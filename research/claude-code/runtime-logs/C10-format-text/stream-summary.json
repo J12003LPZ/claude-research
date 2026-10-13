@@ -1,0 +1,11 @@
+{
+ "event_count": 1,
+ "init": null,
+ "result": null,
+ "events": [
+  {
+   "type": "<non-json>",
+   "head": "ok"
+  }
+ ]
+}

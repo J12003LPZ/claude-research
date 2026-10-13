@@ -1,0 +1,260 @@
+[
+ {
+  "t_in_ms": 0,
+  "t_out_ms": 0,
+  "tag": "SessionStart",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "session_id",
+   "source",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_ENV_FILE",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "SessionStart",
+  "source": "startup"
+ },
+ {
+  "t_in_ms": 19,
+  "t_out_ms": 19,
+  "tag": "InstructionsLoaded",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "file_path",
+   "hook_event_name",
+   "load_reason",
+   "memory_type",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "InstructionsLoaded",
+  "load_reason": "session_start",
+  "memory_type": "Project"
+ },
+ {
+  "t_in_ms": 20,
+  "t_out_ms": 20,
+  "tag": "InstructionsLoaded",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "file_path",
+   "hook_event_name",
+   "load_reason",
+   "memory_type",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "InstructionsLoaded",
+  "load_reason": "session_start",
+  "memory_type": "Project"
+ },
+ {
+  "t_in_ms": 223,
+  "t_out_ms": 223,
+  "tag": "UserPromptSubmit",
+  "mode": "context",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "permission_mode",
+   "prompt",
+   "prompt_id",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "UserPromptSubmit",
+  "permission_mode": "default",
+  "prompt_len": 61
+ },
+ {
+  "t_in_ms": 5609,
+  "t_out_ms": 5609,
+  "tag": "Stop",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "Stop",
+  "permission_mode": "default",
+  "stop_hook_active": false,
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 12639,
+  "t_out_ms": 12639,
+  "tag": "UserPromptSubmit",
+  "mode": "context",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "permission_mode",
+   "prompt",
+   "prompt_id",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "UserPromptSubmit",
+  "permission_mode": "default",
+  "prompt_len": 68
+ },
+ {
+  "t_in_ms": 14216,
+  "t_out_ms": 14216,
+  "tag": "Stop",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "Stop",
+  "permission_mode": "default",
+  "stop_hook_active": false,
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 29645,
+  "t_out_ms": 29645,
+  "tag": "SessionEnd",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "prompt_id",
+   "reason",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "hook_event_name": "SessionEnd",
+  "reason": "other"
+ }
+]

@@ -1,0 +1,1515 @@
+[
+ {
+  "request": {
+   "seq": "0001",
+   "t_ms": 126,
+   "method": "HEAD",
+   "url": "/api/hello",
+   "body_bytes": 0,
+   "header_order": [
+    "Connection",
+    "User-Agent",
+    "Accept",
+    "Host",
+    "Accept-Encoding"
+   ],
+   "headers": {
+    "connection": "keep-alive",
+    "user-agent": "Bun/1.4.3",
+    "accept": "*/*",
+    "host": "127.0.0.1:61337",
+    "accept-encoding": "gzip, deflate, br, zstd"
+   },
+   "body": null
+  },
+  "response": {
+   "seq": "0001",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Tue, 13 Oct 2026 21:10:58 GMT",
+    "content-type": "application/json",
+    "content-length": "20",
+    "connection": "keep-alive",
+    "server-timing": "x-originResponse;dur=",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 92,
+   "t_ms": 218,
+   "body_bytes": 0,
+   "chunk_count": 0,
+   "chunk_times_ms": [],
+   "client_closed_early": false,
+   "body_head": ""
+  }
+ },
+ {
+  "request": {
+   "seq": "0002",
+   "t_ms": 678,
+   "method": "POST",
+   "url": "/v1/messages?beta=true",
+   "body_bytes": 100368,
+   "header_order": [
+    "Accept",
+    "Authorization",
+    "Content-Type",
+    "User-Agent",
+    "X-Claude-Code-Session-Id",
+    "X-Stainless-Arch",
+    "X-Stainless-Lang",
+    "X-Stainless-OS",
+    "X-Stainless-Package-Version",
+    "X-Stainless-Retry-Count",
+    "X-Stainless-Runtime",
+    "X-Stainless-Runtime-Version",
+    "X-Stainless-Timeout",
+    "anthropic-beta",
+    "anthropic-dangerous-direct-browser-access",
+    "anthropic-version",
+    "x-app",
+    "Connection",
+    "Host",
+    "Accept-Encoding",
+    "Content-Length"
+   ],
+   "headers": {
+    "accept": "application/json",
+    "authorization": "<redacted len=115>",
+    "content-type": "application/json",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
+    "x-claude-code-session-id": "<redacted len=36>",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Windows",
+    "x-stainless-package-version": "0.128.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.3.0",
+    "x-stainless-timeout": "600",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-dangerous-direct-browser-access": "true",
+    "anthropic-version": "2023-06-01",
+    "x-app": "cli",
+    "connection": "keep-alive",
+    "host": "127.0.0.1:61337",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "content-length": "100368"
+   },
+   "body": {
+    "top_level_keys": [
+     "model",
+     "messages",
+     "system",
+     "tools",
+     "metadata",
+     "max_tokens",
+     "thinking",
+     "context_management",
+     "output_config",
+     "stream"
+    ],
+    "model": "claude-haiku-5-5",
+    "max_tokens": 128000,
+    "stream": true,
+    "thinking": {
+     "type": "adaptive",
+     "display": "updates"
+    },
+    "context_management": {
+     "edits": [
+      {
+       "type": "clear_thinking_20251015",
+       "keep": "all"
+      }
+     ]
+    },
+    "output_config": {
+     "effort": "medium"
+    },
+    "metadata_keys": [
+     "user_id"
+    ],
+    "metadata_user_id_json_keys": [
+     "account_uuid",
+     "device_id",
+     "session_id"
+    ],
+    "system": [
+     {
+      "type": "text",
+      "len": 74,
+      "sha256": "eca158134e308678",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.3fd; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 62,
+      "sha256": "0d7062851dd7bd7e",
+      "head": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 8774,
+      "sha256": "1a4453b8e56b258d",
+      "head": "\\nYou are an agent working with the user toward their goals, using your own judgm",
+      "tags": [
+       "pasted_content",
+       "skill-name",
+       "short-kebab-case-slug",
+       "system-reminder"
+      ]
+     }
+    ],
+    "tools_count": 26,
+    "tools": [
+     {
+      "name": "Agent",
+      "type": null,
+      "description_len": 1628,
+      "schema_len": 1941,
+      "schema_props": [
+       "description",
+       "effort",
+       "isolation",
+       "model",
+       "prompt",
+       "run_in_background",
+       "subagent_type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Bash",
+      "type": null,
+      "description_len": 1785,
+      "schema_len": 1784,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronCreate",
+      "type": null,
+      "description_len": 2595,
+      "schema_len": 912,
+      "schema_props": [
+       "cron",
+       "durable",
+       "prompt",
+       "recurring"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronDelete",
+      "type": null,
+      "description_len": 100,
+      "schema_len": 219,
+      "schema_props": [
+       "id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronList",
+      "type": null,
+      "description_len": 60,
+      "schema_len": 126,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "DesignSync",
+      "type": null,
+      "description_len": 3742,
+      "schema_len": 5423,
+      "schema_props": [
+       "assets",
+       "counts",
+       "deletes",
+       "files",
+       "localDir",
+       "method",
+       "name",
+       "path",
+       "paths",
+       "planId",
+       "projectId",
+       "writes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Edit",
+      "type": null,
+      "description_len": 360,
+      "schema_len": 584,
+      "schema_props": [
+       "file_path",
+       "new_string",
+       "old_string",
+       "replace_all"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "EnterWorktree",
+      "type": null,
+      "description_len": 3220,
+      "schema_len": 708,
+      "schema_props": [
+       "name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ExitWorktree",
+      "type": null,
+      "description_len": 1923,
+      "schema_len": 502,
+      "schema_props": [
+       "action",
+       "discard_changes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Glob",
+      "type": null,
+      "description_len": 140,
+      "schema_len": 557,
+      "schema_props": [
+       "path",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Grep",
+      "type": null,
+      "description_len": 477,
+      "schema_len": 2764,
+      "schema_props": [
+       "-A",
+       "-B",
+       "-C",
+       "-i",
+       "-n",
+       "-o",
+       "context",
+       "glob",
+       "head_limit",
+       "multiline",
+       "offset",
+       "output_mode",
+       "path",
+       "pattern",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ListAgents",
+      "type": null,
+      "description_len": 777,
+      "schema_len": 336,
+      "schema_props": [
+       "channel",
+       "q"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Monitor",
+      "type": null,
+      "description_len": 6354,
+      "schema_len": 1093,
+      "schema_props": [
+       "command",
+       "description",
+       "timeout_ms",
+       "ws"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "NotebookEdit",
+      "type": null,
+      "description_len": 619,
+      "schema_len": 981,
+      "schema_props": [
+       "cell_id",
+       "cell_type",
+       "edit_mode",
+       "new_source",
+       "notebook_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PowerShell",
+      "type": null,
+      "description_len": 7942,
+      "schema_len": 877,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PushNotification",
+      "type": null,
+      "description_len": 1362,
+      "schema_len": 351,
+      "schema_props": [
+       "message",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Read",
+      "type": null,
+      "description_len": 790,
+      "schema_len": 1112,
+      "schema_props": [
+       "allow_large",
+       "file_path",
+       "limit",
+       "offset",
+       "pages"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "RemoteTrigger",
+      "type": null,
+      "description_len": 2834,
+      "schema_len": 856,
+      "schema_props": [
+       "action",
+       "body",
+       "cursor",
+       "session_id",
+       "trigger_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ReportFindings",
+      "type": null,
+      "description_len": 574,
+      "schema_len": 1646,
+      "schema_props": [
+       "findings",
+       "level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ScheduleWakeup",
+      "type": null,
+      "description_len": 3148,
+      "schema_len": 1423,
+      "schema_props": [
+       "delaySeconds",
+       "noop",
+       "prompt",
+       "reason",
+       "stop"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "SendMessage",
+      "type": null,
+      "description_len": 4259,
+      "schema_len": 1344,
+      "schema_props": [
+       "message",
+       "notify_when_idle",
+       "summary",
+       "to"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Skill",
+      "type": null,
+      "description_len": 1417,
+      "schema_len": 345,
+      "schema_props": [
+       "args",
+       "skill"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "TaskStop",
+      "type": null,
+      "description_len": 364,
+      "schema_len": 382,
+      "schema_props": [
+       "shell_id",
+       "task_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebFetch",
+      "type": null,
+      "description_len": 469,
+      "schema_len": 584,
+      "schema_props": [
+       "offset",
+       "prompt",
+       "url"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebSearch",
+      "type": null,
+      "description_len": 334,
+      "schema_len": 499,
+      "schema_props": [
+       "allowed_domains",
+       "blocked_domains",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Write",
+      "type": null,
+      "description_len": 240,
+      "schema_len": 367,
+      "schema_props": [
+       "content",
+       "file_path"
+      ],
+      "extra_keys": []
+     }
+    ],
+    "tools_total_bytes": 78193,
+    "messages_count": 2,
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "len": 3109,
+        "sha256": "080d87e067231ed7",
+        "head": "<system-reminder>\\nCodebase and user instructions are shown below. Be sure to adh",
+        "tags": [
+         "system-reminder",
+         "path",
+         "task"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 907,
+        "sha256": "4750f83751a28640",
+        "head": "<system-reminder>\\nAs you answer the user's questions, you can use the following ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 581,
+        "sha256": "72370c93a9ca5451",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 111,
+        "sha256": "2d18798b74c01124",
+        "head": "Use the Bash tool to run exactly: python -c \"import time; time.sleep(40); print("
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "len": 9028,
+        "sha256": "05f37c84816ccfcf",
+        "head": "# Environment\\nYou have been invoked in the following environment: \\n - Primary wo",
+        "tags": [
+         "n"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "response": {
+   "seq": "0002",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Tue, 13 Oct 2026 21:11:01 GMT",
+    "content-type": "text/event-stream; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cache-control": "no-cache",
+    "anthropic-ratelimit-unified-status": "allowed_warning",
+    "anthropic-ratelimit-unified-representative-claim": "seven_day",
+    "anthropic-ratelimit-unified-upgrade-paths": "upgrade_plan",
+    "anthropic-ratelimit-unified-7d-reset": "1792346400",
+    "anthropic-ratelimit-unified-7d-surpassed-threshold": "0.75",
+    "anthropic-ratelimit-unified-7d-status": "allowed_warning",
+    "anthropic-ratelimit-unified-overage-status": "rejected",
+    "anthropic-ratelimit-unified-5h-status": "allowed",
+    "anthropic-ratelimit-unified-reset": "1792346400",
+    "anthropic-ratelimit-unified-5h-utilization": "0.53",
+    "anthropic-ratelimit-unified-5h-reset": "1791943200",
+    "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
+    "anthropic-ratelimit-unified-fallback-percentage": "0.5",
+    "anthropic-ratelimit-unified-fallback": "available",
+    "anthropic-ratelimit-unified-7d-utilization": "0.85",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "request-id": "req_<id>",
+    "traceresponse": "00-<hex>-0ff89dbf5e99f719-01",
+    "anthropic-organization-id": "<redacted len=36>",
+    "anthropic-workspace-id": "wrkspc_<id>",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "vary": "Accept-Encoding",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 2158,
+   "t_ms": 2836,
+   "body_bytes": 4829,
+   "chunk_count": 6,
+   "chunk_times_ms": [
+    2159,
+    2306,
+    2306,
+    2408,
+    2488,
+    2499
+   ],
+   "client_closed_early": false,
+   "message_start": {
+    "model": "claude-haiku-5-5",
+    "id_prefix": "msg_011C",
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 4911,
+     "cache_read_input_tokens": 31271,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 4911
+     },
+     "output_tokens": 17,
+     "service_tier": "standard",
+     "inference_geo": "global"
+    },
+    "keys": [
+     "container",
+     "content",
+     "context_management",
+     "diagnostics",
+     "id",
+     "model",
+     "role",
+     "stop_details",
+     "stop_reason",
+     "stop_sequence",
+     "type",
+     "usage"
+    ]
+   },
+   "message_delta_keys": [
+    "context_management",
+    "delta",
+    "type",
+    "usage"
+   ],
+   "sse_event_runs": [
+    [
+     "message_start",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "ping",
+     1
+    ],
+    [
+     "content_block_delta",
+     23
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "message_delta",
+     1
+    ],
+    [
+     "message_stop",
+     1
+    ]
+   ],
+   "content_blocks": [
+    {
+     "index": 0,
+     "type": "tool_use",
+     "name": "Bash",
+     "delta_types": {
+      "input_json_delta": 23
+     },
+     "delta_count": 23
+    }
+   ],
+   "final_usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 4911,
+    "cache_read_input_tokens": 31271,
+    "output_tokens": 125,
+    "output_tokens_details": {
+     "thinking_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 125,
+      "cache_read_input_tokens": 31271,
+      "cache_creation_input_tokens": 4911,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 4911
+      },
+      "type": "message"
+     }
+    ]
+   },
+   "final_delta": {
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "container": null
+   }
+  }
+ },
+ {
+  "request": {
+   "seq": "0003",
+   "t_ms": 13098,
+   "method": "POST",
+   "url": "/v1/messages?beta=true",
+   "body_bytes": 101510,
+   "header_order": [
+    "Accept",
+    "Authorization",
+    "Content-Type",
+    "User-Agent",
+    "X-Claude-Code-Session-Id",
+    "X-Stainless-Arch",
+    "X-Stainless-Lang",
+    "X-Stainless-OS",
+    "X-Stainless-Package-Version",
+    "X-Stainless-Retry-Count",
+    "X-Stainless-Runtime",
+    "X-Stainless-Runtime-Version",
+    "X-Stainless-Timeout",
+    "anthropic-beta",
+    "anthropic-dangerous-direct-browser-access",
+    "anthropic-version",
+    "x-app",
+    "Connection",
+    "Host",
+    "Accept-Encoding",
+    "Content-Length"
+   ],
+   "headers": {
+    "accept": "application/json",
+    "authorization": "<redacted len=115>",
+    "content-type": "application/json",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
+    "x-claude-code-session-id": "<redacted len=36>",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Windows",
+    "x-stainless-package-version": "0.128.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.3.0",
+    "x-stainless-timeout": "600",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-dangerous-direct-browser-access": "true",
+    "anthropic-version": "2023-06-01",
+    "x-app": "cli",
+    "connection": "keep-alive",
+    "host": "127.0.0.1:61337",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "content-length": "101510"
+   },
+   "body": {
+    "top_level_keys": [
+     "model",
+     "messages",
+     "system",
+     "tools",
+     "metadata",
+     "max_tokens",
+     "thinking",
+     "context_management",
+     "output_config",
+     "stream"
+    ],
+    "model": "claude-haiku-5-5",
+    "max_tokens": 128000,
+    "stream": true,
+    "thinking": {
+     "type": "adaptive",
+     "display": "updates"
+    },
+    "context_management": {
+     "edits": [
+      {
+       "type": "clear_thinking_20251015",
+       "keep": "all"
+      }
+     ]
+    },
+    "output_config": {
+     "effort": "medium"
+    },
+    "metadata_keys": [
+     "user_id"
+    ],
+    "metadata_user_id_json_keys": [
+     "account_uuid",
+     "device_id",
+     "session_id"
+    ],
+    "system": [
+     {
+      "type": "text",
+      "len": 74,
+      "sha256": "eca158134e308678",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.3fd; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 62,
+      "sha256": "0d7062851dd7bd7e",
+      "head": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 8774,
+      "sha256": "1a4453b8e56b258d",
+      "head": "\\nYou are an agent working with the user toward their goals, using your own judgm",
+      "tags": [
+       "pasted_content",
+       "skill-name",
+       "short-kebab-case-slug",
+       "system-reminder"
+      ]
+     }
+    ],
+    "tools_count": 26,
+    "tools": [
+     {
+      "name": "Agent",
+      "type": null,
+      "description_len": 1628,
+      "schema_len": 1941,
+      "schema_props": [
+       "description",
+       "effort",
+       "isolation",
+       "model",
+       "prompt",
+       "run_in_background",
+       "subagent_type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Bash",
+      "type": null,
+      "description_len": 1785,
+      "schema_len": 1784,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronCreate",
+      "type": null,
+      "description_len": 2595,
+      "schema_len": 912,
+      "schema_props": [
+       "cron",
+       "durable",
+       "prompt",
+       "recurring"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronDelete",
+      "type": null,
+      "description_len": 100,
+      "schema_len": 219,
+      "schema_props": [
+       "id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronList",
+      "type": null,
+      "description_len": 60,
+      "schema_len": 126,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "DesignSync",
+      "type": null,
+      "description_len": 3742,
+      "schema_len": 5423,
+      "schema_props": [
+       "assets",
+       "counts",
+       "deletes",
+       "files",
+       "localDir",
+       "method",
+       "name",
+       "path",
+       "paths",
+       "planId",
+       "projectId",
+       "writes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Edit",
+      "type": null,
+      "description_len": 360,
+      "schema_len": 584,
+      "schema_props": [
+       "file_path",
+       "new_string",
+       "old_string",
+       "replace_all"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "EnterWorktree",
+      "type": null,
+      "description_len": 3220,
+      "schema_len": 708,
+      "schema_props": [
+       "name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ExitWorktree",
+      "type": null,
+      "description_len": 1923,
+      "schema_len": 502,
+      "schema_props": [
+       "action",
+       "discard_changes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Glob",
+      "type": null,
+      "description_len": 140,
+      "schema_len": 557,
+      "schema_props": [
+       "path",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Grep",
+      "type": null,
+      "description_len": 477,
+      "schema_len": 2764,
+      "schema_props": [
+       "-A",
+       "-B",
+       "-C",
+       "-i",
+       "-n",
+       "-o",
+       "context",
+       "glob",
+       "head_limit",
+       "multiline",
+       "offset",
+       "output_mode",
+       "path",
+       "pattern",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ListAgents",
+      "type": null,
+      "description_len": 777,
+      "schema_len": 336,
+      "schema_props": [
+       "channel",
+       "q"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Monitor",
+      "type": null,
+      "description_len": 6354,
+      "schema_len": 1093,
+      "schema_props": [
+       "command",
+       "description",
+       "timeout_ms",
+       "ws"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "NotebookEdit",
+      "type": null,
+      "description_len": 619,
+      "schema_len": 981,
+      "schema_props": [
+       "cell_id",
+       "cell_type",
+       "edit_mode",
+       "new_source",
+       "notebook_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PowerShell",
+      "type": null,
+      "description_len": 7942,
+      "schema_len": 877,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PushNotification",
+      "type": null,
+      "description_len": 1362,
+      "schema_len": 351,
+      "schema_props": [
+       "message",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Read",
+      "type": null,
+      "description_len": 790,
+      "schema_len": 1112,
+      "schema_props": [
+       "allow_large",
+       "file_path",
+       "limit",
+       "offset",
+       "pages"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "RemoteTrigger",
+      "type": null,
+      "description_len": 2834,
+      "schema_len": 856,
+      "schema_props": [
+       "action",
+       "body",
+       "cursor",
+       "session_id",
+       "trigger_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ReportFindings",
+      "type": null,
+      "description_len": 574,
+      "schema_len": 1646,
+      "schema_props": [
+       "findings",
+       "level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ScheduleWakeup",
+      "type": null,
+      "description_len": 3148,
+      "schema_len": 1423,
+      "schema_props": [
+       "delaySeconds",
+       "noop",
+       "prompt",
+       "reason",
+       "stop"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "SendMessage",
+      "type": null,
+      "description_len": 4259,
+      "schema_len": 1344,
+      "schema_props": [
+       "message",
+       "notify_when_idle",
+       "summary",
+       "to"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Skill",
+      "type": null,
+      "description_len": 1417,
+      "schema_len": 345,
+      "schema_props": [
+       "args",
+       "skill"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "TaskStop",
+      "type": null,
+      "description_len": 364,
+      "schema_len": 382,
+      "schema_props": [
+       "shell_id",
+       "task_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebFetch",
+      "type": null,
+      "description_len": 469,
+      "schema_len": 584,
+      "schema_props": [
+       "offset",
+       "prompt",
+       "url"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebSearch",
+      "type": null,
+      "description_len": 334,
+      "schema_len": 499,
+      "schema_props": [
+       "allowed_domains",
+       "blocked_domains",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Write",
+      "type": null,
+      "description_len": 240,
+      "schema_len": 367,
+      "schema_props": [
+       "content",
+       "file_path"
+      ],
+      "extra_keys": []
+     }
+    ],
+    "tools_total_bytes": 78193,
+    "messages_count": 5,
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "len": 3109,
+        "sha256": "080d87e067231ed7",
+        "head": "<system-reminder>\\nCodebase and user instructions are shown below. Be sure to adh",
+        "tags": [
+         "system-reminder",
+         "path",
+         "task"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 907,
+        "sha256": "4750f83751a28640",
+        "head": "<system-reminder>\\nAs you answer the user's questions, you can use the following ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 581,
+        "sha256": "72370c93a9ca5451",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 111,
+        "sha256": "2d18798b74c01124",
+        "head": "Use the Bash tool to run exactly: python -c \"import time; time.sleep(40); print("
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 9028,
+        "sha256": "05f37c84816ccfcf",
+        "head": "# Environment\\nYou have been invoked in the following environment: \\n - Primary wo"
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "id_prefix": "toolu_",
+        "name": "Bash",
+        "input_keys": [
+         "command",
+         "description",
+         "timeout"
+        ],
+        "input": {
+         "len": 149,
+         "sha256": "b7285be2678e39bb",
+         "head": "{\"command\": \"python -c \\\"import time; time.sleep(40); print('finished')\\\"\", \"des"
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": true,
+        "content": {
+         "len": 436,
+         "sha256": "735cff60fb006a8a",
+         "head": "The user doesn't want to proceed with this tool use. The tool use was rejected ("
+        }
+       },
+       {
+        "type": "text",
+        "len": 43,
+        "sha256": "1b694b2a248665a2",
+        "head": "[Request interrupted by user for tool use]\\n"
+       },
+       {
+        "type": "text",
+        "len": 68,
+        "sha256": "22ab2afcda128ba5",
+        "head": "What happened to the previous command? Answer in one short sentence."
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "len": 74,
+        "sha256": "be99db1399e15bdf",
+        "head": "UserPromptSubmit hook additional context: HOOK_CTX_MARKER_UserPromptSubmit"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "response": {
+   "seq": "0003",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Tue, 13 Oct 2026 21:11:12 GMT",
+    "content-type": "text/event-stream; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cache-control": "no-cache",
+    "anthropic-ratelimit-unified-status": "allowed_warning",
+    "anthropic-ratelimit-unified-representative-claim": "seven_day",
+    "anthropic-ratelimit-unified-upgrade-paths": "upgrade_plan",
+    "anthropic-ratelimit-unified-7d-reset": "1792346400",
+    "anthropic-ratelimit-unified-7d-surpassed-threshold": "0.75",
+    "anthropic-ratelimit-unified-7d-status": "allowed_warning",
+    "anthropic-ratelimit-unified-overage-status": "rejected",
+    "anthropic-ratelimit-unified-5h-status": "allowed",
+    "anthropic-ratelimit-unified-reset": "1792346400",
+    "anthropic-ratelimit-unified-5h-utilization": "0.54",
+    "anthropic-ratelimit-unified-5h-reset": "1791943200",
+    "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
+    "anthropic-ratelimit-unified-fallback-percentage": "0.5",
+    "anthropic-ratelimit-unified-fallback": "available",
+    "anthropic-ratelimit-unified-7d-utilization": "0.85",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "request-id": "req_<id>",
+    "traceresponse": "00-<hex>-07024a05f02cd19a-01",
+    "anthropic-organization-id": "<redacted len=36>",
+    "anthropic-workspace-id": "wrkspc_<id>",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "vary": "Accept-Encoding",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 1268,
+   "t_ms": 14366,
+   "body_bytes": 4622,
+   "chunk_count": 14,
+   "chunk_times_ms": [
+    1269,
+    1669,
+    1909,
+    1910,
+    1937,
+    1950,
+    1970,
+    1990,
+    2011,
+    2031,
+    2052,
+    2067,
+    2071,
+    2081
+   ],
+   "client_closed_early": false,
+   "message_start": {
+    "model": "claude-haiku-5-5",
+    "id_prefix": "msg_011C",
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 348,
+     "cache_read_input_tokens": 36182,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 348
+     },
+     "output_tokens": 2,
+     "service_tier": "standard",
+     "inference_geo": "global"
+    },
+    "keys": [
+     "container",
+     "content",
+     "context_management",
+     "diagnostics",
+     "id",
+     "model",
+     "role",
+     "stop_details",
+     "stop_reason",
+     "stop_sequence",
+     "type",
+     "usage"
+    ]
+   },
+   "message_delta_keys": [
+    "context_management",
+    "delta",
+    "type",
+    "usage"
+   ],
+   "sse_event_runs": [
+    [
+     "message_start",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "ping",
+     1
+    ],
+    [
+     "content_block_delta",
+     3
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "content_block_delta",
+     9
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "message_delta",
+     1
+    ],
+    [
+     "message_stop",
+     1
+    ]
+   ],
+   "content_blocks": [
+    {
+     "index": 0,
+     "type": "thinking",
+     "name": null,
+     "delta_types": {
+      "thinking_delta": 2,
+      "signature_delta": 1
+     },
+     "delta_count": 3
+    },
+    {
+     "index": 1,
+     "type": "text",
+     "name": null,
+     "delta_types": {
+      "text_delta": 9
+     },
+     "delta_count": 9
+    }
+   ],
+   "final_usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 348,
+    "cache_read_input_tokens": 36182,
+    "output_tokens": 143,
+    "output_tokens_details": {
+     "thinking_tokens": 114
+    },
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 143,
+      "cache_read_input_tokens": 36182,
+      "cache_creation_input_tokens": 348,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 348
+      },
+      "type": "message"
+     }
+    ]
+   },
+   "final_delta": {
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "container": null
+   }
+  }
+ }
+]

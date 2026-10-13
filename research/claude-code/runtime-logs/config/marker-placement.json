@@ -1,0 +1,113 @@
+{
+ "C1-discovery-sub": [
+  {
+   "seq": "0002",
+   "system_lens": [
+    74,
+    62,
+    8777
+   ],
+   "markers": [
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3375:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3541:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3700:MK_LOCAL",
+    "msg[0:user].block[0]@3847:MK_SUB"
+   ]
+  }
+ ],
+ "C2-lazy-nested": [
+  {
+   "seq": "0002",
+   "system_lens": [
+    74,
+    62,
+    8777
+   ],
+   "markers": [
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3369:MK_INCLUDED",
+    "msg[0:user].block[0]@3519:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3685:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3844:MK_LOCAL"
+   ]
+  },
+  {
+   "seq": "0003",
+   "system_lens": [
+    74,
+    62,
+    8777
+   ],
+   "markers": [
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3369:MK_INCLUDED",
+    "msg[0:user].block[0]@3519:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3685:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3844:MK_LOCAL",
+    "msg[4:system].block[0]@68:MK_SUB",
+    "msg[4:system].block[0]@168:MK_INNER",
+    "msg[4:system].block[0]@276:MK_RULE_SCOPED"
+   ]
+  }
+ ],
+ "C3-append-sysprompt": [
+  {
+   "seq": "0002",
+   "system_lens": [
+    74,
+    94,
+    8792
+   ],
+   "markers": [
+    "system[2]@8779:MK_APPEND_SYS",
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3369:MK_INCLUDED",
+    "msg[0:user].block[0]@3519:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3685:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3844:MK_LOCAL"
+   ]
+  }
+ ],
+ "C4-replace-sysprompt": [
+  {
+   "seq": "0002",
+   "system_lens": [
+    74,
+    62,
+    36
+   ],
+   "markers": [
+    "system[2]@0:MK_REPLACE_SYS",
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3369:MK_INCLUDED",
+    "msg[0:user].block[0]@3519:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3685:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3844:MK_LOCAL"
+   ]
+  }
+ ],
+ "C8-exclude-dynamic": [
+  {
+   "seq": "0002",
+   "system_lens": [
+    74,
+    62,
+    6375
+   ],
+   "markers": [
+    "msg[0:user].block[0]@3044:MK_PARENT_OUTSIDE_GIT",
+    "msg[0:user].block[0]@3205:MK_PROJECT_ROOT",
+    "msg[0:user].block[0]@3369:MK_INCLUDED",
+    "msg[0:user].block[0]@3519:MK_DOTCLAUDE",
+    "msg[0:user].block[0]@3685:MK_RULE_ALWAYS",
+    "msg[0:user].block[0]@3844:MK_LOCAL"
+   ]
+  }
+ ]
+}

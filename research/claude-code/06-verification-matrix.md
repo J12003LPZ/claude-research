@@ -1,0 +1,207 @@
+# 06. Verification, coverage, cross-validation, open questions
+
+Coverage here is counted over enumerated behaviours and tested scenarios. There is no
+overall completeness percentage, on purpose.
+
+Result vocabulary: **Verified** (static and runtime agree, or runtime alone is decisive),
+**Partially verified** (one side only, or bracketed rather than pinned), **Inferred**,
+**Untested**, **Blocked** (cannot be tested from this host or without the vendor).
+
+## 1. Subsystem verification matrix
+
+| Subsystem | Hypothesis | Static evidence | Runtime evidence | Result | Confidence | Remaining gap |
+|---|---|---|---|---|---|---|
+| Artifact | `claude` is one Bun standalone PE holding the app as JS | PE sections, trailer, module table parse | `Bun/1.4.3` user agent on `/api/hello` | Verified | High | bytecode/source equivalence untested |
+| Startup | Entry module dispatches fast paths, then `main` | entry `cli` read in full | version and bad-flag runs make no API call | Verified | High | each side entry point not exercised |
+| Config | flag > local > project; settings `env` beats process env | merge code, static 01 | C5, C6, C6b, C6c | Verified | High | user and managed layers not run |
+| Config | `availableModels` constrains `--model` | static 01 | E01 vs E01b (not isolated) | Partially verified | Medium | single-variable run |
+| Prompt | 3 system blocks, 2 cached for 1h | cache scope code, static 02 | E01 | Verified | High | other providers |
+| Prompt | Instruction files ride in the first user message | static 02 | C1, C2 marker offsets | Verified | High | |
+| Prompt | Discovery order and lazy nested loading | static 02 | C1, C2, E08 | Verified | High | external-include approval rule |
+| Prompt | `AGENTS.md` not loaded | static 02 (existence probe only) | C2 | Verified | High | |
+| Prompt | Mid-conversation `role: system` messages | beta id in `chunk-80kqkekd.js` | E01, E08, C2 | Verified | High | behaviour when the beta is off |
+| Loop | Continue while tool_use present; one result message per assistant message | static 03 | E02, E08, E09 | Verified | High | |
+| Loop | Tools start before `message_stop` | `streamingToolExecutor.addTool` | E08 event order | Verified | High | interaction with unsafe tools |
+| Loop | Stop-hook block re-enters, capped at 8 | static 03 | E07h (one block) | Partially verified | High / cap Medium | cap not hit |
+| Loop | Max output-token recovery, 3 attempts | static 03 | none | Untested | Medium | long-output run |
+| Transport | App-level retry: 10 attempts, 500 ms base, 25% jitter, retry-after | static 03 constants | E18a, b, d, e | Verified | High | cap 32 s, give-up paths |
+| Transport | 400 triggers a degraded retry | not located statically | E18c | Partially verified | Medium | which 400s qualify |
+| Transport | Fallback model after 3 consecutive 529 | static 03 | none (2 injected) | Untested | Medium | inject 3 with `--fallback-model` |
+| Transport | Idle watchdogs, non-streaming fallback | static 03 | none | Untested | Medium | proxy stall mode |
+| Tools | Lifecycle: lookup, validate, PreToolUse, decide, call, PostToolUse | static 04 | E07a to E07g | Verified | High | PostToolUseFailure |
+| Tools | Large results persisted to disk | static 04 | none | Untested | Medium | 60k-char output |
+| Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
+| Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
+| Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified | High | host approval path |
+| Permissions | Modes plan, bypass, dontAsk, auto | static 04 | none | Untested | Medium | one run per mode |
+| Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
+| Hooks | Exit 2 blocks, exit 1 does not | static 04 | E07c, E07d | Verified | High | per-event differences |
+| Hooks | stdin schemas | static 04 | E07a, E17c | Verified for 10 events | High | 11 events configured but never fired |
+| Subagents | In-process nested loop with own prompt and tools | `runAgent`, static 05 | E11 | Verified | High | |
+| Subagents | Siblings run concurrently | static 05 left this open | E10 | Verified | High | limit of 20 |
+| Subagents | Depth 3, concurrency 20 | static 05 | `subagent_stats.refused` keys only | Partially verified | Medium | hit the limits |
+| Subagents | Background agent survives parent interrupt | static 05 | none | Untested | Medium | |
+| Tasks | Background shell with output file, TaskStop kills | static 05 | E14 | Verified | High | notification into a later turn |
+| Compaction | Trigger = window - min(maxOut, 20000) - 13000 | static 02 | E17c brackets 59k..78k for 100k | Partially verified | High | pin the exact threshold |
+| Compaction | Summary request reuses system, tools, history | static 02 | E17a | Verified | High | |
+| Compaction | Hook order PreCompact, SubagentStop, SessionStart(compact), PostCompact | static 02 | E17c | Verified | High | |
+| Compaction | Post-compact file re-attachment, 5 files | static 02 | E17c (2 files re-read) | Partially verified | Medium | 6+ files |
+| Compaction | Thrash breaker after 3 quick refills | static 02 | E17c | Verified | High | |
+| Compaction | Failure breaker after 3 failed summaries | static 02 | none | Untested | Medium | fault on summary call |
+| Sessions | JSONL chain by uuid and parentUuid; project dir from sanitized cwd | static 05 | lab transcripts, E15 | Verified | High | 200+ char path hashing |
+| Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
+| Sessions | Interrupted-turn repair on resume | static 05 | none | Untested | Medium | kill then resume |
+| Interrupt | Abort closes HTTP stream, synthesizes messages | static 03 | E13b, E13c | Verified | High | TUI Esc, SIGINT |
+| Rendering | Custom Ink-style renderer, 16 ms frames | static 05 | none | Blocked | Low | PTY harness |
+| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | none | Untested | Low | `claude --bg` under observation |
+| Server side | Model behaviour, rate limits, gates, server context edits | none possible | headers only | Blocked | n/a | vendor only |
+
+## 2. Behavioural test matrix: installed CLI versus the proposed reconstruction
+
+"Reconstruction" is the design in `05-implementation-spec.md`. No reimplementation was
+built in this investigation, so the last column records whether the spec defines the
+behaviour precisely enough to test, not a pass or fail.
+
+| # | Behaviour | Installed CLI (evidence) | Spec section | Status |
+|---|---|---|---|---|
+| 1 | Version without config or network | observed | 1 | Verified (spec defined) |
+| 2 | Unknown flag exits 1 | C11 | 1 | Verified |
+| 3 | Settings layering order | C5 to C6c | 2 | Verified |
+| 4 | System block layout and cache markers | E01 | 3 | Verified |
+| 5 | Instruction files in first user message, ordered | C1, C2 | 3 | Verified |
+| 6 | Lazy nested instructions as a later message | E08, C2 | 3 | Verified |
+| 7 | Append and replace system prompt flags | C3, C4 | 3 | Verified |
+| 8 | Single tool round trip | E02 | 5 | Verified |
+| 9 | Parallel tool calls, merged results | E08 | 5 | Verified |
+| 10 | Tool starts before message end | E08 | 5 | Verified |
+| 11 | Sequential dependent tools | E09 | 5 | Verified |
+| 12 | Shell success and non-zero exit shapes | E04, E05b | 6 | Verified |
+| 13 | Out-of-tree path refused | E05 | 7 | Verified |
+| 14 | Compound command and variable checks | E05b, C5 | 7 | Partially verified (parser not specified) |
+| 15 | Headless ask becomes denial | E06 | 7 | Verified |
+| 16 | Rule precedence | E08b | 7 | Verified |
+| 17 | Hook lifecycle order and parallel start | E07a | 8 | Verified |
+| 18 | Hook deny, exit 2, exit 1 | E07b, c, d | 8 | Verified |
+| 19 | Hook allow and deny-rule interaction | E07e, f | 7 | Verified |
+| 20 | Hook input rewrite | E07g | 8 | Verified |
+| 21 | Stop hook block | E07h | 5 | Verified |
+| 22 | Subagent creation to hand-back | E11 | 9 | Verified |
+| 23 | Parallel subagents | E10 | 9 | Verified |
+| 24 | Unknown agent type | E12 | 9 | Verified |
+| 25 | Background shell and stop | E14 | 9 | Verified |
+| 26 | Interrupt during streaming | E13b | 13 | Verified |
+| 27 | Interrupt during a tool | E13c | 13 | Partially verified (process kill not proven) |
+| 28 | Resume, continue, fork | E15 | 11 | Verified |
+| 29 | Manual compaction | E17a | 10 | Verified |
+| 30 | Automatic compaction and thrash stop | E17c | 10 | Verified |
+| 31 | Retry on 429, 500, 529, reset | E18 | 4 | Verified |
+| 32 | Degraded retry on 400 | E18c | 4 | Partially verified |
+| 33 | Max turns | C7 | 5 | Verified |
+| 34 | Output formats | C9, C10 | 1 | Verified |
+| 35 | Real API error ends the run | E08b | 4 | Verified |
+| 36 | Interactive permission dialog | none | 7 | Blocked |
+| 37 | Terminal rendering | none | 12 | Blocked |
+| 38 | Host approval over the control protocol | none | 7 | Untested |
+| 39 | Subagent failure mid-run | none | 9 | Untested |
+| 40 | Crash recovery on resume | none | 11 | Untested |
+| 41 | Large tool result persistence | none | 6 | Untested |
+| 42 | Model fallback | none | 4 | Untested |
+| 43 | Sandbox | none | 7 | Untested |
+| 44 | MCP tool call | none | 14 | Untested |
+
+Counts: 44 behaviours enumerated. Verified 32, partially verified 3, untested 7, blocked 2.
+
+## 3. Cross-validation per subsystem
+
+Each block answers: what we know, how, what else could explain it, what would falsify it,
+what is unknown.
+
+**Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
+entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
+runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
+executes. Falsifier: a behaviour that contradicts the source text; none in 53 runs.
+Unknown: updater behaviour, each side entry point.
+
+**Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
+loading, flag effects. How: captured request bodies with synthetic markers at known
+offsets. Alternative: the proxy path could differ from the direct path. Falsifier: a
+direct-path debug dump with a different body. Unknown: server-side additions, exact
+section list of the main prompt under every feature flag.
+
+**Agent loop.** Known: loop condition, streaming tool start, result batching, stop-hook
+re-entry, termination reasons. How: event order in the SDK stream cross-checked with HTTP
+request sequence and static `streamingToolExecutor` code. Alternative: the early tool
+result in E08 could be event reordering in the output layer. Rejected: the hook log
+timestamps in E07a place PreToolUse before `message_delta`. Falsifier: a hook timestamp
+later than the stream end. Unknown: behaviour with non-concurrency-safe tools in one
+message.
+
+**Transport.** Known: endpoint, headers, body keys, retry timing, abort. How: proxy
+captures and injected faults. Alternative: delays could come from the SDK. Rejected:
+`x-stainless-retry-count` stayed 0 and the delays match the application constants.
+Falsifier: a retry with a non-zero SDK retry header. Unknown: watchdog and fallback paths.
+
+**Permissions and hooks.** Known: precedence, hook ordering, decision effects. How: hook
+logs with timestamps, file state on disk before and after, denial events. Alternative:
+E07f could be the model declining to call Edit. Rejected: the call was made and returned
+"No such tool available". Falsifier: an allow hook that makes a denied tool run. Unknown:
+the other four modes, classifier, sandbox.
+
+**Subagents and tasks.** Known: nested loop, separate prompt, parallel siblings, event
+lifecycle, hand-back framing. How: overlapping request timestamps on the proxy, task
+events, on-disk subagent transcripts. Alternative: overlap could be an artifact of proxy
+timing. Rejected: 339 ms separation with 2 s durations on both. Falsifier: strictly serial
+child requests under the same prompt. Unknown: limits, background survival, failures.
+
+**Compaction.** Known: trigger region, request shape, hook order, rebuild, breaker. How:
+three automatic cycles and one manual one, with boundary metadata and hook logs.
+Alternative: the breaker could be a token budget rather than a refill counter. Rejected:
+the result text and `terminal_reason` name the refill condition, and static pass 02 has the
+counter. Falsifier: a run that compacts more than three times in quick succession without
+stopping. Unknown: failure paths, partial compaction, server-side context edits.
+
+**Sessions.** Known: layout, row types, chain links, resume semantics. How: schema
+extraction from lab sessions only, message counts on resumed requests. Alternative: resume
+could rebuild reminders rather than replay them. Rejected by E15e/E15f: after editing
+`CLAUDE.md`, the resumed request kept the old text in message 0 and carried the new text
+in a fresh reminder on the new user message. Falsifier: a resumed request whose first
+message shows the edited file. Unknown: repair logic, retention sweeps.
+
+## 4. Ten most consequential open questions
+
+Targeted follow-up was attempted where it was cheap. Status after that:
+
+| # | Question | Why it matters | Attempt | Status |
+|---|---|---|---|---|
+| 1 | Does the proxied path equal the direct path? | Every request-shape claim rests on it | Checked debug log line `dispatching to firstParty`, OAuth unaffected, stable beta list | Open. Needs a direct-path body dump |
+| 2 | Which 400 errors trigger the degraded retry, and what else gets stripped? | A reimplementation needs the rule | Diffed E18c request pair: `thinking.display` and one beta removed | Partly answered |
+| 3 | Exact auto-compact threshold | Affects when context is lost | Bracketed 59k..78k; static formula gives 67k | Partly answered |
+| 4 | Are reminders and environment text replayed or regenerated on resume? | Cache reuse and correctness after file edits | Ran the falsifier (E15e, E15f): edited `CLAUDE.md` between create and resume | Answered. The stored first message is replayed unchanged, and the current file content is added as a new reminder block on the new user message |
+| 5 | Is the tool's process tree killed on interrupt? | Orphan processes | Single process listing after E13c, none found | Partly answered |
+| 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Open at runtime |
+| 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
+| 8 | What do plan, dontAsk, bypass and auto modes do in practice? | Four of six modes unobserved | Static 04 algorithm extracted | Open at runtime |
+| 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 53 runs | Open. Would need a JavaScriptCore bytecode disassembler |
+
+Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
+calls overlap. E10 shows they do.
+
+## 5. Architecture corrections made along the way
+
+1. First assumption: a Node/npm package. Wrong. It is a native-installer Bun standalone
+   executable with no npm footprint.
+2. First assumption: instruction files are part of the system prompt. Wrong. They are in
+   the first user message; the system array stays byte-stable for caching.
+3. First assumption: the environment block is in the system prompt. Wrong. It is a
+   mid-conversation `system` role message.
+4. First assumption: tools run after the model finishes its message. Wrong for
+   concurrency-safe tools: they start as their block completes.
+5. First assumption: SDK-level retries. Wrong. The application retries; the SDK header
+   stays at 0.
+6. Static passes initially pointed at small named chunks (`query`, `runAgent`) as the
+   implementations. They are re-export shims; the bodies are in shared chunks.
+7. Experiment design errors corrected: `ls /absolute` tests path policy, not shell failure;
+   `sleep N` is refused by the tool; Git Bash rewrote `/compact` into a Windows path; an
+   empty argument pushed flags behind `--` and silently ran ten experiments in the wrong
+   profile.

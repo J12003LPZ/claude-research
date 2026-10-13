@@ -1,0 +1,245 @@
+{
+ "line_count": 473,
+ "top_prefixes": [
+  [
+   "Keeping C",
+   92
+  ],
+  [
+   "hooks",
+   43
+  ],
+  [
+   "Fast mode unavailable",
+   18
+  ],
+  [
+   "STARTUP",
+   12
+  ],
+  [
+   "CA certs",
+   10
+  ],
+  [
+   "init",
+   8
+  ],
+  [
+   "uds-messaging",
+   8
+  ],
+  [
+   "Cleared",
+   8
+  ],
+  [
+   "LSP",
+   8
+  ],
+  [
+   "cc-plugin-telemetry",
+   8
+  ],
+  [
+   "$.session",
+   8
+  ],
+  [
+   "LSP Diagnostics",
+   8
+  ],
+  [
+   "Hooks",
+   8
+  ],
+  [
+   "API",
+   8
+  ],
+  [
+   "Cache",
+   8
+  ],
+  [
+   "Reading marketplace from C",
+   8
+  ],
+  [
+   "Failed",
+   8
+  ],
+  [
+   "mTLS",
+   6
+  ],
+  [
+   "Failed to stat directory C",
+   6
+  ],
+  [
+   "LSP MANAGER",
+   6
+  ],
+  [
+   "Bootstrap",
+   6
+  ],
+  [
+   "No",
+   5
+  ],
+  [
+   "Git remote URL",
+   4
+  ],
+  [
+   "Error",
+   4
+  ],
+  [
+   "MCP",
+   4
+  ],
+  [
+   "[3P",
+   4
+  ],
+  [
+   "plugin.register",
+   4
+  ],
+  [
+   "claudeai-mcp",
+   4
+  ],
+  [
+   "engine",
+   4
+  ],
+  [
+   "autocompact",
+   4
+  ],
+  [
+   "attribution",
+   4
+  ],
+  [
+   "API REQUEST",
+   4
+  ],
+  [
+   "installPluginsForHeadless",
+   4
+  ],
+  [
+   "Stream",
+   4
+  ],
+  [
+   "$.http.fetch",
+   4
+  ],
+  [
+   "MDM",
+   2
+  ],
+  [
+   "Broken",
+   2
+  ],
+  [
+   "Using bash path",
+   2
+  ],
+  [
+   "ToolSearch",
+   2
+  ],
+  [
+   "win32-kernel32",
+   2
+  ],
+  [
+   "Loaded 30 installed plugins from C",
+   2
+  ],
+  [
+   "Found",
+   2
+  ],
+  [
+   "getPluginSkills",
+   2
+  ],
+  [
+   "Checking plugin cc-plugin-agents-md",
+   2
+  ],
+  [
+   "Checking plugin cc-plugin-telemetry",
+   2
+  ],
+  [
+   "Checking",
+   2
+  ],
+  [
+   "Total plugin workflows loaded",
+   2
+  ],
+  [
+   "Total plugin commands loaded",
+   2
+  ],
+  [
+   "Total plugin skills loaded",
+   2
+  ],
+  [
+   "Loading skills from",
+   2
+  ],
+  [
+   "Total plugin agents loaded",
+   2
+  ],
+  [
+   "Loaded",
+   2
+  ],
+  [
+   "cc-plugin-sec-default@builtin",
+   2
+  ],
+  [
+   "getSkills returning",
+   2
+  ],
+  [
+   "Starting",
+   2
+  ],
+  [
+   "Passes",
+   2
+  ],
+  [
+   "All",
+   2
+  ],
+  [
+   "Total LSP servers loaded",
+   2
+  ],
+  [
+   "Initialized",
+   2
+  ],
+  [
+   "LSP SERVER MANAGER",
+   2
+  ]
+ ]
+}

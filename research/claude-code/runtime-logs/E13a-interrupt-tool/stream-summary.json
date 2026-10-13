@@ -1,0 +1,1091 @@
+{
+ "event_count": 96,
+ "init": {
+  "type": "system",
+  "subtype": "init",
+  "cwd": "C:\\Users\\<user>\\cc-rea-lab\\proj-hooks",
+  "session_id": "<uuid>",
+  "tools": [
+   "Task",
+   "Bash",
+   "CronCreate",
+   "CronDelete",
+   "CronList",
+   "DesignSync",
+   "Edit",
+   "EnterWorktree",
+   "ExitWorktree",
+   "Glob",
+   "Grep",
+   "ListAgents",
+   "Monitor",
+   "NotebookEdit",
+   "PowerShell",
+   "PushNotification",
+   "Read",
+   "RemoteTrigger",
+   "ReportFindings",
+   "ScheduleWakeup",
+   "SendMessage",
+   "Skill",
+   "TaskStop",
+   "WebFetch",
+   "WebSearch",
+   "Write"
+  ],
+  "mcp_servers": [],
+  "model": "claude-haiku-5-5",
+  "permissionMode": "default",
+  "slash_commands": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "terminal_slash_commands": 4,
+  "apiKeySource": "none",
+  "claude_code_version": "2.1.296",
+  "output_style": "default",
+  "agents": [
+   "claude",
+   "Explore",
+   "general-purpose",
+   "Plan",
+   "statusline-setup"
+  ],
+  "skills": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "plugins": 3,
+  "capabilities": 10,
+  "analytics_disabled": false,
+  "product_feedback_disabled": false,
+  "uuid": "<uuid>",
+  "memory_paths": 1,
+  "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-<hex>",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "per_turn_effort_active": true,
+  "view_mode": "default",
+  "powershell_path": "C:\\Users\\<user>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+  "slash_commands_count": 52,
+  "skills_count": 17,
+  "agents_count": 5
+ },
+ "result": {
+  "duration_api_ms": 6753,
+  "stop_reason": "end_turn",
+  "session_id": "<uuid>",
+  "total_cost_usd": 0.00840259,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 541,
+   "cache_read_input_tokens": 36358,
+   "output_tokens": 33,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 541,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 33,
+     "cache_read_input_tokens": 36358,
+     "cache_creation_input_tokens": 541,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 541
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": [
+    "cacheCreationInputTokens",
+    "cacheReadInputTokens",
+    "canonicalModel",
+    "contextWindow",
+    "costBasis",
+    "costUSD",
+    "inputTokens",
+    "maxOutputTokens",
+    "outputTokens",
+    "provider",
+    "thinkingTokens",
+    "webSearchRequests"
+   ]
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "ttft_ms": 1550,
+  "type": "result",
+  "duration_ms": 1652,
+  "uuid": "<uuid>",
+  "ttft_stream_ms": 1457,
+  "time_to_request_ms": 86,
+  "first_content_frame_ms": 1457,
+  "queued_turn_count": 0,
+  "result_index": 1,
+  "result": {
+   "len": 72,
+   "sha256": "737f94f349b3aa2a",
+   "head": "The Bash tool blocked `sleep 40` as a standalone sleep, so it never ran."
+  }
+ },
+ "events": [
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null,
+   "repeat": 11
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 62,
+      "sha256": "4a7df1054e4fcf5f",
+      "head": "{\"command\": \"sleep 40\", \"description\": \"Sleep for 40 seconds\"}"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 279,
+      "sha256": "a3e4bcdabd71165d",
+      "head": "<tool_use_error>Blocked: standalone sleep 40. To wait for a condition, use Monit"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "thinking",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "keys": [
+    "estimated_tokens",
+    "estimated_tokens_delta",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "thinking_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "keys": [
+    "estimated_tokens",
+    "estimated_tokens_delta",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "thinking_delta",
+   "parent_tool_use_id": null,
+   "repeat": 2
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "keys": [
+    "estimated_tokens",
+    "estimated_tokens_delta",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "signature_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "thinking_display",
+    "thinking_duration_ms",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "thinking",
+     "thinking_len": 0,
+     "has_signature": true
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "text",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "text_delta",
+   "parent_tool_use_id": null,
+   "repeat": 32
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 421,
+     "sha256": "9c0524d506f9273f",
+     "head": "I didn't run `sleep 40`. The Bash tool blocked it as a standalone sleep, and its"
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "end_turn",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  },
+  {
+   "type": "control_response",
+   "keys": [
+    "response",
+    "type"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "text",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "text_delta",
+   "parent_tool_use_id": null,
+   "repeat": 5
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 72,
+     "sha256": "737f94f349b3aa2a",
+     "head": "The Bash tool blocked `sleep 40` as a standalone sleep, so it never ran."
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "end_turn",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  }
+ ]
+}

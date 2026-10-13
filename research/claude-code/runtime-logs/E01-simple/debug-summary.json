@@ -1,0 +1,245 @@
+{
+ "line_count": 606,
+ "top_prefixes": [
+  [
+   "Loaded",
+   88
+  ],
+  [
+   "Keeping C",
+   46
+  ],
+  [
+   "Attempting",
+   36
+  ],
+  [
+   "hooks",
+   34
+  ],
+  [
+   "Hooks",
+   24
+  ],
+  [
+   "MCP",
+   20
+  ],
+  [
+   "Failed to parse YAML frontmatter in C",
+   17
+  ],
+  [
+   "Plugin loading errors",
+   14
+  ],
+  [
+   "Hook",
+   12
+  ],
+  [
+   "Read",
+   9
+  ],
+  [
+   "Failed to stat directory C",
+   8
+  ],
+  [
+   "Plugin not available for MCP",
+   8
+  ],
+  [
+   "Loading hooks from plugin",
+   7
+  ],
+  [
+   "STARTUP",
+   6
+  ],
+  [
+   "Fast mode unavailable",
+   6
+  ],
+  [
+   "CA certs",
+   5
+  ],
+  [
+   "init",
+   4
+  ],
+  [
+   "Loading skills from",
+   4
+  ],
+  [
+   "skills",
+   4
+  ],
+  [
+   "uds-messaging",
+   4
+  ],
+  [
+   "Cleared",
+   4
+  ],
+  [
+   "getPluginSkills",
+   4
+  ],
+  [
+   "Checking plugin frontend-design",
+   4
+  ],
+  [
+   "Checking plugin code-simplifier",
+   4
+  ],
+  [
+   "Checking plugin claude-md-management",
+   4
+  ],
+  [
+   "Checking plugin typescript-lsp",
+   4
+  ],
+  [
+   "Checking plugin code-review",
+   4
+  ],
+  [
+   "Checking plugin security-guidance",
+   4
+  ],
+  [
+   "Checking plugin pr-review-toolkit",
+   4
+  ],
+  [
+   "Checking plugin pyright-lsp",
+   4
+  ],
+  [
+   "Checking plugin plugin-dev",
+   4
+  ],
+  [
+   "Checking plugin claude-security",
+   4
+  ],
+  [
+   "Checking plugin codex",
+   4
+  ],
+  [
+   "Checking plugin claude-seo",
+   4
+  ],
+  [
+   "Checking plugin last30days",
+   4
+  ],
+  [
+   "Checking plugin rust-analyzer-lsp",
+   4
+  ],
+  [
+   "Checking plugin code-modernization",
+   4
+  ],
+  [
+   "Checking plugin typesafe",
+   4
+  ],
+  [
+   "Checking plugin linear",
+   4
+  ],
+  [
+   "Checking plugin code-review-toolkit",
+   4
+  ],
+  [
+   "Checking plugin superpowers",
+   4
+  ],
+  [
+   "Checking plugin cc-plugin-agents-md",
+   4
+  ],
+  [
+   "Checking plugin cc-plugin-telemetry",
+   4
+  ],
+  [
+   "Checking",
+   4
+  ],
+  [
+   "Total plugin commands loaded",
+   4
+  ],
+  [
+   "Total plugin skills loaded",
+   4
+  ],
+  [
+   "getSkills returning",
+   4
+  ],
+  [
+   "Total plugin workflows loaded",
+   4
+  ],
+  [
+   "LSP",
+   4
+  ],
+  [
+   "Registered",
+   4
+  ],
+  [
+   "cc-plugin-telemetry",
+   4
+  ],
+  [
+   "\"Hook",
+   4
+  ],
+  [
+   "Cache",
+   4
+  ],
+  [
+   "Reading marketplace from C",
+   4
+  ],
+  [
+   "Failed",
+   4
+  ],
+  [
+   "Broken",
+   3
+  ],
+  [
+   "mTLS",
+   3
+  ],
+  [
+   "Loaded inline plugin from path",
+   3
+  ],
+  [
+   "LSP MANAGER",
+   3
+  ],
+  [
+   "Bootstrap",
+   3
+  ]
+ ]
+}

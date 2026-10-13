@@ -1,0 +1,1050 @@
+{
+ "event_count": 37,
+ "init": {
+  "type": "system",
+  "subtype": "init",
+  "cwd": "C:\\Users\\<user>\\cc-rea-lab\\proj-a",
+  "session_id": "<uuid>",
+  "tools": [
+   "Task",
+   "Bash",
+   "CronCreate",
+   "CronDelete",
+   "CronList",
+   "DesignSync",
+   "Edit",
+   "EnterWorktree",
+   "ExitWorktree",
+   "Glob",
+   "Grep",
+   "ListAgents",
+   "LSP",
+   "Monitor",
+   "NotebookEdit",
+   "PowerShell",
+   "PushNotification",
+   "Read",
+   "RemoteTrigger",
+   "ReportFindings",
+   "ScheduleWakeup",
+   "SendMessage",
+   "Skill",
+   "TaskStop",
+   "WebFetch",
+   "WebSearch",
+   "Workflow",
+   "Write",
+   "mcp__claude_ai_Claude_Docs__batch",
+   "mcp__claude_ai_Claude_Docs__create",
+   "mcp__claude_ai_Claude_Docs__delete",
+   "mcp__claude_ai_Claude_Docs__export",
+   "mcp__claude_ai_Claude_Docs__guide",
+   "mcp__claude_ai_Claude_Docs__query",
+   "mcp__claude_ai_Claude_Docs__read",
+   "mcp__claude_ai_Claude_Docs__update",
+   "mcp__rea__address_name",
+   "mcp__rea__address_to_file_offset",
+   "mcp__rea__analyze_function",
+   "mcp__rea__analyze_javascript_application",
+   "mcp__rea__analyze_swift_types",
+   "mcp__rea__analyze_web_bundle",
+   "mcp__rea__annotate_native_function",
+   "mcp__rea__batch_decompile",
+   "mcp__rea__binary_overview",
+   "mcp__rea__binary_session",
+   "mcp__rea__build_call_path",
+   "mcp__rea__build_reconstruction_obligation_ledger",
+   "mcp__rea__capture_adb_screen",
+   "mcp__rea__capture_browser_scenario",
+   "mcp__rea__capture_electron_scenario",
+   "mcp__rea__capture_native_ui_scenario",
+   "mcp__rea__capture_process_scenario",
+   "mcp__rea__capture_web_screenshot",
+   "mcp__rea__close_binary",
+   "mcp__rea__collect_adb_bugreport",
+   "mcp__rea__comment",
+   "mcp__rea__compare_application_versions",
+   "mcp__rea__compare_artifacts",
+   "mcp__rea__compare_bundles",
+   "mcp__rea__compare_functions",
+   "mcp__rea__compare_javascript_export_shapes",
+   "mcp__rea__compare_managed_members",
+   "mcp__rea__compare_process_captures",
+   "mcp__rea__compare_source_to_bundle",
+   "mcp__rea__compare_web_captures",
+   "mcp__rea__compare_web_screenshots",
+   "mcp__rea__correlate_static_and_runtime",
+   "mcp__rea__current_address",
+   "mcp__rea__current_document",
+   "mcp__rea__current_procedure",
+   "mcp__rea__decode_android_resources",
+   "mcp__rea__decode_interface_builder",
+   "mcp__rea__decompile_jeb_item",
+   "mcp__rea__demangle_swift",
+   "mcp__rea__discover_webmcp_tools",
+   "mcp__rea__evaluate_reconstruction_coverage",
+   "mcp__rea__export_evidence_bundle",
+   "mcp__rea__export_web_scripts",
+   "mcp__rea__extract_artifact",
+   "mcp__rea__extract_firmware",
+   "mcp__rea__find_changed_behavior",
+   "mcp__rea__find_xrefs_to_name",
+   "mcp__rea__get_call_graph",
+   "mcp__rea__get_evidence_bundle",
+   "mcp__rea__get_navigation_context",
+   "mcp__rea__get_objc_classes",
+   "mcp__rea__get_objc_protocols",
+   "mcp__rea__goto_address",
+   "mcp__rea__import_evidence_bundle",
+   "mcp__rea__import_managed_reconstruction",
+   "mcp__rea__inline_comment",
+   "mcp__rea__inspect_adb_client",
+   "mcp__rea__inspect_adb_device",
+   "mcp__rea__inspect_adb_display",
+   "mcp__rea__inspect_adb_package",
+   "mcp__rea__inspect_adb_window",
+   "mcp__rea__inspect_address_context",
+   "mcp__rea__inspect_analysis_view",
+   "mcp__rea__inspect_android_class",
+   "mcp__rea__inspect_android_method",
+   "mcp__rea__inspect_android_package",
+   "mcp__rea__inspect_apktool_client",
+   "mcp__rea__inspect_artifact",
+   "mcp__rea__inspect_asset_catalog",
+   "mcp__rea__inspect_binary_layout",
+   "mcp__rea__inspect_electron_page",
+   "mcp__rea__inspect_evm_interface",
+   "mcp__rea__inspect_firmware_regions",
+   "mcp__rea__inspect_jeb_client",
+   "mcp__rea__inspect_keyed_archive",
+   "mcp__rea__inspect_macho",
+   "mcp__rea__inspect_managed_artifact",
+   "mcp__rea__inspect_managed_members",
+   "mcp__rea__inspect_managed_native_boundaries",
+   "mcp__rea__inspect_native_api",
+   "mcp__rea__inspect_native_data_type",
+   "mcp__rea__inspect_native_dispatch_metadata",
+   "mcp__rea__inspect_native_instruction",
+   "mcp__rea__inspect_native_load_image",
+   "mcp__rea__inspect_pe_resources",
+   "mcp__rea__inspect_plist",
+   "mcp__rea__inspect_recorded_crash",
+   "mcp__rea__inspect_signature",
+   "mcp__rea__inspect_web_event_listeners",
+   "mcp__rea__inspect_web_network_capture",
+   "mcp__rea__inspect_web_page",
+   "mcp__rea__install_adb_package",
+   "mcp__rea__list_adb_devices",
+   "mcp__rea__list_adb_directory",
+   "mcp__rea__list_adb_features",
+   "mcp__rea__list_adb_packages",
+   "mcp__rea__list_adb_processes",
+   "mcp__rea__list_adb_services",
+   "mcp__rea__list_architectures",
+   "mcp__rea__list_bookmarks",
+   "mcp__rea__list_browser_targets",
+   "mcp__rea__list_documents",
+   "mcp__rea__list_electron_targets",
+   "mcp__rea__list_javascript_runtime_targets",
+   "mcp__rea__list_jeb_units",
+   "mcp__rea__list_names",
+   "mcp__rea__list_procedures",
+   "mcp__rea__list_segments",
+   "mcp__rea__list_strings",
+   "mcp__rea__list_unknowns",
+   "mcp__rea__next_address",
+   "mcp__rea__observe_javascript_runtime",
+   "mcp__rea__observe_native_calls",
+   "mcp__rea__observe_native_ui",
+   "mcp__rea__observe_web_execution",
+   "mcp__rea__observe_web_session",
+   "mcp__rea__open_binary",
+   "mcp__rea__open_jeb_project",
+   "mcp__rea__prev_address",
+   "mcp__rea__procedure_address",
+   "mcp__rea__procedure_assembly",
+   "mcp__rea__procedure_callees",
+   "mcp__rea__procedure_callers",
+   "mcp__rea__procedure_info",
+   "mcp__rea__procedure_pseudo_code",
+   "mcp__rea__procedure_references",
+   "mcp__rea__project_android_application_graph",
+   "mcp__rea__project_apple_application_graph",
+   "mcp__rea__project_managed_application_graph",
+   "mcp__rea__pull_adb_file",
+   "mcp__rea__pull_adb_package",
+   "mcp__rea__push_adb_file",
+   "mcp__rea__read_adb_logcat",
+   "mcp__rea__read_adb_setting",
+   "mcp__rea__read_bytes",
+   "mcp__rea__read_function_instructions",
+   "mcp__rea__reconcile_javascript_runtime",
+   "mcp__rea__record_unknown",
+   "mcp__rea__recover_javascript_sources",
+   "mcp__rea__resolve_adb_packages",
+   "mcp__rea__resolve_containing_procedure",
+   "mcp__rea__resolve_native_call_targets",
+   "mcp__rea__search_android_classes",
+   "mcp__rea__search_procedures",
+   "mcp__rea__search_strings",
+   "mcp__rea__set_address_name",
+   "mcp__rea__set_addresses_names",
+   "mcp__rea__set_bookmark",
+   "mcp__rea__set_comment",
+   "mcp__rea__set_inline_comment",
+   "mcp__rea__start_adb_activity",
+   "mcp__rea__start_adb_app",
+   "mcp__rea__stop_adb_app",
+   "mcp__rea__trace_android_references",
+   "mcp__rea__trace_application_feature",
+   "mcp__rea__trace_call_path",
+   "mcp__rea__trace_dylib_resolution",
+   "mcp__rea__trace_feature",
+   "mcp__rea__trace_javascript_semantics",
+   "mcp__rea__trace_native_ui_action",
+   "mcp__rea__trace_native_values",
+   "mcp__rea__trace_web_module_imports",
+   "mcp__rea__trace_web_source_location",
+   "mcp__rea__uninstall_adb_package",
+   "mcp__rea__unset_bookmark",
+   "mcp__rea__update_unknown",
+   "mcp__rea__verify_managed_native_boundaries",
+   "mcp__rea__verify_reconstruction",
+   "mcp__rea__verify_unknown_resolution",
+   "mcp__rea__xrefs"
+  ],
+  "mcp_servers": [
+   {
+    "status": "needs-auth"
+   },
+   {
+    "status": "connected"
+   },
+   {
+    "status": "connected"
+   }
+  ],
+  "model": "claude-opus-5-5",
+  "permissionMode": "default",
+  "slash_commands": [
+   "adhd",
+   "agent-introspection-debugging",
+   "agent-sort",
+   "animate",
+   "animate-expo",
+   "animation-vocabulary",
+   "api-design",
+   "apple-design"
+  ],
+  "terminal_slash_commands": 4,
+  "apiKeySource": "none",
+  "claude_code_version": "2.1.296",
+  "output_style": "default",
+  "agents": [
+   "claude",
+   "claude-security:claude-security",
+   "claude-security:explore",
+   "claude-security:patch-generator",
+   "claude-security:patch-verifier",
+   "claude-security:scan-inventory",
+   "claude-security:scan-loader",
+   "claude-security:scan-redactor"
+  ],
+  "skills": [
+   "adhd",
+   "agent-introspection-debugging",
+   "agent-sort",
+   "animate",
+   "animate-expo",
+   "animation-vocabulary",
+   "api-design",
+   "apple-design"
+  ],
+  "plugins": 22,
+  "capabilities": 10,
+  "analytics_disabled": false,
+  "product_feedback_disabled": false,
+  "uuid": "<uuid>",
+  "memory_paths": 1,
+  "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-<hex>",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "per_turn_effort_active": true,
+  "view_mode": "default",
+  "powershell_path": "C:\\Users\\<user>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+  "slash_commands_count": 256,
+  "skills_count": 186,
+  "agents_count": 69
+ },
+ "result": {
+  "duration_api_ms": 2058,
+  "stop_reason": "end_turn",
+  "session_id": "<uuid>",
+  "total_cost_usd": 2.064008,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 257990,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 4,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 257990,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 4,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 257990,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 257990
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": [
+    "cacheCreationInputTokens",
+    "cacheReadInputTokens",
+    "canonicalModel",
+    "contextWindow",
+    "costBasis",
+    "costUSD",
+    "inputTokens",
+    "maxOutputTokens",
+    "outputTokens",
+    "provider",
+    "thinkingTokens",
+    "webSearchRequests"
+   ]
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "ttft_ms": 2447,
+  "type": "result",
+  "duration_ms": 2821,
+  "uuid": "<uuid>",
+  "ttft_stream_ms": 2445,
+  "time_to_request_ms": 424,
+  "first_content_frame_ms": 2446,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "result": {
+   "len": 4,
+   "sha256": "9795c5ff8937f235",
+   "head": "pong"
+  }
+ },
+ "events": [
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "ui_invalidate",
+   "keys": [
+    "event",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "hook_progress",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "SessionStart",
+   "hook_name": "SessionStart:startup",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "UserPromptSubmit",
+   "hook_name": "UserPromptSubmit",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "informational",
+   "keys": [
+    "content",
+    "isMeta",
+    "level",
+    "session_id",
+    "subtype",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": "Model \"haiku\" is restricted by your organization's settings. Using claude-opus-5-5 instead.",
+   "level": "warning"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "system",
+   "subtype": "ui_invalidate",
+   "keys": [
+    "event",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "text",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "text_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 4,
+     "sha256": "9795c5ff8937f235",
+     "head": "pong"
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "end_turn",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_started",
+   "keys": [
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "system",
+   "subtype": "hook_response",
+   "keys": [
+    "exit_code",
+    "hook_event",
+    "hook_id",
+    "hook_name",
+    "outcome",
+    "output",
+    "session_id",
+    "stderr",
+    "stdout",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "hook_event": "Stop",
+   "hook_name": "Stop",
+   "exit_code": 0,
+   "outcome": "success"
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  }
+ ]
+}

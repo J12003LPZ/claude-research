@@ -1,0 +1,245 @@
+{
+ "line_count": 246,
+ "top_prefixes": [
+  [
+   "Keeping C",
+   46
+  ],
+  [
+   "hooks",
+   26
+  ],
+  [
+   "Fast mode unavailable",
+   9
+  ],
+  [
+   "STARTUP",
+   6
+  ],
+  [
+   "CA certs",
+   5
+  ],
+  [
+   "init",
+   4
+  ],
+  [
+   "uds-messaging",
+   4
+  ],
+  [
+   "Cleared",
+   4
+  ],
+  [
+   "LSP",
+   4
+  ],
+  [
+   "cc-plugin-telemetry",
+   4
+  ],
+  [
+   "$.session",
+   4
+  ],
+  [
+   "LSP Diagnostics",
+   4
+  ],
+  [
+   "Hooks",
+   4
+  ],
+  [
+   "API",
+   4
+  ],
+  [
+   "Cache",
+   4
+  ],
+  [
+   "Reading marketplace from C",
+   4
+  ],
+  [
+   "Failed",
+   4
+  ],
+  [
+   "Stall",
+   4
+  ],
+  [
+   "Broken",
+   3
+  ],
+  [
+   "mTLS",
+   3
+  ],
+  [
+   "Failed to stat directory C",
+   3
+  ],
+  [
+   "LSP MANAGER",
+   3
+  ],
+  [
+   "Bootstrap",
+   3
+  ],
+  [
+   "Git remote URL",
+   2
+  ],
+  [
+   "No",
+   2
+  ],
+  [
+   "Error",
+   2
+  ],
+  [
+   "MCP",
+   2
+  ],
+  [
+   "[3P",
+   2
+  ],
+  [
+   "plugin.register",
+   2
+  ],
+  [
+   "Preserving file permissions",
+   2
+  ],
+  [
+   "Writing to temp file",
+   2
+  ],
+  [
+   "Applied",
+   2
+  ],
+  [
+   "Temp",
+   2
+  ],
+  [
+   "Renaming C",
+   2
+  ],
+  [
+   "File C",
+   2
+  ],
+  [
+   "claudeai-mcp",
+   2
+  ],
+  [
+   "engine",
+   2
+  ],
+  [
+   "autocompact",
+   2
+  ],
+  [
+   "attribution",
+   2
+  ],
+  [
+   "API REQUEST",
+   2
+  ],
+  [
+   "installPluginsForHeadless",
+   2
+  ],
+  [
+   "Stream",
+   2
+  ],
+  [
+   "$.http.fetch",
+   2
+  ],
+  [
+   "MDM",
+   1
+  ],
+  [
+   "Using bash path",
+   1
+  ],
+  [
+   "ToolSearch",
+   1
+  ],
+  [
+   "win32-kernel32",
+   1
+  ],
+  [
+   "Loaded 30 installed plugins from C",
+   1
+  ],
+  [
+   "Found",
+   1
+  ],
+  [
+   "getPluginSkills",
+   1
+  ],
+  [
+   "Checking plugin cc-plugin-agents-md",
+   1
+  ],
+  [
+   "Checking plugin cc-plugin-telemetry",
+   1
+  ],
+  [
+   "Checking",
+   1
+  ],
+  [
+   "Total plugin workflows loaded",
+   1
+  ],
+  [
+   "Total plugin commands loaded",
+   1
+  ],
+  [
+   "Total plugin skills loaded",
+   1
+  ],
+  [
+   "Loading skills from",
+   1
+  ],
+  [
+   "Total plugin agents loaded",
+   1
+  ],
+  [
+   "Loaded",
+   1
+  ],
+  [
+   "cc-plugin-sec-default@builtin",
+   1
+  ]
+ ]
+}

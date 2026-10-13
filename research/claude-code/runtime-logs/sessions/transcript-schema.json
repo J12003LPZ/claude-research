@@ -1,0 +1,3212 @@
+{
+ "projects_root_shape": "~/.claude/projects/<sanitized-cwd>/",
+ "layout": [
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 13
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg-sub",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 34,
+    "<session-uuid>/subagents/agent-<id>.jsonl": 4,
+    "<session-uuid>/subagents/agent-<id>.json": 4
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-allow",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-allow-vs-deny",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-deny",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-exit1",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-exit2",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-rewrite",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-stopblock",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 5
+   }
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-perm-rules",
+   "file_shapes": {
+    "<session-uuid>.jsonl": 1
+   }
+  }
+ ],
+ "entry_types": {
+  "main:queue-operation": {
+   "count": 138,
+   "fields": {
+    "content": [
+     "str"
+    ],
+    "operation": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ]
+   }
+  },
+  "main:user": {
+   "count": 147,
+   "fields": {
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isCompactSummary": [
+     "bool"
+    ],
+    "isMeta": [
+     "bool"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "isVisibleInTranscriptOnly": [
+     "bool"
+    ],
+    "message": [
+     "object{content,role}"
+    ],
+    "parentUuid": [
+     "NoneType",
+     "str"
+    ],
+    "permissionDecision": [
+     "object{decision,reasonType,source}",
+     "object{decision,source}"
+    ],
+    "permissionMode": [
+     "str"
+    ],
+    "promptId": [
+     "str"
+    ],
+    "promptSource": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "slug": [
+     "str"
+    ],
+    "sourceToolAssistantUUID": [
+     "str"
+    ],
+    "summarizedTurnPromptUuids": [
+     "array<str>"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "toolDenialKind": [
+     "str"
+    ],
+    "toolUseResult": [
+     "object{agentId,agentType,canContinueAgent,content,harnessNoteCount,harnessSectionHash,harnessTailCount,prompt,resolvedModel,status,toolStats,totalDurationMs,tot",
+     "object{backgroundTaskId,interrupted,isImage,noOutputExpected,stderr,stdout}",
+     "object{command,message,task_id,task_type}",
+     "object{countIsComplete,durationMs,filenames,numFiles,totalMatches,truncated}",
+     "object{file,type}",
+     "object{filePath,newString,oldString,originalFile,replaceAll,structuredPatch,userModified}",
+     "object{filenames,mode,numFiles,totalFiles}",
+     "object{interrupted,isImage,noOutputExpected,stderr,stdout}",
+     "str"
+    ],
+    "turnOrigin": [
+     "str"
+    ],
+    "turnPosition": [
+     "object{promptIndex,turnIndex}"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   },
+   "message_fields": [
+    "content",
+    "role"
+   ],
+   "block_types": [
+    "string",
+    "text",
+    "tool_result"
+   ]
+  },
+  "main:attachment": {
+   "count": 826,
+   "fields": {
+    "attachment": [
+     "object{addedBlocks,addedNames,removedNames,type}",
+     "object{addedLines,addedTypes,builtInTypes,isInitial,removedTypes,showConcurrencyNote,type}",
+     "object{banner,toolUseID,type}",
+     "object{blockingError,hookEvent,hookName,toolUseID,type}",
+     "object{cliPrefix,contextRendering,echoWireToolInputs,inlineTools,keptReminders,reminderFold,systemPrompt,systemTurns,toolChangeHeader,tools,type}",
+     "object{command,content,durationMs,exitCode,hookEvent,hookName,stderr,stdout,toolUseID,type}",
+     "object{command,durationMs,exitCode,hookEvent,hookName,stderr,stdout,toolUseID,type}",
+     "object{commit,managedCommit,managedPr,pr,sendUserFileHint,type,url}",
+     "object{content,displayPath,filename,type}",
+     "object{content,displayPath,path,type}",
+     "object{content,hookEvent,hookName,toolUseID,type}",
+     "object{content,isInitial,names,skillCount,type}",
+     "object{context,type}",
+     "object{contextRendering,echoWireToolInputs,inlineTools,keptReminders,reminderFold,systemPrompt,systemTurns,toolChangeHeader,type}",
+     "object{contextRendering,echoWireToolInputs,reminderFold,systemPrompt,type}",
+     "object{date,type}",
+     "object{displayPath,filename,type}",
+     "object{entries,toolInputCopies,type}",
+     "object{exitCommitted,maxTurns,turnCount,type}",
+     "object{files,type}",
+     "object{identity,text,type}",
+     "object{organizationUuid,type}",
+     "object{sections,type}",
+     "object{snapshot,type}"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "parentUuid": [
+     "NoneType",
+     "str"
+    ],
+    "rendered": [
+     "array<object{content}>"
+    ],
+    "renderedBesideToolResult": [
+     "bool"
+    ],
+    "renderedRole": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "slug": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "main:atis-latch": {
+   "count": 198,
+   "fields": {
+    "atis": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ]
+   }
+  },
+  "main:last-prompt": {
+   "count": 188,
+   "fields": {
+    "lastPrompt": [
+     "str"
+    ],
+    "leafUuid": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ]
+   }
+  },
+  "main:assistant": {
+   "count": 183,
+   "fields": {
+    "apiBlockIndex": [
+     "int"
+    ],
+    "apiError": [
+     "str"
+    ],
+    "apiErrorParams": [
+     "object{rate_limit_info}"
+    ],
+    "apiErrorStatus": [
+     "int"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "effort": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "error": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isAbortedMidStream": [
+     "bool"
+    ],
+    "isApiErrorMessage": [
+     "bool"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "message": [
+     "object{container,content,context_management,diagnostics,id,model,role,stop_details,stop_reason,stop_sequence,type,usage}"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "perTurnEffort": [
+     "str"
+    ],
+    "quotaLimits": [
+     "object{isUsingOverage,overageDisabledReason,overageStatus,rateLimitType,resetsAt,status,unifiedRateLimitFallbackAvailable,upgradePaths}"
+    ],
+    "requestId": [
+     "str"
+    ],
+    "requestedModel": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "slug": [
+     "str"
+    ],
+    "thinkingDisplay": [
+     "str"
+    ],
+    "thinkingDurationMs": [
+     "int"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ],
+    "wireToolInputs": [
+     "object{toolu_<id>}"
+    ]
+   },
+   "message_fields": [
+    "container",
+    "content",
+    "context_management",
+    "diagnostics",
+    "id",
+    "model",
+    "role",
+    "stop_details",
+    "stop_reason",
+    "stop_sequence",
+    "type",
+    "usage"
+   ],
+   "block_types": [
+    "text",
+    "thinking",
+    "tool_use"
+   ]
+  },
+  "main:cost-state": {
+   "count": 67,
+   "fields": {
+    "hasUnknownModelCost": [
+     "bool"
+    ],
+    "modelUsage": [
+     "object{claude-haiku-5-5}",
+     "object{claude-opus-5-5}",
+     "object{}"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "startTime": [
+     "int"
+    ],
+    "totalAPIDuration": [
+     "int"
+    ],
+    "totalAPIDurationWithoutRetries": [
+     "int"
+    ],
+    "totalCostUSD": [
+     "float",
+     "int"
+    ],
+    "totalDuration": [
+     "int"
+    ],
+    "totalLinesAdded": [
+     "int"
+    ],
+    "totalLinesRemoved": [
+     "int"
+    ],
+    "totalToolDuration": [
+     "int"
+    ],
+    "type": [
+     "str"
+    ]
+   }
+  },
+  "main:system/stop_hook_summary": {
+   "count": 18,
+   "fields": {
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "hasOutput": [
+     "bool"
+    ],
+    "hookAdditionalContext": [
+     "array<>"
+    ],
+    "hookCount": [
+     "int"
+    ],
+    "hookErrors": [
+     "array<>",
+     "array<str>"
+    ],
+    "hookInfos": [
+     "array<object{command,durationMs}>",
+     "array<object{command}>"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "level": [
+     "str"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "preventedContinuation": [
+     "bool"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "stopReason": [
+     "str"
+    ],
+    "subtype": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "toolUseID": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "main:mode": {
+   "count": 6,
+   "fields": {
+    "mode": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ]
+   }
+  },
+  "main:system/compact_boundary": {
+   "count": 4,
+   "fields": {
+    "compactMetadata": [
+     "object{cumulativeDroppedTokens,durationMs,postTokens,preTokens,preservedMessages,preservedSegment,trigger}"
+    ],
+    "content": [
+     "str"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isMeta": [
+     "bool"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "level": [
+     "str"
+    ],
+    "logicalParentUuid": [
+     "str"
+    ],
+    "parentUuid": [
+     "NoneType"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "slug": [
+     "str"
+    ],
+    "subtype": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "main:system/api_error": {
+   "count": 5,
+   "fields": {
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "error": [
+     "object{connection,formatted,isNetworkDown,message,noResponse,rateLimits,status}",
+     "object{connection,formatted,isNetworkDown,message,noResponse,rateLimits}"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "level": [
+     "str"
+    ],
+    "maxRetries": [
+     "int"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "retryAttempt": [
+     "int"
+    ],
+    "retryInMs": [
+     "int"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "source": [
+     "str"
+    ],
+    "subtype": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "main:system/informational": {
+   "count": 1,
+   "fields": {
+    "content": [
+     "str"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isMeta": [
+     "bool"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "level": [
+     "str"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "subtype": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "subagent:user": {
+   "count": 8,
+   "fields": {
+    "agentId": [
+     "str"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "message": [
+     "object{content,role}"
+    ],
+    "parentUuid": [
+     "NoneType",
+     "str"
+    ],
+    "permissionDecision": [
+     "object{decision,reasonType,source}"
+    ],
+    "promptId": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "sourceToolAssistantUUID": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   },
+   "message_fields": [
+    "content",
+    "role"
+   ],
+   "block_types": [
+    "string",
+    "tool_result"
+   ]
+  },
+  "subagent:attachment": {
+   "count": 45,
+   "fields": {
+    "agentId": [
+     "str"
+    ],
+    "attachment": [
+     "object{addedBlocks,addedNames,removedNames,type}",
+     "object{addedLines,addedTypes,builtInTypes,isInitial,removedTypes,showConcurrencyNote,type}",
+     "object{cliPrefix,contextRendering,echoWireToolInputs,inlineTools,keptReminders,reminderFold,systemPrompt,systemTurns,toolChangeHeader,tools,type}",
+     "object{commit,managedCommit,managedPr,pr,sendUserFileHint,type,url}",
+     "object{content,isInitial,names,skillCount,type}",
+     "object{context,type}",
+     "object{contextRendering,echoWireToolInputs,reminderFold,systemPrompt,type}",
+     "object{date,type}",
+     "object{files,type}",
+     "object{identity,text,type}",
+     "object{organizationUuid,type}",
+     "object{snapshot,type}"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "rendered": [
+     "array<object{content}>"
+    ],
+    "renderedBesideToolResult": [
+     "bool"
+    ],
+    "renderedRole": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ]
+   }
+  },
+  "subagent:assistant": {
+   "count": 11,
+   "fields": {
+    "agentId": [
+     "str"
+    ],
+    "apiBlockIndex": [
+     "int"
+    ],
+    "attributionAgent": [
+     "str"
+    ],
+    "cwd": [
+     "str"
+    ],
+    "effort": [
+     "str"
+    ],
+    "entrypoint": [
+     "str"
+    ],
+    "gitBranch": [
+     "str"
+    ],
+    "isSidechain": [
+     "bool"
+    ],
+    "message": [
+     "object{container,content,context_management,diagnostics,id,model,role,stop_details,stop_reason,stop_sequence,type,usage}"
+    ],
+    "parentUuid": [
+     "str"
+    ],
+    "perTurnEffort": [
+     "str"
+    ],
+    "requestId": [
+     "str"
+    ],
+    "requestedModel": [
+     "str"
+    ],
+    "sessionId": [
+     "str"
+    ],
+    "thinkingDisplay": [
+     "str"
+    ],
+    "thinkingDurationMs": [
+     "int"
+    ],
+    "timestamp": [
+     "str"
+    ],
+    "type": [
+     "str"
+    ],
+    "userType": [
+     "str"
+    ],
+    "uuid": [
+     "str"
+    ],
+    "version": [
+     "str"
+    ],
+    "wireToolInputs": [
+     "object{toolu_<id>}"
+    ]
+   },
+   "message_fields": [
+    "container",
+    "content",
+    "context_management",
+    "diagnostics",
+    "id",
+    "model",
+    "role",
+    "stop_details",
+    "stop_reason",
+    "stop_sequence",
+    "type",
+    "usage"
+   ],
+   "block_types": [
+    "text",
+    "thinking",
+    "tool_use"
+   ]
+  }
+ },
+ "files": [
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 23,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 22,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-nest-proj-cfg-sub",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 20,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 31,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 24,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 62,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "mode",
+    "atis-latch",
+    "system/compact_boundary(parent:null)",
+    "user[compactSummary]",
+    "user[meta]",
+    "user",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "mode",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "mode",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 22,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "system/api_error",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 22,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "system/api_error",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 27,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 47,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "assistant",
+    "last-prompt",
+    "mode",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "system/informational",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 32,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 31,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 24,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 24,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 24,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 30,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "assistant",
+    "user",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 30,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 21,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 27,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 24,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "system/api_error",
+    "last-prompt",
+    "atis-latch",
+    "system/api_error",
+    "assistant",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "mode",
+    "atis-latch",
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "attachment",
+    "user",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "last-prompt",
+    "mode",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 22,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "system/api_error",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 32,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "attachment(parent:null)",
+    "attachment",
+    "attachment",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "subagent",
+   "entries": 16,
+   "sequence": [
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "subagent",
+   "entries": 16,
+   "sequence": [
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "assistant"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "subagent",
+   "entries": 16,
+   "sequence": [
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "assistant"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-a",
+   "kind": "subagent",
+   "entries": 16,
+   "sequence": [
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "assistant",
+    "assistant"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-allow",
+   "kind": "main",
+   "entries": 28,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "user",
+    "attachment",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-allow-vs-deny",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-deny",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-exit1",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-exit2",
+   "kind": "main",
+   "entries": 25,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-rewrite",
+   "kind": "main",
+   "entries": 26,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "attachment",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hook-stopblock",
+   "kind": "main",
+   "entries": 27,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "attachment",
+    "user[meta]",
+    "attachment",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "kind": "main",
+   "entries": 33,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "system/stop_hook_summary",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "attachment",
+    "assistant",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "kind": "main",
+   "entries": 142,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "last-prompt",
+    "atis-latch",
+    "system/compact_boundary(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "user[compactSummary]",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "last-prompt",
+    "atis-latch",
+    "system/compact_boundary(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "user[compactSummary]",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "last-prompt",
+    "atis-latch",
+    "system/compact_boundary(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "user[compactSummary]",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "kind": "main",
+   "entries": 33,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "assistant",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "kind": "main",
+   "entries": 32,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "user",
+    "last-prompt",
+    "atis-latch",
+    "queue-operation",
+    "queue-operation",
+    "user",
+    "attachment",
+    "assistant",
+    "assistant",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-hooks",
+   "kind": "main",
+   "entries": 29,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "system/stop_hook_summary",
+    "last-prompt",
+    "cost-state"
+   ]
+  },
+  {
+   "project_dir": "C--Users-<user>-cc-rea-lab-proj-perm-rules",
+   "kind": "main",
+   "entries": 31,
+   "sequence": [
+    "queue-operation",
+    "queue-operation",
+    "user(parent:null)",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "atis-latch",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "assistant",
+    "user",
+    "attachment",
+    "last-prompt",
+    "atis-latch",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "assistant",
+    "user",
+    "assistant",
+    "last-prompt",
+    "cost-state"
+   ]
+  }
+ ]
+}

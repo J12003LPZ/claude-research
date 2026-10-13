@@ -1,0 +1,25 @@
+{
+ "E15e-replay-create": {
+  "messages": 2,
+  "roles": [
+   "user",
+   "system"
+  ],
+  "markers": [
+   "msg[0:user].block[0]:MK_BEFORE_EDIT"
+  ]
+ },
+ "E15f-replay-resume": {
+  "messages": 4,
+  "roles": [
+   "user",
+   "system",
+   "assistant",
+   "user"
+  ],
+  "markers": [
+   "msg[0:user].block[0]:MK_BEFORE_EDIT",
+   "msg[3:user].block[0]:MK_AFTER_EDIT"
+  ]
+ }
+}

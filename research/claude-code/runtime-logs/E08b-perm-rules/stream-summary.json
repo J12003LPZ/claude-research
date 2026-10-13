@@ -1,0 +1,1157 @@
+{
+ "event_count": 92,
+ "init": {
+  "type": "system",
+  "subtype": "init",
+  "cwd": "C:\\Users\\<user>\\cc-rea-lab\\proj-perm-rules",
+  "session_id": "<uuid>",
+  "tools": [
+   "Task",
+   "Bash",
+   "CronCreate",
+   "CronDelete",
+   "CronList",
+   "DesignSync",
+   "Edit",
+   "EnterWorktree",
+   "ExitWorktree",
+   "Glob",
+   "Grep",
+   "ListAgents",
+   "Monitor",
+   "NotebookEdit",
+   "PushNotification",
+   "Read",
+   "RemoteTrigger",
+   "ReportFindings",
+   "ScheduleWakeup",
+   "SendMessage",
+   "Skill",
+   "TaskStop",
+   "WebFetch",
+   "WebSearch",
+   "Write"
+  ],
+  "mcp_servers": [],
+  "model": "claude-haiku-5-5",
+  "permissionMode": "default",
+  "slash_commands": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "terminal_slash_commands": 4,
+  "apiKeySource": "none",
+  "claude_code_version": "2.1.296",
+  "output_style": "default",
+  "agents": [
+   "claude",
+   "Explore",
+   "general-purpose",
+   "Plan",
+   "statusline-setup"
+  ],
+  "skills": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "plugins": 3,
+  "capabilities": 10,
+  "analytics_disabled": false,
+  "product_feedback_disabled": false,
+  "uuid": "<uuid>",
+  "memory_paths": 1,
+  "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-<hex>",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "per_turn_effort_active": true,
+  "view_mode": "default",
+  "powershell_path": "C:\\Users\\<user>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+  "slash_commands_count": 52,
+  "skills_count": 17,
+  "agents_count": 5
+ },
+ "result": {
+  "duration_api_ms": 7926,
+  "stop_reason": "stop_sequence",
+  "session_id": "<uuid>",
+  "total_cost_usd": 0.00781858,
+  "usage": {
+   "input_tokens": 8,
+   "cache_creation_input_tokens": 33123,
+   "cache_read_input_tokens": 98618,
+   "output_tokens": 414,
+   "output_tokens_details": {
+    "thinking_tokens": 92
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 33123,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 82,
+     "cache_read_input_tokens": 33008,
+     "cache_creation_input_tokens": 115,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 115
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": [
+    "cacheCreationInputTokens",
+    "cacheReadInputTokens",
+    "canonicalModel",
+    "contextWindow",
+    "costBasis",
+    "costUSD",
+    "inputTokens",
+    "maxOutputTokens",
+    "outputTokens",
+    "provider",
+    "thinkingTokens",
+    "webSearchRequests"
+   ]
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_<id>",
+    "tool_input": {
+     "command": "echo denied-two",
+     "description": "Echo denied-two"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_<id>",
+    "tool_input": {
+     "command": "echo ask-three",
+     "description": "Echo ask-three"
+    }
+   },
+   {
+    "tool_name": "Read",
+    "tool_use_id": "toolu_<id>",
+    "tool_input": {
+     "file_path": "C:\\Users\\<user>\\cc-rea-lab\\proj-perm-rules\\secret\\s.txt"
+    }
+   }
+  ],
+  "terminal_reason": "api_error",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": true,
+  "num_turns": 5,
+  "subtype": "success",
+  "api_error_status": 429,
+  "api_error": "usage_limit_reached",
+  "type": "result",
+  "duration_ms": 8984,
+  "uuid": "<uuid>",
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "result": {
+   "len": 61,
+   "sha256": "81041d8d5257466f",
+   "head": "You've hit your session limit \u00b7 resets 5pm (America/New_York)"
+  }
+ },
+ "events": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "thinking",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "keys": [
+    "estimated_tokens",
+    "estimated_tokens_delta",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "thinking_delta",
+   "parent_tool_use_id": null,
+   "repeat": 2
+  },
+  {
+   "type": "system",
+   "subtype": "thinking_tokens",
+   "keys": [
+    "estimated_tokens",
+    "estimated_tokens_delta",
+    "session_id",
+    "subtype",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "signature_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "thinking_display",
+    "thinking_duration_ms",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "thinking",
+     "thinking_len": 0,
+     "has_signature": true
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null,
+   "repeat": 11
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 66,
+      "sha256": "e8540bfd4ab6204b",
+      "head": "{\"command\": \"echo allowed-one\", \"description\": \"Echo allowed-one\"}"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": false,
+     "content": {
+      "len": 11,
+      "sha256": "d5348a62fc6ff4d1",
+      "head": "allowed-one"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "interrupted",
+    "isImage",
+    "noOutputExpected",
+    "stderr",
+    "stdout"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null,
+   "repeat": 11
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 64,
+      "sha256": "6927a5f0b4949902",
+      "head": "{\"command\": \"echo denied-two\", \"description\": \"Echo denied-two\"}"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 68,
+      "sha256": "60b398f773d6e310",
+      "head": "Permission to use Bash with command echo denied-two has been denied."
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null,
+   "repeat": 10
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 62,
+      "sha256": "fb0766735aa0666c",
+      "head": "{\"command\": \"echo ask-three\", \"description\": \"Echo ask-three\"}"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 73,
+      "sha256": "820d8fdbc04ad3d9",
+      "head": "Claude requested permissions to use Bash, but you haven't granted it yet."
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Read"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null,
+   "repeat": 12
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Read",
+     "input_keys": [
+      "file_path"
+     ],
+     "input": {
+      "len": 77,
+      "sha256": "8bb7a54059bd9fd9",
+      "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-perm-rules\\\\secret\\\\s.txt\"}"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "output_tokens",
+    "service_tier"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 99,
+      "sha256": "d219b98eebfe9436",
+      "head": "<tool_use_error>File is in a directory that is denied by your permission setting"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "api_error",
+    "api_error_params",
+    "error",
+    "is_api_error_message",
+    "message",
+    "parent_tool_use_id",
+    "request_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 61,
+     "sha256": "81041d8d5257466f",
+     "head": "You've hit your session limit \u00b7 resets 5pm (America/New_York)"
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": "stop_sequence",
+   "usage_keys": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "fallback_credit",
+    "inference_geo",
+    "input_tokens",
+    "iterations",
+    "output_tokens",
+    "output_tokens_details",
+    "server_tool_use",
+    "service_tier",
+    "speed"
+   ],
+   "error": "rate_limit"
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error",
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "total_cost_usd",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2848 @@
+[
+ {
+  "request": {
+   "seq": "0001",
+   "t_ms": 139,
+   "method": "HEAD",
+   "url": "/api/hello",
+   "body_bytes": 0,
+   "header_order": [
+    "Connection",
+    "User-Agent",
+    "Accept",
+    "Host",
+    "Accept-Encoding"
+   ],
+   "headers": {
+    "connection": "keep-alive",
+    "user-agent": "Bun/1.4.3",
+    "accept": "*/*",
+    "host": "127.0.0.1:62519",
+    "accept-encoding": "gzip, deflate, br, zstd"
+   },
+   "body": null
+  },
+  "response": {
+   "seq": "0001",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Tue, 13 Oct 2026 17:11:55 GMT",
+    "content-type": "application/json",
+    "content-length": "20",
+    "connection": "keep-alive",
+    "server-timing": "x-originResponse;dur=",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 63,
+   "t_ms": 202,
+   "body_bytes": 0,
+   "chunk_count": 0,
+   "chunk_times_ms": [],
+   "client_closed_early": false,
+   "body_head": ""
+  }
+ },
+ {
+  "request": {
+   "seq": "0002",
+   "t_ms": 4019,
+   "method": "POST",
+   "url": "/v1/messages?beta=true",
+   "body_bytes": 604758,
+   "header_order": [
+    "Accept",
+    "Authorization",
+    "Content-Type",
+    "User-Agent",
+    "X-Claude-Code-Session-Id",
+    "X-Stainless-Arch",
+    "X-Stainless-Lang",
+    "X-Stainless-OS",
+    "X-Stainless-Package-Version",
+    "X-Stainless-Retry-Count",
+    "X-Stainless-Runtime",
+    "X-Stainless-Runtime-Version",
+    "X-Stainless-Timeout",
+    "anthropic-beta",
+    "anthropic-dangerous-direct-browser-access",
+    "anthropic-version",
+    "x-app",
+    "Connection",
+    "Host",
+    "Accept-Encoding",
+    "Content-Length"
+   ],
+   "headers": {
+    "accept": "application/json",
+    "authorization": "<redacted len=115>",
+    "content-type": "application/json",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
+    "x-claude-code-session-id": "<redacted len=36>",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Windows",
+    "x-stainless-package-version": "0.128.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.3.0",
+    "x-stainless-timeout": "600",
+    "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-dangerous-direct-browser-access": "true",
+    "anthropic-version": "2023-06-01",
+    "x-app": "cli",
+    "connection": "keep-alive",
+    "host": "127.0.0.1:62519",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "content-length": "604758"
+   },
+   "body": {
+    "top_level_keys": [
+     "model",
+     "messages",
+     "system",
+     "tools",
+     "metadata",
+     "max_tokens",
+     "thinking",
+     "context_management",
+     "output_config",
+     "stream"
+    ],
+    "model": "claude-opus-5-5",
+    "max_tokens": 128000,
+    "stream": true,
+    "thinking": {
+     "type": "adaptive",
+     "display": "updates"
+    },
+    "context_management": {
+     "edits": [
+      {
+       "type": "clear_thinking_20251015",
+       "keep": "all"
+      }
+     ]
+    },
+    "output_config": {
+     "effort": "medium"
+    },
+    "metadata_keys": [
+     "user_id"
+    ],
+    "metadata_user_id_json_keys": [
+     "account_uuid",
+     "device_id",
+     "session_id"
+    ],
+    "system": [
+     {
+      "type": "text",
+      "len": 74,
+      "sha256": "b85e974772afb1e7",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.9a4; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 62,
+      "sha256": "0d7062851dd7bd7e",
+      "head": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 9271,
+      "sha256": "2041d71dec1e9670",
+      "head": "\\nYou are an agent working with the user toward their goals, using your own judgm",
+      "tags": [
+       "pasted_content",
+       "skill-name",
+       "short-kebab-case-slug",
+       "system-reminder"
+      ]
+     }
+    ],
+    "tools_count": 206,
+    "tools": [
+     {
+      "name": "Agent",
+      "type": null,
+      "description_len": 1628,
+      "schema_len": 1941,
+      "schema_props": [
+       "description",
+       "effort",
+       "isolation",
+       "model",
+       "prompt",
+       "run_in_background",
+       "subagent_type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Bash",
+      "type": null,
+      "description_len": 1784,
+      "schema_len": 1783,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronCreate",
+      "type": null,
+      "description_len": 2595,
+      "schema_len": 912,
+      "schema_props": [
+       "cron",
+       "durable",
+       "prompt",
+       "recurring"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronDelete",
+      "type": null,
+      "description_len": 100,
+      "schema_len": 219,
+      "schema_props": [
+       "id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronList",
+      "type": null,
+      "description_len": 60,
+      "schema_len": 126,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "DesignSync",
+      "type": null,
+      "description_len": 3742,
+      "schema_len": 5423,
+      "schema_props": [
+       "assets",
+       "counts",
+       "deletes",
+       "files",
+       "localDir",
+       "method",
+       "name",
+       "path",
+       "paths",
+       "planId",
+       "projectId",
+       "writes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Edit",
+      "type": null,
+      "description_len": 360,
+      "schema_len": 584,
+      "schema_props": [
+       "file_path",
+       "new_string",
+       "old_string",
+       "replace_all"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "EnterWorktree",
+      "type": null,
+      "description_len": 3220,
+      "schema_len": 708,
+      "schema_props": [
+       "name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ExitWorktree",
+      "type": null,
+      "description_len": 1923,
+      "schema_len": 502,
+      "schema_props": [
+       "action",
+       "discard_changes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Glob",
+      "type": null,
+      "description_len": 140,
+      "schema_len": 557,
+      "schema_props": [
+       "path",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Grep",
+      "type": null,
+      "description_len": 477,
+      "schema_len": 2764,
+      "schema_props": [
+       "-A",
+       "-B",
+       "-C",
+       "-i",
+       "-n",
+       "-o",
+       "context",
+       "glob",
+       "head_limit",
+       "multiline",
+       "offset",
+       "output_mode",
+       "path",
+       "pattern",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ListAgents",
+      "type": null,
+      "description_len": 777,
+      "schema_len": 336,
+      "schema_props": [
+       "channel",
+       "q"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "LSP",
+      "type": null,
+      "description_len": 1235,
+      "schema_len": 1056,
+      "schema_props": [
+       "character",
+       "filePath",
+       "line",
+       "operation",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Monitor",
+      "type": null,
+      "description_len": 6354,
+      "schema_len": 1091,
+      "schema_props": [
+       "command",
+       "description",
+       "timeout_ms",
+       "ws"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "NotebookEdit",
+      "type": null,
+      "description_len": 619,
+      "schema_len": 981,
+      "schema_props": [
+       "cell_id",
+       "cell_type",
+       "edit_mode",
+       "new_source",
+       "notebook_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PowerShell",
+      "type": null,
+      "description_len": 7941,
+      "schema_len": 876,
+      "schema_props": [
+       "command",
+       "dangerouslyDisableSandbox",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PushNotification",
+      "type": null,
+      "description_len": 1362,
+      "schema_len": 351,
+      "schema_props": [
+       "message",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Read",
+      "type": null,
+      "description_len": 790,
+      "schema_len": 1112,
+      "schema_props": [
+       "allow_large",
+       "file_path",
+       "limit",
+       "offset",
+       "pages"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "RemoteTrigger",
+      "type": null,
+      "description_len": 2834,
+      "schema_len": 856,
+      "schema_props": [
+       "action",
+       "body",
+       "cursor",
+       "session_id",
+       "trigger_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ReportFindings",
+      "type": null,
+      "description_len": 574,
+      "schema_len": 1646,
+      "schema_props": [
+       "findings",
+       "level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ScheduleWakeup",
+      "type": null,
+      "description_len": 3148,
+      "schema_len": 1423,
+      "schema_props": [
+       "delaySeconds",
+       "noop",
+       "prompt",
+       "reason",
+       "stop"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "SendMessage",
+      "type": null,
+      "description_len": 4259,
+      "schema_len": 1344,
+      "schema_props": [
+       "message",
+       "notify_when_idle",
+       "summary",
+       "to"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Skill",
+      "type": null,
+      "description_len": 1417,
+      "schema_len": 345,
+      "schema_props": [
+       "args",
+       "skill"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "TaskStop",
+      "type": null,
+      "description_len": 364,
+      "schema_len": 382,
+      "schema_props": [
+       "shell_id",
+       "task_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebFetch",
+      "type": null,
+      "description_len": 469,
+      "schema_len": 584,
+      "schema_props": [
+       "offset",
+       "prompt",
+       "url"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebSearch",
+      "type": null,
+      "description_len": 334,
+      "schema_len": 499,
+      "schema_props": [
+       "allowed_domains",
+       "blocked_domains",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Workflow",
+      "type": null,
+      "description_len": 3478,
+      "schema_len": 1833,
+      "schema_props": [
+       "args",
+       "description",
+       "name",
+       "resumeFromRunId",
+       "script",
+       "scriptPath",
+       "title"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Write",
+      "type": null,
+      "description_len": 240,
+      "schema_len": 367,
+      "schema_props": [
+       "content",
+       "file_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__batch",
+      "type": null,
+      "description_len": 64,
+      "schema_len": 277,
+      "schema_props": [
+       "batch",
+       "container",
+       "opId",
+       "verbose"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__create",
+      "type": null,
+      "description_len": 77,
+      "schema_len": 502,
+      "schema_props": [
+       "artifact",
+       "container",
+       "engine",
+       "object",
+       "opId",
+       "payload",
+       "verbose"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__delete",
+      "type": null,
+      "description_len": 241,
+      "schema_len": 550,
+      "schema_props": [
+       "container",
+       "engine",
+       "opId",
+       "payload",
+       "ref",
+       "verbose"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__export",
+      "type": null,
+      "description_len": 254,
+      "schema_len": 485,
+      "schema_props": [
+       "container",
+       "file",
+       "format",
+       "maxBytes",
+       "paper"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__guide",
+      "type": null,
+      "description_len": 180,
+      "schema_len": 245,
+      "schema_props": [
+       "items"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__query",
+      "type": null,
+      "description_len": 69,
+      "schema_len": 313,
+      "schema_props": [
+       "container",
+       "object",
+       "payload"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__read",
+      "type": null,
+      "description_len": 221,
+      "schema_len": 506,
+      "schema_props": [
+       "container",
+       "engine",
+       "payload",
+       "ref"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__claude_ai_Claude_Docs__update",
+      "type": null,
+      "description_len": 69,
+      "schema_len": 619,
+      "schema_props": [
+       "answering",
+       "container",
+       "engine",
+       "opId",
+       "payload",
+       "ref",
+       "verbose"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__address_name",
+      "type": null,
+      "description_len": 220,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__address_to_file_offset",
+      "type": null,
+      "description_len": 435,
+      "schema_len": 770,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__analyze_function",
+      "type": null,
+      "description_len": 463,
+      "schema_len": 368,
+      "schema_props": [
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__analyze_javascript_application",
+      "type": null,
+      "description_len": 535,
+      "schema_len": 2598,
+      "schema_props": [
+       "analysis_timeout_ms",
+       "detail",
+       "format",
+       "input_path",
+       "integrity_policy",
+       "max_heap_mb"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__analyze_swift_types",
+      "type": null,
+      "description_len": 651,
+      "schema_len": 1004,
+      "schema_props": [
+       "category",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__analyze_web_bundle",
+      "type": null,
+      "description_len": 311,
+      "schema_len": 2431,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "fetch_source_maps",
+       "include_accessibility_text",
+       "include_console_text",
+       "include_json_body_shapes",
+       "include_script_sources",
+       "include_storage_fingerprints",
+       "include_storage_keys",
+       "include_websocket_shapes",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__annotate_native_function",
+      "type": null,
+      "description_len": 504,
+      "schema_len": 978,
+      "schema_props": [
+       "comment",
+       "inline_comment",
+       "name",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__batch_decompile",
+      "type": null,
+      "description_len": 330,
+      "schema_len": 424,
+      "schema_props": [
+       "addresses"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__binary_overview",
+      "type": null,
+      "description_len": 220,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__binary_session",
+      "type": null,
+      "description_len": 150,
+      "schema_len": 902,
+      "schema_props": [
+       "expected_catalog_digest",
+       "expected_package_version",
+       "expected_server_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__build_call_path",
+      "type": null,
+      "description_len": 223,
+      "schema_len": 5910,
+      "schema_props": [
+       "functions",
+       "goal",
+       "start"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__build_reconstruction_obligation_ledger",
+      "type": null,
+      "description_len": 495,
+      "schema_len": 17971,
+      "schema_props": [
+       "evidence_bundle",
+       "manifest",
+       "reviewed_obligations"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_adb_screen",
+      "type": null,
+      "description_len": 215,
+      "schema_len": 833,
+      "schema_props": [
+       "output_directory",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_browser_scenario",
+      "type": null,
+      "description_len": 744,
+      "schema_len": 14425,
+      "schema_props": [
+       "actions",
+       "browser",
+       "capture",
+       "environment",
+       "secrets",
+       "start_url",
+       "storage"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_electron_scenario",
+      "type": null,
+      "description_len": 885,
+      "schema_len": 3378,
+      "schema_props": [
+       "actions",
+       "application_path",
+       "application_root",
+       "args",
+       "executable_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_native_ui_scenario",
+      "type": null,
+      "description_len": 330,
+      "schema_len": 2852,
+      "schema_props": [
+       "accessibility",
+       "max_nodes",
+       "pid",
+       "screenshot",
+       "steps",
+       "window_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_process_scenario",
+      "type": null,
+      "description_len": 1128,
+      "schema_len": 6800,
+      "schema_props": [
+       "arguments",
+       "environment",
+       "events",
+       "executable",
+       "filesystem_observation_paths",
+       "finalization_ms",
+       "idle_timeout_ms",
+       "limits",
+       "normalization",
+       "settle_ms",
+       "terminal",
+       "timeout_ms",
+       "working_directory"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__capture_web_screenshot",
+      "type": null,
+      "description_len": 175,
+      "schema_len": 764,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__close_binary",
+      "type": null,
+      "description_len": 551,
+      "schema_len": 667,
+      "schema_props": [
+       "overwrite",
+       "snapshot_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__collect_adb_bugreport",
+      "type": null,
+      "description_len": 271,
+      "schema_len": 867,
+      "schema_props": [
+       "output_directory",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__comment",
+      "type": null,
+      "description_len": 179,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_application_versions",
+      "type": null,
+      "description_len": 419,
+      "schema_len": 6410,
+      "schema_props": [
+       "left",
+       "left_native_observations",
+       "right",
+       "right_native_observations"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_artifacts",
+      "type": null,
+      "description_len": 316,
+      "schema_len": 5513,
+      "schema_props": [
+       "left",
+       "right"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_bundles",
+      "type": null,
+      "description_len": 291,
+      "schema_len": 1118,
+      "schema_props": [
+       "left_bundle_path",
+       "record_pairs",
+       "right_bundle_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_functions",
+      "type": null,
+      "description_len": 269,
+      "schema_len": 5513,
+      "schema_props": [
+       "left",
+       "right"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_javascript_export_shapes",
+      "type": null,
+      "description_len": 782,
+      "schema_len": 6682,
+      "schema_props": [
+       "left",
+       "left_export_name",
+       "left_module_path",
+       "right",
+       "right_export_name",
+       "right_module_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_managed_members",
+      "type": null,
+      "description_len": 518,
+      "schema_len": 5513,
+      "schema_props": [
+       "left",
+       "right"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_process_captures",
+      "type": null,
+      "description_len": 406,
+      "schema_len": 9489,
+      "schema_props": [
+       "left",
+       "max_capture_age_ms",
+       "right",
+       "trace_spec"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_source_to_bundle",
+      "type": null,
+      "description_len": 454,
+      "schema_len": 14479,
+      "schema_props": [
+       "application",
+       "reference"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_web_captures",
+      "type": null,
+      "description_len": 885,
+      "schema_len": 61876,
+      "schema_props": [
+       "after",
+       "after_scenario",
+       "before",
+       "before_scenario",
+       "normalization"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__compare_web_screenshots",
+      "type": null,
+      "description_len": 165,
+      "schema_len": 1551,
+      "schema_props": [
+       "after",
+       "before",
+       "channel_threshold"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__correlate_static_and_runtime",
+      "type": null,
+      "description_len": 337,
+      "schema_len": 7596,
+      "schema_props": [
+       "mappings",
+       "runtime_comparisons",
+       "static_comparisons"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__current_address",
+      "type": null,
+      "description_len": 166,
+      "schema_len": 465,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__current_document",
+      "type": null,
+      "description_len": 62,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__current_procedure",
+      "type": null,
+      "description_len": 128,
+      "schema_len": 465,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__decode_android_resources",
+      "type": null,
+      "description_len": 451,
+      "schema_len": 1218,
+      "schema_props": [
+       "include_strings",
+       "locale",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__decode_interface_builder",
+      "type": null,
+      "description_len": 312,
+      "schema_len": 741,
+      "schema_props": [
+       "max_connections",
+       "max_documents",
+       "max_objects"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__decompile_jeb_item",
+      "type": null,
+      "description_len": 280,
+      "schema_len": 1044,
+      "schema_props": [
+       "item_address",
+       "item_kind",
+       "unit_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__demangle_swift",
+      "type": null,
+      "description_len": 139,
+      "schema_len": 503,
+      "schema_props": [
+       "symbols"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__discover_webmcp_tools",
+      "type": null,
+      "description_len": 230,
+      "schema_len": 929,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__evaluate_reconstruction_coverage",
+      "type": null,
+      "description_len": 272,
+      "schema_len": 21240,
+      "schema_props": [
+       "boundary_id",
+       "coverage"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__export_evidence_bundle",
+      "type": null,
+      "description_len": 187,
+      "schema_len": 724,
+      "schema_props": [
+       "overwrite",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__export_web_scripts",
+      "type": null,
+      "description_len": 709,
+      "schema_len": 1009,
+      "schema_props": [
+       "capture_path",
+       "output_directory"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__extract_artifact",
+      "type": null,
+      "description_len": 397,
+      "schema_len": 297,
+      "schema_props": [
+       "integrity_policy"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__extract_firmware",
+      "type": null,
+      "description_len": 530,
+      "schema_len": 2574,
+      "schema_props": [
+       "max_depth",
+       "max_output_bytes",
+       "max_output_files",
+       "output_directory",
+       "path",
+       "range"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__find_changed_behavior",
+      "type": null,
+      "description_len": 245,
+      "schema_len": 5474,
+      "schema_props": [
+       "comparisons"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__find_xrefs_to_name",
+      "type": null,
+      "description_len": 217,
+      "schema_len": 316,
+      "schema_props": [
+       "name"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__get_call_graph",
+      "type": null,
+      "description_len": 352,
+      "schema_len": 667,
+      "schema_props": [
+       "address",
+       "direction"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__get_evidence_bundle",
+      "type": null,
+      "description_len": 564,
+      "schema_len": 966,
+      "schema_props": [
+       "detail",
+       "filters"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__get_navigation_context",
+      "type": null,
+      "description_len": 252,
+      "schema_len": 308,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__get_objc_classes",
+      "type": null,
+      "description_len": 93,
+      "schema_len": 342,
+      "schema_props": [
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__get_objc_protocols",
+      "type": null,
+      "description_len": 63,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__goto_address",
+      "type": null,
+      "description_len": 311,
+      "schema_len": 770,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__import_evidence_bundle",
+      "type": null,
+      "description_len": 178,
+      "schema_len": 543,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__import_managed_reconstruction",
+      "type": null,
+      "description_len": 367,
+      "schema_len": 7569,
+      "schema_props": [
+       "decompiler",
+       "methods",
+       "notes",
+       "static_members"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inline_comment",
+      "type": null,
+      "description_len": 147,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_adb_client",
+      "type": null,
+      "description_len": 235,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_adb_device",
+      "type": null,
+      "description_len": 267,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_adb_display",
+      "type": null,
+      "description_len": 163,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_adb_package",
+      "type": null,
+      "description_len": 273,
+      "schema_len": 787,
+      "schema_props": [
+       "package",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_adb_window",
+      "type": null,
+      "description_len": 181,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_address_context",
+      "type": null,
+      "description_len": 258,
+      "schema_len": 443,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_analysis_view",
+      "type": null,
+      "description_len": 977,
+      "schema_len": 9336,
+      "schema_props": [
+       "source",
+       "view"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_android_class",
+      "type": null,
+      "description_len": 270,
+      "schema_len": 689,
+      "schema_props": [
+       "class_name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_android_method",
+      "type": null,
+      "description_len": 239,
+      "schema_len": 1160,
+      "schema_props": [
+       "class_name",
+       "method_name",
+       "overload_index",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_android_package",
+      "type": null,
+      "description_len": 255,
+      "schema_len": 441,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_apktool_client",
+      "type": null,
+      "description_len": 221,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_artifact",
+      "type": null,
+      "description_len": 542,
+      "schema_len": 297,
+      "schema_props": [
+       "integrity_policy"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_asset_catalog",
+      "type": null,
+      "description_len": 206,
+      "schema_len": 434,
+      "schema_props": [
+       "limit",
+       "offset"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_binary_layout",
+      "type": null,
+      "description_len": 1177,
+      "schema_len": 1172,
+      "schema_props": [
+       "detail",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_electron_page",
+      "type": null,
+      "description_len": 400,
+      "schema_len": 2340,
+      "schema_props": [
+       "cdp_endpoint",
+       "include_script_sources",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_evm_interface",
+      "type": null,
+      "description_len": 637,
+      "schema_len": 758,
+      "schema_props": [
+       "encoding",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_firmware_regions",
+      "type": null,
+      "description_len": 379,
+      "schema_len": 502,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_jeb_client",
+      "type": null,
+      "description_len": 262,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_keyed_archive",
+      "type": null,
+      "description_len": 321,
+      "schema_len": 689,
+      "schema_props": [
+       "limit",
+       "offset",
+       "path",
+       "root"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_macho",
+      "type": null,
+      "description_len": 173,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_managed_artifact",
+      "type": null,
+      "description_len": 365,
+      "schema_len": 513,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_managed_members",
+      "type": null,
+      "description_len": 375,
+      "schema_len": 487,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_managed_native_boundaries",
+      "type": null,
+      "description_len": 284,
+      "schema_len": 487,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_native_api",
+      "type": null,
+      "description_len": 312,
+      "schema_len": 368,
+      "schema_props": [
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_native_data_type",
+      "type": null,
+      "description_len": 279,
+      "schema_len": 490,
+      "schema_props": [
+       "address",
+       "document",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_native_dispatch_metadata",
+      "type": null,
+      "description_len": 554,
+      "schema_len": 365,
+      "schema_props": [
+       "max_records"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_native_instruction",
+      "type": null,
+      "description_len": 283,
+      "schema_len": 427,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_native_load_image",
+      "type": null,
+      "description_len": 542,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_pe_resources",
+      "type": null,
+      "description_len": 642,
+      "schema_len": 1149,
+      "schema_props": [
+       "max_entries",
+       "max_file_bytes",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_plist",
+      "type": null,
+      "description_len": 132,
+      "schema_len": 386,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_recorded_crash",
+      "type": null,
+      "description_len": 879,
+      "schema_len": 834,
+      "schema_props": [
+       "include_debugger_context",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_signature",
+      "type": null,
+      "description_len": 155,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_web_event_listeners",
+      "type": null,
+      "description_len": 419,
+      "schema_len": 891,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "selector",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_web_network_capture",
+      "type": null,
+      "description_len": 828,
+      "schema_len": 1899,
+      "schema_props": [
+       "capture_path",
+       "format",
+       "record_ordinals",
+       "sensitive_values"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__inspect_web_page",
+      "type": null,
+      "description_len": 376,
+      "schema_len": 5039,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "include_accessibility_text",
+       "include_console_text",
+       "include_json_body_shapes",
+       "include_script_sources",
+       "include_storage_fingerprints",
+       "include_storage_keys",
+       "include_websocket_shapes",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__install_adb_package",
+      "type": null,
+      "description_len": 270,
+      "schema_len": 1126,
+      "schema_props": [
+       "apk_path",
+       "replace",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_devices",
+      "type": null,
+      "description_len": 302,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_directory",
+      "type": null,
+      "description_len": 199,
+      "schema_len": 794,
+      "schema_props": [
+       "device_path",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_features",
+      "type": null,
+      "description_len": 116,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_packages",
+      "type": null,
+      "description_len": 186,
+      "schema_len": 859,
+      "schema_props": [
+       "scope",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_processes",
+      "type": null,
+      "description_len": 152,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_adb_services",
+      "type": null,
+      "description_len": 84,
+      "schema_len": 478,
+      "schema_props": [
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_architectures",
+      "type": null,
+      "description_len": 115,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_bookmarks",
+      "type": null,
+      "description_len": 207,
+      "schema_len": 465,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_browser_targets",
+      "type": null,
+      "description_len": 205,
+      "schema_len": 515,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_documents",
+      "type": null,
+      "description_len": 151,
+      "schema_len": 144,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_electron_targets",
+      "type": null,
+      "description_len": 220,
+      "schema_len": 388,
+      "schema_props": [
+       "cdp_endpoint"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_javascript_runtime_targets",
+      "type": null,
+      "description_len": 269,
+      "schema_len": 336,
+      "schema_props": [
+       "inspector_endpoint"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_jeb_units",
+      "type": null,
+      "description_len": 229,
+      "schema_len": 1355,
+      "schema_props": [
+       "count",
+       "filter",
+       "index",
+       "parent_unit_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_names",
+      "type": null,
+      "description_len": 176,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_procedures",
+      "type": null,
+      "description_len": 191,
+      "schema_len": 465,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_segments",
+      "type": null,
+      "description_len": 206,
+      "schema_len": 465,
+      "schema_props": [
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_strings",
+      "type": null,
+      "description_len": 304,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__list_unknowns",
+      "type": null,
+      "description_len": 247,
+      "schema_len": 574,
+      "schema_props": [
+       "domain",
+       "severity",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__next_address",
+      "type": null,
+      "description_len": 154,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__observe_javascript_runtime",
+      "type": null,
+      "description_len": 694,
+      "schema_len": 894,
+      "schema_props": [
+       "inspector_endpoint",
+       "observation_ms",
+       "runtime_kind",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__observe_native_calls",
+      "type": null,
+      "description_len": 672,
+      "schema_len": 3975,
+      "schema_props": [
+       "argument_registers",
+       "arguments",
+       "backtrace_frames",
+       "breakpoints",
+       "duration_ms",
+       "environment",
+       "max_events",
+       "working_directory"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__observe_native_ui",
+      "type": null,
+      "description_len": 231,
+      "schema_len": 1028,
+      "schema_props": [
+       "accessibility",
+       "max_nodes",
+       "pid",
+       "screenshot",
+       "window_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__observe_web_execution",
+      "type": null,
+      "description_len": 549,
+      "schema_len": 927,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__observe_web_session",
+      "type": null,
+      "description_len": 273,
+      "schema_len": 933,
+      "schema_props": [
+       "allowed_origins",
+       "cdp_endpoint",
+       "observation_ms",
+       "target_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__open_binary",
+      "type": null,
+      "description_len": 741,
+      "schema_len": 1598,
+      "schema_props": [
+       "format",
+       "path",
+       "provider_id",
+       "snapshot_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__open_jeb_project",
+      "type": null,
+      "description_len": 278,
+      "schema_len": 521,
+      "schema_props": [
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__prev_address",
+      "type": null,
+      "description_len": 220,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_address",
+      "type": null,
+      "description_len": 148,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_assembly",
+      "type": null,
+      "description_len": 319,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_callees",
+      "type": null,
+      "description_len": 219,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_callers",
+      "type": null,
+      "description_len": 183,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_info",
+      "type": null,
+      "description_len": 491,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_pseudo_code",
+      "type": null,
+      "description_len": 400,
+      "schema_len": 684,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__procedure_references",
+      "type": null,
+      "description_len": 304,
+      "schema_len": 918,
+      "schema_props": [
+       "direction",
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__project_android_application_graph",
+      "type": null,
+      "description_len": 281,
+      "schema_len": 5418,
+      "schema_props": [
+       "inventory_evidence"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__project_apple_application_graph",
+      "type": null,
+      "description_len": 473,
+      "schema_len": 5418,
+      "schema_props": [
+       "inventory_evidence"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__project_managed_application_graph",
+      "type": null,
+      "description_len": 333,
+      "schema_len": 6788,
+      "schema_props": [
+       "managed_artifact",
+       "managed_members",
+       "managed_native_boundaries"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__pull_adb_file",
+      "type": null,
+      "description_len": 233,
+      "schema_len": 1157,
+      "schema_props": [
+       "device_path",
+       "output_directory",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__pull_adb_package",
+      "type": null,
+      "description_len": 361,
+      "schema_len": 1225,
+      "schema_props": [
+       "output_directory",
+       "package",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__push_adb_file",
+      "type": null,
+      "description_len": 279,
+      "schema_len": 1353,
+      "schema_props": [
+       "device_path",
+       "local_path",
+       "overwrite",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__read_adb_logcat",
+      "type": null,
+      "description_len": 199,
+      "schema_len": 1393,
+      "schema_props": [
+       "buffer",
+       "count",
+       "pid",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__read_adb_setting",
+      "type": null,
+      "description_len": 184,
+      "schema_len": 967,
+      "schema_props": [
+       "key",
+       "namespace",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__read_bytes",
+      "type": null,
+      "description_len": 227,
+      "schema_len": 918,
+      "schema_props": [
+       "address",
+       "document",
+       "length"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__read_function_instructions",
+      "type": null,
+      "description_len": 205,
+      "schema_len": 564,
+      "schema_props": [
+       "document",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__reconcile_javascript_runtime",
+      "type": null,
+      "description_len": 508,
+      "schema_len": 6500,
+      "schema_props": [
+       "runtime_observations",
+       "static_layers"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__record_unknown",
+      "type": null,
+      "description_len": 165,
+      "schema_len": 3121,
+      "schema_props": [
+       "contradicting_evidence_ids",
+       "domain",
+       "question",
+       "recommended_probes",
+       "relationships",
+       "required_authority",
+       "required_confidence",
+       "required_environment",
+       "severity",
+       "supporting_evidence_ids"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__recover_javascript_sources",
+      "type": null,
+      "description_len": 596,
+      "schema_len": 1591,
+      "schema_props": [
+       "extraction_mode",
+       "output_directory",
+       "path",
+       "rewrite_level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__resolve_adb_packages",
+      "type": null,
+      "description_len": 243,
+      "schema_len": 817,
+      "schema_props": [
+       "query",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__resolve_containing_procedure",
+      "type": null,
+      "description_len": 250,
+      "schema_len": 770,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__resolve_native_call_targets",
+      "type": null,
+      "description_len": 207,
+      "schema_len": 427,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__search_android_classes",
+      "type": null,
+      "description_len": 185,
+      "schema_len": 702,
+      "schema_props": [
+       "path",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__search_procedures",
+      "type": null,
+      "description_len": 252,
+      "schema_len": 1073,
+      "schema_props": [
+       "case_sensitive",
+       "document",
+       "mode",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__search_strings",
+      "type": null,
+      "description_len": 662,
+      "schema_len": 1089,
+      "schema_props": [
+       "case_sensitive",
+       "document",
+       "mode",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__set_address_name",
+      "type": null,
+      "description_len": 367,
+      "schema_len": 920,
+      "schema_props": [
+       "address",
+       "document",
+       "name"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__set_addresses_names",
+      "type": null,
+      "description_len": 462,
+      "schema_len": 670,
+      "schema_props": [
+       "document",
+       "names"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__set_bookmark",
+      "type": null,
+      "description_len": 183,
+      "schema_len": 895,
+      "schema_props": [
+       "address",
+       "document",
+       "name"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__set_comment",
+      "type": null,
+      "description_len": 206,
+      "schema_len": 947,
+      "schema_props": [
+       "address",
+       "comment",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__set_inline_comment",
+      "type": null,
+      "description_len": 221,
+      "schema_len": 938,
+      "schema_props": [
+       "address",
+       "comment",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__start_adb_activity",
+      "type": null,
+      "description_len": 248,
+      "schema_len": 2330,
+      "schema_props": [
+       "action",
+       "component",
+       "data_uri",
+       "extras",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__start_adb_app",
+      "type": null,
+      "description_len": 359,
+      "schema_len": 835,
+      "schema_props": [
+       "package",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__stop_adb_app",
+      "type": null,
+      "description_len": 175,
+      "schema_len": 813,
+      "schema_props": [
+       "package",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_android_references",
+      "type": null,
+      "description_len": 238,
+      "schema_len": 1008,
+      "schema_props": [
+       "class_name",
+       "method_name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_application_feature",
+      "type": null,
+      "description_len": 340,
+      "schema_len": 7293,
+      "schema_props": [
+       "application",
+       "direction",
+       "native_observations",
+       "seed"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_call_path",
+      "type": null,
+      "description_len": 399,
+      "schema_len": 841,
+      "schema_props": [
+       "direction",
+       "goal",
+       "start"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_dylib_resolution",
+      "type": null,
+      "description_len": 692,
+      "schema_len": 741,
+      "schema_props": [
+       "architecture",
+       "roots"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_feature",
+      "type": null,
+      "description_len": 252,
+      "schema_len": 554,
+      "schema_props": [
+       "case_sensitive",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_javascript_semantics",
+      "type": null,
+      "description_len": 265,
+      "schema_len": 9843,
+      "schema_props": [
+       "application",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_native_ui_action",
+      "type": null,
+      "description_len": 425,
+      "schema_len": 1134,
+      "schema_props": [
+       "action",
+       "max_depth",
+       "max_edges",
+       "max_nodes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_native_values",
+      "type": null,
+      "description_len": 402,
+      "schema_len": 1626,
+      "schema_props": [
+       "limit",
+       "max_call_sites",
+       "max_depth",
+       "max_edges",
+       "max_functions",
+       "max_nodes",
+       "offset",
+       "procedure"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_web_module_imports",
+      "type": null,
+      "description_len": 858,
+      "schema_len": 1549,
+      "schema_props": [
+       "import_map",
+       "importer_url",
+       "manifest_path",
+       "script_index"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__trace_web_source_location",
+      "type": null,
+      "description_len": 942,
+      "schema_len": 1594,
+      "schema_props": [
+       "generated_position",
+       "manifest_path",
+       "script_index",
+       "source_map"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__uninstall_adb_package",
+      "type": null,
+      "description_len": 166,
+      "schema_len": 791,
+      "schema_props": [
+       "package",
+       "serial"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__unset_bookmark",
+      "type": null,
+      "description_len": 230,
+      "schema_len": 770,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__update_unknown",
+      "type": null,
+      "description_len": 166,
+      "schema_len": 4249,
+      "schema_props": [
+       "contradicting_evidence_ids",
+       "expected_revision",
+       "recommended_probes",
+       "relationships",
+       "required_authority",
+       "required_confidence",
+       "required_environment",
+       "resolution",
+       "severity",
+       "status",
+       "supporting_evidence_ids",
+       "unknown_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__verify_managed_native_boundaries",
+      "type": null,
+      "description_len": 300,
+      "schema_len": 5617,
+      "schema_props": [
+       "managed_boundaries",
+       "native_observations"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__verify_reconstruction",
+      "type": null,
+      "description_len": 275,
+      "schema_len": 2577,
+      "schema_props": [
+       "specification"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__verify_unknown_resolution",
+      "type": null,
+      "description_len": 214,
+      "schema_len": 429,
+      "schema_props": [
+       "unknown_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "mcp__rea__xrefs",
+      "type": null,
+      "description_len": 287,
+      "schema_len": 726,
+      "schema_props": [
+       "address",
+       "document"
+      ],
+      "extra_keys": []
+     }
+    ],
+    "tools_total_bytes": 556856,
+    "messages_count": 2,
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "len": 3161,
+        "sha256": "2a87371d68b6b62e",
+        "head": "<system-reminder>\\nCodebase and user instructions are shown below. Be sure to adh",
+        "tags": [
+         "system-reminder",
+         "path",
+         "task"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 903,
+        "sha256": "6777bf7b2dd7659c",
+        "head": "<system-reminder>\\nAs you answer the user's questions, you can use the following ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 580,
+        "sha256": "e291f933f8631786",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 40,
+        "sha256": "c645eead6d792185",
+        "head": "Reply with exactly the single word: pong"
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "len": 62470,
+        "sha256": "fa6dabb808930c05",
+        "head": "SessionStart:startup hook success: /last30days: Ready \u2014 4 sources active.\\n  Rese",
+        "tags": [
+         "EXTREMELY_IMPORTANT",
+         "SUBAGENT-STOP",
+         "EXTREMELY-IMPORTANT",
+         "example",
+         "commentary",
+         "title",
+         "today",
+         "topic",
+         "heading",
+         "system",
+         "service",
+         "n"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "response": {
+   "seq": "0002",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Tue, 13 Oct 2026 17:12:01 GMT",
+    "content-type": "text/event-stream; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cache-control": "no-cache",
+    "anthropic-ratelimit-unified-5h-status": "allowed",
+    "anthropic-ratelimit-unified-representative-claim": "five_hour",
+    "anthropic-ratelimit-unified-overage-status": "rejected",
+    "anthropic-ratelimit-unified-reset": "1791925200",
+    "anthropic-ratelimit-unified-5h-utilization": "0.37",
+    "anthropic-ratelimit-unified-7d-reset": "1792346400",
+    "anthropic-ratelimit-unified-5h-reset": "1791925200",
+    "anthropic-ratelimit-unified-7d-status": "allowed",
+    "anthropic-ratelimit-unified-fallback-percentage": "0.5",
+    "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
+    "anthropic-ratelimit-unified-7d-utilization": "0.7",
+    "anthropic-ratelimit-unified-status": "allowed",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "request-id": "req_<id>",
+    "traceresponse": "00-<hex>-2525b112da3a250e-01",
+    "anthropic-organization-id": "<redacted len=36>",
+    "anthropic-workspace-id": "wrkspc_<id>",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "vary": "Accept-Encoding",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 2015,
+   "t_ms": 6034,
+   "body_bytes": 1525,
+   "chunk_count": 4,
+   "chunk_times_ms": [
+    2016,
+    2016,
+    2020,
+    2037
+   ],
+   "client_closed_early": false,
+   "message_start": {
+    "model": "claude-opus-5-5",
+    "id_prefix": "msg_011C",
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 257990,
+     "cache_read_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 257990
+     },
+     "output_tokens": 4,
+     "service_tier": "standard",
+     "inference_geo": "global"
+    },
+    "keys": [
+     "container",
+     "content",
+     "context_management",
+     "diagnostics",
+     "id",
+     "model",
+     "role",
+     "stop_details",
+     "stop_reason",
+     "stop_sequence",
+     "type",
+     "usage"
+    ]
+   },
+   "message_delta_keys": [
+    "context_management",
+    "delta",
+    "type",
+    "usage"
+   ],
+   "sse_event_runs": [
+    [
+     "message_start",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "ping",
+     1
+    ],
+    [
+     "content_block_delta",
+     1
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "message_delta",
+     1
+    ],
+    [
+     "message_stop",
+     1
+    ]
+   ],
+   "content_blocks": [
+    {
+     "index": 0,
+     "type": "text",
+     "name": null,
+     "delta_types": {
+      "text_delta": 1
+     },
+     "delta_count": 1
+    }
+   ],
+   "final_usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 257990,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 4,
+    "output_tokens_details": {
+     "thinking_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 2,
+      "output_tokens": 4,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 257990,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 257990
+      },
+      "type": "message"
+     }
+    ]
+   },
+   "final_delta": {
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "container": null
+   }
+  }
+ }
+]

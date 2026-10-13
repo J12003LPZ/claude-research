@@ -1,0 +1,80 @@
+[
+ {
+  "t_in_ms": 0,
+  "t_out_ms": 0,
+  "tag": "Stop-block",
+  "mode": "stopblock",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hook-stopblock",
+  "hook_event_name": "Stop",
+  "permission_mode": "default",
+  "stop_hook_active": false,
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 1331,
+  "t_out_ms": 1331,
+  "tag": "Stop-block",
+  "mode": "stopblock",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-hook-stopblock",
+  "hook_event_name": "Stop",
+  "permission_mode": "default",
+  "stop_hook_active": true,
+  "effort": {
+   "level": "medium"
+  }
+ }
+]

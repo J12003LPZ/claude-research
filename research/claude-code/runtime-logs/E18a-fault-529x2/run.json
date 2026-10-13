@@ -1,0 +1,59 @@
+{
+ "id": "E18a-fault-529x2",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-a",
+ "argv": [
+  "claude",
+  "-p",
+  "<prompt>",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "C:\\Users\\<user>\\Desktop\\claude-rea\\lab\\raw\\E18a-fault-529x2\\debug.log",
+  "--model",
+  "haiku",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
+ ],
+ "prompt": "Reply with exactly: after-529",
+ "stdin_file": null,
+ "extra_env_names": [],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 64428,
+ "exit_code": 0,
+ "killed": null,
+ "duration_s": 3.835,
+ "cli_version": "2.1.296 (Claude Code)",
+ "started_iso": "2026-10-13T21:06:51Z",
+ "fault": {
+  "path_contains": "/v1/messages",
+  "status": 529,
+  "times": 2,
+  "body": {
+   "type": "error",
+   "error": {
+    "type": "overloaded_error",
+    "message": "Overloaded (lab injected)"
+   }
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "id": "E08b-perm-rules",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-perm-rules",
+ "argv": [
+  "claude",
+  "-p",
+  "<prompt>",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "C:\\Users\\<user>\\Desktop\\claude-rea\\lab\\raw\\E08b-perm-rules\\debug.log",
+  "--model",
+  "haiku",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
+ ],
+ "prompt": "Run these four Bash commands one at a time, each in its own tool call, and report for each whether it ran or was refused: (1) echo allowed-one (2) echo denied-two (3) echo ask-three (4) Read the file secret/s.txt with the Read tool.",
+ "stdin_file": null,
+ "extra_env_names": [
+  "LAB_HOOK_LOG_DIR"
+ ],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 51057,
+ "exit_code": 1,
+ "killed": null,
+ "duration_s": 10.147,
+ "cli_version": "2.1.296 (Claude Code)",
+ "started_iso": "2026-10-13T17:17:53Z",
+ "fault": null
+}

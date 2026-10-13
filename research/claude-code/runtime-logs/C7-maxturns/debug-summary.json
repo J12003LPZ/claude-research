@@ -1,0 +1,245 @@
+{
+ "line_count": 222,
+ "top_prefixes": [
+  [
+   "Keeping C",
+   46
+  ],
+  [
+   "hooks",
+   21
+  ],
+  [
+   "STARTUP",
+   6
+  ],
+  [
+   "Fast mode unavailable",
+   6
+  ],
+  [
+   "CA certs",
+   5
+  ],
+  [
+   "init",
+   4
+  ],
+  [
+   "uds-messaging",
+   4
+  ],
+  [
+   "Cleared",
+   4
+  ],
+  [
+   "LSP",
+   4
+  ],
+  [
+   "cc-plugin-telemetry",
+   4
+  ],
+  [
+   "$.session",
+   4
+  ],
+  [
+   "LSP Diagnostics",
+   4
+  ],
+  [
+   "Hooks",
+   4
+  ],
+  [
+   "Cache",
+   4
+  ],
+  [
+   "Reading marketplace from C",
+   4
+  ],
+  [
+   "Failed",
+   4
+  ],
+  [
+   "mTLS",
+   3
+  ],
+  [
+   "Failed to stat directory C",
+   3
+  ],
+  [
+   "LSP MANAGER",
+   3
+  ],
+  [
+   "Bootstrap",
+   3
+  ],
+  [
+   "Git remote URL",
+   2
+  ],
+  [
+   "No",
+   2
+  ],
+  [
+   "Error",
+   2
+  ],
+  [
+   "MCP",
+   2
+  ],
+  [
+   "[3P",
+   2
+  ],
+  [
+   "plugin.register",
+   2
+  ],
+  [
+   "claudeai-mcp",
+   2
+  ],
+  [
+   "engine",
+   2
+  ],
+  [
+   "API",
+   2
+  ],
+  [
+   "installPluginsForHeadless",
+   2
+  ],
+  [
+   "Stall",
+   2
+  ],
+  [
+   "$.http.fetch",
+   2
+  ],
+  [
+   "MDM",
+   1
+  ],
+  [
+   "Broken",
+   1
+  ],
+  [
+   "Using bash path",
+   1
+  ],
+  [
+   "ToolSearch",
+   1
+  ],
+  [
+   "win32-kernel32",
+   1
+  ],
+  [
+   "Loaded 30 installed plugins from C",
+   1
+  ],
+  [
+   "Found",
+   1
+  ],
+  [
+   "getPluginSkills",
+   1
+  ],
+  [
+   "Checking plugin cc-plugin-agents-md",
+   1
+  ],
+  [
+   "Checking plugin cc-plugin-telemetry",
+   1
+  ],
+  [
+   "Checking",
+   1
+  ],
+  [
+   "Total plugin workflows loaded",
+   1
+  ],
+  [
+   "Total plugin commands loaded",
+   1
+  ],
+  [
+   "Total plugin skills loaded",
+   1
+  ],
+  [
+   "Loading skills from",
+   1
+  ],
+  [
+   "Total plugin agents loaded",
+   1
+  ],
+  [
+   "Loaded",
+   1
+  ],
+  [
+   "cc-plugin-sec-default@builtin",
+   1
+  ],
+  [
+   "getSkills returning",
+   1
+  ],
+  [
+   "Starting",
+   1
+  ],
+  [
+   "Passes",
+   1
+  ],
+  [
+   "All",
+   1
+  ],
+  [
+   "Total LSP servers loaded",
+   1
+  ],
+  [
+   "Initialized",
+   1
+  ],
+  [
+   "LSP SERVER MANAGER",
+   1
+  ],
+  [
+   "servedCatalog",
+   1
+  ],
+  [
+   "Perfetto",
+   1
+  ],
+  [
+   "event-loop-stall",
+   1
+  ]
+ ]
+}

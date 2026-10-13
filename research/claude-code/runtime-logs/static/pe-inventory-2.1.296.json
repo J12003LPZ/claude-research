@@ -1,0 +1,264 @@
+{
+  "path": "C:\\Users\\<user>\\.local\\bin\\claude.exe",
+  "size": 260489376,
+  "sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+  "coff": {
+    "machine": "0x8664",
+    "sections": 13,
+    "timestamp": 1790316740,
+    "characteristics": "0x22",
+    "optional_magic": "0x20b"
+  },
+  "optional": {
+    "entry_rva": "0x3ff500c",
+    "image_base": "0x140000000",
+    "subsystem": 3,
+    "size_of_image": 262717440
+  },
+  "data_directories": {
+    "export": {
+      "rva": "0x54e05ab",
+      "size": 30879
+    },
+    "import": {
+      "rva": "0x54e7e4c",
+      "size": 160
+    },
+    "resource": {
+      "rva": "0x5b3a000",
+      "size": 200748
+    },
+    "exception": {
+      "rva": "0x57bd000",
+      "size": 967260
+    },
+    "security": {
+      "rva": "0xf869800",
+      "size": 10400
+    },
+    "basereloc": {
+      "rva": "0x5b6c000",
+      "size": 211124
+    },
+    "debug": {
+      "rva": "0x54def74",
+      "size": 28
+    },
+    "tls": {
+      "rva": "0x53d45d0",
+      "size": 40
+    },
+    "loadconfig": {
+      "rva": "0x41aca00",
+      "size": 320
+    },
+    "iat": {
+      "rva": "0x54e8b88",
+      "size": 3224
+    },
+    "delayimport": {
+      "rva": "0x54df208",
+      "size": 416
+    }
+  },
+  "sections": [
+    {
+      "name": ".text",
+      "vaddr": "0x1000",
+      "vsize": 68476494,
+      "raw_ptr": 1024,
+      "raw_size": 68476928,
+      "flags": "0x60000020"
+    },
+    {
+      "name": ".rdata",
+      "vaddr": "0x414f000",
+      "vsize": 21186872,
+      "raw_ptr": 68477952,
+      "raw_size": 21187072,
+      "flags": "0x40000040"
+    },
+    {
+      "name": ".data",
+      "vaddr": "0x5584000",
+      "vsize": 2328880,
+      "raw_ptr": 89665024,
+      "raw_size": 116736,
+      "flags": "0xc0000040"
+    },
+    {
+      "name": ".pdata",
+      "vaddr": "0x57bd000",
+      "vsize": 967260,
+      "raw_ptr": 89781760,
+      "raw_size": 967680,
+      "flags": "0x40000040"
+    },
+    {
+      "name": ".bunblt",
+      "vaddr": "0x58aa000",
+      "vsize": 2619496,
+      "raw_ptr": 90749440,
+      "raw_size": 2619904,
+      "flags": "0x40000040"
+    },
+    {
+      "name": ".fptable",
+      "vaddr": "0x5b2a000",
+      "vsize": 256,
+      "raw_ptr": 93369344,
+      "raw_size": 512,
+      "flags": "0xc0000040"
+    },
+    {
+      "name": ".tls",
+      "vaddr": "0x5b2b000",
+      "vsize": 23289,
+      "raw_ptr": 93369856,
+      "raw_size": 23552,
+      "flags": "0xc0000040"
+    },
+    {
+      "name": "_RDATA",
+      "vaddr": "0x5b31000",
+      "vsize": 500,
+      "raw_ptr": 93393408,
+      "raw_size": 512,
+      "flags": "0x40000040"
+    },
+    {
+      "name": "__DATA,_",
+      "vaddr": "0x5b32000",
+      "vsize": 16384,
+      "raw_ptr": 93393920,
+      "raw_size": 16384,
+      "flags": "0xc0000040"
+    },
+    {
+      "name": "__DATA,_",
+      "vaddr": "0x5b36000",
+      "vsize": 16384,
+      "raw_ptr": 93410304,
+      "raw_size": 16384,
+      "flags": "0xc0000040"
+    },
+    {
+      "name": ".rsrc",
+      "vaddr": "0x5b3a000",
+      "vsize": 200748,
+      "raw_ptr": 93426688,
+      "raw_size": 201216,
+      "flags": "0x40000040"
+    },
+    {
+      "name": ".reloc",
+      "vaddr": "0x5b6c000",
+      "vsize": 211124,
+      "raw_ptr": 93627904,
+      "raw_size": 211456,
+      "flags": "0x42000040"
+    },
+    {
+      "name": ".bun",
+      "vaddr": "0x5ba0000",
+      "vsize": 166639191,
+      "raw_ptr": 93839360,
+      "raw_size": 166639616,
+      "flags": "0x40000040"
+    }
+  ],
+  "end_of_sections": 260478976,
+  "overlay_bytes": 10400,
+  "markers": {
+    "---- Bun! ----": {
+      "count": 2,
+      "first_offsets": [
+        84255488,
+        260478535
+      ]
+    },
+    "/$bunfs/": {
+      "count": 2,
+      "first_offsets": [
+        84256834,
+        84256842
+      ]
+    },
+    "B:/~BUN/": {
+      "count": 198083,
+      "first_offsets": [
+        11658421,
+        11946844,
+        11947050,
+        11947276,
+        14567442
+      ]
+    },
+    "bun-vfs": {
+      "count": 49,
+      "first_offsets": [
+        14191825,
+        81998833,
+        83143969,
+        83417785,
+        83417857
+      ]
+    },
+    "sourceMappingURL=": {
+      "count": 4,
+      "first_offsets": [
+        82176050,
+        83049637,
+        83096695,
+        83464753
+      ]
+    },
+    "__BUN": {
+      "count": 6,
+      "first_offsets": [
+        35862000,
+        82121669,
+        82121900,
+        85707672,
+        91182804
+      ]
+    }
+  },
+  "marker_sections": {
+    "---- Bun! ----": [
+      ".rdata",
+      ".bun"
+    ],
+    "/$bunfs/": [
+      ".rdata",
+      ".rdata"
+    ],
+    "B:/~BUN/": [
+      ".text",
+      ".text",
+      ".text",
+      ".text",
+      ".text"
+    ],
+    "bun-vfs": [
+      ".text",
+      ".rdata",
+      ".rdata",
+      ".rdata",
+      ".rdata"
+    ],
+    "sourceMappingURL=": [
+      ".rdata",
+      ".rdata",
+      ".rdata",
+      ".rdata"
+    ],
+    "__BUN": [
+      ".text",
+      ".rdata",
+      ".rdata",
+      ".rdata",
+      ".bunblt"
+    ]
+  }
+}

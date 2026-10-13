@@ -1,0 +1,52 @@
+{
+ "id": "E17c-autocompact",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-hooks",
+ "argv": [
+  "claude",
+  "-p",
+  "<prompt>",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "C:\\Users\\<user>\\Desktop\\claude-rea\\lab\\raw\\E17c-autocompact\\debug.log",
+  "--model",
+  "haiku",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json",
+  "--autocompact",
+  "100k"
+ ],
+ "prompt": "Read all ten files big/big1.txt through big/big10.txt with the Read tool, in order, exactly one Read call per message, and keep going without stopping or asking until all ten have been read. Do not end your turn early. After the tenth read, reply with ALLDONE followed by the first line of big10.txt and the token I gave you here: OTTER-3317.",
+ "stdin_file": null,
+ "extra_env_names": [
+  "LAB_HOOK_LOG_DIR"
+ ],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 60772,
+ "exit_code": 1,
+ "killed": null,
+ "duration_s": 70.225,
+ "cli_version": "2.1.296 (Claude Code)",
+ "started_iso": "2026-10-13T21:12:12Z",
+ "fault": null
+}
