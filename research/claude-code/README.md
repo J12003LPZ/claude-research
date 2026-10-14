@@ -59,14 +59,28 @@ the tools here.
   requests, events, hook logs and files. Highest confidence. Limits: headless mode only,
   mostly a slim configuration, all through a forwarding proxy.
 - **Static passes** (`static-01` to `static-05`, about 520 KB): written by five parallel
-  analysis agents reading minified code, each claim carrying a `chunk@offset` anchor. Four
-  of the five were cut off by an account rate limit while still refining; all have their
-  six sections. They were **not reviewed line by line**. Eleven claims were spot-checked
-  against runtime results or the code and held (AGENTS.md not loaded, parallel hooks,
-  retry constants, compaction formula region, rapid-refill breaker, streaming tool
-  executor, sub-agent hand-back framing, hook/permission resolution order, transcript
-  fields, the mid-conversation system beta, the `/api/hello` preflight). Treat unchecked
-  static claims as leads with addresses, not as facts.
+  analysis agents reading minified code, each claim carrying a `chunk@offset` anchor, then
+  **audited a second time** by five independent reviewers. Audit method and limits:
+  - Mechanical: `tools/audit_static_citations.py` checks that every one of the 1,849
+    `chunk@offset` citations names an extracted chunk and lies inside it. After one fix
+    (`static-04` line 239) all 1,849 resolve. This proves the address exists, not that the
+    prose is right.
+  - Semantic: each reviewer read the claims against the source and the runtime logs and
+    wrote a ledger, kept in `runtime-logs/static/audit/`. `runtime-logs/static/static-claim-ledger-2.1.296.json`
+    lists all 747 report paragraphs with their anchors (436 carry none).
+  - Results (claim groups): 01: 146 verified, 48 partial, 1 contradicted. 02: 126, 25, 4.
+    03: 108, 21, 2. 04: about 138, about 52, 1. 05: 155, 63, 1. "Partial" means some part
+    was confirmed and some part was omitted, inexact or not re-read. Runtime evidence
+    contradicted no verified static claim.
+  - Fixed in place: every contradiction (9 in total) is corrected in the report, marked
+    "Audit correction". I re-checked six of them against the source myself (`deniedModels`
+    delete, stop-hook condition, idle-timeout interaction, `ts` rendering selection, resume
+    guidance condition, client-side tool-result clearing) plus the Read size sentinel, the
+    detached-result path and the renderer facade chunk.
+  - Not done: the partial findings are recorded in a "5b. Audit addendum" in each report
+    and are **not yet re-verified or merged into the text**. The reviewers were language
+    models reading minified code, and I did not re-read their verified rows. Treat the
+    addendum items as leads; treat any claim outside both lists as checked once by an agent.
 - **Implementation spec** (`05`): separates REPRODUCE (observed) from CHOICE (design).
 
 ## Reproducing

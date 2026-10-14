@@ -236,7 +236,7 @@ override (`mcpPermissionModeOverrides[serverName]`) replaces the mode when the s
 permissive mode; certain MCP classes and `excludedFromModeBypassAllow` tools are downgraded to
 `auto` (if the classifier can run) or `default`.
 
-**Cycle (shift+tab). VS** `chunk-pq75k3y4.js@~1500`:
+**Cycle (shift+tab). VS** `chunk-pq75k3y4.js@0`:
 `default → acceptEdits → plan → bypassPermissions (if available) → auto (if available) → default`;
 from `bypassPermissions`: `auto` if available else `default`; from `dontAsk`: `default`.
 
@@ -739,6 +739,8 @@ async function checkPermissionsAndCall(tool, id, rawInput, ctx, canUseTool, assi
     startHeartbeat(30_000)
     try:
         res = await tool.call(input, ctxWithToolUseId, canUseTool, assistantMsg, onProgress, extra)
+        # audit correction (chunk-phacttch.js@2301574): `if (res.detached) { record; return }` runs
+        # BEFORE the PostToolUse loop below, so a detached result skips PostToolUse and newMessages
         block = res.detached ? {type:"tool_result", content: res.detached.text}
                              : tool.mapToolResultToToolResultBlockParam(res.data, id)
         data = res.data
@@ -1110,7 +1112,7 @@ interface ToolResultUserMessage {
 | Persist file size cap | 1,073,741,824 bytes | `chunk-fd5j6erd.js@1398` |
 | Persisted preview size | 2,000 chars | `chunk-ghf2w5kp.js@~2330` |
 | Token estimate divisor | 4 chars per token | `chunk-fd5j6erd.js@1364` |
-| Typical `maxResultSizeChars` | 100,000 (Write, Glob, Edit, NotebookEdit, ToolSearch, many); Grep 20,000; Read 1 (sentinel); auth stubs 10,000 | `chunk-phacttch.js@734042, 762384, 768643, 3541279, 4160334` |
+| Typical `maxResultSizeChars` | 100,000 (Write, Glob, Edit, NotebookEdit, ToolSearch, many); Grep 20,000; Read `Infinity` (audit correction: the source is `maxResultSizeChars:1/0`, not 1; it is excluded from the aggregate result budget by `zis()` in `chunk-ghf2w5kp.js`); auth stubs 10,000 | `chunk-phacttch.js@734042, 762384, 768643, 3541279, 4160334` |
 | Hook default timeout | 600,000 ms | `chunk-phacttch.js@2915934` |
 | UserPromptSubmit hook timeout | 30,000 ms | same line, `S5e` |
 | Model-switch hook timeout | 30,000 ms | same line, `w5e` |
@@ -1134,6 +1136,49 @@ interface ToolResultUserMessage {
 | MCP inline image mimes | jpeg, png, gif, webp | `chunk-9158d2ng.js@~66300` |
 
 ---
+
+## 5b. Audit addendum (second-pass review)
+
+A second reviewer checked this report against the extracted source and runtime logs: about
+138 claims verified, about 52 partial, 1 contradicted (the Read `maxResultSizeChars` row,
+corrected in place), 5 unanchored. The reviewer also found one behavioural error in the
+pseudocode (detached results skip PostToolUse), corrected in place after I checked
+`chunk-phacttch.js@2301574`. No runtime evidence contradicts a verified static claim. The
+items below were reported by the reviewer and are **not yet re-verified or merged into the
+text**; the original wording is superseded where they differ:
+
+- Hook timeouts: 600,000 ms is the command default only. Prompt hooks default to 30,000 ms
+  (`chunk-phacttch.js@~2900100`) and agent hooks to 60,000 ms (`@~2910700`).
+- `sandboxOverride` does not block every auto-mode fast path. It excludes only the acceptEdits
+  simulation (`@3329142`) and desktop-forward (`@3333639`) and forces a headless deny.
+- The bypass test uses the effective mode and a second opt-out `!Fre(name)`. The dontAsk branch
+  has a `!Ve` (Chrome domain grant) exemption. Classifier outcomes also include
+  `refusedBySafeguard`, `onBlock==="flag"` and four transcript-too-long arms. The headless deny
+  text is `jpn()` ("Permission to use X has been denied..."), not "requires interactive approval".
+- dontAsk's deny message includes the tool name and trailing text; the slow-permission log fires
+  only in auto mode.
+- Step 9 invalid-input denies are wrapped in `<tool_use_error>`. Runtime E13c shows the interrupt
+  text `pv` ("doesn't want to proceed with this tool use"), not the "take this action right now" text.
+- `strictInputJSONSchema` is a second strict path gated by `tengu_structured_output_strict`
+  with no `Tfr` check. A `classifierOnly` plus `wge` carve-out skips the whole-tool and field deny.
+  mcpServerPolicy ask rules have a second skip condition (`CLAUDE_CODE_REMOTE`, bypass mode,
+  `tengu_mcp_server_policy_bypass_exempt`).
+- Contracts: the HookInput contract omits `background_tasks` and `session_crons` on Stop and
+  SubagentStop (runtime E07a confirms them) and extras on PreModelSwitch, PostModelSwitch and
+  SessionStart. `ToolPermissionContext` omits `servedCall`, `sandboxAutoAllowSuspended`,
+  `chromeClassifierFloorEnabled`. `asyncRewake` is honoured only when `(!ke()||Dpt())`.
+- Hook dedupe is per hook type, not only command hooks. The literal-list matcher character class
+  is `[A-Za-z0-9_|, -]` only for events in set `gX`, otherwise `[A-Za-z0-9_|]`.
+- MCP `isConcurrencySafe` also includes `mayOverlap`. The MCP idle-timeout formula is
+  `min(max(r, timeout, 1000), zs)`; the "HTTP per-request floor 60000" role is unverified.
+  The PowerShell ask list is incomplete (scheduled tasks, WMI/CIM, wmic, Invoke-Item).
+- `effectiveMaxPermission` lives in `chunk-9158d2ng.js@126933`, not `chunk-032sc1gt.js@~4100`
+  (that is the auth stub). "Settings file edit auto-allowed in bypass" is inference.
+  `shouldDefer` exists in `chunk-phacttch.js` (780103, 1946189, 4175412); `interruptBehavior`
+  was not found anywhere. The Q1 tool-name literal list has no anchors.
+- Wrong or drifted offsets (behaviour right): lines 21, 78, 89, 101, 108, 109, 206, 227, 228,
+  245-246, 348, 420, 459, 473, 493, 501-502, 505, 609-610. The scratchpad ledger lists the
+  corrected offsets.
 
 ## 6. Open questions for runtime experiments
 

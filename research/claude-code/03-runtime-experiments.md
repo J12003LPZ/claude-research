@@ -390,7 +390,7 @@ sources (user settings were excluded on purpose; managed settings would need adm
 | Item | Reason | What would settle it |
 |---|---|---|
 | Interactive TUI behaviour (rendering, Esc, permission dialog) | needs a PTY; REA process capture is unsupported on native Windows | run under WSL with REA `capture_process_scenario`, or ConPTY harness |
-| Approval granted through a host (`can_use_tool` control request) | not built | extend `run_stream.py` with `--permission-prompt-tool stdio` |
+| Approval granted through a host (`can_use_tool` control request) | harness built (`run_stream.py --permission-behavior allow\|deny`, unit-tested), first run E19 blocked | E19 ended `Not logged in` before any model request (`result.terminal_reason: api_error`, 1 request: `HEAD /api/hello`, no tool ran). STRONGLY INFERRED cause: `run_exp.py` scrubs `ANTHROPIC_*` from the child, and this session authenticates through such variables instead of a stored login. Rerun from a session with a stored login, or pass the auth variables through deliberately |
 | Subagent failing mid-run, nested subagents | time | prompt a child to call a denied tool; set depth |
 | Summarization request failure | would need a fault on a specific request | `fault.json` keyed on the compaction instruction |
 | Process kill and recovery on resume | not run | kill the CLI during a tool, then `--resume` |

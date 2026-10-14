@@ -157,7 +157,8 @@ Parse tool input once, at block close. Emit the completed block upward at close.
 CHOICE: implement retries in your own wrapper with the SDK's retries set to 0, as the
 original does (retry count header stayed 0), so retry policy, events and cancellation live
 in one place. Add an idle watchdog (the original uses 180 s without bytes and 300 s without
-events, static only).
+events by default, static only; when a stream-idle timeout is configured the 180 s byte default
+is skipped and the byte timeout equals the event timeout, `chunk-nfvf6nm0.js@267300`).
 
 Concurrency: several requests may be in flight (parallel subagents, E10). The adapter must
 be reentrant and usage accounting must be per request, then summed per model.

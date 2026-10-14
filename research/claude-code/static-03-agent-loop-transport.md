@@ -265,8 +265,11 @@ internal end-of-turn checks). Result `{blockingErrors, preventContinuation, goal
   a cap of 0 or less disables the check.
 - `Za` also injects internal meta nudges that act like blocking results (brief-mode enforcement,
   "you must call the structured output tool", subagent hand-back) (`@67408` to `@70600`).
-- Stop hooks are skipped when the query is aborted in a bare/print "wn()" mode, or when
-  `settingsHooksOff` is set (`@67408`).
+- Stop hooks are skipped when `wn()` is true and the abort signal is **not** set, or when
+  `settingsHooksOff` is set (`@67408`, `if(wn()&&!s.abortController.signal.aborted)return`).
+  Audit correction: the first version read this as "aborted in bare/print mode". `wn()` is not
+  a bare/print-mode test; the reviewer traced it to a process-shutdown-committed flag
+  (`chunk-80kqkekd.js@150434`, set at `chunk-fzzrkchm.js@491900`), not re-verified by me.
 
 **F3.4 Output-limit recovery. VS**
 - The API client yields a synthetic API-error assistant message when `stop_reason` is
@@ -1371,6 +1374,44 @@ Env vars that tune the above (all read in the cited code): `CLAUDE_CODE_MAX_RETR
 
 ---
 
+## 5b. Audit addendum (second-pass review)
+
+A second reviewer checked 140 claim groups against the extracted source and the runtime
+logs: 108 verified, 21 partial, 2 contradicted (corrected in place above), 8 not
+source-checkable (3 process statements, 5 open-question predictions). No committed runtime
+evidence contradicts a verified static claim. Reported by the reviewer, **not yet re-verified
+or merged into the text** (the original wording is superseded where they differ):
+
+- F6.4: the 180 s byte default applies only when no stream-idle env or setting is set, can be
+  overridden by flag `tengu_byte_stream_idle_timeout_ms`, and applies to first-party, gateway and
+  `anthropicAws` providers plus the Bedrock opt-in (`chunk-nfvf6nm0.js@267300`, `@273109`).
+- F7.5: the foreground source set is an exact-key set (`repl_main_thread`, five
+  `repl_main_thread:outputStyle:*` variants, `sdk`, any `agent:` prefix, undefined), not
+  `repl_main_thread*` (`chunk-cvvnq4he.js@258000`). The 5xx fallback applies only outside watchdog
+  mode; model-not-found and permission fallbacks can use an access fallback model with no
+  `fallbackModel` set (`chunk-phacttch.js@2728900`).
+- F7.11: `maxSleptThrough` and `maxOutputFiltered` are gated by flags `tengu_tidy_cloud` and
+  `tengu_eager_rain` (`@2743760`, `@2808896`).
+- F10.4: runtime captures show `hook_started`, `hook_response`, `task_started`,
+  `task_notification` and `permission_denied` frames on stdout via paths other than the `kk`
+  filter, so the frame list is incomplete; the `result` frame is rewritten when
+  `deferred_tool_use` is set.
+- F10.5: `system/init` also carries `per_turn_effort_active` and `powershell_path` (confirmed by
+  runtime init keys).
+- 3.3 pseudocode: the `permission_denied` model fallback is thrown before the retry loop, not
+  inside the catch (`chunk-phacttch.js@2723307`).
+- F5.1: the request timeout is `API_TIMEOUT_MS ?? settings api_timeout_ms ?? 600000`.
+- F5.4: the "workload identity" label is inference; the real code is near
+  `chunk-nfvf6nm0.js@264000`.
+- F8.4: the cost function also has a long-prompt row selection and a US-geo multiplier
+  (`chunk-cvvnq4he.js@286803`, `@287164`).
+- F6.7: results are discarded by the executor's `discarded` flag, not tombstoned
+  (`chunk-93pksqr2.js@48497`, `@169318`).
+- Scope: `Ad` is about 70 KB, not 63 KB. `parent_tool_use_id` and `priority` were not found in
+  the cited schema window; tool-reference stripping in `yT` was not found as a literal.
+- Unproven: the `x-client-request-id` first-party header claim (proxied captures do not show it).
+- Offsets more than 500 characters off (content correct) at F4.1, F5.6, F6.4, F7.3, F7.7, F8.4.
+
 ## 6. Open questions for runtime experiments
 
 1. **Assistant message granularity on the wire.** Static reading says one `assistant` frame per
@@ -1404,8 +1445,11 @@ Env vars that tune the above (all read in the cited code): `CLAUDE_CODE_MAX_RETR
 10. **Context-overflow adjustment.** Proxy returning the 400 text once; verify the second request's
     `max_tokens` equals `limit - input - 1000`.
 11. **Idle watchdog floor.** Set `CLAUDE_STREAM_IDLE_TIMEOUT_MS=15000` and stall the proxy stream
-    after `message_start`; static reading predicts the event watchdog still waits 300 s while the
-    byte watchdog (180 s first party, or `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS`) fires first.
+    after `message_start`. Audit correction (`chunk-nfvf6nm0.js@267300`, `dw`): the event
+    timeout is `max(env, 300000)`, and when the stream-idle env or setting is set the 180 s
+    first-party byte default is skipped, so the byte timeout equals the event timeout
+    (300 s or more) unless `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS` is set. The earlier
+    prediction that the byte watchdog fires first at 180 s is wrong for this configuration.
 12. **Non-streaming fallback.** Close the SSE connection before any event; verify a second POST
     with `stream:false`, `max_tokens <= 64000`, and that `streaming_fallback_began` produces no
     SDK frame.

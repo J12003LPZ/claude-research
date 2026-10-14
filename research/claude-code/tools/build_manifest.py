@@ -35,7 +35,9 @@ def mask_static_copies():
     user = getpass.getuser()
     rx = re.compile(r"(?i)((?:[\\/]+|--)Users(?:[\\/]+|-))" + re.escape(user) + r"(?![A-Za-z0-9])")
     for sub in ("rea", "static", "config", "sessions"):
-        for f in glob.glob(os.path.join(OUT, sub, "*")):
+        for f in glob.glob(os.path.join(OUT, sub, "**", "*"), recursive=True):
+            if os.path.isdir(f):
+                continue
             t = open(f, encoding="utf-8", errors="replace").read()
             t2 = rx.sub(lambda m: m.group(1) + "<user>", t)
             if t2 != t:
@@ -50,10 +52,10 @@ def main():
             continue
         name = os.path.basename(d)
         files = {}
-        for f in sorted(glob.glob(os.path.join(d, "*"))):
+        for f in sorted(glob.glob(os.path.join(d, "**", "*"), recursive=True)):
             if os.path.isdir(f):
                 continue
-            files[os.path.basename(f)] = {"sha256": sha(f), "bytes": os.path.getsize(f)}
+            files[os.path.relpath(f, d).replace("\\", "/")] = {"sha256": sha(f), "bytes": os.path.getsize(f)}
             text = open(f, encoding="utf-8", errors="replace").read()
             for label, rx in FORBIDDEN:
                 for m in rx.finditer(text):

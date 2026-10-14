@@ -221,14 +221,14 @@ Anchor: `if(h>0&&!V&&!YL(he))return[]`.
 **F2.7 (VS) Rule frontmatter.** `LZn` at `@656270` reads frontmatter key `paths`, strips a trailing `/**`, and drops the list if it is empty or all `**`. The result is stored as `globs`. `zie` at `@675322` loads a rules directory with `conditionalRule:true` and keeps only rules whose globs match the target path, using gitignore-style matching (`.ignores(G)`) on a path relative to the project root. **SI**: the eager walk (`conditionalRule:false`) keeps only rules without globs; the filter line inside `Gae` was cut off in my read.
 
 **F2.8 (VS) Nested / lazy loading.** `Byn` at `@3682562` runs each turn as attachment label `nested_memory`. Tools push file paths into `pendingNestedMemoryTriggers`; `Byn` moves them into `nestedMemoryAttachmentTriggers` and calls `r_n(path, ...)` for each. `r_n` (`@3672607`) iterates `iar(path, ...)` to collect instruction files for directories between the cwd and the touched file plus conditional rules that match it, and returns `nested_memory` attachments. Files that cannot be shown are tracked as `withheld_memory`.
-Serialization: `nested_memory` becomes a meta user message `Contents of <path>:\n\n<content>` wrapped in the reminder tag (`@4461765`).
+Serialization: `nested_memory` becomes a meta message `Contents of <path>:\n\n<content>` wrapped in the reminder tag (`@4461765`). **Audit correction (runtime):** on the wire this message has `role:"system"`, not user. Captures C2 and E08 show it, driven by `systemTurns` and the `mid-conversation-system` beta (`@2689200`, `@135509`); the first version never connected the two. The environment block travels the same way.
 
 **F2.9 (VS) Injection path: two renderings.** This is the main structural finding of this pass.
 
 - *Inline rendering* (legacy): `VXo` at `@828900` prepends **one meta user message** to the message list. Content is `Tyr` + one `# <key>\n<value>` entry per user-context key + `Bms`. `Tyr` opens the `<system-reminder>` tag and `Bms` closes it (`chunk-3qrxzjv5.js@41227`). The `claudeMd` key holds the `fHe` text.
 - *Announced rendering* (default): `ts` in `chunk-93pksqr2.js@30700` empties `userContext` and routes the content into **attachments**: `instructions` (the files), `session_context` (email, project, git status, perforce), `date`, `context_sections`, `coordinator_context`. Each becomes its own meta user message wrapped in the reminder tag.
 
-Selection: `Y2t()` at `chunk-phacttch.js@135275` returns `rf()`, which reads flag `tengu_foamy_spring` with default **true** (`chunk-cvvnq4he.js@142950`). A conversation that already recorded a rendering in its `prompt_snapshot` attachment keeps it (`yc`), and one that already has a `session_context` attachment stays announced (`hc`). `bareFork` skips routing.
+Selection (**audit correction**): the first version said flag `tengu_foamy_spring` selects the rendering. `ts` (`chunk-93pksqr2.js@30700`) has one call site and no flag gate. It takes the inline branch only when a recorded snapshot says inline (`yc(messages) ?? hc(messages)` equals `"inline"`) or via the catch fallback `ea`; otherwise it is announced. `Y2t()` (`chunk-phacttch.js@135275`) reads `rf()`, the flag with default true (`chunk-cvvnq4he.js@142950`), but that only controls honouring and recording a rendering. A conversation that already has a `session_context` attachment stays announced (`hc`). `bareFork` skips routing. Runtime E01 agrees: four text blocks in `messages[0]`.
 Anchors: `rendering:"announced"`; `xe({content:Tyr+Object.entries(n).map(([r,s])=>\`# ${r}`.
 
 **F2.10 (VS) Instruction updates are deltas.** `q5o` at `@130600` compares the current file set against the last full `instructions` attachment plus later deltas (`gkn`). It emits `{files: changedOrNew, removed?, changed:true}` or nothing. `Rlt` renders a delta with a sentence saying each file replaces its earlier copy and lists `Instructions no longer present: <path>`.
@@ -299,9 +299,9 @@ Short-circuits: returns `[]` for one agent-context kind; with `CLAUDE_CODE_SIMPL
 
 Anchor: `Bd("deferred_tools_delta",()=>Promise.resolve(a4t(`.
 
-**F4.2 (VS) Serialization.** A table of `type -> (attachment) => Message[]` sits at `chunk-phacttch.js@4456830` to `@4471125` (84 keys), followed by a `switch` handling 22 more types (`file`, `image`, `pdf`, `notebook`, `mcp_resource`, `queued_command`, `relevant_memories`, `invoked_skills`, `plan_mode`, `plan_mode_reentry`, `auto_mode`, `todo_reminder`, `task_reminder`, `task_status`, `diagnostics`, `hook_success`, `async_hook_response`, `deferred_tools_delta`, `tool_search_usage_reminder`, `attention_budget`, `context_efficiency`, `text`).
+**F4.2 (VS) Serialization.** A table of `type -> (attachment) => Message[]` sits at `chunk-phacttch.js@4456830` to `@4471125` (88 top-level keys by brace-aware parse, audit correction from 84), followed by a `switch` with 22 outer cases. The list below is corrected: `image`, `pdf`, `notebook`, `text` are nested inside `case "file"`, and the switch also handles `agent_listing_delta`, `mcp_instructions_delta`, `mcp_dropped_tools_delta`, `memory_update`, which the first version omitted. First-version list (`file`, `image`, `pdf`, `notebook`, `mcp_resource`, `queued_command`, `relevant_memories`, `invoked_skills`, `plan_mode`, `plan_mode_reentry`, `auto_mode`, `todo_reminder`, `task_reminder`, `task_status`, `diagnostics`, `hook_success`, `async_hook_response`, `deferred_tools_delta`, `tool_search_usage_reminder`, `attention_budget`, `context_efficiency`, `text`).
 
-The common pattern is `_l([xe({content, isMeta:true})])`: a **user-role** message flagged `isMeta`, whose text blocks are each wrapped by `Kl` in the reminder tag (`_l` at `@4441076`). Many types serialize to `[]` (UI-only): for example `withheld_memory`, `prompt_snapshot`, `prompt_render_point`, `deferred_tools_record`, `already_read_file`, `hook_cancelled`, `max_turns_reached`.
+The common pattern is `_l([xe({content, isMeta:true})])`: an internal **user-role** message flagged `isMeta` (on the wire, nested memory and the environment block are sent as `role:"system"` when the mid-conversation-system beta is on; see F2.8), whose text blocks are each wrapped by `Kl` in the reminder tag (`_l` at `@4441076`). Many types serialize to `[]` (UI-only): for example `withheld_memory`, `prompt_snapshot`, `prompt_render_point`, `deferred_tools_record`, `already_read_file`, `hook_cancelled`, `max_turns_reached`.
 Anchor: `nested_memory:(e)=>_l([xe({content:\`Contents of ${e.content.path}:`.
 
 Deferred-tool announcements use five fixed lead sentences at `@4471150` (deferred tools now available via tool search; tools just became available; updated definitions; no longer available; now available).
@@ -451,7 +451,7 @@ The prompt is sent as a normal **user** message appended after the conversation.
 
 `kir` then adds `compactMetadata.preCompactDiscoveredTools` (sorted names of deferred tools already loaded), `postTokens`, `durationMs`. Partial compaction also uses `compactMetadata.preservedMessages.anchorUuid` (seen in `ss`, `chunk-93pksqr2.js@35900`).
 
-**F10.2 (VS) Summary message.** A **user** message with `isCompactSummary:true` and `isVisibleInTranscriptOnly:true`. Text from `L8` (`@2504760`): optional warning about foreign artifact content, a fixed lead sentence (`SRt`, `chunk-8mpz435d.js@32634`, begins `This session is being continued from a previous conversation`), the cleaned summary, an optional pointer to the transcript path, an optional note that the earliest part was not covered, and (when not suppressed) follow-up guidance.
+**F10.2 (VS) Summary message.** A **user** message with `isCompactSummary:true` and `isVisibleInTranscriptOnly:true`. Text from `L8` (`@2504760`): optional warning about foreign artifact content, a fixed lead sentence (`SRt`, `chunk-8mpz435d.js@32634`, begins `This session is being continued from a previous conversation`), the cleaned summary, an optional pointer to the transcript path, an optional note that the earliest part was not covered, and follow-up guidance **only when `suppressFollowUpQuestions` is true** (`@2505860`; `kir` passes true for auto compaction). Audit correction: the first version said "when not suppressed", which is the opposite. The guidance reads "Continue the conversation from where it left off without asking the user any further questions. Resume directly ...", plus a prompt-arm line and "Pick up the last task as if the break never happened."
 
 **F10.3 (VS) Result shape and order.** `kir` returns `{boundaryMarker, summaryMessages, messagesToKeep:[], attachments, hookResults, userDisplayMessage, preCompactTokenCount, postCompactTokenCount, truePostCompactTokenCount, compactionUsage, ptlAttempts, promptCacheSharingEnabled}`. Full compaction keeps **no** original messages.
 
@@ -495,9 +495,9 @@ Call site: `Kk=LMt({hasThinking:ch,toolClearing:jq?.edit})` at `@2803427`.
 Edit shape: `{type:"clear_tool_uses_20250919", trigger:{type:"tool_uses", value}, keep:{type:"tool_uses", value:5}, clear_at_least:{type:"input_tokens", value:20000}, exclude_tools:[…]}`. The server reports back in `context_management.applied_edits[].cleared_tool_uses` / `cleared_input_tokens`; telemetry `tengu_tool_result_clearing_after_idle_server_report`.
 **SI**: the intent is to clear old tool results on the first request after a long idle gap, when the prompt cache has expired anyway (3900 s is just past a 1 h TTL).
 
-**F11.3 (VS) Client-side placeholder.** `gLn="[Old tool result content cleared]"` at `chunk-phacttch.js@4399105` and detectors `Cqr` / `Aqr`. No writer that assigns this constant as tool-result content was found (`content:gLn` has zero hits across chunks). **SI**: this build only recognizes legacy placeholders in resumed transcripts and does not create them.
+**F11.3 (VS, corrected by audit) Client-side placeholder.** `gLn="[Old tool result content cleared]"` at `chunk-phacttch.js@4399104` is only recognized there (detectors `Cqr` / `Aqr`). The identical literal exists as `Tt` in `chunk-3qrxzjv5.js@99080` and **is written** as tool-result content: `mgs` (`@101370`) collects candidates, and `FXt` (`@100834`) replaces matching `tool_result` content with the persisted-output text or `Tt`. `mgs` has a live caller in `chunk-pcraa501.js` (`mgs(e,n,{keepRecent:5,persist,agentId})`, labelled `[CONTEXT_HINT_REJECT]`, reached from the `compact_hint_reject` path). So a client-side tool-result clearing exists in this build. The earlier claim that it only recognizes legacy placeholders was wrong: the zero-hit search covered one chunk only. Trigger conditions of the hint path were not read (**UNK**).
 
-**F11.4 (VS) Legacy microcompact names are gone.** `tengu_cached_microcompact`, `tengu_time_based_microcompact`, `tengu_microcompact`, `cache_edits` have zero hits in `chunk-phacttch.js`. A "snip" mechanism exists (`snipTokensFreed` parameter in the autocompact call); its body was not read (**UNK**).
+**F11.4 (VS, corrected by audit) Legacy microcompact names.** In `chunk-phacttch.js`, `tengu_cached_microcompact`, `tengu_time_based_microcompact`, `tengu_microcompact`, `cache_edits` have zero hits. Across the whole package `tengu_time_based_microcompact` exists once, at `chunk-3qrxzjv5.js@101708`, emitted by `mgs` with trigger `context_hint`; the other three names have zero hits anywhere. "Gone" is therefore false for one of the four. A "snip" mechanism exists (`snipTokensFreed` parameter in the autocompact call); its body was not read (**UNK**).
 
 ### 2.12 Failure handling (Q12)
 
@@ -830,6 +830,43 @@ interface CompactTracking { compacted: boolean; turnId: string; turnCounter: num
 Environment variables read in this subsystem (all **VS** by name): `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`, `CLAUDE_CODE_BLOCKING_LIMIT_OVERRIDE`, `CLAUDE_CODE_AUTO_COMPACT_WINDOW`, `DISABLE_COMPACT`, `DISABLE_AUTO_COMPACT`, `CLAUDE_CODE_MAX_CONTEXT_TOKENS`, `CLAUDE_CODE_DISABLE_1M_CONTEXT`, `CLAUDE_CODE_COLD_COMPACT`, `CLAUDE_CODE_CURRIED_TRINKET`, `FORCE_PROMPT_CACHING_5M`, `ENABLE_PROMPT_CACHING_1H`, `ENABLE_PROMPT_CACHING_1H_BEDROCK`, `CLAUDE_CODE_PROMPT_CACHE_TTL`, `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL`, `CLAUDE_CODE_DISABLE_ATTACHMENTS`, `CLAUDE_CODE_SIMPLE`, `CLAUDE_CODE_DISABLE_CLAUDE_MDS`, `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS`, `CLAUDE_CODE_PERFORCE_MODE`, `SLASH_COMMAND_TOOL_CHAR_BUDGET`, `CLAUDE_CODE_DISABLE_AUTO_MEMORY`, `CLAUDE_CODE_REMOTE_MEMORY_DIR`, `CLAUDE_COWORK_MEMORY_PATH_OVERRIDE`, `CLAUDE_COWORK_MEMORY_GUIDELINES`, `CLAUDE_MEMORY_STORES`, `CLAUDE_CODE_POST_TURN_MEMORY`, `CLAUDE_CODE_ACT_DONT_REDERIVE`, `CLAUDE_CODE_SESSION_KIND`, `CLAUDE_JOB_DIR`.
 
 ---
+
+## 5b. Audit addendum (second-pass review)
+
+A second reviewer checked about 156 claim entries against the extracted source and runtime
+logs: 126 verified, 25 partial, 4 contradicted, 1 not found. The four contradictions are
+corrected in place above (F2.9 rendering selection, F4.2 key count and switch list, F10.2
+follow-up guidance, F11.3 and F11.4 client-side clearing); I checked the source for the
+F2.9, F10.2 and F11.3 corrections myself. The `getSystemPromptSectionCache` and
+`clearSystemPromptSectionState` names (F1.5) occur in no chunk; the behaviour is right and
+the names are author labels. Runtime evidence does not contradict a verified static claim.
+Reported by the reviewer, **not yet re-verified or merged into the text**:
+
+- Section 6, Q1 and Q2: the rendering is announced (E01: four text blocks in `messages[0]`),
+  and the lab profile sends 3 system blocks (74, 62 and 8,777 chars) with no `scope:"global"`,
+  so the "4 or 5 blocks" expectation does not hold.
+- F1.3: `tool_param_json` is gated by `xTs()||((ZH||Dbe)&&tengu_silent_harbor)`; session rows
+  22 to 24 are plain pairs, not `em` entries. F1.9: `GXo` is at `@828427`, and `cacheBreaker`
+  is not set in `oeo`. F1.8: `sHn` has a missing `e.recorded` override branch.
+- F2.1 row 9: the additional-directories loader is gated by
+  `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD`. F3: `pr` is at `@32503` and honours `omitGitStatus`.
+- F5: `loadedFrom` takes four values (`commands_DEPRECATED`, `plugin`, `skills`, `syncedSkills`).
+  F6: `mcpInfo.serverName` takes precedence over the split of the tool name.
+- F7.x: `um` has a `tyo` clamp and a `claude-sonnet-4-6` override. F8: breaker offsets are
+  `Won@2591976`, `rIt@864391`; the autocompact call is at `chunk-93pksqr2.js@137197`; `acr` has
+  extra guards (no explicit model set, no earlier failures).
+- F9: only the `control` prompt arm expects analysis plus summary; other arms expect summary
+  only. Compaction `max_tokens` is 128000 on the fork path (runtime E17a, E17c).
+- F10.x: `compactMetadata` also carries `cumulativeDroppedTokens` and the preserved segment
+  fields (runtime shows both on full compaction; the contract in section 4 omits them). `OYe`
+  is the `plan_mode` reminder, only in plan mode. None of the four compaction headers appears
+  on a runtime request in E17.
+- F12: `Lon` is at `@2576463` and is silent for `Ohe` and `RJ`, not only abort. F13.3: `Ioe=25000`
+  counts characters, not bytes. F13.6: `MAX_SESSION_BYTES` is 61440 (`@3641661`).
+- Contracts: `CacheControl` `ttl` can be omitted rather than `"5m"`; `WireTool` lacks `citations`.
+- Offsets drift by up to about 400 characters in the constants table. Wrong anchors:
+  `KI` is at `chunk-3qrxzjv5.js@38320`; `tyr` at 2754063 and `nyr` at 2754788; `Jfe` at 2751535;
+  `ns` starts at `@32964`.
 
 ## 6. Open questions for runtime experiments
 

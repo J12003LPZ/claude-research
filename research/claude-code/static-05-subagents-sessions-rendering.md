@@ -185,7 +185,7 @@ that case it allows only the vetted web-fetch dispatch and otherwise returns `pa
     - fork: `Dt = parent's already-rendered system prompt` (or rebuilt identically), `we = M5r(prompt, assistantMessage)`, and `forkContextMessages = parent.messages`.
 12. **Tool pool**: normal agents get a freshly assembled pool `toolCatalog.assembleToolPool({...permCtx, mode: agent.permissionMode ?? parentMode}, mcpTools)`; forks get `parent.options.tools` with `useExactTools:true`.
 13. **Worktree** (if `isolation === "worktree"`): `v2e(UQo(agentId))` creates it before launch.
-14. **Concurrency slot**: `Ln(e)` refuses when `taskRegistry.getConcurrentSubagents() >= isr()`; `isr()` is `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS ?? 20` (`kFo=20`, `chunk-phacttch.js@1872101`). The refusal is skipped by flag `tengu_amber_kestrel` or ultracode mode. The slot is a counter in app state (`runningSubagents`), released by an idempotent closure.
+14. **Concurrency slot** (audit correction, not re-verified by me: the reviewer reports the `Ln` check actually runs early, right after the sync/async decision and the abort/budget gate, and again in `Kn` just before the slot is taken, `chunk-h6wy99cb.js@~18711`, `@~24315`, not after worktree creation as ordered here): `Ln(e)` refuses when `taskRegistry.getConcurrentSubagents() >= isr()`; `isr()` is `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS ?? 20` (`kFo=20`, `chunk-phacttch.js@1872101`). The refusal is skipped by flag `tengu_amber_kestrel` or ultracode mode. The slot is a counter in app state (`runningSubagents`), released by an idempotent closure.
 15. Dispatch to the async or sync branch (section A4 and A3).
 
 **What `runAgent` (`vC`, `chunk-jwmqjyrb.js@121161`) builds** (**VERIFIED-STATIC**):
@@ -738,7 +738,7 @@ table and kitty decoding details, scrollback/"static" handling, and the print-mo
 
 **Stack** (**VERIFIED-STATIC**):
 
-- A **custom fork of Ink** in `chunk-v44rfc3q.js` (360 KB) with public surface re-exported by `chunk-tzda8nh4.js` (`createRoot`, `render`, `Box`, `Text`, `Ansi`, `RawAnsi`, `Link`, `NoSelect`, `useAnimationFrame`, `measureElement`). Host node names are Ink's: `ink-root`, `ink-text`, `ink-virtual-text`, `ink-link` (`@178299`).
+- A **custom fork of Ink** in `chunk-v44rfc3q.js` (360 KB) with the public surface (`createRoot`, `render`, `Box`, `Text`, `Ansi`, `RawAnsi`, `Link`, `NoSelect`, `useAnimationFrame`, `measureElement`) in `chunk-8b588q8f.js` (7,242 chars). Audit correction: the first version attributed this surface to `chunk-tzda8nh4.js`; those names occur in neither `chunk-tzda8nh4.js` nor `chunk-v44rfc3q.js`, whose export lists are minified. I confirmed by searching all chunks that `RawAnsi`, `measureElement` and `useAnimationFrame` occur only in `chunk-8b588q8f.js`. The `chunk-tzda8nh4.js` facade carries render, Box, Text, Link and NoSelect. Host node names are Ink's: `ink-root`, `ink-text`, `ink-virtual-text`, `ink-link` (`@178299`).
 - **React reconciler bundled in the same chunk** (`Be.createContainer`, `Be.updateContainer`, `updateContainerSync` at `@122679`, `@126685`), with event priorities: `keydown/keyup/click/focus/blur/paste/action` are discrete, `resize/scroll/wheel/mousemove` are continuous (`@175638`).
 - **Layout engine: a JavaScript implementation of the Yoga API**, not a WASM binary. `calculateLayout` at `@148887` is plain JS that tracks `nodesVisited`, `measureCalls`, `measureCacheHits`. Root is created with `hs.Config.create()`. The root width is the terminal column count on a TTY; off a TTY it lays out at auto width capped at `8192` (`qs`, `@305005`).
 - **Screen model**: frames are cell grids with pooled chars, styles and hyperlinks (`screen.cells`, `charPool`, `hyperlinkPool`, `stylePool`). Two frames are kept (`frontFrame`, `backFrame`) and the log renderer (`this.log.render(prev, next, altScreenActive, useScrollRegions)`, `@324865`) emits a patch list.
@@ -1152,6 +1152,49 @@ type PtyControl =
 | Synchronized update / alt screen / bracketed paste modes | 2026 / 1049 / 2004 | `chunk-7kwz7nym.js@665` |
 
 ---
+
+## 5b. Audit addendum (second-pass review)
+
+A second reviewer checked 224 claim rows against the extracted source and runtime logs: 155
+verified, 63 partial (14 of these not re-read rather than faulted), 1 contradicted, 5 excluded
+as scope notes. All 45 constant values in section 5 check out. Runtime evidence does not
+contradict a verified static claim. Two findings are corrected in place above (renderer facade
+chunk, concurrency check order). The rest were reported by the reviewer and are **not yet
+re-verified or merged into the text**; the original wording is superseded where they differ:
+
+- Line 20: the `chunk-yy3r64d0.js` export body is 161 chars, not 181; `chunk-1stv0pyw.js` is
+  not a few-hundred-byte shim (its export list is 8,480 bytes).
+- A1: the "Duplicate agent name" log compares the whole combined list across sources
+  (`chunk-phacttch.js@2090584`, `bHo`). The `--agents` schema `Z3` (`@1850754`) has `prompt` but no
+  `color` and no `cacheTtl`, so "otherwise the same keys" is wrong.
+- A3: the tool_result can be wrapped in a "[Subagent hand-back]" frame, which runtime E10 and
+  E11 show (`chunk-7hzazptj.js@3965`). The completed-output contract omits `resolvedModel`,
+  `toolStats` and `usage` (runtime E11 `tool_use_result`); `canContinueAgent` is required in
+  the async schema (`chunk-h6wy99cb.js@14500`).
+- A4: `Au` (getTaskOutputPath) is defined in `chunk-9613h2kb.js@3114`; on Windows
+  `initTaskOutputAsSymlink` (`@19899`) uses a hardlink with a copy fallback, not a symlink.
+- A6: the cleanup stages omit `tetherThreadState`, `propagateNestedMemory` and the
+  `deferredWhileParked` deferral (`chunk-jwmqjyrb.js@143450`).
+- B10 to B13: the `api-request-shape` transcript entry uses `shapeHash` and also carries
+  `shape`, `timestamp`, `version`. `FLUSH_INTERVAL_MS=100` is overridden when a remote ingress URL
+  or internal event writer is set (`@~4592000`). `promptId` is always deleted on repair
+  (`@1288300`). The retention sweep is skipped on validation errors only when a cleanup key is
+  unknowable, and a policy setting bypasses it (`chunk-91kaxfwm.js@4139`).
+- C14: `startCapturingEarlyInput` and `consumeEarlyInput` are in `chunk-0p1t5w5n.js`; the
+  reply-event list omits `decrpm`, `cellSize`, `osc` (`chunk-v44rfc3q.js@187450`).
+- Contracts: the PTY control contract omits the client-to-host `auth` token message
+  (`chunk-jn2r7nez.js`, `chunk-k6k3h9nt.js@7383`).
+- Section 6: the open questions are numbered 14, 15, 13.
+- Still unverified, not contradicted: the daemon paths `dispatch/rejected`, `jobs/<short>/state.json`,
+  `jobs/settled`; the on-disk directories `plans/`, `paste-cache/`, `image-cache/`, `backups/`,
+  `tasks/`; `spawn_depth` equals 1 for a top-level spawn; the resume-restore rows for model,
+  todos, cost, bridge and memory mode. The "default is background" claim is static only.
+- Promotion: E10 now verifies parallel Agent calls at runtime, so line 390 can move from
+  STRONGLY INFERRED to runtime-verified. The `.json` sidecar name in runtime logs is an artifact
+  of `tools/transcript_schema.py` (maps `.meta.json` to `.json`); the static `.meta.json` stands.
+- Offset drift of up to about 1.5 KB in `chunk-h6wy99cb.js` (`Bo` at 10309, `Fo` at 10301, MCP
+  wait at 24857, `aUt` at 45438), `chunk-k6k3h9nt.js@7051`, `chunk-jwmqjyrb.js@~143450`, and `avt`
+  defined at `chunk-phacttch.js@4224766`.
 
 ## 6. Open questions for runtime experiments
 

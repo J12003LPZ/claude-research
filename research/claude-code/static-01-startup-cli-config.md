@@ -506,15 +506,17 @@ from highest to lowest and returning the first whose own settings define the key
 | key is `extraKnownMarketplaces` or `managedMcpServers` and both are plain objects | special merge `w0t(existing, incoming)` |
 | anything else | customizer returns `undefined`, default behaviour of `A1` applies |
 
-**SI**: `L` is a de-duplicating function (unique) and `A1` is a lodash-style `mergeWith`
-(recursive deep merge of plain objects, scalar overwrite). The call shape
+**VS (upgraded by audit)**: `L` is a de-duplicating function (`[...new Set]`) and `A1` is lodash `mergeWith`
+(recursive deep merge of plain objects, scalar overwrite), confirmed at `chunk-ff982hys.js@343959` to
+`@344011` and in `chunk-2atrpakp.js`. The call shape
 `A1(target, source, customizer)` and the "return undefined to fall back" contract match.
-The primitive was not read.
 
 Post-merge policy overrides, **VS** (`@~430700`): if a policy tier exists, then
 `availableModels`, `enforceAvailableModels` and `modelPicker` are **overwritten** with the
 policy value when policy defines them, and `deniedModels` is set from policy or **deleted**
-when policy does not define it. Lower sources cannot add to these.
+when policy does not define it. Lower sources cannot add to these. Audit correction: the
+`delete` sits outside the `if(policy)` block (`chunk-ff982hys.js@430728`, `else delete r.deniedModels`), so
+`deniedModels` is dropped from the merged result even when no policy tier exists at all.
 
 Sandbox note, **VS**: when managed settings set `sandbox.filesystem.allowManagedReadPathsOnly`
 or `sandbox.network.allowManagedDomainsOnly`, entries from other files are reported as
@@ -545,10 +547,13 @@ Project settings are **not** discovered by walking up to the git root. They are 
 
 If the project settings path equals the user settings path (running in the home directory
 with configHome at `~/.claude`), the project tier is skipped. **VS**
-(`chunk-mx6ygzc6.js@~88200` `function S_()`).
+(path dedupe set `c` in `lRr`, `chunk-ff982hys.js@428702`). Audit correction: the earlier
+citation of `S_()` at `chunk-mx6ygzc6.js@~88200` was wrong; `S_()` only feeds read and warning logic.
 
 *configHome* on each OS: `CLAUDE_CONFIG_DIR` if set, else `<homedir>/.claude`.
-**SI**: `ve()` itself was not read; two independent call sites spell out the same fallback
+**VS (upgraded by audit)**: `ve` in `chunk-g17170nn.js` is `(CLAUDE_CONFIG_DIR ?? join(homedir, ".claude")).normalize("NFC")`;
+note `??` keeps an empty string, while the global config path (`chunk-47shaprq.js@4536`) uses `||`.
+Two further call sites spell out the same fallback
 (`chunk-g8typhpc.js@20611` `process.env.CLAUDE_CONFIG_DIR||ut(Lu(),".claude")`,
 `chunk-4gghv5aa.js@783434` `pg(VB.homedir(),".claude","ide")`). So:
 
@@ -573,8 +578,8 @@ Four physical inputs plus two logical ones. **VS** unless marked.
 | other | `/etc/claude-code` |
 | WSL, when `wslInherits` | also `/mnt/c/Program Files/ClaudeCode`, tried first (`chunk-7r9zgs5y.js@830`) |
 
-**SI**: `ZT()` returns `Ad.getManagedFilePath()`; that indirection was not followed, `My()`
-sits directly beside it and holds the only path literals.
+**VS (upgraded by audit)**: `ZT()` returns `Ad.getManagedFilePath()`, which caches `My()`
+(`chunk-ff982hys.js@359850` to `@360397`); `My()` holds the only path literals.
 
 Inside the directory (`fEo`, `@388896`): `managed-settings.json` is the base, then every
 entry of `managed-settings.d/` that is a file or symlink, ends in `.json`, and does not start
@@ -1562,6 +1567,37 @@ interface GlobalConfigSlice {
 
 ---
 
+## 5b. Audit addendum (second-pass review)
+
+A second reviewer checked this report claim group by claim group against the extracted
+source: 198 groups, 146 verified, 48 partial (some detail checked, some not re-read), 1
+contradicted, 3 not source-checkable (process statements). All 194 pre-appendix anchors
+resolve. Corrections already applied in place are marked "Audit correction" or "upgraded by
+audit" above. The following were reported by the reviewer and are **recorded here, not yet
+re-verified or merged into the text**; treat the original wording as superseded where they
+differ:
+
+- 2.1 row 4: version output is `VERSION + " (Claude Code)" + QB()`; a `QB()` suffix exists.
+- 2.1 row 2: `jSs` truncates `process.argv` to three entries (`chunk-eshh1gca.js@683`).
+- 2.1.2: the fleet-view path also has a fatal `sessionFactsRestored` check after the fleet
+  gate, and calls `ensureFleetGateHydrated` before `isAgentsFleetEnabled` (`cli@~15000`).
+- 2.2.3: in `preAction` the `CLAUDE_CODE_PLUGIN_DIRS` merge and the sideload check run
+  before the `version_below_minimum` gate `gbs()` (`chunk-jzzwheky.js@~46250`), the reverse
+  of the order stated.
+- 2.4.3: the project-root helper `RF` also requires root, `.git` and `.claude` to be owned by
+  the current user, and returns cwd when the root equals cwd or the real home directory.
+- 2.4.4: parent-slice gating is `S$s(Ie,he)`: no admin tier, or merge behaviour, or a flag.
+  That is broader than stated.
+- 2.4.5: the C1-escape filter is the regex `[\u007f-\u009f]`, so it also covers DEL
+  (`chunk-w8x21rf4.js@1526`).
+- 2.5.x: `ioe()` (safe env apply) runs in `preAction` after init, not inside init
+  (`chunk-jzzwheky.js@~43300`).
+- 2.6: a second fatal `shell_tool_missing` path exists (`YR()===null`, `chunk-we7c2g4z.js@~9200`).
+- 4: the `SettingsContext` contract omits six fields returned by `M()`
+  (`chunk-mx6ygzc6.js@86898`): `helperArmedFromRemote`, `helperMergesOutput`, `helperWarnings`,
+  `helperArmedFromUserWritableBase`, `credentialHelperKeysFrom`, `launchFolderKeysFrom`.
+- Env-var table: about 27 of roughly 57 rows in 2.6 were spot-checked, the rest were not.
+
 ## 6. Open questions for runtime experiments
 
 1. **macOS MDM source.** Run the macOS build's extracted chunk equivalent of
@@ -1623,8 +1659,15 @@ Method: (1) every `NAME:()=>ident` namespace export in `chunk-47shaprq.js` joine
 across all chunks. "type" is the registry parser; `raw` means the name is only read through
 `process.env` directly (count of read sites in parentheses). "Evidence" is the offset of the
 parser definition (registry) or of the first read site (raw). Roles are given in 2.6 for the
-startup-relevant ones only. Everything in this appendix is **VS** for "the name is read by
-shipped code" and nothing more.
+startup-relevant ones only. **Audit correction.** Every name below appears in shipped code,
+but not every name is read: eight raw rows are only assigned (`COREPACK_ENABLE_AUTO_PIN` at
+`cli@1332` and seven `SELF_HOSTED_RUNNER_*` timeout names in `chunk-g8typhpc.js`), and the
+first cited site for `CLAUDE_CODE_COORDINATOR_MODE` is a write (it has other read sites). Five typed rows are anchored
+outside `chunk-47shaprq.js` (`CLAUDE_CODE_MCP_SERVE_TOOL_OUTPUT`, `CLAUDE_CODE_MESSAGING_SOCKET`,
+`CLAUDE_CODE_MESSAGING_TOKEN`, `CLAUDE_CODE_TETHER_LIVE`, `CCR_AGENT_PROXY_TOKEN_FILE_DESCRIPTOR`),
+so "every export of `chunk-47shaprq.js`" is not exact; the 1,121 count in 1 and 2.6 is. The
+raw-only count (118) was not independently recomputed. Read this appendix as "the name
+occurs in shipped code" and nothing more.
 
 Totals: registry 1126, raw `process.env` 416, raw-only 118, union 1244.
 

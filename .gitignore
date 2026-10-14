@@ -1,3 +1,4 @@
 extracted/
 lab/
 *.jsc
+__pycache__/

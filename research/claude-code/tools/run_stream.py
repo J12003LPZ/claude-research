@@ -19,6 +19,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from run_exp import KEEP, LAB, SCRUB_PREFIXES, TOOLS, free_port  # noqa: E402
 
 
+def build_auto_permission_response(request_id, subtype, behavior, message):
+    """Return a host response only for a CLI can_use_tool request."""
+    if subtype != "can_use_tool" or behavior is None:
+        return None
+    response = {"behavior": behavior}
+    if behavior == "deny":
+        response["message"] = message
+    return {"type": "control_response", "response": {
+        "subtype": "success", "request_id": request_id, "response": response,
+    }}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--id", required=True)
@@ -26,6 +38,10 @@ def main():
     ap.add_argument("--script", required=True)
     ap.add_argument("--timeout", type=int, default=120)
     ap.add_argument("--env", action="append", default=[])
+    ap.add_argument("--permission-behavior", choices=["allow", "deny"],
+                    help="auto-answer can_use_tool control requests")
+    ap.add_argument("--permission-message", default="Denied by lab host",
+                    help="message used for an auto-deny response")
     ap.add_argument("rest", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     rest = [x for x in a.rest if x != ""]
@@ -53,6 +69,14 @@ def main():
     p = subprocess.Popen(cmd, cwd=a.cwd, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                          stderr=open(os.path.join(raw, "stderr.txt"), "wb"))
 
+    write_lock = threading.Lock()
+    control_events = []
+
+    def send_line(value):
+        with write_lock:
+            p.stdin.write((json.dumps(value) + "\n").encode("utf-8"))
+            p.stdin.flush()
+
     def reader():
         with open(os.path.join(raw, "stdout.jsonl"), "wb") as plain, \
                 open(os.path.join(raw, "stdout.timed.jsonl"), "w", encoding="utf-8") as timed:
@@ -64,9 +88,26 @@ def main():
                     tag = o.get("type", "?") + ("/" + str(o.get("subtype")) if o.get("subtype") else "")
                     if o.get("type") == "stream_event":
                         tag += "/" + o["event"].get("type", "")
+                    if o.get("type") == "control_request":
+                        req = o.get("request") or {}
+                        entry = {"t_s": round(time.time() - t0, 3),
+                                 "request_id": o.get("request_id"),
+                                 "subtype": req.get("subtype")}
+                        control_events.append(entry)
+                        reply = build_auto_permission_response(
+                            o.get("request_id"), req.get("subtype"),
+                            a.permission_behavior, a.permission_message,
+                        )
+                        if reply:
+                            try:
+                                send_line(reply)
+                                entry["auto_response"] = reply["response"]["response"]
+                            except (BrokenPipeError, OSError) as e:
+                                entry["auto_response_error"] = str(e)
                 except Exception:
                     tag = "<non-json>"
                 timed.write(json.dumps({"t_s": round(time.time() - t0, 3), "tag": tag}) + "\n")
+                timed.flush()
 
     th = threading.Thread(target=reader, daemon=True)
     th.start()
@@ -79,11 +120,11 @@ def main():
             break
         try:
             if step.get("close"):
-                p.stdin.close()
+                with write_lock:
+                    p.stdin.close()
                 sent.append({"t_s": round(time.time() - t0, 3), "close": True})
             else:
-                p.stdin.write((json.dumps(step["send"]) + "\n").encode("utf-8"))
-                p.stdin.flush()
+                send_line(step["send"])
                 s = step["send"]
                 sent.append({"t_s": round(time.time() - t0, 3), "type": s.get("type"),
                              "subtype": (s.get("request") or {}).get("subtype")})
@@ -101,6 +142,7 @@ def main():
     time.sleep(0.5)
     proxy.terminate()
     run = {"id": a.id, "cwd": a.cwd, "argv": cmd[:10] + ["<debug-file>"] + extra, "prompt": None, "stdin_script": sent,
+           "control_events": control_events, "permission_behavior": a.permission_behavior,
            "extra_env_names": [kv.split("=", 1)[0] for kv in a.env], "scrubbed_env_names": scrubbed, "proxy_port": port,
            "exit_code": p.returncode, "killed": killed, "duration_s": round(time.time() - t0, 3),
            "cli_version": "2.1.296 (Claude Code)", "started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0)), "fault": None}

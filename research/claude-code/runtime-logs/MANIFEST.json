@@ -1647,6 +1647,35 @@
    "killed": null
   },
   {
+   "id": "E19-host-approval-allow",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "4bccacecea1a2f8e92a8c212626629bc3dece3e808b761d0a0b5f2eb62f51c5b",
+     "bytes": 2397
+    },
+    "http-summary.json": {
+     "sha256": "0ceaf9a4af660545775f948fd9264b2565eea7d6cdd33c25a7745204892c9256",
+     "bytes": 1135
+    },
+    "run.json": {
+     "sha256": "eadb53f9d708026000cb05ca44bf40b47e1aa249495fcc2a84f80345d6b49122",
+     "bytes": 1891
+    },
+    "stream-summary.json": {
+     "sha256": "dc79152fd55c7aa370a6eb115aaf06eef80b1ad19aa3e20e7db6df638078b9ec",
+     "bytes": 5584
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exit_code": 1,
+   "duration_s": 90.71,
+   "started": "2026-10-13T22:10:25Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
    "id": "config",
    "kind": "static-or-aggregate",
    "files": {
@@ -1699,6 +1728,26 @@
    "id": "static",
    "kind": "static-or-aggregate",
    "files": {
+    "audit/static-01-audit-ledger.md": {
+     "sha256": "49c3741efe2384cbe7ba357b11a924755b3e5c51faf398e3dcb17a4d375ce110",
+     "bytes": 25828
+    },
+    "audit/static-02-audit-ledger.md": {
+     "sha256": "3e4017bc222e35b2ec4aed040be0cee1aa4467798620ed44dda5940fdd819d71",
+     "bytes": 53530
+    },
+    "audit/static-03-audit-ledger.md": {
+     "sha256": "b8bd1b69a0fe809a9f8e421f19a7e9acb0033c1bb6c6ddfcb2731f1cc43d9521",
+     "bytes": 58845
+    },
+    "audit/static-04-audit-ledger.md": {
+     "sha256": "82d2afd1b64cae351a8b373b647ea59ae6336b9f3959d89a4443e14bd0db9f07",
+     "bytes": 63832
+    },
+    "audit/static-05-audit-ledger.md": {
+     "sha256": "5f63a16470d3e345e678138fa842ff549fa5ff3c896aba93b3ac15cf7ba72a0d",
+     "bytes": 65193
+    },
     "bun-module-manifest-2.1.296.json": {
      "sha256": "fc726ffbee1713ca17be71fb86e21c7785d5893d81546f1b1c022f906e340ebe",
      "bytes": 1554790
@@ -1714,6 +1763,14 @@
     "pe-inventory-2.1.296.json": {
      "sha256": "8f5aa87eac3b10a807f4c2ca85465248b8c7d8ddbba9c696f8460218917cd1ac",
      "bytes": 4945
+    },
+    "static-citation-audit-2.1.296.json": {
+     "sha256": "eed2a833ed9a8fb58fec3a3d82653bbcc581b037a94348edf2e50710d8964832",
+     "bytes": 302414
+    },
+    "static-claim-ledger-2.1.296.json": {
+     "sha256": "87b374a722c42a6765e35879feb188d827f0b0b10e52e56a2682b52dba7de8dd",
+     "bytes": 566229
     }
    },
    "redaction": "sanitized"
