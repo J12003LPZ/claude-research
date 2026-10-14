@@ -183,6 +183,14 @@
    "head": "Autocompact is thrashing: the context refilled to the limit within 3 turns of th"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "rapid_refill_breaker",
+   "api_error_status": null,
+   "is_error": true,
+   "num_turns": 13
+  }
+ ],
  "events": [
   {
    "type": "system",

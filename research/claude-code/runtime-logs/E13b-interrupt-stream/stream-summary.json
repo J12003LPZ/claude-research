@@ -157,6 +157,14 @@
    "head": ""
   }
  },
+ "results": [
+  {
+   "terminal_reason": "aborted_streaming",
+   "api_error_status": null,
+   "is_error": true,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

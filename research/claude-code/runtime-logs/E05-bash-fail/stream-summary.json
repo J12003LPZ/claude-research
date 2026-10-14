@@ -195,6 +195,14 @@
    "head": "Exit status: none, because the command never ran. The Bash tool blocked it with "
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

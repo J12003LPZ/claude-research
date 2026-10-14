@@ -186,6 +186,14 @@
    "head": "The output was `project` and `1`, which I've joined onto one line as `project 1`"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

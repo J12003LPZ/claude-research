@@ -186,6 +186,14 @@
    "head": "`local 1`\\n\\nThe raw output was two lines (`local` then `1`), which I joined onto "
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

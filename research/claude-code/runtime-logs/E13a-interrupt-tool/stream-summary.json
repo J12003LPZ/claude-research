@@ -186,6 +186,20 @@
    "head": "The Bash tool blocked `sleep 40` as a standalone sleep, so it never ran."
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  },
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 1
+  }
+ ],
  "events": [
   {
    "type": "system",

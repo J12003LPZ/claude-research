@@ -248,5 +248,13 @@
   "2026-10-14T04:05:35.180Z [signal] API error"
  ],
  "reactive_compact": [],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-14T04:05:34.883Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  }
+ ]
 }

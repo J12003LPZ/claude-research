@@ -167,6 +167,14 @@
    "head": "Prompt is too long"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "prompt_too_long",
+   "api_error_status": 400,
+   "is_error": true,
+   "num_turns": 1
+  }
+ ],
  "events": [
   {
    "type": "system",

@@ -195,6 +195,14 @@
    "head": "1. Wrote `out.txt` containing `mode-test` at `C:\\Users\\<user>\\cc-rea-lab\\proj-mod"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

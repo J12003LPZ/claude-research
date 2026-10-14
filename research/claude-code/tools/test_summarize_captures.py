@@ -1,10 +1,11 @@
+import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from summarize_captures import parse_sse, sanitize_run, summarize_debug, summarize_request, summarize_response
+from summarize_captures import parse_sse, sanitize_run, summarize_debug, summarize_request, summarize_response, summarize_stream
 
 
 class SanitizeRunTests(unittest.TestCase):
@@ -171,6 +172,55 @@ class SanitizeRunTests(unittest.TestCase):
             ],
         )
         self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
+
+    def test_debug_summary_extracts_autocompact_events_without_free_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            path.write_text(
+                "2026-10-14T00:00:01Z [DEBUG] autocompact: tokens=[REDACTED] level=blocked effectiveWindow=980000\n"
+                "2026-10-14T00:00:02Z [DEBUG] autocompact: routing through reactive (thresholdSource=model-default)\n"
+                "2026-10-14T00:00:03Z [DEBUG] PreCompact:auto [python hooklog.py PreCompact log] completed with status 0\n"
+                "2026-10-14T00:00:04Z [INFO] Reactive compact: summarization returned API error: "
+                "API Error: 400 SENSITIVE-LAB-MARKER-9348\n"
+                "2026-10-14T00:00:05Z [WARN] autocompact: circuit breaker tripped SENSITIVE-LAB-MARKER-9348\n",
+                encoding="utf-8",
+            )
+
+            summary = summarize_debug(str(path))
+
+        self.assertEqual(
+            summary["autocompact"],
+            [
+                {"t": "2026-10-14T00:00:01Z", "event": "level", "level": "blocked", "effective_window": 980000},
+                {"t": "2026-10-14T00:00:02Z", "event": "routed_reactive", "threshold_source": "model-default"},
+                {"t": "2026-10-14T00:00:03Z", "event": "pre_compact_hook_ran"},
+                {"t": "2026-10-14T00:00:04Z", "event": "summary_api_error"},
+                {"t": "2026-10-14T00:00:05Z", "event": "circuit_breaker_tripped"},
+            ],
+        )
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
+
+    def test_stream_summary_keeps_every_result_frame(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "stdout.jsonl"
+            frames = [
+                {"type": "result", "subtype": "success", "is_error": True, "terminal_reason": "blocking_limit",
+                 "api_error_status": None, "num_turns": 1, "result": "SENSITIVE-LAB-MARKER-9348"},
+                {"type": "result", "subtype": "success", "is_error": True, "terminal_reason": "api_error",
+                 "api_error_status": 400, "num_turns": 1, "result": "x"},
+            ]
+            path.write_text("\n".join(json.dumps(f) for f in frames) + "\n", encoding="utf-8")
+
+            summary = summarize_stream(str(path))
+
+        self.assertEqual(
+            summary["results"],
+            [
+                {"terminal_reason": "blocking_limit", "api_error_status": None, "is_error": True, "num_turns": 1},
+                {"terminal_reason": "api_error", "api_error_status": 400, "is_error": True, "num_turns": 1},
+            ],
+        )
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary["results"]))
 
     def test_request_summary_does_not_publish_container_or_mcp_values(self):
         marker = "SENSITIVE-LAB-MARKER-9348"

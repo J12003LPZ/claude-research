@@ -390,6 +390,36 @@ in `runtime-logs/E34-ptl-summary-retry/debug-summary.json` (`reactive_compact`).
   are kept, and behaviour when the server error carries no parsable token gap. Whether a real
   server overflow behaves the same is untested.
 
+### E35 to E37: repeated compaction failure in one live process
+
+These runs drive `run_stream.py` (stream-json input, one process, many turns) with the E31 session
+resumed and the proxy answering **every** `/v1/messages` locally with a 400. Only `HEAD /api/hello`
+reached the real service. Per-event numbers are in each run's `debug-summary.json` (`autocompact`) and
+`stream-summary.json` (`results`).
+
+| Run | Setup | Observed |
+|---|---|---|
+| E35 | `--autocompact 100k`, 5 short turns, 400 "prompt is too long" | Every turn: `level=compact`, `routing through reactive (thresholdSource=settings)`, two failed compaction rounds (E34's ladder), `prompt_too_long` end. 5 turns, 10 PreCompact hooks, 5 failed autocompact operations |
+| E36 | no `--autocompact`, 6 short turns, generic 400 | `level=ok effectiveWindow=980000` on all six turns. No compaction. The default window of this model is about 980,000 tokens |
+| E36p-* | one turn each with `--model` set to `claude-opus-4-1`, `claude-sonnet-4-5`, `claude-3-5-haiku-20241022` | `claude-opus-4-1` also reported `effectiveWindow=980000`. The other two printed no `autocompact:` line (cause not determined). No 200k-window model was found |
+| E37 | no `--autocompact`; 28 turns carrying the 186,116-character synthetic flood, then 8 short turns; generic 400 | `level` was `ok` x10, `warn` x1, `blocked` x25. Each of the 25 blocked turns: `routing through reactive (thresholdSource=model-default)`, one PreCompact hook, one `source=compact` request (400), `Reactive compact: summarization returned API error`, then the turn ended with `terminal_reason:"blocking_limit"` and **no** `source=sdk` request. The 11 turns before that ended `api_error` 400. 38 POSTs in total: 13 `source=sdk`, 25 `source=compact` |
+
+- **No breaker appeared.** Across 25 consecutive failed compaction operations in one process (E37), plus
+  5 in E35, the log never shows `circuit breaker tripped`, `tengu_auto_compact_circuit_breaker` or
+  `failure_breaker_open`, and the CLI kept attempting compaction on every blocked turn. The static claim
+  (`static-02` F8.4: three consecutive failures open a breaker) is therefore **contradicted for the route
+  observed here**.
+- **Why earlier runs never reached it.** The source (`chunk-phacttch.js@2596377`) routes through the reactive
+  path when a reactive handler exists and the threshold source is not `auto`, or a classifier overflow or model
+  override is present. Here the source was `settings` (E35) or `model-default` (E37), so all compaction in E27 to
+  E37 used the reactive route. The static counter `consecutiveFailures` is read before that routing, so either it
+  is never incremented on the reactive route or it is absent in this stream-json mode. This was not separated.
+- **New:** at level `blocked` with a failing compaction, the turn ends locally with `blocking_limit` and sends no
+  model request. This matches the `blocking_limit` terminal reason listed in `static-03`.
+- **Not established:** behaviour on the non-reactive route (no reactive handler), in interactive mode, or with
+  a successful compaction between failures (the static reset rule). The 980,000-token window means a real
+  overflow is not reachable cheaply; the flood was only possible because the proxy answered locally.
+
 ### E18a to E18e: transport faults (item 18)
 
 Faults were answered locally by the proxy; nothing was sent upstream for those requests.
@@ -563,7 +593,7 @@ Not tested: a response that has real text when it is cut (does the partial text 
 | Interactive TUI behaviour (rendering, Esc, permission dialog) | needs a PTY; REA process capture is unsupported on native Windows | run under WSL with REA `capture_process_scenario`, or ConPTY harness |
 | Approval granted or refused through a host (`can_use_tool` control request) | **Verified (E19c allow, E19d deny)**; E19 and E19b were setup failures | E19 (earlier account state) ended `Not logged in`. E19b (stored login, `--permission-prompts host` alone) ran the model but emitted no control request: the Bash call was auto-denied with `system/permission_denied` (`decision_reason: This command requires approval`) and the result text was `This command needs approval, so it didn't run`. With `--permission-prompt-tool stdio` (E19c, E19d) the CLI wrote one `control_request` (`request.subtype:"can_use_tool"`, keys `tool_name`, `display_name`, `input`, `description`, `permission_suggestions`, `decision_reason`, `decision_reason_type`, `tool_use_id`) and waited. Allow reply: the tool ran, `tool_result` `host-approved`, `result.permission_denials: []`. Deny reply with `message`: `tool_result` carried the host's message verbatim with `is_error:true`, and `result.permission_denials` listed `tool_name`, `tool_use_id`, `tool_input`. `permission_suggestions` offered an `addRules` entry with destination `localSettings`. The earlier inference that env scrubbing caused the login failure was wrong for E19b: the stored login now works. |
 | Subagent failing mid-run, nested subagents | time | prompt a child to call a denied tool; set depth |
-| Three distinct failed auto-summaries and failure breaker | E31 reached summary API-error exhaustion but the retry loop ended the compaction hook before three separate failures | keep the body-targeted fault, then drive three separate auto-compaction turns after the account rate limit resets; require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
+| Failure breaker on the non-reactive route | **Reactive route observed (E35 to E37): 25 failures, no breaker.** The non-reactive route was never reached | find what leaves the reactive handler undefined or the threshold source equal to `auto`; original E31 note: keep the body-targeted fault, then drive three separate auto-compaction turns after the account rate limit resets; require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
 | Partial compaction | no trigger for the partial path was found | locate the caller of the partial compaction function, then drive it |
 | Prompt-too-long summary retry, non-reactive path | **Reactive path observed (E34)**; the non-reactive `Mon` path was not reached | find what makes autocompact skip the reactive route |
 | Process kill and recovery on resume | **Verified (E24a/E24b)** | kill the CLI during a tool, then `--resume` |

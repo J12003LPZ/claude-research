@@ -298,5 +298,94 @@
   "2026-10-13T21:13:22.862Z [signal] compact"
  ],
  "reactive_compact": [],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-13T21:12:13.583Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:17.265Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:21.738Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:26.030Z",
+   "event": "level",
+   "level": "compact",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:26.031Z",
+   "event": "routed_reactive",
+   "threshold_source": "settings"
+  },
+  {
+   "t": "2026-10-13T21:12:26.100Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-13T21:12:41.103Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:45.342Z",
+   "event": "level",
+   "level": "compact",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:12:45.343Z",
+   "event": "routed_reactive",
+   "threshold_source": "settings"
+  },
+  {
+   "t": "2026-10-13T21:12:45.411Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-13T21:12:59.596Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:13:02.729Z",
+   "event": "level",
+   "level": "compact",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:13:02.729Z",
+   "event": "routed_reactive",
+   "threshold_source": "settings"
+  },
+  {
+   "t": "2026-10-13T21:13:02.794Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-13T21:13:18.940Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-13T21:13:22.862Z",
+   "event": "level",
+   "level": "compact",
+   "effective_window": 80000
+  }
+ ]
 }

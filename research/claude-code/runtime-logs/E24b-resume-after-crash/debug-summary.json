@@ -247,5 +247,13 @@
   "2026-10-14T03:00:36.025Z [signal] compact"
  ],
  "reactive_compact": [],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-14T03:00:36.025Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  }
+ ]
 }

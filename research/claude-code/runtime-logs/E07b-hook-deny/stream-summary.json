@@ -195,6 +195,14 @@
    "head": "REFUSED\\n\\nThe Bash call was blocked by a PreToolUse hook (`LAB_DENY_REASON from P"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

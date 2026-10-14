@@ -311,5 +311,13 @@
    "bytes_total": 247,
    "idle_deadline_ms": 1800000
   }
+ ],
+ "autocompact": [
+  {
+   "t": "2026-10-14T07:29:26.362Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  }
  ]
 }

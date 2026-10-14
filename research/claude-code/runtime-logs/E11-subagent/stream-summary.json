@@ -188,6 +188,14 @@
    "head": "The subagent returned: `gamma`\\n\\nIt was a general-purpose agent, and it made one "
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

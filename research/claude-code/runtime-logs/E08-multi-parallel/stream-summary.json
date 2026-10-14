@@ -186,6 +186,14 @@
    "head": "First lines:\\n\\n- `notes.txt`: `alpha`\\n- `src/calc.py`: `def add(a, b):`\\n- `sub/de"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 4
+  }
+ ],
  "events": [
   {
    "type": "system",

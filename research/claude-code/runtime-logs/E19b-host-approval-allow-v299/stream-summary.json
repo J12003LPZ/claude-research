@@ -195,6 +195,14 @@
    "head": "This command needs approval, so it didn't run. I haven't retried it. Approve it "
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

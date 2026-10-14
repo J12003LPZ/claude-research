@@ -186,6 +186,14 @@
    "head": "The command ran and printed `should-not-run`, so it was not refused."
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

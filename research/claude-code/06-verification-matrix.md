@@ -5,7 +5,8 @@ overall completeness percentage, on purpose.
 
 Result vocabulary: **Verified** (static and runtime agree, or runtime alone is decisive),
 **Partially verified** (one side only, or bracketed rather than pinned), **Inferred**,
-**Untested**, **Blocked** (cannot be tested from this host or without the vendor).
+**Untested**, **Blocked** (cannot be tested from this host or without the vendor), **Contradicted (scoped)**
+(runtime behaviour differs from the static claim in a stated configuration; the claim is not shown false elsewhere).
 
 ## 1. Subsystem verification matrix
 
@@ -47,7 +48,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Compaction | Hook order PreCompact, SubagentStop, SessionStart(compact), PostCompact | static 02 | E17c | Verified | High | |
 | Compaction | Post-compact file re-attachment, 5 files | static 02 | E17c (2 files re-read) | Partially verified | Medium | 6+ files |
 | Compaction | Thrash breaker after 3 quick refills | static 02 | E17c | Verified | High | |
-| Compaction | Failure breaker after 3 distinct failed summaries | static 02 | E30/E31: body-targeted 529s exhausted one summary retry loop; no breaker event | Untested | Medium | drive three separate failed auto-compaction operations after rate limit resets |
+| Compaction | Failure breaker after 3 distinct failed summaries | static 02 (`Won=3`, `failure_breaker_open`) | E35, E36, E37: 25 consecutive failed compactions in one process, every one on the reactive route; no breaker event, compaction retried each turn | Contradicted for the reactive route (scoped) | Medium | non-reactive route never reached; cannot tell if the counter is absent on the reactive route or in stream-json mode |
 | Sessions | JSONL chain by uuid and parentUuid; project dir from sanitized cwd | static 05 | lab transcripts, E15 | Verified | High | 200+ char path hashing |
 | Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
 | Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
@@ -94,7 +95,8 @@ behaviour precisely enough to test, not a pass or fail.
 | 28 | Resume, continue, fork | E15 | 11 | Verified |
 | 29 | Manual compaction | E17a | 10 | Verified |
 | 30 | Automatic compaction and thrash stop | E17c | 10 | Verified |
-| 30a | Summary API-error exhaustion and manual compact fault surface | E28b, E30, E31 | 10 | Partially verified: targeted failure path observed; breaker remains open |
+| 30a | Summary API-error exhaustion and manual compact fault surface | E28b, E30, E31 | 10 | Partially verified: targeted failure path observed; breaker not reached (see 30c) |
+| 30c | Repeated compaction failure in one process, then `blocking_limit` | E35, E36, E37 | 10 | Verified: 25 failed operations on the reactive route, no breaker, `blocking_limit` end with no model request |
 | 30b | Prompt-too-long during compaction (reactive path) | E34 | 10 | Partially verified: two rounds, gap-guided attempts, last resort, `prompt_too_long` end; injected constant gap, non-reactive path untested |
 | 31 | Retry on 429, 500, 529, reset | E18 | 4 | Verified |
 | 32 | Degraded retry on 400 | E18c | 4 | Partially verified |
@@ -111,7 +113,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | `claude sandbox status` reports `supported:false`, `installed:false`, `enabled:false` on this host | 7 | Blocked (not exercisable here; enforcement itself unobserved) |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 46 behaviours enumerated. Verified 37, partially verified 5, untested 1, blocked 3.
+Counts: 47 behaviours enumerated. Verified 38, partially verified 5, untested 1, blocked 3.
 
 ## 3. Cross-validation per subsystem
 
@@ -121,7 +123,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 103 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 109 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -162,8 +164,8 @@ API retry loop and failed the `session.compact` hook, but did not emit the disti
 breaker. Alternative: the rapid-refill breaker could be a token budget rather than a refill
 counter. Rejected: the result text and `terminal_reason` name the refill condition, and
 static pass 02 has the counter. Falsifier for the rapid-refill claim: a run that compacts more
-than three times in quick succession without stopping. Unknown: the failure breaker after
-three separate failed summaries, the non-reactive prompt-too-long path, partial compaction, and
+than three times in quick succession without stopping. Unknown: the failure breaker on the
+non-reactive route (contradicted on the reactive route, E37), the non-reactive prompt-too-long path, partial compaction, and
 server-side context edits.
 
 **Sessions.** Known: layout, row types, chain links, resume semantics. How: schema
@@ -188,7 +190,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 103 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 109 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

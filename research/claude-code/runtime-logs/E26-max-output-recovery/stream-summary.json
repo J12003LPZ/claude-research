@@ -183,6 +183,14 @@
    "head": "API Error: Claude's response exceeded the 200 output token maximum. To configure"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "api_error",
+   "api_error_status": null,
+   "is_error": true,
+   "num_turns": 4
+  }
+ ],
  "events": [
   {
    "type": "system",

@@ -11,18 +11,18 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 103 manifest runs: 82 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 109 manifest runs: 88 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |
 | 17 Implementation spec | done | `05-implementation-spec.md` |
 
 Next steps if resumed: the remaining untested rows of `06` (three distinct failed auto-summary
-operations and the failure breaker, the non-reactive prompt-too-long path and partial compaction, `auto` permission
+operations and the failure breaker on the non-reactive route, the non-reactive prompt-too-long path and partial compaction, `auto` permission
 mode, background-agent survival, daemon lifecycle and TUI behavior, sandbox enforcement (blocked: `sandbox status` reports unsupported on this host), the 180 s byte-watchdog default, and a
-direct-path request dump). E30/E31 verified summary API-error exhaustion but did not reach the
-three-distinct-failure breaker; the account rate-limit response is retained as a boundary, not
-attributed to the CLI breaker.
+direct-path request dump). E35 to E37 ran 30 failed compactions in one process on the reactive
+route with no breaker, so the static failure-breaker claim is contradicted there; the non-reactive
+route was never reached.
 
 ## Tooling (all under `tools/`)
 

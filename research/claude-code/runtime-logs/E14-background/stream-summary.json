@@ -186,6 +186,14 @@
    "head": "The background Bash task was started and then stopped right away.\\n\\n- **Bash (run"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

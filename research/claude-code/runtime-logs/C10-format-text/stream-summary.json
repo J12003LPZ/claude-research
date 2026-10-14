@@ -2,6 +2,7 @@
  "event_count": 1,
  "init": null,
  "result": null,
+ "results": [],
  "events": [
   {
    "type": "<non-json>",

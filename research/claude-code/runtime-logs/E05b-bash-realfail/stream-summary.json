@@ -195,6 +195,14 @@
    "head": "Exit code 2; stderr: `ls: cannot access 'nonexistent-file-here.txt': No such fil"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

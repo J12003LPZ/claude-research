@@ -194,6 +194,14 @@
    "head": "BLOCKED\\n\\nThe Read of `notes.txt` was blocked by a PreToolUse hook (`python C:/Us"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

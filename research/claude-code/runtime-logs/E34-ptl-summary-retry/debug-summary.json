@@ -367,5 +367,26 @@
    "head_truncations": 1
   }
  ],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-14T07:31:08.302Z",
+   "event": "level",
+   "level": "compact",
+   "effective_window": 80000
+  },
+  {
+   "t": "2026-10-14T07:31:08.302Z",
+   "event": "routed_reactive",
+   "threshold_source": "settings"
+  },
+  {
+   "t": "2026-10-14T07:31:08.375Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:31:08.597Z",
+   "event": "pre_compact_hook_ran"
+  }
+ ]
 }

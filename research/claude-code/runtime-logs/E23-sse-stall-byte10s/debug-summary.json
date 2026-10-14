@@ -257,5 +257,13 @@
    "t": "2026-10-14T02:57:15.136Z",
    "event": "fallback_non_streaming"
   }
+ ],
+ "autocompact": [
+  {
+   "t": "2026-10-14T02:57:05.115Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  }
  ]
 }

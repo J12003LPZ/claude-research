@@ -186,6 +186,14 @@
    "head": "The token was WOMBAT-9034, and line 2 of notes.txt is \"beta\"."
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 1
+  }
+ ],
  "events": [
   {
    "type": "system",

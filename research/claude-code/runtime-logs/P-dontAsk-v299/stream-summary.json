@@ -203,6 +203,14 @@
    "head": "1) Write of `out.txt` failed: permission denied because the session is in \"don't"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

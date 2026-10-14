@@ -362,6 +362,7 @@ def summarize_response(meta, raw, chunks):
 
 def summarize_stream(path):
     events, init, result = [], None, None
+    results = []
     if not os.path.exists(path):
         return {"events": []}
     for line in open(path, encoding="utf-8", errors="replace"):
@@ -422,6 +423,8 @@ def summarize_stream(path):
                 if k in o:
                     e[k] = o[k]
         elif t == "result":
+            results.append({"terminal_reason": o.get("terminal_reason"), "api_error_status": o.get("api_error_status"),
+                            "is_error": o.get("is_error"), "num_turns": o.get("num_turns")})
             result = {k: deep_mask(v) for k, v in o.items() if k not in ("result",)}
             result["result"] = digest(o.get("result") or "")
             if isinstance(result.get("modelUsage"), dict):
@@ -444,7 +447,8 @@ def summarize_stream(path):
             compact.append(e2)
     for e in compact:
         e.pop("_key", None)
-    return deep_mask({"event_count": len(events), "init": init, "result": result, "events": compact})
+    return deep_mask({"event_count": len(events), "init": init, "result": result, "results": results,
+                      "events": compact})
 
 
 DEBUG_PAT = re.compile(r"^(\S+)\s+\[(\w+)\]\s*(.*)$")
@@ -462,6 +466,18 @@ REACTIVE_PATTERNS = [
      ("head_truncations",)),
     ("bail_no_assistant_messages", re.compile(
         r"Reactive compact: no assistant messages in summarize set, bailing"), ()),
+]
+
+# Autocompact progress lines. Captures are integers or short code-defined tokens, never free text.
+AUTOCOMPACT_PATTERNS = [
+    ("level", re.compile(r"autocompact: tokens=\S+ level=([a-z]+) effectiveWindow=(\d+)"),
+     ("level", "effective_window")),
+    ("routed_reactive", re.compile(r"autocompact: routing through reactive \(thresholdSource=([a-z-]+)"),
+     ("threshold_source",)),
+    ("pre_compact_hook_ran", re.compile(r"PreCompact:auto \[.*\] completed with status"), ()),
+    ("summary_api_error", re.compile(r"Reactive compact: summarization returned API error"), ()),
+    ("circuit_breaker_tripped", re.compile(r"circuit breaker tripped"), ()),
+    ("failure_breaker_open", re.compile(r"failure_breaker_open"), ()),
 ]
 
 # Stream watchdog progress lines; integers only, no free text.
@@ -487,6 +503,7 @@ def summarize_debug(path):
     priority_signals = []
     reactive = []
     watchdog = []
+    autocompact = []
     signal_rx = re.compile(
         r"compact|source=compact|failure[_ ]breaker|circuit breaker|"
         r"tengu_auto_compact_circuit_breaker|API error",
@@ -511,6 +528,14 @@ def summarize_debug(path):
             if hit:
                 reactive.append({"t": m.group(1), "event": event,
                                  **{n: int(v) for n, v in zip(names, hit.groups())}})
+                break
+        for event, rx, names in AUTOCOMPACT_PATTERNS:
+            hit = rx.search(msg)
+            if hit:
+                vals = dict(zip(names, hit.groups()))
+                if "effective_window" in vals:
+                    vals["effective_window"] = int(vals["effective_window"])
+                autocompact.append({"t": m.group(1), "event": event, **vals})
                 break
         for event, rx, names in WATCHDOG_PATTERNS:
             hit = rx.search(msg)
@@ -542,7 +567,8 @@ def summarize_debug(path):
             elif priority_rx.search(msg):
                 priority_signals.append(safe)
     return {"line_count": len(lines), "top_prefixes": sorted(cats.items(), key=lambda x: -x[1])[:60],
-            "signals": signals + priority_signals[:80], "reactive_compact": reactive, "watchdog": watchdog}
+            "signals": signals + priority_signals[:80], "reactive_compact": reactive, "watchdog": watchdog,
+            "autocompact": autocompact}
 
 
 def main():

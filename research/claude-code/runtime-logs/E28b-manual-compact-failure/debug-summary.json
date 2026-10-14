@@ -258,5 +258,11 @@
   "2026-10-14T03:10:58.476Z [signal] compact"
  ],
  "reactive_compact": [],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-14T03:10:58.475Z",
+   "event": "summary_api_error"
+  }
+ ]
 }

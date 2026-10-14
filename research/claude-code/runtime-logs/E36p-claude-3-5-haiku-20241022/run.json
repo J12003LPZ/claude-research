@@ -1,0 +1,70 @@
+{
+ "id": "E36p-claude-3-5-haiku-20241022",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-hooks",
+ "argv": [
+  "C:/Users/<user>/.local/share/claude/versions/2.1.296",
+  "-p",
+  "--input-format",
+  "stream-json",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "<debug-file>",
+  "--model",
+  "claude-3-5-haiku-20241022",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json",
+  "--resume",
+  "<uuid>"
+ ],
+ "prompt": null,
+ "stdin_script": [
+  {
+   "subtype": {
+    "type": "NoneType"
+   },
+   "t_s": 0.003,
+   "type": "user"
+  },
+  {
+   "close": true,
+   "t_s": 6.001
+  }
+ ],
+ "control_events": [],
+ "permission_behavior": null,
+ "extra_env_names": [
+  "CLAUDE_CONFIG_DIR",
+  "DISABLE_AUTOUPDATER"
+ ],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_BIN",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 64076,
+ "exit_code": 1,
+ "killed": null,
+ "duration_s": 6.851,
+ "cli_version": "2.1.296 (Claude Code)",
+ "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+ "started_iso": "2026-10-14T07:42:11Z",
+ "fault": null
+}

@@ -185,6 +185,14 @@
    "head": "REFUSED\\n\\nThe Edit tool is unavailable in this session, so I did not change `note"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

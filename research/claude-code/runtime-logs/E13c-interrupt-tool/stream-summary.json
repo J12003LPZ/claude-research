@@ -186,6 +186,20 @@
    "head": "The Bash call to run the 40-second sleep was rejected, so the command never exec"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "aborted_tools",
+   "api_error_status": null,
+   "is_error": true,
+   "num_turns": 3
+  },
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 1
+  }
+ ],
  "events": [
   {
    "type": "system",

@@ -166,6 +166,14 @@
    "head": "Error during compaction: You've hit your session limit \u00b7 resets 3:10am (America/"
   }
  },
+ "results": [
+  {
+   "terminal_reason": null,
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 0
+  }
+ ],
  "events": [
   {
    "type": "system",

@@ -184,6 +184,14 @@
    "head": ""
   }
  },
+ "results": [
+  {
+   "terminal_reason": "max_turns",
+   "api_error_status": null,
+   "is_error": true,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

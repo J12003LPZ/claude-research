@@ -84,6 +84,7 @@
   "agents_count": 5
  },
  "result": null,
+ "results": [],
  "events": [
   {
    "type": "system",

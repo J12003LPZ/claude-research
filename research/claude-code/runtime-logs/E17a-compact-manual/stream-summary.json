@@ -169,6 +169,14 @@
    "head": ""
   }
  },
+ "results": [
+  {
+   "terminal_reason": null,
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 0
+  }
+ ],
  "events": [
   {
    "type": "system",

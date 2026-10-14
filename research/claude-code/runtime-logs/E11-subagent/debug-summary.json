@@ -250,5 +250,31 @@
   "2026-10-13T21:07:42.707Z [signal] compact"
  ],
  "reactive_compact": [],
- "watchdog": []
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-13T21:07:34.863Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-13T21:07:37.516Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-13T21:07:39.835Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-13T21:07:42.707Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  }
+ ]
 }

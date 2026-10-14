@@ -1,0 +1,1686 @@
+[
+ {
+  "request": {
+   "seq": "0001",
+   "t_ms": 310,
+   "method": "HEAD",
+   "url": "/api/hello",
+   "body_bytes": 0,
+   "header_order": [
+    "Connection",
+    "User-Agent",
+    "Accept",
+    "Host",
+    "Accept-Encoding"
+   ],
+   "headers": {
+    "connection": "keep-alive",
+    "user-agent": "Bun/1.4.3",
+    "accept": "*/*",
+    "host": "127.0.0.1:64064",
+    "accept-encoding": "gzip, deflate, br, zstd"
+   },
+   "body": null
+  },
+  "response": {
+   "seq": "0001",
+   "injected": false,
+   "status": 200,
+   "headers": {
+    "date": "Wed, 14 Oct 2026 07:42:04 GMT",
+    "content-type": "application/json",
+    "content-length": "20",
+    "connection": "keep-alive",
+    "server-timing": "x-originResponse;dur=",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "x-robots-tag": "none",
+    "cf-ray": "<redacted len=20>"
+   },
+   "ttfb_ms": 53,
+   "t_ms": 363,
+   "body_bytes": 0,
+   "chunk_count": 0,
+   "chunk_times_ms": [],
+   "client_closed_early": false,
+   "body_digest": {
+    "len": 0,
+    "sha256": "e3b0c44298fc1c14"
+   }
+  }
+ },
+ {
+  "request": {
+   "seq": "0002",
+   "t_ms": 966,
+   "method": "POST",
+   "url": "/v1/messages?beta=true",
+   "body_bytes": 809564,
+   "header_order": [
+    "Accept",
+    "Authorization",
+    "Content-Type",
+    "User-Agent",
+    "X-Claude-Code-Session-Id",
+    "X-Stainless-Arch",
+    "X-Stainless-Lang",
+    "X-Stainless-OS",
+    "X-Stainless-Package-Version",
+    "X-Stainless-Retry-Count",
+    "X-Stainless-Runtime",
+    "X-Stainless-Runtime-Version",
+    "X-Stainless-Timeout",
+    "anthropic-beta",
+    "anthropic-dangerous-direct-browser-access",
+    "anthropic-version",
+    "x-app",
+    "Connection",
+    "Host",
+    "Accept-Encoding",
+    "Content-Length"
+   ],
+   "headers": {
+    "accept": "application/json",
+    "authorization": "<redacted len=115>",
+    "content-type": "application/json",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
+    "x-claude-code-session-id": "<redacted len=36>",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Windows",
+    "x-stainless-package-version": "0.128.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.3.0",
+    "x-stainless-timeout": "600",
+    "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-dangerous-direct-browser-access": "true",
+    "anthropic-version": "2023-06-01",
+    "x-app": "cli",
+    "connection": "keep-alive",
+    "host": "127.0.0.1:64064",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "content-length": "809564"
+   },
+   "body": {
+    "top_level_keys": [
+     "model",
+     "messages",
+     "system",
+     "tools",
+     "metadata",
+     "max_tokens",
+     "thinking",
+     "context_management",
+     "output_config",
+     "stream"
+    ],
+    "model": "claude-opus-5-5",
+    "max_tokens": 128000,
+    "stream": true,
+    "thinking": {
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
+    },
+    "context_management": {
+     "type": "object",
+     "keys": [
+      "edits"
+     ]
+    },
+    "output_config": {
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
+    },
+    "metadata_keys": [
+     "user_id"
+    ],
+    "metadata_user_id_json_keys": [
+     "account_uuid",
+     "device_id",
+     "session_id"
+    ],
+    "system": [
+     {
+      "type": "text",
+      "len": 74,
+      "sha256": "5e95bc9eeadb69ab",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.c17; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 62,
+      "sha256": "0d7062851dd7bd7e",
+      "head": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 8774,
+      "sha256": "1a4453b8e56b258d",
+      "head": "\\nYou are an agent working with the user toward their goals, using your own judgm",
+      "tags": [
+       "pasted_content",
+       "skill-name",
+       "short-kebab-case-slug",
+       "system-reminder"
+      ]
+     }
+    ],
+    "tools_count": 26,
+    "tools": [
+     {
+      "name": "Agent",
+      "type": null,
+      "description_len": 1628,
+      "schema_len": 1941,
+      "schema_props": [
+       "description",
+       "effort",
+       "isolation",
+       "model",
+       "prompt",
+       "run_in_background",
+       "subagent_type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Bash",
+      "type": null,
+      "description_len": 1784,
+      "schema_len": 1784,
+      "schema_props": [
+       "<key:c5a14594d5e5314b>",
+       "command",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronCreate",
+      "type": null,
+      "description_len": 2595,
+      "schema_len": 912,
+      "schema_props": [
+       "cron",
+       "durable",
+       "prompt",
+       "recurring"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronDelete",
+      "type": null,
+      "description_len": 100,
+      "schema_len": 219,
+      "schema_props": [
+       "id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronList",
+      "type": null,
+      "description_len": 60,
+      "schema_len": 126,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "DesignSync",
+      "type": null,
+      "description_len": 3742,
+      "schema_len": 5423,
+      "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
+       "assets",
+       "counts",
+       "deletes",
+       "files",
+       "method",
+       "name",
+       "path",
+       "paths",
+       "writes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Edit",
+      "type": null,
+      "description_len": 360,
+      "schema_len": 584,
+      "schema_props": [
+       "file_path",
+       "new_string",
+       "old_string",
+       "replace_all"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "EnterWorktree",
+      "type": null,
+      "description_len": 3220,
+      "schema_len": 708,
+      "schema_props": [
+       "name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ExitWorktree",
+      "type": null,
+      "description_len": 1923,
+      "schema_len": 502,
+      "schema_props": [
+       "action",
+       "discard_changes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Glob",
+      "type": null,
+      "description_len": 140,
+      "schema_len": 557,
+      "schema_props": [
+       "path",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Grep",
+      "type": null,
+      "description_len": 477,
+      "schema_len": 2764,
+      "schema_props": [
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
+       "context",
+       "glob",
+       "head_limit",
+       "multiline",
+       "offset",
+       "output_mode",
+       "path",
+       "pattern",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ListAgents",
+      "type": null,
+      "description_len": 777,
+      "schema_len": 336,
+      "schema_props": [
+       "channel",
+       "q"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Monitor",
+      "type": null,
+      "description_len": 6354,
+      "schema_len": 1093,
+      "schema_props": [
+       "command",
+       "description",
+       "timeout_ms",
+       "ws"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "NotebookEdit",
+      "type": null,
+      "description_len": 619,
+      "schema_len": 981,
+      "schema_props": [
+       "cell_id",
+       "cell_type",
+       "edit_mode",
+       "new_source",
+       "notebook_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PowerShell",
+      "type": null,
+      "description_len": 7941,
+      "schema_len": 877,
+      "schema_props": [
+       "<key:c5a14594d5e5314b>",
+       "command",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PushNotification",
+      "type": null,
+      "description_len": 1362,
+      "schema_len": 351,
+      "schema_props": [
+       "message",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Read",
+      "type": null,
+      "description_len": 790,
+      "schema_len": 1112,
+      "schema_props": [
+       "allow_large",
+       "file_path",
+       "limit",
+       "offset",
+       "pages"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "RemoteTrigger",
+      "type": null,
+      "description_len": 2834,
+      "schema_len": 856,
+      "schema_props": [
+       "action",
+       "body",
+       "cursor",
+       "session_id",
+       "trigger_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ReportFindings",
+      "type": null,
+      "description_len": 574,
+      "schema_len": 1646,
+      "schema_props": [
+       "findings",
+       "level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ScheduleWakeup",
+      "type": null,
+      "description_len": 3148,
+      "schema_len": 1423,
+      "schema_props": [
+       "<key:0b1483676b8190d7>",
+       "noop",
+       "prompt",
+       "reason",
+       "stop"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "SendMessage",
+      "type": null,
+      "description_len": 4259,
+      "schema_len": 1344,
+      "schema_props": [
+       "message",
+       "notify_when_idle",
+       "summary",
+       "to"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Skill",
+      "type": null,
+      "description_len": 1417,
+      "schema_len": 345,
+      "schema_props": [
+       "args",
+       "skill"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "TaskStop",
+      "type": null,
+      "description_len": 364,
+      "schema_len": 382,
+      "schema_props": [
+       "shell_id",
+       "task_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebFetch",
+      "type": null,
+      "description_len": 469,
+      "schema_len": 584,
+      "schema_props": [
+       "offset",
+       "prompt",
+       "url"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebSearch",
+      "type": null,
+      "description_len": 334,
+      "schema_len": 499,
+      "schema_props": [
+       "allowed_domains",
+       "blocked_domains",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Write",
+      "type": null,
+      "description_len": 240,
+      "schema_len": 367,
+      "schema_props": [
+       "content",
+       "file_path"
+      ],
+      "extra_keys": []
+     }
+    ],
+    "tools_total_bytes": 78191,
+    "messages_count": 11,
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "len": 3109,
+        "sha256": "080d87e067231ed7",
+        "head": "<system-reminder>\\nCodebase and user instructions are shown below. Be sure to adh",
+        "tags": [
+         "system-reminder",
+         "path",
+         "task"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 908,
+        "sha256": "13812719042e19b2",
+        "head": "<system-reminder>\\nAs you answer the user's questions, you can use the following ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 5045,
+        "sha256": "f745af0970d836ac",
+        "head": "This session is being continued from a previous conversation that ran out of con"
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 27,
+        "sha256": "b823d1e63be1b413",
+        "head": "Today's date is 2026-10-13."
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path"
+        ],
+        "input": {
+         "len": 72,
+         "sha256": "eafb36aec8eb84d2",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big4.txt\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 51926,
+         "sha256": "8a7496d44b837963",
+         "head": "1\tBIGFILE 4 MARKER-4444\\n2\tsignal heron copper orbit zebra quokka copper copper c"
+        }
+       },
+       {
+        "type": "text",
+        "len": 580,
+        "sha256": "a08e5fd483e406c0",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 3526,
+        "sha256": "8bf755c0b2276483",
+        "head": "[Truncated: PARTIAL view \u2014 C:\\Users\\<user>\\cc-rea-lab\\proj-hooks\\big\\big4.txt: sh"
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path",
+         "limit",
+         "offset"
+        ],
+        "input": {
+         "len": 101,
+         "sha256": "1f06207a55497b6b",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big4.txt\", \"limit\""
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 12771,
+         "sha256": "9a4af4f422b56712",
+         "head": "558\tdolor copper heron dolor amet vector sit lattice dolor lorem lattice harbor "
+        }
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 62,
+        "sha256": "35c9d4df8057c49a",
+        "head": "PostToolUse:Read hook additional context: POST_HOOK_CTX_MARKER"
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path"
+        ],
+        "input": {
+         "len": 72,
+         "sha256": "a233502b8a124147",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big5.txt\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 53144,
+         "sha256": "f66528694558e7cb",
+         "head": "1\tBIGFILE 5 MARKER-5555\\n2\tdelta harbor ipsum sit lorem delta copper ipsum wombat"
+        }
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3b981d4d6fd4a137",
+        "head": "Reply with exactly: ok-1\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "e651cd6a7263a3e9",
+        "head": "Reply with exactly: ok-2\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "b50f843b8ac84ac9",
+        "head": "Reply with exactly: ok-3\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3ea83964b4d87be1",
+        "head": "Reply with exactly: ok-4\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "fabfae25c88fbb1d",
+        "head": "Reply with exactly: ok-5\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3b981d4d6fd4a137",
+        "head": "Reply with exactly: ok-1\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "e651cd6a7263a3e9",
+        "head": "Reply with exactly: ok-2\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "b50f843b8ac84ac9",
+        "head": "Reply with exactly: ok-3\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3ea83964b4d87be1",
+        "head": "Reply with exactly: ok-4\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "fabfae25c88fbb1d",
+        "head": "Reply with exactly: ok-5\\n"
+       },
+       {
+        "type": "text",
+        "len": 24,
+        "sha256": "d44c404db392f0e4",
+        "head": "Reply with exactly: ok-6"
+       },
+       {
+        "type": "text",
+        "len": 582,
+        "sha256": "fa031aaa46b8e9e2",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 22,
+        "sha256": "775a61d9f41e965e",
+        "head": "Reply with exactly: ok"
+       },
+       {
+        "type": "text",
+        "len": 580,
+        "sha256": "e291f933f8631786",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 22,
+        "sha256": "775a61d9f41e965e",
+        "head": "Reply with exactly: ok"
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "len": 9018,
+        "sha256": "68177a4ef0c2c464",
+        "head": "[Truncated: PARTIAL view \u2014 C:\\Users\\<user>\\cc-rea-lab\\proj-hooks\\big\\big5.txt: sh",
+        "tags": [
+         "n"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "response": {
+   "seq": "0002",
+   "injected": true,
+   "mode": "status",
+   "status": 400,
+   "headers": {
+    "content-type": "application/json"
+   },
+   "t_ms": 972,
+   "body_bytes": 98,
+   "chunk_count": 0,
+   "chunk_times_ms": [],
+   "client_closed_early": false,
+   "json_keys": [
+    "error",
+    "type"
+   ],
+   "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
+    "type": "invalid_request_error",
+    "message": {
+     "len": 28,
+     "sha256": "b649a349bb1fc5c5"
+    }
+   }
+  }
+ },
+ {
+  "request": {
+   "seq": "0003",
+   "t_ms": 988,
+   "method": "POST",
+   "url": "/v1/messages?beta=true",
+   "body_bytes": 809544,
+   "header_order": [
+    "Accept",
+    "Authorization",
+    "Content-Type",
+    "User-Agent",
+    "X-Claude-Code-Session-Id",
+    "X-Stainless-Arch",
+    "X-Stainless-Lang",
+    "X-Stainless-OS",
+    "X-Stainless-Package-Version",
+    "X-Stainless-Retry-Count",
+    "X-Stainless-Runtime",
+    "X-Stainless-Runtime-Version",
+    "X-Stainless-Timeout",
+    "anthropic-beta",
+    "anthropic-dangerous-direct-browser-access",
+    "anthropic-version",
+    "x-app",
+    "Connection",
+    "Host",
+    "Accept-Encoding",
+    "Content-Length"
+   ],
+   "headers": {
+    "accept": "application/json",
+    "authorization": "<redacted len=115>",
+    "content-type": "application/json",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
+    "x-claude-code-session-id": "<redacted len=36>",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Windows",
+    "x-stainless-package-version": "0.128.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.3.0",
+    "x-stainless-timeout": "600",
+    "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,extended-cache-ttl-2025-04-11",
+    "anthropic-dangerous-direct-browser-access": "true",
+    "anthropic-version": "2023-06-01",
+    "x-app": "cli",
+    "connection": "keep-alive",
+    "host": "127.0.0.1:64064",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "content-length": "809544"
+   },
+   "body": {
+    "top_level_keys": [
+     "model",
+     "messages",
+     "system",
+     "tools",
+     "metadata",
+     "max_tokens",
+     "thinking",
+     "context_management",
+     "output_config",
+     "stream"
+    ],
+    "model": "claude-opus-5-5",
+    "max_tokens": 128000,
+    "stream": true,
+    "thinking": {
+     "type": "object",
+     "keys": [
+      "type"
+     ]
+    },
+    "context_management": {
+     "type": "object",
+     "keys": [
+      "edits"
+     ]
+    },
+    "output_config": {
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
+    },
+    "metadata_keys": [
+     "user_id"
+    ],
+    "metadata_user_id_json_keys": [
+     "account_uuid",
+     "device_id",
+     "session_id"
+    ],
+    "system": [
+     {
+      "type": "text",
+      "len": 74,
+      "sha256": "5e95bc9eeadb69ab",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.c17; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 62,
+      "sha256": "0d7062851dd7bd7e",
+      "head": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+     },
+     {
+      "type": "text",
+      "cache_control": {
+       "type": "ephemeral",
+       "ttl": "1h"
+      },
+      "len": 8774,
+      "sha256": "1a4453b8e56b258d",
+      "head": "\\nYou are an agent working with the user toward their goals, using your own judgm",
+      "tags": [
+       "pasted_content",
+       "skill-name",
+       "short-kebab-case-slug",
+       "system-reminder"
+      ]
+     }
+    ],
+    "tools_count": 26,
+    "tools": [
+     {
+      "name": "Agent",
+      "type": null,
+      "description_len": 1628,
+      "schema_len": 1941,
+      "schema_props": [
+       "description",
+       "effort",
+       "isolation",
+       "model",
+       "prompt",
+       "run_in_background",
+       "subagent_type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Bash",
+      "type": null,
+      "description_len": 1784,
+      "schema_len": 1784,
+      "schema_props": [
+       "<key:c5a14594d5e5314b>",
+       "command",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronCreate",
+      "type": null,
+      "description_len": 2595,
+      "schema_len": 912,
+      "schema_props": [
+       "cron",
+       "durable",
+       "prompt",
+       "recurring"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronDelete",
+      "type": null,
+      "description_len": 100,
+      "schema_len": 219,
+      "schema_props": [
+       "id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "CronList",
+      "type": null,
+      "description_len": 60,
+      "schema_len": 126,
+      "schema_props": [],
+      "extra_keys": []
+     },
+     {
+      "name": "DesignSync",
+      "type": null,
+      "description_len": 3742,
+      "schema_len": 5423,
+      "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
+       "assets",
+       "counts",
+       "deletes",
+       "files",
+       "method",
+       "name",
+       "path",
+       "paths",
+       "writes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Edit",
+      "type": null,
+      "description_len": 360,
+      "schema_len": 584,
+      "schema_props": [
+       "file_path",
+       "new_string",
+       "old_string",
+       "replace_all"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "EnterWorktree",
+      "type": null,
+      "description_len": 3220,
+      "schema_len": 708,
+      "schema_props": [
+       "name",
+       "path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ExitWorktree",
+      "type": null,
+      "description_len": 1923,
+      "schema_len": 502,
+      "schema_props": [
+       "action",
+       "discard_changes"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Glob",
+      "type": null,
+      "description_len": 140,
+      "schema_len": 557,
+      "schema_props": [
+       "path",
+       "pattern"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Grep",
+      "type": null,
+      "description_len": 477,
+      "schema_len": 2764,
+      "schema_props": [
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
+       "context",
+       "glob",
+       "head_limit",
+       "multiline",
+       "offset",
+       "output_mode",
+       "path",
+       "pattern",
+       "type"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ListAgents",
+      "type": null,
+      "description_len": 777,
+      "schema_len": 336,
+      "schema_props": [
+       "channel",
+       "q"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Monitor",
+      "type": null,
+      "description_len": 6354,
+      "schema_len": 1093,
+      "schema_props": [
+       "command",
+       "description",
+       "timeout_ms",
+       "ws"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "NotebookEdit",
+      "type": null,
+      "description_len": 619,
+      "schema_len": 981,
+      "schema_props": [
+       "cell_id",
+       "cell_type",
+       "edit_mode",
+       "new_source",
+       "notebook_path"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PowerShell",
+      "type": null,
+      "description_len": 7941,
+      "schema_len": 877,
+      "schema_props": [
+       "<key:c5a14594d5e5314b>",
+       "command",
+       "description",
+       "run_in_background",
+       "timeout"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "PushNotification",
+      "type": null,
+      "description_len": 1362,
+      "schema_len": 351,
+      "schema_props": [
+       "message",
+       "status"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Read",
+      "type": null,
+      "description_len": 790,
+      "schema_len": 1112,
+      "schema_props": [
+       "allow_large",
+       "file_path",
+       "limit",
+       "offset",
+       "pages"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "RemoteTrigger",
+      "type": null,
+      "description_len": 2834,
+      "schema_len": 856,
+      "schema_props": [
+       "action",
+       "body",
+       "cursor",
+       "session_id",
+       "trigger_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ReportFindings",
+      "type": null,
+      "description_len": 574,
+      "schema_len": 1646,
+      "schema_props": [
+       "findings",
+       "level"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "ScheduleWakeup",
+      "type": null,
+      "description_len": 3148,
+      "schema_len": 1423,
+      "schema_props": [
+       "<key:0b1483676b8190d7>",
+       "noop",
+       "prompt",
+       "reason",
+       "stop"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "SendMessage",
+      "type": null,
+      "description_len": 4259,
+      "schema_len": 1344,
+      "schema_props": [
+       "message",
+       "notify_when_idle",
+       "summary",
+       "to"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Skill",
+      "type": null,
+      "description_len": 1417,
+      "schema_len": 345,
+      "schema_props": [
+       "args",
+       "skill"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "TaskStop",
+      "type": null,
+      "description_len": 364,
+      "schema_len": 382,
+      "schema_props": [
+       "shell_id",
+       "task_id"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebFetch",
+      "type": null,
+      "description_len": 469,
+      "schema_len": 584,
+      "schema_props": [
+       "offset",
+       "prompt",
+       "url"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "WebSearch",
+      "type": null,
+      "description_len": 334,
+      "schema_len": 499,
+      "schema_props": [
+       "allowed_domains",
+       "blocked_domains",
+       "query"
+      ],
+      "extra_keys": []
+     },
+     {
+      "name": "Write",
+      "type": null,
+      "description_len": 240,
+      "schema_len": 367,
+      "schema_props": [
+       "content",
+       "file_path"
+      ],
+      "extra_keys": []
+     }
+    ],
+    "tools_total_bytes": 78191,
+    "messages_count": 11,
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "len": 3109,
+        "sha256": "080d87e067231ed7",
+        "head": "<system-reminder>\\nCodebase and user instructions are shown below. Be sure to adh",
+        "tags": [
+         "system-reminder",
+         "path",
+         "task"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 908,
+        "sha256": "13812719042e19b2",
+        "head": "<system-reminder>\\nAs you answer the user's questions, you can use the following ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 5045,
+        "sha256": "f745af0970d836ac",
+        "head": "This session is being continued from a previous conversation that ran out of con"
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 27,
+        "sha256": "b823d1e63be1b413",
+        "head": "Today's date is 2026-10-13."
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path"
+        ],
+        "input": {
+         "len": 72,
+         "sha256": "eafb36aec8eb84d2",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big4.txt\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 51926,
+         "sha256": "8a7496d44b837963",
+         "head": "1\tBIGFILE 4 MARKER-4444\\n2\tsignal heron copper orbit zebra quokka copper copper c"
+        }
+       },
+       {
+        "type": "text",
+        "len": 580,
+        "sha256": "a08e5fd483e406c0",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 3526,
+        "sha256": "8bf755c0b2276483",
+        "head": "[Truncated: PARTIAL view \u2014 C:\\Users\\<user>\\cc-rea-lab\\proj-hooks\\big\\big4.txt: sh"
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path",
+         "limit",
+         "offset"
+        ],
+        "input": {
+         "len": 101,
+         "sha256": "1f06207a55497b6b",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big4.txt\", \"limit\""
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 12771,
+         "sha256": "9a4af4f422b56712",
+         "head": "558\tdolor copper heron dolor amet vector sit lattice dolor lorem lattice harbor "
+        }
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "string",
+        "len": 62,
+        "sha256": "35c9d4df8057c49a",
+        "head": "PostToolUse:Read hook additional context: POST_HOOK_CTX_MARKER"
+       }
+      ]
+     },
+     {
+      "role": "assistant",
+      "content": [
+       {
+        "type": "tool_use",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "id_prefix": "toolu_",
+        "name": "Read",
+        "input_keys": [
+         "file_path"
+        ],
+        "input": {
+         "len": 72,
+         "sha256": "a233502b8a124147",
+         "head": "{\"file_path\": \"C:\\\\Users\\\\<user>\\\\cc-rea-lab\\\\proj-hooks\\\\big\\\\big5.txt\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "tool_result",
+        "tool_use_id_prefix": "toolu_",
+        "is_error": null,
+        "content": {
+         "len": 53144,
+         "sha256": "f66528694558e7cb",
+         "head": "1\tBIGFILE 5 MARKER-5555\\n2\tdelta harbor ipsum sit lorem delta copper ipsum wombat"
+        }
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 188195,
+        "sha256": "d22719d637e343a1",
+        "head": "BIGFILE 1 MARKER-1111\r\\ngamma amet lattice ipsum dolor copper sit orbit violet ip"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3b981d4d6fd4a137",
+        "head": "Reply with exactly: ok-1\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "e651cd6a7263a3e9",
+        "head": "Reply with exactly: ok-2\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "b50f843b8ac84ac9",
+        "head": "Reply with exactly: ok-3\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3ea83964b4d87be1",
+        "head": "Reply with exactly: ok-4\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "fabfae25c88fbb1d",
+        "head": "Reply with exactly: ok-5\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3b981d4d6fd4a137",
+        "head": "Reply with exactly: ok-1\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "e651cd6a7263a3e9",
+        "head": "Reply with exactly: ok-2\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "b50f843b8ac84ac9",
+        "head": "Reply with exactly: ok-3\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "3ea83964b4d87be1",
+        "head": "Reply with exactly: ok-4\\n"
+       },
+       {
+        "type": "text",
+        "len": 25,
+        "sha256": "fabfae25c88fbb1d",
+        "head": "Reply with exactly: ok-5\\n"
+       },
+       {
+        "type": "text",
+        "len": 24,
+        "sha256": "d44c404db392f0e4",
+        "head": "Reply with exactly: ok-6"
+       },
+       {
+        "type": "text",
+        "len": 582,
+        "sha256": "fa031aaa46b8e9e2",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 22,
+        "sha256": "775a61d9f41e965e",
+        "head": "Reply with exactly: ok"
+       },
+       {
+        "type": "text",
+        "len": 580,
+        "sha256": "e291f933f8631786",
+        "head": "<system-reminder>\\nAttribution for git commits and pull requests you create from ",
+        "tags": [
+         "system-reminder"
+        ]
+       },
+       {
+        "type": "text",
+        "len": 22,
+        "sha256": "775a61d9f41e965e",
+        "head": "Reply with exactly: ok"
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "cache_control": {
+         "type": "ephemeral",
+         "ttl": "1h"
+        },
+        "len": 9018,
+        "sha256": "68177a4ef0c2c464",
+        "head": "[Truncated: PARTIAL view \u2014 C:\\Users\\<user>\\cc-rea-lab\\proj-hooks\\big\\big5.txt: sh",
+        "tags": [
+         "n"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "response": {
+   "seq": "0003",
+   "injected": true,
+   "mode": "status",
+   "status": 400,
+   "headers": {
+    "content-type": "application/json"
+   },
+   "t_ms": 994,
+   "body_bytes": 98,
+   "chunk_count": 0,
+   "chunk_times_ms": [],
+   "client_closed_early": false,
+   "json_keys": [
+    "error",
+    "type"
+   ],
+   "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
+    "type": "invalid_request_error",
+    "message": {
+     "len": 28,
+     "sha256": "b649a349bb1fc5c5"
+    }
+   }
+  }
+ }
+]

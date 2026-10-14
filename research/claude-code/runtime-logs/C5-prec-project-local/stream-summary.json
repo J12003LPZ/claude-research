@@ -186,6 +186,14 @@
    "head": "`local 1`\\n\\nThe command printed `local` and `1` on separate lines, so I joined th"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

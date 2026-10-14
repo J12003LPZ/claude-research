@@ -186,6 +186,14 @@
    "head": "Plan mode is on, so I haven't done either step yet.\\n\\n- **Step 1 (write `out.txt`"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 2
+  }
+ ],
  "events": [
   {
    "type": "system",

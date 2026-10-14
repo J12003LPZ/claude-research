@@ -1,0 +1,912 @@
+{
+ "line_count": 1827,
+ "top_prefixes": [
+  [
+   "sha256:a9fa9fda98d7712c",
+   381
+  ],
+  [
+   "sha256:d412a062620ef57b",
+   217
+  ],
+  [
+   "sha256:888546584c3e70c0",
+   183
+  ],
+  [
+   "sha256:536ff5051d2541c9",
+   103
+  ],
+  [
+   "sha256:c8e5998f6a3955c2",
+   76
+  ],
+  [
+   "sha256:08da033e703a712f",
+   73
+  ],
+  [
+   "sha256:ed9f6f25068608ef",
+   72
+  ],
+  [
+   "sha256:5a99bd65ee009b73",
+   61
+  ],
+  [
+   "sha256:c0f2c3d33c87d5f1",
+   50
+  ],
+  [
+   "sha256:dcc67c16404bfe1a",
+   46
+  ],
+  [
+   "sha256:eb98c954f185def2",
+   38
+  ],
+  [
+   "sha256:b1f3c8afdfdc381e",
+   36
+  ],
+  [
+   "sha256:10d1aea40a51878a",
+   36
+  ],
+  [
+   "sha256:7f51fc7305b09d42",
+   36
+  ],
+  [
+   "sha256:3ee591fcb25f09a0",
+   36
+  ],
+  [
+   "sha256:bf03243e9de2c35d",
+   36
+  ],
+  [
+   "sha256:2df3727d07e16672",
+   36
+  ],
+  [
+   "sha256:3e6b3c645a3d4043",
+   36
+  ],
+  [
+   "sha256:b957259df5982535",
+   25
+  ],
+  [
+   "sha256:e65fff58f4f5dd2e",
+   25
+  ],
+  [
+   "sha256:9fc20b5a3065ee46",
+   25
+  ],
+  [
+   "sha256:61d33d4d67e17927",
+   25
+  ],
+  [
+   "sha256:afd047b80d0798a4",
+   25
+  ],
+  [
+   "sha256:abb902913ed94ffb",
+   6
+  ],
+  [
+   "sha256:bd1b468c2d02895a",
+   5
+  ],
+  [
+   "sha256:c3be2a6cd3433143",
+   5
+  ],
+  [
+   "sha256:bb54068aea85faa7",
+   4
+  ],
+  [
+   "sha256:6869e181984dac72",
+   4
+  ],
+  [
+   "sha256:11a7240bd384bd8e",
+   4
+  ],
+  [
+   "sha256:15f3a2898addfc6c",
+   4
+  ],
+  [
+   "sha256:821e582030bb0428",
+   4
+  ],
+  [
+   "sha256:dc7bb987664a0f5e",
+   4
+  ],
+  [
+   "sha256:a76ce82a974999d8",
+   4
+  ],
+  [
+   "sha256:23d6dd338824e0ec",
+   4
+  ],
+  [
+   "sha256:031a8f0f659df890",
+   4
+  ],
+  [
+   "sha256:5947b487dfb48ee1",
+   3
+  ],
+  [
+   "sha256:05722a3512c853ae",
+   3
+  ],
+  [
+   "sha256:faab0dc4735c1cfe",
+   3
+  ],
+  [
+   "sha256:ace2cb3d0a548c4b",
+   3
+  ],
+  [
+   "sha256:cab6a859fda3243e",
+   2
+  ],
+  [
+   "sha256:03cd9d13303acb35",
+   2
+  ],
+  [
+   "sha256:1ea442a134b2a184",
+   2
+  ],
+  [
+   "sha256:54a0e8c17ebb21a1",
+   2
+  ],
+  [
+   "sha256:ec80d826d38f56b5",
+   2
+  ],
+  [
+   "sha256:f094d0a2f453bef7",
+   2
+  ],
+  [
+   "sha256:072f2f1df07d5024",
+   2
+  ],
+  [
+   "sha256:90ea13f50c0b6736",
+   2
+  ],
+  [
+   "sha256:0dfe1d63c9d86896",
+   2
+  ],
+  [
+   "sha256:3d2187e72b2ad1a9",
+   2
+  ],
+  [
+   "sha256:99f24fba8119defd",
+   2
+  ],
+  [
+   "sha256:d01476dfee7ed2de",
+   2
+  ],
+  [
+   "sha256:b6c2297291f62097",
+   2
+  ],
+  [
+   "sha256:53f13ae99ed53bd3",
+   2
+  ],
+  [
+   "sha256:21a22417e1cdd462",
+   2
+  ],
+  [
+   "sha256:35f7af5b6dea892e",
+   2
+  ],
+  [
+   "sha256:2b9453275593aa26",
+   2
+  ],
+  [
+   "sha256:a160c9921930fff3",
+   2
+  ],
+  [
+   "sha256:5a2f18dc0c61739f",
+   2
+  ],
+  [
+   "sha256:3c2757a930308b8b",
+   1
+  ],
+  [
+   "sha256:a4cad41a981eb8bc",
+   1
+  ]
+ ],
+ "signals": [
+  "2026-10-14T07:42:50.184Z [signal] compact",
+  "2026-10-14T07:42:50.616Z [signal] compact",
+  "2026-10-14T07:42:50.654Z [signal] API error",
+  "2026-10-14T07:42:50.666Z [signal] API error",
+  "2026-10-14T07:42:52.950Z [signal] compact",
+  "2026-10-14T07:42:52.966Z [signal] API error",
+  "2026-10-14T07:42:52.977Z [signal] API error",
+  "2026-10-14T07:42:55.941Z [signal] compact",
+  "2026-10-14T07:42:55.957Z [signal] API error",
+  "2026-10-14T07:42:58.938Z [signal] compact",
+  "2026-10-14T07:42:58.956Z [signal] API error",
+  "2026-10-14T07:43:01.939Z [signal] compact",
+  "2026-10-14T07:43:01.958Z [signal] API error",
+  "2026-10-14T07:43:04.939Z [signal] compact",
+  "2026-10-14T07:43:04.967Z [signal] API error",
+  "2026-10-14T07:43:07.935Z [signal] compact",
+  "2026-10-14T07:43:07.960Z [signal] API error",
+  "2026-10-14T07:43:10.935Z [signal] compact",
+  "2026-10-14T07:43:10.958Z [signal] API error",
+  "2026-10-14T07:43:13.939Z [signal] compact",
+  "2026-10-14T07:43:13.961Z [signal] API error",
+  "2026-10-14T07:43:16.946Z [signal] compact",
+  "2026-10-14T07:43:16.973Z [signal] API error",
+  "2026-10-14T07:43:19.937Z [signal] compact",
+  "2026-10-14T07:43:19.961Z [signal] API error",
+  "2026-10-14T07:43:22.936Z [signal] compact",
+  "2026-10-14T07:43:22.936Z [signal] compact",
+  "2026-10-14T07:43:23.007Z [signal] compact",
+  "2026-10-14T07:43:23.018Z [signal] source=compact",
+  "2026-10-14T07:43:23.034Z [signal] API error",
+  "2026-10-14T07:43:23.036Z [signal] compact",
+  "2026-10-14T07:43:23.037Z [signal] compact",
+  "2026-10-14T07:43:23.037Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:23.038Z [signal] compact",
+  "2026-10-14T07:43:23.038Z [signal] compact",
+  "2026-10-14T07:43:23.038Z [signal] compact",
+  "2026-10-14T07:43:25.936Z [signal] compact",
+  "2026-10-14T07:43:25.937Z [signal] compact",
+  "2026-10-14T07:43:26.006Z [signal] compact",
+  "2026-10-14T07:43:26.016Z [signal] source=compact",
+  "2026-10-14T07:43:26.032Z [signal] API error",
+  "2026-10-14T07:43:26.034Z [signal] compact",
+  "2026-10-14T07:43:26.035Z [signal] compact",
+  "2026-10-14T07:43:26.035Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:26.036Z [signal] compact",
+  "2026-10-14T07:43:26.036Z [signal] compact",
+  "2026-10-14T07:43:26.036Z [signal] compact",
+  "2026-10-14T07:43:28.939Z [signal] compact",
+  "2026-10-14T07:43:28.940Z [signal] compact",
+  "2026-10-14T07:43:29.007Z [signal] compact",
+  "2026-10-14T07:43:29.017Z [signal] source=compact",
+  "2026-10-14T07:43:29.034Z [signal] API error",
+  "2026-10-14T07:43:29.036Z [signal] compact",
+  "2026-10-14T07:43:29.037Z [signal] compact",
+  "2026-10-14T07:43:29.037Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:29.038Z [signal] compact",
+  "2026-10-14T07:43:29.038Z [signal] compact",
+  "2026-10-14T07:43:29.038Z [signal] compact",
+  "2026-10-14T07:43:31.944Z [signal] compact",
+  "2026-10-14T07:43:31.944Z [signal] compact",
+  "2026-10-14T07:43:32.015Z [signal] compact",
+  "2026-10-14T07:43:32.027Z [signal] source=compact",
+  "2026-10-14T07:43:32.045Z [signal] API error",
+  "2026-10-14T07:43:32.047Z [signal] compact",
+  "2026-10-14T07:43:32.048Z [signal] compact",
+  "2026-10-14T07:43:32.049Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:32.049Z [signal] compact",
+  "2026-10-14T07:43:32.049Z [signal] compact",
+  "2026-10-14T07:43:32.049Z [signal] compact",
+  "2026-10-14T07:43:34.951Z [signal] compact",
+  "2026-10-14T07:43:34.951Z [signal] compact",
+  "2026-10-14T07:43:35.021Z [signal] compact",
+  "2026-10-14T07:43:35.032Z [signal] source=compact",
+  "2026-10-14T07:43:35.050Z [signal] API error",
+  "2026-10-14T07:43:35.052Z [signal] compact",
+  "2026-10-14T07:43:35.053Z [signal] compact",
+  "2026-10-14T07:43:35.053Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:35.054Z [signal] compact",
+  "2026-10-14T07:43:35.054Z [signal] compact",
+  "2026-10-14T07:43:35.054Z [signal] compact",
+  "2026-10-14T07:43:38.040Z [signal] API error",
+  "2026-10-14T07:43:38.044Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:41.035Z [signal] API error",
+  "2026-10-14T07:43:41.038Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:44.052Z [signal] API error",
+  "2026-10-14T07:43:44.055Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:47.045Z [signal] API error",
+  "2026-10-14T07:43:47.048Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:50.057Z [signal] API error",
+  "2026-10-14T07:43:50.061Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:53.053Z [signal] API error",
+  "2026-10-14T07:43:53.056Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:56.054Z [signal] API error",
+  "2026-10-14T07:43:56.058Z [signal] Reactive compact, API error",
+  "2026-10-14T07:43:59.059Z [signal] API error",
+  "2026-10-14T07:43:59.063Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:02.046Z [signal] API error",
+  "2026-10-14T07:44:02.049Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:05.072Z [signal] API error",
+  "2026-10-14T07:44:05.076Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:08.051Z [signal] API error",
+  "2026-10-14T07:44:08.054Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:11.074Z [signal] API error",
+  "2026-10-14T07:44:11.078Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:14.076Z [signal] API error",
+  "2026-10-14T07:44:14.079Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:17.076Z [signal] API error",
+  "2026-10-14T07:44:17.080Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:20.061Z [signal] API error",
+  "2026-10-14T07:44:20.065Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:23.060Z [signal] API error",
+  "2026-10-14T07:44:23.063Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:26.068Z [signal] API error",
+  "2026-10-14T07:44:26.071Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:29.067Z [signal] API error",
+  "2026-10-14T07:44:29.070Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:32.055Z [signal] API error",
+  "2026-10-14T07:44:32.059Z [signal] Reactive compact, API error",
+  "2026-10-14T07:44:35.067Z [signal] API error",
+  "2026-10-14T07:44:35.070Z [signal] Reactive compact, API error"
+ ],
+ "reactive_compact": [],
+ "watchdog": [],
+ "autocompact": [
+  {
+   "t": "2026-10-14T07:42:50.616Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:42:52.950Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:42:55.941Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:42:58.938Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:01.939Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:04.939Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:07.935Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:10.935Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:13.939Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:16.946Z",
+   "event": "level",
+   "level": "ok",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:19.937Z",
+   "event": "level",
+   "level": "warn",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:22.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:22.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:23.007Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:23.037Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:25.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:25.937Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:26.006Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:26.035Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:28.939Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:28.940Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:29.007Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:29.037Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:31.944Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:31.944Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:32.015Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:32.049Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:34.951Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:34.951Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:35.021Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:35.053Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:37.939Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:37.939Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:38.009Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:38.044Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:40.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:40.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:41.005Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:41.038Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:43.939Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:43.939Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:44.010Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:44.055Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:46.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:46.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:47.010Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:47.048Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:49.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:49.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:50.021Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:50.061Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:52.942Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:52.942Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:53.016Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:53.056Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:55.940Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:55.940Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:56.017Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:56.058Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:43:58.938Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:43:58.938Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:43:59.012Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:43:59.063Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:01.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:01.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:02.007Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:02.049Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:04.934Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:04.934Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:05.011Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:05.076Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:07.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:07.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:08.009Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:08.054Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:10.935Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:10.935Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:11.008Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:11.078Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:13.940Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:13.940Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:14.016Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:14.079Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:16.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:16.936Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:17.016Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:17.080Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:19.934Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:19.935Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:20.006Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:20.065Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:22.945Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:22.945Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:23.017Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:23.063Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:25.934Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:25.934Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:26.017Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:26.071Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:28.936Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:28.937Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:29.007Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:29.070Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:31.935Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:31.935Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:32.013Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:32.059Z",
+   "event": "summary_api_error"
+  },
+  {
+   "t": "2026-10-14T07:44:34.933Z",
+   "event": "level",
+   "level": "blocked",
+   "effective_window": 980000
+  },
+  {
+   "t": "2026-10-14T07:44:34.934Z",
+   "event": "routed_reactive",
+   "threshold_source": "model-default"
+  },
+  {
+   "t": "2026-10-14T07:44:35.009Z",
+   "event": "pre_compact_hook_ran"
+  },
+  {
+   "t": "2026-10-14T07:44:35.070Z",
+   "event": "summary_api_error"
+  }
+ ]
+}

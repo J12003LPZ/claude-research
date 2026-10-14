@@ -299,9 +299,10 @@ REPRODUCE (E17a, E17c, static pass 02):
   total), fire SessionStart with source `compact`, then PostCompact.
 - Stop with a clear error if the context refills to the limit within 3 turns, three times
   in a row. Stop retrying after 3 consecutive summarization failures. The first rule is
-  runtime-verified by E17c; the second remains a static/spec requirement, not a runtime
-  finding (E30/E31 exhausted one summary retry loop but did not produce three distinct
-  failed compaction operations).
+  runtime-verified by E17c; the second is a static/spec requirement that runtime
+  evidence **contradicts on the reactive route**: E37 saw 25 consecutive failed compactions in
+  one process with no breaker, and the CLI instead ended each blocked turn with `blocking_limit`.
+  The spec should require a breaker as a CHOICE, not as observed behaviour.
 
 CHOICE: make the re-attachment budget proportional to the window. In E17c (100k window,
 about 36k tokens of fixed prefix, 22.6k-token reads) the rebuilt context of about 15k

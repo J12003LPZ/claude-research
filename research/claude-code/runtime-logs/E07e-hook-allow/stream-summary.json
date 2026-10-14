@@ -186,6 +186,14 @@
    "head": "I changed `beta` to `beta-hook-allowed` in `notes.txt`. The edit went through, s"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

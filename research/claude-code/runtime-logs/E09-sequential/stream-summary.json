@@ -186,6 +186,14 @@
    "head": "`greet('x')` returns `\"hello x\"`.\\n\\nThe match was in `src\\calc.py`, where `greet("
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",

@@ -206,6 +206,14 @@
    "head": "You've hit your session limit \u00b7 resets 5pm (America/New_York)"
   }
  },
+ "results": [
+  {
+   "terminal_reason": "api_error",
+   "api_error_status": 429,
+   "is_error": true,
+   "num_turns": 5
+  }
+ ],
  "events": [
   {
    "type": "system",

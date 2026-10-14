@@ -192,6 +192,14 @@
    "head": "echo returned \"echo:hello-mcp\".\\nmutate returned \"mutate:x\"."
   }
  },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 3
+  }
+ ],
  "events": [
   {
    "type": "system",
