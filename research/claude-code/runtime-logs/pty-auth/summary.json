@@ -1,0 +1,36 @@
+{
+  "id": "pty-auth",
+  "cli_version": "2.1.296",
+  "target_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+  "method": "trusted disposable background session with daemon-managed named pipe",
+  "raw_evidence": "lab/raw/E92-pty-auth (private, not committed)",
+  "launch_exit": 0,
+  "model_request": {
+    "attempted": true,
+    "method": "POST",
+    "path": "/v1/messages?beta=true",
+    "status": 401,
+    "turn_completed": false
+  },
+  "pipe_accepted": true,
+  "protocol": {
+    "hello_observed": true,
+    "auth_required_observed": true,
+    "control_kill_used_for_cleanup": true
+  },
+  "unauthenticated_input": {
+    "marker_sent": true,
+    "host_to_client_raw_bytes": 30979,
+    "marker_reflected_in_host_output": false,
+    "interpretation": "auth-required was emitted; marker absence is recorded but is not treated as an independent proof of input-forwarding rejection"
+  },
+  "cleanup": {
+    "background_session_removed": true,
+    "proxy_stopped": true
+  },
+  "limits": [
+    "The authenticated success path was not exercised",
+    "Supervisor respawn execution remains untested",
+    "The session remained blocked/idle and no model turn completed"
+  ]
+}

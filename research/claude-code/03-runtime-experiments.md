@@ -447,10 +447,11 @@ daemon, an unreachable control endpoint, and zero background workers while still
   documented stdin shape and a Node IPC channel: it emitted its startup and heartbeat records, accepted a `shutdown`
   message, and exited with code 0. A second worker was launched by a short-lived supervisor; after the supervisor
   exited, the worker emitted the documented `parent supervisor gone - exiting` watchdog message. The worker exit
-  status was not captured. Worker-specific
-  respawn codes and PTY auth enforcement remain untested. The E82-E85 sessions and worker probes made no model POST.
+  status was not captured. A trusted daemon-managed PTY probe then connected without sending an auth message,
+  received `auth-required`, and did not observe its synthetic marker in host-to-client terminal frames. Supervisor
+  respawn execution remains untested. The E82-E85 sessions and worker probes made no model POST.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json`, `runtime-logs/daemon-entrypoints/summary.json`,
-  `runtime-logs/worker-lifecycle/summary.json`, `runtime-logs/E85-pty-bytes/summary.json`, and the prior passive surface record in
+  `runtime-logs/worker-lifecycle/summary.json`, `runtime-logs/pty-auth/summary.json`, `runtime-logs/E85-pty-bytes/summary.json`, and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 
 ### E41 to E43: `auto` permission mode with a scripted classifier

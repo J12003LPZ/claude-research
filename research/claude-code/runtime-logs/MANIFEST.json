@@ -4662,8 +4662,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "15567ec9c8f9a8a12c7538fdf23b97d96871220df7c12079115469d9d8927567",
-     "bytes": 2119
+     "sha256": "9748c4d4432e5194df585672f2b5dd15563d26501509f79c5c2a8ea43c44d89c",
+     "bytes": 3172
     }
    },
    "redaction": "sanitized"
@@ -4686,6 +4686,17 @@
     "summary.json": {
      "sha256": "4342ef26f59e124429a1c51b0e082b55163baf4a08570598abd5fc3c0df796e0",
      "bytes": 1367
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
+   "id": "pty-auth",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "1bb8330d5fbb232774167eb0c2e74c7c701fd6447f423edec080376827e0c5af",
+     "bytes": 1194
     }
    },
    "redaction": "sanitized"

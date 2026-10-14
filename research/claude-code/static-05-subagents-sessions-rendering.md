@@ -505,6 +505,17 @@ token (`CLAUDE_BG_PTY_AUTH` or a tokens file).
 IPC channel when an auth manager is present) and writes a JSON config on the worker's stdin
 (`{config, initialAccessToken}`). Workers abort on SIGTERM/SIGINT or an IPC message.
 
+**Worker respawn policy** (**VERIFIED-STATIC**): `chunk-mwtqc60a.js@11` defines temporary-failure exit code
+`75` and permanent exit code `78`. The supervisor's `onExit` handler in `chunk-39q3j8sd.js` retries code 75
+after a randomized 15-45 second delay and increments `temporaryEndsInARow`; the next spawn appends that count to
+the worker argv. Code 78 is logged as permanent and is not respawned. Other nonzero exits use exponential crash
+backoff whose pre-jitter base is capped at 300 seconds; the effective randomized delay can approach 450 seconds. A clean zero exit after at least 60 seconds respawns immediately; a shorter zero
+exit is treated as a crash unless the process-wrapper launcher branch parks it. The 60-second threshold is
+`Er=60000`, the 30-second temporary-failure base is `Dr=30000`, and the 5-minute crash cap is `Pr=300000`
+(`chunk-39q3j8sd.js`); the launcher grace threshold is `yYe=12000` (`chunk-3vxgtxrt.js@11`). A direct
+`scheduled`-unavailable probe returned exit code 78, corroborating the permanent code; supervisor respawn execution
+was not exercised.
+
 **Spares and preload** (`chunk-e9h2r1b7.js@62386`): on supported non-Windows hosts a spare is a pre-warmed
 process started as `--bg-pty-host <sock> 200 50 -- <claude> --bg-spare <claimSock>`. It imports the main chunk
 (`chunk-zvnaqyp5.js`) eagerly, then waits on the claim socket for the real session's env and argv (`kin`), exits
@@ -534,8 +545,9 @@ Windows by the static `runBgSpare` guard. Daemon worker kinds, stdin/parent-watc
 and PTY auth control messages are recorded in `runtime-logs/daemon-entrypoints/summary.json`. The heartbeat worker was
 launched through the pinned CLI with the documented stdin shape and a Node IPC channel; it emitted startup and heartbeat
 records, accepted a `shutdown` message, and exited with code 0. A separate parent-disappearance probe reached the
-runtime watchdog and emitted `parent supervisor gone - exiting`. Worker-specific respawn codes and PTY auth enforcement
-remain untested. See `runtime-logs/worker-lifecycle/summary.json`.
+runtime watchdog and emitted `parent supervisor gone - exiting`. A daemon-managed unauthenticated PTY client then
+received `auth-required`; its synthetic marker was not observed in host-to-client terminal frames. Supervisor
+respawn execution remains untested. See `runtime-logs/worker-lifecycle/summary.json` and `runtime-logs/pty-auth/summary.json`.
 
 ## B. Session persistence and resume
 
