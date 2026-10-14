@@ -68,7 +68,7 @@ def main():
         rp = os.path.join(d, "run.json")
         if os.path.exists(rp):
             r = json.load(open(rp, encoding="utf-8"))
-            row.update({"cli_version": r.get("cli_version"), "exit_code": r.get("exit_code"),
+            row.update({"cli_version": r.get("cli_version"), "exe_sha256": r.get("exe_sha256"), "exit_code": r.get("exit_code"),
                         "duration_s": r.get("duration_s"), "started": r.get("started_iso"),
                         "fault_injected": bool(r.get("fault")), "killed": r.get("killed")})
         rows.append(row)

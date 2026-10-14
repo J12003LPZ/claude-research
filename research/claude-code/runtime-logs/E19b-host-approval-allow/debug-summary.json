@@ -1,5 +1,5 @@
 {
- "line_count": 244,
+ "line_count": 269,
  "top_prefixes": [
   [
    "Keeping C",
@@ -8,6 +8,10 @@
   [
    "hooks",
    24
+  ],
+  [
+   "Using",
+   16
   ],
   [
    "Fast mode unavailable",
@@ -98,6 +102,10 @@
    2
   ],
   [
+   "Found",
+   2
+  ],
+  [
    "MCP",
    2
   ],
@@ -107,30 +115,6 @@
   ],
   [
    "$.session",
-   2
-  ],
-  [
-   "Preserving file permissions",
-   2
-  ],
-  [
-   "Writing to temp file",
-   2
-  ],
-  [
-   "Applied",
-   2
-  ],
-  [
-   "Temp",
-   2
-  ],
-  [
-   "Renaming C",
-   2
-  ],
-  [
-   "File C",
    2
   ],
   [
@@ -170,6 +154,14 @@
    2
   ],
   [
+   "Caching plugin from source",
+   2
+  ],
+  [
+   "Cloned repository from https",
+   2
+  ],
+  [
    "MDM",
    1
   ],
@@ -191,10 +183,6 @@
   ],
   [
    "Loaded 30 installed plugins from C",
-   1
-  ],
-  [
-   "Found",
    1
   ],
   [
@@ -238,7 +226,19 @@
    1
   ],
   [
+   "Acquired",
+   1
+  ],
+  [
+   "Acquired PID lock on running version",
+   1
+  ],
+  [
    "getSkills returning",
+   1
+  ],
+  [
+   "Starting",
    1
   ]
  ]

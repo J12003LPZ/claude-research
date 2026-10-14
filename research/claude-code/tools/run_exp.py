@@ -30,6 +30,21 @@ SCRUB_PREFIXES = ("CLAUDE", "ANTHROPIC", "MCP_", "OTEL_")
 KEEP = {"CLAUDE_CONFIG_DIR"}
 
 
+CLAUDE_BIN = os.environ.get("CLAUDE_BIN", "claude")
+
+
+def exe_info():
+    """Version string and SHA-256 of the binary this run uses (CLAUDE_BIN overrides PATH)."""
+    import hashlib, shutil
+    path = shutil.which(CLAUDE_BIN) or CLAUDE_BIN
+    try:
+        digest = hashlib.sha256(open(path, "rb").read()).hexdigest()
+    except OSError:
+        digest = None
+    ver = subprocess.run([CLAUDE_BIN, "--version"], capture_output=True, text=True).stdout.strip()
+    return ver, digest
+
+
 def free_port():
     s = socket.socket()
     s.bind(("127.0.0.1", 0))
@@ -82,7 +97,7 @@ def main():
         proxy.stdout.readline()
         env["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:{port}"
 
-    cmd = ["claude"]
+    cmd = [CLAUDE_BIN]
     if a.prompt is not None:
         cmd += ["-p", a.prompt]
     if not a.no_default_flags:
@@ -118,9 +133,10 @@ def main():
     time.sleep(0.5)
     if proxy:
         proxy.terminate()
-    version = subprocess.run(["claude", "--version"], capture_output=True, text=True, env=env).stdout.strip()
+    version, exe_sha256 = exe_info()
     run = {
         "id": a.id,
+        "exe_sha256": exe_sha256,
         "cwd": a.cwd,
         "argv": ["claude"] + [x if x != a.prompt else "<prompt>" for x in cmd[1:]],
         "prompt": a.prompt,

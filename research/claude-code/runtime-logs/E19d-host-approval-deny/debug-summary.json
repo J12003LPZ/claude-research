@@ -1,5 +1,5 @@
 {
- "line_count": 238,
+ "line_count": 269,
  "top_prefixes": [
   [
    "Keeping C",
@@ -8,6 +8,10 @@
   [
    "hooks",
    24
+  ],
+  [
+   "Using",
+   16
   ],
   [
    "Fast mode unavailable",
@@ -98,6 +102,10 @@
    2
   ],
   [
+   "Found",
+   2
+  ],
+  [
    "MCP",
    2
   ],
@@ -146,6 +154,14 @@
    2
   ],
   [
+   "Caching plugin from source",
+   2
+  ],
+  [
+   "Cloned repository from https",
+   2
+  ],
+  [
    "MDM",
    1
   ],
@@ -166,15 +182,7 @@
    1
   ],
   [
-   "Loaded",
-   1
-  ],
-  [
    "Loaded 30 installed plugins from C",
-   1
-  ],
-  [
-   "Found",
    1
   ],
   [
@@ -210,7 +218,19 @@
    1
   ],
   [
+   "Loaded",
+   1
+  ],
+  [
    "cc-plugin-sec-default@builtin",
+   1
+  ],
+  [
+   "Acquired",
+   1
+  ],
+  [
+   "Acquired PID lock on running version",
    1
   ],
   [
@@ -219,26 +239,6 @@
   ],
   [
    "Starting",
-   1
-  ],
-  [
-   "Passes",
-   1
-  ],
-  [
-   "Total LSP servers loaded",
-   1
-  ],
-  [
-   "LSP SERVER MANAGER",
-   1
-  ],
-  [
-   "servedCatalog",
-   1
-  ],
-  [
-   "Grove",
    1
   ]
  ]

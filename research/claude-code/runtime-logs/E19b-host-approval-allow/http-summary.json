@@ -2,7 +2,7 @@
  {
   "request": {
    "seq": "0001",
-   "t_ms": 125,
+   "t_ms": 121,
    "method": "HEAD",
    "url": "/api/hello",
    "body_bytes": 0,
@@ -17,7 +17,7 @@
     "connection": "keep-alive",
     "user-agent": "Bun/1.4.3",
     "accept": "*/*",
-    "host": "127.0.0.1:49187",
+    "host": "127.0.0.1:55145",
     "accept-encoding": "gzip, deflate, br, zstd"
    },
    "body": null
@@ -27,7 +27,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:42:07 GMT",
+    "date": "Wed, 14 Oct 2026 02:50:44 GMT",
     "content-type": "application/json",
     "content-length": "20",
     "connection": "keep-alive",
@@ -38,8 +38,8 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 51,
-   "t_ms": 176,
+   "ttfb_ms": 58,
+   "t_ms": 179,
    "body_bytes": 0,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -50,10 +50,10 @@
  {
   "request": {
    "seq": "0002",
-   "t_ms": 577,
+   "t_ms": 546,
    "method": "POST",
    "url": "/v1/messages?beta=true",
-   "body_bytes": 100528,
+   "body_bytes": 100329,
    "header_order": [
     "Accept",
     "Authorization",
@@ -81,7 +81,7 @@
     "accept": "application/json",
     "authorization": "<redacted len=115>",
     "content-type": "application/json",
-    "user-agent": "claude-cli/2.1.299 (external, sdk-cli)",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
     "x-claude-code-session-id": "<redacted len=36>",
     "x-stainless-arch": "x64",
     "x-stainless-lang": "js",
@@ -91,14 +91,14 @@
     "x-stainless-runtime": "node",
     "x-stainless-runtime-version": "v26.3.0",
     "x-stainless-timeout": "600",
-    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
     "anthropic-dangerous-direct-browser-access": "true",
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:49187",
+    "host": "127.0.0.1:55145",
     "accept-encoding": "gzip, deflate, br, zstd",
-    "content-length": "100528"
+    "content-length": "100329"
    },
    "body": {
     "top_level_keys": [
@@ -143,8 +143,8 @@
      {
       "type": "text",
       "len": 74,
-      "sha256": "4d0528b1797052c7",
-      "head": "x-anthropic-billing-header: cc_version=2.1.299.98a; cc_entrypoint=sdk-cli;"
+      "sha256": "fb37bec3a905c408",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.542; cc_entrypoint=sdk-cli;"
      },
      {
       "type": "text",
@@ -208,7 +208,7 @@
      {
       "name": "CronCreate",
       "type": null,
-      "description_len": 2794,
+      "description_len": 2595,
       "schema_len": 912,
       "schema_props": [
        "cron",
@@ -514,7 +514,7 @@
       "extra_keys": []
      }
     ],
-    "tools_total_bytes": 78392,
+    "tools_total_bytes": 78193,
     "messages_count": 2,
     "messages": [
      {
@@ -583,7 +583,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:42:09 GMT",
+    "date": "Wed, 14 Oct 2026 02:50:45 GMT",
     "content-type": "text/event-stream; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -593,17 +593,17 @@
     "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
     "anthropic-ratelimit-unified-overage-status": "rejected",
     "anthropic-ratelimit-unified-reset": "1791961800",
-    "anthropic-ratelimit-unified-5h-utilization": "0.6",
+    "anthropic-ratelimit-unified-5h-utilization": "0.72",
     "anthropic-ratelimit-unified-7d-reset": "1792018800",
     "anthropic-ratelimit-unified-5h-reset": "1791961800",
     "anthropic-ratelimit-unified-7d-status": "allowed",
     "anthropic-ratelimit-unified-fallback-percentage": "0.5",
     "anthropic-ratelimit-unified-fallback": "available",
-    "anthropic-ratelimit-unified-7d-utilization": "0.59",
+    "anthropic-ratelimit-unified-7d-utilization": "0.6",
     "anthropic-ratelimit-unified-status": "allowed",
     "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
     "request-id": "req_<id>",
-    "traceresponse": "00-<hex>-63fd358688b808e4-01",
+    "traceresponse": "00-<hex>-35ea44e59d5520ce-01",
     "anthropic-organization-id": "<redacted len=36>",
     "anthropic-workspace-id": "wrkspc_<id>",
     "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
@@ -613,16 +613,19 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 1761,
-   "t_ms": 2338,
-   "body_bytes": 3825,
-   "chunk_count": 5,
+   "ttfb_ms": 1271,
+   "t_ms": 1817,
+   "body_bytes": 5581,
+   "chunk_count": 8,
    "chunk_times_ms": [
-    1762,
-    1762,
-    1901,
-    2049,
-    2057
+    1272,
+    1272,
+    1520,
+    1591,
+    1591,
+    1730,
+    1822,
+    1859
    ],
    "client_closed_early": false,
    "message_start": {
@@ -630,13 +633,13 @@
     "id_prefix": "msg_011C",
     "usage": {
      "input_tokens": 2,
-     "cache_creation_input_tokens": 36202,
+     "cache_creation_input_tokens": 36148,
      "cache_read_input_tokens": 0,
      "cache_creation": {
       "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 36202
+      "ephemeral_1h_input_tokens": 36148
      },
-     "output_tokens": 17,
+     "output_tokens": 5,
      "service_tier": "standard",
      "inference_geo": "global"
     },
@@ -676,6 +679,18 @@
     ],
     [
      "content_block_delta",
+     3
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "content_block_delta",
      16
     ],
     [
@@ -694,6 +709,16 @@
    "content_blocks": [
     {
      "index": 0,
+     "type": "thinking",
+     "name": null,
+     "delta_types": {
+      "thinking_delta": 2,
+      "signature_delta": 1
+     },
+     "delta_count": 3
+    },
+    {
+     "index": 1,
      "type": "tool_use",
      "name": "Bash",
      "delta_types": {
@@ -704,21 +729,21 @@
    ],
    "final_usage": {
     "input_tokens": 2,
-    "cache_creation_input_tokens": 36202,
+    "cache_creation_input_tokens": 36148,
     "cache_read_input_tokens": 0,
-    "output_tokens": 87,
+    "output_tokens": 151,
     "output_tokens_details": {
-     "thinking_tokens": 0
+     "thinking_tokens": 63
     },
     "iterations": [
      {
       "input_tokens": 2,
-      "output_tokens": 87,
+      "output_tokens": 151,
       "cache_read_input_tokens": 0,
-      "cache_creation_input_tokens": 36202,
+      "cache_creation_input_tokens": 36148,
       "cache_creation": {
        "ephemeral_5m_input_tokens": 0,
-       "ephemeral_1h_input_tokens": 36202
+       "ephemeral_1h_input_tokens": 36148
       },
       "type": "message"
      }
@@ -735,10 +760,10 @@
  {
   "request": {
    "seq": "0003",
-   "t_ms": 2653,
+   "t_ms": 2419,
    "method": "POST",
    "url": "/v1/messages?beta=true",
-   "body_bytes": 100919,
+   "body_bytes": 101853,
    "header_order": [
     "Accept",
     "Authorization",
@@ -766,7 +791,7 @@
     "accept": "application/json",
     "authorization": "<redacted len=115>",
     "content-type": "application/json",
-    "user-agent": "claude-cli/2.1.299 (external, sdk-cli)",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
     "x-claude-code-session-id": "<redacted len=36>",
     "x-stainless-arch": "x64",
     "x-stainless-lang": "js",
@@ -776,14 +801,14 @@
     "x-stainless-runtime": "node",
     "x-stainless-runtime-version": "v26.3.0",
     "x-stainless-timeout": "600",
-    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
     "anthropic-dangerous-direct-browser-access": "true",
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:49187",
+    "host": "127.0.0.1:55145",
     "accept-encoding": "gzip, deflate, br, zstd",
-    "content-length": "100919"
+    "content-length": "101853"
    },
    "body": {
     "top_level_keys": [
@@ -828,8 +853,8 @@
      {
       "type": "text",
       "len": 74,
-      "sha256": "4d0528b1797052c7",
-      "head": "x-anthropic-billing-header: cc_version=2.1.299.98a; cc_entrypoint=sdk-cli;"
+      "sha256": "fb37bec3a905c408",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.542; cc_entrypoint=sdk-cli;"
      },
      {
       "type": "text",
@@ -893,7 +918,7 @@
      {
       "name": "CronCreate",
       "type": null,
-      "description_len": 2794,
+      "description_len": 2595,
       "schema_len": 912,
       "schema_props": [
        "cron",
@@ -1199,7 +1224,7 @@
       "extra_keys": []
      }
     ],
-    "tools_total_bytes": 78392,
+    "tools_total_bytes": 78193,
     "messages_count": 4,
     "messages": [
      {
@@ -1257,6 +1282,11 @@
       "role": "assistant",
       "content": [
        {
+        "type": "thinking",
+        "thinking_len": 0,
+        "has_signature": true
+       },
+       {
         "type": "tool_use",
         "cache_control": {
          "type": "ephemeral",
@@ -1303,7 +1333,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:42:11 GMT",
+    "date": "Wed, 14 Oct 2026 02:50:47 GMT",
     "content-type": "text/event-stream; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -1313,17 +1343,17 @@
     "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
     "anthropic-ratelimit-unified-overage-status": "rejected",
     "anthropic-ratelimit-unified-reset": "1791961800",
-    "anthropic-ratelimit-unified-5h-utilization": "0.6",
+    "anthropic-ratelimit-unified-5h-utilization": "0.72",
     "anthropic-ratelimit-unified-7d-reset": "1792018800",
     "anthropic-ratelimit-unified-5h-reset": "1791961800",
     "anthropic-ratelimit-unified-7d-status": "allowed",
     "anthropic-ratelimit-unified-fallback-percentage": "0.5",
     "anthropic-ratelimit-unified-fallback": "available",
-    "anthropic-ratelimit-unified-7d-utilization": "0.59",
+    "anthropic-ratelimit-unified-7d-utilization": "0.6",
     "anthropic-ratelimit-unified-status": "allowed",
     "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
     "request-id": "req_<id>",
-    "traceresponse": "00-<hex>-13719028925bfa7e-01",
+    "traceresponse": "00-<hex>-57289aa0f1988ea1-01",
     "anthropic-organization-id": "<redacted len=36>",
     "anthropic-workspace-id": "wrkspc_<id>",
     "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
@@ -1333,31 +1363,32 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 1366,
-   "t_ms": 4019,
-   "body_bytes": 5333,
-   "chunk_count": 20,
+   "ttfb_ms": 828,
+   "t_ms": 3247,
+   "body_bytes": 5742,
+   "chunk_count": 21,
    "chunk_times_ms": [
-    1367,
-    1367,
-    1567,
-    1635,
-    2163,
-    2163,
-    2185,
-    2207,
-    2229,
-    2253,
-    2275,
-    2297,
-    2319,
-    2342,
-    2364,
-    2386,
-    2409,
-    2427,
-    2429,
-    2438
+    828,
+    829,
+    975,
+    1073,
+    1755,
+    1756,
+    1777,
+    1802,
+    1822,
+    1845,
+    1868,
+    1891,
+    1914,
+    1938,
+    1960,
+    1982,
+    2004,
+    2026,
+    2045,
+    2048,
+    2054
    ],
    "client_closed_early": false,
    "message_start": {
@@ -1365,13 +1396,13 @@
     "id_prefix": "msg_011C",
     "usage": {
      "input_tokens": 2,
-     "cache_creation_input_tokens": 104,
-     "cache_read_input_tokens": 36202,
+     "cache_creation_input_tokens": 168,
+     "cache_read_input_tokens": 36148,
      "cache_creation": {
       "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 104
+      "ephemeral_1h_input_tokens": 168
      },
-     "output_tokens": 8,
+     "output_tokens": 9,
      "service_tier": "standard",
      "inference_geo": "global"
     },
@@ -1423,7 +1454,7 @@
     ],
     [
      "content_block_delta",
-     13
+     14
     ],
     [
      "content_block_stop",
@@ -1454,28 +1485,28 @@
      "type": "text",
      "name": null,
      "delta_types": {
-      "text_delta": 13
+      "text_delta": 14
      },
-     "delta_count": 13
+     "delta_count": 14
     }
    ],
    "final_usage": {
     "input_tokens": 2,
-    "cache_creation_input_tokens": 104,
-    "cache_read_input_tokens": 36202,
-    "output_tokens": 202,
+    "cache_creation_input_tokens": 168,
+    "cache_read_input_tokens": 36148,
+    "output_tokens": 245,
     "output_tokens_details": {
-     "thinking_tokens": 161
+     "thinking_tokens": 183
     },
     "iterations": [
      {
       "input_tokens": 2,
-      "output_tokens": 202,
-      "cache_read_input_tokens": 36202,
-      "cache_creation_input_tokens": 104,
+      "output_tokens": 245,
+      "cache_read_input_tokens": 36148,
+      "cache_creation_input_tokens": 168,
       "cache_creation": {
        "ephemeral_5m_input_tokens": 0,
-       "ephemeral_1h_input_tokens": 104
+       "ephemeral_1h_input_tokens": 168
       },
       "type": "message"
      }

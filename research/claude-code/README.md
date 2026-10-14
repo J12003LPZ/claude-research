@@ -49,6 +49,12 @@ each claim can be trusted.
 | Manifest with hashes and redaction check | `runtime-logs/MANIFEST.json` | `tools/build_manifest.py` |
 | Static anchors | `chunk-xxxxxxxx.js@offset` citations inside `static-0N` | `tools/cq.py` over `extracted/` |
 
+Version drift: the installed binary auto-updated to 2.1.299 during this work (the original
+2.1.296 file is still in `~/.local/share/claude/versions/`, hash unchanged). Static findings and
+nearly all runtime evidence are 2.1.296. Runs named `*-v299` ran on 2.1.299; the harness now takes
+`CLAUDE_BIN` and records `cli_version` and `exe_sha256` per run. Where both builds were run
+(permission modes, host approval), they agreed.
+
 Not committed: `extracted/` (the unpacked proprietary module tree) and `lab/` (raw
 captures with full prompt text and private instruction files). Both are reproducible with
 the tools here.

@@ -33,7 +33,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
 | Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified | High | host approval path |
-| Permissions | Modes plan, bypass, dontAsk, auto | static 04 | none | Untested | Medium | one run per mode |
+| Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` mode still untested |
 | Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
 | Hooks | Exit 2 blocks, exit 1 does not | static 04 | E07c, E07d | Verified | High | per-event differences |
 | Hooks | stdin schemas | static 04 | E07a, E17c | Verified for 10 events | High | 11 events configured but never fired |
@@ -180,7 +180,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 5 | Is the tool's process tree killed on interrupt? | Orphan processes | Single process listing after E13c, none found | Partly answered |
 | 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Answered at runtime (E19c allow, E19d deny); needs `--permission-prompt-tool stdio`, `--permission-prompts host` alone auto-denies |
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
-| 8 | What do plan, dontAsk, bypass and auto modes do in practice? | Four of six modes unobserved | Static 04 algorithm extracted | Open at runtime |
+| 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
 | 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 53 runs | Open. Would need a JavaScriptCore bytecode disassembler |
 

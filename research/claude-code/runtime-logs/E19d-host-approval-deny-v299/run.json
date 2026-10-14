@@ -1,0 +1,76 @@
+{
+ "id": "E19d-host-approval-deny-v299",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-a",
+ "argv": [
+  "claude",
+  "-p",
+  "--input-format",
+  "stream-json",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "<debug-file>",
+  "--model",
+  "haiku",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json",
+  "--permission-mode",
+  "manual",
+  "--permission-prompt-tool",
+  "stdio"
+ ],
+ "prompt": null,
+ "stdin_script": [
+  {
+   "t_s": 0.006,
+   "type": "user",
+   "subtype": null
+  },
+  {
+   "t_s": 90.0,
+   "close": true
+  }
+ ],
+ "control_events": [
+  {
+   "t_s": 2.194,
+   "request_id": "e643e03b-17b0-4fab-952b-e8adf6b195b5",
+   "subtype": "can_use_tool",
+   "auto_response": {
+    "behavior": "deny",
+    "message": "host policy: not allowed"
+   }
+  }
+ ],
+ "permission_behavior": "deny",
+ "extra_env_names": [],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 63464,
+ "exit_code": 0,
+ "killed": null,
+ "duration_s": 90.764,
+ "cli_version": "2.1.299 (Claude Code)",
+ "started_iso": "2026-10-14T02:45:27Z",
+ "fault": null,
+ "version_note": "run.json was written by a harness that hardcoded 2.1.296; corrected afterwards because the installed binary was 2.1.299 (mtime Oct 13 22:19) when this ran, before CLAUDE_BIN and exe_sha256 recording existed"
+}

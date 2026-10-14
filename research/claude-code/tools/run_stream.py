@@ -19,6 +19,21 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from run_exp import KEEP, LAB, SCRUB_PREFIXES, TOOLS, free_port  # noqa: E402
 
 
+CLAUDE_BIN = os.environ.get("CLAUDE_BIN", "claude")
+
+
+def exe_info():
+    """Version string and SHA-256 of the binary this run uses (CLAUDE_BIN overrides PATH)."""
+    import hashlib, shutil
+    path = shutil.which(CLAUDE_BIN) or CLAUDE_BIN
+    try:
+        digest = hashlib.sha256(open(path, "rb").read()).hexdigest()
+    except OSError:
+        digest = None
+    ver = subprocess.run([CLAUDE_BIN, "--version"], capture_output=True, text=True).stdout.strip()
+    return ver, digest
+
+
 def build_auto_permission_response(request_id, subtype, behavior, message):
     """Return a host response only for a CLI can_use_tool request."""
     if subtype != "can_use_tool" or behavior is None:
@@ -63,7 +78,7 @@ def main():
     proxy.stdout.readline()
     env["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:{port}"
 
-    cmd = ["claude", "-p", "--input-format", "stream-json", "--output-format", "stream-json", "--verbose",
+    cmd = [CLAUDE_BIN, "-p", "--input-format", "stream-json", "--output-format", "stream-json", "--verbose",
            "--include-partial-messages", "--include-hook-events", "--debug-file", os.path.join(raw, "debug.log")] + extra
     t0 = time.time()
     p = subprocess.Popen(cmd, cwd=a.cwd, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -145,7 +160,7 @@ def main():
            "control_events": control_events, "permission_behavior": a.permission_behavior,
            "extra_env_names": [kv.split("=", 1)[0] for kv in a.env], "scrubbed_env_names": scrubbed, "proxy_port": port,
            "exit_code": p.returncode, "killed": killed, "duration_s": round(time.time() - t0, 3),
-           "cli_version": "2.1.296 (Claude Code)", "started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0)), "fault": None}
+           "cli_version": exe_info()[0], "exe_sha256": exe_info()[1], "started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0)), "fault": None}
     json.dump(run, open(os.path.join(raw, "run.json"), "w", encoding="utf-8"), indent=1)
     print(json.dumps({"id": a.id, "exit_code": p.returncode, "killed": killed, "sent": sent}))
 

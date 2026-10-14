@@ -2,7 +2,7 @@
  "id": "E19c-host-approval-allow",
  "cwd": "C:/Users/<user>/cc-rea-lab/proj-a",
  "argv": [
-  "claude",
+  "C:/Users/<user>/.local/share/claude/versions/2.1.296",
   "-p",
   "--input-format",
   "stream-json",
@@ -28,7 +28,7 @@
  "prompt": null,
  "stdin_script": [
   {
-   "t_s": 0.005,
+   "t_s": 0.006,
    "type": "user",
    "subtype": null
   },
@@ -39,8 +39,8 @@
  ],
  "control_events": [
   {
-   "t_s": 2.972,
-   "request_id": "673a8193-32e0-4f9c-94bb-9cdda7400e06",
+   "t_s": 2.489,
+   "request_id": "dde492ab-a663-4195-9c53-f9bc9f41d1f7",
    "subtype": "can_use_tool",
    "auto_response": {
     "behavior": "allow"
@@ -51,6 +51,7 @@
  "extra_env_names": [],
  "scrubbed_env_names": [
   "CLAUDECODE",
+  "CLAUDE_BIN",
   "CLAUDE_CODE_CHILD_SESSION",
   "CLAUDE_CODE_ENTRYPOINT",
   "CLAUDE_CODE_EXECPATH",
@@ -64,11 +65,12 @@
   "CLAUDE_PID",
   "CLAUDE_PLUGIN_DATA"
  ],
- "proxy_port": 61521,
+ "proxy_port": 59524,
  "exit_code": 0,
  "killed": null,
- "duration_s": 90.737,
+ "duration_s": 90.761,
  "cli_version": "2.1.296 (Claude Code)",
- "started_iso": "2026-10-14T02:43:50Z",
+ "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+ "started_iso": "2026-10-14T02:52:15Z",
  "fault": null
 }

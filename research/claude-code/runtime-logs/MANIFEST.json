@@ -30,6 +30,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.098,
    "started": "2026-10-13T21:13:51Z",
@@ -59,6 +60,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.063,
    "started": "2026-10-13T21:15:26Z",
@@ -88,6 +90,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 0.114,
    "started": "2026-10-13T21:15:28Z",
@@ -117,6 +120,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.51,
    "started": "2026-10-13T21:13:54Z",
@@ -146,6 +150,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 1.95,
    "started": "2026-10-13T21:13:59Z",
@@ -175,6 +180,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.451,
    "started": "2026-10-13T21:14:02Z",
@@ -204,6 +210,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.248,
    "started": "2026-10-13T21:14:59Z",
@@ -233,6 +240,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.475,
    "started": "2026-10-13T21:15:04Z",
@@ -262,6 +270,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 6.994,
    "started": "2026-10-13T21:15:09Z",
@@ -291,6 +300,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.524,
    "started": "2026-10-13T21:15:17Z",
@@ -320,6 +330,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 2.201,
    "started": "2026-10-13T21:14:18Z",
@@ -349,6 +360,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.281,
    "started": "2026-10-13T21:14:21Z",
@@ -378,6 +390,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.626,
    "started": "2026-10-13T21:15:22Z",
@@ -407,6 +420,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 7.006,
    "started": "2026-10-13T17:11:55Z",
@@ -436,6 +450,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.612,
    "started": "2026-10-13T17:13:42Z",
@@ -465,6 +480,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 5.16,
    "started": "2026-10-13T17:14:10Z",
@@ -494,6 +510,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.442,
    "started": "2026-10-13T17:14:16Z",
@@ -523,6 +540,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 13.228,
    "started": "2026-10-13T17:14:27Z",
@@ -552,6 +570,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 21.423,
    "started": "2026-10-13T17:14:45Z",
@@ -581,6 +600,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 6.07,
    "started": "2026-10-13T21:07:27Z",
@@ -610,6 +630,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 5.776,
    "started": "2026-10-13T17:14:20Z",
@@ -639,6 +660,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 13.151,
    "started": "2026-10-13T17:15:10Z",
@@ -672,6 +694,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 8.095,
    "started": "2026-10-13T17:17:01Z",
@@ -705,6 +728,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.747,
    "started": "2026-10-13T17:17:10Z",
@@ -738,6 +762,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.383,
    "started": "2026-10-13T17:17:16Z",
@@ -771,6 +796,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.461,
    "started": "2026-10-13T17:17:20Z",
@@ -804,6 +830,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 5.813,
    "started": "2026-10-13T17:17:25Z",
@@ -837,6 +864,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 7.853,
    "started": "2026-10-13T17:17:32Z",
@@ -870,6 +898,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 6.03,
    "started": "2026-10-13T17:17:41Z",
@@ -903,6 +932,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.434,
    "started": "2026-10-13T17:17:48Z",
@@ -932,6 +962,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 5.825,
    "started": "2026-10-13T17:15:24Z",
@@ -961,6 +992,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 10.147,
    "started": "2026-10-13T17:17:53Z",
@@ -990,6 +1022,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 12.217,
    "started": "2026-10-13T17:15:31Z",
@@ -1019,6 +1052,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 8.333,
    "started": "2026-10-13T21:14:24Z",
@@ -1048,6 +1082,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 10.492,
    "started": "2026-10-13T21:07:34Z",
@@ -1077,6 +1112,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.315,
    "started": "2026-10-13T21:07:45Z",
@@ -1110,6 +1146,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 30.754,
    "started": "2026-10-13T21:09:56Z",
@@ -1139,6 +1176,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 12.814,
    "started": "2026-10-13T21:10:27Z",
@@ -1172,6 +1210,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 30.891,
    "started": "2026-10-13T21:10:58Z",
@@ -1201,6 +1240,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 7.745,
    "started": "2026-10-13T21:07:49Z",
@@ -1230,6 +1270,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.655,
    "started": "2026-10-13T21:07:58Z",
@@ -1259,6 +1300,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.047,
    "started": "2026-10-13T21:08:01Z",
@@ -1288,6 +1330,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.743,
    "started": "2026-10-13T21:08:05Z",
@@ -1317,6 +1360,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.091,
    "started": "2026-10-13T21:08:09Z",
@@ -1346,6 +1390,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.464,
    "started": "2026-10-13T21:24:46Z",
@@ -1375,6 +1420,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.454,
    "started": "2026-10-13T21:24:49Z",
@@ -1404,6 +1450,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.551,
    "started": "2026-10-13T21:08:38Z",
@@ -1433,6 +1480,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 7.939,
    "started": "2026-10-13T21:08:42Z",
@@ -1462,6 +1510,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.107,
    "started": "2026-10-13T21:08:51Z",
@@ -1495,6 +1544,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 70.225,
    "started": "2026-10-13T21:12:12Z",
@@ -1524,6 +1574,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 3.835,
    "started": "2026-10-13T21:06:51Z",
@@ -1553,6 +1604,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.981,
    "started": "2026-10-13T21:06:56Z",
@@ -1582,6 +1634,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 1.998,
    "started": "2026-10-13T21:07:00Z",
@@ -1611,6 +1664,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 2.692,
    "started": "2026-10-13T21:07:02Z",
@@ -1640,6 +1694,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 4.48,
    "started": "2026-10-13T21:07:06Z",
@@ -1669,6 +1724,7 @@
    },
    "redaction": "sanitized",
    "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 1,
    "duration_s": 90.71,
    "started": "2026-10-13T22:10:25Z",
@@ -1680,6 +1736,36 @@
    "kind": "experiment",
    "files": {
     "debug-summary.json": {
+     "sha256": "b77b912ec02108b81d52adfb545c053d9980d0bf2d6bd618c641dae624c7f112",
+     "bytes": 2375
+    },
+    "http-summary.json": {
+     "sha256": "026eb23acb819b3ebefb1d593f64f625e5c9b1e57b9df9a352ee29892123fbee",
+     "bytes": 34744
+    },
+    "run.json": {
+     "sha256": "d7b6ec95f17cef280d23fc856ce33a44e625747d65fb2526159ef19c516dc62e",
+     "bytes": 1535
+    },
+    "stream-summary.json": {
+     "sha256": "d3d31d73c8f370f7f575e63dbb3e2b8c5f033264888d00b192982be8ab0b0aea",
+     "bytes": 15928
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 90.756,
+   "started": "2026-10-14T02:50:44Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E19b-host-approval-allow-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
      "sha256": "d63d85b0f479c55630b74e657417f7af549fdd40f17a7156e573585b2c1cf961",
      "bytes": 2337
     },
@@ -1688,8 +1774,8 @@
      "bytes": 34178
     },
     "run.json": {
-     "sha256": "0cbb8ac47162609afbb0a20de664b5580fe19415473572cbd4979e52934f36f1",
-     "bytes": 1386
+     "sha256": "84338d2a4f5299283097e1db83745a33875d6341e8d58549da967147af185f20",
+     "bytes": 1619
     },
     "stream-summary.json": {
      "sha256": "d2d1cbe252a99cfdc1b186999444473ff19e575eeef13c813c88c5345d5b58f3",
@@ -1697,7 +1783,8 @@
     }
    },
    "redaction": "sanitized",
-   "cli_version": "2.1.296 (Claude Code)",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 90.738,
    "started": "2026-10-14T02:42:07Z",
@@ -1709,6 +1796,36 @@
    "kind": "experiment",
    "files": {
     "debug-summary.json": {
+     "sha256": "154a068253dd61e864626d9331324f14948b1d585bedac86ecfdde7f0eebcb7c",
+     "bytes": 2350
+    },
+    "http-summary.json": {
+     "sha256": "5c127ef8d2fb4fa693dadae03d5c124d3a0569b731fe3be72117527830cfe4ac",
+     "bytes": 35499
+    },
+    "run.json": {
+     "sha256": "e628383d6ad35b7d6d288024d635ee9d47ecadb4e9d24d2756406608cb22c929",
+     "bytes": 1712
+    },
+    "stream-summary.json": {
+     "sha256": "cc26ccebd04967c400665746e2b4b4fa8cd0274ff5a5c1a97ac9faf51790620f",
+     "bytes": 13432
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 90.761,
+   "started": "2026-10-14T02:52:15Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E19c-host-approval-allow-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
      "sha256": "cae2f26ca4494766af1ec2600de7765120bcaade154b73d7ebba2982fff663a5",
      "bytes": 2337
     },
@@ -1717,8 +1834,8 @@
      "bytes": 35433
     },
     "run.json": {
-     "sha256": "afdef54f7dcd9a0984362f4129685b4acb2a8208dbb25b145c6d3c112704e452",
-     "bytes": 1565
+     "sha256": "4423a6a596d3a64d946316c2e296e70443cdf6ae87e58d9e7d580e43a2cf6db0",
+     "bytes": 1798
     },
     "stream-summary.json": {
      "sha256": "bb4d17b8df7354e4d61c7d089615846487141f9c64b78a455b664a9297c2daa6",
@@ -1726,7 +1843,8 @@
     }
    },
    "redaction": "sanitized",
-   "cli_version": "2.1.296 (Claude Code)",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 90.737,
    "started": "2026-10-14T02:43:50Z",
@@ -1738,6 +1856,36 @@
    "kind": "experiment",
    "files": {
     "debug-summary.json": {
+     "sha256": "b77b912ec02108b81d52adfb545c053d9980d0bf2d6bd618c641dae624c7f112",
+     "bytes": 2375
+    },
+    "http-summary.json": {
+     "sha256": "ff6cf1851a5afa70c3372a753c8fed01d7891206d6d3349bb0ed40c3d4c31a13",
+     "bytes": 35921
+    },
+    "run.json": {
+     "sha256": "a5dc59b4016bf0a44277bf54ba247142ef6fa4ac3af656786a1d96de0582fe9f",
+     "bytes": 1753
+    },
+    "stream-summary.json": {
+     "sha256": "ef9bc0decc06a8974ec2068a2785fa8f7773e7579218ad4df29f7963d7eaccd0",
+     "bytes": 15755
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 90.869,
+   "started": "2026-10-14T02:53:46Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E19d-host-approval-deny-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
      "sha256": "7dd61e17332709f7da8985c9634ce8109ab6690e811aecd8b46af2dbe7a3fdaa",
      "bytes": 2337
     },
@@ -1746,8 +1894,8 @@
      "bytes": 35458
     },
     "run.json": {
-     "sha256": "a9345546c18bdfb5fc8c15d1295e77587617d4ef5a79536846385faba8709476",
-     "bytes": 1606
+     "sha256": "4eb81852745dbd27d38a486fb01ba520cfb75120a7ebf533471b237546b81133",
+     "bytes": 1839
     },
     "stream-summary.json": {
      "sha256": "2970f8ad77c1c0e0c3c08b22a3c54dc64b2e49af323333a7bb9ba2e3714c4e1e",
@@ -1755,10 +1903,251 @@
     }
    },
    "redaction": "sanitized",
-   "cli_version": "2.1.296 (Claude Code)",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
    "exit_code": 0,
    "duration_s": 90.764,
    "started": "2026-10-14T02:45:27Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-acceptEdits",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "a3488e9dd26d7481f854533b48e4e918be219f6979a1af06cb46ba20a9bb4067",
+     "bytes": 2334
+    },
+    "http-summary.json": {
+     "sha256": "f4e5e4bdbf4dfa09ac040897a3fbee176d121ef12e7f6b8fa54ca8ef8069dcfd",
+     "bytes": 52611
+    },
+    "run.json": {
+     "sha256": "dbfba4ca41ace7e5e398415614a96e059c1476a64a177f4c3601a88337516b4b",
+     "bytes": 1560
+    },
+    "stream-summary.json": {
+     "sha256": "1d21f2aacb0e857b69e2f2ea42c61eb4dd34dd6cb14d12bdb45b9a1178054f1b",
+     "bytes": 19223
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 5.807,
+   "started": "2026-10-14T02:50:30Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-acceptEdits-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "956a859f806763dfae567136dc0bfdad5897f5910a967bd7fe33469a06065539",
+     "bytes": 2317
+    },
+    "http-summary.json": {
+     "sha256": "c8bc9476471743e3a93e6fc78d321753caa9e146c3349da036dbe9354a0040ca",
+     "bytes": 52474
+    },
+    "run.json": {
+     "sha256": "36ca5b41e3c44bb6c75a54230f1f277f9fc5589e000251ffd93284f9dc12c05b",
+     "bytes": 1435
+    },
+    "stream-summary.json": {
+     "sha256": "35f0aa45ddceb63f03c81b18032b94ecea96794ef819daa36ae51c24d5bd9b1e",
+     "bytes": 19239
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
+   "exit_code": 0,
+   "duration_s": 6.29,
+   "started": "2026-10-14T02:49:19Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-bypassPermissions",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "c50673a40e7c6a984a9c29fda480fb4b51103e4bc7e8f1610adedb2ffb84d9e4",
+     "bytes": 2333
+    },
+    "http-summary.json": {
+     "sha256": "2d9a5df3be89b0a253dd9bd6390fd8427bc697461f8fcb34cf50f8114cc29e05",
+     "bytes": 35313
+    },
+    "run.json": {
+     "sha256": "2677c84191be3e91ede09b3e9e869add4a29a5f9c358b62fe32bb05cc3922873",
+     "bytes": 1578
+    },
+    "stream-summary.json": {
+     "sha256": "b3009a474770e518b860245a878d5adcaf18a1b52d64dafef377b9972e424f61",
+     "bytes": 16021
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 6.323,
+   "started": "2026-10-14T02:50:36Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-bypassPermissions-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "8cd8531fe11fa6796aa304af22c6a8507bde54463fdfdf7704e2b7961467e1aa",
+     "bytes": 2317
+    },
+    "http-summary.json": {
+     "sha256": "8032f57c41ce226bc0cf1c0217a217890700b2487bccc12a429af2834b05620e",
+     "bytes": 51909
+    },
+    "run.json": {
+     "sha256": "f89f4d904f7da81705fbac47a63b53170312fd0c6c1636122de47a740bd24af1",
+     "bytes": 1454
+    },
+    "stream-summary.json": {
+     "sha256": "cf7d1d99784b7955191f14fa6a7d0e11a7a452027250f96d214166bf7dedc106",
+     "bytes": 16680
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
+   "exit_code": 0,
+   "duration_s": 6.761,
+   "started": "2026-10-14T02:49:26Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-dontAsk",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "ce492e1c84f588057883ab5e7ec8e8fa7bb1ac44e84df0176421a554699d4252",
+     "bytes": 2349
+    },
+    "http-summary.json": {
+     "sha256": "aedaeb5cb98d2bda0d4c62f97026ce024ec0b367030d788554f28cb2f6091785",
+     "bytes": 53121
+    },
+    "run.json": {
+     "sha256": "0d05e5154f3240ee1f38ff1ba272e0d416195b8368f3bf45b9499a6ac14e5fe0",
+     "bytes": 1548
+    },
+    "stream-summary.json": {
+     "sha256": "6d497ea68a60518550a1dc0c62d784f80b35ff834d9dc05df509e0e2119592b8",
+     "bytes": 21301
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 7.377,
+   "started": "2026-10-14T02:50:21Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-dontAsk-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "698a8ae39f5fb9d489db1ccc43dfed011672bb1d520862e183b9f9297079498e",
+     "bytes": 2333
+    },
+    "http-summary.json": {
+     "sha256": "3a5cf117ef15d35b11a7ed007e4cfb40e5f6b160a4826e2ffb1e856d026a77cf",
+     "bytes": 35495
+    },
+    "run.json": {
+     "sha256": "2d904340e2dd6198187d3ef86817a788ee9ff6d619e7fe5d9fc99f6fb8f081bc",
+     "bytes": 1424
+    },
+    "stream-summary.json": {
+     "sha256": "671b3edca17f4f0028b294a58cfe40b2dc224541939e73233652cf84d75f1165",
+     "bytes": 16750
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
+   "exit_code": 0,
+   "duration_s": 5.656,
+   "started": "2026-10-14T02:49:12Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-plan",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "df0cee8e9c6b7e08932bd5d7054b4484ddd1c991128046a2852e4fb6fbebd305",
+     "bytes": 2323
+    },
+    "http-summary.json": {
+     "sha256": "d93b4097328a1f82e4da1fd217045e8a9ceac443767a25963443234e52a96e88",
+     "bytes": 35564
+    },
+    "run.json": {
+     "sha256": "82d7c7a71ac229b5610b64460e724a3b68fa76401a20de76026490a0799a930b",
+     "bytes": 1539
+    },
+    "stream-summary.json": {
+     "sha256": "ad0ec68b8e50df648cea8a635629c34e544594654473811bfd69408d91908ab6",
+     "bytes": 14947
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 7.906,
+   "started": "2026-10-14T02:50:13Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "P-plan-v299",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "3fb0faf4186a973934c4061862c403c556cc5f69d995af7a4a2698c43a67a552",
+     "bytes": 2323
+    },
+    "http-summary.json": {
+     "sha256": "0b6557c62f497b39cab31c8c379a0ab897e6d4f25dd39338cc3d1d744f002c8c",
+     "bytes": 35506
+    },
+    "run.json": {
+     "sha256": "cae300bf89856ceb307ef387fbbb3ad17ad41dd0302f63e9f39b5a968ba7e46c",
+     "bytes": 1415
+    },
+    "stream-summary.json": {
+     "sha256": "13072075e3663bf686653d9f0edb51f10e394b75668e8c91fc640a5a0f01b771",
+     "bytes": 15059
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.299 (Claude Code)",
+   "exe_sha256": null,
+   "exit_code": 0,
+   "duration_s": 7.442,
+   "started": "2026-10-14T02:49:04Z",
    "fault_injected": false,
    "killed": null
   },

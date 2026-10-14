@@ -1,5 +1,5 @@
 {
- "line_count": 251,
+ "line_count": 254,
  "top_prefixes": [
   [
    "Keeping C",
@@ -170,10 +170,6 @@
    1
   ],
   [
-   "Loaded",
-   1
-  ],
-  [
    "Loaded 30 installed plugins from C",
    1
   ],
@@ -214,7 +210,19 @@
    1
   ],
   [
+   "Loaded",
+   1
+  ],
+  [
    "cc-plugin-sec-default@builtin",
+   1
+  ],
+  [
+   "Acquired",
+   1
+  ],
+  [
+   "Acquired PID lock on running version",
    1
   ],
   [
@@ -231,14 +239,6 @@
   ],
   [
    "Total LSP servers loaded",
-   1
-  ],
-  [
-   "LSP SERVER MANAGER",
-   1
-  ],
-  [
-   "servedCatalog",
    1
   ]
  ]

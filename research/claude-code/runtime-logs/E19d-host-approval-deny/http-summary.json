@@ -2,7 +2,7 @@
  {
   "request": {
    "seq": "0001",
-   "t_ms": 116,
+   "t_ms": 120,
    "method": "HEAD",
    "url": "/api/hello",
    "body_bytes": 0,
@@ -17,7 +17,7 @@
     "connection": "keep-alive",
     "user-agent": "Bun/1.4.3",
     "accept": "*/*",
-    "host": "127.0.0.1:63464",
+    "host": "127.0.0.1:64988",
     "accept-encoding": "gzip, deflate, br, zstd"
    },
    "body": null
@@ -27,7 +27,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:45:27 GMT",
+    "date": "Wed, 14 Oct 2026 02:53:46 GMT",
     "content-type": "application/json",
     "content-length": "20",
     "connection": "keep-alive",
@@ -38,8 +38,8 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 48,
-   "t_ms": 164,
+   "ttfb_ms": 56,
+   "t_ms": 176,
    "body_bytes": 0,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -50,10 +50,10 @@
  {
   "request": {
    "seq": "0002",
-   "t_ms": 647,
+   "t_ms": 546,
    "method": "POST",
    "url": "/v1/messages?beta=true",
-   "body_bytes": 111475,
+   "body_bytes": 111276,
    "header_order": [
     "Accept",
     "Authorization",
@@ -81,7 +81,7 @@
     "accept": "application/json",
     "authorization": "<redacted len=115>",
     "content-type": "application/json",
-    "user-agent": "claude-cli/2.1.299 (external, sdk-cli)",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
     "x-claude-code-session-id": "<redacted len=36>",
     "x-stainless-arch": "x64",
     "x-stainless-lang": "js",
@@ -91,14 +91,14 @@
     "x-stainless-runtime": "node",
     "x-stainless-runtime-version": "v26.3.0",
     "x-stainless-timeout": "600",
-    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
     "anthropic-dangerous-direct-browser-access": "true",
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:63464",
+    "host": "127.0.0.1:64988",
     "accept-encoding": "gzip, deflate, br, zstd",
-    "content-length": "111475"
+    "content-length": "111276"
    },
    "body": {
     "top_level_keys": [
@@ -143,8 +143,8 @@
      {
       "type": "text",
       "len": 74,
-      "sha256": "4d0528b1797052c7",
-      "head": "x-anthropic-billing-header: cc_version=2.1.299.98a; cc_entrypoint=sdk-cli;"
+      "sha256": "fb37bec3a905c408",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.542; cc_entrypoint=sdk-cli;"
      },
      {
       "type": "text",
@@ -221,7 +221,7 @@
      {
       "name": "CronCreate",
       "type": null,
-      "description_len": 2794,
+      "description_len": 2595,
       "schema_len": 912,
       "schema_props": [
        "cron",
@@ -545,7 +545,7 @@
       "extra_keys": []
      }
     ],
-    "tools_total_bytes": 89528,
+    "tools_total_bytes": 89329,
     "messages_count": 2,
     "messages": [
      {
@@ -614,7 +614,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:45:28 GMT",
+    "date": "Wed, 14 Oct 2026 02:53:49 GMT",
     "content-type": "text/event-stream; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -624,17 +624,17 @@
     "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
     "anthropic-ratelimit-unified-overage-status": "rejected",
     "anthropic-ratelimit-unified-reset": "1791961800",
-    "anthropic-ratelimit-unified-5h-utilization": "0.61",
+    "anthropic-ratelimit-unified-5h-utilization": "0.72",
     "anthropic-ratelimit-unified-7d-reset": "1792018800",
     "anthropic-ratelimit-unified-5h-reset": "1791961800",
     "anthropic-ratelimit-unified-7d-status": "allowed",
     "anthropic-ratelimit-unified-fallback-percentage": "0.5",
     "anthropic-ratelimit-unified-fallback": "available",
-    "anthropic-ratelimit-unified-7d-utilization": "0.59",
+    "anthropic-ratelimit-unified-7d-utilization": "0.6",
     "anthropic-ratelimit-unified-status": "allowed",
     "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
     "request-id": "req_<id>",
-    "traceresponse": "00-<hex>-992717a8468b211b-01",
+    "traceresponse": "00-<hex>-7e74a8bc3839a611-01",
     "anthropic-organization-id": "<redacted len=36>",
     "anthropic-workspace-id": "wrkspc_<id>",
     "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
@@ -644,19 +644,19 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 867,
-   "t_ms": 1514,
-   "body_bytes": 5661,
+   "ttfb_ms": 2201,
+   "t_ms": 2747,
+   "body_bytes": 5550,
    "chunk_count": 8,
    "chunk_times_ms": [
-    868,
-    869,
-    1067,
-    1272,
-    1272,
-    1388,
-    1544,
-    1554
+    2202,
+    2202,
+    2409,
+    2524,
+    2525,
+    2639,
+    2792,
+    2800
    ],
    "client_closed_early": false,
    "message_start": {
@@ -665,12 +665,12 @@
     "usage": {
      "input_tokens": 2,
      "cache_creation_input_tokens": 0,
-     "cache_read_input_tokens": 40149,
+     "cache_read_input_tokens": 40095,
      "cache_creation": {
       "ephemeral_5m_input_tokens": 0,
       "ephemeral_1h_input_tokens": 0
      },
-     "output_tokens": 6,
+     "output_tokens": 4,
      "service_tier": "standard",
      "inference_geo": "global"
     },
@@ -761,16 +761,16 @@
    "final_usage": {
     "input_tokens": 2,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 40149,
-    "output_tokens": 169,
+    "cache_read_input_tokens": 40095,
+    "output_tokens": 158,
     "output_tokens_details": {
-     "thinking_tokens": 81
+     "thinking_tokens": 70
     },
     "iterations": [
      {
       "input_tokens": 2,
-      "output_tokens": 169,
-      "cache_read_input_tokens": 40149,
+      "output_tokens": 158,
+      "cache_read_input_tokens": 40095,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
        "ephemeral_5m_input_tokens": 0,
@@ -791,10 +791,10 @@
  {
   "request": {
    "seq": "0003",
-   "t_ms": 2218,
+   "t_ms": 3369,
    "method": "POST",
    "url": "/v1/messages?beta=true",
-   "body_bytes": 113081,
+   "body_bytes": 112822,
    "header_order": [
     "Accept",
     "Authorization",
@@ -822,7 +822,7 @@
     "accept": "application/json",
     "authorization": "<redacted len=115>",
     "content-type": "application/json",
-    "user-agent": "claude-cli/2.1.299 (external, sdk-cli)",
+    "user-agent": "claude-cli/2.1.296 (external, sdk-cli)",
     "x-claude-code-session-id": "<redacted len=36>",
     "x-stainless-arch": "x64",
     "x-stainless-lang": "js",
@@ -832,14 +832,14 @@
     "x-stainless-runtime": "node",
     "x-stainless-runtime-version": "v26.3.0",
     "x-stainless-timeout": "600",
-    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
+    "anthropic-beta": "oauth-2025-04-20,interleaved-thinking-2025-05-14,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,claude-code-20250219,per-turn-control-2026-07-01,mid-conversation-tool-changes-2026-07-01,inline-tools-2026-09-15,advisor-tool-2026-03-01,effort-2025-11-24,thinking-display-updates-2026-08-18,extended-cache-ttl-2025-04-11",
     "anthropic-dangerous-direct-browser-access": "true",
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:63464",
+    "host": "127.0.0.1:64988",
     "accept-encoding": "gzip, deflate, br, zstd",
-    "content-length": "113081"
+    "content-length": "112822"
    },
    "body": {
     "top_level_keys": [
@@ -884,8 +884,8 @@
      {
       "type": "text",
       "len": 74,
-      "sha256": "4d0528b1797052c7",
-      "head": "x-anthropic-billing-header: cc_version=2.1.299.98a; cc_entrypoint=sdk-cli;"
+      "sha256": "fb37bec3a905c408",
+      "head": "x-anthropic-billing-header: cc_version=2.1.296.542; cc_entrypoint=sdk-cli;"
      },
      {
       "type": "text",
@@ -962,7 +962,7 @@
      {
       "name": "CronCreate",
       "type": null,
-      "description_len": 2794,
+      "description_len": 2595,
       "schema_len": 912,
       "schema_props": [
        "cron",
@@ -1286,7 +1286,7 @@
       "extra_keys": []
      }
     ],
-    "tools_total_bytes": 89528,
+    "tools_total_bytes": 89329,
     "messages_count": 4,
     "messages": [
      {
@@ -1395,7 +1395,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 02:45:30 GMT",
+    "date": "Wed, 14 Oct 2026 02:53:51 GMT",
     "content-type": "text/event-stream; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -1405,17 +1405,17 @@
     "anthropic-ratelimit-unified-overage-disabled-reason": "org_level_disabled",
     "anthropic-ratelimit-unified-overage-status": "rejected",
     "anthropic-ratelimit-unified-reset": "1791961800",
-    "anthropic-ratelimit-unified-5h-utilization": "0.61",
+    "anthropic-ratelimit-unified-5h-utilization": "0.72",
     "anthropic-ratelimit-unified-7d-reset": "1792018800",
     "anthropic-ratelimit-unified-5h-reset": "1791961800",
     "anthropic-ratelimit-unified-7d-status": "allowed",
     "anthropic-ratelimit-unified-fallback-percentage": "0.5",
     "anthropic-ratelimit-unified-fallback": "available",
-    "anthropic-ratelimit-unified-7d-utilization": "0.59",
+    "anthropic-ratelimit-unified-7d-utilization": "0.6",
     "anthropic-ratelimit-unified-status": "allowed",
     "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
     "request-id": "req_<id>",
-    "traceresponse": "00-<hex>-f37400a3803fda32-01",
+    "traceresponse": "00-<hex>-89b6fd3e6315ff26-01",
     "anthropic-organization-id": "<redacted len=36>",
     "anthropic-workspace-id": "wrkspc_<id>",
     "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
@@ -1425,16 +1425,20 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 1340,
-   "t_ms": 3558,
-   "body_bytes": 1697,
-   "chunk_count": 5,
+   "ttfb_ms": 1491,
+   "t_ms": 4860,
+   "body_bytes": 3731,
+   "chunk_count": 9,
    "chunk_times_ms": [
-    1341,
-    1341,
-    1381,
-    1396,
-    1405
+    1492,
+    1492,
+    1685,
+    1704,
+    1931,
+    1931,
+    1953,
+    1973,
+    1982
    ],
    "client_closed_early": false,
    "message_start": {
@@ -1442,13 +1446,13 @@
     "id_prefix": "msg_011C",
     "usage": {
      "input_tokens": 2,
-     "cache_creation_input_tokens": 188,
-     "cache_read_input_tokens": 40149,
+     "cache_creation_input_tokens": 177,
+     "cache_read_input_tokens": 40095,
      "cache_creation": {
       "ephemeral_5m_input_tokens": 0,
-      "ephemeral_1h_input_tokens": 188
+      "ephemeral_1h_input_tokens": 177
      },
-     "output_tokens": 1,
+     "output_tokens": 3,
      "service_tier": "standard",
      "inference_geo": "global"
     },
@@ -1488,6 +1492,18 @@
     ],
     [
      "content_block_delta",
+     3
+    ],
+    [
+     "content_block_stop",
+     1
+    ],
+    [
+     "content_block_start",
+     1
+    ],
+    [
+     "content_block_delta",
      2
     ],
     [
@@ -1506,6 +1522,16 @@
    "content_blocks": [
     {
      "index": 0,
+     "type": "thinking",
+     "name": null,
+     "delta_types": {
+      "thinking_delta": 2,
+      "signature_delta": 1
+     },
+     "delta_count": 3
+    },
+    {
+     "index": 1,
      "type": "text",
      "name": null,
      "delta_types": {
@@ -1516,21 +1542,21 @@
    ],
    "final_usage": {
     "input_tokens": 2,
-    "cache_creation_input_tokens": 188,
-    "cache_read_input_tokens": 40149,
-    "output_tokens": 10,
+    "cache_creation_input_tokens": 177,
+    "cache_read_input_tokens": 40095,
+    "output_tokens": 108,
     "output_tokens_details": {
-     "thinking_tokens": 0
+     "thinking_tokens": 98
     },
     "iterations": [
      {
       "input_tokens": 2,
-      "output_tokens": 10,
-      "cache_read_input_tokens": 40149,
-      "cache_creation_input_tokens": 188,
+      "output_tokens": 108,
+      "cache_read_input_tokens": 40095,
+      "cache_creation_input_tokens": 177,
       "cache_creation": {
        "ephemeral_5m_input_tokens": 0,
-       "ephemeral_1h_input_tokens": 188
+       "ephemeral_1h_input_tokens": 177
       },
       "type": "message"
      }

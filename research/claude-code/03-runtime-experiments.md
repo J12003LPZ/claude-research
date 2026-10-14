@@ -385,6 +385,24 @@ sources (user settings were excluded on purpose; managed settings would need adm
 - Unknown flag: stderr `error: unknown option '--definitely-not-a-flag'`, exit 1, no API
   call.
 
+## Permission modes (P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions)
+
+One headless prompt per mode in a disposable project: "Write `out.txt` with the Write tool, then run
+`python -c "print(123)"` with Bash". Slim profile, haiku, `--permission-mode <mode>`. Run on 2.1.296
+(`CLAUDE_BIN` pinned to the original binary, `exe_sha256` recorded in `run.json`) and again on
+2.1.299 (`*-v299`). Both builds behaved the same in every row.
+
+| Mode | Write | Bash | Evidence |
+|---|---|---|---|
+| `plan` | not run on `out.txt`; the model wrote its plan to `~/.claude/plans/<slug>.md` instead (that Write succeeded) and ended the turn saying no step was done | not run | `result.permission_denials: []`, no `permission_denied` frame. Plan mode withheld the action through the model, not through a denial record |
+| `acceptEdits` | allowed, file created, no approval | denied: `system/permission_denied`, `decision_reason_type:"other"`, message `This command requires approval`, `tool_result.is_error:true` | `result.permission_denials` has 1 entry (Bash) |
+| `dontAsk` | denied with the `Yhe` text: `Permission to use Write has been denied because Claude Code is running in don't ask mode. IMPORTANT: ...` | same text for Bash; `permission_denied` frame has `decision_reason_type:"mode"` | 2 denials in `result.permission_denials`. Confirms the static `Yhe(name)` message in `static-04` |
+| `bypassPermissions` | allowed | allowed, `tool_result` `123` | no `permission_denied`, no control request |
+
+Side effects: plan mode created two plan files under `~/.claude/plans/` (one per build). The lab
+project `out.txt` appeared only for `acceptEdits` and `bypassPermissions`. Not tested here: `auto`
+mode (needs the classifier), interactive plan approval, bypass with rules that should still win.
+
 ## Experiments not run, with reasons
 
 | Item | Reason | What would settle it |
