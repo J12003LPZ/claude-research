@@ -406,6 +406,22 @@ project used default permission mode and a command hook that returned
   and the 16 configured events not reached by these scenarios. Evidence: `runtime-logs/E46-hooks/hooks-summary.json`,
   `runtime-logs/E46-permreq/hooks-summary.json`, and their `stream-summary.json` files.
 
+### E47: headless denial after a non-deciding PermissionRequest hook (scripted model)
+
+E47 reused the all-event hook project with default permission mode, but changed the Bash tool input to a synthetic
+Python file write that is not on the safe allowlist. The `PermissionRequest` hook logged the request and returned no
+decision. The proxy still answered all model requests locally.
+
+- The hook received `tool_name: Bash`, `permission_mode: default`, `permission_suggestions`, `effort`, and the
+  normal session fields. No `PermissionRequest` decision was emitted.
+- The Bash call was not run: `runtime-logs/E47-denied-danger/stream-summary.json` records one `permission_denials`
+  entry for the Bash tool and `is_error: true` on the tool result. The synthetic `denied-made.txt` file is absent.
+- The run continued through the scripted Agent child and ended `completed`, exit 0, `num_turns:4`. No
+  `PermissionDenied` hook invocation appeared in this route.
+- **Verified for headless mode:** after a `PermissionRequest` hook returns successfully without an allow or deny
+  decision, the pending ask becomes a denial rather than an interactive prompt. This is a direct runtime check of
+  the fallback described in `static-04`; it does not establish interactive behavior or all event-specific hooks.
+
 ### E41 to E43: `auto` permission mode with a scripted classifier
 
 `--permission-mode auto` sends each unapproved tool call to a classifier, which is a model call. Here the lab proxy

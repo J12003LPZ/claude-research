@@ -11,7 +11,7 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 148 manifest runs: 127 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 150 manifest runs: 129 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |
@@ -67,6 +67,7 @@ used the settings model). Status: partially verified (E01 vs E01b, not a single-
 21. Automatic summary failure: eleven injected 529 HTTP attempts (one initial attempt plus ten retries) exhaust one `source=compact` operation, then `Reactive compact: summarization returned API error` and `session.compact` hook failure occur; no failure-breaker event was observed (E31).
 22. Evidence tooling now digests arbitrary error/non-JSON/SSE error text, structurally summarizes request and run metadata, accepts mixed SSE line endings, tolerates incomplete frames, retains explicit late breaker signals without raw message text, preserves injected SSE capture metadata/body, validates malformed fault matcher fields, and closes capture streams on cancellation.
 23. E32b used the local OAuth store and reached a real upstream 429 after `HEAD /api/hello`; the account was still rate-limited, so no further live breaker experiments were run.
+24. E46 covered 13 hook event types in one scripted session and accepted a default-mode `PermissionRequest` allow; E47 showed that a non-deciding PermissionRequest hook leaves a dangerous headless Bash call denied. Across sanitized hook logs, 17 of 33 event types have been observed.
 
 ## Incidents
 

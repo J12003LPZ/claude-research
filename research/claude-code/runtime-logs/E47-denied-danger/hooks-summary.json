@@ -1,0 +1,662 @@
+[
+ {
+  "t_in_ms": 0,
+  "t_out_ms": 0,
+  "tag": "SessionStart",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "session_id",
+   "source",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_ENV_FILE",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "SessionStart",
+  "source": "startup"
+ },
+ {
+  "t_in_ms": 13,
+  "t_out_ms": 13,
+  "tag": "InstructionsLoaded",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "file_path",
+   "hook_event_name",
+   "load_reason",
+   "memory_type",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "InstructionsLoaded",
+  "load_reason": "session_start",
+  "memory_type": "Project"
+ },
+ {
+  "t_in_ms": 286,
+  "t_out_ms": 286,
+  "tag": "UserPromptExpansion",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "command_args",
+   "command_name",
+   "command_source",
+   "cwd",
+   "expansion_type",
+   "hook_event_name",
+   "permission_mode",
+   "prompt",
+   "prompt_id",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "UserPromptExpansion",
+  "permission_mode": "default",
+  "prompt_len": 16
+ },
+ {
+  "t_in_ms": 360,
+  "t_out_ms": 360,
+  "tag": "UserPromptSubmit",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "permission_mode",
+   "prompt",
+   "prompt_id",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "UserPromptSubmit",
+  "permission_mode": "default",
+  "prompt_len": 16
+ },
+ {
+  "t_in_ms": 475,
+  "t_out_ms": 475,
+  "tag": "PreToolUse",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "tool_use_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Read",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "file_path"
+  ]
+ },
+ {
+  "t_in_ms": 599,
+  "t_out_ms": 599,
+  "tag": "PostToolUseFailure",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "duration_ms",
+   "effort",
+   "error",
+   "hook_event_name",
+   "is_interrupt",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "tool_use_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PostToolUseFailure",
+  "tool_name": "Read",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "file_path"
+  ],
+  "error_head": "File does not exist. Note: your current working directory is C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger."
+ },
+ {
+  "t_in_ms": 674,
+  "t_out_ms": 674,
+  "tag": "PreToolUse",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "tool_use_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "command",
+   "description"
+  ]
+ },
+ {
+  "t_in_ms": 753,
+  "t_out_ms": 753,
+  "tag": "PermissionRequest",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "permission_suggestions",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PermissionRequest",
+  "tool_name": "Bash",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "command",
+   "description"
+  ]
+ },
+ {
+  "t_in_ms": 822,
+  "t_out_ms": 822,
+  "tag": "PostToolBatch",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_calls",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PostToolBatch",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 904,
+  "t_out_ms": 904,
+  "tag": "PreToolUse",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "tool_use_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Agent",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "description",
+   "prompt",
+   "run_in_background",
+   "subagent_type"
+  ]
+ },
+ {
+  "t_in_ms": 974,
+  "t_out_ms": 974,
+  "tag": "SubagentStart",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "agent_id",
+   "agent_type",
+   "cwd",
+   "hook_event_name",
+   "prompt_id",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "SubagentStart",
+  "agent_type": "general-purpose"
+ },
+ {
+  "t_in_ms": 1057,
+  "t_out_ms": 1057,
+  "tag": "SubagentStop",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "agent_id",
+   "agent_transcript_path",
+   "agent_type",
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "SubagentStop",
+  "permission_mode": "default",
+  "stop_hook_active": false,
+  "agent_type": "general-purpose",
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 1139,
+  "t_out_ms": 1140,
+  "tag": "PostToolUse",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "duration_ms",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "tool_response",
+   "tool_use_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Agent",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "description",
+   "prompt",
+   "run_in_background",
+   "subagent_type"
+  ],
+  "tool_response_keys": [
+   "agentId",
+   "agentType",
+   "canContinueAgent",
+   "content",
+   "harnessNoteCount",
+   "harnessSectionHash",
+   "harnessTailCount",
+   "prompt",
+   "resolvedModel",
+   "status",
+   "totalDurationMs",
+   "totalTokens",
+   "totalToolUseCount",
+   "usage"
+  ]
+ },
+ {
+  "t_in_ms": 1208,
+  "t_out_ms": 1208,
+  "tag": "PostToolBatch",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "prompt_id",
+   "session_id",
+   "tool_calls",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "PostToolBatch",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 1285,
+  "t_out_ms": 1285,
+  "tag": "MessageDisplay",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "delta",
+   "final",
+   "hook_event_name",
+   "index",
+   "message_id",
+   "prompt_id",
+   "session_id",
+   "transcript_path",
+   "turn_id"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "MessageDisplay"
+ },
+ {
+  "t_in_ms": 1365,
+  "t_out_ms": 1365,
+  "tag": "Stop",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "background_tasks",
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "last_assistant_message",
+   "permission_mode",
+   "prompt_id",
+   "session_crons",
+   "session_id",
+   "stop_hook_active",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "Stop",
+  "permission_mode": "default",
+  "stop_hook_active": false,
+  "effort": {
+   "level": "medium"
+  }
+ },
+ {
+  "t_in_ms": 1438,
+  "t_out_ms": 1438,
+  "tag": "SessionEnd",
+  "mode": "log",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "hook_event_name",
+   "prompt_id",
+   "reason",
+   "session_id",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e47-denied-danger",
+  "hook_event_name": "SessionEnd",
+  "reason": "other"
+ }
+]

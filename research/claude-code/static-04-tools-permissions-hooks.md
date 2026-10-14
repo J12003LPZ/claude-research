@@ -451,7 +451,9 @@ PostToolBatch, SubagentStart, SubagentStop, MessageDisplay, Stop and SessionEnd.
 Bash call produced `PermissionRequest` with the expected tool and permission fields; the hook returned
 `decision.behavior: "allow"` and the file write completed. Across the current sanitized hook logs, 17 of
 33 event types have been observed. The remaining 16 were not reached, so this is bounded event coverage,
-not evidence that they are unreachable.
+not evidence that they are unreachable. **E47-denied-danger** additionally showed that a successful
+`PermissionRequest` hook which returns no decision leaves a dangerous default-mode Bash call denied in
+headless mode; the run recorded one `permission_denials` entry and no `PermissionDenied` hook invocation.
 
 **Config schema. VS** `chunk-ff982hys.js@~101100-104500`:
 `hooks: { [Event]: Array<{ matcher?: string, hooks: HookEntry[] }> }`. Entry types in the settings

@@ -33,7 +33,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Tools | Large results persisted to disk | static 04 | E22 (14 sizes) | Verified; Bash threshold is 30,000 raw characters, not 50,000 | High | other tools' caps, MCP tools |
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | PreToolUse or PermissionRequest hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f, E46-permreq | Verified | High | |
-| Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified without a host handler; host approval is a separate row (E19c, E19d) | High | interactive dialog |
+| Permissions | Headless ask becomes denial | static 04 | E06, E06b, E47-denied-danger | Verified without a host handler; E47 also covers a non-deciding PermissionRequest hook; host approval is a separate row (E19c, E19d) | High | interactive dialog |
 | Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` has its own row below; its rule schema is read locally, see `runtime-logs/auto-mode-defaults/` |
 | Permissions | `auto` mode: classifier stages, thresholds, fail closed, denial limits | static 04 | E41, E42, E42b, E42c, E43 (scripted classifier, no upstream call): thresholds 25 and 35, fail closed on error, limits at 3 consecutive and 20 total | Verified for `claude -p` with a scripted classifier; the static abort branch not reproduced | Medium | real classifier verdicts, interactive prompting, server-side classifier, which context throws `Agent aborted` |
 | Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
@@ -128,7 +128,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 148 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 150 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -195,7 +195,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes; E39 scripted run (SDK `interrupt`) | Answered: no, for the SDK interrupt (E39a). TUI Esc open |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 148 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 150 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

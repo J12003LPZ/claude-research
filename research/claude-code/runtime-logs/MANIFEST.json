@@ -4269,6 +4269,74 @@
    "killed": null
   },
   {
+   "id": "E47-denied",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "046e945fbdd19e9ed1bc1d7f7a8979282a0af43bc11a02a77c73c39bfd210201",
+     "bytes": 3739
+    },
+    "hooks-summary.json": {
+     "sha256": "88057b365d059146534ba4e5f2629349ce48f9953b6a553768329f7902571ac8",
+     "bytes": 14928
+    },
+    "http-summary.json": {
+     "sha256": "a0739b0a449471dc840ce66e7bf6205115efc5297d28afccc91dbea7b3d4952b",
+     "bytes": 59826
+    },
+    "run.json": {
+     "sha256": "550822c57e3f2772c2e168f62411dc2671b7817a960153410c3afcd58efa5463",
+     "bytes": 2124
+    },
+    "stream-summary.json": {
+     "sha256": "4e1d37c127d02049c9f930812845c455863ba3eeec0b282d30fce1554d025bc2",
+     "bytes": 27273
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 2.568,
+   "started": "2026-10-14T08:47:28Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E47-denied-danger",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "40078163a9c659944cfa9bf0d8ad822a37180366615b3a62fc1156698491b926",
+     "bytes": 3739
+    },
+    "hooks-summary.json": {
+     "sha256": "baf77adf7e1a6952cff5145f902d87db86652e43dc0ae068d1eaa0a1cd2af039",
+     "bytes": 14911
+    },
+    "http-summary.json": {
+     "sha256": "55389b70d670d9bc6cdc4bff3b71e4a0c5d028be545a10782a9fca060f503520",
+     "bytes": 59938
+    },
+    "run.json": {
+     "sha256": "77be1da9f646d1485a48dee5029ea2a1595d7bb4f9320a9e70f006a9c95664de",
+     "bytes": 2145
+    },
+    "stream-summary.json": {
+     "sha256": "8aef03799d1c710bee31507e5452a70a03a5c446a62bb5938c12834dc80d0644",
+     "bytes": 27733
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 2.341,
+   "started": "2026-10-14T08:47:50Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {
