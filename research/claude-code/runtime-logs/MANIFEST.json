@@ -3085,6 +3085,17 @@
    "killed": null
   },
   {
+   "id": "auto-mode-defaults",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "8680bed0990e47f2f0452a75a5ab2ac66d25d13af1b5c1278bfa5afe41b29aa9",
+     "bytes": 829
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "config",
    "kind": "static-or-aggregate",
    "files": {

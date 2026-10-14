@@ -452,7 +452,14 @@ One headless prompt per mode in a disposable project: "Write `out.txt` with the 
 
 Side effects: plan mode created two plan files under `~/.claude/plans/` (one per build). The lab
 project `out.txt` appeared only for `acceptEdits` and `bypassPermissions`. Not tested here: `auto`
-mode (needs the classifier), interactive plan approval, bypass with rules that should still win.
+mode decisions (they need the classifier, which is a model call), interactive plan approval, bypass with rules that should still win.
+
+`claude auto-mode defaults` (2.1.296, local subcommand, exit 0) prints JSON with four string lists:
+`allow` 17, `soft_deny` 72, `hard_deny` 1, `environment` 21. This matches the `auto_mode` settings
+schema in `chunk-phacttch.js` (`allow`, `soft_deny`, `hard_deny`, `environment`). Only counts, sizes and a
+hash are kept in `runtime-logs/auto-mode-defaults/summary.json`; the rule text is the classifier's own
+prompt content and is withheld. That the command made no network call was not measured. The
+subcommand `critique` calls a model and was not run.
 
 ## Fallback, watchdog and large-output experiments (E20 to E23)
 

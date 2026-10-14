@@ -33,7 +33,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
 | Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified without a host handler; host approval is a separate row (E19c, E19d) | High | interactive dialog |
-| Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` mode still untested |
+| Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` classifier decisions untested (needs a model call); its rule schema is read locally, see `runtime-logs/auto-mode-defaults/` |
 | Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
 | Hooks | Exit 2 blocks, exit 1 does not | static 04 | E07c, E07d | Verified | High | per-event differences |
 | Hooks | stdin schemas | static 04 | E07a, E17c | Verified for 10 events | High | 11 events configured but never fired |

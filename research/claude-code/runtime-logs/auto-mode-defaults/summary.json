@@ -1,0 +1,32 @@
+{
+ "id": "auto-mode-defaults",
+ "command": "claude auto-mode defaults",
+ "cli_version": "2.1.296",
+ "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+ "network_used": "not observed; the command printed JSON and exited 0 (not measured at the socket level)",
+ "stdout_bytes": 82839,
+ "stdout_sha256_16": "9443a887746a8369",
+ "lists": {
+  "allow": {
+   "items": 17,
+   "total_chars": 7952,
+   "max_item_chars": 983
+  },
+  "soft_deny": {
+   "items": 72,
+   "total_chars": 64444,
+   "max_item_chars": 4614
+  },
+  "hard_deny": {
+   "items": 1,
+   "total_chars": 5278,
+   "max_item_chars": 5278
+  },
+  "environment": {
+   "items": 21,
+   "total_chars": 3483,
+   "max_item_chars": 802
+  }
+ },
+ "rule_text": "withheld: these strings are the classifier's own prompt content"
+}
