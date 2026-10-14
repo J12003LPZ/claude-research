@@ -314,7 +314,6 @@ dangerous `rm` still asks.
 
 Runtime note: `claude auto-mode defaults` returns exactly four lists, `allow`, `soft_deny`, `hard_deny`, `environment`
 (counts in `runtime-logs/auto-mode-defaults/summary.json`). Classifier decisions themselves were not observed.
-
 Auto-mode denial limits: **VS** `@2533539 "nG={maxConsecutive:3,maxTotal:20}"`. On reaching either,
 the next block falls back to prompting; in headless it throws
 `"Agent aborted: too many classifier denials in headless mode"` (`@~3350400`).
