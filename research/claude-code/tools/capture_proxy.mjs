@@ -18,6 +18,14 @@
 // "stall_ms": 0}, matching requests are answered locally and `times` is
 // decremented. Nothing is sent upstream for an injected fault. `body_contains`
 // and `body_contains_all` are optional literal matchers for request-body-aware faults.
+//
+// Scripted replies (no upstream model call): fault.json may instead hold
+//   {"path_contains": "/v1/messages", "sequence": [ {"body_contains": "X", "body_not_contains": ["Y"],
+//     "response": {"model": "...", "stop_reason": "tool_use", "content": [ text / tool_use blocks ]}} ],
+//    "otherwise": {"status": 400, "body": {...}}}
+// The first entry whose matchers fit a request is consumed and answered as a real Anthropic SSE stream
+// (or a JSON message when the request has stream:false). Requests no entry fits get `otherwise`, so nothing
+// unmatched is forwarded. Entry order matters: put the most specific matchers first.
 import http from "node:http";
 import https from "node:https";
 import fs from "node:fs";

@@ -503,7 +503,8 @@
     "tasks",
     "type",
     "uuid"
-   ]
+   ],
+   "task_count": 1
   },
   {
    "type": "system",
@@ -519,7 +520,8 @@
     "tool_use_id",
     "type",
     "uuid"
-   ]
+   ],
+   "task_type": "local_bash"
   },
   {
    "type": "user",
@@ -664,7 +666,8 @@
     "task_id",
     "type",
     "uuid"
-   ]
+   ],
+   "patch_status": "killed"
   },
   {
    "type": "system",
@@ -692,7 +695,8 @@
     "tasks",
     "type",
     "uuid"
-   ]
+   ],
+   "task_count": 0
   },
   {
    "type": "stream_event",

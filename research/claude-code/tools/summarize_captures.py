@@ -394,6 +394,18 @@ def summarize_stream(path):
                 init["plugins"] = len(o["plugins"])
         elif t == "system" and str(o.get("subtype", "")).startswith("hook"):
             e.update({k: mask(o.get(k)) for k in ("hook_event", "hook_name", "exit_code", "outcome") if k in o})
+        elif t == "system" and (str(o.get("subtype", "")).startswith("task_")
+                                or o.get("subtype") == "background_tasks_changed"):
+            # Task lifecycle: keep only closed-vocabulary status fields, never descriptions or summaries.
+            if o.get("task_type") in ("local_agent", "local_bash", "monitor", "remote_agent"):
+                e["task_type"] = o["task_type"]
+            if o.get("status") in ("completed", "failed", "stopped", "killed", "running", "pending"):
+                e["status"] = o["status"]
+            patch = o.get("patch")
+            if isinstance(patch, dict) and patch.get("status") in ("completed", "failed", "stopped", "killed", "running", "pending"):
+                e["patch_status"] = patch["status"]
+            if isinstance(o.get("tasks"), list):
+                e["task_count"] = len(o["tasks"])
         elif t == "system":
             for k in ("status", "compact_metadata", "content", "level"):
                 if k in o:

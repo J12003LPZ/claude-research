@@ -41,7 +41,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Subagents | In-process nested loop with own prompt and tools | `runAgent`, static 05 | E11 | Verified | High | |
 | Subagents | Siblings run concurrently | static 05 left this open | E10 | Verified | High | limit of 20 |
 | Subagents | Depth 3, concurrency 20 | static 05 | `subagent_stats.refused` keys only | Partially verified | Medium | hit the limits |
-| Subagents | Background agent survives parent interrupt | static 05 | none | Untested | Medium | |
+| Subagents | Background agent survives parent interrupt | static 05 (independent controller) | E39a, E39b, E39c (scripted model, SDK `interrupt` request): background and foreground agents both killed; control completes | Contradicted for the SDK interrupt (scoped) | Medium | TUI Esc untested; interrupt handler may stop all tasks by design |
 | Tasks | Background shell with output file, TaskStop kills | static 05 | E14 | Verified | High | notification into a later turn |
 | Compaction | Trigger = window - min(maxOut, 20000) - 13000 | static 02 | E17c brackets 59k..78k for 100k | Partially verified | Static High / runtime Medium | pin the exact runtime threshold |
 | Compaction | Summary request reuses system, tools, history | static 02 | E17a | Verified | High | |
@@ -91,6 +91,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 24 | Unknown agent type | E12 | 9 | Verified |
 | 25 | Background shell and stop | E14 | 9 | Verified |
 | 26 | Interrupt during streaming | E13b | 13 | Verified |
+| 26a | Parent interrupt with a background and a foreground agent | E39a, E39b, E39c | 13 | Verified (SDK interrupt, scripted model): both agents cancelled, `aborted_tools`, control completes |
 | 27 | Interrupt during a tool | E13c | 13 | Partially verified (process kill not proven) |
 | 28 | Resume, continue, fork | E15 | 11 | Verified |
 | 29 | Manual compaction | E17a | 10 | Verified |
@@ -113,7 +114,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | `claude sandbox status` reports `supported:false`, `installed:false`, `enabled:false` on this host | 7 | Blocked (not exercisable here; enforcement itself unobserved) |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 47 behaviours enumerated. Verified 38, partially verified 5, untested 1, blocked 3.
+Counts: 48 behaviours enumerated. Verified 39, partially verified 5, untested 1, blocked 3.
 
 ## 3. Cross-validation per subsystem
 
@@ -123,7 +124,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 110 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 113 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -155,7 +156,7 @@ the `auto` classifier, sandbox enforcement (not supported on this host), and int
 lifecycle, hand-back framing. How: overlapping request timestamps on the proxy, task
 events, on-disk subagent transcripts. Alternative: overlap could be an artifact of proxy
 timing. Rejected: 339 ms separation with 2 s durations on both. Falsifier: strictly serial
-child requests under the same prompt. Unknown: limits, background survival, failures.
+child requests under the same prompt. Unknown: limits, failures, and background survival under TUI Esc (killed under the SDK interrupt, E39).
 
 **Compaction.** Known: trigger region, request shape, hook order, rebuild, and the rapid-refill
 breaker. How: three successful automatic cycles and one manual one, with boundary metadata
@@ -187,10 +188,10 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 4 | Are reminders and environment text replayed or regenerated on resume? | Cache reuse and correctness after file edits | Ran the falsifier (E15e, E15f): edited `CLAUDE.md` between create and resume | Answered. The stored first message is replayed unchanged, and the current file content is added as a new reminder block on the new user message |
 | 5 | Is the tool's process tree killed on interrupt? | Orphan processes | Single process listing after E13c, none found | Partly answered |
 | 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Answered at runtime (E19c allow, E19d deny); needs `--permission-prompt-tool stdio`, `--permission-prompts host` alone auto-denies |
-| 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
+| 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes; E39 scripted run (SDK `interrupt`) | Answered: no, for the SDK interrupt (E39a). TUI Esc open |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 110 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 113 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

@@ -200,6 +200,33 @@ class SanitizeRunTests(unittest.TestCase):
         )
         self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
 
+    def test_stream_summary_keeps_task_status_fields_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "stdout.jsonl"
+            frames = [
+                {"type": "system", "subtype": "task_started", "task_type": "local_agent",
+                 "description": "SENSITIVE-LAB-MARKER-9348"},
+                {"type": "system", "subtype": "task_updated",
+                 "patch": {"status": "killed", "end_time": 1, "note": "SENSITIVE-LAB-MARKER-9348"}},
+                {"type": "system", "subtype": "task_notification", "status": "stopped",
+                 "summary": "SENSITIVE-LAB-MARKER-9348"},
+                {"type": "system", "subtype": "background_tasks_changed",
+                 "tasks": [{"id": "a", "description": "SENSITIVE-LAB-MARKER-9348"}]},
+            ]
+            path.write_text("\n".join(json.dumps(f) for f in frames) + "\n", encoding="utf-8")
+
+            events = summarize_stream(str(path))["events"]
+
+        task = [{k: e[k] for k in e if k in ("subtype", "task_type", "status", "patch_status", "task_count")}
+                for e in events]
+        self.assertEqual(task, [
+            {"subtype": "task_started", "task_type": "local_agent"},
+            {"subtype": "task_updated", "patch_status": "killed"},
+            {"subtype": "task_notification", "status": "stopped"},
+            {"subtype": "background_tasks_changed", "task_count": 1},
+        ])
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(events))
+
     def test_stream_summary_keeps_every_result_frame(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "stdout.jsonl"

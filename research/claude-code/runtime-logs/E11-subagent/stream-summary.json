@@ -478,7 +478,8 @@
     "tool_use_id",
     "type",
     "uuid"
-   ]
+   ],
+   "task_type": "local_agent"
   },
   {
    "type": "user",
@@ -636,7 +637,8 @@
     "task_id",
     "type",
     "uuid"
-   ]
+   ],
+   "patch_status": "completed"
   },
   {
    "type": "system",

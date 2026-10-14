@@ -363,6 +363,36 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
 
+### E39: a parent interrupt with a background or foreground agent (scripted model)
+
+These runs use the proxy's new `sequence` mode (`tools/scripted_response.mjs`): the lab proxy answers every
+`/v1/messages` with a canned, valid Anthropic stream, so the real CLI runs its real tools while **no model
+request goes upstream**. The script: turn 1 makes the parent call `Agent` (`run_in_background` true or false);
+the child runs `Bash` (a Python sleep of 12 s, then writes `child-done.txt`); the parent then starts its own
+30 s `Bash`. At 6 s the stream-json host sends an `interrupt` control request; at 10 s it sends a new user
+message. Permission mode `bypassPermissions`. Build script and fault sequence stay in the scratchpad and
+`lab/raw`; the structured results are in each run's `stream-summary.json` (`events`, `results`).
+
+| Run | Agent | Interrupt | Task events | `child-done.txt` | Turn results |
+|---|---|---|---|---|---|
+| E39c | background | none | agent `completed`, both Bash tasks `completed`; the child's second request at 13.5 s | written | `completed` (3 turns) |
+| E39a | background | at 6 s | `task_updated` patch `killed`; three `task_notification` `stopped` (agent plus two Bash); `background_tasks_changed` 1 then 0 | **absent** | first turn `aborted_tools` (error), then the 10 s message `completed` |
+| E39b | foreground | at 6 s | `tool_dispatch_end tool=Agent outcome=aborted`; `task_updated` `killed`; two `task_notification` `stopped` | **absent** | first turn `aborted_tools` (error), then `completed` |
+
+Debug lines for the cancelled agents: `[Stall] agent_completion … agentType=general-purpose exitPath=cancelled durationMs=5475`
+(background) and `…durationMs=5474` (foreground), both within 1 s of the interrupt; the background run then logged
+`[enqueueAgentNotification] skipped … status=killed … reason=already-notified`.
+
+- **Contradicts the static claim for this interface.** `static-05` (abort linkage table, lines 412 to 418) says an
+  interrupt of the parent turn does not stop a background agent, because it has an independent controller. Here the
+  SDK `interrupt` control request killed the background agent as well as the foreground one, and the control run (same
+  script, no interrupt) completes, so the kill is caused by the interrupt.
+- **Scope:** this is the stream-json `interrupt` control request, not the TUI Esc key the static text names. The two
+  paths may differ. The result is therefore **Contradicted (scoped)**: not shown false for Esc in the TUI.
+- **Not established:** whether the host's interrupt handler stops all tasks by design, or whether the background
+  agent shares the parent's controller in this build. The scripted model is not a real model: tool-use timing and
+  content are canned.
+
 ### E38: the 180 s first-party byte default
 
 No stream env at all, same local `sse_stall` fault. Timeline from `runtime-logs/E38-byte-watchdog-default/debug-summary.json`:

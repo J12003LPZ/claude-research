@@ -281,7 +281,8 @@ REPRODUCE (E10, E11, E12, E14):
 - Limits to adopt: depth 3, 20 concurrent (static pass 05).
 
 Cancellation: a foreground child shares the parent's abort signal; a background child has
-its own and survives a parent interrupt (static pass 05, not exercised). Store child
+its own, which static pass 05 reads as surviving a parent interrupt; the SDK `interrupt` request in
+E39a killed it, so do not promise survival without a TUI test. Store child
 transcripts next to the parent's session file.
 
 ## 10. context-manager and compaction-controller

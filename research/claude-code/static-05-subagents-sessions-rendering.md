@@ -415,7 +415,7 @@ Cleanup (`Fe`) at settle:
 | foreground moved to background | same controller, relay **detached** (`detachParentAbortRelay`) | no |
 | launched in background | `ine` is called from the Agent tool **without** `parentAbortController`, so `lr()` creates an independent controller | no |
 
-So an Esc interrupt of the parent turn does not stop background agents. They are stopped by `TaskStop`
+So an Esc interrupt of the parent turn does not stop background agents. **Runtime contradiction (E39a, scoped):** the stream-json `interrupt` control request did kill a background agent (`task_updated` status `killed`, `exitPath=cancelled`) while the same script without an interrupt completed; the TUI Esc path was not run. They are stopped by `TaskStop`
 or the task UI, which call `gE(taskId, registry, killedBy)` (`chunk-phacttch.js@4228625`): aborts the
 controller, sets `status:"killed"`, `killedBy: "user" | "parent" | "system"`, `endTime`, clears
 keepalives, kills monitors and orphaned shell tasks owned by the agent, and emits a `killed` notification
@@ -1206,7 +1206,7 @@ chunk, concurrency check order). The rest are split below into items I re-read a
 
 1. **Default backgrounding.** Launch one `Agent` call with no `run_in_background` in an interactive session and one in `-p` mode. Expect `async_launched` interactively. In headless mode the result depends on `e7()`/`Vat()`; record which.
 2. **Parallel Agent calls.** **Answered at runtime (E10):** sibling `Agent` calls overlap (about 339 ms start separation, 2 s durations on both).
-3. **Parent interrupt.** Start a background agent, press Esc during the parent turn, and check that the agent's JSONL keeps growing. Repeat with a foreground agent and expect it to stop.
+3. **Parent interrupt.** Start a background agent, press Esc during the parent turn, and check that the agent's JSONL keeps growing. Repeat with a foreground agent and expect it to stop. **Answered for the SDK interrupt (E39):** both were cancelled; TUI Esc not run.
 4. **Depth cap.** Chain general-purpose agents until `"Subagent nesting limit reached (depth 3 of 3)"` appears. Confirm whether the `Agent` tool is already missing from the depth-3 child's tool list.
 5. **Notification delivery while idle vs mid-turn.** Finish a background agent while the REPL is idle (expect a new turn to start on its own) and while a long tool is running (expect delivery between steps). Capture the exact `<task-notification>` text from the transcript.
 6. **Project key hash.** Create a session in a directory whose absolute path exceeds 200 characters and read the directory name to recover the `Hse` suffix; test candidate hashes (djb2, Java `hashCode`, Bun.hash) against it.
