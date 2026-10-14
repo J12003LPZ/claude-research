@@ -222,6 +222,22 @@ class SanitizeRunTests(unittest.TestCase):
         )
         self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary["results"]))
 
+    def test_schema_keys_keep_camel_case_but_digest_secret_like_keys(self):
+        from summarize_captures import structural_shape
+
+        shape = structural_shape({
+            "dangerouslyDisableSandbox": 1,
+            "run_in_background": 2,
+            "sk-ant-api03-SENSITIVE-9348": 3,
+            "token_9348": 4,
+        })
+
+        self.assertIn("dangerouslyDisableSandbox", shape["keys"])
+        self.assertIn("run_in_background", shape["keys"])
+        self.assertNotIn("sk-ant-api03-SENSITIVE-9348", str(shape))
+        self.assertNotIn("token_9348", str(shape))
+        self.assertEqual(sum(k.startswith("<key:") for k in shape["keys"]), 2)
+
     def test_request_summary_does_not_publish_container_or_mcp_values(self):
         marker = "SENSITIVE-LAB-MARKER-9348"
         req = {

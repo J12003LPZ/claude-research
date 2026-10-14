@@ -204,8 +204,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -249,17 +249,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
-       "<key:8b8a945cd5d667f1>",
-       "<key:96f2c1696293622c>",
-       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
+       "localDir",
        "method",
        "name",
        "path",
        "paths",
+       "planId",
+       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -378,8 +378,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -442,7 +442,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "<key:0b1483676b8190d7>",
+       "delaySeconds",
        "noop",
        "prompt",
        "reason",
@@ -915,8 +915,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -960,17 +960,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
-       "<key:8b8a945cd5d667f1>",
-       "<key:96f2c1696293622c>",
-       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
+       "localDir",
        "method",
        "name",
        "path",
        "paths",
+       "planId",
+       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -1089,8 +1089,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -1583,8 +1583,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -1628,17 +1628,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
-       "<key:8b8a945cd5d667f1>",
-       "<key:96f2c1696293622c>",
-       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
+       "localDir",
        "method",
        "name",
        "path",
        "paths",
+       "planId",
+       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -1757,8 +1757,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2326,8 +2326,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2371,17 +2371,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
-       "<key:8b8a945cd5d667f1>",
-       "<key:96f2c1696293622c>",
-       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
+       "localDir",
        "method",
        "name",
        "path",
        "paths",
+       "planId",
+       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -2500,8 +2500,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
-       "<key:c5a14594d5e5314b>",
        "command",
+       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2564,7 +2564,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "<key:0b1483676b8190d7>",
+       "delaySeconds",
        "noop",
        "prompt",
        "reason",

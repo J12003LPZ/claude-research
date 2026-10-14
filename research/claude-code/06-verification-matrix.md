@@ -28,7 +28,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Transport | App-level retry: 10 attempts, 500 ms base, 25% jitter, retry-after | static 03 constants | E18a, b, d, e | Verified | High | cap 32 s, give-up paths |
 | Transport | 400 triggers a degraded retry | not located statically | E18c | Partially verified | Medium | which 400s qualify |
 | Transport | Fallback model after 3 consecutive 529 | static 03 | E20, E21 | Verified | High | `--fallback-model` unset: 4 retries, no switch (E21) |
-| Transport | Byte watchdog, non-streaming fallback | static 03 | E23 | Verified for the byte tier (E23, byte env 10 s) and the event tier (E33: abort at exactly 300 s with env 15 s, warning at 150 s) | Medium | 180 s first-party byte default untested; `[Stall]` warning cadence unexplained |
+| Transport | Byte watchdog, non-streaming fallback | static 03 | E23 | Verified for the byte tier (E23 env 10 s; E38 default 180 s) and the event tier (E33: abort at exactly 300 s with env 15 s, warning at 150 s) | High | `[Stall]` warning purpose unexplained; non-first-party providers untested |
 | Tools | Lifecycle: lookup, validate, PreToolUse, decide, call, PostToolUse | static 04 | E07a to E07g | Verified | High | PostToolUseFailure |
 | Tools | Large results persisted to disk | static 04 | E22 (14 sizes) | Verified; Bash threshold is 30,000 raw characters, not 50,000 | High | other tools' caps, MCP tools |
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
@@ -123,7 +123,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 109 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 110 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -143,7 +143,7 @@ message.
 **Transport.** Known: endpoint, headers, body keys, retry timing, abort. How: proxy
 captures and injected faults. Alternative: delays could come from the SDK. Rejected:
 `x-stainless-retry-count` stayed 0 and the delays match the application constants.
-Falsifier: a retry with a non-zero SDK retry header. Unknown: the 180 s first-party byte default, the `[Stall]` warning cadence, and other fallback variants.
+Falsifier: a retry with a non-zero SDK retry header. Unknown: the purpose of the `[Stall]` warnings, non-first-party providers, and other fallback variants.
 
 **Permissions and hooks.** Known: precedence, hook ordering, decision effects. How: hook
 logs with timestamps, file state on disk before and after, denial events. Alternative:
@@ -190,7 +190,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 109 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 110 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

@@ -59,7 +59,7 @@ def private_digest(text):
 def safe_key(value):
     """Keep ordinary schema keys readable while digesting arbitrary key text."""
     text = str(value)
-    if re.fullmatch(r"[a-z][a-z0-9_]*", text) or text in {"Authorization"}:
+    if re.fullmatch(r"[A-Za-z][A-Za-z_]{0,40}", text) or text in {"Authorization"}:
         return text
     return "<key:" + hashlib.sha256(text.encode("utf-8")).hexdigest()[:16] + ">"
 

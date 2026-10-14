@@ -67,6 +67,47 @@ const captured = fs.readFileSync(path.join(outDir, "0001-res.body"), "utf8");
 assert.equal(meta.headers["content-type"], "text/event-stream");
 assert.match(captured, /event: message_start/);
 
+function post(body) {
+  return new Promise((resolve, reject) => {
+    const request = http.request({
+      host: "127.0.0.1", port, path: "/v1/messages", method: "POST",
+      headers: { "content-type": "application/json" },
+    }, (res) => {
+      const chunks = [];
+      res.on("data", (chunk) => chunks.push(chunk));
+      res.on("end", () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString("utf8") }));
+    });
+    request.on("error", reject);
+    request.end(body);
+  });
+}
+
+// Scripted sequence mode: canned replies, never forwarded upstream.
+const faultPath = path.join(outDir, "fault.json");
+const text = (value) => ({ model: "claude-haiku-5-5", stop_reason: "end_turn", content: [{ type: "text", text: value }] });
+fs.writeFileSync(faultPath, JSON.stringify({
+  path_contains: "/v1/messages",
+  sequence: [{ body_contains: "AAA", response: text("one") }],
+  otherwise: { status: 400, body: { type: "error", error: { type: "invalid_request_error", message: "lab otherwise" } } },
+}));
+const streamed = await post('{"stream":true,"x":"AAA"}');
+assert.equal(streamed.status, 200);
+assert.equal(streamed.headers["content-type"], "text/event-stream");
+assert.match(streamed.body, /"text":"one"/);
+assert.match(streamed.body, /event: message_stop/);
+const fallback = await post('{"stream":false,"x":"AAA"}');
+assert.equal(fallback.status, 400);
+assert.match(fallback.body, /lab otherwise/);
+fs.writeFileSync(faultPath, JSON.stringify({
+  path_contains: "/v1/messages",
+  sequence: [{ body_contains: "CCC", response: text("two") }],
+}));
+const plain = await post('{"stream":false,"x":"CCC"}');
+assert.equal(plain.status, 200);
+assert.equal(plain.headers["content-type"], "application/json");
+assert.equal(JSON.parse(plain.body).content[0].text, "two");
+assert.deepEqual(JSON.parse(fs.readFileSync(faultPath, "utf8")).sequence, []);
+
 proxy.kill();
 await once(proxy, "exit");
 fs.rmSync(outDir, { recursive: true, force: true });

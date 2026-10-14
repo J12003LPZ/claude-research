@@ -363,6 +363,15 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
 
+### E38: the 180 s first-party byte default
+
+No stream env at all, same local `sse_stall` fault. Timeline from `runtime-logs/E38-byte-watchdog-default/debug-summary.json`:
+`[Stall]` warnings at 15, 30, 60, 120 s with `idleDeadlineMs=180000`; `Streaming idle warning: no chunks received for 150s`
+(the event-level warning, half of 300 s); then at **180.000 s** `[byte-watchdog] firing: idle=180000ms` and
+`Streaming idle timeout (byte-level): stream idle: no bytes for 180000ms`, then the non-streaming fallback
+(second POST at 181 s, `stream:false`, `max_tokens:64000`). The event-tier 300 s timeout never came due because the byte
+tier fired first, as `static-03` F6.4 predicts for an unset env. **Verified:** first-party default 180 s.
+
 ### E34: prompt-too-long during compaction (reactive path)
 
 E34 resumed the same private session as E31 with `--autocompact 100k`, and the proxy answered
@@ -558,8 +567,9 @@ killed the run at 420 s. Numbers are in `runtime-logs/E33-event-watchdog-floor/d
   request to non-streaming mode, the same fallback shape as E23's byte tier.
 - The `idleDeadlineMs=1800000` field equals the byte timeout set here, so it belongs to the byte tier.
 - **Unexplained:** the `[Stall] stream_idle_partial` warnings at 15, 30, 60 and 120 s are not in the static
-  report. They stopped before the 150 s warning and there was none at 240 s. Because the env value was
-  also 15000, it is not known whether the 15 s start comes from the env or is fixed.
+  report. They stopped before the 150 s warning and there was none at 240 s. E38 (no stream env at all) shows
+  the same 15, 30, 60, 120 s schedule, so the cadence is fixed, not derived from the env value. Their purpose
+  is not known.
 - **Not observed:** the `tengu_streaming_idle_timeout` event with `tier:"event"` does not appear in the debug
   log, so that tier label stays a static claim. The 180 s first-party byte default is still unwaited.
 

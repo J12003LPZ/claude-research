@@ -23,6 +23,7 @@ import https from "node:https";
 import fs from "node:fs";
 import path from "node:path";
 import { faultMatches } from "./fault_match.mjs";
+import { buildJsonMessage, buildSse, takeFromSequence } from "./scripted_response.mjs";
 
 const port = Number(process.argv[2]);
 const outDir = process.argv[3];
@@ -43,6 +44,12 @@ function readFault(urlPath, bodyText) {
   if (!fs.existsSync(p)) return null;
   try {
     const f = JSON.parse(fs.readFileSync(p, "utf8"));
+    if (Array.isArray(f.sequence)) {
+      const taken = takeFromSequence(f, urlPath, bodyText);
+      if (!taken) return null;
+      fs.writeFileSync(p, JSON.stringify(f));
+      return taken.entry;
+    }
     if (!f.times || f.times <= 0) return null;
     if (!faultMatches(f, urlPath, bodyText)) return null;
     f.times -= 1;
@@ -113,6 +120,18 @@ data: ${JSON.stringify(start)}
         resBody.write(ssePayload);
         if (fault.stall_ms) setTimeout(() => { res.end(); endCapture(); }, fault.stall_ms);
         req.on("close", endCapture);
+        return;
+      }
+      if (fault.response) {
+        // Scripted model reply: nothing is sent upstream.
+        const wantsStream = parsed?.stream !== false;
+        const scriptedHeaders = { "content-type": wantsStream ? "text/event-stream" : "application/json" };
+        const scriptedBody = wantsStream ? buildSse(fault.response) : JSON.stringify(buildJsonMessage(fault.response));
+        meta({ seq: id, injected: true, mode: "respond", status: 200, headers: scriptedHeaders, t_ms: Date.now() - t0 });
+        res.writeHead(200, scriptedHeaders);
+        res.end(scriptedBody);
+        resBody.end(scriptedBody);
+        timing.end();
         return;
       }
       const payload = JSON.stringify(

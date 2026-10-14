@@ -11,5 +11,11 @@ export function faultMatches(fault, urlPath, bodyText) {
       return false;
     }
   }
+  if (fault.body_not_contains !== undefined) {
+    if (!Array.isArray(fault.body_not_contains) ||
+        !fault.body_not_contains.every((marker) => typeof marker === "string" && !bodyText.includes(marker))) {
+      return false;
+    }
+  }
   return true;
 }
