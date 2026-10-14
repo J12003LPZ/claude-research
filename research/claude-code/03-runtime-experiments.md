@@ -443,9 +443,14 @@ daemon, an unreachable control endpoint, and zero background workers while still
   retained. E84 stopped a trusted background entry, ran `respawn` successfully, observed the replacement entry in
   `state: "working"`, `status: "idle"`, then stopped and removed it. The spare pool is host-blocked on Windows
   by the static `runBgSpare` guard. E85 attached through a Windows PTY, received 7,303 bytes including ANSI
-  control bytes, sent input, and cleaned the session. Worker spawn/exit remains unobserved; worker stdin/parent-watchdog
-  and PTY auth contracts are static-only. The E82-E85 sessions made no model POST because they remained blocked/idle.
-- Evidence: `runtime-logs/daemon-lifecycle/summary.json`, `runtime-logs/daemon-entrypoints/summary.json`, `runtime-logs/E85-pty-bytes/summary.json`, and the prior passive surface record in
+  control bytes, sent input, and cleaned the session. A disposable `heartbeat` worker was then launched with the
+  documented stdin shape and a Node IPC channel: it emitted its startup and heartbeat records, accepted a `shutdown`
+  message, and exited with code 0. A second worker was launched by a short-lived supervisor; after the supervisor
+  exited, the worker emitted the documented `parent supervisor gone - exiting` watchdog message. The worker exit
+  status was not captured. Worker-specific
+  respawn codes and PTY auth enforcement remain untested. The E82-E85 sessions and worker probes made no model POST.
+- Evidence: `runtime-logs/daemon-lifecycle/summary.json`, `runtime-logs/daemon-entrypoints/summary.json`,
+  `runtime-logs/worker-lifecycle/summary.json`, `runtime-logs/E85-pty-bytes/summary.json`, and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 
 ### E41 to E43: `auto` permission mode with a scripted classifier

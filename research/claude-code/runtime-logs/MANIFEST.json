@@ -4662,8 +4662,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "37ab4d1906965737b80ccad04cfb882906e0edfae74b204819cdccadd87cc984",
-     "bytes": 1692
+     "sha256": "15567ec9c8f9a8a12c7538fdf23b97d96871220df7c12079115469d9d8927567",
+     "bytes": 2119
     }
    },
    "redaction": "sanitized"
@@ -4790,6 +4790,17 @@
     "static-claim-ledger-2.1.296.json": {
      "sha256": "8c55bdf494b87b799f65e4c40383dd7fbe08ff42ca629c8b2c47794035acd835",
      "bytes": 573356
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
+   "id": "worker-lifecycle",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "a3992b1c156d27bcfe67f62841564af31275f99e6c8fe90f870c948b6eb8da18",
+     "bytes": 1270
     }
    },
    "redaction": "sanitized"

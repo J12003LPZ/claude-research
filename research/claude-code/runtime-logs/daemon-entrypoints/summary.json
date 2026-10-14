@@ -17,7 +17,16 @@
     "invalid_json_probe": "heartbeat worker with non-JSON stdin returns invalid config JSON on stdin",
     "stdin_contract_static": "newline/stream JSON with config and initialAccessToken; schema validation precedes run",
     "parent_watchdog_static": "30s poll; worker aborts and exits when the supervisor parent disappears",
-    "controlled_worker_lifecycle": false
+    "controlled_worker_lifecycle": {
+      "ipc_shutdown": "verified",
+      "heartbeat_output": true,
+      "exit_code": 0,
+      "evidence": "runtime-logs/worker-lifecycle/summary.json"
+    },
+    "parent_watchdog_runtime": {
+      "observed": "parent supervisor gone - exiting",
+      "evidence": "runtime-logs/worker-lifecycle/summary.json"
+    }
   },
   "pty_auth_static": {
     "env_or_token_file": ["CLAUDE_BG_PTY_AUTH", "CLAUDE_BG_SOCKET_TOKENS_PATH"],
@@ -33,8 +42,9 @@
     "child_started": false
   },
   "limits": [
-    "No worker was launched",
-    "No worker respawn or IPC lifecycle was exercised",
+    "Worker-specific respawn exit codes were not exercised",
+    "Scheduled and remoteControl workers were not launched because they are OAuth-gated",
+    "Runtime PTY auth enforcement was not reached",
     "No spare PTY was launched because the Windows static guard disables it"
   ]
 }

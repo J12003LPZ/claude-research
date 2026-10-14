@@ -531,7 +531,11 @@ background session and observed one `background` registry row in `state:"blocked
 received 7,303 bytes including ANSI control bytes, sent input, and cleaned the session; this verifies PTY byte
 transport while the session was blocked/idle, not model terminal semantics. The spare pool is host-blocked on
 Windows by the static `runBgSpare` guard. Daemon worker kinds, stdin/parent-watchdog contracts, invalid-kind handling,
-and PTY auth control messages are recorded in `runtime-logs/daemon-entrypoints/summary.json`, but no worker was launched.
+and PTY auth control messages are recorded in `runtime-logs/daemon-entrypoints/summary.json`. The heartbeat worker was
+launched through the pinned CLI with the documented stdin shape and a Node IPC channel; it emitted startup and heartbeat
+records, accepted a `shutdown` message, and exited with code 0. A separate parent-disappearance probe reached the
+runtime watchdog and emitted `parent supervisor gone - exiting`. Worker-specific respawn codes and PTY auth enforcement
+remain untested. See `runtime-logs/worker-lifecycle/summary.json`.
 
 ## B. Session persistence and resume
 
