@@ -438,8 +438,10 @@ daemon, an unreachable control endpoint, and zero background workers while still
   conflict; direct non-print `--bg` attempts failed the workspace-trust gate before session creation. After
   completing onboarding and trust in an isolated config, E82 launched a disposable background session successfully;
   `agents --json --all` observed one matching `background` row in `state: "blocked"`, `status: "idle"`, and
-  `stop` plus `rm` reduced the matching count to zero. Spare PTY, worker spawn/exit, respawn codes, and attach
-  authentication remain unobserved. The E82 session made no model POST because it remained blocked/idle.
+  `stop` plus `rm` reduced the matching count to zero. E83 also found the trusted session by its private registry id,
+  started `claude attach`, observed attach output, then detached and cleaned it with `stop` plus `rm`; no ids are
+  retained. Spare PTY, worker spawn/exit, respawn codes, and attach authentication remain unobserved. The E82/E83
+  sessions made no model POST because they remained blocked/idle.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 

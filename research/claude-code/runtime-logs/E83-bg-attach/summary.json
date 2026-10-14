@@ -1,0 +1,20 @@
+{
+  "id": "E83-bg-attach",
+  "cli_version": "2.1.296",
+  "method": "trusted disposable background session with isolated HOME/config and local proxy",
+  "launch_exit": 0,
+  "background_registry_match": true,
+  "attach_process_started": true,
+  "attach_output_marker": true,
+  "attach_exitstatus": 2,
+  "cleanup": {
+    "stop_sent": true,
+    "rm_sent": true,
+    "after_cleanup_count": 0
+  },
+  "ids_withheld": true,
+  "limits": [
+    "The background session remained blocked/idle and did not complete a model turn",
+    "No spare PTY or worker respawn was exercised"
+  ]
+}

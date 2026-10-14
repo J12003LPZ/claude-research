@@ -524,7 +524,9 @@ immediately. Subsequent direct `--bg` attempts showed two gates: `--bg` conflict
 launches require workspace trust before a session is created. This confirms the CLI surface and idle contract text,
 but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY auth. After completing onboarding and trust in an isolated config, E82 launched a
 background session and observed one `background` registry row in `state:"blocked"`, `status:"idle"`; `stop` plus
-`rm` removed it. The session made no model POST, so attach and active PTY behavior remain untested.
+`rm` removed it. E83 started `claude attach` against a live trusted registry entry, observed attach output, then
+ detached and cleaned the entry. The sessions made no model POST, so active PTY data flow, spare PTY, worker respawn,
+and PTY authentication remain untested.
 
 ## B. Session persistence and resume
 

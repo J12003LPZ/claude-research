@@ -4348,6 +4348,17 @@
    "redaction": "sanitized"
   },
   {
+   "id": "E83-bg-attach",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "1d31a7fe67ed91e898d23b4fab7e89ec603ddd0913b274c09004ace877ccb573",
+     "bytes": 573
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {
