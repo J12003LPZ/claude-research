@@ -11,6 +11,8 @@ import os
 import sys
 
 exp, mode = sys.argv[1], sys.argv[2]
+if not exp or any(ch not in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-" for ch in exp):
+    raise SystemExit("exp id must contain only ASCII letters, digits, '_' or '-'")
 n = int(sys.argv[3]) if len(sys.argv) > 3 else 22
 LAB = r"C:/Users/sergi/cc-rea-lab"
 RAW = r"C:/Users/sergi/Desktop/claude-rea/lab/raw"

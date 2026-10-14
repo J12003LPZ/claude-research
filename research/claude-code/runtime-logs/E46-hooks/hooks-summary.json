@@ -30,8 +30,8 @@
   "source": "startup"
  },
  {
-  "t_in_ms": 10,
-  "t_out_ms": 10,
+  "t_in_ms": 14,
+  "t_out_ms": 14,
   "tag": "InstructionsLoaded",
   "mode": "log",
   "pid": "<pid>",
@@ -62,8 +62,8 @@
   "memory_type": "Project"
  },
  {
-  "t_in_ms": 278,
-  "t_out_ms": 278,
+  "t_in_ms": 274,
+  "t_out_ms": 274,
   "tag": "UserPromptExpansion",
   "mode": "log",
   "pid": "<pid>",
@@ -98,8 +98,8 @@
   "prompt_len": 16
  },
  {
-  "t_in_ms": 354,
-  "t_out_ms": 354,
+  "t_in_ms": 351,
+  "t_out_ms": 351,
   "tag": "UserPromptSubmit",
   "mode": "log",
   "pid": "<pid>",
@@ -130,8 +130,8 @@
   "prompt_len": 16
  },
  {
-  "t_in_ms": 470,
-  "t_out_ms": 470,
+  "t_in_ms": 463,
+  "t_out_ms": 463,
   "tag": "PreToolUse",
   "mode": "log",
   "pid": "<pid>",
@@ -172,8 +172,8 @@
   ]
  },
  {
-  "t_in_ms": 470,
-  "t_out_ms": 470,
+  "t_in_ms": 464,
+  "t_out_ms": 464,
   "tag": "PreToolUse",
   "mode": "log",
   "pid": "<pid>",
@@ -215,8 +215,8 @@
   ]
  },
  {
-  "t_in_ms": 635,
-  "t_out_ms": 635,
+  "t_in_ms": 563,
+  "t_out_ms": 563,
   "tag": "PostToolUseFailure",
   "mode": "log",
   "pid": "<pid>",
@@ -261,8 +261,8 @@
   "error_head": "File does not exist. Note: your current working directory is C:\\Users\\<user>\\cc-rea-lab\\proj-e46-hooks."
  },
  {
-  "t_in_ms": 1101,
-  "t_out_ms": 1101,
+  "t_in_ms": 1043,
+  "t_out_ms": 1043,
   "tag": "PostToolUse",
   "mode": "log",
   "pid": "<pid>",
@@ -313,8 +313,8 @@
   ]
  },
  {
-  "t_in_ms": 1168,
-  "t_out_ms": 1168,
+  "t_in_ms": 1110,
+  "t_out_ms": 1110,
   "tag": "PostToolBatch",
   "mode": "log",
   "pid": "<pid>",
@@ -349,8 +349,8 @@
   }
  },
  {
-  "t_in_ms": 1251,
-  "t_out_ms": 1251,
+  "t_in_ms": 1192,
+  "t_out_ms": 1192,
   "tag": "PreToolUse",
   "mode": "log",
   "pid": "<pid>",
@@ -394,8 +394,8 @@
   ]
  },
  {
-  "t_in_ms": 1324,
-  "t_out_ms": 1324,
+  "t_in_ms": 1264,
+  "t_out_ms": 1264,
   "tag": "SubagentStart",
   "mode": "log",
   "pid": "<pid>",
@@ -425,8 +425,8 @@
   "agent_type": "general-purpose"
  },
  {
-  "t_in_ms": 1412,
-  "t_out_ms": 1412,
+  "t_in_ms": 1372,
+  "t_out_ms": 1372,
   "tag": "SubagentStop",
   "mode": "log",
   "pid": "<pid>",
@@ -469,8 +469,8 @@
   }
  },
  {
-  "t_in_ms": 1502,
-  "t_out_ms": 1502,
+  "t_in_ms": 1457,
+  "t_out_ms": 1457,
   "tag": "PostToolUse",
   "mode": "log",
   "pid": "<pid>",
@@ -532,8 +532,8 @@
   ]
  },
  {
-  "t_in_ms": 1586,
-  "t_out_ms": 1586,
+  "t_in_ms": 1522,
+  "t_out_ms": 1522,
   "tag": "PostToolBatch",
   "mode": "log",
   "pid": "<pid>",
@@ -568,8 +568,8 @@
   }
  },
  {
-  "t_in_ms": 1669,
-  "t_out_ms": 1669,
+  "t_in_ms": 1599,
+  "t_out_ms": 1599,
   "tag": "MessageDisplay",
   "mode": "log",
   "pid": "<pid>",
@@ -601,8 +601,8 @@
   "hook_event_name": "MessageDisplay"
  },
  {
-  "t_in_ms": 1737,
-  "t_out_ms": 1737,
+  "t_in_ms": 1682,
+  "t_out_ms": 1682,
   "tag": "Stop",
   "mode": "log",
   "pid": "<pid>",
@@ -641,8 +641,8 @@
   }
  },
  {
-  "t_in_ms": 1816,
-  "t_out_ms": 1816,
+  "t_in_ms": 1761,
+  "t_out_ms": 1761,
   "tag": "SessionEnd",
   "mode": "log",
   "pid": "<pid>",

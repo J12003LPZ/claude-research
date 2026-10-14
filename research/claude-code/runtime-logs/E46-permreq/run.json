@@ -61,12 +61,12 @@
   "CLAUDE_PID",
   "CLAUDE_PLUGIN_DATA"
  ],
- "proxy_port": 58795,
+ "proxy_port": 56266,
  "exit_code": 0,
  "killed": null,
- "duration_s": 1.664,
+ "duration_s": 1.745,
  "cli_version": "2.1.296 (Claude Code)",
- "started_iso": "2026-10-14T08:41:36Z",
+ "started_iso": "2026-10-14T08:51:53Z",
  "fault": {
   "otherwise": {
    "type": "object",

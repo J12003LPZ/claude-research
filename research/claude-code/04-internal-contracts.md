@@ -188,7 +188,7 @@ interface HookOutput {                                                          
   hookSpecificOutput?: {
     hookEventName: string;
     permissionDecision?: "allow" | "deny" | "ask"; permissionDecisionReason?: string;   // PreToolUse
-    decision?: { behavior: "allow" | "deny"; updatedInput?: object; updatedPermissions?: object; message?: string; interrupt?: boolean } // PermissionRequest
+    decision?: { behavior: "allow" | "deny"; updatedInput?: object; updatedPermissions?: PermissionUpdate[]; message?: string; interrupt?: boolean } // PermissionRequest
     updatedInput?: object;                                                               // PreToolUse
     additionalContext?: string;                                                          // UserPromptSubmit, PostToolUse
   };

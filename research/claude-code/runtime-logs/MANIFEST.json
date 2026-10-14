@@ -4205,23 +4205,23 @@
    "kind": "experiment",
    "files": {
     "debug-summary.json": {
-     "sha256": "e85630cf07e386ea15b8b713c0ea7777093ddc2cc3c30d22b43a3767152cc4ba",
+     "sha256": "6cd0a2f0e01521d34a767d3f868feffc28330fa1a2502fbe1bf69ddd87b4ed1d",
      "bytes": 3739
     },
     "hooks-summary.json": {
-     "sha256": "60ddc22824ddfc79a8a671cce89f15d3039210c0b6b0d3ed4449934c0703a9f3",
+     "sha256": "3bbf96f8f7a0782e369cb4f8ccef0570c4f8bc3521eb1a64a403dc52d46ce54a",
      "bytes": 15030
     },
     "http-summary.json": {
-     "sha256": "89519ef0e3893f632a889d36113da4f138d85062e4575347ba344a65463277d3",
-     "bytes": 59825
+     "sha256": "58a45eea5adf0312f91b68b36826a6efe01d4db7adb2631bb1dd1435487931b1",
+     "bytes": 59823
     },
     "run.json": {
-     "sha256": "0b0fcb8cc53fec1d611f0d7cf8054cdb1dddc25d6b54109e687c280426284bfc",
+     "sha256": "7db17c4ed5a600b80ff409c549ea7c3ebe958300b8ac7ac04461f963daf76c55",
      "bytes": 2169
     },
     "stream-summary.json": {
-     "sha256": "4126ee758e27172cbd0db42b0681a5d3ce36ebfb16ff5a68a22539cc88b1000c",
+     "sha256": "1ed3c091bbcd6c55ae9432f1f54a1203550f6b00dd12659e37ed6802757f6dca",
      "bytes": 27281
     }
    },
@@ -4229,8 +4229,8 @@
    "cli_version": "2.1.296 (Claude Code)",
    "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
    "exit_code": 0,
-   "duration_s": 2.595,
-   "started": "2026-10-14T08:40:23Z",
+   "duration_s": 2.551,
+   "started": "2026-10-14T08:51:46Z",
    "fault_injected": true,
    "killed": null
   },
@@ -4239,7 +4239,7 @@
    "kind": "experiment",
    "files": {
     "debug-summary.json": {
-     "sha256": "c19604ce3b207d14f33e3f52f689d8a51439f6cc0fe9b434030ad4f75f8b012f",
+     "sha256": "b2a3524958b6d938e56088c0261ce3e5474f861bfaa5d8baafa9756d5492b442",
      "bytes": 3400
     },
     "hooks-summary.json": {
@@ -4247,15 +4247,15 @@
      "bytes": 948
     },
     "http-summary.json": {
-     "sha256": "4154342e14f2e3908cd92b68875e0dcc414634ebf62df5828665f119ac5b178a",
+     "sha256": "c9f59e03ffe5233bbbf963ce7d9ba78a4e76efe7bba8cceb2aadaa9fba560129",
      "bytes": 29010
     },
     "run.json": {
-     "sha256": "dd4d5aefa585134cdf5eee1470056ac55c151f8003a75967b318cc409d9c400f",
+     "sha256": "6323c8d23ab15e21d731238f373c20347ea71de8c69a57e32ab0856063977f03",
      "bytes": 2127
     },
     "stream-summary.json": {
-     "sha256": "ba254a7c2c9fd70c7bb5e6ba67733e37c7f55a3c93839ecac699a7af38d92bbe",
+     "sha256": "3430b1f2a70a7fc0e8aa8d6188a04dc71d02a3e189722bf95411ecd00ef1d859",
      "bytes": 11284
     }
    },
@@ -4263,8 +4263,8 @@
    "cli_version": "2.1.296 (Claude Code)",
    "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
    "exit_code": 0,
-   "duration_s": 1.664,
-   "started": "2026-10-14T08:41:36Z",
+   "duration_s": 1.745,
+   "started": "2026-10-14T08:51:53Z",
    "fault_injected": true,
    "killed": null
   },

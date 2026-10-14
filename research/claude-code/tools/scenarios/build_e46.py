@@ -9,12 +9,14 @@ import os
 import sys
 
 exp, mode = sys.argv[1], sys.argv[2]
+if not exp or any(ch not in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-" for ch in exp):
+    raise SystemExit("exp id must contain only ASCII letters, digits, '_' or '-'")
 LAB = r"C:/Users/sergi/cc-rea-lab"
 RAW = r"C:/Users/sergi/Desktop/claude-rea/lab/raw"
 proj = f"{LAB}/proj-{exp.lower()}"
 os.makedirs(f"{proj}/.claude/commands", exist_ok=True)
 os.makedirs(f"{proj}/hooklog", exist_ok=True)
-for stale in ("hooklog/hooklog.jsonl",):
+for stale in ("hooklog/hooklog.jsonl", "permreq-made.txt", ".claude/permreq.py.log"):
     if os.path.exists(f"{proj}/{stale}"):
         os.remove(f"{proj}/{stale}")
 
@@ -41,7 +43,18 @@ def tool(tool_id, name, tool_input):
 seq = []
 if mode == "hooks":
     open(f"{proj}/.claude/commands/lab.md", "w").write("---\ndescription: lab command\n---\nExpanded lab command: $ARGUMENTS\n")
-    hooks = {e: [{"hooks": [{"type": "command", "command": f"python C:/Users/sergi/cc-rea-lab/hooklog.py {e} log"}]}]
+    logger = f"{proj}/hooklog.py"
+    open(logger, "w").write(
+        "import json, os, sys, time\n"
+        "tag = sys.argv[1] if len(sys.argv) > 1 else '?'\n"
+        "mode = sys.argv[2] if len(sys.argv) > 2 else 'log'\n"
+        "t_in = time.time()\n"
+        "raw = sys.stdin.read()\n"
+        "try: data = json.loads(raw)\n"
+        "except Exception: data = {'_raw': raw[:500]}\n"
+        "rec = {'t_in': t_in, 't_out': time.time(), 'tag': tag, 'mode': mode, 'pid': os.getpid(), 'ppid': os.getppid(), 'cwd': os.getcwd(), 'env_names': sorted(k for k in os.environ if k.startswith('CLAUDE')), 'stdin': data}\n"
+        "with open(os.path.join(os.environ.get('LAB_HOOK_LOG_DIR', os.path.dirname(__file__)), 'hooklog.jsonl'), 'a', encoding='utf-8') as f: f.write(json.dumps(rec) + '\\n')\n")
+    hooks = {e: [{"hooks": [{"type": "command", "command": f"python {logger} {e} log"}]}]
              for e in EVENTS}
     json.dump({"hooks": hooks}, open(f"{proj}/.claude/settings.json", "w"))
     seq = [

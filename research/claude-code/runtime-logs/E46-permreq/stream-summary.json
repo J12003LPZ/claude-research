@@ -84,7 +84,7 @@
   "agents_count": 5
  },
  "result": {
-  "duration_api_ms": 43,
+  "duration_api_ms": 37,
   "stop_reason": "end_turn",
   "session_id": "<uuid>",
   "total_cost_usd": 7.000000000000001e-06,
@@ -161,7 +161,7 @@
   "api_error_status": null,
   "ttft_ms": 57,
   "type": "result",
-  "duration_ms": 733,
+  "duration_ms": 704,
   "uuid": "<uuid>",
   "ttft_stream_ms": 56,
   "time_to_request_ms": 48,

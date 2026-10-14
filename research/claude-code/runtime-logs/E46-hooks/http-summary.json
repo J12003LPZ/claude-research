@@ -2,7 +2,7 @@
  {
   "request": {
    "seq": "0001",
-   "t_ms": 977,
+   "t_ms": 310,
    "method": "HEAD",
    "url": "/api/hello",
    "body_bytes": 0,
@@ -17,7 +17,7 @@
     "connection": "keep-alive",
     "user-agent": "Bun/1.4.3",
     "accept": "*/*",
-    "host": "127.0.0.1:61752",
+    "host": "127.0.0.1:64315",
     "accept-encoding": "gzip, deflate, br, zstd"
    },
    "body": null
@@ -27,7 +27,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 08:40:23 GMT",
+    "date": "Wed, 14 Oct 2026 08:51:46 GMT",
     "content-type": "application/json",
     "content-length": "20",
     "connection": "keep-alive",
@@ -38,8 +38,8 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 65,
-   "t_ms": 1042,
+   "ttfb_ms": 58,
+   "t_ms": 368,
    "body_bytes": 0,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -53,7 +53,7 @@
  {
   "request": {
    "seq": "0002",
-   "t_ms": 1682,
+   "t_ms": 999,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 99868,
@@ -99,7 +99,7 @@
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:61752",
+    "host": "127.0.0.1:64315",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "99868"
    },
@@ -604,7 +604,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 1685,
+   "t_ms": 1002,
    "body_bytes": 1309,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -703,7 +703,7 @@
  {
   "request": {
    "seq": "0003",
-   "t_ms": 2476,
+   "t_ms": 1742,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 100483,
@@ -749,7 +749,7 @@
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:61752",
+    "host": "127.0.0.1:64315",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "100483"
    },
@@ -1312,7 +1312,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 2478,
+   "t_ms": 1744,
    "body_bytes": 948,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -1390,7 +1390,7 @@
  {
   "request": {
    "seq": "0004",
-   "t_ms": 2633,
+   "t_ms": 1898,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 87350,
@@ -1436,9 +1436,9 @@
     "anthropic-dangerous-direct-browser-access": "true",
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
-    "x-claude-code-agent-id": "a3af5bfa3c7597c40",
+    "x-claude-code-agent-id": "a9e5e6a240fea76a4",
     "connection": "keep-alive",
-    "host": "127.0.0.1:61752",
+    "host": "127.0.0.1:64315",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "87350"
    },
@@ -1909,7 +1909,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 2635,
+   "t_ms": 1901,
    "body_bytes": 772,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -1987,7 +1987,7 @@
  {
   "request": {
    "seq": "0005",
-   "t_ms": 2896,
+   "t_ms": 2150,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 101442,
@@ -2033,7 +2033,7 @@
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:61752",
+    "host": "127.0.0.1:64315",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "101442"
    },
@@ -2607,7 +2607,7 @@
          {
           "type": "text",
           "len": 679,
-          "sha256": "7eadc16bea5e3983",
+          "sha256": "4f086b147608eb96",
           "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
           "tags": [
            "usage"
@@ -2628,7 +2628,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 2899,
+   "t_ms": 2153,
    "body_bytes": 770,
    "chunk_count": 0,
    "chunk_times_ms": [],

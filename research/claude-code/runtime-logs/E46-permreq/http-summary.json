@@ -2,7 +2,7 @@
  {
   "request": {
    "seq": "0001",
-   "t_ms": 303,
+   "t_ms": 312,
    "method": "HEAD",
    "url": "/api/hello",
    "body_bytes": 0,
@@ -17,7 +17,7 @@
     "connection": "keep-alive",
     "user-agent": "Bun/1.4.3",
     "accept": "*/*",
-    "host": "127.0.0.1:58795",
+    "host": "127.0.0.1:56266",
     "accept-encoding": "gzip, deflate, br, zstd"
    },
    "body": null
@@ -27,7 +27,7 @@
    "injected": false,
    "status": 200,
    "headers": {
-    "date": "Wed, 14 Oct 2026 08:41:36 GMT",
+    "date": "Wed, 14 Oct 2026 08:51:53 GMT",
     "content-type": "application/json",
     "content-length": "20",
     "connection": "keep-alive",
@@ -38,8 +38,8 @@
     "x-robots-tag": "none",
     "cf-ray": "<redacted len=20>"
    },
-   "ttfb_ms": 51,
-   "t_ms": 354,
+   "ttfb_ms": 50,
+   "t_ms": 362,
    "body_bytes": 0,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -53,7 +53,7 @@
  {
   "request": {
    "seq": "0002",
-   "t_ms": 828,
+   "t_ms": 816,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 99695,
@@ -99,7 +99,7 @@
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:58795",
+    "host": "127.0.0.1:56266",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "99695"
    },
@@ -593,7 +593,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 831,
+   "t_ms": 820,
    "body_bytes": 920,
    "chunk_count": 0,
    "chunk_times_ms": [],
@@ -671,7 +671,7 @@
  {
   "request": {
    "seq": "0003",
-   "t_ms": 1493,
+   "t_ms": 1461,
    "method": "POST",
    "url": "/v1/messages?beta=true",
    "body_bytes": 100048,
@@ -717,7 +717,7 @@
     "anthropic-version": "2023-06-01",
     "x-app": "cli",
     "connection": "keep-alive",
-    "host": "127.0.0.1:58795",
+    "host": "127.0.0.1:56266",
     "accept-encoding": "gzip, deflate, br, zstd",
     "content-length": "100048"
    },
@@ -1246,7 +1246,7 @@
    "headers": {
     "content-type": "text/event-stream"
    },
-   "t_ms": 1495,
+   "t_ms": 1463,
    "body_bytes": 774,
    "chunk_count": 0,
    "chunk_times_ms": [],
