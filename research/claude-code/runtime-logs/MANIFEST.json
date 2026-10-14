@@ -4337,6 +4337,17 @@
    "killed": null
   },
   {
+   "id": "E82-bg-stall",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "9916648b68c9bed48d677640127801dc749ab1565c11c26aebc79056fb3d6499",
+     "bytes": 889
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {

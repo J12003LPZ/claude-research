@@ -1,0 +1,34 @@
+{
+  "id": "E82-bg-stall",
+  "cli_version": "2.1.296",
+  "method": "trusted disposable background session with local proxy and isolated HOME/config",
+  "launch": {
+    "exit_code": 0,
+    "reported_backgrounded": true,
+    "name_withheld": true
+  },
+  "registry_during_session": {
+    "matched_count": 1,
+    "kind": "background",
+    "state": "blocked",
+    "status": "idle",
+    "ids_withheld": true
+  },
+  "cleanup": {
+    "stop_sent": true,
+    "rm_sent": true,
+    "after_cleanup_count": 0
+  },
+  "transport": {
+    "request_count": 2,
+    "methods": ["HEAD", "HEAD"],
+    "paths": ["/api/hello", "/api/hello"],
+    "model_post_seen": false,
+    "upstream_model_call": false
+  },
+  "limits": [
+    "No model turn completed because the background session remained blocked/idle",
+    "No attach-to-PTY interaction was attempted",
+    "No worker respawn or spare PTY was exercised"
+  ]
+}

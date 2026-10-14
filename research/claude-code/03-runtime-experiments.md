@@ -435,11 +435,11 @@ daemon, an unreachable control endpoint, and zero background workers while still
   not short-circuit to help: it started a background session, which was stopped immediately; the id is withheld.
 - **Partially verified:** the idle-exit contract is present in the shipped help and matches the static source string,
   but no controlled client attach/detach cycle was run. A direct `--bg` attempt with `-p` failed because the modes
-  conflict; direct non-print `--bg` attempts failed the workspace-trust gate before session creation. No disposable
-  background session passed the gate. Spare PTY, worker spawn/exit, respawn codes, and attach authentication remain
-  unobserved. A Python PTY bridge reached the interactive trust screen and rendered the affirmative option, but
-  synthetic key navigation did not change the default `No, exit` selection, so no trust was accepted and no
-  background session was created.
+  conflict; direct non-print `--bg` attempts failed the workspace-trust gate before session creation. After
+  completing onboarding and trust in an isolated config, E82 launched a disposable background session successfully;
+  `agents --json --all` observed one matching `background` row in `state: "blocked"`, `status: "idle"`, and
+  `stop` plus `rm` reduced the matching count to zero. Spare PTY, worker spawn/exit, respawn codes, and attach
+  authentication remain unobserved. The E82 session made no model POST because it remained blocked/idle.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 
