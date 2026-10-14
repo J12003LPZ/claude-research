@@ -28,8 +28,15 @@
     "schema_fields": ["cwd", "id", "kind", "name", "pid", "sessionId", "startedAt", "state", "status"],
     "private_rows_withheld": true
   },
+  "bg_launch_gates": {
+    "print_mode_conflict": true,
+    "workspace_trust_required": true,
+    "controlled_session_created": false,
+    "cleanup_matches_remaining": 0,
+    "error_classes": ["--bg and --print conflict", "Workspace not trusted"]
+  },
   "limits": [
-    "No controlled claude --bg launch was used",
+    "No controlled claude --bg launch passed workspace trust",
     "No daemon worker, spare PTY, respawn, or attach lifecycle was exercised",
     "No daemon log contents were copied"
   ]

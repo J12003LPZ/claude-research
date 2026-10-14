@@ -520,8 +520,9 @@ its launching terminal because the pty host is spawned `detached:true` and owns 
 installation is disabled in this build, the daemon runs on demand, and it exits when the last client disconnects.
 `daemon status` on this host reported no running daemon, unreachable control, and zero workers. A separate
 `claude --bg --help` invocation did not take the help fast path: it started a background session and was stopped
-immediately. This confirms the CLI surface and idle contract text, but not a client attach/detach cycle, spare PTY,
-worker respawn, or PTY auth.
+immediately. Subsequent direct `--bg` attempts showed two gates: `--bg` conflicts with `--print`, and non-print
+launches require workspace trust before a session is created. This confirms the CLI surface and idle contract text,
+but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY auth.
 
 ## B. Session persistence and resume
 

@@ -434,8 +434,10 @@ daemon, an unreachable control endpoint, and zero background workers while still
   `--keep-workers`; the service-install path is disabled in this build. A separate `claude --bg --help` probe did
   not short-circuit to help: it started a background session, which was stopped immediately; the id is withheld.
 - **Partially verified:** the idle-exit contract is present in the shipped help and matches the static source string,
-  but no controlled client attach/detach cycle was run. Spare PTY, worker spawn/exit, respawn codes, and attach
-  authentication remain unobserved.
+  but no controlled client attach/detach cycle was run. A direct `--bg` attempt with `-p` failed because the modes
+  conflict; direct non-print `--bg` attempts failed the workspace-trust gate before session creation. No disposable
+  background session passed the gate. Spare PTY, worker spawn/exit, respawn codes, and attach authentication remain
+  unobserved.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 
