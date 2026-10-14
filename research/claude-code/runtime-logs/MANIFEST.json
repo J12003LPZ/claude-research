@@ -2392,6 +2392,159 @@
    "killed": null
   },
   {
+   "id": "E24a-crash-mid-tool",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "37eee555a405b9d2d2a2d6e3bb2ad34000290ff53ff8145f5af571a46cd79303",
+     "bytes": 2369
+    },
+    "http-summary.json": {
+     "sha256": "10cd579a670ae29e998523d19ec2759379eafef234a5f0cc57d43d3c72b1ef3c",
+     "bytes": 17534
+    },
+    "run.json": {
+     "sha256": "128673b9b9cb458f47555acd87259f20385c8832df798b89c796c7ca2d19edfd",
+     "bytes": 1512
+    },
+    "stream-summary.json": {
+     "sha256": "6c9b051fe34c9070431033cea1766cec20927cfd39fa9d1e1333cd46f60145fa",
+     "bytes": 7625
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 1,
+   "duration_s": 12.027,
+   "started": "2026-10-14T03:00:22Z",
+   "fault_injected": false,
+   "killed": {
+    "signal": "kill",
+    "at_s": 12.004
+   }
+  },
+  {
+   "id": "E24b-resume-after-crash",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "1cc52a25068e195c8cf733a767d076b9ecf9b79b3754856d5969af8cf192654f",
+     "bytes": 2359
+    },
+    "http-summary.json": {
+     "sha256": "6ac49f804d66cfc955e2e8e7ba8590a9bc8fe44a5ea65568e57bd5dd383c60c1",
+     "bytes": 18567
+    },
+    "run.json": {
+     "sha256": "bb251f987f21552e4cebcc89b378d023d89ba8c04bd5a8c12e00be234dca0e5a",
+     "bytes": 1419
+    },
+    "stream-summary.json": {
+     "sha256": "3a810a3a328db39763b2aa2e5ac995dd3ac12dd409eed753d4ff3eaa93240af5",
+     "bytes": 7875
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 2.254,
+   "started": "2026-10-14T03:00:35Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E25-mcp-call-bypassPermissions",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "f680b81f616681f49c31278b7fbe19bd0b9e6343bd89249e59774669a0caa14b",
+     "bytes": 2342
+    },
+    "http-summary.json": {
+     "sha256": "d44c90b45a4da05cba545f40bba1107de1b3a59b86dfb6e96bb7999faab763b3",
+     "bytes": 35698
+    },
+    "run.json": {
+     "sha256": "36d4ec60a2a6c6aacc378cd91c5f7894bf2d28b18d96e2ec591e53ba0f79fcf4",
+     "bytes": 1503
+    },
+    "stream-summary.json": {
+     "sha256": "d88fe75b40eea9f11bc0287ca25bd1a1e5d3b4599224eed7c298b057b877b6ed",
+     "bytes": 13350
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 3.686,
+   "started": "2026-10-14T03:00:01Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E25-mcp-call-manual",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "84fd8a3f3fe8e1eb29d278fe30c1c7a14068de93746f0226cf2537b969557097",
+     "bytes": 2332
+    },
+    "http-summary.json": {
+     "sha256": "4362f05746f0c1e572bce765295fc14fb3db6629451cdadfbca9f07d43edefa1",
+     "bytes": 36434
+    },
+    "run.json": {
+     "sha256": "38dcfc8ee69e8ae2c9967afa05c334043945ab2bbcad992d2f5e076263d2ca92",
+     "bytes": 1470
+    },
+    "stream-summary.json": {
+     "sha256": "bebaba3a083c908a738980651806089c92982017cd4d13d3f93f7b6aa032722a",
+     "bytes": 16269
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 4.985,
+   "started": "2026-10-14T02:59:55Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E26-max-output-recovery",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "2f4121798e2d38b9b1fce6eb8ddb8101546110bc6eefeb005ccbdad60552740f",
+     "bytes": 2349
+    },
+    "http-summary.json": {
+     "sha256": "12d337201a050de2aadf48f94274841c28846eb49eaa49b85d02978ba28a24b1",
+     "bytes": 66576
+    },
+    "run.json": {
+     "sha256": "ea42ac01fecbcec5b870eb944683012f5666f750b513cc6ecfd9eb5e513d382a",
+     "bytes": 1418
+    },
+    "stream-summary.json": {
+     "sha256": "1b77c53e1888871bedf39a063f2e108becab2b0d246cbf1bc3385fdb3df01923",
+     "bytes": 20041
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 1,
+   "duration_s": 7.895,
+   "started": "2026-10-14T03:01:22Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {

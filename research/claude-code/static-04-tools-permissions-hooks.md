@@ -1179,8 +1179,10 @@ text**; the original wording is superseded where they differ:
   none of them: the tool_result text was the path-safety message "Claude requested permissions
   to write to <path>, but you haven't granted it yet." (`chunk-p9na5vps.js@214561`). So which
   string appears depends on the layer that produced the denial, and the report's single
-  "requires interactive approval" wording for headless is incomplete. Which layer wraps the path
-  message in the `y$` text was not traced (**UNK**).
+  "requires interactive approval" wording for headless is incomplete. Runtime E25 adds a third
+  headless wording, `Claude requested permissions to use <tool>, but you haven't granted it yet.`, for a
+  tool-level ask with no rule (an MCP tool). Which layer wraps the path message and this one was not
+  traced in source (**UNK**); all three appeared only when no host handler existed.
 - **Merged and verified (second batch).** `ToolPermissionContext` also has `sandboxAutoAllowSuspended`
   (set by a `sandbox_auto_allow_suspended` case, `chunk-b8yyp6tv.js@4718`) and
   `chromeClassifierFloorEnabled` (marked `not_serialized`, `chunk-cxahpq08.js@1882`). `servedCall` only

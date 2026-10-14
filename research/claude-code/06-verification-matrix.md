@@ -23,7 +23,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Loop | Continue while tool_use present; one result message per assistant message | static 03 | E02, E08, E09 | Verified | High | |
 | Loop | Tools start before `message_stop` | `streamingToolExecutor.addTool` | E08 event order | Verified | High | interaction with unsafe tools |
 | Loop | Stop-hook block re-enters, capped at 8 | static 03 | E07h (one block) | Partially verified | High / cap Medium | cap not hit |
-| Loop | Max output-token recovery, 3 attempts | static 03 | none | Untested | Medium | long-output run |
+| Loop | Max output-token recovery, 3 attempts | static 03 | E26 | Verified (3 recoveries, nudge text, final error) | Medium | partial text replay when text, not thinking, is cut |
 | Transport | App-level retry: 10 attempts, 500 ms base, 25% jitter, retry-after | static 03 constants | E18a, b, d, e | Verified | High | cap 32 s, give-up paths |
 | Transport | 400 triggers a degraded retry | not located statically | E18c | Partially verified | Medium | which 400s qualify |
 | Transport | Fallback model after 3 consecutive 529 | static 03 | E20, E21 | Verified | High | `--fallback-model` unset: 4 retries, no switch (E21) |
@@ -50,7 +50,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Compaction | Failure breaker after 3 failed summaries | static 02 | none | Untested | Medium | fault on summary call |
 | Sessions | JSONL chain by uuid and parentUuid; project dir from sanitized cwd | static 05 | lab transcripts, E15 | Verified | High | 200+ char path hashing |
 | Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
-| Sessions | Interrupted-turn repair on resume | static 05 | none | Untested | Medium | kill then resume |
+| Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
 | Interrupt | Abort closes HTTP stream, synthesizes messages | static 03 | E13b, E13c | Verified | High | TUI Esc, SIGINT |
 | Rendering | Custom Ink-style renderer, 16 ms frames | static 05 | none | Blocked | Low | PTY harness |
 | Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | none | Untested | Low | `claude --bg` under observation |
@@ -101,13 +101,13 @@ behaviour precisely enough to test, not a pass or fail.
 | 35 | Real API error ends the run | E08b | 4 | Verified |
 | 36 | Interactive permission dialog | none | 7 | Blocked |
 | 37 | Terminal rendering | none | 12 | Blocked |
-| 38 | Host approval over the control protocol | none | 7 | Untested |
+| 38 | Host approval over the control protocol | E19c, E19d | 7 | Verified |
 | 39 | Subagent failure mid-run | none | 9 | Untested |
-| 40 | Crash recovery on resume | none | 11 | Untested |
+| 40 | Crash recovery on resume | E24 | 11 | Verified (synthetic interrupted result) |
 | 41 | Large tool result persistence | E22 | 6 | Verified (Bash) |
 | 42 | Model fallback | E20, E21 | 4 | Verified |
 | 43 | Sandbox | none | 7 | Untested |
-| 44 | MCP tool call | none | 14 | Untested |
+| 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
 Counts: 44 behaviours enumerated. Verified 32, partially verified 3, untested 7, blocked 2.
 

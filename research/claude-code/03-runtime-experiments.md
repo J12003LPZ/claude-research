@@ -418,6 +418,35 @@ local proxy; nothing was sent upstream for them. Proxy gained an `sse_stall` mod
 The `E23` result settles the static prediction for the byte tier only. With the stream-idle env unset the
 byte default is 180 s on first party and the event floor is 300 s; neither was waited out.
 
+## Crash recovery and MCP calls (E24, E25)
+
+| Id | Setup | Observed |
+|---|---|---|
+| E24a-crash-mid-tool | Bash `sleep 45` under `bypassPermissions`; the CLI process was killed hard (`kill`) at 12 s | exit code 1, killed by the harness. The transcript ends with the assistant `thinking` and `tool_use` rows; no `tool_result` was written |
+| E24b-resume-after-crash | `--resume <session id>` with the prompt `Reply with exactly: resumed-ok` | The first request carried 6 messages. After the original user turn and the assistant `tool_use` came a synthetic user `tool_result`, `is_error:true`, text `[Tool call interrupted: the session ended before this call's result was recorded, so its outcome is unknown. Check whether it took effect before relying on it or running it again.]`, then a synthetic assistant text `No response requested.`, then the new user prompt. The transcript afterwards holds those two synthetic rows as ordinary `user` and `assistant` rows. The turn auto-ran only because a new prompt was given; no continuation without a prompt was tested |
+| E25-mcp-call-manual | stdio MCP server `lab` (`tools/lab_mcp_echo.py`: `echo` with `readOnlyHint:true`, `mutate` without), headless default mode | `system/init` lists `mcp_servers: [{name:"lab", status:"connected", source:"dynamic"}]`. The wire tools are `mcp__lab__echo` and `mcp__lab__mutate`, appended after the built-ins, with only `name`, `description`, `input_schema`. The model called both in one turn. **Both were denied**, including the read-only-hinted one: `system/permission_denied` with `decision_reason_type` absent and `message: Claude requested permissions to use mcp__lab__echo, but you haven't granted it yet.`; the `tool_result` had the same text and `is_error:true` |
+| E25-mcp-call-bypassPermissions | same, bypass | both ran; `tool_result.content` is the array `[{type:"text", text:"echo:hello-mcp"}]` and `[{type:"text", text:"mutate:x"}]`, no `is_error` |
+
+The E25 deny text is the third headless wording seen: Bash uses `This command requires approval`
+(E19b, P-acceptEdits), a path-safety deny uses `Claude requested permissions to write to <path>,
+but you haven't granted it yet.` (E06), and a tool-level ask with no rule uses `Claude requested
+permissions to use <tool>, but you haven't granted it yet.` (E25). All three are headless
+auto-denials with no host handler.
+
+## Max output token recovery (E26)
+
+`CLAUDE_CODE_MAX_OUTPUT_TOKENS=200`, prompt asking for 400 numbers written as words. Four requests,
+all `max_tokens: 200`, all `stop_reason: max_tokens` (one original plus three recoveries, as the static
+pass predicted). Request 2 appended a text block to the same user message (`messages` stayed at 2):
+`Output token limit hit. Resume directly — no apology, no recap of what you were doing. Pick up mid-thought if that is where the cut happened. Break remaining work into smaller pieces.`
+Requests 3 and 4 appended the same text again, so the user message grew by one block each time. The
+partial assistant output was not replayed in the request bodies; the stream shows `thinking_tokens`
+frames and no text, so the 200 tokens were probably spent on thinking and a thinking-only message is
+dropped (**STRONGLY INFERRED**, not isolated). Final frame: `result` with `subtype:"success"`,
+`is_error:true`, `terminal_reason:"api_error"`, `num_turns:4`, exit code 1, text ending
+`...exceeded the 200 output token maximum. To configure this behavior, set the CLAUDE_CODE_MAX_OUTPUT_TOKENS environment variable.`
+Not tested: a response that has real text when it is cut (does the partial text enter the next request).
+
 ## Experiments not run, with reasons
 
 | Item | Reason | What would settle it |
