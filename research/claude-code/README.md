@@ -3,7 +3,7 @@
 Target: the `claude` CLI installed on this Windows machine
 (`~\.local\bin\claude.exe`, SHA-256 `76de74f7...06769a`, a signed Bun standalone executable).
 Method: artifact extraction, static reading of the embedded JavaScript, REA's JavaScript
-application analyzer, and 113 instrumented lab runs against disposable projects (92 E-runs, 13 C-probes, and 8 P-mode probes), including targeted compaction-failure controls.
+application analyzer, and 114 instrumented lab runs against disposable projects (93 E-runs, 13 C-probes, and 8 P-mode probes), including targeted compaction-failure controls.
 
 Start with `02-verified-architecture.md`. Use `06-verification-matrix.md` to see how far
 each claim can be trusted.
@@ -104,6 +104,7 @@ python -I tools/chunk_index.py   <extract dir>/~BUN/root index.json
 python -I tools/run_exp.py --id X --cwd <lab project> --prompt "..." -- --model haiku --setting-sources project,local
 python -I tools/summarize_captures.py X --print
 python -I tools/build_manifest.py
+bash tools/run_gates.sh        # tests, audits, manifest, count and matrix-footer checks
 ```
 
 Paths inside the tools are absolute for this machine; adjust `LAB`, `OUT`, `ROOT` at the

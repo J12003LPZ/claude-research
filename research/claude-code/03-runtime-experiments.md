@@ -363,6 +363,23 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
 
+### E40: the Stop-hook block cap (scripted model)
+
+A project `Stop` hook that **always** returns `{"decision":"block","reason":"..."}` and logs each call, plus a
+scripted model that answers every request with a short text. Nothing went upstream. Results
+(`runtime-logs/E40-stop-hook-cap/`):
+
+- The hook ran **9 times**: once with `stop_hook_active:false`, then 8 times with `true`. The CLI made **9** model
+  requests, with `messages` counts 2, 5, 8, 11, 14, 17, 20, 23, 26 (three added per re-entry: the assistant reply,
+  the user message `Stop hook feedback:\n<reason>`, and one more message).
+- On the 9th block the CLI stopped re-entering and emitted `system/informational` and `system/notification` frames:
+  `A hook blocked the turn from ending 9 consecutive times - overriding and ending turn. For Stop/SubagentStop hooks,
+  check stop_hook_active in the input and return success while it's true. Set CLAUDE_CODE_STOP_HOOK_BLOCK_CAP to raise
+  this limit.`
+- Final frame: `subtype:"success"`, `is_error:false`, `terminal_reason:"completed"`, `num_turns:10`, exit 0, 1.8 s.
+- **Verified:** the default cap of 8 (8 blocks are honored, the 9th is overridden) and the `completed` end. **Not run:**
+  `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` set to another value or to 0, and `SubagentStop`.
+
 ### E39: a parent interrupt with a background or foreground agent (scripted model)
 
 These runs use the proxy's new `sequence` mode (`tools/scripted_response.mjs`): the lab proxy answers every

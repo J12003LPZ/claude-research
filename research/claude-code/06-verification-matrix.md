@@ -23,7 +23,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Prompt | Mid-conversation `role: system` messages | beta id in `chunk-80kqkekd.js` | E01, E08, C2 | Verified | High | behaviour when the beta is off |
 | Loop | Continue while tool_use present; one result message per assistant message | static 03 | E02, E08, E09 | Verified | High | |
 | Loop | Tools start before `message_stop` | `streamingToolExecutor.addTool` | E08 event order | Verified | High | interaction with unsafe tools |
-| Loop | Stop-hook block re-enters, capped at 8 | static 03 | E07h (one block) | Partially verified | High / cap Medium | cap not hit |
+| Loop | Stop-hook block re-enters, capped at 8 | static 03 | E07h (one block); E40 (always-block hook, scripted model: 8 honored, 9th overridden, `completed`) | Verified | High | other cap values, `SubagentStop` |
 | Loop | Max output-token recovery, 3 attempts | static 03 | E26 | Verified (3 recoveries, nudge text, final error) | Medium | partial text replay when text, not thinking, is cut |
 | Transport | App-level retry: 10 attempts, 500 ms base, 25% jitter, retry-after | static 03 constants | E18a, b, d, e | Verified | High | cap 32 s, give-up paths |
 | Transport | 400 triggers a degraded retry | not located statically | E18c | Partially verified | Medium | which 400s qualify |
@@ -124,7 +124,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 113 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 114 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -191,7 +191,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes; E39 scripted run (SDK `interrupt`) | Answered: no, for the SDK interrupt (E39a). TUI Esc open |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 113 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 114 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

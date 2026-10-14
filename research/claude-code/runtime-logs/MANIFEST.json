@@ -3211,6 +3211,36 @@
    "killed": null
   },
   {
+   "id": "E40-stop-hook-cap",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "f14cab45a3e17fc541e16c3560e4760ed30c0387a67e502b2f208e99e2f1fcd2",
+     "bytes": 4579
+    },
+    "http-summary.json": {
+     "sha256": "0de23833604970e23574bc320a6c8b6ca38e75398d92bbcdfa37c087d0505811",
+     "bytes": 149102
+    },
+    "run.json": {
+     "sha256": "083667bafc8e64883a8b4e3e7cf65b183b648f84394d38e6fc95e57e29af6309",
+     "bytes": 1616
+    },
+    "stream-summary.json": {
+     "sha256": "f0e9fea764ab413d87cd49eeeb18f556b54697421b6836466d6d40002ef0717c",
+     "bytes": 34928
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.771,
+   "started": "2026-10-14T07:58:19Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {

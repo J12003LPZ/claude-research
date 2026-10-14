@@ -11,7 +11,7 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 113 manifest runs: 92 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 114 manifest runs: 93 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |
@@ -29,6 +29,7 @@ route was never reached.
 - `pe_inventory.py`, `bun_probe.py`, `bun_extract.py`: PE + Bun module-graph extraction.
 - `chunk_index.py`, `cq.py`: export/import index and bounded search over extracted chunks.
 - `capture_proxy.mjs`: logging forward proxy (`ANTHROPIC_BASE_URL`), credential values never stored, fault injection via `fault.json`, and scripted model replies (`sequence`, `scripted_response.mjs`) that need no upstream call.
+- `run_gates.sh`: the whole local gate lane in one command. `sync_counts.py` rewrites run counts quoted in the prose from the manifest; `check_matrix.py` checks the matrix footer against its rows.
 - `run_exp.py`: one instrumented `claude -p` run. `summarize_captures.py`, `hooks_summary.py`, `show_exp.py`: sanitized evidence + views.
 - `lab_batch1.sh`, `lab_batch2.sh`: experiment batches. Lab projects live in `C:\Users\<user>\cc-rea-lab\`.
 

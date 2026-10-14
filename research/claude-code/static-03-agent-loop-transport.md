@@ -262,7 +262,7 @@ internal end-of-turn checks). Result `{blockingErrors, preventContinuation, goal
   transition `stop_hook_blocking`; the blocking errors are appended as user messages so the model
   sees them, and `stopHookActive` becomes true for the next Stop hook input.
 - Cap: `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP ?? 8` (`@188500` `"a.CLAUDE_CODE_STOP_HOOK_BLOCK_CAP??8"`);
-  a cap of 0 or less disables the check.
+  a cap of 0 or less disables the check. **Runtime (E40):** with the default, an always-blocking hook was honored 8 times and overridden on the 9th consecutive block, ending `completed` with a warning that names `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`.
 - `Za` also injects internal meta nudges that act like blocking results (brief-mode enforcement,
   "you must call the structured output tool", subagent hand-back) (`@67408` to `@70600`).
 - Stop hooks are skipped when `wn()` is true and the abort signal is **not** set, or when
