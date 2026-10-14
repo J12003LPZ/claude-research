@@ -23,7 +23,10 @@
   "--permission-mode",
   "bypassPermissions"
  ],
- "prompt": "Use the Bash tool exactly once to run: python -c \"print('a'*49000)\" . Then reply with only the word done.",
+ "prompt": {
+  "len": 105,
+  "sha256": "60fb23123196059e"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "DISABLE_AUTOUPDATER"

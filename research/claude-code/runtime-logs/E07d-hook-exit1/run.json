@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use Read on notes.txt and tell me line 1.",
+ "prompt": {
+  "len": 41,
+  "sha256": "1043bb7fdd2364fc"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

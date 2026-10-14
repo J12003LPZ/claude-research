@@ -22,7 +22,10 @@
   "--allowedTools",
   "Bash(ls:*)"
  ],
- "prompt": "Use the Bash tool to run exactly: ls nonexistent-file-here.txt   Then report the exit code and stderr in one line. Do not retry.",
+ "prompt": {
+  "len": 128,
+  "sha256": "788bbccc7b4b735f"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

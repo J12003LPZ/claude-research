@@ -22,7 +22,10 @@
   "--allowedTools",
   "Bash(echo:*)"
  ],
- "prompt": "Use the Bash tool to run exactly: echo lab-ok   Then report the output.",
+ "prompt": {
+  "len": 71,
+  "sha256": "c6f85826feddc795"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

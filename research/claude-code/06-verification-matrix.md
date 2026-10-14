@@ -47,7 +47,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Compaction | Hook order PreCompact, SubagentStop, SessionStart(compact), PostCompact | static 02 | E17c | Verified | High | |
 | Compaction | Post-compact file re-attachment, 5 files | static 02 | E17c (2 files re-read) | Partially verified | Medium | 6+ files |
 | Compaction | Thrash breaker after 3 quick refills | static 02 | E17c | Verified | High | |
-| Compaction | Failure breaker after 3 failed summaries | static 02 | none | Untested | Medium | fault on summary call |
+| Compaction | Failure breaker after 3 distinct failed summaries | static 02 | E30/E31: body-targeted 529s exhausted one summary retry loop; no breaker event | Untested | Medium | drive three separate failed auto-compaction operations after rate limit resets |
 | Sessions | JSONL chain by uuid and parentUuid; project dir from sanitized cwd | static 05 | lab transcripts, E15 | Verified | High | 200+ char path hashing |
 | Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
 | Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
@@ -94,6 +94,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 28 | Resume, continue, fork | E15 | 11 | Verified |
 | 29 | Manual compaction | E17a | 10 | Verified |
 | 30 | Automatic compaction and thrash stop | E17c | 10 | Verified |
+| 30a | Summary API-error exhaustion and manual compact fault surface | E28b, E30, E31 | 10 | Partially verified: targeted failure path observed; breaker remains open |
 | 31 | Retry on 429, 500, 529, reset | E18 | 4 | Verified |
 | 32 | Degraded retry on 400 | E18c | 4 | Partially verified |
 | 33 | Max turns | C7 | 5 | Verified |
@@ -109,7 +110,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | none | 7 | Untested |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 44 behaviours enumerated. Verified 32, partially verified 3, untested 7, blocked 2.
+Counts: 45 behaviours enumerated. Verified 32, partially verified 3, untested 8, blocked 2.
 
 ## 3. Cross-validation per subsystem
 
@@ -153,12 +154,16 @@ events, on-disk subagent transcripts. Alternative: overlap could be an artifact 
 timing. Rejected: 339 ms separation with 2 s durations on both. Falsifier: strictly serial
 child requests under the same prompt. Unknown: limits, background survival, failures.
 
-**Compaction.** Known: trigger region, request shape, hook order, rebuild, breaker. How:
-three automatic cycles and one manual one, with boundary metadata and hook logs.
-Alternative: the breaker could be a token budget rather than a refill counter. Rejected:
-the result text and `terminal_reason` name the refill condition, and static pass 02 has the
-counter. Falsifier: a run that compacts more than three times in quick succession without
-stopping. Unknown: failure paths, partial compaction, server-side context edits.
+**Compaction.** Known: trigger region, request shape, hook order, rebuild, and the rapid-refill
+breaker. How: three successful automatic cycles and one manual one, with boundary metadata
+and hook logs. E30/E31 added a body-targeted summary fault: the CLI exhausted the summary
+API retry loop and failed the `session.compact` hook, but did not emit the distinct-failure
+breaker. Alternative: the rapid-refill breaker could be a token budget rather than a refill
+counter. Rejected: the result text and `terminal_reason` name the refill condition, and
+static pass 02 has the counter. Falsifier for the rapid-refill claim: a run that compacts more
+than three times in quick succession without stopping. Unknown: the failure breaker after
+three separate failed summaries, prompt-too-long summary retries, partial compaction, and
+server-side context edits.
 
 **Sessions.** Known: layout, row types, chain links, resume semantics. How: schema
 extraction from lab sessions only, message counts on resumed requests. Alternative: resume

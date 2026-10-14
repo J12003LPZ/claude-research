@@ -40,7 +40,7 @@
  "control_events": [
   {
    "t_s": 2.972,
-   "request_id": "673a8193-32e0-4f9c-94bb-9cdda7400e06",
+   "request_id": "<uuid>",
    "subtype": "can_use_tool",
    "auto_response": {
     "behavior": "allow"

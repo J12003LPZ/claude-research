@@ -21,7 +21,10 @@
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json",
   "--exclude-dynamic-system-prompt-sections"
  ],
- "prompt": "Reply with exactly: ok",
+ "prompt": {
+  "len": 22,
+  "sha256": "775a61d9f41e965e"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

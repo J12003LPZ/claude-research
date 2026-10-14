@@ -52,6 +52,9 @@ captured bytes or events. Interpretations are stated separately and can be weake
 | E17-pre, E17a, E17b | 17 | Manual `/compact` | boundary event, summary message, 36,430 to 1,464 tokens | Verified |
 | E17c-autocompact | 16, 17 | Large context, 100k window | 3 automatic compactions, then thrash breaker | Verified |
 | E18a..e | 18 | Injected 529, 500, 400, reset, 429 | retries with backoff; 400 degrades a field | Verified |
+| E27, E27b, E27c | 16, 17 | Compaction-fault controls | auth/path controls failed before the target: no request, 401, then real 429 | Verified controls; no compaction result |
+| E28b | 17 | Manual `/compact` with body-targeted 529 | first summary attempt injected locally; second compact retry reached real 429; command exited 0 without a boundary | Partially verified |
+| E30, E31 | 16, 17 | Automatic summary fault, body marker `<analysis>` | E30 had three injected 529 attempts; E31 had 11 injected 529 attempts, then `Reactive compact: summarization returned API error`; no failure-breaker event observed | Failure path verified; breaker unverified |
 | C1..C4, C8 | prompt | Instruction discovery, system prompt flags | marker placement recorded | Verified |
 | C5, C6, C6b, C6c | config | `env` precedence across settings sources | flag > local > project > process env | Verified |
 | C7-maxturns | failure | `--max-turns 1` with a tool call | `error_max_turns`, exit 1 | Verified |
@@ -312,6 +315,48 @@ Automatic (`--autocompact 100k`, ten 62 KB files, about 22,600 tokens each per t
 - Not observed: a failing summarization request, the prompt-too-long retry path, partial
   compaction.
 
+### E27 to E31: compaction-failure injection (items 16, 17)
+
+The proxy was extended with optional literal `body_contains` and `body_contains_all` fault
+matchers. This is a transport fixture change, not a claim about the CLI. In these fixtures it
+lets the lab target the summary request, whose body contains the no-tools `<analysis>` /
+`<summary>` instruction, rather than relying only on the shared `/v1/messages` path. It is a
+literal heuristic, not a cryptographic request classifier. The matcher was syntax-checked and
+then exercised by E28b, E30 and E31. Raw request bodies remain outside the repository;
+sanitized evidence is in the corresponding `runtime-logs/` directories.
+
+- E27 was a control failure: 2.1.296 reached no API request after the child environment
+  lost its usable credential. E27b passed the stale environment token and received a real
+  upstream 401. E27c selected the local OAuth store and received a real upstream account
+  429 before compaction. These runs are retained to separate authentication/rate-limit
+  failures from a compaction result.
+- E28b used the literal `/compact Keep the token.` on the existing resumed session. The
+  proxy matched `POST /v1/messages?beta=true` and returned the synthetic 529 locally
+  (`injected:true`). The CLI retried the same `source=compact` request; that second compact
+  attempt was not faulted and reached the real 429. No compact boundary was emitted and the
+  local command exited 0 with an error result. This verifies the manual error injection and
+  its headless exit shape, not the auto failure breaker.
+- E30 resumed the already-large E17c session with the existing stdin fixture. Its captured
+  request body was 231,252 bytes and did not contain the 188k flood text; it produced three
+  successive `source=compact` requests that matched the body marker and returned injected
+  529s. These were attempts 1, 2 and 3 of one summary operation; the fourth attempt reached
+  the real 429. It would be incorrect to count those three transport attempts as three
+  compaction failures.
+- E31 repeated the flood with the 188,194-byte stdin fixture and a fault budget of 40. Eleven
+  `source=compact` HTTP attempts were injected with 529, corresponding to attempt 1 through
+  attempt 11 in the CLI's `1/11` retry counter. That is one initial attempt plus ten retries.
+  Debug output then showed `Reactive compact: summarization returned API error` and a failed
+  `session.compact` hook; the next `source=sdk` request reached the real 429 and the turn
+  ended with exit 1. The fault file retained 29 unused injections. No
+  `tengu_auto_compact_circuit_breaker`, `failure_breaker_open`, or compact boundary appeared.
+  The observed failure is therefore **Verified** as summary API-error exhaustion and hook
+  failure, while the static claim of three *distinct* failed summaries opening a session
+  breaker remains **Untested**.
+- Not observed: the prompt-too-long summary retry/drop path, partial compaction, direct-path
+  cache-sharing fallback, or three separate failed auto-compaction operations in one live
+  session. The account rate limit (`retry-after` reported by the server) prevented a
+  final ordinary turn after E31; that server response is not attributed to the CLI breaker.
+
 ### E18a to E18e: transport faults (item 18)
 
 Faults were answered locally by the proxy; nothing was sent upstream for those requests.
@@ -454,6 +499,7 @@ Not tested: a response that has real text when it is cut (does the partial text 
 | Interactive TUI behaviour (rendering, Esc, permission dialog) | needs a PTY; REA process capture is unsupported on native Windows | run under WSL with REA `capture_process_scenario`, or ConPTY harness |
 | Approval granted or refused through a host (`can_use_tool` control request) | **Verified (E19c allow, E19d deny)**; E19 and E19b were setup failures | E19 (earlier account state) ended `Not logged in`. E19b (stored login, `--permission-prompts host` alone) ran the model but emitted no control request: the Bash call was auto-denied with `system/permission_denied` (`decision_reason: This command requires approval`) and the result text was `This command needs approval, so it didn't run`. With `--permission-prompt-tool stdio` (E19c, E19d) the CLI wrote one `control_request` (`request.subtype:"can_use_tool"`, keys `tool_name`, `display_name`, `input`, `description`, `permission_suggestions`, `decision_reason`, `decision_reason_type`, `tool_use_id`) and waited. Allow reply: the tool ran, `tool_result` `host-approved`, `result.permission_denials: []`. Deny reply with `message`: `tool_result` carried the host's message verbatim with `is_error:true`, and `result.permission_denials` listed `tool_name`, `tool_use_id`, `tool_input`. `permission_suggestions` offered an `addRules` entry with destination `localSettings`. The earlier inference that env scrubbing caused the login failure was wrong for E19b: the stored login now works. |
 | Subagent failing mid-run, nested subagents | time | prompt a child to call a denied tool; set depth |
-| Summarization request failure | would need a fault on a specific request | `fault.json` keyed on the compaction instruction |
-| Process kill and recovery on resume | not run | kill the CLI during a tool, then `--resume` |
+| Three distinct failed auto-summaries and failure breaker | E31 reached summary API-error exhaustion but the retry loop ended the compaction hook before three separate failures | keep the body-targeted fault, then drive three separate auto-compaction turns after the account rate limit resets; require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
+| Prompt-too-long summary retry and partial compaction | no controlled prompt-too-long or partial-summary response was available | inject a summary-shaped error/text response while keeping normal model turns available |
+| Process kill and recovery on resume | **Verified (E24a/E24b)** | kill the CLI during a tool, then `--resume` |
 | Direct (unproxied) baseline | proxy was the only body-level tap | compare `--debug api` logs with and without the proxy |

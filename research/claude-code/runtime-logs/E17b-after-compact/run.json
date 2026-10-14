@@ -22,7 +22,10 @@
   "--resume",
   "<uuid>"
  ],
- "prompt": "What token did I ask you to remember, and what is line 2 of notes.txt? Answer from memory in one line; only use a tool if you cannot answer.",
+ "prompt": {
+  "len": 140,
+  "sha256": "4f1ea9c04e3c034a"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

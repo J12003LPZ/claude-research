@@ -23,7 +23,10 @@
   "--permission-mode",
   "manual"
  ],
- "prompt": "Call the lab MCP echo tool with text hello-mcp, then call the lab MCP mutate tool with text x. Reply with one short line per call.",
+ "prompt": {
+  "len": 130,
+  "sha256": "418e01cf94c98cf6"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "DISABLE_AUTOUPDATER"

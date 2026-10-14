@@ -22,7 +22,10 @@
   "--autocompact",
   "100k"
  ],
- "prompt": "Read all ten files big/big1.txt through big/big10.txt with the Read tool, in order, exactly one Read call per message, and keep going without stopping or asking until all ten have been read. Do not end your turn early. After the tenth read, reply with ALLDONE followed by the first line of big10.txt and the token I gave you here: OTTER-3317.",
+ "prompt": {
+  "len": 342,
+  "sha256": "4d9ce2fc31a2cbea"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

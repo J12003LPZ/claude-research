@@ -27,7 +27,21 @@ ALLOW_EMAIL = {"noreply@anthropic.com"}
 
 
 def sha(p):
-    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+    with open(p, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def fault_was_injected(directory):
+    """Report an injected fault only when a captured response says so."""
+    summary = os.path.join(directory, "http-summary.json")
+    if not os.path.exists(summary):
+        return False
+    try:
+        with open(summary, encoding="utf-8") as f:
+            rows = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return False
+    return any((row.get("response") or {}).get("injected") is True for row in rows)
 
 
 def mask_static_copies():
@@ -38,10 +52,12 @@ def mask_static_copies():
         for f in glob.glob(os.path.join(OUT, sub, "**", "*"), recursive=True):
             if os.path.isdir(f):
                 continue
-            t = open(f, encoding="utf-8", errors="replace").read()
+            with open(f, encoding="utf-8", errors="replace") as fp:
+                t = fp.read()
             t2 = rx.sub(lambda m: m.group(1) + "<user>", t)
             if t2 != t:
-                open(f, "w", encoding="utf-8", newline="").write(t2)
+                with open(f, "w", encoding="utf-8", newline="") as fp:
+                    fp.write(t2)
 
 
 def main():
@@ -56,7 +72,8 @@ def main():
             if os.path.isdir(f):
                 continue
             files[os.path.relpath(f, d).replace("\\", "/")] = {"sha256": sha(f), "bytes": os.path.getsize(f)}
-            text = open(f, encoding="utf-8", errors="replace").read()
+            with open(f, encoding="utf-8", errors="replace") as fp:
+                text = fp.read()
             for label, rx in FORBIDDEN:
                 for m in rx.finditer(text):
                     if label == "email" and m.group(0) in ALLOW_EMAIL:
@@ -67,10 +84,11 @@ def main():
                "files": files, "redaction": "sanitized"}
         rp = os.path.join(d, "run.json")
         if os.path.exists(rp):
-            r = json.load(open(rp, encoding="utf-8"))
+            with open(rp, encoding="utf-8") as fp:
+                r = json.load(fp)
             row.update({"cli_version": r.get("cli_version"), "exe_sha256": r.get("exe_sha256"), "exit_code": r.get("exit_code"),
                         "duration_s": r.get("duration_s"), "started": r.get("started_iso"),
-                        "fault_injected": bool(r.get("fault")), "killed": r.get("killed")})
+                        "fault_injected": fault_was_injected(d), "killed": r.get("killed")})
         rows.append(row)
     man = {"target": {"path_shape": "~/.local/bin/claude.exe", "version": "2.1.296",
                       "sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a"},

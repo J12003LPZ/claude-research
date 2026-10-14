@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "First use Grep to find which file under this directory contains the text 'def greet'. Then Read that file. Then tell me what greet('x') returns.",
+ "prompt": {
+  "len": 144,
+  "sha256": "0b11684748743949"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

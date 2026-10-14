@@ -22,7 +22,10 @@
   "--max-turns",
   "1"
  ],
- "prompt": "Use Read on r.txt then reply ok",
+ "prompt": {
+  "len": 31,
+  "sha256": "6d60b5c30ddd173a"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

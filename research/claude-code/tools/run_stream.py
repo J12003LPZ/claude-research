@@ -80,6 +80,7 @@ def main():
 
     cmd = [CLAUDE_BIN, "-p", "--input-format", "stream-json", "--output-format", "stream-json", "--verbose",
            "--include-partial-messages", "--include-hook-events", "--debug-file", os.path.join(raw, "debug.log")] + extra
+    version, exe_sha256 = exe_info()
     t0 = time.time()
     p = subprocess.Popen(cmd, cwd=a.cwd, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                          stderr=open(os.path.join(raw, "stderr.txt"), "wb"))
@@ -160,7 +161,7 @@ def main():
            "control_events": control_events, "permission_behavior": a.permission_behavior,
            "extra_env_names": [kv.split("=", 1)[0] for kv in a.env], "scrubbed_env_names": scrubbed, "proxy_port": port,
            "exit_code": p.returncode, "killed": killed, "duration_s": round(time.time() - t0, 3),
-           "cli_version": exe_info()[0], "exe_sha256": exe_info()[1], "started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0)), "fault": None}
+           "cli_version": version, "exe_sha256": exe_sha256, "started_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0)), "fault": None}
     json.dump(run, open(os.path.join(raw, "run.json"), "w", encoding="utf-8"), indent=1)
     print(json.dumps({"id": a.id, "exit_code": p.returncode, "killed": killed, "sent": sent}))
 

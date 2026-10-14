@@ -22,7 +22,10 @@
   "--resume",
   "<uuid>"
  ],
- "prompt": "What token did I ask you to remember? Reply with only the token.",
+ "prompt": {
+  "len": 64,
+  "sha256": "f677776d73c094b7"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "In ONE message, launch two Agent tool calls in parallel (subagent_type general-purpose, run_in_background false): the first with prompt 'Read notes.txt and reply with its first line only', the second with prompt 'Read src/calc.py and reply with its first line only'. Then report both answers.",
+ "prompt": {
+  "len": 292,
+  "sha256": "1aab9cddb86c754c"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

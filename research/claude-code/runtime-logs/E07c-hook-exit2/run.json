@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use Read on notes.txt and tell me line 1. If the read is blocked, say BLOCKED and stop.",
+ "prompt": {
+  "len": 87,
+  "sha256": "28ea89903f77bebe"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

@@ -22,7 +22,10 @@
   "--permission-mode",
   "dontAsk"
  ],
- "prompt": "Do two things in order. 1) Use the Write tool to create the file out.txt containing the text mode-test. 2) Use the Bash tool to run: python -c \"print(123)\". Then reply with one short line saying what happened for each step.",
+ "prompt": {
+  "len": 223,
+  "sha256": "acff9098647f9b3d"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

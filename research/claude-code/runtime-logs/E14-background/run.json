@@ -22,7 +22,10 @@
   "--allowedTools",
   "Bash(sleep:*)"
  ],
- "prompt": "Use the Bash tool with run_in_background set to true to run exactly: sleep 45   Then, without waiting, stop that background task with the TaskStop tool. Report the task id and what each tool returned.",
+ "prompt": {
+  "len": 200,
+  "sha256": "a3dec76a4f6b458a"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

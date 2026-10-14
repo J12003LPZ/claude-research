@@ -22,7 +22,10 @@
   "--allowedTools",
   "Bash(ls:*)"
  ],
- "prompt": "Use the Bash tool to run exactly: ls /nonexistent-lab-path-xyz   Then report the exit status and stderr in one line. Do not retry.",
+ "prompt": {
+  "len": 130,
+  "sha256": "324548fc93c2963b"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

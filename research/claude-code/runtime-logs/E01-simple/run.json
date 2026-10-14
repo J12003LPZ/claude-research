@@ -15,7 +15,10 @@
   "--model",
   "haiku"
  ],
- "prompt": "Reply with exactly the single word: pong",
+ "prompt": {
+  "len": 40,
+  "sha256": "c645eead6d792185"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

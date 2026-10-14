@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Reply with exactly: first-answer",
+ "prompt": {
+  "len": 32,
+  "sha256": "89e018133eeffcb2"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

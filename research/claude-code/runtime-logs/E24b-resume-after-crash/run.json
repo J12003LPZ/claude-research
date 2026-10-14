@@ -25,7 +25,10 @@
   "--resume",
   "<uuid>"
  ],
- "prompt": "Reply with exactly: resumed-ok",
+ "prompt": {
+  "len": 30,
+  "sha256": "4dacae67211c2a23"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "DISABLE_AUTOUPDATER"

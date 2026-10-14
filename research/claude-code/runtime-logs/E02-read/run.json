@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use the Read tool on notes.txt and tell me the second line. Do not use any other tool.",
+ "prompt": {
+  "len": 86,
+  "sha256": "8375e9f61311384b"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

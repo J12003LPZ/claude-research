@@ -23,7 +23,10 @@
   "<uuid>",
   "--fork-session"
  ],
- "prompt": "Reply with only the token again, then the word FORK.",
+ "prompt": {
+  "len": 52,
+  "sha256": "68bbd3d82482f49b"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

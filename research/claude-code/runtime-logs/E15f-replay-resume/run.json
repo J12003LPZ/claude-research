@@ -22,7 +22,10 @@
   "--resume",
   "<uuid>"
  ],
- "prompt": "Reply with exactly: two",
+ "prompt": {
+  "len": 23,
+  "sha256": "ddd00e284743107f"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Reply with exactly: after-reset",
+ "prompt": {
+  "len": 31,
+  "sha256": "6146d597251d8ffb"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

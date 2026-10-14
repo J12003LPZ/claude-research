@@ -22,7 +22,10 @@
   "--resume",
   "<uuid>"
  ],
- "prompt": "/compact Keep the token.",
+ "prompt": {
+  "len": 24,
+  "sha256": "0250a0beb8070ade"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

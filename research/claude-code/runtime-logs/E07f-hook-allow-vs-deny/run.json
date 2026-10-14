@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use Read on notes.txt, then use Edit to change 'beta' to 'beta-should-not'. If the Edit tool is unavailable or refused say REFUSED and stop.",
+ "prompt": {
+  "len": 140,
+  "sha256": "4b015c39458ff9bb"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

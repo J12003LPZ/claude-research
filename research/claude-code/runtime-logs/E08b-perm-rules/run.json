@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Run these four Bash commands one at a time, each in its own tool call, and report for each whether it ran or was refused: (1) echo allowed-one (2) echo denied-two (3) echo ask-three (4) Read the file secret/s.txt with the Read tool.",
+ "prompt": {
+  "len": 232,
+  "sha256": "c87851e7483e5dba"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

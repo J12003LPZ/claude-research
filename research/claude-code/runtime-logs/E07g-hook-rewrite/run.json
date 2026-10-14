@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use the Bash tool to run exactly: echo ORIGINAL-COMMAND   Then report the exact output.",
+ "prompt": {
+  "len": 87,
+  "sha256": "9e42382bb39bead7"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

@@ -22,7 +22,10 @@
   "--permission-mode",
   "acceptEdits"
  ],
- "prompt": "Use Read on notes.txt, then use Edit to change 'beta' to 'beta-h'. Then say done.",
+ "prompt": {
+  "len": 81,
+  "sha256": "f582aec895e6da93"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

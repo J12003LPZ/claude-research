@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Remember the token ZEBRA-5512. Reply with only: OK",
+ "prompt": {
+  "len": 50,
+  "sha256": "984d5ea5b1025767"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

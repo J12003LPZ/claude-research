@@ -3,7 +3,7 @@
 Target: the `claude` CLI installed on this Windows machine
 (`~\.local\bin\claude.exe`, SHA-256 `76de74f7...06769a`, a signed Bun standalone executable).
 Method: artifact extraction, static reading of the embedded JavaScript, REA's JavaScript
-application analyzer, and 55 instrumented runtime experiments against disposable projects.
+application analyzer, and 99 instrumented lab runs against disposable projects (78 E-runs, 13 C-probes, and 8 P-mode probes), including targeted compaction-failure controls.
 
 Start with `02-verified-architecture.md`. Use `06-verification-matrix.md` to see how far
 each claim can be trusted.

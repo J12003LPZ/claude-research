@@ -50,6 +50,21 @@ def deep_mask(o):
     return o
 
 
+def private_digest(text):
+    """Keep prompt identity and size without publishing prompt content."""
+    return {"len": len(text), "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]}
+
+
+def sanitize_run(run):
+    """Mask metadata and replace the raw prompt with a content-free digest."""
+    out = deep_mask(run)
+    if isinstance(run.get("exe_sha256"), str):
+        out["exe_sha256"] = run["exe_sha256"]
+    if isinstance(run.get("prompt"), str):
+        out["prompt"] = private_digest(run["prompt"])
+    return out
+
+
 def digest(text):
     if not isinstance(text, str):
         text = json.dumps(text, sort_keys=True)
@@ -309,9 +324,11 @@ DEBUG_PAT = re.compile(r"^(\S+)\s+\[(\w+)\]\s*(.*)$")
 def summarize_debug(path):
     if not os.path.exists(path):
         return None
-    lines = open(path, encoding="utf-8", errors="replace").read().splitlines()
+    with open(path, encoding="utf-8", errors="replace") as f:
+        lines = f.read().splitlines()
     cats = {}
-    first = []
+    signals = []
+    signal_rx = re.compile(r"compact|source=compact|failure breaker|circuit breaker|API error", re.I)
     for ln in lines:
         m = DEBUG_PAT.match(ln)
         if not m:
@@ -320,7 +337,10 @@ def summarize_debug(path):
         cat = re.match(r"\[?([A-Za-z][\w .:-]{1,40}?)[\]:]", msg)
         key = cat.group(1) if cat else msg.split(" ")[0][:30]
         cats[key] = cats.get(key, 0) + 1
-    return {"line_count": len(lines), "top_prefixes": sorted(cats.items(), key=lambda x: -x[1])[:60]}
+        if signal_rx.search(msg) and len(signals) < 80:
+            signals.append(mask(ln))
+    return {"line_count": len(lines), "top_prefixes": sorted(cats.items(), key=lambda x: -x[1])[:60],
+            "signals": signals}
 
 
 def main():
@@ -330,8 +350,7 @@ def main():
     out = os.path.join(OUT, exp)
     os.makedirs(out, exist_ok=True)
     run = json.load(open(os.path.join(raw, "run.json"), encoding="utf-8"))
-    run["cwd"] = mask(run["cwd"])
-    run["argv"] = [mask(x) for x in run["argv"]]
+    run = sanitize_run(run)
     json.dump(run, open(os.path.join(out, "run.json"), "w", encoding="utf-8"), indent=1)
 
     http = []

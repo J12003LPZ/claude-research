@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Call the Agent tool exactly once with subagent_type 'does-not-exist-agent' and prompt 'hello'. Report the exact error you get back. Do not retry.",
+ "prompt": {
+  "len": 145,
+  "sha256": "853d9a0f02f1054c"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

@@ -11,15 +11,18 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 55 runs | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 99 manifest runs: 78 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |
 | 17 Implementation spec | done | `05-implementation-spec.md` |
 
-Next steps if resumed: the untested and blocked rows of `06` section 2 (host approval over
-the control protocol, the four unobserved permission modes, crash recovery on resume, a PTY
-harness under WSL for the interactive UI, a direct-path request dump).
+Next steps if resumed: the remaining untested rows of `06` (three distinct failed auto-summary
+operations and the failure breaker, prompt-too-long and partial compaction, `auto` permission
+mode, background-agent survival, daemon/TUI behavior, sandbox, event-tier watchdog, and a
+direct-path request dump). E30/E31 verified summary API-error exhaustion but did not reach the
+three-distinct-failure breaker; the account rate-limit response is retained as a boundary, not
+attributed to the CLI breaker.
 
 ## Tooling (all under `tools/`)
 
@@ -59,6 +62,8 @@ used the settings model). Marked STRONGLY INFERRED until the static evidence is 
 17. Stop hook `decision: block` re-enters the loop with a synthetic user message "Stop hook feedback: ..." and the second Stop has `stop_hook_active` (E07h).
 18. Rule precedence observed: deny > ask > allow for Bash prefix rules; Read deny rule on a path blocks via tool validation (E08b).
 19. Real API failure captured: 429 session limit ends the run with `is_error: true`, `terminal_reason: api_error`, exit code 1, and a synthetic assistant text (E08b tail).
+20. Compaction fault targeting: a literal request-body marker distinguishes summary calls from normal `/v1/messages` turns in the lab proxy (E28b, E30, E31).
+21. Automatic summary failure: eleven injected 529 HTTP attempts (one initial attempt plus ten retries) exhaust one `source=compact` operation, then `Reactive compact: summarization returned API error` and `session.compact` hook failure occur; no failure-breaker event was observed (E31).
 
 ## Incidents
 

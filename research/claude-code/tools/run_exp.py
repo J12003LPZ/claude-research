@@ -105,6 +105,7 @@ def main():
                 "--include-hook-events", "--debug-file", os.path.join(raw, "debug.log")]
     cmd += extra
 
+    version, exe_sha256 = exe_info()
     stdin = open(a.stdin_file, "rb") if a.stdin_file else subprocess.DEVNULL
     t0 = time.time()
     flags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
@@ -133,7 +134,6 @@ def main():
     time.sleep(0.5)
     if proxy:
         proxy.terminate()
-    version, exe_sha256 = exe_info()
     run = {
         "id": a.id,
         "exe_sha256": exe_sha256,

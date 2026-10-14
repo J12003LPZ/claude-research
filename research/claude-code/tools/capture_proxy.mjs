@@ -12,14 +12,17 @@
 // sanitized structural evidence that is kept.
 //
 // Fault injection (safe transport-failure experiments): if <raw_out_dir>/fault.json
-// exists with {"path_contains": "/v1/messages", "status": 529, "times": 2,
-// "body": {...}, "headers": {...}, "mode": "status" | "reset" | "stall" | "sse_stall",
-// "after_bytes": 0, "stall_ms": 0}, matching requests are answered locally and
-// `times` is decremented. Nothing is sent upstream for an injected fault.
+// exists with {"path_contains": "/v1/messages", "body_contains_all": ["<analysis>",
+// "<summary>"], "status": 529, "times": 2, "body": {...}, "headers": {...},
+// "mode": "status" | "reset" | "stall" | "sse_stall", "after_bytes": 0,
+// "stall_ms": 0}, matching requests are answered locally and `times` is
+// decremented. Nothing is sent upstream for an injected fault. `body_contains`
+// and `body_contains_all` are optional literal matchers for request-body-aware faults.
 import http from "node:http";
 import https from "node:https";
 import fs from "node:fs";
 import path from "node:path";
+import { faultMatches } from "./fault_match.mjs";
 
 const port = Number(process.argv[2]);
 const outDir = process.argv[3];
@@ -35,13 +38,13 @@ const redact = (h) =>
 let seq = 0;
 const t0 = Date.now();
 
-function readFault(urlPath) {
+function readFault(urlPath, bodyText) {
   const p = path.join(outDir, "fault.json");
   if (!fs.existsSync(p)) return null;
   try {
     const f = JSON.parse(fs.readFileSync(p, "utf8"));
     if (!f.times || f.times <= 0) return null;
-    if (f.path_contains && !urlPath.includes(f.path_contains)) return null;
+    if (!faultMatches(f, urlPath, bodyText)) return null;
     f.times -= 1;
     fs.writeFileSync(p, JSON.stringify(f));
     return f;
@@ -76,7 +79,7 @@ const server = http.createServer((req, res) => {
       }),
     );
 
-    const fault = readFault(req.url);
+    const fault = readFault(req.url, body.toString("utf8"));
     const timing = fs.createWriteStream(path.join(outDir, `${id}-res.chunks.jsonl`));
     const resBody = fs.createWriteStream(path.join(outDir, `${id}-res.body`));
     const meta = (o) => fs.writeFileSync(path.join(outDir, `${id}-res.json`), JSON.stringify(o));

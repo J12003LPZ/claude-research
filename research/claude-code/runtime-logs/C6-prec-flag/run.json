@@ -24,7 +24,10 @@
   "--settings",
   "C:/Users/<user>/cc-rea-lab/flag-settings.json"
  ],
- "prompt": "Use Bash to run exactly: printenv LAB_PREC LAB_ONLY_PROJECT   and report the output verbatim on one line.",
+ "prompt": {
+  "len": 105,
+  "sha256": "03c704d48b75a0ef"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

@@ -20,7 +20,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Use Read on sub/inner/x.txt then reply with exactly: ok",
+ "prompt": {
+  "len": 55,
+  "sha256": "b60b1cb433211845"
+ },
  "stdin_file": null,
  "extra_env_names": [],
  "scrubbed_env_names": [

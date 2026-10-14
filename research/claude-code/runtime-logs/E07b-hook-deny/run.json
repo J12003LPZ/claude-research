@@ -22,7 +22,10 @@
   "--allowedTools",
   "Bash(echo:*)"
  ],
- "prompt": "Use the Bash tool to run exactly: echo hello-from-bash   If refused say REFUSED and stop.",
+ "prompt": {
+  "len": 89,
+  "sha256": "8a2f29fd5075350a"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "LAB_HOOK_LOG_DIR"

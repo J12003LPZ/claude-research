@@ -21,7 +21,10 @@
   "--mcp-config",
   "C:/Users/<user>/cc-rea-lab/empty-mcp.json"
  ],
- "prompt": "Write the numbers from 1 to 400 as words, one per line, nothing else.",
+ "prompt": {
+  "len": 69,
+  "sha256": "ffe5308c60340116"
+ },
  "stdin_file": null,
  "extra_env_names": [
   "DISABLE_AUTOUPDATER",
