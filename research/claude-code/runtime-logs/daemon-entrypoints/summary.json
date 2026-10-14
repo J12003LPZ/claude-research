@@ -14,7 +14,15 @@
     "invalid_kind_probe": "claude --daemon-worker with no kind",
     "invalid_probe_exit_code": 2,
     "invalid_probe_error_class": "unknown worker kind",
+    "stdin_contract_static": "newline/stream JSON with config and initialAccessToken; schema validation precedes run",
+    "parent_watchdog_static": "30s poll; worker aborts and exits when the supervisor parent disappears",
     "controlled_worker_lifecycle": false
+  },
+  "pty_auth_static": {
+    "env_or_token_file": ["CLAUDE_BG_PTY_AUTH", "CLAUDE_BG_SOCKET_TOKENS_PATH"],
+    "unauthenticated_client": "receives auth-required and is not forwarded terminal input",
+    "control_messages": ["auth", "resize", "kill", "ping", "pong"],
+    "source": "chunk-jn2r7nez.js@2489"
   },
   "limits": [
     "No worker was launched",

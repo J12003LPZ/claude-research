@@ -527,10 +527,11 @@ but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY 
 background session and observed one `background` registry row in `state:"blocked"`, `status:"idle"`; `stop` plus
 `rm` removed it. E83 started `claude attach` against a live trusted registry entry, observed attach output, then
  detached and cleaned the entry. E84 stopped a trusted entry, ran `respawn` successfully, observed a replacement
-`background` row in `state:"working"`, `status:"idle"`, and cleaned it. The sessions made no model POST, so
-active PTY data flow, worker respawn, and PTY authentication remain untested. The spare pool is host-blocked on
-Windows by the static `runBgSpare` guard; daemon worker kinds and invalid-kind handling are recorded in
-`runtime-logs/daemon-entrypoints/summary.json`, but no worker was launched.
+`background` row in `state:"working"`, `status:"idle"`, and cleaned it. E85 attached through a Windows PTY,
+received 7,303 bytes including ANSI control bytes, sent input, and cleaned the session; this verifies PTY byte
+transport while the session was blocked/idle, not model terminal semantics. The spare pool is host-blocked on
+Windows by the static `runBgSpare` guard. Daemon worker kinds, stdin/parent-watchdog contracts, invalid-kind handling,
+and PTY auth control messages are recorded in `runtime-logs/daemon-entrypoints/summary.json`, but no worker was launched.
 
 ## B. Session persistence and resume
 

@@ -1,0 +1,18 @@
+{
+  "id": "E85-pty-bytes",
+  "cli_version": "2.1.296",
+  "method": "trusted disposable background session with local proxy and attach through a Windows PTY",
+  "launch_exit": 0,
+  "background_match": true,
+  "attach_started": true,
+  "pty_bytes_received": 7303,
+  "ansi_control_bytes_seen": true,
+  "input_sent": true,
+  "attach_exitstatus": 2,
+  "after_cleanup_count": 0,
+  "ids_withheld": true,
+  "limits": [
+    "The session remained blocked/idle and no model turn completed",
+    "This verifies attach PTY byte delivery, not model terminal semantics"
+  ]
+}
