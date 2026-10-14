@@ -2976,8 +2976,8 @@
      "bytes": 3112
     },
     "http-summary.json": {
-     "sha256": "c4a46d31ffd20e61662c6e19bceb1342d3d861a68b90191b1a3928a5dbd4e888",
-     "bytes": 25986
+     "sha256": "d571a81c071bd2cca5b5bd1a08c3367a79401c2145d1db253a884ef9695518c1",
+     "bytes": 25953
     },
     "run.json": {
      "sha256": "12fa8f0c868b0e037287322b10355e289cb28fa5ff5b727f541a8c62ebe7de96",
@@ -3036,8 +3036,8 @@
      "bytes": 3162
     },
     "http-summary.json": {
-     "sha256": "ea978c985dc0a6eb4aec803cd57bf0dbff06988904175f10ab9159c81bbb7407",
-     "bytes": 47752
+     "sha256": "d5c96e485dfca0e3eebf9d3bdc4fbd3a8dac5adc2685c6fc19a1c835595cf21a",
+     "bytes": 47670
     },
     "run.json": {
      "sha256": "e62c22d5ed6208edff4fcb58139a0352d882eceba756d52f58efd310ccb2581e",
@@ -3237,6 +3237,846 @@
    "exit_code": 0,
    "duration_s": 1.771,
    "started": "2026-10-14T07:58:19Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41a-auto-unavailable",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "29b0e1a254173df80d78881af8ad3aa05f8f3d216dfb6f005428521e610252cd",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "239c0f7cccbccb20e40d2a45c6937aa40495c39f01b8a91626ef248da6000c60",
+     "bytes": 40208
+    },
+    "run.json": {
+     "sha256": "d32acfc7cde59203959c1331aafd985e6ba57adc7b78122f3562138562d8eca9",
+     "bytes": 1662
+    },
+    "stream-summary.json": {
+     "sha256": "78fbe8519f3532692e948bf672759ec485af3054d5286c1515ef49a3730cf88e",
+     "bytes": 11028
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.163,
+   "started": "2026-10-14T08:06:17Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41b-auto-sev0",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "2b9a7cbb6480527b4df81ef74398febd380c31aa30fa131e5a75f5c70f8175b9",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "136ab8bb14a4f78a14ac68bd15db34a1041651a457093b66e1256b597778cad9",
+     "bytes": 34711
+    },
+    "run.json": {
+     "sha256": "860aa4e4e252abf7277dfa3eda80bfd8b935105151ff6d975d681282bce44b69",
+     "bytes": 1641
+    },
+    "stream-summary.json": {
+     "sha256": "6eafe15b249dce65718b7cdce637ed3c4d8303777c54120ab5607f81f1fb87ff",
+     "bytes": 10592
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.565,
+   "started": "2026-10-14T08:03:13Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41c-auto-sev18",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "a5ff95dd5e991531ec46c417a50652bbd80dde98aac89e7cf15f2254d3cd0501",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "638b3e4cbc6f5a07fd2f1e7faada9786587865930b5d576ab769dd6581850f68",
+     "bytes": 34711
+    },
+    "run.json": {
+     "sha256": "cf07e8245ed50770aaf5fa04571cda9dd832b1cbb02fa58e9bec7971a5dd9265",
+     "bytes": 1644
+    },
+    "stream-summary.json": {
+     "sha256": "80e72d3bb9b67b54546d6fa4d0acadb0ea3e4e4eeb6c5a4db87ccb3370badeaa",
+     "bytes": 10593
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.651,
+   "started": "2026-10-14T08:03:16Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41d-auto-sev50",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "0d869bd6f538e7e436ddba4178c31e53bcc7276d611c06bff61cf473b9f35ff1",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "2c89a71b2c7d38e032e1c0789872290938224b28ed17bc1372e68f7b011eb3b2",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "af4fd5602f189626d1101bd1c7bd0aec99c14018885f53b292b8f68a6afead4e",
+     "bytes": 1644
+    },
+    "stream-summary.json": {
+     "sha256": "398462be1b946205eb5a1d4b11ae27bbcc5711b016ef9a191cd963512a86869e",
+     "bytes": 11022
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.105,
+   "started": "2026-10-14T08:03:19Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev20",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "15fa94e4db58a4f3fa4fccde0921c38633ff15d2cfe3e16cf4f72d9de9b41a6a",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "a081632bef9e60018d94ac5c2c7f085068773213f84972373a177fc564b846ed",
+     "bytes": 34711
+    },
+    "run.json": {
+     "sha256": "9b97026e9eb18a4eed249f3e879cb402080c30c1e71346778858117a40e9ff3b",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "9270920bea00968f649c508efc4f398bf504467a261ff38a225890677dfde8b2",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.608,
+   "started": "2026-10-14T08:03:32Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev21",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "154f7b522e118186422d9c4e348dc17232ba53a47d137323e1262a8475f93cef",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "bb2c8c691e90c9620b167b7a7dff858ebfd422a53094335e8dd2c4143d151560",
+     "bytes": 34711
+    },
+    "run.json": {
+     "sha256": "d18e8003d2b15141f5fbb6349ecce2cd880b37b3adfb4781cf35149f5a630a94",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "15e6e9c8fb8b83db7fbe52ebc549f4e4270600ffd29df2adc3f6c16ce0b584ac",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.665,
+   "started": "2026-10-14T08:03:35Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev25",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "94b41dad7361747bd7f87098c8a6d531877262b1e81dad1fb7354dbed5bdb9cf",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "4f3fe9a28a8db336e11797b998115aff2839f7bb97491ad23486d8026cf5b99c",
+     "bytes": 34711
+    },
+    "run.json": {
+     "sha256": "b135d47f057cbb78c12e355368a31a5c7667481ff63fcc05b9da3ddc826326b6",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "025db11b491be22e88a7938558cc5044ddc3f413631e8a6e413c816b9d36e227",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.576,
+   "started": "2026-10-14T08:03:38Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev25_5",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "b07d7a03830c89fef68ea2b5020c48e2ebdd88291a546cae576152dfc5279bd2",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "40f0db0963e68de48d1a8d603f5c7470e72dd58ec69718a10c62b6beed77346c",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "f9ab11fdf94bb4b6c3c7e489ea874997ef18430259462e08361fdc9ed093534d",
+     "bytes": 1635
+    },
+    "stream-summary.json": {
+     "sha256": "eec23a42595523861449817cff760229096c15f9035b526a8807487308c99823",
+     "bytes": 11019
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.169,
+   "started": "2026-10-14T08:03:52Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev26",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "5510ae0d82a2d25d5c79c36feee464eb0407f6acce0c0d6bc54b6e4187281d2e",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "7820e2a83419cc5ae89eafef6f787b88e909b9ce8cef607fb0f444a65cf8f366",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "0692c48408914aa584a208f116b5dec31aba2f88cc9177f4062192a00a04400d",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "14b9b892dbc0815cd9863165a6b1d7032a915be88296b199e702ab88ceae028a",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.116,
+   "started": "2026-10-14T08:03:54Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev28",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "6b2f5cd734bed795fdcf7a225c9a48d736d4430c8fc4f9e90816393769d4d31b",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "7f5e3fd7918e6aef032242bf0ed21e2a11ab252a3e464429b148d58fcae7ad9f",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "4b98097acd286cbd2f729b6eaa07480116c8df52c132d53b7d1709893f7d7fca",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "e542d39bdac784a8df08786223c863a82fbcf7702d54334b449b63e667814a9a",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.161,
+   "started": "2026-10-14T08:03:56Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev29",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "4ec19e36de9e4fd09ba08a4ed087bba3f9f19bc02010f5cc66b17bd82af32a90",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "7c714f2ed48e4a693d0a3d7695804c64c68b5accbe91b3e2ede517310e9e7487",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "6461ba3d23da69ffbe8fd95463a3f9d383eb95a20eb49a1d70616a81df7b71f5",
+     "bytes": 1628
+    },
+    "stream-summary.json": {
+     "sha256": "3140b7e9d5772ff052d41405167f86e1bfa34dcd7145c51a160ac877537ee5dc",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.12,
+   "started": "2026-10-14T08:03:59Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev30",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "ddcf195a3e944cb6a065c89d018409a07e43343ba65aba0379f8736e7666bca5",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "5bb82a8d50f978a4bf1cd3489ed5eb789e3e38cbaccb9968f9f70438484a1805",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "2246b3367253bc28950c084b5e91b6aa0a077e0e69483f233c6e6c64453b1f37",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "a2cc58e0bafe46893f278cc0b7a5db1222064b3c0bdb73c05e4f21f9a34d6f70",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.116,
+   "started": "2026-10-14T08:03:40Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41t-sev40",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "177423bc10184389a57076e20c52b6cd240fbebc7b311e89e1c9bc4839e42b04",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "193eb4da5936112fc343780e9308d1713b2c4114a9934e651ff5ffef1e9b4463",
+     "bytes": 40352
+    },
+    "run.json": {
+     "sha256": "93106510e29e67723a3f81da203208ad7b0b9ec3e0564549dfb5bf71dc83b3f4",
+     "bytes": 1628
+    },
+    "stream-summary.json": {
+     "sha256": "5c544106ddbd2074b9cd4bdbb097d8e46eaa248b62410b218c2c89eea2b7eff1",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.18,
+   "started": "2026-10-14T08:03:43Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-10",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "d236a4ec4e19503788527d01e622afe8db65254ca6a87c79fef664b8b20fd2f1",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "2ca5ac1ebf7886fdae2df440ae7100deaa35ccd0a3e7981264f00e6361396bc9",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "e205d84a0148c85873e63efd574561e44b605cf55688565dbef11b66184f006b",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "d4582b3ecdd68f9ec11d7006ba396c4f5153e96734e622fd62d2148759307dc9",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.576,
+   "started": "2026-10-14T08:04:25Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-25",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "19acf2fd8fbaf47c918eddcfc1d8917dba77fecfce007e93e145a064190200e6",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "db9c8c00b3dc784015fa7aa329cbcedfe8f01da8ceafe70eca6b7ba62436a1c5",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "018269067f72d414aa4525a113af84aea5cfe699408716d3415442f47ad38b61",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "c84b6d72a8ae508771f1e985d7dc8acf942c5d0e667acbae105626b7d80b03ce",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.585,
+   "started": "2026-10-14T08:04:27Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-26",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "2785588b5e1043af321f6ea60a2b1c1527a8362d7ef98079ae19205b6527bda6",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "5f7e962ae266a33a73f0f8debfbd2e3b5419b9069fd7f447cc2b3ceda8705685",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "dde693b09e86e08c0b829738b0794f32d9fbabc2f4fee38b84d9e9ec261fb4cf",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "df55e1ee77a8e2d4cd079d3b0c1d0a189824984934b6d6b8537a9fc847c443ac",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.563,
+   "started": "2026-10-14T08:04:30Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-30",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "4b3bc47979aba1084e6078f98553adfa1a6947d8e94c83b206be3a87b2d768c8",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "8d30bfd851aede3d4b80eafc80cf9573bbea7a533e10b5659d13f4c732e55d9d",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "636386faae5d944a5cb17873cc44d4fee97805428f94542a2ef1289aaaa6cbc7",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "9b82f396ac310eb4730b4b810b07ed7b45adae872039c7f5f3c18a63d4c125fa",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.635,
+   "started": "2026-10-14T08:04:33Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-30_5",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "62ebc0b3c99acfe5634ef9fc90a5be6111647147d94dc9e42b28cb446de33243",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "add8aa31c795790077da455a7e7fc126a3976353121f550724e3b9539c44b18d",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "eab0ede222f2c59c94e3d7c702f088482f70d48400bfb384124ad57550383a72",
+     "bytes": 1635
+    },
+    "stream-summary.json": {
+     "sha256": "ae2bcb918f68c02f0572b64581288459c933ee0702277712bfc8ea969f336d19",
+     "bytes": 10590
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.599,
+   "started": "2026-10-14T08:04:46Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-32",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "5efbcc6f7a4f3bfc33cbcb8d56d963b6a34fd8499acc74ec61ef6572f4cd07a4",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "7e9781db1d78a5a91b5051a96fb66181c15005a8cfecbec9003748fb6869cba6",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "17fbcfa652e5527c70b7b9f118f38510c378dad2d30abec8fe1773a70633e47f",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "158bcec934beead33870916431ad97267deecd21d9cfeb586bd64015ad498804",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.631,
+   "started": "2026-10-14T08:04:49Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-35",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "a8131f710449bc5b632457ab8f04376831523a7fc9d868f976361af1cda0ca7b",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "6a3ba0cd1cae502d4844813e650470c397433ffa364404b15327a82c3185a669",
+     "bytes": 40283
+    },
+    "run.json": {
+     "sha256": "0666b9ac387e525eb38fb9a3ff702290c9a534089aae7cb9defc667bb5d870d1",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "6376a8f007320fa32566c50cdf87647b4b650590b88c0f592cd01f7dc684e5d5",
+     "bytes": 10588
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.602,
+   "started": "2026-10-14T08:04:52Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-35_5",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "0e13bbf14cd7c15d230681f56194f3d2212d90f25447278f16b2dd328f16f0f6",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "6a1a2eb5c8654effef21fc13f4bd1dbaadd77f438e36524b1d3e639c587918be",
+     "bytes": 40331
+    },
+    "run.json": {
+     "sha256": "a8af03b8f1dbeeb3779bdaad5088eb165d15e86a707f17f0e7771afc12d47223",
+     "bytes": 1635
+    },
+    "stream-summary.json": {
+     "sha256": "c7b806c331aae42d09d453f3d2a40faff2769136ea22f1a45ba22f7f425fbebe",
+     "bytes": 11020
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.175,
+   "started": "2026-10-14T08:04:54Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-38",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "f4bb0fa285c858f0641e15c49275777c5f2cbc092edb55fd6c6ca022836d3092",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "06762b1e914dc4bb254b3af5b7e8eddb655baf0818ca3aec8ff638661d902861",
+     "bytes": 40331
+    },
+    "run.json": {
+     "sha256": "15dbc32b279009eae234660634fb488d68712ccdf3a14956e57b49c8c2894b81",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "31f41b743ad3653153f4fcd186ba520d3d3996a1036da0d136470c78c8bcdba1",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.118,
+   "started": "2026-10-14T08:04:57Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-40",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "57dc8d8ba0231bbc38a6cc298ff7cda38076f8cd0cd4f6a6171b9a92bc040edc",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "28d630cf3cb835b9ad7c701b7d83695273305858e2c22cc4540674bfcc1dc093",
+     "bytes": 40331
+    },
+    "run.json": {
+     "sha256": "6c06956900e7098d966ea9451d7cf63415e7df5f056e95b3553d886b89c38d3e",
+     "bytes": 1629
+    },
+    "stream-summary.json": {
+     "sha256": "ecee81f70ae760365cf0114c9b0bab2bb6c865a986b5b9e92f1e33944f21323c",
+     "bytes": 11017
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.187,
+   "started": "2026-10-14T08:04:36Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E41u-s2-60",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "ef59bf91849a3ce01e2da646bb1245702495c6c51e1f26361493a7ef6205d7f0",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "3e4f79ba45be15a1a084e456cc61efed1e895eef952735867eb34e99da7b7495",
+     "bytes": 40331
+    },
+    "run.json": {
+     "sha256": "2b96bf30a9bea3fc03fee0a5771154033eb7941091c0a9063783f43175755173",
+     "bytes": 1628
+    },
+    "stream-summary.json": {
+     "sha256": "8208440fb78720be1959d86ed4969507ee2404657e0ce8db8e67cfdf1f59a2d3",
+     "bytes": 11018
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.17,
+   "started": "2026-10-14T08:04:38Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E42-auto-denials",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "664b31a5f993a1673ec494f2930dfb767b5a2b6145323b1aba0e8c3dc7701812",
+     "bytes": 4248
+    },
+    "http-summary.json": {
+     "sha256": "c8ba048fb3b666c1925dae27b3de8f1a3ef371c5d1dc70005b59199aac77aa79",
+     "bytes": 184322
+    },
+    "run.json": {
+     "sha256": "5d44a0834673f8ce6fef2396d07c642fb58f453a6019b1c725384e61b2e559f5",
+     "bytes": 1648
+    },
+    "stream-summary.json": {
+     "sha256": "cd362f3cdd5f4ff29704ea45023e2242b0751d1bea82622a4c7e3a94c1a60f08",
+     "bytes": 28213
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.343,
+   "started": "2026-10-14T08:05:07Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E42b-auto-total-denials",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "ca04644b4fc189b9eb2dfb840cf74333729afef92ed6330ed53f34883a2d54fe",
+     "bytes": 8793
+    },
+    "http-summary.json": {
+     "sha256": "380414f7f4ccbb4616f142311e6d62c6696027677bc66c645ff8434d0954285f",
+     "bytes": 1336476
+    },
+    "run.json": {
+     "sha256": "f4f1a52c808cefaef1e626daffe9f22689446764843a849e772a9576a72fb229",
+     "bytes": 1669
+    },
+    "stream-summary.json": {
+     "sha256": "031143c01e4fbc87ca7e039b0769d621f790a4dfbd5fb90098a42624d959b30d",
+     "bytes": 117649
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 3.104,
+   "started": "2026-10-14T08:05:32Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E42c-auto-24-denials",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "7e440d557b4390592ad3056d56f104b6a8d1329eedcb59ba9367a83acfabb983",
+     "bytes": 7279
+    },
+    "http-summary.json": {
+     "sha256": "3c010008f6686bee8cf50b2cf010f77030c3beab12add44bcfccae1aab77b4ff",
+     "bytes": 921767
+    },
+    "run.json": {
+     "sha256": "f178713f08a2d401f09bbcb56bcc58aae0787191d072dcba91d3c409184f7141",
+     "bytes": 1660
+    },
+    "stream-summary.json": {
+     "sha256": "bee88c14b5463a92ae2ae0ed4971e1c4dfe708e87f61a1c01dc14e88b5c87ce5",
+     "bytes": 90041
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.773,
+   "started": "2026-10-14T08:05:49Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E43-auto-bg-agent-denials",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "849c2f065d51cd9c4e833824bc6a5c02f99dc3bff53e806a656bea152f30a7fc",
+     "bytes": 5051
+    },
+    "http-summary.json": {
+     "sha256": "0841ff984dce25580d7668d9fa973573c564af49054d807b922b6e6b544f2839",
+     "bytes": 248137
+    },
+    "run.json": {
+     "sha256": "a81f91a75037ecd8163a7c87626531ed76a8e1a6a9cc8df32c0d881cbc671023",
+     "bytes": 1594
+    },
+    "stream-summary.json": {
+     "sha256": "891832794e8867a3b76b8d78237244ed5425ea06d20dc6a8daa618858fe0ef5c",
+     "bytes": 25798
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 1,
+   "duration_s": 12.794,
+   "started": "2026-10-14T08:08:01Z",
    "fault_injected": true,
    "killed": null
   },
@@ -3487,6 +4327,17 @@
     "summary.json": {
      "sha256": "8680bed0990e47f2f0452a75a5ab2ac66d25d13af1b5c1278bfa5afe41b29aa9",
      "bytes": 829
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
+   "id": "auto-mode-thresholds",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "e12ca4785eae1e7937d70041e442bb0fd9f006c4b3e506dfb6e8effc4bb701e1",
+     "bytes": 3339
     }
    },
    "redaction": "sanitized"

@@ -12,6 +12,7 @@ Sanitization rules:
   * header values for credentials were already dropped by the proxy; ids are masked here
   * emails, UUIDs, long hex ids, home-directory names are masked in every emitted string
 """
+import getpass
 import glob
 import hashlib
 import json
@@ -30,6 +31,8 @@ MASKS = [
     (re.compile(r"\b(wrkspc|req|msg|org|toolu|srvtoolu)_[A-Za-z0-9]{6,}"), r"\1_<id>"),
     (re.compile(r"(?i)([A-Z]:[\\/]+Users[\\/]+)[^\\/\"'\s]+"), r"\1<user>"),
     (re.compile(r"(?i)(/home/|/Users/)[^/\"'\s]+"), r"\1<user>"),
+    # The bare OS account name, whole word only (a classifier prompt states it as "User identity").
+    (re.compile(r"(?i)(?<![A-Za-z0-9])" + re.escape(getpass.getuser()) + r"(?![A-Za-z0-9])"), "<user>"),
 ]
 
 
@@ -208,10 +211,7 @@ def summarize_request_field(key, value):
         return value
     if key in {"stream"} and isinstance(value, bool):
         return value
-    if key == "model" and value in {
-        "claude-haiku-5-5", "claude-sonnet-5-5", "claude-opus-4-1", "claude-opus-4-5",
-        "claude-opus-4-6", "claude-fable-5-1", "claude-opus-5-5",
-    }:
+    if key == "model" and isinstance(value, str) and re.fullmatch(r"claude-[a-z0-9-]{1,40}(\[[0-9a-z]{1,4}\])?", value):
         return value
     if key in {"speed", "service_tier"} and value in {"standard", "fast", "priority"}:
         return value

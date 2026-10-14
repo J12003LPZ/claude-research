@@ -249,6 +249,31 @@ class SanitizeRunTests(unittest.TestCase):
         )
         self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary["results"]))
 
+    def test_bare_account_name_is_masked_in_heads_and_digests(self):
+        import getpass
+
+        from summarize_captures import digest, mask
+
+        user = getpass.getuser()
+        masked = mask(f"**User identity**: `{user}`. The `$USER/...` pattern")
+        self.assertNotIn(user, masked)
+        self.assertIn("<user>", masked)
+        self.assertNotIn(user, digest(f"\n\n## Session Context\n\n- **User identity**: `{user}`")["head"])
+        self.assertEqual(mask(f"x{user}y"), f"x{user}y")  # not a whole word
+
+    def test_request_model_ids_are_kept_but_arbitrary_model_strings_are_digested(self):
+        def model_of(value):
+            req = {"seq": "1", "t_ms": 0, "method": "POST", "url": "/v1/messages", "body_bytes": 1,
+                   "headers": {}, "body": {"model": value}}
+            return summarize_request(req)["body"]["model"]
+
+        self.assertEqual(model_of("claude-sonnet-5"), "claude-sonnet-5")
+        self.assertEqual(model_of("claude-sonnet-5[1m]"), "claude-sonnet-5[1m]")
+        self.assertEqual(model_of("claude-haiku-5-5"), "claude-haiku-5-5")
+        leaked = model_of("my-private-model-SENSITIVE-9348")
+        self.assertNotIn("SENSITIVE-9348", str(leaked))
+        self.assertEqual(set(leaked), {"len", "sha256"})
+
     def test_schema_keys_keep_camel_case_but_digest_secret_like_keys(self):
         from summarize_captures import structural_shape
 

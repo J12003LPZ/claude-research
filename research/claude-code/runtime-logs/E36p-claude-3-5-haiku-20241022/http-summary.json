@@ -113,10 +113,7 @@
      "max_tokens",
      "stream"
     ],
-    "model": {
-     "len": 25,
-     "sha256": "162eda995e0e11ab"
-    },
+    "model": "claude-3-5-haiku-20241022",
     "max_tokens": 8192,
     "stream": true,
     "metadata_keys": [

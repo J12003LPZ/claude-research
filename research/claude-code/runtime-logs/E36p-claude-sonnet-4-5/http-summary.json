@@ -115,10 +115,7 @@
      "context_management",
      "stream"
     ],
-    "model": {
-     "len": 17,
-     "sha256": "f2b3b47fd9a71add"
-    },
+    "model": "claude-sonnet-4-5",
     "max_tokens": 32000,
     "stream": true,
     "thinking": {
@@ -1078,10 +1075,7 @@
      "context_management",
      "stream"
     ],
-    "model": {
-     "len": 17,
-     "sha256": "f2b3b47fd9a71add"
-    },
+    "model": "claude-sonnet-4-5",
     "max_tokens": 32000,
     "stream": true,
     "thinking": {

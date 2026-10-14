@@ -108,6 +108,15 @@ assert.equal(plain.headers["content-type"], "application/json");
 assert.equal(JSON.parse(plain.body).content[0].text, "two");
 assert.deepEqual(JSON.parse(fs.readFileSync(faultPath, "utf8")).sequence, []);
 
+// A request with no `stream` key is non-streaming by API default and must get a JSON message.
+fs.writeFileSync(faultPath, JSON.stringify({
+  path_contains: "/v1/messages",
+  sequence: [{ body_contains: "DDD", response: text("three") }],
+}));
+const implicit = await post('{"x":"DDD"}');
+assert.equal(implicit.headers["content-type"], "application/json");
+assert.equal(JSON.parse(implicit.body).content[0].text, "three");
+
 proxy.kill();
 await once(proxy, "exit");
 fs.rmSync(outDir, { recursive: true, force: true });

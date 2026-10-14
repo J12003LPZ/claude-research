@@ -34,7 +34,8 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
 | Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified without a host handler; host approval is a separate row (E19c, E19d) | High | interactive dialog |
-| Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` classifier decisions untested (needs a model call); its rule schema is read locally, see `runtime-logs/auto-mode-defaults/` |
+| Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` has its own row below; its rule schema is read locally, see `runtime-logs/auto-mode-defaults/` |
+| Permissions | `auto` mode: classifier stages, thresholds, fail closed, denial limits | static 04 | E41, E42, E42b, E42c, E43 (scripted classifier, no upstream call): thresholds 25 and 35, fail closed on error, limits at 3 consecutive and 20 total | Verified for `claude -p` with a scripted classifier; the static abort branch not reproduced | Medium | real classifier verdicts, interactive prompting, server-side classifier, which context throws `Agent aborted` |
 | Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
 | Hooks | Exit 2 blocks, exit 1 does not | static 04 | E07c, E07d | Verified | High | per-event differences |
 | Hooks | stdin schemas | static 04 | E07a, E17c | Verified for 10 events | High | 11 events configured but never fired |
@@ -80,6 +81,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 13 | Out-of-tree path refused | E05 | 7 | Verified |
 | 14 | Compound command and variable checks | E05b, C5 | 7 | Partially verified (parser not specified) |
 | 15 | Headless ask becomes denial | E06 | 7 | Verified |
+| 15a | `auto` mode allow, escalate, deny, fail closed, denial limits | E41 to E43 | 7 | Verified (scripted classifier, `-p`); abort branch not reproduced |
 | 16 | Rule precedence | E08b | 7 | Verified |
 | 17 | Hook lifecycle order and parallel start | E07a | 8 | Verified |
 | 18 | Hook deny, exit 2, exit 1 | E07b, c, d | 8 | Verified |
@@ -114,7 +116,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | `claude sandbox status` reports `supported:false`, `installed:false`, `enabled:false` on this host | 7 | Blocked (not exercisable here; enforcement itself unobserved) |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 48 behaviours enumerated. Verified 39, partially verified 5, untested 1, blocked 3.
+Counts: 49 behaviours enumerated. Verified 40, partially verified 5, untested 1, blocked 3.
 
 ## 3. Cross-validation per subsystem
 
@@ -124,7 +126,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 114 manifest runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 142 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -150,7 +152,7 @@ Falsifier: a retry with a non-zero SDK retry header. Unknown: the purpose of the
 logs with timestamps, file state on disk before and after, denial events. Alternative:
 E07f could be the model declining to call Edit. Rejected: the call was made and returned
 "No such tool available". Falsifier: an allow hook that makes a denied tool run. Unknown:
-the `auto` classifier, sandbox enforcement (not supported on this host), and interactive approval UI.
+real `auto` classifier verdicts (the flow is verified with a scripted one), sandbox enforcement (not supported on this host), and interactive approval UI.
 
 **Subagents and tasks.** Known: nested loop, separate prompt, parallel siblings, event
 lifecycle, hand-back framing. How: overlapping request timestamps on the proxy, task
@@ -191,7 +193,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes; E39 scripted run (SDK `interrupt`) | Answered: no, for the SDK interrupt (E39a). TUI Esc open |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 114 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 142 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

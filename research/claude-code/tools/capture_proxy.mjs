@@ -132,7 +132,8 @@ data: ${JSON.stringify(start)}
       }
       if (fault.response) {
         // Scripted model reply: nothing is sent upstream.
-        const wantsStream = parsed?.stream !== false;
+        // The API default is non-streaming: only an explicit `stream: true` gets SSE.
+        const wantsStream = parsed?.stream === true;
         const scriptedHeaders = { "content-type": wantsStream ? "text/event-stream" : "application/json" };
         const scriptedBody = wantsStream ? buildSse(fault.response) : JSON.stringify(buildJsonMessage(fault.response));
         meta({ seq: id, injected: true, mode: "respond", status: 200, headers: scriptedHeaders, t_ms: Date.now() - t0 });

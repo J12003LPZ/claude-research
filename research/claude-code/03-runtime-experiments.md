@@ -363,6 +363,54 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
 
+### E41 to E43: `auto` permission mode with a scripted classifier
+
+`--permission-mode auto` sends each unapproved tool call to a classifier, which is a model call. Here the lab proxy
+answers the classifier too (a canned `<severity>` score), so the whole mode can be exercised with **no upstream
+model request**. The parent is scripted to call `Bash` (a Python file write, not on the safe list). Build scripts are
+in `tools/scenarios/`; the bisect is summarized by `tools/auto_thresholds.py` into
+`runtime-logs/auto-mode-thresholds/summary.json`. Classifier prompt text is not kept (about 137,000 characters).
+
+**Flow per call** (debug log): `[auto-mode] new action being classified: tool=Bash`, then a `classifier_request`
+at `stage=xml_s1`, then, only if stage 1 escalates, `stage=xml_s2`. Before that the log shows
+`[server-classifier] … server_no_result … classifies locally for the rest of this session` (no server verdict was
+present because the scripted replies carry none). The gate line reads `verifyAutoModeGateAccess: enabledState=enabled`.
+
+**Classifier request shape** (E41, structure only): no `tools`; `thinking:{type:"disabled"}`; model `claude-sonnet-5`
+first (`claude-sonnet-5[1m]` in the log), then the session model as a fallback; three `system` blocks of 74, 137,394 (cache
+`ephemeral`, ttl 1h) and 242 characters; two `user` messages (the second has five text blocks). Stage 1:
+`max_tokens:64`, `stop_sequences:["</severity>"]`. Stage 2: `max_tokens:8192`, no stop sequence.
+
+| Probe | Result |
+|---|---|
+| stage-1 score 0, 18, 20, 21, 25 | one classifier request; tool ran (**allowed**) |
+| stage-1 score 25.5, 26, 28, 29, 30, 40, 50 | a second classifier request (stage 2) |
+| stage 1 = 30, stage-2 score 10, 25, 26, 30, 30.5, 32, 35 | tool ran |
+| stage 1 = 30, stage-2 score 35.5, 38, 40, 60, 90 | tool did not run (**denied**) |
+| classifier answered 400 on both models (E41a) | `Sonnet 5 probe demotion errorKind=http_400`, fallback to the session model with `179987ms remaining`, then `Auto mode classifier unavailable, denying with retry guidance (fail closed)` and `Bash tool permission denied`; the run still ended `completed` |
+
+- **Thresholds on this account:** block when severity is **strictly greater** than `t1 = 25` (stage 1, escalate) and
+  `t2 = 35` (stage 2, deny). The static defaults `lBe=15`, `cBe=20` (`chunk-phacttch.js@1093223`) were not in
+  effect; where 25 and 35 come from (remote config or a site default) was not determined.
+- **Denial text.** A classifier denial returns an error `tool_result` and a `system/permission_denied` frame with
+  `decision_reason_type:"classifier"`, `decision_reason:"Blocked by classifier"`, and a long guidance message beginning
+  `Permission for this action was denied by the Claude Code auto mode classifier. Reason: Blocked by classifier.`
+- **Denial limits in `claude -p` (E42, E42b, E42c, six, 22 and 24 denials).** Denials 1 and 2 use the guidance text. From
+  the 3rd consecutive denial the classifier is still consulted at both stages, but the decision becomes an ask:
+  `decision_reason` `N consecutive actions were blocked. Please review the transcript before continuing.` followed by
+  `Latest blocked action: Blocked by classifier`, and in headless mode the model sees `This command requires approval`
+  (log: `Classifier denial limit exceeded, falling back to prompting`). `N` counts up to 19. The 20th denial reads
+  `20 actions were blocked this session`; after it the counters restart (the 21st and 22nd get the guidance text,
+  the 23rd says `3 consecutive`). This matches `Kxr@3354151`, which resets both counters at the total limit.
+  With an allow after every second denial (E42b, 22 denials, 11 allows) no limit message appeared at all.
+- **Not reproduced:** `Agent aborted: too many classifier denials in headless mode`. The source throws it only when
+  `shouldAvoidPermissionPrompts` is true. It did not occur in `-p` (E42, E42c) or for a background agent launched from a
+  stream-json session whose Bash calls were denied 5 times (E43; the agent logged `falling back to prompting`, then
+  failed on trailing requests that my script did not cover, which is a script limit, not CLI behaviour). Which
+  context sets that flag was not found.
+- **Not established:** real classifier verdicts and prompts, interactive prompting, the server-side classifier path,
+  and why the scripted results carry no `server` verdict.
+
 ### E40: the Stop-hook block cap (scripted model)
 
 A project `Stop` hook that **always** returns `{"decision":"block","reason":"..."}` and logs each call, plus a

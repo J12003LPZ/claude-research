@@ -1,0 +1,74 @@
+{
+ "id": "E41u-s2-60",
+ "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+ "cwd": "C:/Users/<user>/cc-rea-lab/proj-e41u-s2-60",
+ "argv": [
+  "claude",
+  "-p",
+  "<prompt>",
+  "--output-format",
+  "stream-json",
+  "--verbose",
+  "--include-partial-messages",
+  "--include-hook-events",
+  "--debug-file",
+  "C:\\Users\\<user>\\Desktop\\claude-rea\\lab\\raw\\E41u-s2-60\\debug.log",
+  "--model",
+  "haiku",
+  "--setting-sources",
+  "project,local",
+  "--strict-mcp-config",
+  "--mcp-config",
+  "C:/Users/<user>/cc-rea-lab/empty-mcp.json",
+  "--permission-mode",
+  "auto"
+ ],
+ "prompt": {
+  "len": 35,
+  "sha256": "1d9bf5a7c7e9f1fb"
+ },
+ "stdin_file": null,
+ "extra_env_names": [
+  "CLAUDE_CONFIG_DIR",
+  "DISABLE_AUTOUPDATER"
+ ],
+ "scrubbed_env_names": [
+  "CLAUDECODE",
+  "CLAUDE_BIN",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_EFFORT",
+  "CLAUDE_MEM_HEALTH_TIMEOUT_MS",
+  "CLAUDE_MEM_HOOK_READINESS_TIMEOUT_MS",
+  "CLAUDE_PID",
+  "CLAUDE_PLUGIN_DATA"
+ ],
+ "proxy_port": 63153,
+ "exit_code": 0,
+ "killed": null,
+ "duration_s": 1.17,
+ "cli_version": "2.1.296 (Claude Code)",
+ "started_iso": "2026-10-14T08:04:38Z",
+ "fault": {
+  "otherwise": {
+   "type": "object",
+   "keys": [
+    "body",
+    "status"
+   ]
+  },
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
+  "sequence": {
+   "type": "array",
+   "length": 4
+  }
+ }
+}

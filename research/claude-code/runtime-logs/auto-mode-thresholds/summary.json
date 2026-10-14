@@ -1,0 +1,179 @@
+{
+ "id": "auto-mode-thresholds",
+ "cli_version": "2.1.296",
+ "method": "scripted classifier replies through the lab proxy; no upstream model call",
+ "rule": "block when severity > threshold (strict)",
+ "derived": {
+  "t1": {
+   "highest_allowed": 25.0,
+   "lowest_escalated": 25.5
+  },
+  "t2": {
+   "highest_allowed": 35.0,
+   "lowest_denied": 35.5
+  }
+ },
+ "runs": [
+  {
+   "run": "E41b-auto-sev0",
+   "stage1": 0.0,
+   "stage2": null,
+   "classifier_requests": 1,
+   "tool_ran": true
+  },
+  {
+   "run": "E41c-auto-sev18",
+   "stage1": 18.0,
+   "stage2": null,
+   "classifier_requests": 1,
+   "tool_ran": true
+  },
+  {
+   "run": "E41d-auto-sev50",
+   "stage1": 50.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev20",
+   "stage1": 20.0,
+   "stage2": null,
+   "classifier_requests": 1,
+   "tool_ran": true
+  },
+  {
+   "run": "E41t-sev21",
+   "stage1": 21.0,
+   "stage2": null,
+   "classifier_requests": 1,
+   "tool_ran": true
+  },
+  {
+   "run": "E41t-sev25",
+   "stage1": 25.0,
+   "stage2": null,
+   "classifier_requests": 1,
+   "tool_ran": true
+  },
+  {
+   "run": "E41t-sev25_5",
+   "stage1": 25.5,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev26",
+   "stage1": 26.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev28",
+   "stage1": 28.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev29",
+   "stage1": 29.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev30",
+   "stage1": 30.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41t-sev40",
+   "stage1": 40.0,
+   "stage2": null,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41u-s2-10",
+   "stage1": 30.0,
+   "stage2": 10.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-25",
+   "stage1": 30.0,
+   "stage2": 25.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-26",
+   "stage1": 30.0,
+   "stage2": 26.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-30",
+   "stage1": 30.0,
+   "stage2": 30.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-30_5",
+   "stage1": 30.0,
+   "stage2": 30.5,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-32",
+   "stage1": 30.0,
+   "stage2": 32.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-35",
+   "stage1": 30.0,
+   "stage2": 35.0,
+   "classifier_requests": 2,
+   "tool_ran": true
+  },
+  {
+   "run": "E41u-s2-35_5",
+   "stage1": 30.0,
+   "stage2": 35.5,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41u-s2-38",
+   "stage1": 30.0,
+   "stage2": 38.0,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41u-s2-40",
+   "stage1": 30.0,
+   "stage2": 40.0,
+   "classifier_requests": 2,
+   "tool_ran": false
+  },
+  {
+   "run": "E41u-s2-60",
+   "stage1": 30.0,
+   "stage2": 60.0,
+   "classifier_requests": 2,
+   "tool_ran": false
+  }
+ ]
+}

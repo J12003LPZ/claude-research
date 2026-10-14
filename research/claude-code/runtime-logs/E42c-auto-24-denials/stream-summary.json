@@ -1,0 +1,4753 @@
+{
+ "event_count": 251,
+ "init": {
+  "type": "system",
+  "subtype": "init",
+  "cwd": "C:\\Users\\<user>\\cc-rea-lab\\proj-e42c-auto-24-denials",
+  "session_id": "<uuid>",
+  "tools": [
+   "Task",
+   "Bash",
+   "CronCreate",
+   "CronDelete",
+   "CronList",
+   "DesignSync",
+   "Edit",
+   "EnterWorktree",
+   "ExitWorktree",
+   "Glob",
+   "Grep",
+   "ListAgents",
+   "Monitor",
+   "NotebookEdit",
+   "PowerShell",
+   "PushNotification",
+   "Read",
+   "RemoteTrigger",
+   "ReportFindings",
+   "ScheduleWakeup",
+   "SendMessage",
+   "Skill",
+   "TaskStop",
+   "WebFetch",
+   "WebSearch",
+   "Write"
+  ],
+  "mcp_servers": [],
+  "model": "claude-haiku-5-5",
+  "permissionMode": "auto",
+  "slash_commands": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "terminal_slash_commands": 4,
+  "apiKeySource": "none",
+  "claude_code_version": "2.1.296",
+  "output_style": "default",
+  "agents": [
+   "claude",
+   "Explore",
+   "general-purpose",
+   "Plan",
+   "statusline-setup"
+  ],
+  "skills": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "plugins": 3,
+  "capabilities": 10,
+  "analytics_disabled": false,
+  "product_feedback_disabled": false,
+  "uuid": "<uuid>",
+  "memory_paths": 1,
+  "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-<hex>",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "per_turn_effort_active": true,
+  "view_mode": "default",
+  "powershell_path": "C:\\Users\\<user>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+  "slash_commands_count": 52,
+  "skills_count": 17,
+  "agents_count": 5
+ },
+ "result": {
+  "duration_api_ms": 290,
+  "stop_reason": "end_turn",
+  "session_id": "<uuid>",
+  "total_cost_usd": 8.750000000000007e-05,
+  "usage": {
+   "input_tokens": 250,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 125,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": [
+    "cacheCreationInputTokens",
+    "cacheReadInputTokens",
+    "canonicalModel",
+    "contextWindow",
+    "costBasis",
+    "costUSD",
+    "inputTokens",
+    "maxOutputTokens",
+    "outputTokens",
+    "provider",
+    "thinkingTokens",
+    "webSearchRequests"
+   ]
+  },
+  "permission_denials": [
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_1",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-1.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_2",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-2.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_3",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-3.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_4",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-4.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_5",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-5.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_6",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-6.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_7",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-7.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_8",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-8.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_9",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-9.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_10",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-10.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_11",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-11.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_12",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-12.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_13",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-13.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_14",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-14.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_15",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-15.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_16",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-16.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_17",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-17.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_18",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-18.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_19",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-19.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_20",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-20.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_21",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-21.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_22",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-22.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_23",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-23.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   },
+   {
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_lab_auto_24",
+    "tool_input": {
+     "command": "python -c \"open('auto-made-24.txt','w').write('x')\"",
+     "description": "lab write"
+    }
+   }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 25,
+  "subtype": "success",
+  "api_error_status": null,
+  "ttft_ms": 56,
+  "type": "result",
+  "duration_ms": 825,
+  "uuid": "<uuid>",
+  "ttft_stream_ms": 55,
+  "time_to_request_ms": 47,
+  "first_content_frame_ms": 55,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "result": {
+   "len": 9,
+   "sha256": "6618fcfb212dfced",
+   "head": "AUTO-DONE"
+  }
+ },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 25
+  }
+ ],
+ "events": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "c39e1273299eaae0",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-1.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 1024,
+      "sha256": "b683913a0fdbe0c1",
+      "head": "Permission for this action was denied by the Claude Code auto mode classifier. R"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "8e091ce37981d876",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-2.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 1024,
+      "sha256": "b683913a0fdbe0c1",
+      "head": "Permission for this action was denied by the Claude Code auto mode classifier. R"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "ae02496689eacafc",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-3.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "01aa90bd3cea730b",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-4.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "8dba510b376677d7",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-5.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "0fed13c8a2ea8f2d",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-6.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "dd73d6a6975da15a",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-7.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "6edd02ea4e13b410",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-8.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 95,
+      "sha256": "43dff982bf24abf3",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-9.txt','w').write('x')\\\"\", \"description"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "bde6464d11e0b69d",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-10.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "048fc57457e5f7c3",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-11.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "2bcdc7a02b869cc4",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-12.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "afcc5c52357d069d",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-13.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "ba550d77e3e5b875",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-14.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "186c33921aec772f",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-15.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "270dc9363a39ca33",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-16.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "b1a294090cd460dc",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-17.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "d2d8c4668774fcb0",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-18.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "447159ae51d3c473",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-19.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "69b23acd39dde9ca",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-20.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "79075d749ad226ec",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-21.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 1024,
+      "sha256": "b683913a0fdbe0c1",
+      "head": "Permission for this action was denied by the Claude Code auto mode classifier. R"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "643d0b9539c58043",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-22.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 1024,
+      "sha256": "b683913a0fdbe0c1",
+      "head": "Permission for this action was denied by the Claude Code auto mode classifier. R"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "726e2bb4337b16fd",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-23.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Bash"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Bash",
+     "input_keys": [
+      "command",
+      "description"
+     ],
+     "input": {
+      "len": 96,
+      "sha256": "1044c5a563dfc3d1",
+      "head": "{\"command\": \"python -c \\\"open('auto-made-24.txt','w').write('x')\\\"\", \"descriptio"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "permission_denied",
+   "keys": [
+    "decision_reason",
+    "decision_reason_type",
+    "message",
+    "session_id",
+    "subtype",
+    "tool_name",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 30,
+      "sha256": "730efe4df63bb809",
+      "head": "This command requires approval"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "text",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "text_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 9,
+     "sha256": "6618fcfb212dfced",
+     "head": "AUTO-DONE"
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "end_turn",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  }
+ ]
+}

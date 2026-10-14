@@ -316,7 +316,7 @@ Runtime note: `claude auto-mode defaults` returns exactly four lists, `allow`, `
 (counts in `runtime-logs/auto-mode-defaults/summary.json`). Classifier decisions themselves were not observed.
 Auto-mode denial limits: **VS** `@2533539 "nG={maxConsecutive:3,maxTotal:20}"`. On reaching either,
 the next block falls back to prompting; in headless it throws
-`"Agent aborted: too many classifier denials in headless mode"` (`@~3350400`).
+`"Agent aborted: too many classifier denials in headless mode"` (`@~3350400`). **Runtime (E42 to E43):** in `claude -p` the fallback applied from the 3rd consecutive denial (decision reason `N consecutive actions were blocked`, model sees `This command requires approval`), the 20th denial printed `20 actions were blocked this session` and reset both counters, and the abort was never thrown, including for a background agent. The classifier's stage-1 and stage-2 severity thresholds were 25 and 35 (strict `>`), not the static 15 and 20.
 
 **Rule syntax. VS** `chunk-1e8shh70.js@~2900` (`gpe`, `Un`):
 `Tool` or `Tool(content)`; the opening paren must be unescaped, the closing paren must be the last

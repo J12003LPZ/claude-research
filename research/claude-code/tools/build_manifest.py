@@ -21,6 +21,7 @@ FORBIDDEN = [
     ("api-key", re.compile(r"sk-ant-[A-Za-z0-9_-]{10,}")),
     ("email", re.compile(r"[\w.+-]+@[\w-]+\.(com|net|org|io|dev)\b")),
     ("local-user", re.compile(r"(?i)[\\/]Users[\\/]+" + re.escape(getpass.getuser()) + r"\b")),
+    ("account-name", re.compile(r"(?i)(?<![A-Za-z0-9])" + re.escape(getpass.getuser()) + r"(?![A-Za-z0-9])")),
     ("workspace-id", re.compile(r"wrkspc_[A-Za-z0-9]{10,}")),
 ]
 ALLOW_EMAIL = {"noreply@anthropic.com"}
