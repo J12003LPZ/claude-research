@@ -9698,9 +9698,9 @@
     },
     {
       "report": "static-04-tools-permissions-hooks.md",
-      "anchors_total": 138,
-      "anchors_unique": 117,
-      "anchors_resolvable": 138,
+      "anchors_total": 145,
+      "anchors_unique": 123,
+      "anchors_resolvable": 145,
       "anchors_missing_file": 0,
       "anchors_out_of_bounds": 0,
       "entries": [
@@ -9849,6 +9849,24 @@
           "status": "resolvable"
         },
         {
+          "chunk": "chunk-16dehttm.js",
+          "offset": 6003,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
+          "chunk": "chunk-55xtg3ed.js",
+          "offset": 1109,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
+          "chunk": "chunk-phacttch.js",
+          "offset": 780103,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
           "chunk": "chunk-rpwh4z9c.js",
           "offset": 155896,
           "approximate": false,
@@ -9870,6 +9888,12 @@
           "chunk": "chunk-phacttch.js",
           "offset": 828400,
           "approximate": true,
+          "status": "resolvable"
+        },
+        {
+          "chunk": "chunk-phacttch.js",
+          "offset": 827317,
+          "approximate": false,
           "status": "resolvable"
         },
         {
@@ -10245,6 +10269,12 @@
           "status": "resolvable"
         },
         {
+          "chunk": "chunk-9158d2ng.js",
+          "offset": 128350,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
           "chunk": "chunk-z3rhyxhg.js",
           "offset": 1300,
           "approximate": true,
@@ -10516,8 +10546,20 @@
         },
         {
           "chunk": "chunk-phacttch.js",
-          "offset": 2900100,
-          "approximate": true,
+          "offset": 2915934,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
+          "chunk": "chunk-phacttch.js",
+          "offset": 3363139,
+          "approximate": false,
+          "status": "resolvable"
+        },
+        {
+          "chunk": "chunk-p9na5vps.js",
+          "offset": 214561,
+          "approximate": false,
           "status": "resolvable"
         },
         {
@@ -11404,8 +11446,8 @@
     }
   ],
   "summary": {
-    "anchors_total": 1892,
-    "anchors_resolvable": 1892,
+    "anchors_total": 1899,
+    "anchors_resolvable": 1899,
     "anchors_missing_file": 0,
     "anchors_out_of_bounds": 0
   }

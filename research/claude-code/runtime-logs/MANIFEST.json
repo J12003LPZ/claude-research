@@ -1765,12 +1765,12 @@
      "bytes": 4945
     },
     "static-citation-audit-2.1.296.json": {
-     "sha256": "eed2a833ed9a8fb58fec3a3d82653bbcc581b037a94348edf2e50710d8964832",
-     "bytes": 302414
+     "sha256": "d20ffa45b838348c4c1fbd81cb58baa35b5dc052a5c7620bd8029776281bf898",
+     "bytes": 303532
     },
     "static-claim-ledger-2.1.296.json": {
-     "sha256": "87b374a722c42a6765e35879feb188d827f0b0b10e52e56a2682b52dba7de8dd",
-     "bytes": 566229
+     "sha256": "4b2dfc3c82e36bb48d3227c475fed37b274e5f7818bf0954875499a4482a06a0",
+     "bytes": 567528
     }
    },
    "redaction": "sanitized"

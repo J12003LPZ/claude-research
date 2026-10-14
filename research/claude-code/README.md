@@ -77,8 +77,13 @@ the tools here.
     delete, stop-hook condition, idle-timeout interaction, `ts` rendering selection, resume
     guidance condition, client-side tool-result clearing) plus the Read size sentinel, the
     detached-result path and the renderer facade chunk.
-  - Not done: the partial findings are recorded in a "5b. Audit addendum" in each report
-    and are **not yet re-verified or merged into the text**. The reviewers were language
+  - Merge progress: in `static-04`, eight addendum items were re-verified in source and merged
+    (hook timeouts, bypass and dontAsk tests, `shouldDefer`, MCP concurrency, the second strict
+    path, Stop-hook input fields, the Read size sentinel). One reviewer claim was found
+    unsupported and replaced with the runtime-observed text. Reports 01, 02, 03, 05 have only
+    their contradictions merged.
+  - Not done: the remaining partial findings are recorded in a "5b. Audit addendum" in each
+    report and are **not yet re-verified or merged into the text**. The reviewers were language
     models reading minified code, and I did not re-read their verified rows. Treat the
     addendum items as leads; treat any claim outside both lists as checked once by an agent.
 - **Implementation spec** (`05`): separates REPRODUCE (observed) from CHOICE (design).

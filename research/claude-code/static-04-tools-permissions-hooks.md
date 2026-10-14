@@ -107,7 +107,11 @@ Return value of `call`: an object with `data`, optional `newMessages`, `contextL
 `endsTurn`, `remedy`, `classifierContext`, `detached {text}`, `structured_output`,
 `subagentFrameResult`. **VS** `chunk-phacttch.js@~2300000 "gr.contextLayers"`, `"gr.detached"`.
 Progress is delivered through the `onProgress` callback, not by yielding. **VS** `@~2296900 "await ui(s,_e)"`.
-`interruptBehavior` and `shouldDefer` were not found under those names in the regions read. **UNK**.
+`interruptBehavior` was not found under that name in the regions read. **UNK**. Audit
+update, verified by me: `shouldDefer` is a boolean tool member set in tool definitions across the
+package (for example `shouldDefer:!0` on the cron-list tool at `chunk-16dehttm.js@6003`, `shouldDefer:!1`
+on the artifact tool at `chunk-55xtg3ed.js@1109`, and `chunk-phacttch.js@780103`, `@1946189`, `@4175412`).
+How the registry consumes it (deferred tool loading) was not read.
 
 **Inventory. VS for names, SI for the full set.** `getAllBaseTools` is `rv` at
 `chunk-rpwh4z9c.js@155896`; it returns a flat array with many entries gated by feature checks.
@@ -148,7 +152,10 @@ remaining mangled entries to names was not completed. **UNK** for those.
   JSON-schema converter is called `EM` at another site (`@~2274700 "_(EM(e.inputSchema))"`). **SI**
   that `HPt` uses the same converter for zod tools.
 - `strict:true` is set only when structured outputs are on and the schema passes `Tfr`;
-  otherwise it logs and sends non-strict.
+  otherwise it logs and sends non-strict. Audit update, verified by me
+  (`chunk-phacttch.js@827317`): there is a second path, `else if (tool.strictInputJSONSchema &&
+  flag tengu_structured_output_strict (default false))`, which sets `strict:true` and uses that
+  schema with no `Tfr` check.
 - `defer_loading:true` when the caller passes `deferLoading`; `cache_control` when the caller passes
   `cacheControl`. A deferred stub tool also exists: `@~2652900 "defer_loading:!0"` with empty schema.
 - On some providers (`E$()`) every field other than name, description, input_schema, cache_control
@@ -497,7 +504,7 @@ Callback hooks run first in a separate loop only when every matched hook is an i
 
 | Role | Value | Evidence |
 |---|---|---|
-| default per-hook timeout | 600,000 ms | `@2915934 "lu=600000"` |
+| default per-hook timeout (command hooks) | 600,000 ms | `@2915934 "lu=600000"`; prompt hooks 30,000 ms (`@~2900100`), agent hooks 60,000 ms (`@2911035`) |
 | per-hook override | `timeout` seconds × 1000 | `@~2972600 "e.timeout?e.timeout*1000:lu"` |
 | UserPromptSubmit event timeout | 30,000 ms | `"S5e=30000"`, `@~2952400` |
 | PreModelSwitch / PostModelSwitch | 30,000 ms | `"w5e=30000"` |
@@ -640,8 +647,9 @@ All **VS**.
   | output token cap | 25,000 tokens (`MAX_MCP_OUTPUT_TOKENS`) | `chunk-y7nenkdd.js@~1060 "g=25000"` |
   | auth stub tool result cap | 10,000 chars | `chunk-032sc1gt.js@4159` |
 
-- **Tool composition. VS** `chunk-9158d2ng.js@~128300`: `isReadOnly` and `isConcurrencySafe` from
-  `annotations.readOnlyHint`; `isDestructive` from `destructiveHint`; `isOpenWorld` from
+- **Tool composition. VS** `chunk-9158d2ng.js@~128300`: `isReadOnly` from `annotations.readOnlyHint`;
+  `isConcurrencySafe` is `mayOverlap || annotations.readOnlyHint` (audit correction, verified at
+  `chunk-9158d2ng.js@128350`; the first version omitted `mayOverlap`); `isDestructive` from `destructiveHint`; `isOpenWorld` from
   `openWorldHint`; `inputJSONSchema` from the server schema; `checkPermissions` returns
   `passthrough` with an `addRules` suggestion for the full tool name to `localSettings` (or `ask`
   with `suppressAlwaysAllowRule` for interaction-required tools); user-facing name
@@ -679,7 +687,8 @@ All **VS**.
 - Forked contexts get `shouldAvoidPermissionPrompts:true` by default
   (`chunk-phacttch.js@2540046`).
 - With `shouldAvoidPermissionPrompts`, an `ask` goes to PermissionRequest hooks and otherwise
-  denies with the "requires interactive approval" message (Layer B step 6).
+  denies (Layer B step 6). Audit note: runtime E06 shows the denial text can be the path-safety
+  message itself, not the "requires interactive approval" text; see the addendum.
 - Hook input carries `agent_id` and `agent_type`; subagent stop fires `SubagentStop` instead of
   `Stop` with `agent_transcript_path` (`@~2946200`). Session hooks are looked up under the agent id.
 
@@ -1046,7 +1055,8 @@ type HookInput = HookInputBase & (
       command_args: string; command_source: string; prompt: string }
   | { hook_event_name: "SessionStart"; source: string; agent_type?: string; model?: string; session_title?: string }
   | { hook_event_name: "SessionEnd"; reason: "clear" | "resume" | "logout" | "prompt_input_exit" | "other" }
-  | { hook_event_name: "Stop"; stop_hook_active: boolean; last_assistant_message?: string }
+  | { hook_event_name: "Stop"; stop_hook_active: boolean; last_assistant_message?: string;
+      background_tasks?: unknown; session_crons?: unknown }   // audit: the last two are runtime-observed (E07a); the static pass omitted them. SubagentStop may carry them too (reviewer claim, not verified)
   | { hook_event_name: "SubagentStop"; stop_hook_active: boolean; agent_id: string;
       agent_transcript_path: string; agent_type: string; last_assistant_message?: string }
   | { hook_event_name: "SubagentStart"; agent_id: string; agent_type: string }
@@ -1113,7 +1123,7 @@ interface ToolResultUserMessage {
 | Persisted preview size | 2,000 chars | `chunk-ghf2w5kp.js@~2330` |
 | Token estimate divisor | 4 chars per token | `chunk-fd5j6erd.js@1364` |
 | Typical `maxResultSizeChars` | 100,000 (Write, Glob, Edit, NotebookEdit, ToolSearch, many); Grep 20,000; Read `Infinity` (audit correction: the source is `maxResultSizeChars:1/0`, not 1; it is excluded from the aggregate result budget by `zis()` in `chunk-ghf2w5kp.js`); auth stubs 10,000 | `chunk-phacttch.js@734042, 762384, 768643, 3541279, 4160334` |
-| Hook default timeout | 600,000 ms | `chunk-phacttch.js@2915934` |
+| Hook default timeout (command; prompt 30,000, agent 60,000) | 600,000 ms | `chunk-phacttch.js@2915934` |
 | UserPromptSubmit hook timeout | 30,000 ms | same line, `S5e` |
 | Model-switch hook timeout | 30,000 ms | same line, `w5e` |
 | SessionEnd hook default / cap | 1,500 ms / 60,000 ms | `chunk-phacttch.js@2955308` |
@@ -1147,16 +1157,33 @@ pseudocode (detached results skip PostToolUse), corrected in place after I check
 items below were reported by the reviewer and are **not yet re-verified or merged into the
 text**; the original wording is superseded where they differ:
 
-- Hook timeouts: 600,000 ms is the command default only. Prompt hooks default to 30,000 ms
-  (`chunk-phacttch.js@~2900100`) and agent hooks to 60,000 ms (`@~2910700`).
+- **Merged and verified (hook timeouts).** 600,000 ms (`lu`, `chunk-phacttch.js@2915934`) is the
+  command-hook default only. Prompt hooks default to `timeout*1000 : 30000` (about `@2900100`)
+  and agent hooks to `timeout*1000 : 60000` (`@2911035`, inside `Oln`). Checked in source by me.
 - `sandboxOverride` does not block every auto-mode fast path. It excludes only the acceptEdits
   simulation (`@3329142`) and desktop-forward (`@3333639`) and forces a headless deny.
-- The bypass test uses the effective mode and a second opt-out `!Fre(name)`. The dontAsk branch
-  has a `!Ve` (Chrome domain grant) exemption. Classifier outcomes also include
-  `refusedBySafeguard`, `onBlock==="flag"` and four transcript-too-long arms. The headless deny
-  text is `jpn()` ("Permission to use X has been denied..."), not "requires interactive approval".
-- dontAsk's deny message includes the tool name and trailing text; the slow-permission log fires
-  only in auto mode.
+- **Merged and verified (bypass and dontAsk).** The bypass test is
+  `(effectiveMode==="bypassPermissions" || (bypassAvailable && !forRemoteExecution)) && !tool.excludedFromModeBypassAllow() && !Fre(tool.name)`
+  with the effective mode from `qE(tool, ctx)` (`chunk-phacttch.js@3363139`), so a second
+  opt-out `!Fre(name)` exists. The `dontAsk` branch is `if (mode==="dontAsk" && !Ve) deny`
+  (`@3322938`) where `Ve` is a Chrome domain-grant exemption (`domainAllowed`, `grantRule`
+  present, not plan mode, no hook ask floor, ...). The dontAsk deny message is
+  `Yhe(name)` = "Permission to use NAME has been denied because Claude Code is running in
+  don't ask mode." plus the shared trailing text `YDn` (`@4364370`), so it is not a fixed string.
+  Checked in source by me.
+- **Not merged, reviewer claim unsupported.** The reviewer said the headless deny text is
+  `jpn()` ("Permission to use X has been denied..."). Source shows three distinct strings:
+  `jpn` (whole-tool deny rule), `Yhe` (dontAsk), and `X4t` ("Permission for this tool use was
+  denied: it requires interactive approval ...", used by `y$` when permission prompts are
+  unavailable, `@3320793`, `@4364370`). Runtime E06 (Edit, default mode, headless) produced
+  none of them: the tool_result text was the path-safety message "Claude requested permissions
+  to write to <path>, but you haven't granted it yet." (`chunk-p9na5vps.js@214561`). So which
+  string appears depends on the layer that produced the denial, and the report's single
+  "requires interactive approval" wording for headless is incomplete. Which layer wraps the path
+  message in the `y$` text was not traced (**UNK**).
+- Classifier outcomes also include `refusedBySafeguard`, `onBlock==="flag"` and four
+  transcript-too-long arms (reviewer, not re-verified). The slow-permission log fires only in auto
+  mode (reviewer, not re-verified).
 - Step 9 invalid-input denies are wrapped in `<tool_use_error>`. Runtime E13c shows the interrupt
   text `pv` ("doesn't want to proceed with this tool use"), not the "take this action right now" text.
 - `strictInputJSONSchema` is a second strict path gated by `tengu_structured_output_strict`
@@ -1169,13 +1196,12 @@ text**; the original wording is superseded where they differ:
   `chromeClassifierFloorEnabled`. `asyncRewake` is honoured only when `(!ke()||Dpt())`.
 - Hook dedupe is per hook type, not only command hooks. The literal-list matcher character class
   is `[A-Za-z0-9_|, -]` only for events in set `gX`, otherwise `[A-Za-z0-9_|]`.
-- MCP `isConcurrencySafe` also includes `mayOverlap`. The MCP idle-timeout formula is
+- (`mayOverlap` is merged in Q11 and `strictInputJSONSchema` in Q2.) The MCP idle-timeout formula is
   `min(max(r, timeout, 1000), zs)`; the "HTTP per-request floor 60000" role is unverified.
   The PowerShell ask list is incomplete (scheduled tasks, WMI/CIM, wmic, Invoke-Item).
 - `effectiveMaxPermission` lives in `chunk-9158d2ng.js@126933`, not `chunk-032sc1gt.js@~4100`
   (that is the auth stub). "Settings file edit auto-allowed in bypass" is inference.
-  `shouldDefer` exists in `chunk-phacttch.js` (780103, 1946189, 4175412); `interruptBehavior`
-  was not found anywhere. The Q1 tool-name literal list has no anchors.
+  `shouldDefer` is merged and verified (see Q1); `interruptBehavior` was not found anywhere. The Q1 tool-name literal list has no anchors.
 - Wrong or drifted offsets (behaviour right): lines 21, 78, 89, 101, 108, 109, 206, 227, 228,
   245-246, 348, 420, 459, 473, 493, 501-502, 505, 609-610. The scratchpad ledger lists the
   corrected offsets.
