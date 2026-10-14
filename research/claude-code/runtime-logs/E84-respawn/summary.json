@@ -1,0 +1,29 @@
+{
+  "id": "E84-respawn",
+  "cli_version": "2.1.296",
+  "method": "trusted disposable background session with isolated HOME/config and local proxy",
+  "launch_exit": 0,
+  "before_stop": {
+    "kind": "background",
+    "state": "blocked",
+    "status": "idle"
+  },
+  "stop_exit": 0,
+  "respawn_exit": 0,
+  "respawn_output_nonempty": true,
+  "after_respawn": {
+    "kind": "background",
+    "state": "working",
+    "status": "idle"
+  },
+  "cleanup": {
+    "stop_sent": true,
+    "rm_sent": true,
+    "after_cleanup_count": 0
+  },
+  "ids_withheld": true,
+  "limits": [
+    "The respawned session remained idle and no model turn completed",
+    "No spare PTY or worker respawn was exercised"
+  ]
+}

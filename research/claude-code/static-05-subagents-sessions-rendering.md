@@ -525,8 +525,9 @@ launches require workspace trust before a session is created. This confirms the 
 but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY auth. After completing onboarding and trust in an isolated config, E82 launched a
 background session and observed one `background` registry row in `state:"blocked"`, `status:"idle"`; `stop` plus
 `rm` removed it. E83 started `claude attach` against a live trusted registry entry, observed attach output, then
- detached and cleaned the entry. The sessions made no model POST, so active PTY data flow, spare PTY, worker respawn,
-and PTY authentication remain untested.
+ detached and cleaned the entry. E84 stopped a trusted entry, ran `respawn` successfully, observed a replacement
+`background` row in `state:"working"`, `status:"idle"`, and cleaned it. The sessions made no model POST, so
+active PTY data flow, spare PTY, worker respawn, and PTY authentication remain untested.
 
 ## B. Session persistence and resume
 

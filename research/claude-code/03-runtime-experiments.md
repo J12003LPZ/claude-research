@@ -440,8 +440,9 @@ daemon, an unreachable control endpoint, and zero background workers while still
   `agents --json --all` observed one matching `background` row in `state: "blocked"`, `status: "idle"`, and
   `stop` plus `rm` reduced the matching count to zero. E83 also found the trusted session by its private registry id,
   started `claude attach`, observed attach output, then detached and cleaned it with `stop` plus `rm`; no ids are
-  retained. Spare PTY, worker spawn/exit, respawn codes, and attach authentication remain unobserved. The E82/E83
-  sessions made no model POST because they remained blocked/idle.
+  retained. E84 stopped a trusted background entry, ran `respawn` successfully, observed the replacement entry in
+  `state: "working"`, `status: "idle"`, then stopped and removed it. Spare PTY, worker spawn/exit, and attach
+  authentication remain unobserved. The E82-E84 sessions made no model POST because they remained blocked/idle.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 

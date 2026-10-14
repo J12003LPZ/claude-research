@@ -4359,6 +4359,17 @@
    "redaction": "sanitized"
   },
   {
+   "id": "E84-respawn",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "efa47ce754cc35891f5e393893daf490d6f7a9513aa4d177bb21d2129fdc16da",
+     "bytes": 693
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {
