@@ -44,7 +44,10 @@
    "chunk_count": 0,
    "chunk_times_ms": [],
    "client_closed_early": false,
-   "body_head": ""
+   "body_digest": {
+    "len": 0,
+    "sha256": "e3b0c44298fc1c14"
+   }
   }
  },
  {
@@ -117,19 +120,23 @@
     "max_tokens": 128000,
     "stream": true,
     "thinking": {
-     "type": "adaptive",
-     "display": "updates"
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
     },
     "context_management": {
-     "edits": [
-      {
-       "type": "clear_thinking_20251015",
-       "keep": "all"
-      }
+     "type": "object",
+     "keys": [
+      "edits"
      ]
     },
     "output_config": {
-     "effort": "medium"
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
     },
     "metadata_keys": [
      "user_id"
@@ -197,8 +204,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -242,17 +249,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
-       "localDir",
        "method",
        "name",
        "path",
        "paths",
-       "planId",
-       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -309,12 +316,12 @@
       "description_len": 477,
       "schema_len": 2764,
       "schema_props": [
-       "-A",
-       "-B",
-       "-C",
-       "-i",
-       "-n",
-       "-o",
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
        "context",
        "glob",
        "head_limit",
@@ -371,8 +378,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -435,7 +442,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "delaySeconds",
+       "<key:0b1483676b8190d7>",
        "noop",
        "prompt",
        "reason",
@@ -596,8 +603,15 @@
     "type"
    ],
    "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
     "type": "overloaded_error",
-    "message": "Overloaded (lab injected)"
+    "message": {
+     "len": 25,
+     "sha256": "9ac4eb56ccc14fbd"
+    }
    }
   }
  },
@@ -671,19 +685,23 @@
     "max_tokens": 128000,
     "stream": true,
     "thinking": {
-     "type": "adaptive",
-     "display": "updates"
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
     },
     "context_management": {
-     "edits": [
-      {
-       "type": "clear_thinking_20251015",
-       "keep": "all"
-      }
+     "type": "object",
+     "keys": [
+      "edits"
      ]
     },
     "output_config": {
-     "effort": "medium"
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
     },
     "metadata_keys": [
      "user_id"
@@ -751,8 +769,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -796,17 +814,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
-       "localDir",
        "method",
        "name",
        "path",
        "paths",
-       "planId",
-       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -863,12 +881,12 @@
       "description_len": 477,
       "schema_len": 2764,
       "schema_props": [
-       "-A",
-       "-B",
-       "-C",
-       "-i",
-       "-n",
-       "-o",
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
        "context",
        "glob",
        "head_limit",
@@ -925,8 +943,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -989,7 +1007,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "delaySeconds",
+       "<key:0b1483676b8190d7>",
        "noop",
        "prompt",
        "reason",
@@ -1150,8 +1168,15 @@
     "type"
    ],
    "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
     "type": "overloaded_error",
-    "message": "Overloaded (lab injected)"
+    "message": {
+     "len": 25,
+     "sha256": "9ac4eb56ccc14fbd"
+    }
    }
   }
  },
@@ -1225,19 +1250,23 @@
     "max_tokens": 128000,
     "stream": true,
     "thinking": {
-     "type": "adaptive",
-     "display": "updates"
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
     },
     "context_management": {
-     "edits": [
-      {
-       "type": "clear_thinking_20251015",
-       "keep": "all"
-      }
+     "type": "object",
+     "keys": [
+      "edits"
      ]
     },
     "output_config": {
-     "effort": "medium"
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
     },
     "metadata_keys": [
      "user_id"
@@ -1305,8 +1334,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -1350,17 +1379,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
-       "localDir",
        "method",
        "name",
        "path",
        "paths",
-       "planId",
-       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -1417,12 +1446,12 @@
       "description_len": 477,
       "schema_len": 2764,
       "schema_props": [
-       "-A",
-       "-B",
-       "-C",
-       "-i",
-       "-n",
-       "-o",
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
        "context",
        "glob",
        "head_limit",
@@ -1479,8 +1508,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -1543,7 +1572,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "delaySeconds",
+       "<key:0b1483676b8190d7>",
        "noop",
        "prompt",
        "reason",
@@ -1704,8 +1733,15 @@
     "type"
    ],
    "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
     "type": "overloaded_error",
-    "message": "Overloaded (lab injected)"
+    "message": {
+     "len": 25,
+     "sha256": "9ac4eb56ccc14fbd"
+    }
    }
   }
  },
@@ -1779,19 +1815,23 @@
     "max_tokens": 128000,
     "stream": true,
     "thinking": {
-     "type": "adaptive",
-     "display": "updates"
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
     },
     "context_management": {
-     "edits": [
-      {
-       "type": "clear_thinking_20251015",
-       "keep": "all"
-      }
+     "type": "object",
+     "keys": [
+      "edits"
      ]
     },
     "output_config": {
-     "effort": "medium"
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
     },
     "metadata_keys": [
      "user_id"
@@ -1859,8 +1899,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -1904,17 +1944,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
-       "localDir",
        "method",
        "name",
        "path",
        "paths",
-       "planId",
-       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -1971,12 +2011,12 @@
       "description_len": 477,
       "schema_len": 2764,
       "schema_props": [
-       "-A",
-       "-B",
-       "-C",
-       "-i",
-       "-n",
-       "-o",
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
        "context",
        "glob",
        "head_limit",
@@ -2033,8 +2073,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2097,7 +2137,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "delaySeconds",
+       "<key:0b1483676b8190d7>",
        "noop",
        "prompt",
        "reason",
@@ -2258,8 +2298,15 @@
     "type"
    ],
    "error": {
+    "keys": [
+     "message",
+     "type"
+    ],
     "type": "overloaded_error",
-    "message": "Overloaded (lab injected)"
+    "message": {
+     "len": 25,
+     "sha256": "9ac4eb56ccc14fbd"
+    }
    }
   }
  },
@@ -2333,19 +2380,23 @@
     "max_tokens": 128000,
     "stream": true,
     "thinking": {
-     "type": "adaptive",
-     "display": "updates"
+     "type": "object",
+     "keys": [
+      "display",
+      "type"
+     ]
     },
     "context_management": {
-     "edits": [
-      {
-       "type": "clear_thinking_20251015",
-       "keep": "all"
-      }
+     "type": "object",
+     "keys": [
+      "edits"
      ]
     },
     "output_config": {
-     "effort": "medium"
+     "type": "object",
+     "keys": [
+      "effort"
+     ]
     },
     "metadata_keys": [
      "user_id"
@@ -2413,8 +2464,8 @@
       "description_len": 1784,
       "schema_len": 1784,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2458,17 +2509,17 @@
       "description_len": 3742,
       "schema_len": 5423,
       "schema_props": [
+       "<key:8b8a945cd5d667f1>",
+       "<key:96f2c1696293622c>",
+       "<key:c1edf0fb045f5c8a>",
        "assets",
        "counts",
        "deletes",
        "files",
-       "localDir",
        "method",
        "name",
        "path",
        "paths",
-       "planId",
-       "projectId",
        "writes"
       ],
       "extra_keys": []
@@ -2525,12 +2576,12 @@
       "description_len": 477,
       "schema_len": 2764,
       "schema_props": [
-       "-A",
-       "-B",
-       "-C",
-       "-i",
-       "-n",
-       "-o",
+       "<key:29272c47115b5a93>",
+       "<key:444c8974fcf3d4d9>",
+       "<key:5249f4fcc629efa0>",
+       "<key:71fbb8ec87f49f3c>",
+       "<key:aad8f90c96ec1604>",
+       "<key:de75ad58228bf5f0>",
        "context",
        "glob",
        "head_limit",
@@ -2587,8 +2638,8 @@
       "description_len": 7941,
       "schema_len": 877,
       "schema_props": [
+       "<key:c5a14594d5e5314b>",
        "command",
-       "dangerouslyDisableSandbox",
        "description",
        "run_in_background",
        "timeout"
@@ -2651,7 +2702,7 @@
       "description_len": 3148,
       "schema_len": 1423,
       "schema_props": [
-       "delaySeconds",
+       "<key:0b1483676b8190d7>",
        "noop",
        "prompt",
        "reason",

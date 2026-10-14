@@ -48,15 +48,18 @@
  "cli_version": "2.1.296 (Claude Code)",
  "started_iso": "2026-10-13T21:07:00Z",
  "fault": {
-  "path_contains": "/v1/messages",
-  "status": 400,
-  "times": 1,
   "body": {
-   "type": "error",
-   "error": {
-    "type": "invalid_request_error",
-    "message": "lab injected invalid request"
-   }
-  }
+   "type": "object",
+   "keys": [
+    "error",
+    "type"
+   ]
+  },
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
+  "status": 400,
+  "times": 1
  }
 }

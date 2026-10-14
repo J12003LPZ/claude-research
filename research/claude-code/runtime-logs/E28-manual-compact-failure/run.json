@@ -69,16 +69,22 @@
  "cli_version": "2.1.296 (Claude Code)",
  "started_iso": "2026-10-14T03:10:40Z",
  "fault": {
-  "path_contains": "/v1/messages",
-  "body_contains": "<analysis>",
-  "status": 529,
-  "times": 1,
   "body": {
-   "type": "error",
-   "error": {
-    "type": "overloaded_error",
-    "message": "Overloaded (manual compaction failure injected by lab)"
-   }
-  }
+   "type": "object",
+   "keys": [
+    "error",
+    "type"
+   ]
+  },
+  "body_contains": {
+   "len": 10,
+   "sha256": "44d9575662199cf4"
+  },
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
+  "status": 529,
+  "times": 1
  }
 }

@@ -48,18 +48,24 @@
  "cli_version": "2.1.296 (Claude Code)",
  "started_iso": "2026-10-13T21:07:06Z",
  "fault": {
-  "path_contains": "/v1/messages",
-  "status": 429,
-  "times": 1,
-  "headers": {
-   "retry-after": "2"
-  },
   "body": {
-   "type": "error",
-   "error": {
-    "type": "rate_limit_error",
-    "message": "lab injected 429"
-   }
-  }
+   "type": "object",
+   "keys": [
+    "error",
+    "type"
+   ]
+  },
+  "headers": {
+   "type": "object",
+   "keys": [
+    "<key:44185efd10816246>"
+   ]
+  },
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
+  "status": 429,
+  "times": 1
  }
 }

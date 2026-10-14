@@ -44,7 +44,10 @@
    "chunk_count": 0,
    "chunk_times_ms": [],
    "client_closed_early": false,
-   "body_head": ""
+   "body_digest": {
+    "len": 0,
+    "sha256": "e3b0c44298fc1c14"
+   }
   }
  }
 ]

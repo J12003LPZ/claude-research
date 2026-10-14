@@ -83,14 +83,17 @@ const server = http.createServer((req, res) => {
     const timing = fs.createWriteStream(path.join(outDir, `${id}-res.chunks.jsonl`));
     const resBody = fs.createWriteStream(path.join(outDir, `${id}-res.body`));
     const meta = (o) => fs.writeFileSync(path.join(outDir, `${id}-res.json`), JSON.stringify(o));
+    const endCapture = () => {
+      if (!timing.writableEnded) timing.end();
+      if (!resBody.writableEnded) resBody.end();
+    };
 
     if (fault) {
       const mode = fault.mode || "status";
       if (mode === "reset") {
         meta({ seq: id, injected: true, mode, t_ms: Date.now() - t0 });
         req.socket.destroy();
-        timing.end();
-        resBody.end();
+        endCapture();
         return;
       }
       if (mode === "sse_stall") {
@@ -99,15 +102,17 @@ const server = http.createServer((req, res) => {
         const start = { type: "message_start", message: { id: "msg_lab_stall", type: "message", role: "assistant",
           model: fault.model || "claude-haiku-5-5", content: [], stop_reason: null, stop_sequence: null,
           usage: { input_tokens: 1, output_tokens: 1 } } };
-        meta({ seq: id, injected: true, mode, status: 200, t_ms: Date.now() - t0 });
-        res.writeHead(200, { "content-type": "text/event-stream", "cache-control": "no-cache" });
-        res.write(`event: message_start
+        const sseHeaders = { "content-type": "text/event-stream", "cache-control": "no-cache" };
+        meta({ seq: id, injected: true, mode, status: 200, headers: sseHeaders, t_ms: Date.now() - t0 });
+        res.writeHead(200, sseHeaders);
+        const ssePayload = `event: message_start
 data: ${JSON.stringify(start)}
 
-`);
-        resBody.write("[message_start only]");
-        if (fault.stall_ms) setTimeout(() => { res.end(); resBody.end(); timing.end(); }, fault.stall_ms);
-        req.on("close", () => { resBody.end(); timing.end(); });
+`;
+        res.write(ssePayload);
+        resBody.write(ssePayload);
+        if (fault.stall_ms) setTimeout(() => { res.end(); endCapture(); }, fault.stall_ms);
+        req.on("close", endCapture);
         return;
       }
       const payload = JSON.stringify(
@@ -147,17 +152,18 @@ data: ${JSON.stringify(start)}
         });
         ur.on("end", () => {
           timing.write(JSON.stringify({ t_ms: Date.now() - started, end: true }) + "\n");
-          timing.end();
-          resBody.end();
+          endCapture();
           res.end();
         });
-        ur.on("error", () => res.destroy());
+        ur.on("error", () => {
+          endCapture();
+          res.destroy();
+        });
       },
     );
     up.on("error", (e) => {
       meta({ seq: id, injected: false, upstream_error: String(e.code || e.message), t_ms: Date.now() - t0 });
-      timing.end();
-      resBody.end();
+      endCapture();
       if (!res.headersSent) res.writeHead(502, { "content-type": "application/json" });
       res.end(JSON.stringify({ type: "error", error: { type: "api_error", message: "lab proxy upstream error" } }));
     });
@@ -168,6 +174,7 @@ data: ${JSON.stringify(start)}
           path.join(outDir, `${id}-res.chunks.jsonl`),
           JSON.stringify({ t_ms: Date.now() - started, client_closed_early: true }) + "\n",
         );
+        endCapture();
         up.destroy();
       }
     });

@@ -140,7 +140,7 @@ names only.
 - **JavaScriptCore bytecode:** not disassembled. The same modules ship as source text, and
   the bytecode is a cache of that source. **HYPOTHESIS, untested:** bytecode and source are
   equivalent. A mismatch would be visible as runtime behaviour that contradicts the source;
-  none was seen across 53 experiments.
+  none was seen across the 101 manifest runs.
 
 ## 4. Runtime instrumentation used instead of process tracing
 
@@ -156,8 +156,8 @@ names only.
 The proxy forwards every request unchanged to `api.anthropic.com` over TLS. Credential
 header values are never written (name plus length only). Raw captures stay in `lab/raw/`,
 which is not committed; `runtime-logs/` holds structural summaries (lengths, hashes,
-80-character heads). `tools/build_manifest.py` fails if a token, key, email, workspace id or
-the local account name appears in any committed evidence file. Last run: clean.
+selected 80-character heads, and content-free digests where text may be arbitrary). `tools/build_manifest.py` fails if a token, key, email, workspace id or
+the local account name appears in the sanitized runtime evidence tree. It does not scan the raw captures or the prose reports. Last run: clean.
 
 ### 4.1 Instrumentation caveats
 

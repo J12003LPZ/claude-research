@@ -53,8 +53,11 @@
  "cli_version": "2.1.296 (Claude Code)",
  "started_iso": "2026-10-14T02:57:04Z",
  "fault": {
-  "path_contains": "/v1/messages",
   "mode": "sse_stall",
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
   "times": 1
  }
 }

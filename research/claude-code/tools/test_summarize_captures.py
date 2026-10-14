@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from summarize_captures import sanitize_run, summarize_debug
+from summarize_captures import parse_sse, sanitize_run, summarize_debug, summarize_request, summarize_response
 
 
 class SanitizeRunTests(unittest.TestCase):
@@ -15,20 +15,39 @@ class SanitizeRunTests(unittest.TestCase):
             "prompt": "PRIVATE-PROMPT-TOKEN-7319",
             "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
             "stdin_file": r"C:\Users\sergi\cc-rea-lab\compact-flood.txt",
-            "fault": {"body": {"message": r"C:\Users\sergi\private\prompt.txt"}},
+            "fault": {
+                "body": {"message": r"C:\Users\sergi\private\prompt.txt"},
+                "headers": {"Authorization": "PRIVATE-FAULT-MARKER-9348"},
+                "mode": "PRIVATE-MODE-MARKER-9348",
+            },
+            "stdin_script": [{"t_s": 0, "type": "PRIVATE-TYPE-MARKER-9348", "send": {"message": "PRIVATE-STDIN-MARKER-9348"}}],
+            "control_events": [{
+                "t_s": 1,
+                "subtype": "can_use_tool",
+                "auto_response": {"behavior": "deny", "message": "PRIVATE-CONTROL-MARKER-9348"},
+            }],
         }
 
         sanitized = sanitize_run(run)
 
         self.assertNotIn("sergi", str(sanitized))
         self.assertNotIn("PRIVATE-PROMPT-TOKEN-7319", str(sanitized))
+        self.assertNotIn("PRIVATE-FAULT-MARKER-9348", str(sanitized))
+        self.assertNotIn("PRIVATE-MODE-MARKER-9348", str(sanitized))
+        self.assertNotIn("PRIVATE-TYPE-MARKER-9348", str(sanitized))
+        self.assertNotIn("PRIVATE-STDIN-MARKER-9348", str(sanitized))
+        self.assertNotIn("PRIVATE-CONTROL-MARKER-9348", str(sanitized))
         self.assertEqual(sanitized["exe_sha256"], "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a")
         self.assertEqual(set(sanitized["prompt"]), {"len", "sha256"})
         self.assertEqual(sanitized["prompt"]["len"], len("PRIVATE-PROMPT-TOKEN-7319"))
         self.assertEqual(sanitized["stdin_file"], r"C:\Users\<user>\cc-rea-lab\compact-flood.txt")
         self.assertEqual(
-            sanitized["fault"]["body"]["message"],
-            r"C:\Users\<user>\private\prompt.txt",
+            sanitized["fault"]["body"],
+            {"type": "object", "keys": ["message"]},
+        )
+        self.assertEqual(
+            sanitized["fault"]["headers"],
+            {"type": "object", "keys": ["Authorization"]},
         )
 
     def test_does_not_mutate_input(self):
@@ -52,6 +71,168 @@ class SanitizeRunTests(unittest.TestCase):
         self.assertEqual(len(summary["signals"]), 2)
         self.assertIn("Reactive compact", summary["signals"][0])
         self.assertIn("source=compact", summary["signals"][1])
+
+    def test_debug_summary_keeps_late_breaker_signal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            lines = [
+                f"2026-10-14T00:00:{i:02d}Z [DEBUG] compact refill {i}"
+                for i in range(80)
+            ]
+            lines.append(
+                "2026-10-14T00:01:21Z [ERROR] failure breaker open SENSITIVE-LAB-MARKER-9348"
+            )
+            path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+            summary = summarize_debug(str(path))
+
+        self.assertTrue(any("failure breaker" in signal for signal in summary["signals"]))
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
+
+    def test_debug_prefix_does_not_publish_arbitrary_log_word(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            path.write_text(
+                "2026-10-14T00:00:00Z [DEBUG] PRIVATE-TOKEN-9348 compact probe\n",
+                encoding="utf-8",
+            )
+
+            summary = summarize_debug(str(path))
+
+        self.assertNotIn("PRIVATE-TOKEN-9348", str(summary))
+
+    def test_debug_summary_labels_breaker_event_names(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            path.write_text(
+                "2026-10-14T00:00:00Z [ERROR] failure_breaker_open\n"
+                "2026-10-14T00:00:01Z [ERROR] tengu_auto_compact_circuit_breaker\n",
+                encoding="utf-8",
+            )
+
+            summary = summarize_debug(str(path))
+
+        self.assertTrue(any("failure_breaker_open" in signal for signal in summary["signals"]))
+        self.assertTrue(any("tengu_auto_compact_circuit_breaker" in signal for signal in summary["signals"]))
+
+    def test_request_summary_does_not_publish_container_or_mcp_values(self):
+        marker = "SENSITIVE-LAB-MARKER-9348"
+        req = {
+            "seq": "0001",
+            "t_ms": 0,
+            "method": "POST",
+            "url": "/v1/messages",
+            "body_bytes": 123,
+            "headers": {},
+            "body": {
+                "container": {"id": marker, "url": "https://private.example"},
+                "mcp_servers": [{"name": marker, "headers": {"Authorization": "Bearer secret"}}],
+                "context_management": {"PRIVATE-REQUEST-MARKER-9348": marker},
+                "tool_choice": {"value": marker},
+            },
+        }
+
+        summary = summarize_request(req)["body"]
+
+        self.assertNotIn(marker, str(summary))
+        self.assertEqual(summary["container"], {"type": "object", "keys": ["id", "url"]})
+        self.assertEqual(
+            summary["mcp_servers"],
+            {"count": 1, "items": [{"type": "object", "keys": ["headers", "name"]}]},
+        )
+
+    def test_response_error_message_is_digest_only(self):
+        marker = "SENSITIVE-LAB-MARKER-9348"
+        raw = (
+            '{"error":{"type":"invalid_request_error","message":"'
+            + marker
+            + '"}}'
+        ).encode("utf-8")
+
+        summary = summarize_response(
+            {"status": 400, "headers": {"content-type": "application/json"}},
+            raw,
+            [],
+        )
+
+        self.assertNotIn(marker, str(summary))
+        self.assertEqual(summary["error"]["type"], "invalid_request_error")
+        self.assertEqual(summary["error"]["message"]["len"], len(marker))
+        self.assertNotIn("head", summary["error"]["message"])
+
+    def test_non_json_response_body_is_digest_only(self):
+        marker = "SENSITIVE-LAB-MARKER-9348"
+        summary = summarize_response(
+            {"status": 502, "headers": {"content-type": "text/plain"}},
+            marker.encode("utf-8"),
+            [],
+        )
+
+        self.assertNotIn(marker, str(summary))
+        self.assertEqual(summary["body_digest"]["len"], len(marker))
+        self.assertNotIn("body_head", summary)
+
+    def test_sse_error_message_is_digest_only(self):
+        marker = "PRIVATE-SSE-ERROR-MARKER-9348"
+        raw = (
+            'event: error\n'
+            'data: {"type":"error","error":{"type":"api_error","message":"'
+            + marker
+            + '"}}\n\n'
+        )
+
+        summary = summarize_response(
+            {"status": 529, "headers": {"content-type": "text/event-stream"}},
+            raw.encode("utf-8"),
+            [],
+        )
+
+        self.assertNotIn(marker, str(summary))
+        self.assertEqual(summary["sse_error"]["message"]["len"], len(marker))
+
+    def test_incomplete_sse_message_start_does_not_crash(self):
+        raw = 'event: message_start\ndata: {"type":"message_start"}\n\n'
+
+        summary = summarize_response(
+            {"status": 200, "headers": {"content-type": "text/event-stream"}},
+            raw.encode("utf-8"),
+            [],
+        )
+
+        self.assertEqual(summary["sse_event_runs"], [["message_start", 1]])
+        self.assertNotIn("message_start", summary)
+
+    def test_parse_sse_accepts_multiple_crlf_events(self):
+        raw = (
+            'event: message_start\r\n'
+            'data: {"type":"message_start"}\r\n\r\n'
+            'event: message_delta\r\n'
+            'data: {"type":"message_delta"}\r\n\r\n'
+        )
+
+        self.assertEqual(
+            parse_sse(raw),
+            [
+                ("message_start", {"type": "message_start"}),
+                ("message_delta", {"type": "message_delta"}),
+            ],
+        )
+
+    def test_parse_sse_accepts_mixed_line_endings(self):
+        raw = (
+            'event: message_start\n'
+            'data: {"type":"message_start"}\n\r\n'
+            'event: message_delta\r\n'
+            'data: {"type":"message_delta"}\r\n\r\n'
+        )
+
+        self.assertEqual(
+            parse_sse(raw),
+            [
+                ("message_start", {"type": "message_start"}),
+                ("message_delta", {"type": "message_delta"}),
+            ],
+        )
 
 
 if __name__ == "__main__":

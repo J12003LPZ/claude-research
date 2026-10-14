@@ -419,7 +419,7 @@ Worked example (my arithmetic, not from the binary): 200,000 window, 32,000 max 
 2. The arm's instructions. Arms: `control`, `lean`, `short`, `short_v2`, `capped`, chosen by env `CLAUDE_CODE_CURRIED_TRINKET` or flag `tengu_curried_trinket` (default `control`).
 3. Optional `Additional Instructions:` with user and hook text.
 4. A trailing reminder repeating the no-tools rule (`xnn`).
-The reply is expected to hold an `<analysis>` block and a `<summary>` block; `Qdr` strips the analysis and rewrites the summary tag to `Summary:`.
+For the default `control` arm, the reply is expected to hold an `<analysis>` block and a `<summary>` block; `Qdr` strips the analysis and rewrites the summary tag to `Summary:`. Other arms were not runtime-verified.
 The prompt is sent as a normal **user** message appended after the conversation.
 
 **F9.4 (VS) Two transport paths.**
@@ -430,7 +430,7 @@ The prompt is sent as a normal **user** message appended after the conversation.
 
 **F9.6 (VS) Model.** `cacheSafeParams.model ?? ctx.options.mainLoopModel`, with a fallback chain `oue(model, fallbackModel)`. A policy branch can substitute another model or throw `Compaction unavailable: …`.
 
-**F9.7 (UNK) Max output tokens.** No explicit cap was found in `Non`. The summarizer appears to use the model default. Needs a runtime capture.
+**F9.7 (VS; runtime scoped) Max output tokens.** No explicit cap was found in `Non`; runtime E17a and E17c captured `max_tokens: 128000` for the default/control compaction arm. Other prompt arms remain untested.
 
 **F9.8 (VS) Prompt-too-long retry.** If the summary text starts with `Prompt is too long` (`pH`), `Mon` drops the oldest API-round groups: enough groups to cover the reported overflow when the error carries a token gap, else `floor(groups * 0.2)` (at least 1, at most `groups-1`). If the remainder starts with an assistant message, a meta user message `[earlier conversation truncated for compaction retry]` is prepended. Up to `N8=3` retries, then error `Conversation too long. Press esc twice to go up a few messages and try again.` and telemetry `tengu_compact_failed{reason:"prompt_too_long"}`.
 
@@ -884,7 +884,7 @@ the names are author labels. Runtime evidence does not contradict a verified sta
 3. **Role of the `GXt` block and of `MLn(tools)`.** Diff `system[]` with and without the relevant tools to see what text appears.
 4. **Cache marker placement.** Count `cache_control` occurrences in `messages[]` across three consecutive turns; confirm the single-tail-marker rule and when a second marker appears.
 5. **TTL in practice.** Record `ttl` on a subscriber account for `repl_main_thread` vs a subagent request, with and without `ENABLE_PROMPT_CACHING_1H`.
-6. **Compaction `max_tokens`.** Capture the request with `querySource: "compact"` and read `max_tokens`, `model`, `thinking`, and whether `system`/`tools` equal the parent's (fork path) or the one-sentence summarizer prompt (fallback path).
+6. **Compaction `max_tokens` on other arms.** E17a and E17c captured `max_tokens: 128000` for the default/control arm. Capture a non-control prompt arm and read `max_tokens`, `model`, `thinking`, and whether `system`/`tools` equal the parent's (fork path) or the one-sentence summarizer prompt (fallback path).
 7. **Threshold check.** Set `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=10`, run a session, and read the debug line `autocompact: tokens=… level=… effectiveWindow=…`. Compare `effectiveWindow` with `window - min(maxOutput, 20000)`.
 8. **Blocking behavior.** Set `CLAUDE_CODE_BLOCKING_LIMIT_OVERRIDE` low with `DISABLE_AUTO_COMPACT=1` and observe the user-visible message and whether the request is sent. The `blocked` consumer was not traced statically.
 9. **Rule glob semantics.** Create `.claude/rules/a.md` with `paths: ["src/**"]` and one without `paths`. Confirm the first is absent at session start and arrives as `nested_memory` after reading a file under `src/`.

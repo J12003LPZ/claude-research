@@ -7,7 +7,8 @@ Writes  research/claude-code/runtime-logs/<id>/{run.json, http-summary.json,
         stream-summary.json, debug-summary.json}
 
 Sanitization rules:
-  * prompt / message / tool text is reduced to length, sha256 and an 80-char head
+  * prompt / message / tool text is reduced to length, sha256 and an 80-char head when safe;
+    arbitrary response/error text is content-free length and sha256 metadata
   * header values for credentials were already dropped by the proxy; ids are masked here
   * emails, UUIDs, long hex ids, home-directory names are masked in every emitted string
 """
@@ -55,13 +56,83 @@ def private_digest(text):
     return {"len": len(text), "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]}
 
 
+def safe_key(value):
+    """Keep ordinary schema keys readable while digesting arbitrary key text."""
+    text = str(value)
+    if re.fullmatch(r"[a-z][a-z0-9_]*", text) or text in {"Authorization"}:
+        return text
+    return "<key:" + hashlib.sha256(text.encode("utf-8")).hexdigest()[:16] + ">"
+
+
+def safe_keys(values):
+    return [safe_key(value) for value in values]
+
+
+def summarize_fault(value):
+    """Preserve fault controls without publishing matcher or payload values."""
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        return structural_shape(value)
+    out = {}
+    scalar_keys = {"status", "times", "mode", "stall_ms", "after_bytes"}
+    matcher_keys = {"path_contains", "body_contains", "body_contains_all"}
+    for key in sorted(value):
+        item = value[key]
+        if key in scalar_keys and isinstance(item, (bool, int, float, str, type(None))):
+            if key == "mode" and item not in {"status", "reset", "stall", "sse_stall"}:
+                out[key] = private_digest(str(item))
+            else:
+                out[key] = item
+        elif key in matcher_keys:
+            if isinstance(item, list):
+                out[key] = [private_digest(str(entry)) for entry in item]
+            else:
+                out[key] = private_digest(str(item))
+        else:
+            out[key] = structural_shape(item)
+    return out
+
+
+def summarize_record_list(value):
+    """Keep timing and event types while hiding arbitrary record payloads."""
+    if not isinstance(value, list):
+        return structural_shape(value)
+    records = []
+    for record in value:
+        if not isinstance(record, dict):
+            records.append(structural_shape(record))
+            continue
+        record_out = {}
+        for key, item in sorted(record.items()):
+            if key == "t_s" and isinstance(item, (int, float)):
+                record_out[key] = item
+            elif key == "close" and isinstance(item, bool):
+                record_out[key] = item
+            elif key == "type" and item in {"user", "control_response"}:
+                record_out[key] = item
+            elif key == "subtype" and item in {"can_use_tool", "success"}:
+                record_out[key] = item
+            elif isinstance(item, str):
+                record_out[key] = private_digest(item)
+            else:
+                record_out[key] = structural_shape(item)
+        records.append(record_out)
+    return records
+
+
 def sanitize_run(run):
-    """Mask metadata and replace the raw prompt with a content-free digest."""
+    """Mask metadata and replace raw prompt/fault text with content-free summaries."""
     out = deep_mask(run)
     if isinstance(run.get("exe_sha256"), str):
         out["exe_sha256"] = run["exe_sha256"]
     if isinstance(run.get("prompt"), str):
         out["prompt"] = private_digest(run["prompt"])
+    if "fault" in run:
+        out["fault"] = summarize_fault(run["fault"])
+    for key in ("stdin_script", "control_events"):
+        if key in run:
+            out[key] = summarize_record_list(run[key])
     return out
 
 
@@ -70,6 +141,32 @@ def digest(text):
         text = json.dumps(text, sort_keys=True)
     return {"len": len(text), "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest()[:16],
             "head": mask(text[:HEAD].replace("\n", "\\n"))}
+
+
+def structural_shape(value):
+    """Describe a structured value without publishing any of its values."""
+    if isinstance(value, dict):
+        return {"type": "object", "keys": sorted(safe_keys(value.keys()))}
+    if isinstance(value, list):
+        return {"type": "array", "length": len(value)}
+    return {"type": type(value).__name__}
+
+
+def summarize_error(value):
+    """Keep error shape and type while digesting arbitrary server text."""
+    if not isinstance(value, dict):
+        return structural_shape(value)
+    out = {"keys": sorted(safe_keys(value.keys()))}
+    if isinstance(value.get("type"), str):
+        error_type = value["type"]
+        out["type"] = error_type if error_type in {
+            "api_error", "invalid_request_error", "overloaded_error", "rate_limit_error",
+            "server_error", "authentication_error", "permission_error",
+        } else private_digest(error_type)
+    if "message" in value:
+        message = value["message"]
+        out["message"] = private_digest(message if isinstance(message, str) else str(message))
+    return out
 
 
 def block(b):
@@ -105,6 +202,26 @@ def block(b):
     return out
 
 
+def summarize_request_field(key, value):
+    """Keep known request scalars and structure-digest all other field values."""
+    if key in {"max_tokens", "temperature"} and isinstance(value, (int, float)):
+        return value
+    if key in {"stream"} and isinstance(value, bool):
+        return value
+    if key == "model" and value in {
+        "claude-haiku-5-5", "claude-sonnet-5-5", "claude-opus-4-1", "claude-opus-4-5",
+        "claude-opus-4-6", "claude-fable-5-1", "claude-opus-5-5",
+    }:
+        return value
+    if key in {"speed", "service_tier"} and value in {"standard", "fast", "priority"}:
+        return value
+    if isinstance(value, (dict, list)):
+        return structural_shape(value)
+    if isinstance(value, str):
+        return private_digest(value)
+    return structural_shape(value)
+
+
 def summarize_request(req):
     body = req.get("body")
     out = {"seq": req["seq"], "t_ms": req["t_ms"], "method": req["method"],
@@ -114,14 +231,22 @@ def summarize_request(req):
     if not isinstance(body, dict):
         out["body"] = body if body is None else "<non-json>"
         return out
-    b = {"top_level_keys": list(body.keys())}
+    b = {"top_level_keys": safe_keys(body.keys())}
     for k in ("model", "max_tokens", "stream", "temperature", "tool_choice", "thinking", "betas",
-              "context_management", "output_config", "speed", "service_tier", "container", "mcp_servers"):
+              "context_management", "output_config", "speed", "service_tier"):
         if k in body:
-            b[k] = body[k]
+            b[k] = summarize_request_field(k, body[k])
+    if "container" in body:
+        b["container"] = structural_shape(body["container"])
+    if "mcp_servers" in body:
+        servers = body["mcp_servers"]
+        b["mcp_servers"] = {
+            "count": len(servers),
+            "items": [structural_shape(server) for server in servers],
+        } if isinstance(servers, list) else structural_shape(servers)
     if "metadata" in body:
         md = body["metadata"]
-        b["metadata_keys"] = sorted(md.keys())
+        b["metadata_keys"] = sorted(safe_keys(md.keys()))
         uid = md.get("user_id")
         if isinstance(uid, str):
             try:
@@ -140,8 +265,8 @@ def summarize_request(req):
             "name": t.get("name"), "type": t.get("type"),
             "description_len": len(t.get("description") or ""),
             "schema_len": len(json.dumps(t.get("input_schema"))) if "input_schema" in t else None,
-            "schema_props": sorted(((t.get("input_schema") or {}).get("properties") or {}).keys()),
-            "extra_keys": sorted(k for k in t.keys() if k not in ("name", "description", "input_schema", "type")),
+            "schema_props": sorted(safe_keys(((t.get("input_schema") or {}).get("properties") or {}).keys())),
+            "extra_keys": sorted(safe_keys(k for k in t.keys() if k not in ("name", "description", "input_schema", "type"))),
             **({"cache_control": t["cache_control"]} if "cache_control" in t else {}),
             **({"defer_loading": t["defer_loading"]} if "defer_loading" in t else {}),
         } for t in tools]
@@ -158,7 +283,8 @@ def summarize_request(req):
 
 def parse_sse(raw):
     events = []
-    for chunk in raw.split("\n\n"):
+    normalized = raw.replace("\r\n", "\n").replace("\r", "\n")
+    for chunk in normalized.split("\n\n"):
         ev, data = None, []
         for line in chunk.split("\n"):
             if line.startswith("event:"):
@@ -195,9 +321,12 @@ def summarize_response(meta, raw, chunks):
             if not isinstance(d, dict):
                 continue
             if d.get("type") == "message_start":
-                m = d["message"]
-                out["message_start"] = {"model": m.get("model"), "id_prefix": str(m.get("id", ""))[:8],
-                                        "usage": m.get("usage"), "keys": sorted(m.keys())}
+                m = d.get("message")
+                if isinstance(m, dict):
+                    out["message_start"] = {"model": m.get("model"), "id_prefix": str(m.get("id", ""))[:8],
+                                            "usage": m.get("usage"), "keys": sorted(safe_keys(m.keys()))}
+                else:
+                    out["message_start_keys"] = sorted(safe_keys(d.keys()))
             elif d.get("type") == "content_block_start":
                 cb = d["content_block"]
                 blocks.append({"index": d.get("index"), "type": cb.get("type"), "name": cb.get("name"),
@@ -211,7 +340,7 @@ def summarize_response(meta, raw, chunks):
                 stop = d.get("delta")
                 out["message_delta_keys"] = sorted(d.keys())
             elif d.get("type") == "error":
-                out["sse_error"] = d.get("error")
+                out["sse_error"] = summarize_error(d.get("error"))
         out["sse_event_runs"] = seqn
         out["content_blocks"] = blocks
         out["final_usage"] = usage
@@ -221,13 +350,13 @@ def summarize_response(meta, raw, chunks):
             j = json.loads(text)
             out["json_keys"] = sorted(j.keys()) if isinstance(j, dict) else type(j).__name__
             if isinstance(j, dict) and "error" in j:
-                out["error"] = j["error"]
+                out["error"] = summarize_error(j["error"])
             if isinstance(j, dict) and "usage" in j:
                 out["usage"] = j["usage"]
             if isinstance(j, dict) and "input_tokens" in j:
                 out["input_tokens"] = j["input_tokens"]
         except Exception:
-            out["body_head"] = mask(text[:160])
+            out["body_digest"] = private_digest(text)
     return out
 
 
@@ -328,19 +457,51 @@ def summarize_debug(path):
         lines = f.read().splitlines()
     cats = {}
     signals = []
-    signal_rx = re.compile(r"compact|source=compact|failure breaker|circuit breaker|API error", re.I)
+    priority_signals = []
+    signal_rx = re.compile(
+        r"compact|source=compact|failure[_ ]breaker|circuit breaker|"
+        r"tengu_auto_compact_circuit_breaker|API error",
+        re.I,
+    )
+    priority_rx = re.compile(
+        r"Reactive compact|failure[_ ]breaker|circuit breaker|"
+        r"tengu_auto_compact_circuit_breaker|API error",
+        re.I,
+    )
     for ln in lines:
         m = DEBUG_PAT.match(ln)
         if not m:
             continue
         msg = m.group(3)
         cat = re.match(r"\[?([A-Za-z][\w .:-]{1,40}?)[\]:]", msg)
-        key = cat.group(1) if cat else msg.split(" ")[0][:30]
+        raw_key = cat.group(1) if cat else msg.split(" ")[0][:30]
+        key = "sha256:" + hashlib.sha256(raw_key.encode("utf-8")).hexdigest()[:16]
         cats[key] = cats.get(key, 0) + 1
-        if signal_rx.search(msg) and len(signals) < 80:
-            signals.append(mask(ln))
+        if signal_rx.search(msg):
+            labels = []
+            if re.search(r"Reactive compact", msg, re.I):
+                labels.append("Reactive compact")
+            if re.search(r"source=compact", msg, re.I):
+                labels.append("source=compact")
+            if re.search(r"failure_breaker_open", msg, re.I):
+                labels.append("failure_breaker_open")
+            elif re.search(r"failure breaker", msg, re.I):
+                labels.append("failure breaker")
+            if re.search(r"tengu_auto_compact_circuit_breaker", msg, re.I):
+                labels.append("tengu_auto_compact_circuit_breaker")
+            elif re.search(r"circuit breaker", msg, re.I):
+                labels.append("circuit breaker")
+            if re.search(r"API error", msg, re.I):
+                labels.append("API error")
+            if not labels:
+                labels.append("compact")
+            safe = f"{m.group(1)} [signal] {', '.join(labels)}"
+            if len(signals) < 80:
+                signals.append(safe)
+            elif priority_rx.search(msg):
+                priority_signals.append(safe)
     return {"line_count": len(lines), "top_prefixes": sorted(cats.items(), key=lambda x: -x[1])[:60],
-            "signals": signals}
+            "signals": signals + priority_signals[:80]}
 
 
 def main():

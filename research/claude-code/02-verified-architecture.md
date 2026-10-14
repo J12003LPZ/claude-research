@@ -334,7 +334,7 @@ sequenceDiagram
   M-->>L: analysis + summary text
   L->>H: SubagentStop (compaction agent)
   L->>S: compact_boundary row (pre/post tokens, preserved segment)
-  L->>L: new history = summary message + preserved tail + re-attached recent files
+  L->>L: new history = summary message + re-attached state; preserved tail only on kept-tail/partial paths
   L->>H: SessionStart(source=compact), PostCompact(compact_summary)
   L->>L: 3 refills within 3 turns each => stop with rapid_refill_breaker
 ```

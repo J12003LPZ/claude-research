@@ -1,7 +1,8 @@
 # 03. Runtime experiment catalog
 
-All runs: Claude Code 2.1.296 on Windows 11, `claude -p` (headless), synthetic prompts and
-files only, lab projects under `~\cc-rea-lab\`. Sanitized evidence for experiment `X` is in
+Runs were predominantly Claude Code 2.1.296 on Windows 11; seven explicitly named `*-v299`
+comparison runs used 2.1.299. All runs used `claude -p` (headless), synthetic prompts and files
+only, and lab projects under `~\cc-rea-lab\`. Sanitized evidence for experiment `X` is in
 `runtime-logs/X/` (`run.json`, `http-summary.json`, `stream-summary.json`,
 `hooks-summary.json` where hooks were installed). `runtime-logs/MANIFEST.json` lists hashes.
 
@@ -356,6 +357,11 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   cache-sharing fallback, or three separate failed auto-compaction operations in one live
   session. The account rate limit (`retry-after` reported by the server) prevented a
   final ordinary turn after E31; that server response is not attributed to the CLI breaker.
+- E32 was a login control: without `CLAUDE_CONFIG_DIR`, the child reported `Not logged in` and
+  made no model request. E32b supplied the existing local OAuth store and reached the real
+  upstream account limit: one `HEAD /api/hello` followed by a `POST /v1/messages` returning
+  429 before a model response. These canaries confirm that the live account was still blocked;
+  they do not test the CLI failure breaker.
 
 ### E18a to E18e: transport faults (item 18)
 

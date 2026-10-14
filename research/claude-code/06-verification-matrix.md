@@ -42,7 +42,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Subagents | Depth 3, concurrency 20 | static 05 | `subagent_stats.refused` keys only | Partially verified | Medium | hit the limits |
 | Subagents | Background agent survives parent interrupt | static 05 | none | Untested | Medium | |
 | Tasks | Background shell with output file, TaskStop kills | static 05 | E14 | Verified | High | notification into a later turn |
-| Compaction | Trigger = window - min(maxOut, 20000) - 13000 | static 02 | E17c brackets 59k..78k for 100k | Partially verified | High | pin the exact threshold |
+| Compaction | Trigger = window - min(maxOut, 20000) - 13000 | static 02 | E17c brackets 59k..78k for 100k | Partially verified | Static High / runtime Medium | pin the exact runtime threshold |
 | Compaction | Summary request reuses system, tools, history | static 02 | E17a | Verified | High | |
 | Compaction | Hook order PreCompact, SubagentStop, SessionStart(compact), PostCompact | static 02 | E17c | Verified | High | |
 | Compaction | Post-compact file re-attachment, 5 files | static 02 | E17c (2 files re-read) | Partially verified | Medium | 6+ files |
@@ -110,7 +110,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | none | 7 | Untested |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 45 behaviours enumerated. Verified 32, partially verified 3, untested 8, blocked 2.
+Counts: 45 behaviours enumerated. Verified 37, partially verified 4, untested 2, blocked 2.
 
 ## 3. Cross-validation per subsystem
 
@@ -120,7 +120,7 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in 53 runs.
+executes. Falsifier: a behaviour that contradicts the source text; none in the 101 manifest runs.
 Unknown: updater behaviour, each side entry point.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
@@ -140,13 +140,13 @@ message.
 **Transport.** Known: endpoint, headers, body keys, retry timing, abort. How: proxy
 captures and injected faults. Alternative: delays could come from the SDK. Rejected:
 `x-stainless-retry-count` stayed 0 and the delays match the application constants.
-Falsifier: a retry with a non-zero SDK retry header. Unknown: watchdog and fallback paths.
+Falsifier: a retry with a non-zero SDK retry header. Unknown: event-tier watchdog behavior, default watchdog timeout, and other fallback variants.
 
 **Permissions and hooks.** Known: precedence, hook ordering, decision effects. How: hook
 logs with timestamps, file state on disk before and after, denial events. Alternative:
 E07f could be the model declining to call Edit. Rejected: the call was made and returned
 "No such tool available". Falsifier: an allow hook that makes a denied tool run. Unknown:
-the other four modes, classifier, sandbox.
+the `auto` classifier, sandbox, and interactive approval UI.
 
 **Subagents and tasks.** Known: nested loop, separate prompt, parallel siblings, event
 lifecycle, hand-back framing. How: overlapping request timestamps on the proxy, task
@@ -170,7 +170,7 @@ extraction from lab sessions only, message counts on resumed requests. Alternati
 could rebuild reminders rather than replay them. Rejected by E15e/E15f: after editing
 `CLAUDE.md`, the resumed request kept the old text in message 0 and carried the new text
 in a fresh reminder on the new user message. Falsifier: a resumed request whose first
-message shows the edited file. Unknown: repair logic, retention sweeps.
+message shows the edited file. Unknown: remaining interrupted-turn repair variants and retention sweeps.
 
 ## 4. Ten most consequential open questions
 
@@ -187,7 +187,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 53 runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 101 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.

@@ -2,244 +2,299 @@
  "line_count": 672,
  "top_prefixes": [
   [
-   "hooks",
+   "sha256:a9fa9fda98d7712c",
    120
   ],
   [
-   "Hooks",
+   "sha256:d412a062620ef57b",
    94
   ],
   [
-   "Hook",
+   "sha256:536ff5051d2541c9",
    59
   ],
   [
-   "Keeping C",
+   "sha256:dcc67c16404bfe1a",
    46
   ],
   [
-   "Fast mode unavailable",
+   "sha256:888546584c3e70c0",
    39
   ],
   [
-   "API",
+   "sha256:c8e5998f6a3955c2",
    24
   ],
   [
-   "API REQUEST",
+   "sha256:eb98c954f185def2",
    23
   ],
   [
-   "LSP Diagnostics",
+   "sha256:08da033e703a712f",
    20
   ],
   [
-   "Stall",
+   "sha256:22ddee488cda1c4c",
    18
   ],
   [
-   "Forked",
+   "sha256:c0f2c3d33c87d5f1",
    15
   ],
   [
-   "autocompact",
+   "sha256:5a99bd65ee009b73",
    14
   ],
   [
-   "attribution",
+   "sha256:3ee591fcb25f09a0",
    12
   ],
   [
-   "Stream",
+   "sha256:1eec3071dd26e224",
    12
   ],
   [
-   "Successfully",
+   "sha256:b1f3c8afdfdc381e",
    10
   ],
   [
-   "\"Hook",
+   "sha256:10d1aea40a51878a",
    10
   ],
   [
-   "InstructionsLoaded",
+   "sha256:dc7bb987664a0f5e",
    8
   ],
   [
-   "STARTUP",
+   "sha256:abb902913ed94ffb",
    6
   ],
   [
-   "CA certs",
+   "sha256:bd1b468c2d02895a",
    5
   ],
   [
-   "cc-plugin-telemetry",
+   "sha256:c3be2a6cd3433143",
    5
   ],
   [
-   "init",
+   "sha256:bb54068aea85faa7",
    4
   ],
   [
-   "uds-messaging",
+   "sha256:11a7240bd384bd8e",
    4
   ],
   [
-   "Cleared",
+   "sha256:15f3a2898addfc6c",
    4
   ],
   [
-   "LSP",
+   "sha256:821e582030bb0428",
    4
   ],
   [
-   "Cache",
+   "sha256:a76ce82a974999d8",
    4
   ],
   [
-   "Reading marketplace from C",
+   "sha256:23d6dd338824e0ec",
    4
   ],
   [
-   "Failed",
+   "sha256:031a8f0f659df890",
    4
   ],
   [
-   "mTLS",
+   "sha256:5947b487dfb48ee1",
    3
   ],
   [
-   "Failed to stat directory C",
+   "sha256:6869e181984dac72",
    3
   ],
   [
-   "LSP MANAGER",
+   "sha256:05722a3512c853ae",
    3
   ],
   [
-   "Bootstrap",
+   "sha256:faab0dc4735c1cfe",
    3
   ],
   [
-   "PreCompact",
+   "sha256:b957259df5982535",
    3
   ],
   [
-   "PostCompact",
+   "sha256:054b78aad653ffcb",
    3
   ],
   [
-   "Broken",
+   "sha256:cab6a859fda3243e",
    2
   ],
   [
-   "Git remote URL",
+   "sha256:03cd9d13303acb35",
    2
   ],
   [
-   "No",
+   "sha256:1ea442a134b2a184",
    2
   ],
   [
-   "Error",
+   "sha256:54a0e8c17ebb21a1",
    2
   ],
   [
-   "MCP",
+   "sha256:53f13ae99ed53bd3",
    2
   ],
   [
-   "[3P",
+   "sha256:2b9453275593aa26",
    2
   ],
   [
-   "plugin.register",
+   "sha256:21a22417e1cdd462",
    2
   ],
   [
-   "$.session",
+   "sha256:ace2cb3d0a548c4b",
    2
   ],
   [
-   "Preserving file permissions",
+   "sha256:aa1a60b0875a9f37",
    2
   ],
   [
-   "Writing to temp file",
+   "sha256:5cd3d34b4895f8b5",
    2
   ],
   [
-   "Applied",
+   "sha256:0c79a9c222840ed0",
    2
   ],
   [
-   "Temp",
+   "sha256:d62f436b9e1b638e",
    2
   ],
   [
-   "Renaming C",
+   "sha256:cd2e4a64a83b51d2",
    2
   ],
   [
-   "File C",
+   "sha256:8478f2730878f500",
    2
   ],
   [
-   "claudeai-mcp",
+   "sha256:35f7af5b6dea892e",
    2
   ],
   [
-   "engine",
+   "sha256:ed9f6f25068608ef",
    2
   ],
   [
-   "installPluginsForHeadless",
+   "sha256:a160c9921930fff3",
    2
   ],
   [
-   "$.http.fetch",
+   "sha256:5a2f18dc0c61739f",
    2
   ],
   [
-   "compact",
+   "sha256:b6b54201f23d00f5",
    2
   ],
   [
-   "MDM",
+   "sha256:3c2757a930308b8b",
    1
   ],
   [
-   "Using bash path",
+   "sha256:a4cad41a981eb8bc",
    1
   ],
   [
-   "ToolSearch",
+   "sha256:3161b03bc700f758",
    1
   ],
   [
-   "win32-kernel32",
+   "sha256:b8657ebb801cf2e1",
    1
   ],
   [
-   "Loaded 30 installed plugins from C",
+   "sha256:8652fb28c2cfe208",
    1
   ],
   [
-   "Found",
+   "sha256:b0ee315f4ac6af09",
    1
   ],
   [
-   "getPluginSkills",
+   "sha256:f094d0a2f453bef7",
    1
   ],
   [
-   "Checking plugin cc-plugin-agents-md",
+   "sha256:072f2f1df07d5024",
    1
   ],
   [
-   "Checking plugin cc-plugin-telemetry",
+   "sha256:90ea13f50c0b6736",
    1
   ]
+ ],
+ "signals": [
+  "2026-10-13T21:12:13.109Z [signal] compact",
+  "2026-10-13T21:12:13.583Z [signal] compact",
+  "2026-10-13T21:12:17.265Z [signal] compact",
+  "2026-10-13T21:12:21.738Z [signal] compact",
+  "2026-10-13T21:12:26.030Z [signal] compact",
+  "2026-10-13T21:12:26.031Z [signal] compact",
+  "2026-10-13T21:12:26.100Z [signal] compact",
+  "2026-10-13T21:12:26.109Z [signal] source=compact",
+  "2026-10-13T21:12:36.392Z [signal] compact",
+  "2026-10-13T21:12:36.407Z [signal] compact",
+  "2026-10-13T21:12:36.476Z [signal] compact",
+  "2026-10-13T21:12:36.477Z [signal] compact",
+  "2026-10-13T21:12:36.478Z [signal] compact",
+  "2026-10-13T21:12:36.699Z [signal] compact",
+  "2026-10-13T21:12:36.766Z [signal] compact",
+  "2026-10-13T21:12:36.770Z [signal] compact",
+  "2026-10-13T21:12:41.103Z [signal] compact",
+  "2026-10-13T21:12:41.157Z [signal] compact",
+  "2026-10-13T21:12:41.157Z [signal] compact",
+  "2026-10-13T21:12:45.342Z [signal] compact",
+  "2026-10-13T21:12:45.343Z [signal] compact",
+  "2026-10-13T21:12:45.411Z [signal] compact",
+  "2026-10-13T21:12:45.418Z [signal] source=compact",
+  "2026-10-13T21:12:54.363Z [signal] compact",
+  "2026-10-13T21:12:54.382Z [signal] compact",
+  "2026-10-13T21:12:54.452Z [signal] compact",
+  "2026-10-13T21:12:54.453Z [signal] compact",
+  "2026-10-13T21:12:54.454Z [signal] compact",
+  "2026-10-13T21:12:54.455Z [signal] compact",
+  "2026-10-13T21:12:54.692Z [signal] compact",
+  "2026-10-13T21:12:54.759Z [signal] compact",
+  "2026-10-13T21:12:54.762Z [signal] compact",
+  "2026-10-13T21:12:59.596Z [signal] compact",
+  "2026-10-13T21:12:59.646Z [signal] compact",
+  "2026-10-13T21:12:59.647Z [signal] compact",
+  "2026-10-13T21:13:02.729Z [signal] compact",
+  "2026-10-13T21:13:02.729Z [signal] compact",
+  "2026-10-13T21:13:02.794Z [signal] compact",
+  "2026-10-13T21:13:02.800Z [signal] source=compact",
+  "2026-10-13T21:13:13.290Z [signal] compact",
+  "2026-10-13T21:13:13.306Z [signal] compact",
+  "2026-10-13T21:13:13.374Z [signal] compact",
+  "2026-10-13T21:13:13.375Z [signal] compact",
+  "2026-10-13T21:13:13.376Z [signal] compact",
+  "2026-10-13T21:13:13.377Z [signal] compact",
+  "2026-10-13T21:13:13.640Z [signal] compact",
+  "2026-10-13T21:13:13.705Z [signal] compact",
+  "2026-10-13T21:13:13.708Z [signal] compact",
+  "2026-10-13T21:13:18.940Z [signal] compact",
+  "2026-10-13T21:13:18.988Z [signal] compact",
+  "2026-10-13T21:13:18.988Z [signal] compact",
+  "2026-10-13T21:13:22.862Z [signal] compact",
+  "2026-10-13T21:13:22.862Z [signal] compact"
  ]
 }

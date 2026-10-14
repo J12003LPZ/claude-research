@@ -25,5 +25,13 @@ assert.equal(
   faultMatches({}, "/v1/messages", "anything"),
   true,
 );
+assert.equal(
+  faultMatches({ body_contains_all: "<analysis>" }, "/v1/messages", "<analysis>"),
+  false,
+);
+assert.equal(
+  faultMatches({ body_contains: 42 }, "/v1/messages", "42"),
+  false,
+);
 
 console.log("capture proxy fault matcher tests passed");

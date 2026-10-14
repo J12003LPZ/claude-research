@@ -11,7 +11,7 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 99 manifest runs: 78 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 101 manifest runs: 80 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |
@@ -64,6 +64,8 @@ used the settings model). Marked STRONGLY INFERRED until the static evidence is 
 19. Real API failure captured: 429 session limit ends the run with `is_error: true`, `terminal_reason: api_error`, exit code 1, and a synthetic assistant text (E08b tail).
 20. Compaction fault targeting: a literal request-body marker distinguishes summary calls from normal `/v1/messages` turns in the lab proxy (E28b, E30, E31).
 21. Automatic summary failure: eleven injected 529 HTTP attempts (one initial attempt plus ten retries) exhaust one `source=compact` operation, then `Reactive compact: summarization returned API error` and `session.compact` hook failure occur; no failure-breaker event was observed (E31).
+22. Evidence tooling now digests arbitrary error/non-JSON/SSE error text, structurally summarizes request and run metadata, accepts mixed SSE line endings, tolerates incomplete frames, retains explicit late breaker signals without raw message text, preserves injected SSE capture metadata/body, validates malformed fault matcher fields, and closes capture streams on cancellation.
+23. E32b used the local OAuth store and reached a real upstream 429 after `HEAD /api/hello`; the account was still rate-limited, so no further live breaker experiments were run.
 
 ## Incidents
 

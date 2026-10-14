@@ -54,15 +54,18 @@
  "cli_version": "2.1.296 (Claude Code)",
  "started_iso": "2026-10-14T02:56:26Z",
  "fault": {
-  "path_contains": "/v1/messages",
-  "status": 529,
-  "times": 3,
   "body": {
-   "type": "error",
-   "error": {
-    "type": "overloaded_error",
-    "message": "Overloaded (lab injected)"
-   }
-  }
+   "type": "object",
+   "keys": [
+    "error",
+    "type"
+   ]
+  },
+  "path_contains": {
+   "len": 12,
+   "sha256": "c64fb925aa64878f"
+  },
+  "status": 529,
+  "times": 3
  }
 }

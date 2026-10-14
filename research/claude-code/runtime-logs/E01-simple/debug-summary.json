@@ -2,244 +2,248 @@
  "line_count": 606,
  "top_prefixes": [
   [
-   "Loaded",
+   "sha256:d01476dfee7ed2de",
    88
   ],
   [
-   "Keeping C",
+   "sha256:dcc67c16404bfe1a",
    46
   ],
   [
-   "Attempting",
+   "sha256:4b6d57ff3e795b24",
    36
   ],
   [
-   "hooks",
+   "sha256:a9fa9fda98d7712c",
    34
   ],
   [
-   "Hooks",
+   "sha256:d412a062620ef57b",
    24
   ],
   [
-   "MCP",
+   "sha256:53f13ae99ed53bd3",
    20
   ],
   [
-   "Failed to parse YAML frontmatter in C",
+   "sha256:a91559445537f720",
    17
   ],
   [
-   "Plugin loading errors",
+   "sha256:7c4b271bcd33802e",
    14
   ],
   [
-   "Hook",
+   "sha256:536ff5051d2541c9",
    12
   ],
   [
-   "Read",
+   "sha256:9b9a8d05a7ec353b",
    9
   ],
   [
-   "Failed to stat directory C",
+   "sha256:6869e181984dac72",
    8
   ],
   [
-   "Plugin not available for MCP",
+   "sha256:33a39f530a899b07",
    8
   ],
   [
-   "Loading hooks from plugin",
+   "sha256:cf91ff7c65b89560",
    7
   ],
   [
-   "STARTUP",
+   "sha256:abb902913ed94ffb",
    6
   ],
   [
-   "Fast mode unavailable",
+   "sha256:888546584c3e70c0",
    6
   ],
   [
-   "CA certs",
+   "sha256:bd1b468c2d02895a",
    5
   ],
   [
-   "init",
+   "sha256:bb54068aea85faa7",
    4
   ],
   [
-   "Loading skills from",
+   "sha256:ec80d826d38f56b5",
    4
   ],
   [
-   "skills",
+   "sha256:32c1cf49a2feee26",
    4
   ],
   [
-   "uds-messaging",
+   "sha256:11a7240bd384bd8e",
    4
   ],
   [
-   "Cleared",
+   "sha256:15f3a2898addfc6c",
    4
   ],
   [
-   "getPluginSkills",
+   "sha256:f094d0a2f453bef7",
    4
   ],
   [
-   "Checking plugin frontend-design",
+   "sha256:65083461f596fd39",
    4
   ],
   [
-   "Checking plugin code-simplifier",
+   "sha256:a494b6e188f659bc",
    4
   ],
   [
-   "Checking plugin claude-md-management",
+   "sha256:d72eac6fb4c3975e",
    4
   ],
   [
-   "Checking plugin typescript-lsp",
+   "sha256:cee1681289fb5f57",
    4
   ],
   [
-   "Checking plugin code-review",
+   "sha256:a5d9d58012b6e79d",
    4
   ],
   [
-   "Checking plugin security-guidance",
+   "sha256:ca6aadbcc20ac27b",
    4
   ],
   [
-   "Checking plugin pr-review-toolkit",
+   "sha256:cc5abfbd697fb1f2",
    4
   ],
   [
-   "Checking plugin pyright-lsp",
+   "sha256:9dd382db1d37db54",
    4
   ],
   [
-   "Checking plugin plugin-dev",
+   "sha256:001d35e7121d445f",
    4
   ],
   [
-   "Checking plugin claude-security",
+   "sha256:1cbdeebe3ad51375",
    4
   ],
   [
-   "Checking plugin codex",
+   "sha256:81b2964e4554a4a3",
    4
   ],
   [
-   "Checking plugin claude-seo",
+   "sha256:f7e9e967d02cea13",
    4
   ],
   [
-   "Checking plugin last30days",
+   "sha256:8dee65db551dad2e",
    4
   ],
   [
-   "Checking plugin rust-analyzer-lsp",
+   "sha256:c68870fbebfc7751",
    4
   ],
   [
-   "Checking plugin code-modernization",
+   "sha256:16e66e66611e8205",
    4
   ],
   [
-   "Checking plugin typesafe",
+   "sha256:d86640a0aab1db71",
    4
   ],
   [
-   "Checking plugin linear",
+   "sha256:5921ac638b96b1a1",
    4
   ],
   [
-   "Checking plugin code-review-toolkit",
+   "sha256:344f2f4f7b7244f9",
    4
   ],
   [
-   "Checking plugin superpowers",
+   "sha256:6183b4f2f972939a",
    4
   ],
   [
-   "Checking plugin cc-plugin-agents-md",
+   "sha256:072f2f1df07d5024",
    4
   ],
   [
-   "Checking plugin cc-plugin-telemetry",
+   "sha256:90ea13f50c0b6736",
    4
   ],
   [
-   "Checking",
+   "sha256:0dfe1d63c9d86896",
    4
   ],
   [
-   "Total plugin commands loaded",
+   "sha256:3d2187e72b2ad1a9",
    4
   ],
   [
-   "Total plugin skills loaded",
+   "sha256:99f24fba8119defd",
    4
   ],
   [
-   "getSkills returning",
+   "sha256:b6c2297291f62097",
    4
   ],
   [
-   "Total plugin workflows loaded",
+   "sha256:8d901f41f815e860",
    4
   ],
   [
-   "LSP",
+   "sha256:821e582030bb0428",
    4
   ],
   [
-   "Registered",
+   "sha256:2351ee992626bafb",
    4
   ],
   [
-   "cc-plugin-telemetry",
+   "sha256:c3be2a6cd3433143",
    4
   ],
   [
-   "\"Hook",
+   "sha256:10d1aea40a51878a",
    4
   ],
   [
-   "Cache",
+   "sha256:a76ce82a974999d8",
    4
   ],
   [
-   "Reading marketplace from C",
+   "sha256:23d6dd338824e0ec",
    4
   ],
   [
-   "Failed",
+   "sha256:031a8f0f659df890",
    4
   ],
   [
-   "Broken",
+   "sha256:cab6a859fda3243e",
    3
   ],
   [
-   "mTLS",
+   "sha256:5947b487dfb48ee1",
    3
   ],
   [
-   "Loaded inline plugin from path",
+   "sha256:cd820076f5f2286b",
    3
   ],
   [
-   "LSP MANAGER",
+   "sha256:05722a3512c853ae",
    3
   ],
   [
-   "Bootstrap",
+   "sha256:faab0dc4735c1cfe",
    3
   ]
+ ],
+ "signals": [
+  "2026-10-13T17:11:57.115Z [signal] compact",
+  "2026-10-13T17:11:59.496Z [signal] compact"
  ]
 }
