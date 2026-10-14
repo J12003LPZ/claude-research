@@ -19,7 +19,7 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 
 Next steps if resumed: the remaining untested rows of `06` (three distinct failed auto-summary
 operations and the failure breaker, prompt-too-long and partial compaction, `auto` permission
-mode, background-agent survival, daemon/TUI behavior, sandbox enforcement (blocked: `sandbox status` reports unsupported on this host), event-tier watchdog, and a
+mode, background-agent survival, daemon lifecycle and TUI behavior, sandbox enforcement (blocked: `sandbox status` reports unsupported on this host), event-tier watchdog, and a
 direct-path request dump). E30/E31 verified summary API-error exhaustion but did not reach the
 three-distinct-failure breaker; the account rate-limit response is retained as a boundary, not
 attributed to the CLI breaker.

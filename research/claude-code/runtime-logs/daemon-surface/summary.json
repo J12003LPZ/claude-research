@@ -1,0 +1,69 @@
+{
+ "id": "daemon-surface",
+ "method": "passive, read-only observation of a daemon already running on this host; no session was launched",
+ "cli_version": "2.1.296",
+ "agents_json": {
+  "command": "claude agents --json",
+  "sessions": 6,
+  "fields": [
+   "cwd",
+   "id",
+   "kind",
+   "name",
+   "pid",
+   "sessionId",
+   "startedAt",
+   "state",
+   "status"
+  ],
+  "kind_status_counts": {
+   "background/blocked": 3,
+   "background/busy": 1,
+   "interactive/busy": 2
+  },
+  "withheld": "names, cwd, pids, session ids"
+ },
+ "named_pipes": {
+  "daemon_control": 1,
+  "daemon_pty": 1,
+  "daemon_rv": 1,
+  "messaging": 3,
+  "shape": [
+   "cc-daemon-<hex>-control",
+   "cc-daemon-<hex>-pty-<hex>",
+   "cc-daemon-<hex>-rv-<hex>",
+   "LOCAL/cc-msg-<hex>"
+  ]
+ },
+ "directories": {
+  "~/.claude/daemon": true,
+  "~/.claude/jobs": true
+ },
+ "processes": {
+  "claude daemon": {
+   "count": 1,
+   "flags": [
+    "--json-path",
+    "--log-file",
+    "--origin",
+    "--spawned-by"
+   ]
+  },
+  "claude --bg-pty-host": {
+   "count": 1,
+   "flags": [
+    "--session-id",
+    "--fork-session",
+    "--resume",
+    "--model",
+    "--permission-mode"
+   ]
+  }
+ },
+ "not_observed": [
+  "spare pty host (--bg-spare)",
+  "spawn/exit lifecycle",
+  "exit-code 75/78 respawn protocol",
+  "claude --bg launch (not run)"
+ ]
+}

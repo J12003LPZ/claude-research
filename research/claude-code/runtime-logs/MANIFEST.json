@@ -3111,6 +3111,17 @@
    "redaction": "sanitized"
   },
   {
+   "id": "daemon-surface",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "4342ef26f59e124429a1c51b0e082b55163baf4a08570598abd5fc3c0df796e0",
+     "bytes": 1367
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "rea",
    "kind": "static-or-aggregate",
    "files": {
