@@ -505,11 +505,12 @@ token (`CLAUDE_BG_PTY_AUTH` or a tokens file).
 IPC channel when an auth manager is present) and writes a JSON config on the worker's stdin
 (`{config, initialAccessToken}`). Workers abort on SIGTERM/SIGINT or an IPC message.
 
-**Spares and preload** (`chunk-e9h2r1b7.js@62386`): a spare is a pre-warmed process started as
-`--bg-pty-host <sock> 200 50 -- <claude> --bg-spare <claimSock>`. It imports the main chunk
-(`chunk-zvnaqyp5.js`) eagerly, then waits on the claim socket for the real session's env and argv
-(`kin`), exits if `process.ppid` changes (polled every 2000 ms), and on claim runs the normal main
-(`Ein`). `--preload` (`chunk-v8jk3662.js@6352`) is the same idea without a pty: load the main chunk, then run.
+**Spares and preload** (`chunk-e9h2r1b7.js@62386`): on supported non-Windows hosts a spare is a pre-warmed
+process started as `--bg-pty-host <sock> 200 50 -- <claude> --bg-spare <claimSock>`. It imports the main chunk
+(`chunk-zvnaqyp5.js`) eagerly, then waits on the claim socket for the real session's env and argv (`kin`), exits
+if `process.ppid` changes (polled every 2000 ms), and on claim runs the normal main (`Ein`). The actual
+`runBgSpare` path returns `null` on Windows (`chunk-e9h2r1b7.js@64739`), so the spare pool is disabled on this
+host. `--preload` (`chunk-v8jk3662.js@6352`) is the same idea without a pty: load the main chunk, then run.
 
 **Lifecycle** (STRONGLY INFERRED from strings, supervisor body not read): the daemon starts on demand
 when a client needs it and exits when the last client disconnects
@@ -527,7 +528,9 @@ background session and observed one `background` registry row in `state:"blocked
 `rm` removed it. E83 started `claude attach` against a live trusted registry entry, observed attach output, then
  detached and cleaned the entry. E84 stopped a trusted entry, ran `respawn` successfully, observed a replacement
 `background` row in `state:"working"`, `status:"idle"`, and cleaned it. The sessions made no model POST, so
-active PTY data flow, spare PTY, worker respawn, and PTY authentication remain untested.
+active PTY data flow, worker respawn, and PTY authentication remain untested. The spare pool is host-blocked on
+Windows by the static `runBgSpare` guard; daemon worker kinds and invalid-kind handling are recorded in
+`runtime-logs/daemon-entrypoints/summary.json`, but no worker was launched.
 
 ## B. Session persistence and resume
 

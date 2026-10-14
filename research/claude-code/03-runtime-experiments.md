@@ -441,9 +441,10 @@ daemon, an unreachable control endpoint, and zero background workers while still
   `stop` plus `rm` reduced the matching count to zero. E83 also found the trusted session by its private registry id,
   started `claude attach`, observed attach output, then detached and cleaned it with `stop` plus `rm`; no ids are
   retained. E84 stopped a trusted background entry, ran `respawn` successfully, observed the replacement entry in
-  `state: "working"`, `status: "idle"`, then stopped and removed it. Spare PTY, worker spawn/exit, and attach
-  authentication remain unobserved. The E82-E84 sessions made no model POST because they remained blocked/idle.
-- Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
+  `state: "working"`, `status: "idle"`, then stopped and removed it. The spare pool is host-blocked on Windows
+  by the static `runBgSpare` guard. Worker spawn/exit and attach authentication remain unobserved. The E82-E84
+  sessions made no model POST because they remained blocked/idle.
+- Evidence: `runtime-logs/daemon-lifecycle/summary.json`, `runtime-logs/daemon-entrypoints/summary.json`, and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 
 ### E41 to E43: `auto` permission mode with a scripted classifier

@@ -1,0 +1,24 @@
+{
+  "id": "daemon-entrypoints",
+  "cli_version": "2.1.296",
+  "spare_pty": {
+    "static_guard": "runBgSpare returns null when the platform is Windows",
+    "static_source": "chunk-e9h2r1b7.js@64739",
+    "bounded_probe": "claude --bg-spare",
+    "probe_exit_code": 2,
+    "probe_error_class": "missing claim sock path",
+    "available_on_this_host": false
+  },
+  "daemon_workers": {
+    "valid_kinds_static": ["heartbeat", "scheduled", "remoteControl"],
+    "invalid_kind_probe": "claude --daemon-worker with no kind",
+    "invalid_probe_exit_code": 2,
+    "invalid_probe_error_class": "unknown worker kind",
+    "controlled_worker_lifecycle": false
+  },
+  "limits": [
+    "No worker was launched",
+    "No worker respawn or IPC lifecycle was exercised",
+    "No spare PTY was launched because the Windows static guard disables it"
+  ]
+}

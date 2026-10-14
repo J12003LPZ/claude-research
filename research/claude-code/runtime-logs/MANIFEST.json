@@ -4647,6 +4647,17 @@
    "redaction": "sanitized"
   },
   {
+   "id": "daemon-entrypoints",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "a29fee4f9190c93ec2344887e524a01b73c109e3ff819dcc2aa23e895e2435f1",
+     "bytes": 839
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "daemon-lifecycle",
    "kind": "static-or-aggregate",
    "files": {
