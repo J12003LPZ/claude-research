@@ -522,7 +522,8 @@ installation is disabled in this build, the daemon runs on demand, and it exits 
 `claude --bg --help` invocation did not take the help fast path: it started a background session and was stopped
 immediately. Subsequent direct `--bg` attempts showed two gates: `--bg` conflicts with `--print`, and non-print
 launches require workspace trust before a session is created. This confirms the CLI surface and idle contract text,
-but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY auth.
+but not a trusted client attach/detach cycle, spare PTY, worker respawn, or PTY auth. A Python PTY bridge reached the trust screen but could not move the selection from
+`No, exit`, so the trust-gated background path remains unexercised.
 
 ## B. Session persistence and resume
 

@@ -437,7 +437,9 @@ daemon, an unreachable control endpoint, and zero background workers while still
   but no controlled client attach/detach cycle was run. A direct `--bg` attempt with `-p` failed because the modes
   conflict; direct non-print `--bg` attempts failed the workspace-trust gate before session creation. No disposable
   background session passed the gate. Spare PTY, worker spawn/exit, respawn codes, and attach authentication remain
-  unobserved.
+  unobserved. A Python PTY bridge reached the interactive trust screen and rendered the affirmative option, but
+  synthetic key navigation did not change the default `No, exit` selection, so no trust was accepted and no
+  background session was created.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
 

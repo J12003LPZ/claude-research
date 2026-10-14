@@ -35,6 +35,13 @@
     "cleanup_matches_remaining": 0,
     "error_classes": ["--bg and --print conflict", "Workspace not trusted"]
   },
+  "pty_trust_probe": {
+    "interactive_trust_screen_reached": true,
+    "yes_option_rendered": true,
+    "synthetic_key_navigation_accepted": false,
+    "session_created": false,
+    "private_paths_withheld": true
+  },
   "limits": [
     "No controlled claude --bg launch passed workspace trust",
     "No daemon worker, spare PTY, respawn, or attach lifecycle was exercised",
