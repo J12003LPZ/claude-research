@@ -1205,14 +1205,14 @@ chunk, concurrency check order). The rest are split below into items I re-read a
 ## 6. Open questions for runtime experiments
 
 1. **Default backgrounding.** Launch one `Agent` call with no `run_in_background` in an interactive session and one in `-p` mode. Expect `async_launched` interactively. In headless mode the result depends on `e7()`/`Vat()`; record which.
-2. **Parallel Agent calls.** Ask for three agents in one message and compare `task_started` timestamps in stream-json output to confirm they overlap.
+2. **Parallel Agent calls.** **Answered at runtime (E10):** sibling `Agent` calls overlap (about 339 ms start separation, 2 s durations on both).
 3. **Parent interrupt.** Start a background agent, press Esc during the parent turn, and check that the agent's JSONL keeps growing. Repeat with a foreground agent and expect it to stop.
 4. **Depth cap.** Chain general-purpose agents until `"Subagent nesting limit reached (depth 3 of 3)"` appears. Confirm whether the `Agent` tool is already missing from the depth-3 child's tool list.
 5. **Notification delivery while idle vs mid-turn.** Finish a background agent while the REPL is idle (expect a new turn to start on its own) and while a long tool is running (expect delivery between steps). Capture the exact `<task-notification>` text from the transcript.
 6. **Project key hash.** Create a session in a directory whose absolute path exceeds 200 characters and read the directory name to recover the `Hse` suffix; test candidate hashes (djb2, Java `hashCode`, Bun.hash) against it.
 7. **Lazy file creation.** Start `claude`, exit without typing, and confirm no `<sessionId>.jsonl` exists.
 8. **Kill window.** `taskkill /F` the process right after a tool result prints, then count lines to measure how much of a 100 ms batch is lost, and check that the next resume seals the torn line.
-9. **Interrupted turn.** Kill during a tool call, resume, and check whether a meta `"Continue from where you left off."` row is appended and whether the turn auto-runs (expected only with `CLAUDE_CODE_RESUME_INTERRUPTED_TURN`).
+9. **Interrupted turn.** Kill during a tool call, resume, and check whether a meta `"Continue from where you left off."` row is appended and whether the turn auto-runs (expected only with `CLAUDE_CODE_RESUME_INTERRUPTED_TURN`). **Partly answered (E24a, E24b):** resume with a new prompt gets a synthetic interrupted `tool_result` plus `No response requested.`; resume with no prompt and the env flag were not run.
 10. **Fork cache sharing.** With the fork gate on, spawn `subagent_type:"fork"` and compare `cache_read_input_tokens` on the fork's first request against the parent's prefix size.
 11. **Daemon on Windows.** Run `claude --bg "..."` and list `\\.\pipe\cc-daemon-*`, `~/.claude/daemon/`, `~/.claude/jobs/` and the process tree to confirm supervisor -> pty host -> REPL and the spare pool size.
 12. **Retention.** Set `cleanupPeriodDays: 1`, backdate a transcript's mtime, delete `.last-cleanup`, start a session and wait about 5 s to see the sweep.

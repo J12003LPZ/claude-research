@@ -879,8 +879,8 @@ the names are author labels. Runtime evidence does not contradict a verified sta
 
 ## 6. Open questions for runtime experiments
 
-1. **Which rendering is live.** Capture one first-turn request. Check whether instruction files arrive as a single user message at index 0 containing `# claudeMd` (inline) or as separate reminder-wrapped messages (announced). Flag `tengu_foamy_spring` decides; static default is announced.
-2. **System block count and scopes.** In the same capture, list `system[]` blocks with their `cache_control`. Expect 4 or 5 blocks on first-party with a `scope:"global"` block. Confirm whether the identity line carries no marker in that mode.
+1. **Which rendering is live.** Capture one first-turn request. Check whether instruction files arrive as a single user message at index 0 containing `# claudeMd` (inline) or as separate reminder-wrapped messages (announced). Flag `tengu_foamy_spring` decides; static default is announced. **Answered at runtime (E01, C1, C2):** the announced rendering is live in the slim profile (reminder blocks in `messages[0]`).
+2. **System block count and scopes.** In the same capture, list `system[]` blocks with their `cache_control`. The static expectation was 4 or 5 blocks with a `scope:"global"` block. **Answered at runtime (E01):** three system blocks and no `scope:"global"` in the slim profile; other profiles and providers are untested.
 3. **Role of the `GXt` block and of `MLn(tools)`.** Diff `system[]` with and without the relevant tools to see what text appears.
 4. **Cache marker placement.** Count `cache_control` occurrences in `messages[]` across three consecutive turns; confirm the single-tail-marker rule and when a second marker appears.
 5. **TTL in practice.** Record `ttl` on a subscriber account for `repl_main_thread` vs a subagent request, with and without `ENABLE_PROMPT_CACHING_1H`.

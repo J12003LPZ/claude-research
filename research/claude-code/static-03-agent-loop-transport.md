@@ -1432,10 +1432,12 @@ multiplier, F6.7 discarded executor flag.
    --verbose` on a prompt that produces text plus two tool calls; count `assistant` frames per
    `message.id` and check whether early frames show `stop_reason:null` (they are serialized before
    the `message_delta` back-patch).
-2. **Tool start before `message_stop`.** Experiment: with `--include-partial-messages`, prompt two
+2. **Tool start before `message_stop`.** **Answered at runtime (E08, E07a):** tool results appear while the assistant stream is still open.
+   Original experiment: with `--include-partial-messages`, prompt two
    read-only tool calls; compare timestamps of the first `user` tool_result frame against the
    `stream_event` `message_stop` of the same `api_message_id`.
-3. **Parallel vs serial.** Experiment: request three independent Read calls and one Bash call in
+3. **Parallel vs serial.** **Partly answered (E08):** three parallel tool calls, merged results, PreToolUse hooks start in the same millisecond. The exclusive-Bash case was not run.
+   Original experiment: request three independent Read calls and one Bash call in
    one turn with a PreToolUse hook that logs start/end times; confirm overlapping reads and an
    exclusive Bash.
 4. **Sibling tools after an error.** Static reading says a failing tool no longer cancels

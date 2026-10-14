@@ -15,10 +15,10 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Startup | Entry module dispatches fast paths, then `main` | entry `cli` read in full | version and bad-flag runs make no API call | Verified | High | each side entry point not exercised |
 | Config | flag > local > project; settings `env` beats process env | merge code, static 01 | C5, C6, C6b, C6c | Verified | High | user and managed layers not run |
 | Config | `availableModels` constrains `--model` | static 01 | E01 vs E01b (not isolated) | Partially verified | Medium | single-variable run |
-| Prompt | 3 system blocks, 2 cached for 1h | cache scope code, static 02 | E01 | Verified | High | other providers |
+| Prompt | 3 system blocks, 2 cached for 1h | cache scope code, static 02 | E01 | Verified for the slim profile on first party | High | other profiles and providers |
 | Prompt | Instruction files ride in the first user message | static 02 | C1, C2 marker offsets | Verified | High | |
 | Prompt | Discovery order and lazy nested loading | static 02 | C1, C2, E08 | Verified | High | external-include approval rule |
-| Prompt | `AGENTS.md` not loaded | static 02 (existence probe only) | C2 | Verified | High | |
+| Prompt | `AGENTS.md` not loaded | static 02 (existence probe only) | C2 | Verified for one lab project layout | High | other settings and flags |
 | Prompt | Mid-conversation `role: system` messages | beta id in `chunk-80kqkekd.js` | E01, E08, C2 | Verified | High | behaviour when the beta is off |
 | Loop | Continue while tool_use present; one result message per assistant message | static 03 | E02, E08, E09 | Verified | High | |
 | Loop | Tools start before `message_stop` | `streamingToolExecutor.addTool` | E08 event order | Verified | High | interaction with unsafe tools |
@@ -32,7 +32,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Tools | Large results persisted to disk | static 04 | E22 (14 sizes) | Verified; Bash threshold is 30,000 raw characters, not 50,000 | High | other tools' caps, MCP tools |
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
-| Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified | High | host approval path |
+| Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified without a host handler; host approval is a separate row (E19c, E19d) | High | interactive dialog |
 | Permissions | Modes plan, bypass, dontAsk, acceptEdits | static 04 | P-plan, P-dontAsk, P-acceptEdits, P-bypassPermissions (2.1.296 and 2.1.299) | Verified for one Write plus one Bash per mode | Medium | `auto` mode still untested |
 | Hooks | Matching hooks run in parallel | static 04 | E07a timestamps | Verified | High | |
 | Hooks | Exit 2 blocks, exit 1 does not | static 04 | E07c, E07d | Verified | High | per-event differences |
@@ -52,8 +52,8 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
 | Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
 | Interrupt | Abort closes HTTP stream, synthesizes messages | static 03 | E13b, E13c | Verified | High | TUI Esc, SIGINT |
-| Rendering | Custom Ink-style renderer, 16 ms frames | static 05 | none | Blocked | Low | PTY harness |
-| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | none | Untested | Low | `claude --bg` under observation |
+| Rendering | Custom Ink-style renderer, 16 ms frames | static 05 only; not runtime-verified | none | Blocked | Low | PTY harness |
+| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 only; not runtime-verified | none (the `system/init` frame shows a `messaging_socket_path` pipe name, which is not the daemon) | Untested | Low | `claude --bg` under observation |
 | Server side | Model behaviour, rate limits, gates, server context edits | none possible | headers only | Blocked | n/a | vendor only |
 
 ## 2. Behavioural test matrix: installed CLI versus the proposed reconstruction

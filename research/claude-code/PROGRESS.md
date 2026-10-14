@@ -39,7 +39,7 @@ Default config on this machine sends 206 tools and ~258k cached tokens per first
 `--model haiku --setting-sources project,local --strict-mcp-config --mcp-config empty-mcp.json`
 (26 tools, ~36k tokens, ~0.002 to 0.008 USD per run). `--model haiku` alone was ignored under
 user settings (E01: `availableModels` in user settings does not list a haiku id; the request
-used the settings model). Marked STRONGLY INFERRED until the static evidence is matched.
+used the settings model). Status: partially verified (E01 vs E01b, not a single-variable run); see `06-verification-matrix.md` row 17.
 
 ## Verified runtime findings so far
 
