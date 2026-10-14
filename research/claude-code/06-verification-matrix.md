@@ -26,10 +26,10 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Loop | Max output-token recovery, 3 attempts | static 03 | none | Untested | Medium | long-output run |
 | Transport | App-level retry: 10 attempts, 500 ms base, 25% jitter, retry-after | static 03 constants | E18a, b, d, e | Verified | High | cap 32 s, give-up paths |
 | Transport | 400 triggers a degraded retry | not located statically | E18c | Partially verified | Medium | which 400s qualify |
-| Transport | Fallback model after 3 consecutive 529 | static 03 | none (2 injected) | Untested | Medium | inject 3 with `--fallback-model` |
-| Transport | Idle watchdogs, non-streaming fallback | static 03 | none | Untested | Medium | proxy stall mode |
+| Transport | Fallback model after 3 consecutive 529 | static 03 | E20, E21 | Verified | High | `--fallback-model` unset: 4 retries, no switch (E21) |
+| Transport | Byte watchdog, non-streaming fallback | static 03 | E23 | Verified for the byte tier with `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS=10000` | Medium | event tier (300 s floor) and the 180 s default are untested |
 | Tools | Lifecycle: lookup, validate, PreToolUse, decide, call, PostToolUse | static 04 | E07a to E07g | Verified | High | PostToolUseFailure |
-| Tools | Large results persisted to disk | static 04 | none | Untested | Medium | 60k-char output |
+| Tools | Large results persisted to disk | static 04 | E22 (14 sizes) | Verified; Bash threshold is 30,000 raw characters, not 50,000 | High | other tools' caps, MCP tools |
 | Permissions | deny > ask > allow | static 04 core check | E08b | Verified | High | cross-layer rule merge |
 | Permissions | Hook allow skips prompt; deny rule still wins | `resolveHookAndPermission` | E07e, E07f | Verified | High | |
 | Permissions | Headless ask becomes denial | static 04 | E06, E06b | Verified | High | host approval path |
@@ -104,8 +104,8 @@ behaviour precisely enough to test, not a pass or fail.
 | 38 | Host approval over the control protocol | none | 7 | Untested |
 | 39 | Subagent failure mid-run | none | 9 | Untested |
 | 40 | Crash recovery on resume | none | 11 | Untested |
-| 41 | Large tool result persistence | none | 6 | Untested |
-| 42 | Model fallback | none | 4 | Untested |
+| 41 | Large tool result persistence | E22 | 6 | Verified (Bash) |
+| 42 | Model fallback | E20, E21 | 4 | Verified |
 | 43 | Sandbox | none | 7 | Untested |
 | 44 | MCP tool call | none | 14 | Untested |
 

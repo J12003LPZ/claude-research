@@ -403,6 +403,21 @@ Side effects: plan mode created two plan files under `~/.claude/plans/` (one per
 project `out.txt` appeared only for `acceptEdits` and `bypassPermissions`. Not tested here: `auto`
 mode (needs the classifier), interactive plan approval, bypass with rules that should still win.
 
+## Fallback, watchdog and large-output experiments (E20 to E23)
+
+All on 2.1.296 (`CLAUDE_BIN` pinned), slim profile, haiku. Injected faults were answered by the
+local proxy; nothing was sent upstream for them. Proxy gained an `sse_stall` mode for E23.
+
+| Id | Setup | Observed |
+|---|---|---|
+| E20-529x3-fallback | 3 injected 529, `--fallback-model sonnet` | Two `system/api_retry` frames (delays 585 and 1,198 ms), then on the third 529 a `system/model_fallback` frame (`trigger:"overloaded"`, `original_model:"claude-haiku-5-5"`, `fallback_model:"claude-sonnet-5-5"`, text `Switched to Sonnet 5.5 due to high demand for Haiku 5.5`), then a fourth request with model `claude-sonnet-5-5` and a one-byte-longer body that succeeded. Result `ok`. Matches the static `J8 = 3` rule |
+| E21-529x4-nofallback | 4 injected 529, no fallback model | Four `api_retry` frames (delays 576, 1,041, 2,456, 4,232 ms), then success on the same model. No "repeated overload" error and no model switch, so that static branch did not fire for haiku on this account |
+| E23-sse-stall-byte10s | upstream replies 200 with `message_start`, then silence; `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS=10000` | debug log: `[byte-watchdog] firing: idle=10000ms`, `Streaming idle timeout (byte-level)`, `Error streaming, falling back to non-streaming mode`. The next request had `stream:false` and `max_tokens:64000` (first was `stream:true`, `max_tokens:128000`) and succeeded. No `api_retry` frame and no SDK frame for the fallback. Run took 12.3 s |
+| E22-bigout-N | `python -c "print('a'*N)"` under `bypassPermissions` | N = 5,000 to 29,998: tool_result inline (N chars; the trailing newline is trimmed). N = 29,999 and above (49,000, 51,000, 450,000 too): tool_result is a `<persisted-output>` block of about 2.2 KB: `Output too large (SIZE). Full output saved to: <config dir>/projects/<project>/<session>/tool-results/<id>.txt`, blank line, `Preview (first 2KB):`, preview, `...`, `</persisted-output>`. So the Bash threshold is 30,000 raw characters including the newline (the static report's 50,000 is the cap for tools that do not set a lower `maxResultSizeChars`) |
+
+The `E23` result settles the static prediction for the byte tier only. With the stream-idle env unset the
+byte default is 180 s on first party and the event floor is 300 s; neither was waited out.
+
 ## Experiments not run, with reasons
 
 | Item | Reason | What would settle it |

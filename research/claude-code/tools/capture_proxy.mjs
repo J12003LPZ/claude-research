@@ -13,7 +13,7 @@
 //
 // Fault injection (safe transport-failure experiments): if <raw_out_dir>/fault.json
 // exists with {"path_contains": "/v1/messages", "status": 529, "times": 2,
-// "body": {...}, "headers": {...}, "mode": "status" | "reset" | "stall",
+// "body": {...}, "headers": {...}, "mode": "status" | "reset" | "stall" | "sse_stall",
 // "after_bytes": 0, "stall_ms": 0}, matching requests are answered locally and
 // `times` is decremented. Nothing is sent upstream for an injected fault.
 import http from "node:http";
@@ -88,6 +88,23 @@ const server = http.createServer((req, res) => {
         req.socket.destroy();
         timing.end();
         resBody.end();
+        return;
+      }
+      if (mode === "sse_stall") {
+        // Valid SSE start, then silence: exercises the idle watchdogs. After stall_ms
+        // (default: never) the connection is closed without further events.
+        const start = { type: "message_start", message: { id: "msg_lab_stall", type: "message", role: "assistant",
+          model: fault.model || "claude-haiku-5-5", content: [], stop_reason: null, stop_sequence: null,
+          usage: { input_tokens: 1, output_tokens: 1 } } };
+        meta({ seq: id, injected: true, mode, status: 200, t_ms: Date.now() - t0 });
+        res.writeHead(200, { "content-type": "text/event-stream", "cache-control": "no-cache" });
+        res.write(`event: message_start
+data: ${JSON.stringify(start)}
+
+`);
+        resBody.write("[message_start only]");
+        if (fault.stall_ms) setTimeout(() => { res.end(); resBody.end(); timing.end(); }, fault.stall_ms);
+        req.on("close", () => { resBody.end(); timing.end(); });
         return;
       }
       const payload = JSON.stringify(

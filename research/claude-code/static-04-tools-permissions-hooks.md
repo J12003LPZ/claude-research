@@ -197,7 +197,7 @@ Details:
   event is emitted every 30,000 ms for main-thread tools (`@2245164 "C9r=30000"`, `"tool_heartbeat"`).
 - **Slow-hook logging threshold. VS** 2,000 ms (`@2254664 "yqe=2000"`).
 - **Empty output. VS.** Replaced by `(NAME completed with no output)` (`chunk-ghf2w5kp.js@~5700`).
-- **Large output. VS.** Threshold = `min(tool.maxResultSizeChars, 50000)` unless a remote flag
+- **Large output. VS** (runtime E22: Bash is persisted from 30,000 raw characters, inline at 29,999; so the Bash `maxResultSizeChars` is 30,000). Threshold = `min(tool.maxResultSizeChars, 50000)` unless a remote flag
   overrides per tool; default when a tool gives none is 400,000. Content containing image or
   document blocks is never persisted. Above the threshold the text is written to
   `<tool-results dir>/<tool_use_id>.txt` (or `.json` for block arrays) with exclusive create, and
