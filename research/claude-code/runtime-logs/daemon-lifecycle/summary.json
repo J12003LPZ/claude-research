@@ -1,6 +1,6 @@
 {
   "id": "daemon-lifecycle",
-  "method": "read-only pinned CLI help and status; no background session launched intentionally",
+  "method": "read-only pinned CLI help and status; one accidental --bg --help dispatch was stopped immediately",
   "cli_version": "2.1.296",
   "help": {
     "daemon_subcommands": ["run", "status", "logs", "uninstall", "stop"],
@@ -15,6 +15,13 @@
     "bg_workers": 0,
     "roster_reported_updated": true,
     "status_command": "claude daemon status"
+  },
+  "bg_help_dispatch": {
+    "command": "claude --bg --help",
+    "help_short_circuit": false,
+    "started_background_session": true,
+    "stopped_immediately": true,
+    "session_id_withheld": true
   },
   "agents_json": {
     "command_completed": true,

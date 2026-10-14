@@ -431,7 +431,8 @@ daemon, an unreachable control endpoint, and zero background workers while still
 `claude agents --json` completed and its schema was recorded without retaining names, paths, pids, or session ids.
 
 - **Verified:** the CLI exposes `run`, `status`, `logs`, `uninstall`, and `stop`; `stop` documents
-  `--keep-workers`; the service-install path is disabled in this build.
+  `--keep-workers`; the service-install path is disabled in this build. A separate `claude --bg --help` probe did
+  not short-circuit to help: it started a background session, which was stopped immediately; the id is withheld.
 - **Partially verified:** the idle-exit contract is present in the shipped help and matches the static source string,
   but no controlled client attach/detach cycle was run. Spare PTY, worker spawn/exit, respawn codes, and attach
   authentication remain unobserved.

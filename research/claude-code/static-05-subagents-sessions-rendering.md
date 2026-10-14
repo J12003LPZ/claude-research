@@ -518,8 +518,10 @@ its launching terminal because the pty host is spawned `detached:true` and owns 
 
 **Runtime note [daemon-lifecycle, VERIFIED/PARTIAL]:** pinned 2.1.296 `daemon --help` reports that service
 installation is disabled in this build, the daemon runs on demand, and it exits when the last client disconnects.
-`daemon status` on this host reported no running daemon, unreachable control, and zero workers. This confirms the
-CLI surface and idle contract text, but not a client attach/detach cycle, spare PTY, worker respawn, or PTY auth.
+`daemon status` on this host reported no running daemon, unreachable control, and zero workers. A separate
+`claude --bg --help` invocation did not take the help fast path: it started a background session and was stopped
+immediately. This confirms the CLI surface and idle contract text, but not a client attach/detach cycle, spare PTY,
+worker respawn, or PTY auth.
 
 ## B. Session persistence and resume
 
