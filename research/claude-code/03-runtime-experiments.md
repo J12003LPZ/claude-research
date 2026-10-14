@@ -401,7 +401,7 @@ reached the real service. Per-event numbers are in each run's `debug-summary.jso
 |---|---|---|
 | E35 | `--autocompact 100k`, 5 short turns, 400 "prompt is too long" | Every turn: `level=compact`, `routing through reactive (thresholdSource=settings)`, two failed compaction rounds (E34's ladder), `prompt_too_long` end. 5 turns, 10 PreCompact hooks, 5 failed autocompact operations |
 | E36 | no `--autocompact`, 6 short turns, generic 400 | `level=ok effectiveWindow=980000` on all six turns. No compaction. The default window of this model is about 980,000 tokens |
-| E36p-* | one turn each with `--model` set to `claude-opus-4-1`, `claude-sonnet-4-5`, `claude-3-5-haiku-20241022` | `claude-opus-4-1` also reported `effectiveWindow=980000`. The other two printed no `autocompact:` line (cause not determined). No 200k-window model was found |
+| E36p-* | one turn each with `--model` set to `claude-opus-4-1`, `claude-sonnet-4-5`, `claude-3-5-haiku-20241022` | `claude-opus-4-1` also reported `effectiveWindow=980000`. The other two printed no `autocompact:` line: for a source-`auto` model the should-compact predicate returns false before it logs (see below). No 200k-window model with a logged window was found |
 | E37 | no `--autocompact`; 28 turns carrying the 186,116-character synthetic flood, then 8 short turns; generic 400 | `level` was `ok` x10, `warn` x1, `blocked` x25. Each of the 25 blocked turns: `routing through reactive (thresholdSource=model-default)`, one PreCompact hook, one `source=compact` request (400), `Reactive compact: summarization returned API error`, then the turn ended with `terminal_reason:"blocking_limit"` and **no** `source=sdk` request. The 11 turns before that ended `api_error` 400. 38 POSTs in total: 13 `source=sdk`, 25 `source=compact` |
 
 - **No breaker appeared.** Across 25 consecutive failed compaction operations in one process (E37), plus
@@ -414,6 +414,12 @@ reached the real service. Per-event numbers are in each run's `debug-summary.jso
   override is present. Here the source was `settings` (E35) or `model-default` (E37), so all compaction in E27 to
   E37 used the reactive route. The static counter `consecutiveFailures` is read before that routing, so either it
   is never incremented on the reactive route or it is absent in this stream-json mode. This was not separated.
+- **Source reading that ties E36p to E37** (`chunk-phacttch.js`): the should-compact predicate `scr@2593137` returns
+  false at `if(r$()&&!Xae(n,r)&&!S)` before it writes the `autocompact: tokens=` line, and `Xae@862512` is
+  `source !== "auto"`. In a local session (`r$()` true, `CLAUDE_CODE_REMOTE` unset) compaction therefore
+  runs only for a non-`auto` threshold source, and the routing test at `@2596309` (`nt!=="auto"`) sends every
+  such case down the reactive route. The window source is `auto` only for a recognized model below 1M that is
+  not billed past 200k (`lv@860717`); `haiku-5-5` and `opus-4-1` here resolve to `model-default`.
 - **New:** at level `blocked` with a failing compaction, the turn ends locally with `blocking_limit` and sends no
   model request. This matches the `blocking_limit` terminal reason listed in `static-03`.
 - **Not established:** behaviour on the non-reactive route (no reactive handler), in interactive mode, or with
