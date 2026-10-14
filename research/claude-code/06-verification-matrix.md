@@ -107,10 +107,10 @@ behaviour precisely enough to test, not a pass or fail.
 | 40 | Crash recovery on resume | E24 | 11 | Verified (synthetic interrupted result) |
 | 41 | Large tool result persistence | E22 | 6 | Verified (Bash) |
 | 42 | Model fallback | E20, E21 | 4 | Verified |
-| 43 | Sandbox | none | 7 | Untested |
+| 43 | Sandbox | `claude sandbox status` reports `supported:false`, `installed:false`, `enabled:false` on this host | 7 | Blocked (not exercisable here; enforcement itself unobserved) |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 45 behaviours enumerated. Verified 37, partially verified 4, untested 2, blocked 2.
+Counts: 45 behaviours enumerated. Verified 37, partially verified 4, untested 1, blocked 3.
 
 ## 3. Cross-validation per subsystem
 
@@ -146,7 +146,7 @@ Falsifier: a retry with a non-zero SDK retry header. Unknown: event-tier watchdo
 logs with timestamps, file state on disk before and after, denial events. Alternative:
 E07f could be the model declining to call Edit. Rejected: the call was made and returned
 "No such tool available". Falsifier: an allow hook that makes a denied tool run. Unknown:
-the `auto` classifier, sandbox, and interactive approval UI.
+the `auto` classifier, sandbox enforcement (not supported on this host), and interactive approval UI.
 
 **Subagents and tasks.** Known: nested loop, separate prompt, parallel siblings, event
 lifecycle, hand-back framing. How: overlapping request timestamps on the proxy, task

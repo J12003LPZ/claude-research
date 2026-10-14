@@ -1241,7 +1241,7 @@ text**; the original wording is superseded where they differ:
 7. **Large output.** Tool output of 49,999 / 50,001 / 400,001 chars from Bash and from an MCP tool;
    confirm the threshold used, the file location, and the exact `<persisted-output>` text.
 8. **Sandbox on Windows.** Whether `sandbox.enabled` does anything on this build without Git Bash
-   and whether `srt-win` is ever installed; observe with `sandbox.failIfUnavailable:true`.
+   and whether `srt-win` is ever installed; observe with `sandbox.failIfUnavailable:true`. **Partly answered at runtime:** `claude sandbox status` on this host returns `supported:false`, `installed:false`, `enabled:false`, reason "The Windows sandbox is not enabled on this build" (`runtime-logs/sandbox-status/summary.json`); `sandbox install` was not run because it self-elevates.
 9. **Mode cycle.** Press shift+tab from each mode with and without
    `--dangerously-skip-permissions` and with auto mode available; compare with the static cycle.
 10. **Subagent prompts.** Background agent calling a tool that needs approval, with and without a

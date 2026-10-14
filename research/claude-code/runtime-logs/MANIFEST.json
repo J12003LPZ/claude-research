@@ -3134,6 +3134,17 @@
    "redaction": "sanitized"
   },
   {
+   "id": "sandbox-status",
+   "kind": "static-or-aggregate",
+   "files": {
+    "summary.json": {
+     "sha256": "25d15b9c77c2134797f0f976ce47373365028bc4fdbb643e4bb05b0dfcc7c394",
+     "bytes": 767
+    }
+   },
+   "redaction": "sanitized"
+  },
+  {
    "id": "sessions",
    "kind": "static-or-aggregate",
    "files": {

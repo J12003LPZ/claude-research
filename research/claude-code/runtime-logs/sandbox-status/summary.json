@@ -1,0 +1,25 @@
+{
+ "id": "sandbox-status",
+ "command": "claude sandbox status",
+ "cli_version": "2.1.296",
+ "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+ "not_run": "claude sandbox install (self-elevates through a UAC prompt; creates a system user and network filters)",
+ "output": {
+  "statusVersion": 3,
+  "available": false,
+  "installed": false,
+  "policyLocked": false,
+  "reasons": [
+   "The Windows sandbox is not enabled on this build."
+  ],
+  "supported": false,
+  "enabled": false,
+  "enabledSource": "off",
+  "unavailableReason": null,
+  "strictMode": false,
+  "strictModeSource": "off",
+  "filesystemPolicy": "strict",
+  "autoAllowBashIfSandboxed": false,
+  "autoAllowBashIfSandboxedSource": "unsupported"
+ }
+}
