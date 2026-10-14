@@ -353,7 +353,7 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   The observed failure is therefore **Verified** as summary API-error exhaustion and hook
   failure, while the static claim of three *distinct* failed summaries opening a session
   breaker remains **Untested**.
-- Not observed: the prompt-too-long summary retry/drop path, partial compaction, direct-path
+- Not observed here: partial compaction, direct-path
   cache-sharing fallback, or three separate failed auto-compaction operations in one live
   session. The account rate limit (`retry-after` reported by the server) prevented a
   final ordinary turn after E31; that server response is not attributed to the CLI breaker.
@@ -362,6 +362,33 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   upstream account limit: one `HEAD /api/hello` followed by a `POST /v1/messages` returning
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
+
+### E34: prompt-too-long during compaction (reactive path)
+
+E34 resumed the same private session as E31 with `--autocompact 100k`, and the proxy answered
+**every** `/v1/messages` request locally with HTTP 400 `invalid_request_error`, message
+`prompt is too long: 250000 tokens > 200000 maximum`. The gap is therefore a lab constant of
+50,000 tokens, not a measurement. Only `HEAD /api/hello` reached the real service; 8 of 9 requests
+were injected and no model request went upstream. Raw bodies stay private; structured numbers are
+in `runtime-logs/E34-ptl-summary-retry/debug-summary.json` (`reactive_compact`).
+
+- The debug log shows `autocompact: routing through reactive (thresholdSource=settings)`, so this
+  is the **reactive** compaction path. The static report did not read that path (`static-02` scope
+  note); the non-reactive `Mon` drop-and-retry of F9.8 was not exercised.
+- Round 1 made three `source=compact` requests (11, 11 and 5 messages; 623,737, 231,252 and 160,697
+  bytes). After each 400 the CLI logged `attempt N hit prompt-too-long (gap=50000, gap_guided step S),
+  next preserves K/7` with K = 3, 5, 6 and step 2, 2, 1. It then logged `no assistant messages in
+  summarize set, bailing`, and the `session.compact` hook failed.
+- The turn then sent its ordinary `source=sdk` request (809,955 bytes), which also got the 400
+  (`StopFailure:invalid_request` hooks ran), and a second compaction round started: three attempts
+  (preserves 4/7, 5/7, 6/7; 11, 8 and 5 messages), then `round ladder exhausted, last resort (keeping
+  3 trailing messages, head truncations so far: 1)`, one last-resort request (2 messages, 96,937
+  bytes), and `last-resort request still too long after 1 head truncations, giving up`.
+- Final frame: `subtype:"success"`, `is_error:true`, `terminal_reason:"prompt_too_long"`,
+  `api_error_status:400`, exit 1, 3.9 s, one turn.
+- **Not established:** what `gap_guided step` and the `K/7` preserve ratio mean, which messages
+  are kept, and behaviour when the server error carries no parsable token gap. Whether a real
+  server overflow behaves the same is untested.
 
 ### E18a to E18e: transport faults (item 18)
 
@@ -474,7 +501,31 @@ local proxy; nothing was sent upstream for them. Proxy gained an `sse_stall` mod
 | E22-bigout-N | `python -c "print('a'*N)"` under `bypassPermissions` | N = 5,000 to 29,998: tool_result inline (N chars; the trailing newline is trimmed). N = 29,999 and above (49,000, 51,000, 450,000 too): tool_result is a `<persisted-output>` block of about 2.2 KB: `Output too large (SIZE). Full output saved to: <config dir>/projects/<project>/<session>/tool-results/<id>.txt`, blank line, `Preview (first 2KB):`, preview, `...`, `</persisted-output>`. So the Bash threshold is 30,000 raw characters including the newline (the static report's 50,000 is the cap for tools that do not set a lower `maxResultSizeChars`) |
 
 The `E23` result settles the static prediction for the byte tier only. With the stream-idle env unset the
-byte default is 180 s on first party and the event floor is 300 s; neither was waited out.
+byte default is 180 s on first party; that default was not waited out.
+
+### E33: event-tier watchdog and its 300 s floor
+
+2.1.296, slim profile, `CLAUDE_STREAM_IDLE_TIMEOUT_MS=15000` and `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS=1800000`
+(the byte tier's maximum, so it cannot fire first). The proxy answered every `/v1/messages` with `sse_stall`:
+a valid `message_start` frame, then silence. Nothing went upstream except `HEAD /api/hello`. The harness
+killed the run at 420 s. Numbers are in `runtime-logs/E33-event-watchdog-floor/debug-summary.json` (`watchdog`).
+
+| Time after the request | Observed |
+|---|---|
+| 15, 30, 60, 120 s | `[Stall] stream_idle_partial lastChunkAgeMs=… bytesTotal=247 idleDeadlineMs=1800000` |
+| 150 s | `Streaming idle warning: no chunks received for 150s` |
+| 300 s (07:29:26.1 to 07:34:26.4) | `Streaming idle timeout: no chunks received for 300s, aborting stream`, then `falling back to non-streaming mode` |
+| about 301 s | second POST with `stream:false`, `max_tokens:64000` (first was `stream:true`, `128000`); it was stalled too |
+
+- **Verified:** the event-tier timeout is `max(env, 300000)`. An env value of 15 s did not lower it. The
+  warning came at half of the timeout, 150 s, as `static-03` F6.4 predicts. The timeout switches the
+  request to non-streaming mode, the same fallback shape as E23's byte tier.
+- The `idleDeadlineMs=1800000` field equals the byte timeout set here, so it belongs to the byte tier.
+- **Unexplained:** the `[Stall] stream_idle_partial` warnings at 15, 30, 60 and 120 s are not in the static
+  report. They stopped before the 150 s warning and there was none at 240 s. Because the env value was
+  also 15000, it is not known whether the 15 s start comes from the env or is fixed.
+- **Not observed:** the `tengu_streaming_idle_timeout` event with `tier:"event"` does not appear in the debug
+  log, so that tier label stays a static claim. The 180 s first-party byte default is still unwaited.
 
 ## Crash recovery and MCP calls (E24, E25)
 
@@ -513,6 +564,7 @@ Not tested: a response that has real text when it is cut (does the partial text 
 | Approval granted or refused through a host (`can_use_tool` control request) | **Verified (E19c allow, E19d deny)**; E19 and E19b were setup failures | E19 (earlier account state) ended `Not logged in`. E19b (stored login, `--permission-prompts host` alone) ran the model but emitted no control request: the Bash call was auto-denied with `system/permission_denied` (`decision_reason: This command requires approval`) and the result text was `This command needs approval, so it didn't run`. With `--permission-prompt-tool stdio` (E19c, E19d) the CLI wrote one `control_request` (`request.subtype:"can_use_tool"`, keys `tool_name`, `display_name`, `input`, `description`, `permission_suggestions`, `decision_reason`, `decision_reason_type`, `tool_use_id`) and waited. Allow reply: the tool ran, `tool_result` `host-approved`, `result.permission_denials: []`. Deny reply with `message`: `tool_result` carried the host's message verbatim with `is_error:true`, and `result.permission_denials` listed `tool_name`, `tool_use_id`, `tool_input`. `permission_suggestions` offered an `addRules` entry with destination `localSettings`. The earlier inference that env scrubbing caused the login failure was wrong for E19b: the stored login now works. |
 | Subagent failing mid-run, nested subagents | time | prompt a child to call a denied tool; set depth |
 | Three distinct failed auto-summaries and failure breaker | E31 reached summary API-error exhaustion but the retry loop ended the compaction hook before three separate failures | keep the body-targeted fault, then drive three separate auto-compaction turns after the account rate limit resets; require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
-| Prompt-too-long summary retry and partial compaction | no controlled prompt-too-long or partial-summary response was available | inject a summary-shaped error/text response while keeping normal model turns available |
+| Partial compaction | no trigger for the partial path was found | locate the caller of the partial compaction function, then drive it |
+| Prompt-too-long summary retry, non-reactive path | **Reactive path observed (E34)**; the non-reactive `Mon` path was not reached | find what makes autocompact skip the reactive route |
 | Process kill and recovery on resume | **Verified (E24a/E24b)** | kill the CLI during a tool, then `--resume` |
 | Direct (unproxied) baseline | proxy was the only body-level tap | compare `--debug api` logs with and without the proxy |

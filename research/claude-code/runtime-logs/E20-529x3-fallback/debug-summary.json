@@ -248,5 +248,7 @@
   "2026-10-14T02:56:27.605Z [signal] API error",
   "2026-10-14T02:56:28.208Z [signal] API error",
   "2026-10-14T02:56:29.413Z [signal] API error"
- ]
+ ],
+ "reactive_compact": [],
+ "watchdog": []
 }

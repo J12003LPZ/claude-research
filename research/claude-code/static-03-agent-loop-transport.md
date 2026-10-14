@@ -1463,7 +1463,7 @@ multiplier, F6.7 discarded executor flag.
     after `message_start`. Audit correction (`chunk-nfvf6nm0.js@267300`, `dw`): the event
     timeout is `max(env, 300000)`, and when the stream-idle env or setting is set the 180 s
     first-party byte default is skipped, so the byte timeout equals the event timeout
-    (300 s or more) unless `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS` is set. The earlier
+    (300 s or more) unless `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS` is set. **Event-tier half answered by E33:** with env 15 s the abort came at 300 s and the warning at 150 s. The earlier
     prediction that the byte watchdog fires first at 180 s is wrong for this configuration.
 12. **Non-streaming fallback.** Close the SSE connection before any event; verify a second POST
     with `stream:false`, `max_tokens <= 64000`, and that `streaming_fallback_began` produces no

@@ -247,5 +247,7 @@
   "2026-10-13T17:15:33.199Z [signal] compact",
   "2026-10-13T17:15:35.287Z [signal] compact",
   "2026-10-13T17:15:36.941Z [signal] compact"
- ]
+ ],
+ "reactive_compact": [],
+ "watchdog": []
 }

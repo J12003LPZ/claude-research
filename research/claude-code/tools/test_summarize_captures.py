@@ -115,6 +115,63 @@ class SanitizeRunTests(unittest.TestCase):
         self.assertTrue(any("failure_breaker_open" in signal for signal in summary["signals"]))
         self.assertTrue(any("tengu_auto_compact_circuit_breaker" in signal for signal in summary["signals"]))
 
+    def test_debug_summary_extracts_reactive_compact_numbers_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            path.write_text(
+                "2026-10-14T00:00:01Z [INFO] Reactive compact: attempt 2 hit prompt-too-long "
+                "(gap=50000 → gap_guided step 1), next preserves 5/7 SENSITIVE-LAB-MARKER-9348\n"
+                "2026-10-14T00:00:02Z [INFO] Reactive compact: round ladder exhausted, last resort "
+                "(keeping 3 trailing messages, head truncations so far: 1)\n"
+                "2026-10-14T00:00:03Z [INFO] Reactive compact: last-resort request still too long "
+                "after 1 head truncations, giving up\n"
+                "2026-10-14T00:00:04Z [INFO] Reactive compact: no assistant messages in summarize set, bailing\n",
+                encoding="utf-8",
+            )
+
+            summary = summarize_debug(str(path))
+
+        self.assertEqual(
+            summary["reactive_compact"],
+            [
+                {"t": "2026-10-14T00:00:01Z", "event": "attempt_prompt_too_long", "attempt": 2,
+                 "gap": 50000, "step": 1, "preserves": 5, "of": 7},
+                {"t": "2026-10-14T00:00:02Z", "event": "last_resort", "keeping": 3, "head_truncations": 1},
+                {"t": "2026-10-14T00:00:03Z", "event": "gave_up", "head_truncations": 1},
+                {"t": "2026-10-14T00:00:04Z", "event": "bail_no_assistant_messages"},
+            ],
+        )
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
+
+    def test_debug_summary_extracts_watchdog_numbers_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "debug.log"
+            path.write_text(
+                "2026-10-14T00:00:01Z [WARN] [Stall] stream_idle_partial lastChunkAgeMs=14999 "
+                "bytesTotal=247 idleDeadlineMs=1800000 SENSITIVE-LAB-MARKER-9348\n"
+                "2026-10-14T00:00:02Z [WARN] Streaming idle warning: no chunks received for 150s\n"
+                "2026-10-14T00:00:03Z [ERROR] Streaming idle timeout: no chunks received for 300s, aborting stream\n"
+                "2026-10-14T00:00:04Z [ERROR] [byte-watchdog] firing: idle=10000ms\n"
+                "2026-10-14T00:00:05Z [ERROR] Error streaming, falling back to non-streaming mode: "
+                "Stream idle timeout SENSITIVE-LAB-MARKER-9348\n",
+                encoding="utf-8",
+            )
+
+            summary = summarize_debug(str(path))
+
+        self.assertEqual(
+            summary["watchdog"],
+            [
+                {"t": "2026-10-14T00:00:01Z", "event": "stall_partial", "last_chunk_age_ms": 14999,
+                 "bytes_total": 247, "idle_deadline_ms": 1800000},
+                {"t": "2026-10-14T00:00:02Z", "event": "idle_warning", "seconds": 150},
+                {"t": "2026-10-14T00:00:03Z", "event": "idle_timeout", "seconds": 300},
+                {"t": "2026-10-14T00:00:04Z", "event": "byte_watchdog_fired", "idle_ms": 10000},
+                {"t": "2026-10-14T00:00:05Z", "event": "fallback_non_streaming"},
+            ],
+        )
+        self.assertNotIn("SENSITIVE-LAB-MARKER-9348", str(summary))
+
     def test_request_summary_does_not_publish_container_or_mcp_values(self):
         marker = "SENSITIVE-LAB-MARKER-9348"
         req = {

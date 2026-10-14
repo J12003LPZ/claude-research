@@ -449,6 +449,33 @@ def summarize_stream(path):
 
 DEBUG_PAT = re.compile(r"^(\S+)\s+\[(\w+)\]\s*(.*)$")
 
+# Reactive-compact progress lines. Only the integers are captured, never free text.
+REACTIVE_PATTERNS = [
+    ("attempt_prompt_too_long", re.compile(
+        r"Reactive compact: attempt (\d+) hit prompt-too-long \(gap=(\d+)\D+?step (\d+)\), next preserves (\d+)/(\d+)"),
+     ("attempt", "gap", "step", "preserves", "of")),
+    ("last_resort", re.compile(
+        r"Reactive compact: round ladder exhausted, last resort \(keeping (\d+) trailing messages, head truncations so far: (\d+)\)"),
+     ("keeping", "head_truncations")),
+    ("gave_up", re.compile(
+        r"Reactive compact: last-resort request still too long after (\d+) head truncations, giving up"),
+     ("head_truncations",)),
+    ("bail_no_assistant_messages", re.compile(
+        r"Reactive compact: no assistant messages in summarize set, bailing"), ()),
+]
+
+# Stream watchdog progress lines; integers only, no free text.
+WATCHDOG_PATTERNS = [
+    ("stall_partial", re.compile(
+        r"\[Stall\] stream_idle_partial lastChunkAgeMs=(\d+) bytesTotal=(\d+) idleDeadlineMs=(\d+)"),
+     ("last_chunk_age_ms", "bytes_total", "idle_deadline_ms")),
+    ("idle_warning", re.compile(r"Streaming idle warning: no chunks received for (\d+)s"), ("seconds",)),
+    ("idle_timeout", re.compile(r"Streaming idle timeout: no chunks received for (\d+)s, aborting stream"),
+     ("seconds",)),
+    ("byte_watchdog_fired", re.compile(r"\[byte-watchdog\] firing: idle=(\d+)ms"), ("idle_ms",)),
+    ("fallback_non_streaming", re.compile(r"falling back to non-streaming mode"), ()),
+]
+
 
 def summarize_debug(path):
     if not os.path.exists(path):
@@ -458,6 +485,8 @@ def summarize_debug(path):
     cats = {}
     signals = []
     priority_signals = []
+    reactive = []
+    watchdog = []
     signal_rx = re.compile(
         r"compact|source=compact|failure[_ ]breaker|circuit breaker|"
         r"tengu_auto_compact_circuit_breaker|API error",
@@ -477,6 +506,18 @@ def summarize_debug(path):
         raw_key = cat.group(1) if cat else msg.split(" ")[0][:30]
         key = "sha256:" + hashlib.sha256(raw_key.encode("utf-8")).hexdigest()[:16]
         cats[key] = cats.get(key, 0) + 1
+        for event, rx, names in REACTIVE_PATTERNS:
+            hit = rx.search(msg)
+            if hit:
+                reactive.append({"t": m.group(1), "event": event,
+                                 **{n: int(v) for n, v in zip(names, hit.groups())}})
+                break
+        for event, rx, names in WATCHDOG_PATTERNS:
+            hit = rx.search(msg)
+            if hit:
+                watchdog.append({"t": m.group(1), "event": event,
+                                 **{n: int(v) for n, v in zip(names, hit.groups())}})
+                break
         if signal_rx.search(msg):
             labels = []
             if re.search(r"Reactive compact", msg, re.I):
@@ -501,7 +542,7 @@ def summarize_debug(path):
             elif priority_rx.search(msg):
                 priority_signals.append(safe)
     return {"line_count": len(lines), "top_prefixes": sorted(cats.items(), key=lambda x: -x[1])[:60],
-            "signals": signals + priority_signals[:80]}
+            "signals": signals + priority_signals[:80], "reactive_compact": reactive, "watchdog": watchdog}
 
 
 def main():
