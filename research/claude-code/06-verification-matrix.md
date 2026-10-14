@@ -55,7 +55,7 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
 | Interrupt | Abort closes HTTP stream, synthesizes messages | static 03 | E13b, E13c | Verified | High | TUI Esc, SIGINT |
 | Rendering | Custom Ink-style renderer, 16 ms frames | static 05 only; not runtime-verified | none | Blocked | Low | PTY harness |
-| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | passive observation of a running daemon: pipes `cc-daemon-<id>-control`, `-pty-<id>`, `-rv-<id>`; a `claude daemon` supervisor and a `claude --bg-pty-host` process; `agents --json` lists background and interactive sessions (`runtime-logs/daemon-surface/`) | Partially verified | Medium | spare pool, lifecycle and respawn codes unobserved; no controlled `claude --bg` launch |
+| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | passive surface plus pinned `daemon --help`/`status`: pipes and prior processes in `daemon-surface`; service install disabled, on-demand idle contract, status no daemon/zero workers in `daemon-lifecycle` | Partially verified | Medium | no controlled client attach/detach, spare pool, worker lifecycle, respawn codes, PTY auth, or `claude --bg` launch |
 | Server side | Model behaviour, rate limits, gates, server context edits | none possible | headers only | Blocked | n/a | vendor only |
 
 ## 2. Behavioural test matrix: installed CLI versus the proposed reconstruction

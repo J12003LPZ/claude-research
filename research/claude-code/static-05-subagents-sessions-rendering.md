@@ -516,6 +516,11 @@ when a client needs it and exits when the last client disconnects
 (`"the daemon runs on demand and exits when the last client disconnects"`). A background session survives
 its launching terminal because the pty host is spawned `detached:true` and owns the REPL process.
 
+**Runtime note [daemon-lifecycle, VERIFIED/PARTIAL]:** pinned 2.1.296 `daemon --help` reports that service
+installation is disabled in this build, the daemon runs on demand, and it exits when the last client disconnects.
+`daemon status` on this host reported no running daemon, unreachable control, and zero workers. This confirms the
+CLI surface and idle contract text, but not a client attach/detach cycle, spare PTY, worker respawn, or PTY auth.
+
 ## B. Session persistence and resume
 
 ### B9. On-disk layout

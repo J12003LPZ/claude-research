@@ -422,6 +422,22 @@ decision. The proxy still answered all model requests locally.
   decision, the pending ask becomes a denial rather than an interactive prompt. This is a direct runtime check of
   the fallback described in `static-04`; it does not establish interactive behavior or all event-specific hooks.
 
+### Daemon lifecycle probe: help and status only
+
+A read-only invocation of the pinned 2.1.296 binary established the exposed lifecycle contract without launching a
+background session intentionally. `claude daemon --help` says service installation is disabled in this build, the
+daemon runs on demand, and it exits when the last client disconnects. `claude daemon status` reported no running
+daemon, an unreachable control endpoint, and zero background workers while still reporting a recently updated roster.
+`claude agents --json` completed and its schema was recorded without retaining names, paths, pids, or session ids.
+
+- **Verified:** the CLI exposes `run`, `status`, `logs`, `uninstall`, and `stop`; `stop` documents
+  `--keep-workers`; the service-install path is disabled in this build.
+- **Partially verified:** the idle-exit contract is present in the shipped help and matches the static source string,
+  but no controlled client attach/detach cycle was run. Spare PTY, worker spawn/exit, respawn codes, and attach
+  authentication remain unobserved.
+- Evidence: `runtime-logs/daemon-lifecycle/summary.json` and the prior passive surface record in
+  `runtime-logs/daemon-surface/summary.json`.
+
 ### E41 to E43: `auto` permission mode with a scripted classifier
 
 `--permission-mode auto` sends each unapproved tool call to a classifier, which is a model call. Here the lab proxy

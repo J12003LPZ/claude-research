@@ -1,0 +1,29 @@
+{
+  "id": "daemon-lifecycle",
+  "method": "read-only pinned CLI help and status; no background session launched intentionally",
+  "cli_version": "2.1.296",
+  "help": {
+    "daemon_subcommands": ["run", "status", "logs", "uninstall", "stop"],
+    "service_install_disabled": true,
+    "on_demand": true,
+    "exits_when_last_client_disconnects": true,
+    "stop_can_keep_workers": true
+  },
+  "status": {
+    "running": false,
+    "control_reachable": false,
+    "bg_workers": 0,
+    "roster_reported_updated": true,
+    "status_command": "claude daemon status"
+  },
+  "agents_json": {
+    "command_completed": true,
+    "schema_fields": ["cwd", "id", "kind", "name", "pid", "sessionId", "startedAt", "state", "status"],
+    "private_rows_withheld": true
+  },
+  "limits": [
+    "No controlled claude --bg launch was used",
+    "No daemon worker, spare PTY, respawn, or attach lifecycle was exercised",
+    "No daemon log contents were copied"
+  ]
+}
