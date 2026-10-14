@@ -14,6 +14,7 @@
     "invalid_kind_probe": "claude --daemon-worker with no kind",
     "invalid_probe_exit_code": 2,
     "invalid_probe_error_class": "unknown worker kind",
+    "invalid_json_probe": "heartbeat worker with non-JSON stdin returns invalid config JSON on stdin",
     "stdin_contract_static": "newline/stream JSON with config and initialAccessToken; schema validation precedes run",
     "parent_watchdog_static": "30s poll; worker aborts and exits when the supervisor parent disappears",
     "controlled_worker_lifecycle": false
