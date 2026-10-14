@@ -4618,8 +4618,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "3e34b322c008143ff7674b116e5458ee9223509f14a12e4da63472eb16fd95b7",
-     "bytes": 948
+     "sha256": "cf3455d9df65b427cc37b6b3f4def1b5ce43cba880b8d1ad231d3edfd72838d3",
+     "bytes": 1167
     }
    },
    "redaction": "sanitized"
