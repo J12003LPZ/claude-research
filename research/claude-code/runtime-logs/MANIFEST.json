@@ -4662,8 +4662,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "f5810d31a9b680560d04a587474abeaefaf9584719084a98d7a2359ca427c483",
-     "bytes": 1474
+     "sha256": "37ab4d1906965737b80ccad04cfb882906e0edfae74b204819cdccadd87cc984",
+     "bytes": 1692
     }
    },
    "redaction": "sanitized"

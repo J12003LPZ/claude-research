@@ -23,7 +23,14 @@
     "env_or_token_file": ["CLAUDE_BG_PTY_AUTH", "CLAUDE_BG_SOCKET_TOKENS_PATH"],
     "unauthenticated_client": "receives auth-required and is not forwarded terminal input",
     "control_messages": ["auth", "resize", "kill", "ping", "pong"],
-    "source": "chunk-jn2r7nez.js@2489"
+    "source": "chunk-jn2r7nez.js@2489",
+    "runtime_enforcement_probe": "not reached"
+  },
+  "pty_host_probe": {
+    "command_shape": "--bg-pty-host <named-pipe> 40 10 -- cmd.exe",
+    "exit_code": 1,
+    "pipe_accepted": false,
+    "child_started": false
   },
   "limits": [
     "No worker was launched",
