@@ -61,13 +61,13 @@ the tools here.
 - **Static passes** (`static-01` to `static-05`, about 520 KB): written by five parallel
   analysis agents reading minified code, each claim carrying a `chunk@offset` anchor, then
   **audited a second time** by five independent reviewers. Audit method and limits:
-  - Mechanical: `tools/audit_static_citations.py` checks that every one of the 1,849
+  - Mechanical: `tools/audit_static_citations.py` checks that every one of the 1,913
     `chunk@offset` citations names an extracted chunk and lies inside it. After one fix
-    (`static-04` line 239) all 1,849 resolve. This proves the address exists, not that the
+    (`static-04` line 239) all 1,913 resolve, including the anchors added by the merges below. This proves the address exists, not that the
     prose is right.
   - Semantic: each reviewer read the claims against the source and the runtime logs and
     wrote a ledger, kept in `runtime-logs/static/audit/`. `runtime-logs/static/static-claim-ledger-2.1.296.json`
-    lists all 747 report paragraphs with their anchors (436 carry none).
+    lists all 768 report paragraphs with their anchors (439 carry none).
   - Results (claim groups): 01: 146 verified, 48 partial, 1 contradicted. 02: 126, 25, 4.
     03: 108, 21, 2. 04: about 138, about 52, 1. 05: 155, 63, 1. "Partial" means some part
     was confirmed and some part was omitted, inexact or not re-read. Runtime evidence
@@ -77,15 +77,16 @@ the tools here.
     delete, stop-hook condition, idle-timeout interaction, `ts` rendering selection, resume
     guidance condition, client-side tool-result clearing) plus the Read size sentinel, the
     detached-result path and the renderer facade chunk.
-  - Merge progress: in `static-04`, eight addendum items were re-verified in source and merged
-    (hook timeouts, bypass and dontAsk tests, `shouldDefer`, MCP concurrency, the second strict
-    path, Stop-hook input fields, the Read size sentinel). One reviewer claim was found
-    unsupported and replaced with the runtime-observed text. Reports 01, 02, 03, 05 have only
-    their contradictions merged.
-  - Not done: the remaining partial findings are recorded in a "5b. Audit addendum" in each
-    report and are **not yet re-verified or merged into the text**. The reviewers were language
-    models reading minified code, and I did not re-read their verified rows. Treat the
-    addendum items as leads; treat any claim outside both lists as checked once by an agent.
+  - Merge progress: every report's "5b. Audit addendum" now separates items I re-read in the
+    source or runtime logs and merged (static-01: 5, static-02: 6, static-03: 10, static-04: 9
+    plus the earlier batch, static-05: 2) from "still unverified leads". One reviewer claim was
+    found unsupported (the headless deny text) and replaced with the runtime-observed text; two
+    smaller reviewer statements were checked and found only partly right (the `FLUSH_INTERVAL_MS`
+    override, the `loadedFrom` value set).
+  - Not done: the leads left in each addendum (roughly 60 items, mostly offsets, side conditions
+    and anchors) are **not verified**. The reviewers were language models reading minified code, and
+    I did not re-read their verified rows. Treat leads as leads; treat any claim outside both lists
+    as checked once by an agent.
 - **Implementation spec** (`05`): separates REPRODUCE (observed) from CHOICE (design).
 
 ## Reproducing

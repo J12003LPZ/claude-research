@@ -1573,30 +1573,39 @@ A second reviewer checked this report claim group by claim group against the ext
 source: 198 groups, 146 verified, 48 partial (some detail checked, some not re-read), 1
 contradicted, 3 not source-checkable (process statements). All 194 pre-appendix anchors
 resolve. Corrections already applied in place are marked "Audit correction" or "upgraded by
-audit" above. The following were reported by the reviewer and are **recorded here, not yet
-re-verified or merged into the text**; treat the original wording as superseded where they
-differ:
+audit" above. The items below are split into those I re-read in source and those that remain unverified leads.
 
-- 2.1 row 4: version output is `VERSION + " (Claude Code)" + QB()`; a `QB()` suffix exists.
-- 2.1 row 2: `jSs` truncates `process.argv` to three entries (`chunk-eshh1gca.js@683`).
-- 2.1.2: the fleet-view path also has a fatal `sessionFactsRestored` check after the fleet
-  gate, and calls `ensureFleetGateHydrated` before `isAgentsFleetEnabled` (`cli@~15000`).
-- 2.2.3: in `preAction` the `CLAUDE_CODE_PLUGIN_DIRS` merge and the sideload check run
-  before the `version_below_minimum` gate `gbs()` (`chunk-jzzwheky.js@~46250`), the reverse
-  of the order stated.
-- 2.4.3: the project-root helper `RF` also requires root, `.git` and `.claude` to be owned by
-  the current user, and returns cwd when the root equals cwd or the real home directory.
+**Verified in source and stated here (the original wording is superseded):**
+
+- 2.1 row 4: `--version` prints `${VERSION} (Claude Code)${QB()}`, so a `QB()` suffix may follow
+  (`cli@3503`, `chunk-jzzwheky.js@65293`).
+- 2.1 row 2: the `--gh-standin` handler `jSs` destructures `process.argv.slice(2)` and, when the
+  first argument is `--gh-standin`, truncates `process.argv` to three entries
+  (`chunk-eshh1gca.js@683`).
+- 2.6: a second fatal `shell_tool_missing` path exists. After the PowerShell branch, `YR()===null`
+  prints a message, calls `Mse({reason:"shell_tool_missing"})` and exits 1 (`chunk-we7c2g4z.js@9176`).
+  The reason is part of the startup-failure enum (`chunk-80kqkekd.js@284215`).
+- 4: the `SettingsContext` object returned by `M()` also has `helperArmedFromRemote`,
+  `helperMergesOutput`, `helperWarnings`, `helperArmedFromUserWritableBase`,
+  `credentialHelperKeysFrom` and `launchFolderKeysFrom` (`chunk-mx6ygzc6.js@87329`). The
+  contract in section 4 omits them.
+- 2.4.5: a C1/control-character class `[-]` (which includes DEL) is used by several
+  sanitizers, for example `chunk-0a3kw9bb.js@3268`; I did not confirm which one the reviewer meant
+  at `chunk-w8x21rf4.js@1526`.
+
+**Still unverified leads (not merged):**
+
+- 2.1.2: the fleet-view path also has a fatal `sessionFactsRestored` check after the fleet gate and
+  calls `ensureFleetGateHydrated` before `isAgentsFleetEnabled` (`cli@~15000`).
+- 2.2.3: in `preAction` the `CLAUDE_CODE_PLUGIN_DIRS` merge and the sideload check run before the
+  `version_below_minimum` gate `gbs()` (`chunk-jzzwheky.js@~46250`), the reverse of the order stated.
+- 2.4.3: the project-root helper `RF` also requires root, `.git` and `.claude` to be owned by the
+  current user, and returns cwd when the root equals cwd or the real home directory.
 - 2.4.4: parent-slice gating is `S$s(Ie,he)`: no admin tier, or merge behaviour, or a flag.
-  That is broader than stated.
-- 2.4.5: the C1-escape filter is the regex `[\u007f-\u009f]`, so it also covers DEL
-  (`chunk-w8x21rf4.js@1526`).
 - 2.5.x: `ioe()` (safe env apply) runs in `preAction` after init, not inside init
   (`chunk-jzzwheky.js@~43300`).
-- 2.6: a second fatal `shell_tool_missing` path exists (`YR()===null`, `chunk-we7c2g4z.js@~9200`).
-- 4: the `SettingsContext` contract omits six fields returned by `M()`
-  (`chunk-mx6ygzc6.js@86898`): `helperArmedFromRemote`, `helperMergesOutput`, `helperWarnings`,
-  `helperArmedFromUserWritableBase`, `credentialHelperKeysFrom`, `launchFolderKeysFrom`.
-- Env-var table: about 27 of roughly 57 rows in 2.6 were spot-checked, the rest were not.
+- Env-var table: about 27 of roughly 57 rows in 2.6 were spot-checked by the reviewer, the rest
+  were not.
 
 ## 6. Open questions for runtime experiments
 

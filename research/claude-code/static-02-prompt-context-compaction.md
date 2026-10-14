@@ -840,33 +840,42 @@ follow-up guidance, F11.3 and F11.4 client-side clearing); I checked the source 
 F2.9, F10.2 and F11.3 corrections myself. The `getSystemPromptSectionCache` and
 `clearSystemPromptSectionState` names (F1.5) occur in no chunk; the behaviour is right and
 the names are author labels. Runtime evidence does not contradict a verified static claim.
-Reported by the reviewer, **not yet re-verified or merged into the text**:
+**Verified in source or runtime by me and stated here (the original wording is superseded):**
 
-- Section 6, Q1 and Q2: the rendering is announced (E01: four text blocks in `messages[0]`),
-  and the lab profile sends 3 system blocks (74, 62 and 8,777 chars) with no `scope:"global"`,
-  so the "4 or 5 blocks" expectation does not hold.
-- F1.3: `tool_param_json` is gated by `xTs()||((ZH||Dbe)&&tengu_silent_harbor)`; session rows
-  22 to 24 are plain pairs, not `em` entries. F1.9: `GXo` is at `@828427`, and `cacheBreaker`
-  is not set in `oeo`. F1.8: `sHn` has a missing `e.recorded` override branch.
-- F2.1 row 9: the additional-directories loader is gated by
-  `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD`. F3: `pr` is at `@32503` and honours `omitGitStatus`.
-- F5: `loadedFrom` takes four values (`commands_DEPRECATED`, `plugin`, `skills`, `syncedSkills`).
-  F6: `mcpInfo.serverName` takes precedence over the split of the tool name.
-- F7.x: `um` has a `tyo` clamp and a `claude-sonnet-4-6` override. F8: breaker offsets are
-  `Won@2591976`, `rIt@864391`; the autocompact call is at `chunk-93pksqr2.js@137197`; `acr` has
-  extra guards (no explicit model set, no earlier failures).
-- F9: only the `control` prompt arm expects analysis plus summary; other arms expect summary
-  only. Compaction `max_tokens` is 128000 on the fork path (runtime E17a, E17c).
-- F10.x: `compactMetadata` also carries `cumulativeDroppedTokens` and the preserved segment
-  fields (runtime shows both on full compaction; the contract in section 4 omits them). `OYe`
-  is the `plan_mode` reminder, only in plan mode. None of the four compaction headers appears
-  on a runtime request in E17.
-- F12: `Lon` is at `@2576463` and is silent for `Ohe` and `RJ`, not only abort. F13.3: `Ioe=25000`
-  counts characters, not bytes. F13.6: `MAX_SESSION_BYTES` is 61440 (`@3641661`).
+- F1.3: the `tool_param_json` section is returned only when `xTs()` is true, or when `ZH(...)` or
+  `Dbe(...)` is true and flag `tengu_silent_harbor` (default false) is on, else `null`
+  (`chunk-phacttch.js@2020438`).
+- F13.3: `Ioe = 25000` is compared with `byteCount: text.length` (`chunk-a88xynhk.js@831`), so the
+  limit counts characters, not bytes. The 4x constant `ywr = 4*Ioe` is defined beside it.
+- F10: the compaction metadata sent to hosts carries `cumulative_dropped_tokens` and the preserved
+  segment fields (`chunk-jwmqjyrb.js@34378`). Runtime E17a and E17c stream summaries contain
+  `cumulative_dropped_tokens`, `preserved_messages` and `preserved_segment`. The contract in
+  `04-internal-contracts.md` section 4 omits them.
+- Section 6, Q1 and Q2: runtime E01 shows the announced rendering (four text blocks in
+  `messages[0]`) and the slim profile sends 3 system blocks (74, 62 and 8,777 characters) with no
+  `scope:"global"`, so the "4 or 5 blocks" expectation does not hold for that profile.
+- F9: runtime E17a and E17c requests carry `max_tokens: 128000`; whether every compaction arm uses
+  that value is not established.
+- F2.1 row 9: `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` exists as a registered env name; one
+  confirmed use is the container `add_directory` handler (`chunk-fzzrkchm.js@566798`). The loader
+  gate the reviewer described was not located by me.
+
+**Still unverified leads (not merged):**
+
+- F1.9: `GXo` is at `@828427` and `cacheBreaker` is not set in `oeo`. F1.8: `sHn` has a missing
+  `e.recorded` override branch. F3: `pr` is at `@32503` and honours `omitGitStatus`.
+- F5: `loadedFrom` takes four values (`commands_DEPRECATED`, `plugin`, `skills`, `syncedSkills`);
+  I saw `skills`, `commands_DEPRECATED` and `syncedSkills` in source, not `plugin`. F6:
+  `mcpInfo.serverName` takes precedence over the split of the tool name.
+- F7.x: `um` has a `tyo` clamp and a `claude-sonnet-4-6` override. F8: breaker offsets
+  `Won@2591976`, `rIt@864391`; autocompact call at `chunk-93pksqr2.js@137197`; `acr` has extra
+  guards. F9: only the `control` prompt arm expects analysis plus summary.
+- F10.x: `OYe` is the `plan_mode` reminder, only in plan mode. None of the four compaction headers
+  appears on a runtime request in E17. F12: `Lon` at `@2576463` is silent for `Ohe` and `RJ`.
+  F13.6: `MAX_SESSION_BYTES` is 61440 (`@3641661`); I found `61440` only in unrelated chunks.
 - Contracts: `CacheControl` `ttl` can be omitted rather than `"5m"`; `WireTool` lacks `citations`.
-- Offsets drift by up to about 400 characters in the constants table. Wrong anchors:
-  `KI` is at `chunk-3qrxzjv5.js@38320`; `tyr` at 2754063 and `nyr` at 2754788; `Jfe` at 2751535;
-  `ns` starts at `@32964`.
+- Wrong anchors reported: `KI` at `chunk-3qrxzjv5.js@38320`; `tyr` at 2754063 and `nyr` at 2754788;
+  `Jfe` at 2751535; `ns` starts at `@32964`. The constants table drifts by up to about 400 characters.
 
 ## 6. Open questions for runtime experiments
 

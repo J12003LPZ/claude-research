@@ -358,7 +358,7 @@ The Anthropic TypeScript SDK client (`obe`, with `x-stainless-*` header strings 
 is constructed per attempt series with `maxRetries: 0` from the CLI's own retry wrapper
 (`chunk-phacttch.js@2840800` `"n$({maxRetries:0,model:Y.model"`). The call is
 `client.beta.messages.create({...params, stream:true}, {signal, headers}).withResponse()`
-(`chunk-phacttch.js@2842829`). Common options: `timeout: API_TIMEOUT_MS ?? 600000`,
+(`chunk-phacttch.js@2842829`). Common options: `timeout: API_TIMEOUT_MS ?? settings api_timeout_ms ?? 600000` (`ebr()`, `chunk-nfvf6nm0.js@257880`; audit merge),
 `dangerouslyAllowBrowser:true`, custom `fetch` wrapper `bw(...)` (`@257600`).
 
 **F5.2 Provider selection. VS** `chunk-bnqade36.js@30341`:
@@ -389,7 +389,8 @@ firstParty `ANTHROPIC_BASE_URL || <built-in BASE_API_URL>`; bedrock
   (SDK sends `Authorization: Bearer`), otherwise `apiKey` (SDK sends `X-Api-Key`). The body of
   `uSs` was not read.
 - Workload-identity path: `Authorization: Bearer <token from provider>` with `apiKey:null`
-  (`@263700`).
+  (`@263700`; the label "workload identity" is my inference, the code at `@263800` only shows a
+  token provider whose `getToken()` supplies the bearer value).
 - Bedrock: `AWS_BEARER_TOKEN_BEDROCK` -> `Authorization: Bearer`, else SigV4 with resolved
   credentials or a provider chain; `X-Api-Key` and `Authorization` are explicitly nulled
   otherwise (`@258400`). `CLAUDE_CODE_SKIP_BEDROCK_AUTH`, `..._SKIP_VERTEX_AUTH`,
@@ -473,7 +474,11 @@ A wrapper (`d6e`, `@2679128`) joins adjacent text-only blocks when
   `"Stream idle timeout - no chunks received"` (`@2840047`, `@2867409`).
 - Byte-level watchdog inside the fetch wrapper: default 180000 ms on first party, otherwise the
   event timeout; override `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS`; clamped to [10000, 1800000]
-  (`chunk-nfvf6nm0.js@267300` `"uw=180000"`). First-byte window override
+  (`chunk-nfvf6nm0.js@267300` `"uw=180000"`). Audit merge (re-read in source, `dw`): the 180 s
+  default is used only when no stream-idle env or setting is set; in that case the value can be
+  replaced by flag `tengu_byte_stream_idle_timeout_ms`. The watchdog applies to first-party,
+  gateway and `anthropicAws` providers (`hm`) plus Bedrock when the opt-in is set (`im`), and
+  only first-party gets the 180 s default (others use the event timeout). First-byte window override
   `CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS`. Bedrock opt-in `CLAUDE_ENABLE_BYTE_WATCHDOG_BEDROCK`.
 - Reset rule: each real event re-arms the watchdog; `ping` events re-arm it only for the first 30
   consecutive pings (`wyr=30`, `@2853200`).
@@ -505,6 +510,10 @@ decision machine (Q7). Outcomes:
 - `fail`: rethrow.
 
 **F6.7 Non-streaming fallback. VS**
+- Audit merge: tool results of an abandoned attempt are not tombstoned. The streaming tool executor
+  has a `discarded` flag and returns `"Streaming fallback - tool execution discarded"` as a
+  `tool_result` error (`chunk-93pksqr2.js@48497`). Orphaned assistant messages are tombstoned
+  (`tengu_orphaned_messages_tombstoned`, `@169318`).
 - Trigger A: stream failure where the decision is `retryWithoutStreaming`. The generator yields
   `{type:"streaming_fallback_began", cause}` then runs `qrt` -> `cyr`
   (`chunk-phacttch.js@2883300`, `@2835964`, `@2757700`).
@@ -566,7 +575,9 @@ with `api_request_retry_after_too_long` (`Ygr=60000`).
 **F7.5 529 handling and model fallback. VS** `@2730000` to `@2730800`:
 - Background query sources get no 529 retries: `if (is529 && !Cbe(querySource) && !watchdog)`
   throw (`tengu_api_529_background_dropped`). The foreground set `Fh`
-  (`chunk-cvvnq4he.js@257900`) is: `repl_main_thread*`, `sdk`, anything starting `agent:`,
+  (`chunk-cvvnq4he.js@258287`, audit merge) is an exact-key set: `repl_main_thread`, five
+  `repl_main_thread:outputStyle:*` variants (custom, Concise, Proactive, Explanatory, Learning), `sdk`,
+  anything starting `agent:` (checked by prefix in `Cbe`),
   `compact`, `hook_agent`, `hook_prompt`, `side_question`, `web_search_tool`, `web_fetch_apply`,
   `auto_mode`, `compact_fab_check`, `auto_mode_critique`, `auto_mode_setup_propose`,
   `chrome_mcp`, `artifact_comment_reply`. An undefined source counts as foreground.
@@ -620,7 +631,9 @@ total budget `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` (default unlimited), sleep
 **F7.11 Stream-level attempt decision machine. VS** `chunk-phacttch.js@2741300` to `@2745000`
 (`Q6e`, `Wan`). Counters `{retries, sleptThrough, overloaded, stalls, truncations,
 afterThinkingOnly, outputFiltered, triedWithoutStreaming}`; limits `{maxRetries,
-maxSleptThrough = min(maxRetries,10), maxOverloaded = 3, maxOutputFiltered = 1, hasFallbackModel,
+maxSleptThrough = min(maxRetries,10), maxOverloaded = 3, maxOutputFiltered = 1 (audit merge: the
+first and last are returned only when flags `tengu_tidy_cloud` and `tengu_eager_rain`, default true,
+are on, otherwise 0; `chunk-phacttch.js@2744348`), hasFallbackModel,
 persistent, background}`. Decisions: `retry | retryWithoutStreaming | useFallbackModel |
 keepPartial | fail`. Per-cause extra limits: stalls 1, truncations 1, after-thinking-only 2
 (1 for timeouts). The table is in the pseudocode section.
@@ -665,6 +678,12 @@ usd = ( input/1e6*p.inputTokens + output/1e6*p.outputTokens
       + cacheRead/1e6*p.promptCacheReadTokens + cacheWriteCost(p, usage) ) * multiplier(usage)
       + webSearchRequests * p.webSearchRequests
 ```
+
+Audit merge (re-read, `chunk-cvvnq4he.js@286803`, `@287164`): `p` is chosen by `rM`: if the model row has
+`longPrompt` and `input + cacheRead + cacheCreation` tokens exceed `longPrompt.abovePromptTokens`, the
+`longPrompt` row replaces the base row. `multiplier(usage)` is `1.1` when `usage.inference_geo === "us"`,
+else 1 (`nM`, `tM`). Cache write cost splits the 1-hour portion
+(`cache_creation.ephemeral_1h_input_tokens`, capped at the total) from the rest (`eM`).
 
 Price rows are object literals at `chunk-cvvnq4he.js@285200` (for example
 `{inputTokens:5,outputTokens:25,promptCacheWriteTokens:6.25,promptCacheWrite1hTokens:10,promptCacheReadTokens:0.5,webSearchRequests:0.01}`),
@@ -763,6 +782,12 @@ Missing prompt/stdin -> 1. SIGINT -> 0. SIGTERM -> 143.
   `sdk_status`, `compact_progress`, `refusal_continuation`, `query_model_change`,
   `set_in_progress_tool_use_ids`, `hint_clears`, and others listed at `@186300`.
 
+Audit merge: the list above is not complete. Runtime captures show `system` frames `hook_started`,
+`hook_response`, `task_started`, `task_notification` and a `permission_denied` frame on stdout, and
+the SDK schema names `hook_started`, `hook_progress`, `hook_response` (`chunk-80kqkekd.js@361280`).
+They reach stdout through paths other than the `kk` filter. A `result` frame is rewritten by `den`
+when the turn has `deferred_tool_use` (`chunk-80kqkekd.js@167648`).
+
 Engine-level mappings (`chunk-jr646ga5.js@63800`): loop `stream_request_start` ->
 `system/status status:"requesting"`; loop `system/api_error` -> also
 `system/api_retry {attempt, max_retries, retry_delay_ms, error_status, error}`; shell progress ->
@@ -775,7 +800,9 @@ terminal_slash_commands?, apiKeySource, betas, claude_code_version, output_style
 skills[], plugins[], plugin_errors?, plugin_warnings?, capabilities?, mcp_server_errors?,
 analytics_disabled, product_feedback_disabled, uuid, memory_paths?, scratchpad_path?,
 worker_epoch?, messaging_socket_path?, fast_mode_state, fast_mode_disabled_reason,
-footer_indicator?, effort?`.
+footer_indicator?, effort?, per_turn_effort_active?, powershell_path?` (the last two added by the
+audit merge: both key names appear in runtime `system/init` captures, for example
+`runtime-logs/C1-discovery-sub/stream-summary.json`).
 
 **F10.6 `result`. VS** `M7` at `chunk-80kqkekd.js@168284` and assembly at
 `chunk-jr646ga5.js@68300`. Common fields: `type:"result"`, `uuid`, `duration_ms`,
@@ -1016,6 +1043,8 @@ async function* withRetry(getClient, operation, o):
   max = o.maxRetries ?? (env CLAUDE_CODE_MAX_RETRIES clamped to 15, default 10; watchdog mode default 300)
   ctx = { model: o.model, fastMode, maxTokensOverride: undefined }
   client = null; lastErr = undefined; n529 = o.initialConsecutive529Errors ?? 0; healed = new Set()
+  // audit merge (@2723307): before the loop, if an access fallback model exists (F6e) and the
+  // requested model is flagged (Flt), the function throws ModelFallback up front
   for attempt = 1 .. max+1:
     if o.signal.aborted: throw Abort
     try:
@@ -1029,7 +1058,8 @@ async function* withRetry(getClient, operation, o):
       lastErr = err
       token = await o.onError?.(err)
       if token and not healed.has(token): healed.add(token); attempt--; continue      // free resend
-      if modelAccessRefused(err) and accessFallback: throw ModelFallback("permission_denied")
+      // the catch also reaches the same throw with reason model_not_found | permission_denied | server_error
+      // (@2728700); the claim that permission_denied is thrown only inside the catch was wrong
       if (modelNotFound(err) or modelPermission(err) or (5xx and not 529)) and fallback != model:
         throw ModelFallback("model_not_found" | "permission_denied" | "server_error")
       if fastMode and (429 or 529): shortRetryAfter ? sleep and continue : disable fast mode, attempt--?, continue
@@ -1379,37 +1409,20 @@ Env vars that tune the above (all read in the cited code): `CLAUDE_CODE_MAX_RETR
 A second reviewer checked 140 claim groups against the extracted source and the runtime
 logs: 108 verified, 21 partial, 2 contradicted (corrected in place above), 8 not
 source-checkable (3 process statements, 5 open-question predictions). No committed runtime
-evidence contradicts a verified static claim. Reported by the reviewer, **not yet re-verified
-or merged into the text** (the original wording is superseded where they differ):
+evidence contradicts a verified static claim.
 
-- F6.4: the 180 s byte default applies only when no stream-idle env or setting is set, can be
-  overridden by flag `tengu_byte_stream_idle_timeout_ms`, and applies to first-party, gateway and
-  `anthropicAws` providers plus the Bedrock opt-in (`chunk-nfvf6nm0.js@267300`, `@273109`).
-- F7.5: the foreground source set is an exact-key set (`repl_main_thread`, five
-  `repl_main_thread:outputStyle:*` variants, `sdk`, any `agent:` prefix, undefined), not
-  `repl_main_thread*` (`chunk-cvvnq4he.js@258000`). The 5xx fallback applies only outside watchdog
-  mode; model-not-found and permission fallbacks can use an access fallback model with no
-  `fallbackModel` set (`chunk-phacttch.js@2728900`).
-- F7.11: `maxSleptThrough` and `maxOutputFiltered` are gated by flags `tengu_tidy_cloud` and
-  `tengu_eager_rain` (`@2743760`, `@2808896`).
-- F10.4: runtime captures show `hook_started`, `hook_response`, `task_started`,
-  `task_notification` and `permission_denied` frames on stdout via paths other than the `kk`
-  filter, so the frame list is incomplete; the `result` frame is rewritten when
-  `deferred_tool_use` is set.
-- F10.5: `system/init` also carries `per_turn_effort_active` and `powershell_path` (confirmed by
-  runtime init keys).
-- 3.3 pseudocode: the `permission_denied` model fallback is thrown before the retry loop, not
-  inside the catch (`chunk-phacttch.js@2723307`).
-- F5.1: the request timeout is `API_TIMEOUT_MS ?? settings api_timeout_ms ?? 600000`.
-- F5.4: the "workload identity" label is inference; the real code is near
-  `chunk-nfvf6nm0.js@264000`.
-- F8.4: the cost function also has a long-prompt row selection and a US-geo multiplier
-  (`chunk-cvvnq4he.js@286803`, `@287164`).
-- F6.7: results are discarded by the executor's `discarded` flag, not tombstoned
-  (`chunk-93pksqr2.js@48497`, `@169318`).
+**Merged into the text above after I re-read the source:** F6.4 byte watchdog conditions, F5.1
+request timeout, F7.5 foreground source set, F7.11 flag gates, F10.4 extra frames, F10.5 extra
+init keys, 3.3 pre-loop fallback throw, F5.4 workload-identity label, F8.4 long-prompt row and US
+multiplier, F6.7 discarded executor flag.
+
+**Still unverified leads (not merged):**
+- F7.5: the 5xx fallback applies only outside watchdog mode; the access fallback model can
+  trigger without `fallbackModel` set (`chunk-phacttch.js@2728900`). The catch condition I read at
+  `@2728700` is consistent with this but I did not trace `F6e`/`QK`.
 - Scope: `Ad` is about 70 KB, not 63 KB. `parent_tool_use_id` and `priority` were not found in
   the cited schema window; tool-reference stripping in `yT` was not found as a literal.
-- Unproven: the `x-client-request-id` first-party header claim (proxied captures do not show it).
+- The `x-client-request-id` first-party header claim is unproven (proxied captures do not show it).
 - Offsets more than 500 characters off (content correct) at F4.1, F5.6, F6.4, F7.3, F7.7, F8.4.
 
 ## 6. Open questions for runtime experiments

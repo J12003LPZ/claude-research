@@ -2,9 +2,9 @@
   "reports": [
     {
       "report": "static-01-startup-cli-config.md",
-      "units_total": 203,
-      "units_all_anchors_resolvable": 82,
-      "units_without_anchors": 121,
+      "units_total": 206,
+      "units_all_anchors_resolvable": 83,
+      "units_without_anchors": 123,
       "units_has_invalid_anchor": 0,
       "units": [
         {
@@ -2624,19 +2624,34 @@
         {
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 1572,
+          "line_end": 1576,
+          "text_sha256": "b6347e6acbc62a90",
+          "text_chars": 465,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1578,
           "line_end": 1578,
-          "text_sha256": "24c44d9cf95718cd",
-          "text_chars": 544,
+          "text_sha256": "b45ac4501857396d",
+          "text_chars": 76,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
         {
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 1580,
-          "line_end": 1599,
-          "text_sha256": "325f729dd8eb0cf9",
-          "text_chars": 1541,
+          "line_end": 1594,
+          "text_sha256": "b2c48336bfa208d6",
+          "text_chars": 1128,
           "anchors": [
+            {
+              "chunk": "chunk-jzzwheky.js",
+              "offset": 65293,
+              "approximate": false,
+              "status": "resolvable"
+            },
             {
               "chunk": "chunk-eshh1gca.js",
               "offset": 683,
@@ -2644,9 +2659,27 @@
               "status": "resolvable"
             },
             {
-              "chunk": "chunk-jzzwheky.js",
-              "offset": 46250,
-              "approximate": true,
+              "chunk": "chunk-we7c2g4z.js",
+              "offset": 9176,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-80kqkekd.js",
+              "offset": 284215,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-mx6ygzc6.js",
+              "offset": 87329,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-0a3kw9bb.js",
+              "offset": 3268,
+              "approximate": false,
               "status": "resolvable"
             },
             {
@@ -2654,23 +2687,36 @@
               "offset": 1526,
               "approximate": false,
               "status": "resolvable"
+            }
+          ],
+          "anchor_status": "all_resolvable"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1596,
+          "line_end": 1596,
+          "text_sha256": "d8610223485aed68",
+          "text_chars": 40,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1598,
+          "line_end": 1608,
+          "text_sha256": "fdbd7dfc4c646c47",
+          "text_chars": 876,
+          "anchors": [
+            {
+              "chunk": "chunk-jzzwheky.js",
+              "offset": 46250,
+              "approximate": true,
+              "status": "resolvable"
             },
             {
               "chunk": "chunk-jzzwheky.js",
               "offset": 43300,
               "approximate": true,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-we7c2g4z.js",
-              "offset": 9200,
-              "approximate": true,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-mx6ygzc6.js",
-              "offset": 86898,
-              "approximate": false,
               "status": "resolvable"
             }
           ],
@@ -2678,8 +2724,8 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 1603,
-          "line_end": 1651,
+          "line_start": 1612,
+          "line_end": 1660,
           "text_sha256": "c59dd5ac7ccb76eb",
           "text_chars": 3834,
           "anchors": [],
@@ -2687,8 +2733,8 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 1653,
-          "line_end": 1653,
+          "line_start": 1662,
+          "line_end": 1662,
           "text_sha256": "cb3f91d54eee30e5",
           "text_chars": 3,
           "anchors": [],
@@ -2696,8 +2742,8 @@
         },
         {
           "heading": "Appendix A: environment variable inventory (machine-extracted)",
-          "line_start": 1657,
-          "line_end": 1670,
+          "line_start": 1666,
+          "line_end": 1679,
           "text_sha256": "d42a2f09a123cc53",
           "text_chars": 1266,
           "anchors": [],
@@ -2705,8 +2751,8 @@
         },
         {
           "heading": "Appendix A: environment variable inventory (machine-extracted)",
-          "line_start": 1672,
-          "line_end": 1672,
+          "line_start": 1681,
+          "line_end": 1681,
           "text_sha256": "2251ff4a8dcab2f6",
           "text_chars": 71,
           "anchors": [],
@@ -2714,8 +2760,8 @@
         },
         {
           "heading": "A.CLAUDE_CODE_* (630)",
-          "line_start": 1677,
-          "line_end": 2308,
+          "line_start": 1686,
+          "line_end": 2317,
           "text_sha256": "71f38c9ea268b0dd",
           "text_chars": 49650,
           "anchors": [
@@ -6504,8 +6550,8 @@
         },
         {
           "heading": "A.CLAUDE_* (other) (107)",
-          "line_start": 2312,
-          "line_end": 2420,
+          "line_start": 2321,
+          "line_end": 2429,
           "text_sha256": "090dd43345264841",
           "text_chars": 7921,
           "anchors": [
@@ -7156,8 +7202,8 @@
         },
         {
           "heading": "A.ANTHROPIC_* (47)",
-          "line_start": 2424,
-          "line_end": 2472,
+          "line_start": 2433,
+          "line_end": 2481,
           "text_sha256": "ae12784d520f4a84",
           "text_chars": 3450,
           "anchors": [
@@ -7448,8 +7494,8 @@
         },
         {
           "heading": "A.CCR_* (16)",
-          "line_start": 2476,
-          "line_end": 2493,
+          "line_start": 2485,
+          "line_end": 2502,
           "text_sha256": "3e249937995bf32b",
           "text_chars": 1231,
           "anchors": [
@@ -7554,8 +7600,8 @@
         },
         {
           "heading": "A.SELF_HOSTED_RUNNER_* (31)",
-          "line_start": 2497,
-          "line_end": 2529,
+          "line_start": 2506,
+          "line_end": 2538,
           "text_sha256": "63a8c04adc0e52b2",
           "text_chars": 2607,
           "anchors": [
@@ -7750,8 +7796,8 @@
         },
         {
           "heading": "A.OTEL_* (32)",
-          "line_start": 2533,
-          "line_end": 2566,
+          "line_start": 2542,
+          "line_end": 2575,
           "text_sha256": "242c3ab03b0eba09",
           "text_chars": 2438,
           "anchors": [
@@ -7952,8 +7998,8 @@
         },
         {
           "heading": "A.AWS_* (23)",
-          "line_start": 2570,
-          "line_end": 2594,
+          "line_start": 2579,
+          "line_end": 2603,
           "text_sha256": "522baf412b61a8f1",
           "text_chars": 1561,
           "anchors": [
@@ -8100,8 +8146,8 @@
         },
         {
           "heading": "A.AZURE_* (16)",
-          "line_start": 2598,
-          "line_end": 2615,
+          "line_start": 2607,
+          "line_end": 2624,
           "text_sha256": "ae378cc708b044b6",
           "text_chars": 1223,
           "anchors": [
@@ -8206,8 +8252,8 @@
         },
         {
           "heading": "A.MCP_* (17)",
-          "line_start": 2619,
-          "line_end": 2637,
+          "line_start": 2628,
+          "line_end": 2646,
           "text_sha256": "1c34a56d81320e09",
           "text_chars": 1290,
           "anchors": [
@@ -8318,8 +8364,8 @@
         },
         {
           "heading": "A.DISABLE_* (25)",
-          "line_start": 2641,
-          "line_end": 2667,
+          "line_start": 2650,
+          "line_end": 2676,
           "text_sha256": "84e06cc998a7af98",
           "text_chars": 1776,
           "anchors": [
@@ -8478,8 +8524,8 @@
         },
         {
           "heading": "A.ENABLE_* (12)",
-          "line_start": 2671,
-          "line_end": 2684,
+          "line_start": 2680,
+          "line_end": 2693,
           "text_sha256": "70d3d95e1164fbdf",
           "text_chars": 917,
           "anchors": [
@@ -8560,8 +8606,8 @@
         },
         {
           "heading": "A.GITHUB_* (14)",
-          "line_start": 2688,
-          "line_end": 2703,
+          "line_start": 2697,
+          "line_end": 2712,
           "text_sha256": "cf152ffa1461c3d0",
           "text_chars": 913,
           "anchors": [
@@ -8654,8 +8700,8 @@
         },
         {
           "heading": "A.GIT_* (8)",
-          "line_start": 2707,
-          "line_end": 2716,
+          "line_start": 2716,
+          "line_end": 2725,
           "text_sha256": "15155591f1e12df9",
           "text_chars": 534,
           "anchors": [
@@ -8712,8 +8758,8 @@
         },
         {
           "heading": "A.Other (266)",
-          "line_start": 2720,
-          "line_end": 2987,
+          "line_start": 2729,
+          "line_end": 2996,
           "text_sha256": "74dee5a89bab951f",
           "text_chars": 15937,
           "anchors": [
@@ -10314,9 +10360,9 @@
     },
     {
       "report": "static-02-prompt-context-compaction.md",
-      "units_total": 155,
-      "units_all_anchors_resolvable": 60,
-      "units_without_anchors": 95,
+      "units_total": 157,
+      "units_all_anchors_resolvable": 61,
+      "units_without_anchors": 96,
       "units_has_invalid_anchor": 0,
       "units": [
         {
@@ -12248,17 +12294,60 @@
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 836,
           "line_end": 843,
-          "text_sha256": "9c9d81b4826a0123",
-          "text_chars": 694,
+          "text_sha256": "d51a890c21469a74",
+          "text_chars": 713,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
         {
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 845,
-          "line_end": 869,
-          "text_sha256": "e16cb38e4be00b26",
-          "text_chars": 2066,
+          "line_end": 861,
+          "text_sha256": "041364b32cde9409",
+          "text_chars": 1395,
+          "anchors": [
+            {
+              "chunk": "chunk-phacttch.js",
+              "offset": 2020438,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-a88xynhk.js",
+              "offset": 831,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-jwmqjyrb.js",
+              "offset": 34378,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-fzzrkchm.js",
+              "offset": 566798,
+              "approximate": false,
+              "status": "resolvable"
+            }
+          ],
+          "anchor_status": "all_resolvable"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 863,
+          "line_end": 863,
+          "text_sha256": "d8610223485aed68",
+          "text_chars": 40,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 865,
+          "line_end": 878,
+          "text_sha256": "4481a2f37ce42a4c",
+          "text_chars": 1285,
           "anchors": [
             {
               "chunk": "chunk-93pksqr2.js",
@@ -12277,8 +12366,8 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 873,
-          "line_end": 888,
+          "line_start": 882,
+          "line_end": 897,
           "text_sha256": "e1046a6b671d859e",
           "text_chars": 3075,
           "anchors": [],
@@ -12288,9 +12377,9 @@
     },
     {
       "report": "static-03-agent-loop-transport.md",
-      "units_total": 137,
-      "units_all_anchors_resolvable": 71,
-      "units_without_anchors": 66,
+      "units_total": 140,
+      "units_all_anchors_resolvable": 73,
+      "units_without_anchors": 67,
       "units_has_invalid_anchor": 0,
       "units": [
         {
@@ -12891,8 +12980,8 @@
           "heading": "Q5. Transport",
           "line_start": 356,
           "line_end": 362,
-          "text_sha256": "fbda177f91dfbacc",
-          "text_chars": 619,
+          "text_sha256": "9c48125af48365cc",
+          "text_chars": 697,
           "anchors": [
             {
               "chunk": "chunk-nfvf6nm0.js",
@@ -12909,6 +12998,12 @@
             {
               "chunk": "chunk-phacttch.js",
               "offset": 2842829,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-nfvf6nm0.js",
+              "offset": 257880,
               "approximate": false,
               "status": "resolvable"
             }
@@ -12950,9 +13045,9 @@
         {
           "heading": "Q5. Transport",
           "line_start": 382,
-          "line_end": 396,
-          "text_sha256": "3160dd4499a92c6b",
-          "text_chars": 1115,
+          "line_end": 397,
+          "text_sha256": "0c2dcfcf50a3c732",
+          "text_chars": 1260,
           "anchors": [
             {
               "chunk": "chunk-nfvf6nm0.js",
@@ -12965,8 +13060,8 @@
         },
         {
           "heading": "Q5. Transport",
-          "line_start": 398,
-          "line_end": 408,
+          "line_start": 399,
+          "line_end": 409,
           "text_sha256": "2b57bd33fec237fe",
           "text_chars": 973,
           "anchors": [
@@ -12993,8 +13088,8 @@
         },
         {
           "heading": "Q5. Transport",
-          "line_start": 410,
-          "line_end": 410,
+          "line_start": 411,
+          "line_end": 411,
           "text_sha256": "669f5cb7208ae07a",
           "text_chars": 54,
           "anchors": [
@@ -13009,8 +13104,8 @@
         },
         {
           "heading": "Q5. Transport",
-          "line_start": 412,
-          "line_end": 416,
+          "line_start": 413,
+          "line_end": 417,
           "text_sha256": "8cd21a6954e17d30",
           "text_chars": 271,
           "anchors": [],
@@ -13018,8 +13113,8 @@
         },
         {
           "heading": "Q5. Transport",
-          "line_start": 418,
-          "line_end": 438,
+          "line_start": 419,
+          "line_end": 439,
           "text_sha256": "7811bb66eec5fa4b",
           "text_chars": 1453,
           "anchors": [
@@ -13034,8 +13129,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 442,
-          "line_end": 442,
+          "line_start": 443,
+          "line_end": 443,
           "text_sha256": "1e4864651210fa9c",
           "text_chars": 76,
           "anchors": [
@@ -13050,8 +13145,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 444,
-          "line_end": 451,
+          "line_start": 445,
+          "line_end": 452,
           "text_sha256": "da7dfa02778ef7f2",
           "text_chars": 1286,
           "anchors": [],
@@ -13059,8 +13154,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 453,
-          "line_end": 454,
+          "line_start": 454,
+          "line_end": 455,
           "text_sha256": "68d17cb9a0d18ecf",
           "text_chars": 123,
           "anchors": [],
@@ -13068,8 +13163,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 456,
-          "line_end": 460,
+          "line_start": 457,
+          "line_end": 461,
           "text_sha256": "5b94f24902292a4a",
           "text_chars": 398,
           "anchors": [
@@ -13084,8 +13179,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 462,
-          "line_end": 463,
+          "line_start": 463,
+          "line_end": 464,
           "text_sha256": "0a5e0a808be02c82",
           "text_chars": 164,
           "anchors": [],
@@ -13093,8 +13188,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 465,
-          "line_end": 465,
+          "line_start": 466,
+          "line_end": 466,
           "text_sha256": "0a5d4fee055131f6",
           "text_chars": 22,
           "anchors": [],
@@ -13102,10 +13197,10 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 467,
-          "line_end": 484,
-          "text_sha256": "b3fc1ec622eab408",
-          "text_chars": 1437,
+          "line_start": 468,
+          "line_end": 489,
+          "text_sha256": "5f9c81502878fcdd",
+          "text_chars": 1843,
           "anchors": [
             {
               "chunk": "chunk-phacttch.js",
@@ -13130,8 +13225,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 486,
-          "line_end": 489,
+          "line_start": 491,
+          "line_end": 494,
           "text_sha256": "87c30909ff888219",
           "text_chars": 337,
           "anchors": [
@@ -13146,8 +13241,8 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 491,
-          "line_end": 505,
+          "line_start": 496,
+          "line_end": 510,
           "text_sha256": "22ce9f6402ba2fe2",
           "text_chars": 1131,
           "anchors": [
@@ -13162,11 +13257,17 @@
         },
         {
           "heading": "Q6. Streaming",
-          "line_start": 507,
-          "line_end": 523,
-          "text_sha256": "1bc50a2144ad4b91",
-          "text_chars": 1337,
+          "line_start": 512,
+          "line_end": 532,
+          "text_sha256": "6544409b1edd7486",
+          "text_chars": 1676,
           "anchors": [
+            {
+              "chunk": "chunk-93pksqr2.js",
+              "offset": 48497,
+              "approximate": false,
+              "status": "resolvable"
+            },
             {
               "chunk": "chunk-phacttch.js",
               "offset": 2883300,
@@ -13190,8 +13291,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 527,
-          "line_end": 531,
+          "line_start": 536,
+          "line_end": 540,
           "text_sha256": "ab0f47fa0fe2a428",
           "text_chars": 448,
           "anchors": [
@@ -13206,8 +13307,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 533,
-          "line_end": 537,
+          "line_start": 542,
+          "line_end": 546,
           "text_sha256": "4b96b6ffaab81445",
           "text_chars": 409,
           "anchors": [],
@@ -13215,8 +13316,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 539,
-          "line_end": 540,
+          "line_start": 548,
+          "line_end": 549,
           "text_sha256": "8546ebfe65f5544d",
           "text_chars": 158,
           "anchors": [
@@ -13237,8 +13338,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 542,
-          "line_end": 546,
+          "line_start": 551,
+          "line_end": 555,
           "text_sha256": "841d6ed0cddbcc81",
           "text_chars": 249,
           "anchors": [],
@@ -13246,8 +13347,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 548,
-          "line_end": 551,
+          "line_start": 557,
+          "line_end": 560,
           "text_sha256": "09f959fc0e06fd48",
           "text_chars": 312,
           "anchors": [],
@@ -13255,8 +13356,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 553,
-          "line_end": 564,
+          "line_start": 562,
+          "line_end": 573,
           "text_sha256": "34306c625c16a113",
           "text_chars": 906,
           "anchors": [
@@ -13271,14 +13372,14 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 566,
-          "line_end": 583,
-          "text_sha256": "7e535755fa82169e",
-          "text_chars": 1541,
+          "line_start": 575,
+          "line_end": 594,
+          "text_sha256": "5d470cee71ebd59a",
+          "text_chars": 1703,
           "anchors": [
             {
               "chunk": "chunk-cvvnq4he.js",
-              "offset": 257900,
+              "offset": 258287,
               "approximate": false,
               "status": "resolvable"
             },
@@ -13299,8 +13400,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 585,
-          "line_end": 592,
+          "line_start": 596,
+          "line_end": 603,
           "text_sha256": "237878f3f114c3f4",
           "text_chars": 661,
           "anchors": [],
@@ -13308,8 +13409,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 594,
-          "line_end": 599,
+          "line_start": 605,
+          "line_end": 610,
           "text_sha256": "5f492bd356c8a6f2",
           "text_chars": 405,
           "anchors": [],
@@ -13317,8 +13418,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 601,
-          "line_end": 608,
+          "line_start": 612,
+          "line_end": 619,
           "text_sha256": "fd37e32ae8802260",
           "text_chars": 668,
           "anchors": [],
@@ -13326,8 +13427,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 610,
-          "line_end": 612,
+          "line_start": 621,
+          "line_end": 623,
           "text_sha256": "527297c3c3a65098",
           "text_chars": 258,
           "anchors": [],
@@ -13335,8 +13436,8 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 614,
-          "line_end": 618,
+          "line_start": 625,
+          "line_end": 629,
           "text_sha256": "d068dcfdcf7f505f",
           "text_chars": 436,
           "anchors": [],
@@ -13344,14 +13445,20 @@
         },
         {
           "heading": "Q7. Retries",
-          "line_start": 620,
-          "line_end": 626,
-          "text_sha256": "08e871316f1c772f",
-          "text_chars": 594,
+          "line_start": 631,
+          "line_end": 639,
+          "text_sha256": "3b0fb2b0ae731c1b",
+          "text_chars": 763,
           "anchors": [
             {
               "chunk": "chunk-phacttch.js",
               "offset": 2741300,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-phacttch.js",
+              "offset": 2744348,
               "approximate": false,
               "status": "resolvable"
             }
@@ -13360,8 +13467,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 630,
-          "line_end": 645,
+          "line_start": 643,
+          "line_end": 658,
           "text_sha256": "5e9eb31f130dd4d6",
           "text_chars": 1240,
           "anchors": [
@@ -13382,8 +13489,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 647,
-          "line_end": 651,
+          "line_start": 660,
+          "line_end": 664,
           "text_sha256": "b99036f91124f64c",
           "text_chars": 468,
           "anchors": [
@@ -13398,8 +13505,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 653,
-          "line_end": 659,
+          "line_start": 666,
+          "line_end": 672,
           "text_sha256": "a0dddb068a0598fe",
           "text_chars": 634,
           "anchors": [
@@ -13414,8 +13521,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 661,
-          "line_end": 661,
+          "line_start": 674,
+          "line_end": 674,
           "text_sha256": "931273644c465676",
           "text_chars": 69,
           "anchors": [
@@ -13430,8 +13537,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 663,
-          "line_end": 667,
+          "line_start": 676,
+          "line_end": 680,
           "text_sha256": "f45c94e9c796d63f",
           "text_chars": 210,
           "anchors": [],
@@ -13439,8 +13546,24 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 669,
-          "line_end": 672,
+          "line_start": 682,
+          "line_end": 686,
+          "text_sha256": "48b88c9639c7dd9e",
+          "text_chars": 466,
+          "anchors": [
+            {
+              "chunk": "chunk-cvvnq4he.js",
+              "offset": 286803,
+              "approximate": false,
+              "status": "resolvable"
+            }
+          ],
+          "anchor_status": "all_resolvable"
+        },
+        {
+          "heading": "Q8. Rate limits and usage",
+          "line_start": 688,
+          "line_end": 691,
           "text_sha256": "9b2acfb03e5c7e17",
           "text_chars": 377,
           "anchors": [
@@ -13455,8 +13578,8 @@
         },
         {
           "heading": "Q8. Rate limits and usage",
-          "line_start": 674,
-          "line_end": 676,
+          "line_start": 693,
+          "line_end": 695,
           "text_sha256": "4b83d481eae39e90",
           "text_chars": 259,
           "anchors": [
@@ -13471,8 +13594,8 @@
         },
         {
           "heading": "Q9. Cancellation",
-          "line_start": 680,
-          "line_end": 687,
+          "line_start": 699,
+          "line_end": 706,
           "text_sha256": "b9a4e8628de94376",
           "text_chars": 623,
           "anchors": [
@@ -13487,8 +13610,8 @@
         },
         {
           "heading": "Q9. Cancellation",
-          "line_start": 689,
-          "line_end": 701,
+          "line_start": 708,
+          "line_end": 720,
           "text_sha256": "a484449f3e41b437",
           "text_chars": 868,
           "anchors": [
@@ -13521,8 +13644,8 @@
         },
         {
           "heading": "Q9. Cancellation",
-          "line_start": 703,
-          "line_end": 710,
+          "line_start": 722,
+          "line_end": 729,
           "text_sha256": "a6f14775e1b4504e",
           "text_chars": 570,
           "anchors": [
@@ -13549,8 +13672,8 @@
         },
         {
           "heading": "Q9. Cancellation",
-          "line_start": 712,
-          "line_end": 723,
+          "line_start": 731,
+          "line_end": 742,
           "text_sha256": "9e8c20283f52d0ac",
           "text_chars": 928,
           "anchors": [
@@ -13589,8 +13712,8 @@
         },
         {
           "heading": "Q9. Cancellation",
-          "line_start": 725,
-          "line_end": 726,
+          "line_start": 744,
+          "line_end": 745,
           "text_sha256": "947c4d2300028bfa",
           "text_chars": 173,
           "anchors": [],
@@ -13598,8 +13721,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 730,
-          "line_end": 733,
+          "line_start": 749,
+          "line_end": 752,
           "text_sha256": "b7bea81c0bd0ef41",
           "text_chars": 350,
           "anchors": [
@@ -13620,8 +13743,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 735,
-          "line_end": 743,
+          "line_start": 754,
+          "line_end": 762,
           "text_sha256": "d79ddd5edf371394",
           "text_chars": 623,
           "anchors": [
@@ -13636,8 +13759,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 745,
-          "line_end": 747,
+          "line_start": 764,
+          "line_end": 766,
           "text_sha256": "2cdbc5c50f5ab939",
           "text_chars": 239,
           "anchors": [
@@ -13652,8 +13775,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 749,
-          "line_end": 764,
+          "line_start": 768,
+          "line_end": 783,
           "text_sha256": "775e6462d8eccb61",
           "text_chars": 1126,
           "anchors": [],
@@ -13661,8 +13784,30 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 766,
-          "line_end": 770,
+          "line_start": 785,
+          "line_end": 789,
+          "text_sha256": "64bbdcc2a225c2f2",
+          "text_chars": 465,
+          "anchors": [
+            {
+              "chunk": "chunk-80kqkekd.js",
+              "offset": 361280,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-80kqkekd.js",
+              "offset": 167648,
+              "approximate": false,
+              "status": "resolvable"
+            }
+          ],
+          "anchor_status": "all_resolvable"
+        },
+        {
+          "heading": "Q10. Non-interactive modes",
+          "line_start": 791,
+          "line_end": 795,
           "text_sha256": "59b702b671a45b78",
           "text_chars": 400,
           "anchors": [
@@ -13677,10 +13822,10 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 772,
-          "line_end": 778,
-          "text_sha256": "6539e5381f5b692e",
-          "text_chars": 559,
+          "line_start": 797,
+          "line_end": 805,
+          "text_sha256": "dfd91e89a2467ae9",
+          "text_chars": 764,
           "anchors": [
             {
               "chunk": "chunk-8c1qfwg5.js",
@@ -13693,8 +13838,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 780,
-          "line_end": 785,
+          "line_start": 807,
+          "line_end": 812,
           "text_sha256": "4bb00d7916080961",
           "text_chars": 434,
           "anchors": [
@@ -13715,8 +13860,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 787,
-          "line_end": 792,
+          "line_start": 814,
+          "line_end": 819,
           "text_sha256": "c791106ce42cecf2",
           "text_chars": 718,
           "anchors": [],
@@ -13724,8 +13869,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 794,
-          "line_end": 796,
+          "line_start": 821,
+          "line_end": 823,
           "text_sha256": "36ef684fffc629bf",
           "text_chars": 244,
           "anchors": [
@@ -13740,8 +13885,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 798,
-          "line_end": 821,
+          "line_start": 825,
+          "line_end": 848,
           "text_sha256": "c98f581c67e7d5fb",
           "text_chars": 1963,
           "anchors": [
@@ -13768,8 +13913,8 @@
         },
         {
           "heading": "Q10. Non-interactive modes",
-          "line_start": 823,
-          "line_end": 826,
+          "line_start": 850,
+          "line_end": 853,
           "text_sha256": "4d8454be843d3e1c",
           "text_chars": 298,
           "anchors": [
@@ -13784,8 +13929,8 @@
         },
         {
           "heading": "Q11. Error taxonomy",
-          "line_start": 830,
-          "line_end": 830,
+          "line_start": 857,
+          "line_end": 857,
           "text_sha256": "0e0a7a3c8c610425",
           "text_chars": 35,
           "anchors": [],
@@ -13793,8 +13938,8 @@
         },
         {
           "heading": "Q11. Error taxonomy",
-          "line_start": 832,
-          "line_end": 836,
+          "line_start": 859,
+          "line_end": 863,
           "text_sha256": "e1c10656102d1323",
           "text_chars": 1243,
           "anchors": [],
@@ -13802,8 +13947,8 @@
         },
         {
           "heading": "Q11. Error taxonomy",
-          "line_start": 838,
-          "line_end": 847,
+          "line_start": 865,
+          "line_end": 874,
           "text_sha256": "dafca46af73fc516",
           "text_chars": 831,
           "anchors": [
@@ -13818,8 +13963,8 @@
         },
         {
           "heading": "Q11. Error taxonomy",
-          "line_start": 849,
-          "line_end": 853,
+          "line_start": 876,
+          "line_end": 880,
           "text_sha256": "eed46b27a260a025",
           "text_chars": 469,
           "anchors": [
@@ -13834,8 +13979,8 @@
         },
         {
           "heading": "Q11. Error taxonomy",
-          "line_start": 855,
-          "line_end": 855,
+          "line_start": 882,
+          "line_end": 882,
           "text_sha256": "cb3f91d54eee30e5",
           "text_chars": 3,
           "anchors": [],
@@ -13843,8 +13988,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 861,
-          "line_end": 865,
+          "line_start": 888,
+          "line_end": 892,
           "text_sha256": "8fb2ae4334edabb5",
           "text_chars": 247,
           "anchors": [],
@@ -13852,8 +13997,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 867,
-          "line_end": 872,
+          "line_start": 894,
+          "line_end": 899,
           "text_sha256": "55a802acb2b8f70c",
           "text_chars": 320,
           "anchors": [],
@@ -13861,8 +14006,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 874,
-          "line_end": 877,
+          "line_start": 901,
+          "line_end": 904,
           "text_sha256": "364154f6dcda7a7d",
           "text_chars": 330,
           "anchors": [],
@@ -13870,8 +14015,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 879,
-          "line_end": 881,
+          "line_start": 906,
+          "line_end": 908,
           "text_sha256": "6c98800ab021fb00",
           "text_chars": 194,
           "anchors": [],
@@ -13879,8 +14024,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 883,
-          "line_end": 911,
+          "line_start": 910,
+          "line_end": 938,
           "text_sha256": "88276799e6f88557",
           "text_chars": 1737,
           "anchors": [],
@@ -13888,8 +14033,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 913,
-          "line_end": 916,
+          "line_start": 940,
+          "line_end": 943,
           "text_sha256": "7793ce9b72b50565",
           "text_chars": 177,
           "anchors": [],
@@ -13897,8 +14042,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 918,
-          "line_end": 934,
+          "line_start": 945,
+          "line_end": 961,
           "text_sha256": "f06f99fb6489b783",
           "text_chars": 1175,
           "anchors": [],
@@ -13906,8 +14051,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 936,
-          "line_end": 943,
+          "line_start": 963,
+          "line_end": 970,
           "text_sha256": "7e168f83755ee908",
           "text_chars": 570,
           "anchors": [],
@@ -13915,8 +14060,8 @@
         },
         {
           "heading": "3.1 `queryLoop()` (conceptual name for `Ad`)",
-          "line_start": 945,
-          "line_end": 955,
+          "line_start": 972,
+          "line_end": 982,
           "text_sha256": "638c509407df7a3e",
           "text_chars": 858,
           "anchors": [],
@@ -13924,8 +14069,8 @@
         },
         {
           "heading": "3.2 `streamResponse()` (conceptual name for `pln`, one call per loop iteration)",
-          "line_start": 959,
-          "line_end": 1010,
+          "line_start": 986,
+          "line_end": 1037,
           "text_sha256": "4a7b915013f77907",
           "text_chars": 3420,
           "anchors": [],
@@ -13933,17 +14078,17 @@
         },
         {
           "heading": "3.3 `withRetry()` (conceptual name for `Gke`)",
-          "line_start": 1014,
-          "line_end": 1055,
-          "text_sha256": "55a244b46deef364",
-          "text_chars": 2800,
+          "line_start": 1041,
+          "line_end": 1085,
+          "text_sha256": "ad9d2b68ca52936b",
+          "text_chars": 3089,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
         {
           "heading": "3.4 Attempt decision table for stream failures (`Bhr`, `chunk-phacttch.js@2741900`)",
-          "line_start": 1059,
-          "line_end": 1061,
+          "line_start": 1089,
+          "line_end": 1091,
           "text_sha256": "dae792fdee4bfe1f",
           "text_chars": 202,
           "anchors": [],
@@ -13951,8 +14096,8 @@
         },
         {
           "heading": "3.4 Attempt decision table for stream failures (`Bhr`, `chunk-phacttch.js@2741900`)",
-          "line_start": 1063,
-          "line_end": 1075,
+          "line_start": 1093,
+          "line_end": 1105,
           "text_sha256": "f8b5943048aa9ecc",
           "text_chars": 1317,
           "anchors": [],
@@ -13960,8 +14105,8 @@
         },
         {
           "heading": "3.4 Attempt decision table for stream failures (`Bhr`, `chunk-phacttch.js@2741900`)",
-          "line_start": 1077,
-          "line_end": 1077,
+          "line_start": 1107,
+          "line_end": 1107,
           "text_sha256": "b702e20bfcbca43f",
           "text_chars": 98,
           "anchors": [],
@@ -13969,8 +14114,8 @@
         },
         {
           "heading": "3.5 Sequence diagram",
-          "line_start": 1081,
-          "line_end": 1090,
+          "line_start": 1111,
+          "line_end": 1120,
           "text_sha256": "ee48b3c3761163ec",
           "text_chars": 339,
           "anchors": [],
@@ -13978,8 +14123,8 @@
         },
         {
           "heading": "3.5 Sequence diagram",
-          "line_start": 1092,
-          "line_end": 1145,
+          "line_start": 1122,
+          "line_end": 1175,
           "text_sha256": "a609311ea881153a",
           "text_chars": 2454,
           "anchors": [],
@@ -13987,8 +14132,8 @@
         },
         {
           "heading": "3.6 Loop state machine",
-          "line_start": 1149,
-          "line_end": 1183,
+          "line_start": 1179,
+          "line_end": 1213,
           "text_sha256": "ddbfd7eb01b65e7e",
           "text_chars": 1620,
           "anchors": [],
@@ -13996,8 +14141,8 @@
         },
         {
           "heading": "3.6 Loop state machine",
-          "line_start": 1185,
-          "line_end": 1185,
+          "line_start": 1215,
+          "line_end": 1215,
           "text_sha256": "cb3f91d54eee30e5",
           "text_chars": 3,
           "anchors": [],
@@ -14005,8 +14150,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1189,
-          "line_end": 1189,
+          "line_start": 1219,
+          "line_end": 1219,
           "text_sha256": "261ff054e84c1ce3",
           "text_chars": 93,
           "anchors": [],
@@ -14014,8 +14159,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1191,
-          "line_end": 1211,
+          "line_start": 1221,
+          "line_end": 1241,
           "text_sha256": "9b132827ee8e1f4f",
           "text_chars": 1074,
           "anchors": [
@@ -14030,8 +14175,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1213,
-          "line_end": 1218,
+          "line_start": 1243,
+          "line_end": 1248,
           "text_sha256": "4e305f41cf871047",
           "text_chars": 516,
           "anchors": [
@@ -14046,8 +14191,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1220,
-          "line_end": 1226,
+          "line_start": 1250,
+          "line_end": 1256,
           "text_sha256": "0334f83ecc8f068e",
           "text_chars": 343,
           "anchors": [],
@@ -14055,8 +14200,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1228,
-          "line_end": 1238,
+          "line_start": 1258,
+          "line_end": 1268,
           "text_sha256": "a6030d0e7940e845",
           "text_chars": 498,
           "anchors": [],
@@ -14064,8 +14209,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1240,
-          "line_end": 1252,
+          "line_start": 1270,
+          "line_end": 1282,
           "text_sha256": "6d683922c4e20500",
           "text_chars": 776,
           "anchors": [],
@@ -14073,8 +14218,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1254,
-          "line_end": 1263,
+          "line_start": 1284,
+          "line_end": 1293,
           "text_sha256": "47691d7494b16408",
           "text_chars": 654,
           "anchors": [
@@ -14089,8 +14234,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1265,
-          "line_end": 1277,
+          "line_start": 1295,
+          "line_end": 1307,
           "text_sha256": "c9d88195d5ac9329",
           "text_chars": 925,
           "anchors": [],
@@ -14098,8 +14243,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1279,
-          "line_end": 1295,
+          "line_start": 1309,
+          "line_end": 1325,
           "text_sha256": "5c1b462ca5428d69",
           "text_chars": 685,
           "anchors": [
@@ -14114,8 +14259,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1297,
-          "line_end": 1312,
+          "line_start": 1327,
+          "line_end": 1342,
           "text_sha256": "ed1136817ec51d8b",
           "text_chars": 979,
           "anchors": [
@@ -14136,8 +14281,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1314,
-          "line_end": 1318,
+          "line_start": 1344,
+          "line_end": 1348,
           "text_sha256": "3676d040de221853",
           "text_chars": 371,
           "anchors": [],
@@ -14145,8 +14290,8 @@
         },
         {
           "heading": "4. Data contracts",
-          "line_start": 1320,
-          "line_end": 1320,
+          "line_start": 1350,
+          "line_end": 1350,
           "text_sha256": "cb3f91d54eee30e5",
           "text_chars": 3,
           "anchors": [],
@@ -14154,8 +14299,8 @@
         },
         {
           "heading": "5. Constants",
-          "line_start": 1324,
-          "line_end": 1360,
+          "line_start": 1354,
+          "line_end": 1390,
           "text_sha256": "5b667669a3f4d175",
           "text_chars": 3045,
           "anchors": [
@@ -14248,8 +14393,8 @@
         },
         {
           "heading": "5. Constants",
-          "line_start": 1362,
-          "line_end": 1373,
+          "line_start": 1392,
+          "line_end": 1403,
           "text_sha256": "7776807d9a2535b0",
           "text_chars": 926,
           "anchors": [],
@@ -14257,8 +14402,8 @@
         },
         {
           "heading": "5. Constants",
-          "line_start": 1375,
-          "line_end": 1375,
+          "line_start": 1405,
+          "line_end": 1405,
           "text_sha256": "cb3f91d54eee30e5",
           "text_chars": 3,
           "anchors": [],
@@ -14266,59 +14411,32 @@
         },
         {
           "heading": "5b. Audit addendum (second-pass review)",
-          "line_start": 1379,
-          "line_end": 1383,
-          "text_sha256": "166141e9e763ce92",
-          "text_chars": 435,
+          "line_start": 1409,
+          "line_end": 1412,
+          "text_sha256": "6bd5fc075f1fd887",
+          "text_chars": 305,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
         {
           "heading": "5b. Audit addendum (second-pass review)",
-          "line_start": 1385,
-          "line_end": 1413,
-          "text_sha256": "2b7cee38f9f95c38",
-          "text_chars": 2200,
+          "line_start": 1414,
+          "line_end": 1417,
+          "text_sha256": "61a216f4582f8f1c",
+          "text_chars": 329,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1419,
+          "line_end": 1426,
+          "text_sha256": "a1a678e6627f8f8e",
+          "text_chars": 678,
           "anchors": [
-            {
-              "chunk": "chunk-nfvf6nm0.js",
-              "offset": 267300,
-              "approximate": false,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-cvvnq4he.js",
-              "offset": 258000,
-              "approximate": false,
-              "status": "resolvable"
-            },
             {
               "chunk": "chunk-phacttch.js",
               "offset": 2728900,
-              "approximate": false,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-phacttch.js",
-              "offset": 2723307,
-              "approximate": false,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-nfvf6nm0.js",
-              "offset": 264000,
-              "approximate": false,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-cvvnq4he.js",
-              "offset": 286803,
-              "approximate": false,
-              "status": "resolvable"
-            },
-            {
-              "chunk": "chunk-93pksqr2.js",
-              "offset": 48497,
               "approximate": false,
               "status": "resolvable"
             }
@@ -14327,8 +14445,8 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 1417,
-          "line_end": 1468,
+          "line_start": 1430,
+          "line_end": 1481,
           "text_sha256": "c8810b72851e36a0",
           "text_chars": 4149,
           "anchors": [
@@ -16182,9 +16300,9 @@
         {
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 1160,
-          "line_end": 1207,
-          "text_sha256": "0f17637a602a2ae1",
-          "text_chars": 4225,
+          "line_end": 1218,
+          "text_sha256": "fc5ee1fcce3376b8",
+          "text_chars": 5248,
           "anchors": [
             {
               "chunk": "chunk-phacttch.js",
@@ -16205,6 +16323,42 @@
               "status": "resolvable"
             },
             {
+              "chunk": "chunk-b8yyp6tv.js",
+              "offset": 4718,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-cxahpq08.js",
+              "offset": 1882,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-0revkbfh.js",
+              "offset": 7544,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-ff982hys.js",
+              "offset": 101072,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-art17b6j.js",
+              "offset": 2768,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
+              "chunk": "chunk-0aqheeyt.js",
+              "offset": 1663,
+              "approximate": false,
+              "status": "resolvable"
+            },
+            {
               "chunk": "chunk-9158d2ng.js",
               "offset": 126933,
               "approximate": false,
@@ -16221,8 +16375,8 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 1211,
-          "line_end": 1241,
+          "line_start": 1222,
+          "line_end": 1252,
           "text_sha256": "d8a477a3295dfa91",
           "text_chars": 2731,
           "anchors": [],
@@ -16232,9 +16386,9 @@
     },
     {
       "report": "static-05-subagents-sessions-rendering.md",
-      "units_total": 156,
-      "units_all_anchors_resolvable": 57,
-      "units_without_anchors": 99,
+      "units_total": 159,
+      "units_all_anchors_resolvable": 58,
+      "units_without_anchors": 101,
       "units_has_invalid_anchor": 0,
       "units": [
         {
@@ -17096,8 +17250,8 @@
           "heading": "A5. Concurrency and nesting",
           "line_start": 390,
           "line_end": 393,
-          "text_sha256": "c280871769a297ee",
-          "text_chars": 979,
+          "text_sha256": "48d8f7f89b349083",
+          "text_chars": 1123,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
@@ -18465,28 +18619,62 @@
         {
           "heading": "5b. Audit addendum (second-pass review)",
           "line_start": 1158,
-          "line_end": 1163,
-          "text_sha256": "65f6c81eb39500ed",
-          "text_chars": 553,
+          "line_end": 1162,
+          "text_sha256": "dd5a6db55a79b662",
+          "text_chars": 478,
           "anchors": [],
           "anchor_status": "without_anchors"
         },
         {
           "heading": "5b. Audit addendum (second-pass review)",
-          "line_start": 1165,
-          "line_end": 1197,
-          "text_sha256": "d784ed72326ffac9",
-          "text_chars": 2768,
+          "line_start": 1164,
+          "line_end": 1164,
+          "text_sha256": "f126493cfb896207",
+          "text_chars": 66,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1166,
+          "line_end": 1173,
+          "text_sha256": "4f4cbc5faaf9991e",
+          "text_chars": 744,
           "anchors": [
             {
-              "chunk": "chunk-phacttch.js",
-              "offset": 2090584,
+              "chunk": "chunk-7hzazptj.js",
+              "offset": 3966,
               "approximate": false,
               "status": "resolvable"
             },
             {
-              "chunk": "chunk-7hzazptj.js",
-              "offset": 3965,
+              "chunk": "chunk-93pksqr2.js",
+              "offset": 70585,
+              "approximate": false,
+              "status": "resolvable"
+            }
+          ],
+          "anchor_status": "all_resolvable"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1175,
+          "line_end": 1175,
+          "text_sha256": "d8610223485aed68",
+          "text_chars": 40,
+          "anchors": [],
+          "anchor_status": "without_anchors"
+        },
+        {
+          "heading": "5b. Audit addendum (second-pass review)",
+          "line_start": 1177,
+          "line_end": 1203,
+          "text_sha256": "8d07faadbc61f77b",
+          "text_chars": 2217,
+          "anchors": [
+            {
+              "chunk": "chunk-phacttch.js",
+              "offset": 2090584,
               "approximate": false,
               "status": "resolvable"
             },
@@ -18549,9 +18737,9 @@
         },
         {
           "heading": "6. Open questions for runtime experiments",
-          "line_start": 1201,
-          "line_end": 1215,
-          "text_sha256": "d61da4a17a53d7f8",
+          "line_start": 1207,
+          "line_end": 1221,
+          "text_sha256": "8d804813bcded70f",
           "text_chars": 3039,
           "anchors": [],
           "anchor_status": "without_anchors"
@@ -18560,9 +18748,9 @@
     }
   ],
   "summary": {
-    "units_total": 757,
-    "units_all_anchors_resolvable": 324,
-    "units_without_anchors": 433,
+    "units_total": 768,
+    "units_all_anchors_resolvable": 329,
+    "units_without_anchors": 439,
     "units_has_invalid_anchor": 0
   }
 }

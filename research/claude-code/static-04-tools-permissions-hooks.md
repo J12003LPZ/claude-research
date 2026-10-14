@@ -1181,6 +1181,17 @@ text**; the original wording is superseded where they differ:
   string appears depends on the layer that produced the denial, and the report's single
   "requires interactive approval" wording for headless is incomplete. Which layer wraps the path
   message in the `y$` text was not traced (**UNK**).
+- **Merged and verified (second batch).** `ToolPermissionContext` also has `sandboxAutoAllowSuspended`
+  (set by a `sandbox_auto_allow_suspended` case, `chunk-b8yyp6tv.js@4718`) and
+  `chromeClassifierFloorEnabled` (marked `not_serialized`, `chunk-cxahpq08.js@1882`). `servedCall` only
+  appeared as an export name (`servedCallRequestsJumpQueueOn`, `chunk-0revkbfh.js@7544`), so I could
+  not confirm it as a context field. `asyncRewake` is a hook-schema boolean: it implies async and wakes
+  the model on exit code 2 (`chunk-ff982hys.js@101072`), and a command hook with `async` or
+  `asyncRewake` is shown as `runsInBackground` (`chunk-art17b6j.js@2768`); the `(!ke()||Dpt())` gate
+  was not located. `effectiveMaxPermission` occurs in 13 chunks, including `chunk-9158d2ng.js` (3 hits) as the reviewer
+  said, and `chunk-0aqheeyt.js@1663` (`permission_ceiling`); `chunk-032sc1gt.js` has no hit, so the
+  report's `@~4100` anchor there is wrong. `interruptBehavior`
+  occurs nowhere in the extracted tree (grep, no hits).
 - Classifier outcomes also include `refusedBySafeguard`, `onBlock==="flag"` and four
   transcript-too-long arms (reviewer, not re-verified). The slow-permission log fires only in auto
   mode (reviewer, not re-verified).

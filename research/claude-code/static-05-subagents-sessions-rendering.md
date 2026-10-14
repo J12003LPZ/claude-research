@@ -387,7 +387,7 @@ loop (`LEe`, `hJ`, `chunk-phacttch.js@~4226000`).
 
 ### A5. Concurrency and nesting
 
-- **Parallel scheduling**: the tool declares `isConcurrencySafe() -> true`, so several `Agent` tool_use blocks in one assistant message are eligible for the executor's concurrent batch. The executor itself belongs to another pass. **STRONGLY INFERRED** for actual parallel execution.
+- **Parallel scheduling**: the tool declares `isConcurrencySafe() -> true`, so several `Agent` tool_use blocks in one assistant message are eligible for the executor's concurrent batch. The executor itself belongs to another pass. **VERIFIED-RUNTIME** (audit merge): runtime E10 shows two `Agent` calls from one message started their requests 339 ms apart and were in flight at the same time (`03-runtime-experiments.md`, E10).
 - **Concurrent cap**: 20 by default, env `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`. Error text: `"Concurrent subagent limit reached. You can run N subagents at once. Do not retry."` **VERIFIED-STATIC**.
 - **Nesting**: subagents can spawn subagents up to depth 3 by default (env `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`, flag `tengu_hazel_trellis`). The `Agent` tool is also stripped from the child's pool once `depth >= cap` (`agentToolRemovedByDepth`). `spawn_depth` is 1 for a top-level spawn. **VERIFIED-STATIC**.
 - **Shared-cwd note**: when an unisolated write-capable agent is launched into a directory where another is running, the result carries `sharesCwd:true` and the model receives a note.
@@ -1159,42 +1159,48 @@ A second reviewer checked 224 claim rows against the extracted source and runtim
 verified, 63 partial (14 of these not re-read rather than faulted), 1 contradicted, 5 excluded
 as scope notes. All 45 constant values in section 5 check out. Runtime evidence does not
 contradict a verified static claim. Two findings are corrected in place above (renderer facade
-chunk, concurrency check order). The rest were reported by the reviewer and are **not yet
-re-verified or merged into the text**; the original wording is superseded where they differ:
+chunk, concurrency check order). The rest are split below into items I re-read and items that remain leads.
 
-- Line 20: the `chunk-yy3r64d0.js` export body is 161 chars, not 181; `chunk-1stv0pyw.js` is
-  not a few-hundred-byte shim (its export list is 8,480 bytes).
+**Verified and stated here (the original wording is superseded):**
+
+- A3: the tool_result can be wrapped in a frame that starts `[Subagent hand-back] The text below is
+  the final report of a subagent this session delegated to` (`chunk-7hzazptj.js@3966`); runtime E10
+  and E11 captures contain it. The completed-output `tool_use_result` in runtime E11 also carries
+  `resolvedModel`, `toolStats` and `canContinueAgent`, which the contract in section A3 omits.
+  The parent also enforces a hand-back call for non-auxiliary query sources (`chunk-93pksqr2.js@70585`).
+- A5: promoted to runtime-verified for parallel Agent calls (see above).
+- B10 to B13: `FLUSH_INTERVAL_MS=100` was not found by name in my grep (the only matches were
+  telemetry flush constants), so treat the reviewer's override claim as a lead.
+
+**Still unverified leads (not merged):**
+
+- Line 20: the `chunk-yy3r64d0.js` export body is 161 chars, not 181; `chunk-1stv0pyw.js` is not a
+  few-hundred-byte shim (its export list is 8,480 bytes).
 - A1: the "Duplicate agent name" log compares the whole combined list across sources
   (`chunk-phacttch.js@2090584`, `bHo`). The `--agents` schema `Z3` (`@1850754`) has `prompt` but no
   `color` and no `cacheTtl`, so "otherwise the same keys" is wrong.
-- A3: the tool_result can be wrapped in a "[Subagent hand-back]" frame, which runtime E10 and
-  E11 show (`chunk-7hzazptj.js@3965`). The completed-output contract omits `resolvedModel`,
-  `toolStats` and `usage` (runtime E11 `tool_use_result`); `canContinueAgent` is required in
-  the async schema (`chunk-h6wy99cb.js@14500`).
+- A3: `canContinueAgent` is required in the async schema (`chunk-h6wy99cb.js@14500`).
 - A4: `Au` (getTaskOutputPath) is defined in `chunk-9613h2kb.js@3114`; on Windows
   `initTaskOutputAsSymlink` (`@19899`) uses a hardlink with a copy fallback, not a symlink.
 - A6: the cleanup stages omit `tetherThreadState`, `propagateNestedMemory` and the
   `deferredWhileParked` deferral (`chunk-jwmqjyrb.js@143450`).
-- B10 to B13: the `api-request-shape` transcript entry uses `shapeHash` and also carries
-  `shape`, `timestamp`, `version`. `FLUSH_INTERVAL_MS=100` is overridden when a remote ingress URL
-  or internal event writer is set (`@~4592000`). `promptId` is always deleted on repair
-  (`@1288300`). The retention sweep is skipped on validation errors only when a cleanup key is
-  unknowable, and a policy setting bypasses it (`chunk-91kaxfwm.js@4139`).
-- C14: `startCapturingEarlyInput` and `consumeEarlyInput` are in `chunk-0p1t5w5n.js`; the
-  reply-event list omits `decrpm`, `cellSize`, `osc` (`chunk-v44rfc3q.js@187450`).
+- B10 to B13: the `api-request-shape` transcript entry uses `shapeHash` and also carries `shape`,
+  `timestamp`, `version`. `promptId` is always deleted on repair (`@1288300`). The retention sweep is
+  skipped on validation errors only when a cleanup key is unknowable, and a policy setting bypasses it
+  (`chunk-91kaxfwm.js@4139`).
+- C14: `startCapturingEarlyInput` and `consumeEarlyInput` are in `chunk-0p1t5w5n.js`; the reply-event
+  list omits `decrpm`, `cellSize`, `osc` (`chunk-v44rfc3q.js@187450`).
 - Contracts: the PTY control contract omits the client-to-host `auth` token message
   (`chunk-jn2r7nez.js`, `chunk-k6k3h9nt.js@7383`).
-- Section 6: the open questions are numbered 14, 15, 13.
-- Still unverified, not contradicted: the daemon paths `dispatch/rejected`, `jobs/<short>/state.json`,
-  `jobs/settled`; the on-disk directories `plans/`, `paste-cache/`, `image-cache/`, `backups/`,
-  `tasks/`; `spawn_depth` equals 1 for a top-level spawn; the resume-restore rows for model,
-  todos, cost, bridge and memory mode. The "default is background" claim is static only.
-- Promotion: E10 now verifies parallel Agent calls at runtime, so line 390 can move from
-  STRONGLY INFERRED to runtime-verified. The `.json` sidecar name in runtime logs is an artifact
-  of `tools/transcript_schema.py` (maps `.meta.json` to `.json`); the static `.meta.json` stands.
-- Offset drift of up to about 1.5 KB in `chunk-h6wy99cb.js` (`Bo` at 10309, `Fo` at 10301, MCP
-  wait at 24857, `aUt` at 45438), `chunk-k6k3h9nt.js@7051`, `chunk-jwmqjyrb.js@~143450`, and `avt`
-  defined at `chunk-phacttch.js@4224766`.
+- Not verified, not contradicted: the daemon paths `dispatch/rejected`, `jobs/<short>/state.json`,
+  `jobs/settled`; the directories `plans/`, `paste-cache/`, `image-cache/`, `backups/`, `tasks/`;
+  `spawn_depth` equals 1 for a top-level spawn; the resume-restore rows for model, todos, cost,
+  bridge and memory mode. The "default is background" claim is static only.
+- The `.json` sidecar name in runtime logs is an artifact of `tools/transcript_schema.py` (maps
+  `.meta.json` to `.json`); the static `.meta.json` stands.
+- Offset drift of up to about 1.5 KB in `chunk-h6wy99cb.js` (`Bo` at 10309, `Fo` at 10301, MCP wait at
+  24857, `aUt` at 45438), `chunk-k6k3h9nt.js@7051`, `chunk-jwmqjyrb.js@~143450`, and `avt` defined at
+  `chunk-phacttch.js@4224766`.
 
 ## 6. Open questions for runtime experiments
 
@@ -1210,6 +1216,6 @@ re-verified or merged into the text**; the original wording is superseded where 
 10. **Fork cache sharing.** With the fork gate on, spawn `subagent_type:"fork"` and compare `cache_read_input_tokens` on the fork's first request against the parent's prefix size.
 11. **Daemon on Windows.** Run `claude --bg "..."` and list `\\.\pipe\cc-daemon-*`, `~/.claude/daemon/`, `~/.claude/jobs/` and the process tree to confirm supervisor -> pty host -> REPL and the spare pool size.
 12. **Retention.** Set `cleanupPeriodDays: 1`, backdate a transcript's mtime, delete `.last-cleanup`, start a session and wait about 5 s to see the sweep.
+13. **Worktree cleanup.** Run an agent with `isolation:"worktree"` that makes no changes (expect removal) and one that edits a file (expect the path in the result).
 14. **Rendering.** Record raw terminal output (for example through a pty logger) during a streamed reply: count `ESC[?2026h` pairs per second (expect at most about 60), confirm one write per frame, and confirm whether inline mode ever emits `ESC[?1049h`. Repeat with stdout piped to see which sequences disappear.
 15. **Finished-output freezing.** In inline mode, scroll the terminal back during a long session and resize the window to see which rows are repainted. That settles how completed messages leave the live frame.
-13. **Worktree cleanup.** Run an agent with `isolation:"worktree"` that makes no changes (expect removal) and one that edits a file (expect the path in the result).
