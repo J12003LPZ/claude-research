@@ -383,6 +383,29 @@ All four runs use the scripted proxy (no upstream model call); builders are `too
   merged into the first user message. With real text the partial is kept and each nudge is its own user message.
   Not run here: a fourth consecutive cut (the E26 final error), or `CLAUDE_CODE_MAX_OUTPUT_TOKENS`.
 
+### E46: hook-event coverage and PermissionRequest allow (scripted model)
+
+Both runs use the local scripted proxy and Claude Code 2.1.296. No model request reached the upstream service.
+The hook coverage project registered all 33 static hook event names with the lab logger. The PermissionRequest
+project used default permission mode and a command hook that returned
+`hookSpecificOutput.decision.behavior = "allow"` for a Bash write.
+
+- **E46-hooks:** 17 hook invocations across 13 event types in one four-turn session: `SessionStart`,
+  `InstructionsLoaded`, `UserPromptExpansion`, `UserPromptSubmit`, `PreToolUse`, `PostToolUseFailure`,
+  `PostToolUse`, `PostToolBatch`, `SubagentStart`, `SubagentStop`, `MessageDisplay`, `Stop`, and `SessionEnd`.
+  The scripted turn ran a missing-file `Read`, a successful Bash call in the same assistant message, and a foreground
+  general-purpose subagent. The final result was `completed`, `num_turns:4`, with one spawned and completed child.
+- **E46-permreq:** the default-mode Bash call fired `PermissionRequest:Bash`; the hook stdin contained
+  `hook_event_name`, `tool_name`, `tool_input`, `permission_mode`, `permission_suggestions`, `effort`, and the
+  normal session fields. The allow response was accepted, `permreq-made.txt` contains `x`, and the run ended
+  `completed`, `num_turns:2`, with no permission denial.
+- Across all sanitized hook logs now present, 17 of the 33 static event names have been observed. The remaining
+  16 are not established by these headless scenarios. This is event coverage, not evidence that unobserved events
+  are unreachable.
+- **Not established:** event-specific blocking semantics for the newly observed events, interactive prompt behavior,
+  and the 16 configured events not reached by these scenarios. Evidence: `runtime-logs/E46-hooks/hooks-summary.json`,
+  `runtime-logs/E46-permreq/hooks-summary.json`, and their `stream-summary.json` files.
+
 ### E41 to E43: `auto` permission mode with a scripted classifier
 
 `--permission-mode auto` sends each unapproved tool call to a classifier, which is a model call. Here the lab proxy

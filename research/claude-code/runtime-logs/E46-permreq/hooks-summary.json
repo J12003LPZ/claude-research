@@ -1,0 +1,45 @@
+[
+ {
+  "t_in_ms": 0,
+  "t_out_ms": 0,
+  "tag": "PermissionRequest",
+  "mode": "allow",
+  "pid": "<pid>",
+  "stdin_keys": [
+   "cwd",
+   "effort",
+   "hook_event_name",
+   "permission_mode",
+   "permission_suggestions",
+   "prompt_id",
+   "session_id",
+   "tool_input",
+   "tool_name",
+   "transcript_path"
+  ],
+  "env_names": [
+   "CLAUDECODE",
+   "CLAUDE_CODE_CHILD_SESSION",
+   "CLAUDE_CODE_ENTRYPOINT",
+   "CLAUDE_CODE_MESSAGING_SOCKET",
+   "CLAUDE_CODE_MESSAGING_TOKEN",
+   "CLAUDE_CODE_SESSION_ATTENDED",
+   "CLAUDE_CODE_SESSION_ID",
+   "CLAUDE_CONFIG_DIR",
+   "CLAUDE_EFFORT",
+   "CLAUDE_PID",
+   "CLAUDE_PROJECT_DIR"
+  ],
+  "hook_cwd_is_project": "C:\\Users\\<user>\\cc-rea-lab\\proj-e46-permreq",
+  "hook_event_name": "PermissionRequest",
+  "tool_name": "Bash",
+  "permission_mode": "default",
+  "effort": {
+   "level": "medium"
+  },
+  "tool_input_keys": [
+   "command",
+   "description"
+  ]
+ }
+]

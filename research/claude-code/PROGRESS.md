@@ -11,7 +11,7 @@ each stage. Evidence ids refer to `runtime-logs/<id>/` (sanitized) and `lab/raw/
 | 1 Locate executable | done | `01-environment-and-provenance.md` |
 | 2 REA audit | done | `01` section 3, `runtime-logs/rea/` |
 | 3 to 12 Static architecture | done, 5 sweeps (spot-checked, not line-reviewed) | `static-0N-*.md` |
-| 13 Runtime experiments | done, 146 manifest runs: 125 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
+| 13 Runtime experiments | done, 148 manifest runs: 127 E, 13 C, 8 P | `03-runtime-experiments.md`, `runtime-logs/` |
 | 14 Contracts | done | `04-internal-contracts.md` |
 | 15, 18 Cross-validation and matrices | done | `06-verification-matrix.md` |
 | 16 Repository and manifest | done, redaction check clean | `README.md`, `runtime-logs/MANIFEST.json` |

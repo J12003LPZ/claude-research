@@ -444,6 +444,15 @@ PostModelSwitch, PermissionRequest, PermissionDenied, Setup, TeammateIdle, TaskC
 TaskCompleted, Elicitation, ElicitationResult, ConfigChange, WorktreeCreate, WorktreeRemove,
 InstructionsLoaded, CwdChanged, FileChanged, DirectoryAdded, MessageDisplay.
 
+**Runtime coverage note. VERIFIED [E46-hooks, E46-permreq]:** registering all 33 names in a disposable
+project and driving a scripted headless session produced 13 event types in the hook log: SessionStart,
+InstructionsLoaded, UserPromptExpansion, UserPromptSubmit, PreToolUse, PostToolUseFailure, PostToolUse,
+PostToolBatch, SubagentStart, SubagentStop, MessageDisplay, Stop and SessionEnd. A separate default-mode
+Bash call produced `PermissionRequest` with the expected tool and permission fields; the hook returned
+`decision.behavior: "allow"` and the file write completed. Across the current sanitized hook logs, 17 of
+33 event types have been observed. The remaining 16 were not reached, so this is bounded event coverage,
+not evidence that they are unreachable.
+
 **Config schema. VS** `chunk-ff982hys.js@~101100-104500`:
 `hooks: { [Event]: Array<{ matcher?: string, hooks: HookEntry[] }> }`. Entry types in the settings
 union: `command`, `prompt`, `agent`, `http`, `mcp_tool`. Runtime-only types seen in the executor:

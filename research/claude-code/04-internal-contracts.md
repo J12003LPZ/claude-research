@@ -180,12 +180,15 @@ interface PreCompactInput extends HookInputBase { trigger: "manual" | "auto"; cu
 interface PostCompactInput extends HookInputBase { trigger; compact_summary: string }
 interface InstructionsLoadedInput extends HookInputBase { file_path; load_reason; memory_type }
 interface SubagentStopInput extends HookInputBase { permission_mode; stop_hook_active; agent_type; effort }
+interface PermissionRequestInput extends HookInputBase { permission_mode; effort; tool_name; tool_input;
+  permission_suggestions? }                                                               // O [E46-permreq]
 
-interface HookOutput {                                                                    // O [E07b..h]
+interface HookOutput {                                                                    // O [E07b..h, E46-permreq]
   decision?: "block"; reason?: string;                       // Stop
   hookSpecificOutput?: {
     hookEventName: string;
     permissionDecision?: "allow" | "deny" | "ask"; permissionDecisionReason?: string;   // PreToolUse
+    decision?: { behavior: "allow" | "deny"; updatedInput?: object; updatedPermissions?: object; message?: string; interrupt?: boolean } // PermissionRequest
     updatedInput?: object;                                                               // PreToolUse
     additionalContext?: string;                                                          // UserPromptSubmit, PostToolUse
   };
