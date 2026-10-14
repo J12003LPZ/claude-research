@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -I tools/cq.py *)",
+      "Bash(python -I research/claude-code/tools/cq.py *)",
+      "Bash(python -I tools/audit_static_citations.py *)",
+      "Bash(python -I tools/audit_static_claims.py *)",
+      "Bash(python -I tools/build_manifest.py)",
+      "Bash(python -I tools/summarize_captures.py *)"
+    ]
+  }
+}

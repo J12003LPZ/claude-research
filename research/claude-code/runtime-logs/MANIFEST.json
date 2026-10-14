@@ -1676,6 +1676,93 @@
    "killed": null
   },
   {
+   "id": "E19b-host-approval-allow",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "d63d85b0f479c55630b74e657417f7af549fdd40f17a7156e573585b2c1cf961",
+     "bytes": 2337
+    },
+    "http-summary.json": {
+     "sha256": "4ae9df80f1ce4b37cbddfcde97f9bcdac7dcbaa73a36a67eb87b9066a1a81183",
+     "bytes": 34178
+    },
+    "run.json": {
+     "sha256": "0cbb8ac47162609afbb0a20de664b5580fe19415473572cbd4979e52934f36f1",
+     "bytes": 1386
+    },
+    "stream-summary.json": {
+     "sha256": "d2d1cbe252a99cfdc1b186999444473ff19e575eeef13c813c88c5345d5b58f3",
+     "bytes": 13773
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exit_code": 0,
+   "duration_s": 90.738,
+   "started": "2026-10-14T02:42:07Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E19c-host-approval-allow",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "cae2f26ca4494766af1ec2600de7765120bcaade154b73d7ebba2982fff663a5",
+     "bytes": 2337
+    },
+    "http-summary.json": {
+     "sha256": "50980a237e50678c298d6b6369ad54bcddf1eeb9f565ee3816473f064a625a5f",
+     "bytes": 35433
+    },
+    "run.json": {
+     "sha256": "afdef54f7dcd9a0984362f4129685b4acb2a8208dbb25b145c6d3c112704e452",
+     "bytes": 1565
+    },
+    "stream-summary.json": {
+     "sha256": "bb4d17b8df7354e4d61c7d089615846487141f9c64b78a455b664a9297c2daa6",
+     "bytes": 13422
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exit_code": 0,
+   "duration_s": 90.737,
+   "started": "2026-10-14T02:43:50Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
+   "id": "E19d-host-approval-deny",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "7dd61e17332709f7da8985c9634ce8109ab6690e811aecd8b46af2dbe7a3fdaa",
+     "bytes": 2337
+    },
+    "http-summary.json": {
+     "sha256": "3171cafdc94ed4639a169c6180e1badd4a4c447c67310524283ca81b3b81d284",
+     "bytes": 35458
+    },
+    "run.json": {
+     "sha256": "a9345546c18bdfb5fc8c15d1295e77587617d4ef5a79536846385faba8709476",
+     "bytes": 1606
+    },
+    "stream-summary.json": {
+     "sha256": "2970f8ad77c1c0e0c3c08b22a3c54dc64b2e49af323333a7bb9ba2e3714c4e1e",
+     "bytes": 13589
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exit_code": 0,
+   "duration_s": 90.764,
+   "started": "2026-10-14T02:45:27Z",
+   "fault_injected": false,
+   "killed": null
+  },
+  {
    "id": "config",
    "kind": "static-or-aggregate",
    "files": {

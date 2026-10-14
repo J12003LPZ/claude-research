@@ -178,7 +178,7 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 3 | Exact auto-compact threshold | Affects when context is lost | Bracketed 59k..78k; static formula gives 67k | Partly answered |
 | 4 | Are reminders and environment text replayed or regenerated on resume? | Cache reuse and correctness after file edits | Ran the falsifier (E15e, E15f): edited `CLAUDE.md` between create and resume | Answered. The stored first message is replayed unchanged, and the current file content is added as a new reminder block on the new user message |
 | 5 | Is the tool's process tree killed on interrupt? | Orphan processes | Single process listing after E13c, none found | Partly answered |
-| 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Open at runtime |
+| 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Answered at runtime (E19c allow, E19d deny); needs `--permission-prompt-tool stdio`, `--permission-prompts host` alone auto-denies |
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes | Open at runtime |
 | 8 | What do plan, dontAsk, bypass and auto modes do in practice? | Four of six modes unobserved | Static 04 algorithm extracted | Open at runtime |
 | 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
