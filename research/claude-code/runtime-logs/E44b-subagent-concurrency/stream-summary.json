@@ -1,0 +1,4714 @@
+{
+ "event_count": 205,
+ "init": {
+  "type": "system",
+  "subtype": "init",
+  "cwd": "C:\\Users\\<user>\\cc-rea-lab\\proj-e44b-subagent-concurrency",
+  "session_id": "<uuid>",
+  "tools": [
+   "Task",
+   "Bash",
+   "CronCreate",
+   "CronDelete",
+   "CronList",
+   "DesignSync",
+   "Edit",
+   "EnterWorktree",
+   "ExitWorktree",
+   "Glob",
+   "Grep",
+   "ListAgents",
+   "Monitor",
+   "NotebookEdit",
+   "PowerShell",
+   "PushNotification",
+   "Read",
+   "RemoteTrigger",
+   "ReportFindings",
+   "ScheduleWakeup",
+   "SendMessage",
+   "Skill",
+   "TaskStop",
+   "WebFetch",
+   "WebSearch",
+   "Write"
+  ],
+  "mcp_servers": [],
+  "model": "claude-haiku-5-5",
+  "permissionMode": "bypassPermissions",
+  "slash_commands": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "terminal_slash_commands": 4,
+  "apiKeySource": "none",
+  "claude_code_version": "2.1.296",
+  "output_style": "default",
+  "agents": [
+   "claude",
+   "Explore",
+   "general-purpose",
+   "Plan",
+   "statusline-setup"
+  ],
+  "skills": [
+   "design",
+   "design-sync",
+   "dataviz",
+   "update-config",
+   "verify",
+   "debug",
+   "code-review",
+   "simplify"
+  ],
+  "plugins": 3,
+  "capabilities": 10,
+  "analytics_disabled": false,
+  "product_feedback_disabled": false,
+  "uuid": "<uuid>",
+  "memory_paths": 1,
+  "messaging_socket_path": "\\\\.\\pipe\\LOCAL\\cc-msg-<hex>",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "per_turn_effort_active": true,
+  "view_mode": "default",
+  "powershell_path": "C:\\Users\\<user>\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+  "slash_commands_count": 52,
+  "skills_count": 17,
+  "agents_count": 5
+ },
+ "result": {
+  "duration_api_ms": 3817,
+  "stop_reason": "end_turn",
+  "session_id": "<uuid>",
+  "total_cost_usd": 7.700000000000006e-05,
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 10,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "",
+   "iterations": [],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": [
+    "cacheCreationInputTokens",
+    "cacheReadInputTokens",
+    "canonicalModel",
+    "contextWindow",
+    "costBasis",
+    "costUSD",
+    "inputTokens",
+    "maxOutputTokens",
+    "outputTokens",
+    "provider",
+    "thinkingTokens",
+    "webSearchRequests"
+   ]
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 20,
+   "requested": {
+    "background": 0,
+    "foreground": 20,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 1,
+   "spawned_by_subagents": 0,
+   "completed": 20,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 2,
+    "budget": 0
+   },
+   "by_type": {
+    "general-purpose": 20
+   }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 23,
+  "subtype": "success",
+  "api_error_status": null,
+  "ttft_ms": 52,
+  "type": "result",
+  "duration_ms": 422,
+  "uuid": "<uuid>",
+  "ttft_stream_ms": 51,
+  "time_to_request_ms": 45,
+  "first_content_frame_ms": 52,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "result": {
+   "len": 9,
+   "sha256": "6f515621c9ac2a2d",
+   "head": "root-done"
+  }
+ },
+ "results": [
+  {
+   "terminal_reason": "completed",
+   "api_error_status": null,
+   "is_error": false,
+   "num_turns": 23
+  }
+ ],
+ "events": [
+  {
+   "type": "system",
+   "subtype": "init",
+   "keys": [
+    "agents",
+    "analytics_disabled",
+    "apiKeySource",
+    "capabilities",
+    "claude_code_version",
+    "cwd",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "mcp_servers",
+    "memory_paths",
+    "messaging_socket_path",
+    "model",
+    "output_style",
+    "per_turn_effort_active",
+    "permissionMode",
+    "plugins",
+    "powershell_path",
+    "product_feedback_disabled",
+    "session_id",
+    "skills",
+    "slash_commands",
+    "subtype",
+    "terminal_slash_commands",
+    "tools",
+    "type",
+    "uuid",
+    "view_mode"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "9003a3c7a5938115",
+      "head": "{\"description\": \"lab PAR-CHILD-1\", \"prompt\": \"PAR-CHILD-1\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "490d697ed981c855",
+     "head": "PAR-CHILD-1"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_1"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "74e14119208e4353",
+      "head": "{\"description\": \"lab PAR-CHILD-2\", \"prompt\": \"PAR-CHILD-2\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "9b70e533caf802a7",
+     "head": "PAR-CHILD-2"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_2"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "7c21b9ce63834be9",
+      "head": "{\"description\": \"lab PAR-CHILD-3\", \"prompt\": \"PAR-CHILD-3\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "5285ee95064a5a1a",
+     "head": "PAR-CHILD-3"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_3"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "7a1311267e923241",
+      "head": "{\"description\": \"lab PAR-CHILD-4\", \"prompt\": \"PAR-CHILD-4\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "10e9b2012da72bba",
+     "head": "PAR-CHILD-4"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_4"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "1e7466e173c8f804",
+      "head": "{\"description\": \"lab PAR-CHILD-5\", \"prompt\": \"PAR-CHILD-5\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "510d08482a210d60",
+     "head": "PAR-CHILD-5"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_5"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "63f2205eddd0f76f",
+      "head": "{\"description\": \"lab PAR-CHILD-6\", \"prompt\": \"PAR-CHILD-6\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "d5a2fbad901ca13d",
+     "head": "PAR-CHILD-6"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_6"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "fe95dc79cfb3048d",
+      "head": "{\"description\": \"lab PAR-CHILD-7\", \"prompt\": \"PAR-CHILD-7\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "b6c115f4b9ac2bce",
+     "head": "PAR-CHILD-7"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_7"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "3a7f5511f25f0079",
+      "head": "{\"description\": \"lab PAR-CHILD-8\", \"prompt\": \"PAR-CHILD-8\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "5f4a29749ef645dd",
+     "head": "PAR-CHILD-8"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_8"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 123,
+      "sha256": "ceb14570987906fc",
+      "head": "{\"description\": \"lab PAR-CHILD-9\", \"prompt\": \"PAR-CHILD-9\", \"run_in_background\":"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 11,
+     "sha256": "c004325b165f8852",
+     "head": "PAR-CHILD-9"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_9"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "233ef20212b506f3",
+      "head": "{\"description\": \"lab PAR-CHILD-10\", \"prompt\": \"PAR-CHILD-10\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "0515d618eb76acf4",
+     "head": "PAR-CHILD-10"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_10"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "563daffd7adc0607",
+      "head": "{\"description\": \"lab PAR-CHILD-11\", \"prompt\": \"PAR-CHILD-11\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "8ed2f008ad4df72b",
+     "head": "PAR-CHILD-11"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_11"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "7e66fb416218c3ad",
+      "head": "{\"description\": \"lab PAR-CHILD-12\", \"prompt\": \"PAR-CHILD-12\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "52013e73e34a6c0f",
+     "head": "PAR-CHILD-12"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_12"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "6a4fc928e2c6e0fc",
+      "head": "{\"description\": \"lab PAR-CHILD-13\", \"prompt\": \"PAR-CHILD-13\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "aa401c12586f79ea",
+     "head": "PAR-CHILD-13"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_13"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "a5778f102e8efec4",
+      "head": "{\"description\": \"lab PAR-CHILD-14\", \"prompt\": \"PAR-CHILD-14\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "75713447f383a96d",
+     "head": "PAR-CHILD-14"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_14"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "62a3b315786513aa",
+      "head": "{\"description\": \"lab PAR-CHILD-15\", \"prompt\": \"PAR-CHILD-15\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "566d7315e5e57596",
+     "head": "PAR-CHILD-15"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_15"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "553ab3cf497289da",
+      "head": "{\"description\": \"lab PAR-CHILD-16\", \"prompt\": \"PAR-CHILD-16\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "64531e9ce87f793d",
+     "head": "PAR-CHILD-16"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_16"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "f0cbb9794cdabd5d",
+      "head": "{\"description\": \"lab PAR-CHILD-17\", \"prompt\": \"PAR-CHILD-17\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "77c62e22981c2818",
+     "head": "PAR-CHILD-17"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_17"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "04f5b4bc6c4d7ce5",
+      "head": "{\"description\": \"lab PAR-CHILD-18\", \"prompt\": \"PAR-CHILD-18\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "34398ea99b668150",
+     "head": "PAR-CHILD-18"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_18"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "1f45a4f9496e01bb",
+      "head": "{\"description\": \"lab PAR-CHILD-19\", \"prompt\": \"PAR-CHILD-19\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "e1473535863cee94",
+     "head": "PAR-CHILD-19"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_19"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "c34b18b9125d9494",
+      "head": "{\"description\": \"lab PAR-CHILD-20\", \"prompt\": \"PAR-CHILD-20\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "system",
+   "subtype": "task_started",
+   "keys": [
+    "description",
+    "is_backgrounded",
+    "prompt",
+    "run_id",
+    "session_id",
+    "spawn_depth",
+    "subagent_type",
+    "subtype",
+    "task_id",
+    "task_type",
+    "tool_use_id",
+    "type",
+    "uuid"
+   ],
+   "task_type": "local_agent"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "agent_id",
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "subagent_type",
+    "task_description",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 12,
+     "sha256": "fc73195294806248",
+     "head": "PAR-CHILD-20"
+    }
+   ],
+   "parent_tool_use_id": "toolu_par_20"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "74aa02d816208bb3",
+      "head": "{\"description\": \"lab PAR-CHILD-21\", \"prompt\": \"PAR-CHILD-21\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 186,
+      "sha256": "88990c41830ac0ed",
+      "head": "Concurrent subagent limit reached. You can run 20 subagents at once. Do not retr"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "tool_use",
+    "name": "Agent"
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "input_json_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid",
+    "wire_tool_inputs"
+   ],
+   "content": [
+    {
+     "type": "tool_use",
+     "id_prefix": "toolu_",
+     "name": "Agent",
+     "input_keys": [
+      "description",
+      "prompt",
+      "run_in_background",
+      "subagent_type"
+     ],
+     "input": {
+      "len": 125,
+      "sha256": "1eeb056ceb4b883a",
+      "head": "{\"description\": \"lab PAR-CHILD-22\", \"prompt\": \"PAR-CHILD-22\", \"run_in_background"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": true,
+     "content": {
+      "len": 186,
+      "sha256": "88990c41830ac0ed",
+      "head": "Concurrent subagent limit reached. You can run 20 subagents at once. Do not retr"
+     }
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": "str"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "tool_use",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "rate_limit_event",
+   "keys": [
+    "rate_limit_info",
+    "session_id",
+    "type",
+    "uuid"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "a858614195af14fd",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "b8365d3d0109aadb",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "df3ba49f19583de7",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "8679a4b80bf26eef",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "fc16d11be36e231b",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "d4d648a8143d82c2",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "7d80dc8b8aea1db3",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "2189c2ba63e9634c",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "fbba8265a6e80d83",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "d513ac4ba61dc1ac",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "9864ca50671e44f8",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "0c5a2c07bace236c",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "d590cd7402f39a6d",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "344882ef2dc14d1e",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "2f45ce8878819672",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "5f38ae6652887916",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "263e2306ae665e40",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "efee7b27d9e05a51",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "4582b0e37f33d101",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "task_updated",
+   "keys": [
+    "patch",
+    "run_id",
+    "session_id",
+    "subtype",
+    "task_id",
+    "type",
+    "uuid"
+   ],
+   "patch_status": "completed"
+  },
+  {
+   "type": "system",
+   "subtype": "task_notification",
+   "keys": [
+    "output_file",
+    "run_id",
+    "session_id",
+    "status",
+    "subtype",
+    "summary",
+    "task_id",
+    "tool_use_id",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "status": "completed"
+  },
+  {
+   "type": "user",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "tool_result_meta",
+    "tool_use_result",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "tool_result",
+     "tool_use_id_prefix": "toolu_",
+     "is_error": null,
+     "content": [
+      {
+       "type": "text",
+       "len": 679,
+       "sha256": "d5127ba62ecaa14b",
+       "head": "[Subagent hand-back] The text below is the final report of a subagent this sessi",
+       "tags": [
+        "usage"
+       ]
+      }
+     ]
+    }
+   ],
+   "parent_tool_use_id": null,
+   "tool_use_result_keys": [
+    "agentId",
+    "agentType",
+    "canContinueAgent",
+    "content",
+    "harnessNoteCount",
+    "harnessSectionHash",
+    "harnessTailCount",
+    "prompt",
+    "resolvedModel",
+    "status",
+    "totalDurationMs",
+    "totalTokens",
+    "totalToolUseCount",
+    "usage"
+   ]
+  },
+  {
+   "type": "system",
+   "subtype": "status",
+   "keys": [
+    "session_id",
+    "status",
+    "subtype",
+    "type",
+    "uuid"
+   ],
+   "status": "requesting"
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "thinking_display",
+    "ttft_ms",
+    "type",
+    "uuid"
+   ],
+   "event": "message_start",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_start",
+   "block": {
+    "type": "text",
+    "name": null
+   },
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_delta",
+   "delta": "text_delta",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "assistant",
+   "keys": [
+    "message",
+    "parent_tool_use_id",
+    "session_id",
+    "timestamp",
+    "type",
+    "uuid"
+   ],
+   "content": [
+    {
+     "type": "text",
+     "len": 9,
+     "sha256": "6f515621c9ac2a2d",
+     "head": "root-done"
+    }
+   ],
+   "parent_tool_use_id": null,
+   "stop_reason": null,
+   "usage_keys": [
+    "input_tokens",
+    "output_tokens"
+   ]
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "content_block_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_delta",
+   "stop_reason": "end_turn",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "stream_event",
+   "keys": [
+    "api_message_id",
+    "event",
+    "parent_tool_use_id",
+    "session_id",
+    "type",
+    "uuid"
+   ],
+   "event": "message_stop",
+   "parent_tool_use_id": null
+  },
+  {
+   "type": "result",
+   "subtype": "success",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ]
+  }
+ ]
+}

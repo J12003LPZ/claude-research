@@ -4081,6 +4081,126 @@
    "killed": null
   },
   {
+   "id": "E44a-subagent-depth",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "d70ce2cf0b650c945a534ad9becd469533c9037058884a5b58f1a7023b562e3a",
+     "bytes": 4410
+    },
+    "http-summary.json": {
+     "sha256": "2cf713ff26cd42169985d7079032d7000c865276435983cdf6b5379ced02e8bc",
+     "bytes": 110580
+    },
+    "run.json": {
+     "sha256": "531efc525276907dc31d7cd4a8c8438847f19bf0585643a5bb52040fddeeb154",
+     "bytes": 1669
+    },
+    "stream-summary.json": {
+     "sha256": "14b50b3a3a46ceed7e7d8ac2858a750301a2459a958f4dc42f34d07cdb488dcc",
+     "bytes": 16368
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.353,
+   "started": "2026-10-14T08:12:07Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E44b-subagent-concurrency",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "480eeac54248c89a9c730324fd15e4cb24f3fa45c1b335cdd2dbe9fd7e1cfe0f",
+     "bytes": 6771
+    },
+    "http-summary.json": {
+     "sha256": "4af88b00dfdf477375beb44d1b1447a936e1443e340fe080b97453c2712b1d31",
+     "bytes": 314343
+    },
+    "run.json": {
+     "sha256": "1311a4c2e729f607376b76546a69308df8004ef6ffc1918e0728dc996dfb6552",
+     "bytes": 1688
+    },
+    "stream-summary.json": {
+     "sha256": "681bd41e3322f7737ede877eba4f475a4296e29df2fe42f5954be935a7fe3969",
+     "bytes": 88142
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.631,
+   "started": "2026-10-14T08:12:32Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E44c-subagent-failure",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "a3375b592a6ed9ff55b2ffb15832f36cbe1461253b3cc3a38183630c9e4faa70",
+     "bytes": 3719
+    },
+    "http-summary.json": {
+     "sha256": "d802b0b1742a29b9c9760b8acf755b82dde34ae0c7057b137a34f6827b7b4c5b",
+     "bytes": 41283
+    },
+    "run.json": {
+     "sha256": "f87636e9c693b66abdc590c91ddbc8c2a763448457e56b8eac2d8fe55c6dc361",
+     "bytes": 1675
+    },
+    "stream-summary.json": {
+     "sha256": "723170b125b9c63286dd4778af5044faf1b682277a9e46bbc1346c6081b9254b",
+     "bytes": 11915
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.145,
+   "started": "2026-10-14T08:12:40Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E45-max-output-text",
+   "kind": "experiment",
+   "files": {
+    "debug-summary.json": {
+     "sha256": "378bb92df354bf1d70eee3e392eb6c57f3e66eeefb4de0dd76ecd4acaa1c3bd7",
+     "bytes": 3737
+    },
+    "http-summary.json": {
+     "sha256": "32d1a965a81a7bcbd3ec2dfdef10ce1fa50a3af9208f000facba9066bf9bc60d",
+     "bytes": 58268
+    },
+    "run.json": {
+     "sha256": "b9f09b6ec036bf0c6a88efb08bde153d625789b8a0e4477810217606366976b5",
+     "bytes": 1669
+    },
+    "stream-summary.json": {
+     "sha256": "ea0c70e84a865c3acdb47ce9137a7fdaeedc938acae9e5a93016a005a70b6649",
+     "bytes": 15448
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.129,
+   "started": "2026-10-14T08:12:55Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
    "id": "P-acceptEdits",
    "kind": "experiment",
    "files": {

@@ -363,6 +363,26 @@ sanitized evidence is in the corresponding `runtime-logs/` directories.
   429 before a model response. These canaries confirm that the live account was still blocked;
   they do not test the CLI failure breaker.
 
+### E44 and E45: subagent limits, a failing child, and max-output replay (scripted model)
+
+All four runs use the scripted proxy (no upstream model call); builders are `tools/scenarios/build_e44.py` and
+`run_e44.sh`. `bypassPermissions`, foreground agents, `subagent_stats` read from the final `result` frame.
+
+| Run | Setup | Observed |
+|---|---|---|
+| E44a depth | root asks level 1, which asks level 2, which asks level 3, which asks level 4 | `spawned:3`, `max_depth:3`, `spawned_by_subagents:2`, `completed:3`, all `refused` counters **0**. Request tool lists: root 26, levels 1 and 2 have 25 (with `Agent`), **level 3 has 24 and no `Agent`**. Level 3's attempt to call `Agent` got `<tool_use_error>Error: No such tool available: Agent. Agent is not among the tools available here. Continue with the tools you have.</tool_use_error>` (`is_error:true`) |
+| E44b concurrency | one assistant message with 22 parallel foreground `Agent` calls | `spawned:20`, `completed:20`, `refused.concurrency_limit:2`; the two refused calls returned `Concurrent subagent limit reached. You can run 20 subagents at once. Do not retry. If the user wants more concurrent subagents, ask them to increase CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS.` (`is_error:true`); 22 model requests, `num_turns:23` |
+| E44c failure | the child's first request gets HTTP 400 | `subagent_stats` `failed:1`, `completed:0`; the parent received `Agent terminated early due to an API error: API Error: 400 lab otherwise (error type unknown, HTTP 400, model sent to the API: claude-haiku-5-5)` (`is_error:true`) and carried on: result `completed`, exit 0 |
+| E45 max-output text | three replies cut by `stop_reason:"max_tokens"` that carry real text, then a normal end | Four requests, `max_tokens` 128,000 on each. **The partial text is replayed**: request 2 holds the first reply as an `assistant` text message followed by a separate 183-character `user` text (the nudge); request 3 holds two partials and two nudges; request 4 holds three. Final `completed`, `num_turns:4` |
+
+- **Verified depth cap by tool removal.** The depth-3 child cannot call `Agent` because the tool is absent, so the static
+  `Subagent nesting limit reached (depth N of M)` error and `refused.depth_limit` are not reached on this path.
+  `static-05` open question 4 is answered: the tool is already missing at depth 3.
+- **Verified concurrency cap.** 20 by default, text and env name as the static report says.
+- **E45 versus E26.** E26's cut replies carried only thinking, so no assistant message was replayed and the nudge was
+  merged into the first user message. With real text the partial is kept and each nudge is its own user message.
+  Not run here: a fourth consecutive cut (the E26 final error), or `CLAUDE_CODE_MAX_OUTPUT_TOKENS`.
+
 ### E41 to E43: `auto` permission mode with a scripted classifier
 
 `--permission-mode auto` sends each unapproved tool call to a classifier, which is a model call. Here the lab proxy

@@ -246,7 +246,7 @@ Where each is produced in `chunk-93pksqr2.js`:
 |---|---|---|---|
 | `next_turn` | 199381 | tool results exist | assistant msgs + tool results + attachments |
 | `stop_hook_blocking` | 189203 | Stop hook returned blocking errors | assistant msgs + the blocking-error user messages; sets `stopHookActive:true`, `stopHookBlockingCount+1`, `turnCount+1` |
-| `max_output_tokens_recovery` | 185383 | last message has `apiError:"max_output_tokens"` | meta user nudge (or nothing when resuming an incomplete thinking block) |
+| `max_output_tokens_recovery` | 185383 | last message has `apiError:"max_output_tokens"` | meta user nudge (or nothing when resuming an incomplete thinking block); **runtime (E45):** a cut reply with real text is kept as an assistant message and the nudge follows as a separate user message |
 | `truncated_response_recovery` | 185951 | stream died after output (`truncatedAfterOutput`) in subagent or non-interactive main | meta user nudge |
 | `malformed_tool_use_retry` | 186524 | `stop_reason:"tool_use"` but no tool blocks | all assistant msgs tombstoned, meta user nudge, once |
 | `thinking_only_retry` | 187227 | `end_turn`/`stop_sequence` with no non-empty text and no tool use | meta user nudge, once |
