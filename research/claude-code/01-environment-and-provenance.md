@@ -140,7 +140,7 @@ names only.
 - **JavaScriptCore bytecode:** not disassembled. The same modules ship as source text, and
   the bytecode is a cache of that source. **HYPOTHESIS, untested:** bytecode and source are
   equivalent. A mismatch would be visible as runtime behaviour that contradicts the source;
-  none was seen across the 150 manifest runs.
+  none was seen across the 171 manifest runs.
 
 ## 4. Runtime instrumentation used instead of process tracing
 

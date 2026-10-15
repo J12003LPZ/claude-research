@@ -1,0 +1,41 @@
+{
+ "exp": "E90d-guarde-haiku-none",
+ "stream": {
+  "init_permission_mode": "default",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 1
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Edit",
+   "input": {
+    "file_path": "<str 64 chars>",
+    "old_string": "<str 12 chars>",
+    "new_string": "<str 12 chars>"
+   },
+   "is_error": true,
+   "chars": 138,
+   "lines": 1,
+   "first_line": "Claude requested permissions to write to <home>/cc-rea-lab/proj-e60d-guarde-haiku-none/src/app.py, but you haven't granted it yet.",
+   "last_line": "Claude requested permissions to write to <home>/cc-rea-lab/proj-e60d-guarde-haiku-none/src/app.py, but you haven't granted it yet.",
+   "first_lines": [
+    "Claude requested permissions to write to <home>/cc-rea-lab/proj-e60d-guarde-haiku-none/src/app.py, but you haven't granted it yet."
+   ],
+   "last_lines": [
+    "Claude requested permissions to write to <home>/cc-rea-lab/proj-e60d-guarde-haiku-none/src/app.py, but you haven't granted it yet."
+   ],
+   "markers": []
+  }
+ ],
+ "truncation_notes": []
+}

@@ -1,0 +1,70 @@
+{
+ "exp": "E90k-claude-opus-4-7",
+ "parent_model_flag": "claude-opus-4-7",
+ "env": {},
+ "requests": [
+  {
+   "model": null,
+   "tool_count": 0,
+   "has_write": false,
+   "child": false,
+   "max_tokens": null,
+   "thinking": null,
+   "effort": null
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 30,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 13,
+   "has_write": false,
+   "child": true,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 30,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 13,
+   "has_write": false,
+   "child": true,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 30,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  },
+  {
+   "model": "claude-opus-4-7",
+   "tool_count": 30,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 64000,
+   "thinking": "adaptive",
+   "effort": "xhigh"
+  }
+ ]
+}

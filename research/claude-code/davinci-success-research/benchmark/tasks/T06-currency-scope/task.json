@@ -1,0 +1,8 @@
+{
+ "id": "T06-currency-scope",
+ "title": "Add a currency option without changing USD output",
+ "category": "feature_scope_discipline",
+ "protected": [],
+ "visible_test_cmd": "python -m unittest discover -s tests",
+ "timeout_s": 900
+}

@@ -1,0 +1,1 @@
+Add an optional `currency` parameter (default `"USD"`) to `format_total` in `money.py`. `"EUR"` formats 123456 cents as `1.234,56 €` (dot for thousands, comma for decimals, a space and the euro sign after). Any other currency raises `ValueError`. Output for USD must stay exactly what it is today for every input.

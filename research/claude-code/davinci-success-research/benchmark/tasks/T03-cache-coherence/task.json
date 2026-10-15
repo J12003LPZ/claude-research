@@ -1,0 +1,8 @@
+{
+ "id": "T03-cache-coherence",
+ "title": "Renamed or deleted users still come back from the cache",
+ "category": "bug_fix_multifile",
+ "protected": [],
+ "visible_test_cmd": "python -m unittest discover -s tests",
+ "timeout_s": 1200
+}

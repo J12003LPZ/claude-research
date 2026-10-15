@@ -1,0 +1,8 @@
+{
+ "id": "T02-csv-quotes",
+ "title": "Parse quoted CSV fields on one line",
+ "category": "feature",
+ "protected": [],
+ "visible_test_cmd": "python -m unittest discover -s tests",
+ "timeout_s": 900
+}

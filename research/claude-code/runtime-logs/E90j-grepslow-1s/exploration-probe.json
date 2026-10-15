@@ -1,0 +1,70 @@
+{
+ "exp": "E90j-grepslow-1s",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 3,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needleslow",
+    "output_mode": "count"
+   },
+   "is_error": false,
+   "chars": 5327,
+   "lines": 252,
+   "first_line": "tree/d025/f099.txt:1",
+   "last_line": "Found 9611 total occurrences across 9611 files. with pagination = limit: 250",
+   "first_lines": [
+    "tree/d025/f099.txt:1",
+    "tree/d012/f099.txt:1",
+    "tree/d025/f098.txt:1"
+   ],
+   "last_lines": [
+    "tree/d004/f075.txt:1",
+    "",
+    "Found 9611 total occurrences across 9611 files. with pagination = limit: 250"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needleslow",
+    "output_mode": "files_with_matches",
+    "head_limit": 0
+   },
+   "is_error": false,
+   "chars": 2255,
+   "lines": 111,
+   "first_line": "<persisted-output>",
+   "last_line": "</persisted-output>",
+   "first_lines": [
+    "<persisted-output>",
+    "Output too large (350.1KB). Full output saved to: <home>/.claude/projects/<lab-projects>-proj-e60j-grepslow-1s/c46da785-5fc2-44b0-a6d1-cd4fca470fd1/t",
+    ""
+   ],
+   "last_lines": [
+    "tree/d399/f001.txt",
+    "...",
+    "</persisted-output>"
+   ],
+   "markers": [
+    "persisted_output"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

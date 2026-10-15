@@ -1,0 +1,18 @@
+{
+ "exp": "E90p-claude-mythos-5-1",
+ "model": "claude-mythos-5-1",
+ "tool_count": 26,
+ "system_chars": 11522,
+ "markers": {
+  "delivering_work": true,
+  "corrections": false,
+  "autonomy_block": true,
+  "explore_nudge": false,
+  "prefer_dedicated_tools_full": false,
+  "prefer_dedicated_tools_lean": true,
+  "read_before_edit_text": false
+ },
+ "thinking": "adaptive",
+ "effort": "high",
+ "max_tokens": 64000
+}

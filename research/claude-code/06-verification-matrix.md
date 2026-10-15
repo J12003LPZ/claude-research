@@ -54,8 +54,8 @@ Result vocabulary: **Verified** (static and runtime agree, or runtime alone is d
 | Sessions | resume, continue, fork semantics | static 05 | E15b, c, d | Verified | High | cross-directory resume |
 | Sessions | Interrupted-turn repair on resume | static 05 | E24a, E24b | Verified | High | resume with no new prompt, `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` |
 | Interrupt | Abort closes HTTP stream, synthesizes messages | static 03 | E13b, E13c | Verified | High | TUI Esc, SIGINT |
-| Rendering | Custom Ink-style renderer, 16 ms frames | static 05 only; not runtime-verified | none | Blocked | Low | PTY harness |
-| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 | passive surface plus pinned `daemon --help`/`status`, E82 trusted launch, E83 attach, E84 respawn, E85 PTY bytes, daemon entrypoint probes, and worker lifecycle probe: service install disabled, on-demand idle contract, live `background` row, attach output, 7,303 PTY bytes, respawn to `working/idle`, heartbeat worker startup, IPC shutdown with exit 0, the parent-watchdog message, and a daemon-managed unauthenticated PTY `auth-required` response; spare guard is Windows-disabled (`daemon-surface`, `daemon-lifecycle`, `daemon-entrypoints`, `worker-lifecycle`, `pty-auth`, E82-E85) | Partially verified | Medium | no active model turn; input-forwarding rejection and the authenticated PTY success path were not independently tested; supervisor respawn execution remains static-only; spare is blocked on this host |
+| Rendering | Custom Ink-style renderer, 16 ms frames | static 05 C14 plus fresh scheduler/input/Escape decompilation anchors | E85 proves Windows PTY byte transport, not the full renderer | Partially verified | Low | Full rendering, TUI Esc, and interactive permission UI still need a complete ConPTY harness |
+| Daemon / background sessions | Supervisor, workers, PTY host over named pipe | static 05 A8 plus fresh supervisor/worker/PTY decompilation anchors | passive surface plus pinned `daemon --help`/`status`, E82 trusted launch, E83 attach, E84 background-session respawn, E85 PTY bytes, daemon entrypoint probes, worker lifecycle probe, and E92 PTY-auth probe: service install disabled, on-demand idle contract, live `background` row, attach output, 7,303 PTY bytes, heartbeat worker startup, IPC shutdown with exit 0, parent-watchdog message, and daemon-managed unauthenticated PTY `auth-required`; E92 also attempted `POST /v1/messages?beta=true` and received 401 with no completed turn; spare guard is Windows-disabled | Partially verified | Medium | unauthenticated input rejection lacks an independent child-side effect test; authenticated PTY success and supervisor worker respawn remain untested; watchdog worker exit status was not captured; spare is blocked on this host |
 | Server side | Model behaviour, rate limits, gates, server context edits | none possible | headers only | Blocked | n/a | vendor only |
 
 ## 2. Behavioural test matrix: installed CLI versus the proposed reconstruction
@@ -108,8 +108,8 @@ behaviour precisely enough to test, not a pass or fail.
 | 33a | Output-token recovery with real text | E45 | 5 | Verified |
 | 34 | Output formats | C9, C10 | 1 | Verified |
 | 35 | Real API error ends the run | E08b | 4 | Verified |
-| 36 | Interactive permission dialog | none | 7 | Blocked |
-| 37 | Terminal rendering | none | 12 | Blocked |
+| 36 | Interactive permission dialog | no complete dialog probe; E85 only covers PTY transport | 7 | Untested |
+| 37 | Terminal rendering | E85 covers PTY transport, not renderer output or frame behavior | 12 | Partially verified (PTY transport only) |
 | 38 | Host approval over the control protocol | E19c, E19d | 7 | Verified |
 | 39 | Subagent failure mid-run | E44c | 9 | Verified (child API error becomes a parent-visible error result) |
 | 40 | Crash recovery on resume | E24 | 11 | Verified (synthetic interrupted result) |
@@ -118,7 +118,7 @@ behaviour precisely enough to test, not a pass or fail.
 | 43 | Sandbox | `claude sandbox status` reports `supported:false`, `installed:false`, `enabled:false` on this host | 7 | Blocked (not exercisable here; enforcement itself unobserved) |
 | 44 | MCP tool call | E25 | 14 | Verified (stdio server, deny and allow) |
 
-Counts: 51 behaviours enumerated. Verified 43, partially verified 5, untested 0, blocked 3.
+Counts: 51 behaviours enumerated. Verified 43, partially verified 6, untested 1, blocked 1.
 
 ## 3. Cross-validation per subsystem
 
@@ -128,8 +128,10 @@ what is unknown.
 **Artifact and startup.** Known: one signed PE, Bun runtime plus 2,586 embedded modules,
 entry `cli`. How: PE parse, trailer and table decode, hash match with the version store,
 runtime user agent. Alternative: the shipped JS source could differ from the bytecode that
-executes. Falsifier: a behaviour that contradicts the source text; none in the 150 manifest runs.
-Unknown: updater behaviour, each side entry point.
+executes. Falsifier: a behaviour that contradicts the source text. The 171 manifest runs include scoped
+runtime disagreements for SDK interruption and reactive compaction; neither establishes a
+source/bytecode mismatch.
+Unknown: updater behaviour, each side entry point, and source/bytecode equivalence.
 
 **Prompt assembly.** Known: block layout, reminder placement, discovery order, lazy
 loading, flag effects. How: captured request bodies with synthetic markers at known
@@ -193,9 +195,9 @@ Targeted follow-up was attempted where it was cheap. Status after that:
 | 5 | Is the tool's process tree killed on interrupt? | Orphan processes | Single process listing after E13c, none found | Partly answered |
 | 6 | How does host approval (`can_use_tool`) flow end to end? | Needed for any SDK host | Static 03 documents the fields | Answered at runtime (E19c allow, E19d deny); needs `--permission-prompt-tool stdio`, `--permission-prompts host` alone auto-denies |
 | 7 | Do background agents survive a parent interrupt? | Cancellation model | Static 05 says yes; E39 scripted run (SDK `interrupt`) | Answered: no, for the SDK interrupt (E39a). TUI Esc open |
-| 8 | What do plan, dontAsk, bypass and auto modes do in practice? | `auto` unobserved | Static 04 algorithm extracted | Answered for plan, dontAsk, acceptEdits, bypass (P-* runs); `auto` open |
-| 9 | Interactive rendering and input | Whole UI unverified | Blocked by PTY tooling on native Windows | Blocked |
-| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | No contradiction in 150 manifest runs | Open. Would need a JavaScriptCore bytecode disassembler |
+| 8 | What do plan, dontAsk, bypass and auto modes do in practice? | E41 to E43 scripted classifier; P-* runs | Static 04 algorithm plus runtime flow | Answered for plan, dontAsk, acceptEdits, bypass, and scripted `auto`; real classifier verdicts and interactive auto prompting remain open |
+| 9 | Interactive rendering and input | E85 verified PTY bytes; full UI remains unverified | Native Windows PTY transport is available, but no complete renderer/TUI harness is retained | Partly answered |
+| 10 | Is the shipped bytecode equivalent to the shipped source? | All static claims read the source | Runtime has scoped disagreements with two static claims, but no proof of bytecode/source mismatch | Open. Would need a bytecode-level comparison or equivalent execution evidence |
 
 Also answered during this pass: static pass 05 could not tell whether parallel `Agent`
 calls overlap. E10 shows they do.
@@ -218,3 +220,17 @@ calls overlap. E10 shows they do.
    `sleep N` is refused by the tool; Git Bash rewrote `/compact` into a Windows path; an
    empty argument pushed flags behind `--` and silently ran ten experiments in the wrong
    profile.
+
+## 6. Coding-workflow checks (E50, scripted model)
+
+These rows are outside the section 2 behaviour table and are not counted in its footer. Status words follow the same scale.
+
+| Claim | Status | Evidence | Limit |
+|---|---|---|---|
+| Lean versus full system layout is chosen by model | Verified for 7 model ids sent (9 requested) | E50m, E50o | Models not tested are unknown; the host table behind `V4` was not read |
+| Proactivity level changes the injected block and the initial permission mode | Verified | E50p, E50w | Auto-mode availability is account specific |
+| Headless plan mode refuses `Write` and cannot exit | Verified | E50q | Interactive approval not run; the `Bash` denial went through the classifier path |
+| Explore child has no `Edit` or `Write`; the shell remains | Verified | E50r, E50u | Tested under bypassPermissions only |
+| The CLI does not require a test run or react to a failing one | Verified for a scripted model | E50s, E50t | Real-model behavior UNKNOWN |
+| A project `Stop` hook can force "tests pass before finishing" | Verified | E50v | Hook is user configuration; cap 8 (E40) |
+| Coordinator-mode verification workflow runs as written | Untested | static-02 section 26, item 5 | Prompt text only; not executed |

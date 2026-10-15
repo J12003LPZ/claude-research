@@ -9,7 +9,7 @@ SCENARIOS = ROOT / "research" / "claude-code" / "tools" / "scenarios"
 
 class ScenarioHarnessTests(unittest.TestCase):
     def test_builders_reject_path_like_experiment_ids(self):
-        for name, mode in (("build_e44.py", "depth"), ("build_e46.py", "hooks")):
+        for name, mode in (("build_e44.py", "depth"), ("build_e46.py", "hooks"), ("build_e50.py", "baseline")):
             result = subprocess.run(
                 [sys.executable, "-I", str(SCENARIOS / name), "../outside", mode],
                 cwd=ROOT,
@@ -25,6 +25,11 @@ class ScenarioHarnessTests(unittest.TestCase):
             self.assertIn("set -o pipefail", source, name)
             self.assertIn("invalid experiment id", source, name)
             self.assertIn("|| exit $?", source, name)
+
+    def test_gate_requires_extracted_tree_and_supports_override(self):
+        gate = (ROOT / "research" / "claude-code" / "tools" / "run_gates.sh").read_text(encoding="utf-8")
+        self.assertIn("CLAUDE_REA_EXTRACTED_ROOT", gate)
+        self.assertIn("FAIL  static audits (extracted tree not found", gate)
 
     def test_e46_embeds_its_hook_logger(self):
         source = (SCENARIOS / "build_e46.py").read_text(encoding="utf-8")

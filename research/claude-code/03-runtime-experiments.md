@@ -1,8 +1,11 @@
 # 03. Runtime experiment catalog
 
 Runs were predominantly Claude Code 2.1.296 on Windows 11; seven explicitly named `*-v299`
-comparison runs used 2.1.299. All runs used `claude -p` (headless), synthetic prompts and files
-only, and lab projects under `~\cc-rea-lab\`. Sanitized evidence for experiment `X` is in
+comparison runs used 2.1.299. The manifest E/C/P runs are predominantly headless and use
+synthetic prompts and files under `~\cc-rea-lab\`, but resume/autocompact scenarios can use
+`--resume` with stdin and omit `-p`; each run's `run.json` argv is authoritative. Supplemental
+daemon, worker, and PTY probes used their corresponding interactive or side-entry commands.
+Sanitized evidence for experiment `X` is in
 `runtime-logs/X/` (`run.json`, `http-summary.json`, `stream-summary.json`,
 `hooks-summary.json` where hooks were installed). `runtime-logs/MANIFEST.json` lists hashes.
 
@@ -313,8 +316,9 @@ Automatic (`--autocompact 100k`, ten 62 KB files, about 22,600 tokens each per t
   text "Autocompact is thrashing: the context refilled to the limit within 3 turns of the
   ...", exit code 1. Five of ten files had been read. This is a safe compaction-failure
   path observed without forcing an error.
-- Not observed: a failing summarization request, the prompt-too-long retry path, partial
-  compaction.
+- E17c did not observe a failing summarization request, the prompt-too-long retry path, or
+  partial compaction. E31 later observed summary API-error exhaustion with eleven injected
+  retries; the non-reactive failure-breaker and partial-compaction paths remain open.
 
 ### E27 to E31: compaction-failure injection (items 16, 17)
 
@@ -422,7 +426,7 @@ decision. The proxy still answered all model requests locally.
   decision, the pending ask becomes a denial rather than an interactive prompt. This is a direct runtime check of
   the fallback described in `static-04`; it does not establish interactive behavior or all event-specific hooks.
 
-### Daemon lifecycle probe: help and status only
+### Daemon lifecycle, worker, and PTY probes
 
 A read-only invocation of the pinned 2.1.296 binary established the exposed lifecycle contract without launching a
 background session intentionally. `claude daemon --help` says service installation is disabled in this build, the
@@ -448,8 +452,11 @@ daemon, an unreachable control endpoint, and zero background workers while still
   message, and exited with code 0. A second worker was launched by a short-lived supervisor; after the supervisor
   exited, the worker emitted the documented `parent supervisor gone - exiting` watchdog message. The worker exit
   status was not captured. A trusted daemon-managed PTY probe then connected without sending an auth message,
-  received `auth-required`, and did not observe its synthetic marker in host-to-client terminal frames. Supervisor
-  respawn execution remains untested. The E82-E85 sessions and worker probes made no model POST.
+  received `auth-required`, and did not observe its synthetic marker in host-to-client terminal frames. Marker
+  absence is not independent proof of input-forwarding rejection. Supervisor worker respawn execution remains
+  untested; E84's successful background-session `respawn` is a separate path. E92 later attempted
+  `POST /v1/messages?beta=true` and received HTTP 401, so no model turn completed. The E82-E85 and worker
+  probes made no model POST; E92 is the exception and is recorded separately in `runtime-logs/pty-auth/`.
 - Evidence: `runtime-logs/daemon-lifecycle/summary.json`, `runtime-logs/daemon-entrypoints/summary.json`,
   `runtime-logs/worker-lifecycle/summary.json`, `runtime-logs/pty-auth/summary.json`, `runtime-logs/E85-pty-bytes/summary.json`, and the prior passive surface record in
   `runtime-logs/daemon-surface/summary.json`.
@@ -731,8 +738,9 @@ local proxy; nothing was sent upstream for them. Proxy gained an `sse_stall` mod
 | E23-sse-stall-byte10s | upstream replies 200 with `message_start`, then silence; `CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS=10000` | debug log: `[byte-watchdog] firing: idle=10000ms`, `Streaming idle timeout (byte-level)`, `Error streaming, falling back to non-streaming mode`. The next request had `stream:false` and `max_tokens:64000` (first was `stream:true`, `max_tokens:128000`) and succeeded. No `api_retry` frame and no SDK frame for the fallback. Run took 12.3 s |
 | E22-bigout-N | `python -c "print('a'*N)"` under `bypassPermissions` | N = 5,000 to 29,998: tool_result inline (N chars; the trailing newline is trimmed). N = 29,999 and above (49,000, 51,000, 450,000 too): tool_result is a `<persisted-output>` block of about 2.2 KB: `Output too large (SIZE). Full output saved to: <config dir>/projects/<project>/<session>/tool-results/<id>.txt`, blank line, `Preview (first 2KB):`, preview, `...`, `</persisted-output>`. So the Bash threshold is 30,000 raw characters including the newline (the static report's 50,000 is the cap for tools that do not set a lower `maxResultSizeChars`) |
 
-The `E23` result settles the static prediction for the byte tier only. With the stream-idle env unset the
-byte default is 180 s on first party; that default was not waited out.
+The `E23` result settles the static prediction for the byte tier with an explicit 10 s setting. E38
+later waited through the unset first-party default and observed the 180 s byte watchdog and non-streaming
+fallback. The event-tier label and non-reactive compaction paths remain open.
 
 ### E33: event-tier watchdog and its 300 s floor
 
@@ -757,7 +765,7 @@ killed the run at 420 s. Numbers are in `runtime-logs/E33-event-watchdog-floor/d
   the same 15, 30, 60, 120 s schedule, so the cadence is fixed, not derived from the env value. Their purpose
   is not known.
 - **Not observed:** the `tengu_streaming_idle_timeout` event with `tier:"event"` does not appear in the debug
-  log, so that tier label stays a static claim. The 180 s first-party byte default is still unwaited.
+  log, so that tier label stays a static claim. The 180 s first-party byte default is covered by E38.
 
 ## Crash recovery and MCP calls (E24, E25)
 
@@ -786,17 +794,44 @@ frames and no text, so the 200 tokens were probably spent on thinking and a thin
 dropped (**STRONGLY INFERRED**, not isolated). Final frame: `result` with `subtype:"success"`,
 `is_error:true`, `terminal_reason:"api_error"`, `num_turns:4`, exit code 1, text ending
 `...exceeded the 200 output token maximum. To configure this behavior, set the CLAUDE_CODE_MAX_OUTPUT_TOKENS environment variable.`
-Not tested: a response that has real text when it is cut (does the partial text enter the next request).
+E45 tested a response with real text when it was cut: partial assistant text entered the next request and
+separate nudge messages were appended. Not tested here: a fourth consecutive cut or the
+`CLAUDE_CODE_MAX_OUTPUT_TOKENS` environment override.
 
-## Experiments not run, with reasons
+## Coding-workflow mechanisms with a scripted model (E50)
+
+Twenty-one runs, Claude Code 2.1.296, local scripted proxy, no upstream model call. Builders and runner:
+`tools/scenarios/build_e50.py`, `run_e50.sh`, `run_all_e50.py`; sanitized summaries by `tools/coding_workflow_probe.py`
+(`runtime-logs/E50*/coding-workflow-probe.json`). Full tables and caveats: `davinci-success-research/01-runtime-verified-mechanisms.md`.
+
+- **Layout by model (E50a, E50m, E50o).** The system body is lean (5,994 to 12,078 characters in the system blocks, plus a separate `system`-role message of about 9,700 to 11,600, headings Harness,
+  Session-specific guidance, Memory, Environment, Context management) for haiku-5-5, sonnet-5-5, opus-5-5, fable-5-1
+  and mythos-5, and full (27,558 to 27,560 characters, with "Doing tasks", "Executing actions with care", "Using your
+  tools") for `claude-sonnet-4-5` and `claude-opus-4-7`. `claude-opus-4-1` was sent as `claude-opus-5-5`.
+- **Proactivity (E50p, E50w).** `--proactivity` is a hidden option. The block is a `system`-role message of 1,009 (low),
+  749 (medium) or 2,656 (high) characters; only the high block mentions tests. With no permission flag the initial mode
+  was `auto`, `default`, `auto` for ask, default, proactive.
+- **Plan mode (E50q).** Reminder in every request; `Write` refused with `Cannot write to <path> while in plan mode.`;
+  ExitPlanMode absent and uncallable in `-p`; a `Bash` write was denied through the auto-mode classifier path (the lab
+  cannot answer it), so a plan-mode-only shell rule is not isolated.
+- **Explore (E50r, E50u).** 13 tools against the parent's 26; `Write` unavailable; a `Bash` file write succeeded under
+  bypassPermissions. The two runs exit 1 only because the scripted sequence did not cover the follow-up turn after the
+  background agent's completion notice.
+- **Finishing without or after a failing test (E50s, E50t).** Both ended `subtype success`, `is_error` false, exit 0, in
+  two requests. The CLI neither required a test run nor reacted to a failing one.
+- **Stop-hook test gate (E50v).** A project `Stop` hook that blocks while tests fail made a false "Done." continue:
+  four requests instead of two, the lab hook log (raw) showed `rc 1` then `rc 0`; committed evidence has only the two Stop events.
+
+Not run: interactive ExitPlanMode approval, coordinator mode, any real-model behavior.
+
+## Experiments still open, with reasons
 
 | Item | Reason | What would settle it |
 |---|---|---|
-| Interactive TUI behaviour (rendering, Esc, permission dialog) | needs a PTY; REA process capture is unsupported on native Windows | run under WSL with REA `capture_process_scenario`, or ConPTY harness |
-| Approval granted or refused through a host (`can_use_tool` control request) | **Verified (E19c allow, E19d deny)**; E19 and E19b were setup failures | E19 (earlier account state) ended `Not logged in`. E19b (stored login, `--permission-prompts host` alone) ran the model but emitted no control request: the Bash call was auto-denied with `system/permission_denied` (`decision_reason: This command requires approval`) and the result text was `This command needs approval, so it didn't run`. With `--permission-prompt-tool stdio` (E19c, E19d) the CLI wrote one `control_request` (`request.subtype:"can_use_tool"`, keys `tool_name`, `display_name`, `input`, `description`, `permission_suggestions`, `decision_reason`, `decision_reason_type`, `tool_use_id`) and waited. Allow reply: the tool ran, `tool_result` `host-approved`, `result.permission_denials: []`. Deny reply with `message`: `tool_result` carried the host's message verbatim with `is_error:true`, and `result.permission_denials` listed `tool_name`, `tool_use_id`, `tool_input`. `permission_suggestions` offered an `addRules` entry with destination `localSettings`. The earlier inference that env scrubbing caused the login failure was wrong for E19b: the stored login now works. |
-| Subagent failing mid-run, nested subagents | time | prompt a child to call a denied tool; set depth |
-| Failure breaker on the non-reactive route | **Reactive route observed (E35 to E37): 25 failures, no breaker.** The non-reactive route was never reached | find what leaves the reactive handler undefined or the threshold source equal to `auto`; original E31 note: keep the body-targeted fault, then drive three separate auto-compaction turns after the account rate limit resets; require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
+| Interactive TUI behaviour (rendering, Esc, permission dialog) | E85 proves Windows PTY byte transport, but not the complete renderer or interactive UI | run a controlled ConPTY harness or a supported-host PTY capture |
+| Failure breaker on the non-reactive route | E35 to E37 exercised the reactive route with 25 failed operations and no breaker; the non-reactive route was never reached | find what leaves the reactive handler undefined or the threshold source equal to `auto`; then require `failure_breaker_open` or `tengu_auto_compact_circuit_breaker` |
 | Partial compaction | no trigger for the partial path was found | locate the caller of the partial compaction function, then drive it |
-| Prompt-too-long summary retry, non-reactive path | **Reactive path observed (E34)**; the non-reactive `Mon` path was not reached | find what makes autocompact skip the reactive route |
-| Process kill and recovery on resume | **Verified (E24a/E24b)** | kill the CLI during a tool, then `--resume` |
-| Direct (unproxied) baseline | proxy was the only body-level tap | compare `--debug api` logs with and without the proxy |
+| Prompt-too-long summary retry, non-reactive path | E34 observed the reactive path; the non-reactive `Mon` path was not reached | find what makes autocompact skip the reactive route |
+| Direct (unproxied) baseline | the proxy was the only body-level tap | compare `--debug api` logs with and without the proxy |
+| Authenticated PTY success and independent input rejection | E92 observed `auth-required` and marker absence, but did not authenticate and did not provide a child-side forwarding oracle | use a probe-owned PTY token and a deterministic echoing child; compare no-token, wrong-token, and valid-token clients |
+| Supervisor worker respawn execution | direct worker lifecycle and static exit policy are covered, but the supervisor's replacement-child path was not run | inject controlled worker exits 75, 78, and another nonzero under `claude daemon run`, then record spawn count, argv, timing, and daemon status |

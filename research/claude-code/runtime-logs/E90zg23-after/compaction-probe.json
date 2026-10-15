@@ -1,0 +1,217 @@
+{
+ "base": "E90zg2",
+ "out_dir": "E90zg23-after",
+ "model": "claude-haiku-5-5",
+ "turn_final_request": {
+  "messages": 22,
+  "shape": [
+   {
+    "role": "user",
+    "blocks": 4,
+    "chars": 4326
+   },
+   {
+    "role": "system",
+    "blocks": 1,
+    "chars": 8954
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 75
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 36
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 76
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 76
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 78
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 12508
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 76
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 76
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 77
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 50
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 82
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 46
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 149
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 166
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 83
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 18
+   }
+  ]
+ },
+ "compact_request": {
+  "messages": 22,
+  "instruction_chars": 6403,
+  "instruction_sha256": "6ffda2b58888bf70086ca99b6ed2209e27a1643bee2863c03a34b1a6de09e60c",
+  "arms_equal_by_sha256": [
+   "control"
+  ],
+  "static_prompts_checked": true,
+  "carries_custom_instruction": true,
+  "same_system_text_as_turn": true,
+  "cache_control_differs_from_turn": true,
+  "same_tools_as_turn": true,
+  "history_contains_turn_tool_ids": true,
+  "count_tokens_calls": 1
+ },
+ "after_request": {
+  "messages": 5,
+  "shape": [
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 1048
+   },
+   {
+    "role": "system",
+    "blocks": 0,
+    "chars": 0
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 44
+   },
+   {
+    "role": "user",
+    "blocks": 7,
+    "chars": 4726
+   },
+   {
+    "role": "system",
+    "blocks": 1,
+    "chars": 22392
+   }
+  ],
+  "count_tokens_calls": 0,
+  "summary_message": {
+   "is_first_message": true,
+   "has_canned_summary": true,
+   "analysis_stripped": true,
+   "summary_tag_rewritten": true,
+   "has_transcript_pointer": true,
+   "has_continue_guidance": true,
+   "has_kept_tail_note": true,
+   "has_arm_resume_guidance": false
+  },
+  "restored_files": [
+   {
+    "name": "app.py",
+    "status": "content"
+   },
+   {
+    "name": "d.txt",
+    "status": "content"
+   },
+   {
+    "name": "c.txt",
+    "status": "content"
+   },
+   {
+    "name": "util.py",
+    "status": "content"
+   },
+   {
+    "name": "b.txt",
+    "status": "content"
+   }
+  ],
+  "edit_results_after": {},
+  "attachment_message_chars": 22392,
+  "present": {
+   "canned_summary": true,
+   "project_instruction_file": true,
+   "compact_command_argument": true,
+   "new_user_prompt": true
+  },
+  "absent_after_compaction": {
+   "original_user_prompt": true,
+   "turn_tool_use_ids": true,
+   "failing_test_output": true,
+   "tool_result_blocks": true,
+   "tool_use_blocks": true
+  }
+ },
+ "turn_text_had": {
+  "failing_test_output": true,
+  "original_user_prompt": true
+ }
+}

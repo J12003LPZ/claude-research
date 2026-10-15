@@ -1,0 +1,65 @@
+{
+ "exp": "E90v-claude-opus-5-5",
+ "parent_model_flag": "claude-opus-5-5",
+ "mode": "gpmodel",
+ "env": {
+  "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet",
+  "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"
+ },
+ "requests": [
+  {
+   "model": null,
+   "tool_count": 0,
+   "has_write": false,
+   "child": false,
+   "max_tokens": null,
+   "thinking": null,
+   "effort": null
+  },
+  {
+   "model": "claude-opus-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_count": 17,
+   "has_write": true,
+   "child": true,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-opus-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-opus-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-opus-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  }
+ ]
+}

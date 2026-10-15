@@ -1,0 +1,42 @@
+{
+ "exp": "E90e-guardw-claude-mythos-5-bypassPermissions",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-mythos-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-mythos-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Write",
+   "input": {
+    "file_path": "<str 87 chars>",
+    "content": "<str 32 chars>"
+   },
+   "is_error": false,
+   "chars": 193,
+   "lines": 1,
+   "first_line": "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-mythos-5-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context \u2014",
+   "last_line": "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-mythos-5-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context \u2014",
+   "first_lines": [
+    "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-mythos-5-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context \u2014"
+   ],
+   "last_lines": [
+    "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-mythos-5-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context \u2014"
+   ],
+   "markers": [
+    "updated_successfully"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

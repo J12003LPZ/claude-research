@@ -1,0 +1,1253 @@
+{
+ "note": "Anchor must start with expect; generated from the 2.1.296 extraction; checked by tools/source_pins.py",
+ "pins": [
+  {
+   "anchor": "chunk-fzzrkchm.js@118016",
+   "expect": "async run(){let{drain:e,messageQueue:n,host:r}=this;if(e.running||this.stopping()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@109230",
+   "expect": "take(){while(!this.stopping()){"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@113101",
+   "expect": "exit(){if(this.drain.pendingDispatchUuids=[]"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@115186",
+   "expect": "isHeld(e,n){return!this.stopping()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@116858",
+   "expect": "teardown(){if(this.tornDown)"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@230910",
+   "expect": "resumesNothing(){return this.drain.endSessionRequested||Ls()||wn()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@491913",
+   "expect": "if(ri||Ls())return;ri=!0,T8(),Akn(),Yn.abort(),Zn(143)"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@491804",
+   "expect": "Ee.abortController.abort(pc(\"user-cancel\"))"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@572889",
+   "expect": "subtype===\"end_session\"){if(CC(D.request.reason))"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@486420",
+   "expect": "Vn=()=>Ee.abortController!==void 0&&Ee.abortController.signal.aborted"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@487609",
+   "expect": "Yn=lr(500)"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@492154",
+   "expect": "St(async()=>{if(fn)Qr.persist(fn);$s.resolve(),Gt.onShutdown()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@550957",
+   "expect": "async function $h(){Bh.stop()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@658756",
+   "expect": "await vr.closeInput(async()=>{if(Zxo()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@594489",
+   "expect": "BTn(cv.of(e),G,At)"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@592535",
+   "expect": "bQo(cv.of(e),G,At.slice(0,Xt.cut.index))"
+  },
+  {
+   "anchor": "chunk-phacttch.js@101341",
+   "expect": "async shutdown(e=0,n=\"other\",r){if(this.shutdownInProgress)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@97238",
+   "expect": "shutdownSync(e=0,n=\"other\"){if(!this.shutdownInProgress)process.exitCode=e,T8()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@100147",
+   "expect": "isShuttingDown(){return this.shutdownInProgress}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@98517",
+   "expect": "armShutdownFailsafe(e,n){if(this.failsafeTimer!==void 0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@93131",
+   "expect": "forceExit(e){if(this.failsafeTimer!==void 0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@105059",
+   "expect": "class dat extends Error{constructor(){super(\"Cleanup timeout\")}}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@50696",
+   "expect": "class vst{pendingWrites=new Set"
+  },
+  {
+   "anchor": "chunk-phacttch.js@51131",
+   "expect": "function Est(){return Fte().drain()}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@80875",
+   "expect": "async function FSt(){await Promise.allSettled(Array.from(lAe().pendingKillBackstops))}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@80961",
+   "expect": "function Akn(){for(let e of Array.from(lAe().liveShellCommands))if(e.status===\"running\")e.kill()}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@90434",
+   "expect": "async function eat(){let e=RH();"
+  },
+  {
+   "anchor": "chunk-phacttch.js@85881",
+   "expect": "#E(e){this.#e=\"killed\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@4553723",
+   "expect": "async function uNs(){if(s8()&&!Qde())return;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4552789",
+   "expect": "function BJr(){if(s8()&&!Qde())return;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4554487",
+   "expect": "St(uNs)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2943885",
+   "expect": "async function skt(e,n,r){let{sessionHooks:s"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2955308",
+   "expect": "MZo=1500,vkr=60000"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2955612",
+   "expect": "function JEe(){let e=a.CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@104942",
+   "expect": "async function PDe(){try{let{flushAnalyticsSinks:e}"
+  },
+  {
+   "anchor": "chunk-j0pppawn.js@3916",
+   "expect": "class We{#e=new Set;#t=!1;get drainStarted()"
+  },
+  {
+   "anchor": "chunk-j0pppawn.js@4461",
+   "expect": "var DZ=2000"
+  },
+  {
+   "anchor": "chunk-j0pppawn.js@4520",
+   "expect": "async function gpt(){await ge().cleanup.drain()}"
+  },
+  {
+   "anchor": "chunk-j0pppawn.js@4667",
+   "expect": "async function g2n(){await ge().preExitFlush.drain()}"
+  },
+  {
+   "anchor": "chunk-80kqkekd.js@150398",
+   "expect": "class Na{committed=!1}"
+  },
+  {
+   "anchor": "chunk-ww4e4yyz.js@3629",
+   "expect": "async function BDt(e=2000,{scaleBudgetToQueue:t=!0}"
+  },
+  {
+   "anchor": "chunk-ww4e4yyz.js@4083",
+   "expect": "function fxr(e=2000){return Math.min(w,Math.max(e,"
+  },
+  {
+   "anchor": "chunk-mx6ygzc6.js@3358",
+   "expect": "class Lt{drains=new Set;register(e){this.drains.add(e)}async drainAll()"
+  },
+  {
+   "anchor": "chunk-zf629ea9.js@1621",
+   "expect": "function rPe(){return d().flush()}"
+  },
+  {
+   "anchor": "chunk-4afqvhsq.js@1967",
+   "expect": "var F=2000,R=\"exit-handoff agent flush timeout\""
+  },
+  {
+   "anchor": "chunk-4afqvhsq.js@3677",
+   "expect": "function E({shells:r,workflows:n,agents:e"
+  },
+  {
+   "anchor": "chunk-4afqvhsq.js@5952",
+   "expect": "function wYn(r,n=new Set){for(let e of Object.values(r)){if(e.status!==\"running\""
+  },
+  {
+   "anchor": "chunk-7gqqhxfr.js@6832",
+   "expect": "async function vYn(e,n){let o=await e.shellCommand?.detach?.()"
+  },
+  {
+   "anchor": "chunk-jzzwheky.js@35440",
+   "expect": "St(()=>CHt(H.getState().tasks,e.storageV5))"
+  },
+  {
+   "anchor": "chunk-pzqsmv9v.js@9121",
+   "expect": "async function Ve(){await Ge(Promise.allSettled([...ee().durable.pendingOps]),1e4)}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2611137",
+   "expect": "function AXr(e){let{querySource:n,messages:r,cacheSafeParams:s,facts:h"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2610727",
+   "expect": "function Acr(e,n){return{...e,abortController:n,onCompactEvent:void 0"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2616569",
+   "expect": "function Cke(e,n,r,s){let h=e.get(n);if(h?.status!==\"pending\"||h.abortController!==r)return;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2616746",
+   "expect": "async function Mcr(e,n,r){"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2617315",
+   "expect": "async function xXr(e,n,r,s){"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2618018",
+   "expect": "async function PXr(e){let{toolUseContext:n,messages:r,detectedAt:s"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2518310",
+   "expect": "async function pir(e){let{hasAttempted:n,querySource:r,aborted:s,messages:h"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2519083",
+   "expect": "let Rn=S&&xxr({coverage:S.coverage"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2622150",
+   "expect": "function xir(e,n,r,s,h){let y=$8e(n),S=e.get(y);"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2622478",
+   "expect": "function uRn(e){let n=$8e(void 0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2622774",
+   "expect": "function Mhe(e,n,r,s,h,y){let S=eue(n);"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2607044",
+   "expect": "function Jvt(e,n,r,s,h,y){if(n!==\"main\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2214983",
+   "expect": "async function CXt({tool:e,input:n,toolUseID:r"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2217054",
+   "expect": "async function Ejo({tool:e,toolUseID:n,toolUseContext:r"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2218820",
+   "expect": "function hge({toolName:e,toolUseID:n,status:r,text:s,passive:h,isOnScreen:y}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1909268",
+   "expect": "class n6t{#e=gs(C$o)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1911487",
+   "expect": "function BTn(e,n,r){let s=e.discardAllOutside(r)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1911557",
+   "expect": "function bQo(e,n,r){let s=e.outside(r)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1911652",
+   "expect": "function o6t(e,n){return e.removeByFilter"
+  },
+  {
+   "anchor": "chunk-phacttch.js@238822",
+   "expect": "Qa=(...e)=>Zy().enqueuePendingNotification(...e)"
+  },
+  {
+   "anchor": "chunk-w3dhb84t.js@43811",
+   "expect": "class be{byAgent=new Map"
+  },
+  {
+   "anchor": "chunk-w3dhb84t.js@45723",
+   "expect": "function xxr({coverage:e,kept:t,sent:o,received:r"
+  },
+  {
+   "anchor": "chunk-w3dhb84t.js@45615",
+   "expect": "function yAo({messages:e,rowUuids:t},o)"
+  },
+  {
+   "anchor": "chunk-w3dhb84t.js@44732",
+   "expect": "enqueueSidecarIo(e,t){return this.sidecarIo"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@182145",
+   "expect": "tqt((At,bt,Ht)=>PXr("
+  },
+  {
+   "anchor": "chunk-9w4htdvs.js@354074",
+   "expect": "_discardDetachedToolCallsOutside(h){BTn(cv.of(this.session),this.messageQueue,h)}"
+  },
+  {
+   "anchor": "chunk-9w4htdvs.js@370987",
+   "expect": "this._discardDetachedToolCallsOutside(De)"
+  },
+  {
+   "anchor": "chunk-p5qcgmmn.js@3661",
+   "expect": "cv.of(o).discardAll()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4572755",
+   "expect": "async flush(){if(this.flushTimer)clearTimeout(this.flushTimer)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4562109",
+   "expect": "drainWriteQueue(){this.drainsInFlight++"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4560975",
+   "expect": "scheduleDrain(){if(this.flushTimer)return;this.flushTimer=setTimeout"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4559797",
+   "expect": "async trackWrite(e){this.incrementPendingWrites()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4560024",
+   "expect": "enqueueWrite(e,n,r){if(this.appendsSealedForShutdown)return Promise.resolve()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4582147",
+   "expect": "sealAppendsForShutdown(){this.appendsSealedForShutdown=!0}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4555416",
+   "expect": "function zJr(){Mi().sealAppendsForShutdown()}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@105640",
+   "expect": "async function Zn(e=0,n=\"other\",r){return ab().shutdown(e,n,r)}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@105703",
+   "expect": "function Ps(e=0,n=\"other\"){ab().shutdownSync(e,n)}"
+  },
+  {
+   "anchor": "chunk-a5wd77pa.js@95292",
+   "expect": "registerShutdownCleanup(e={registerCleanup:St,registerPreExitFlush:HP},n=pt)"
+  },
+  {
+   "anchor": "chunk-a5wd77pa.js@95811",
+   "expect": "async finishShutdown(e=pt){await this.flushGoodbye()"
+  },
+  {
+   "anchor": "chunk-cest8dre.js@52965",
+   "expect": "this.ccrClient.onInternalEventLaneClosed=zJr"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@79415",
+   "expect": "async closeInput(e){await this.admissionBarrier().tail"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@123350",
+   "expect": "if(e.inputClosed)await r.onInputClosed()"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@559312",
+   "expect": "onInputClosed:async()=>{if(bn?.stop(),bn=null,await Qh()===\"handed-off\")"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@549992",
+   "expect": "Qh=async()=>{if(Ls())return\"teardown-now\""
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@658855",
+   "expect": "if(Yn.abort(),Ee.running||Yh.pollActive())return;"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@483776",
+   "expect": "function VL(e,n,r,s,h,w,y,P,S,R,I,F,A,te,V,Z,he,me,be,Be){"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@479791",
+   "expect": "for await(let Qe of VL(e,ie,"
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@658985",
+   "expect": ".catch(r_),Qt}function TMe("
+  },
+  {
+   "anchor": "chunk-fzzrkchm.js@483089",
+   "expect": "Ps(_r?.type===\"result\"&&_r?.is_error||Wn?1:"
+  },
+  {
+   "anchor": "chunk-phacttch.js@768520",
+   "expect": "bI=Kt({name:Xr,searchHint:\"search file contents with regex (ripgrep)\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@772316",
+   "expect": "async function Xno(e,{pattern:n,glob:r,type:s,output_mode:h=\"files_with_matches\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@762295",
+   "expect": "_I=Kt({name:lo,searchHint:\"find files by name pattern or wildcard\""
+  },
+  {
+   "anchor": "chunk-4gghv5aa.js@803919",
+   "expect": "async function gre(e,r,n,s){return qo().testOnFirstUse()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3541060",
+   "expect": "$S=Kt({name:rt,ruleContentField:\"file_path\""
+  },
+  {
+   "anchor": "chunk-j0bhqprc.js@854",
+   "expect": "var Xgo=25000"
+  },
+  {
+   "anchor": "chunk-j0bhqprc.js@1751",
+   "expect": "a.CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS"
+  },
+  {
+   "anchor": "chunk-dv0tf3v8.js@3931",
+   "expect": "var J5e=262144"
+  },
+  {
+   "anchor": "chunk-zdd7h7by.js@208689",
+   "expect": "async function yye(e,n=0,r,s,h,y){"
+  },
+  {
+   "anchor": "chunk-dv0tf3v8.js@7676",
+   "expect": "function e8e({content:e,startLine:n,tabAwareSeparator:r=!1}"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@87262",
+   "expect": "NXt=2000"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3697564",
+   "expect": "let Pe={file_path:e,offset:S??1,limit:NXt}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@201549",
+   "expect": "XT={agentType:\"Explore\",whenToUse:s1n"
+  },
+  {
+   "anchor": "chunk-phacttch.js@201740",
+   "expect": "function Fge(e,n){if(e.agentType!==XT.agentType"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2009298",
+   "expect": "function _Bo(e){let n=[kE,Nx].find((w)=>e.has(w));if(UH()){"
+  },
+  {
+   "anchor": "chunk-h6wy99cb.js@27625",
+   "expect": "ee=QU(Fge(s,wt),wt,ze,De)"
+  },
+  {
+   "anchor": "chunk-rpwh4z9c.js@106593",
+   "expect": "Rt=Kt({name:HH,searchHint:\"code intelligence (definitions, references, symbols, hover)\""
+  },
+  {
+   "anchor": "chunk-rpwh4z9c.js@106812",
+   "expect": "isEnabled(){return E0e()}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4154905",
+   "expect": "hasEverConnected:E0e,waitForInitialization:dXo"
+  },
+  {
+   "anchor": "chunk-svt0njrf.js@5444",
+   "expect": "var HH=\"LSP\",Boo=`Interact with Language Server Protocol (LSP) servers"
+  },
+  {
+   "anchor": "chunk-ff982hys.js@138321",
+   "expect": "Command to execute the LSP server (e.g., \"typescript-language-server\")"
+  },
+  {
+   "anchor": "chunk-mkgsmhwy.js@1306",
+   "expect": "function pV(e){if(!e)return null;if(e.length>$e)return i(\"tengu_tree_sitter_parse_abort\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@676340",
+   "expect": "GLe=2000,JZn=[\"--no-optional-locks\",\"status\",\"--short\",tb]"
+  },
+  {
+   "anchor": "chunk-80kqkekd.js@165185",
+   "expect": "sen=\"File has not been read yet. Read it first before writing to it.\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@4164511",
+   "expect": "if(!Pe||Pe.isPartialView){let Ze=We(s.model()),ct=T7t(Ze),At=!WXt(Ze,s.remoteCall)&&Jce(ht,V,s,s.permissions())"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@2857",
+   "expect": "var re=new Set([\"claude-opus-4-6\",\"claude-haiku-4-5\""
+  },
+  {
+   "anchor": "chunk-p9na5vps.js@231585",
+   "expect": "function $f(e,n){if(Vo(n,lg)!==null||ac(n,lg)!==null)return!1;switch(ZNe([e],n).layer){case\"allow\":return!0;case\"path-mode-ask\":return n.mode===\"bypassPermissions\""
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@99350",
+   "expect": "Et=new Set([rt,...u_,Xr,lo,Tf,pr,ht,Xt])"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@6222",
+   "expect": "function Kx(e){return e.leanPrompt??V4(e.model)}"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@5818",
+   "expect": "function de(e){let n=We(e),r=w_(n,\"lean_prompt\",e);"
+  },
+  {
+   "anchor": "chunk-bnqade36.js@2565",
+   "expect": "models:[{id:\"claude-3-5-haiku\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@18857",
+   "expect": "aliases:{opus:{default:\"claude-opus-5-5\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@23782",
+   "expect": "function w_(e,t,r){return Gdt(t,e)??Xtn(e,t,r)}"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@1942",
+   "expect": "function JH(e,n,r,s){if(s!==void 0)return s;let u=w_(n,e,r)"
+  },
+  {
+   "anchor": "chunk-tydh8ra2.js@829",
+   "expect": "function RRe(o){return!YGn()&&w_(o,\"fable_5_1_prompt_bundle\")===!0}"
+  },
+  {
+   "anchor": "chunk-tydh8ra2.js@710",
+   "expect": "function ZH(o,n){let e=w_(o,\"fable_5_mitigations\",n)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2020899",
+   "expect": "em(\"delivering_work_max\",()=>a.CLAUDE_CODE_BISON_CAIRN??(RRe(y)||Bgs(s))?EBo:null)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2019690",
+   "expect": "function B5t(e){Qks((n)=>YNn(n)?\"no_nudges\":void 0),Zks(e)}"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@116420",
+   "expect": "function b$(){let e=Ps();if(e.latched!==void 0)return e.latched"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@357363",
+   "expect": "function tt(){let e=wh();if(e!==void 0&&e!==null)return Lt(e);return Jl()}"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@364824",
+   "expect": "function fg(e){let{model:n,clampWarning:r}=gvr(e)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@745395",
+   "expect": "function QU(e,n,r,s,h,y){let S=()=>fg({permissionMode:s??\"default\",mainLoopModel:n,exceeds200kTokens:!1})"
+  },
+  {
+   "anchor": "chunk-h6wy99cb.js@10543",
+   "expect": "model:U([\"sonnet\",\"opus\",\"haiku\",\"fable\"]).optional().describe(`Optional model override"
+  },
+  {
+   "anchor": "chunk-eeg6qbez.js@2553",
+   "expect": "function GWn(e){switch(e){case\"haiku\":return 0;case\"sonnet\":return 1;case\"opus\":return 2;case\"fable\":case\"mythos\":return 3"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2551755",
+   "expect": "class gM extends Error{originalModel;fallbackModel;reason;originalError;blockMessage;constructor(e,n,r=\"overloaded\",s,h){super(`Model fallback triggered"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@379253",
+   "expect": "function oue(e,n){if(y7())return[e];let r=pBn(e,n)"
+  },
+  {
+   "anchor": "chunk-ff982hys.js@218750",
+   "expect": "fallbackModel:()=>T(o()).optional().describe('Fallback model(s) tried in order when the primary model is overloaded or unavailable."
+  },
+  {
+   "anchor": "chunk-phacttch.js@867425",
+   "expect": "var dIt=\"advisor_20260301\""
+  },
+  {
+   "anchor": "chunk-zdd7h7by.js@329457",
+   "expect": "function MEt(){if(a.CLAUDE_CODE_DISABLE_ADVISOR_TOOL||Cj())return!1;return Ie()===\"firstParty\"&&kh()}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2533994",
+   "expect": "Gnn=\"Never consult the advisor tool.\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@3579584",
+   "expect": "function s2(){if(bd()||pPo())return!0;let e=SIt();if(e===void 0||COr(e)||ROr(e))return!0"
+  },
+  {
+   "anchor": "chunk-zkrrxfpr.js@6323",
+   "expect": "function Fx(){if(a.CLAUDE_CODE_ENABLE_TASKS===!1)return!1"
+  },
+  {
+   "anchor": "chunk-phacttch.js@860717",
+   "expect": "function lv(e,n,r=Xf()){let{model:s,contextWindow:h,canonical:y}=e"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@395055",
+   "expect": "function zv(e,n){if(yBn(e,n))return 1e6;let r=eyo(e)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@383174",
+   "expect": "var jN=new Set([\"claude-3-opus\",\"claude-3-sonnet\""
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@396606",
+   "expect": "function V7t(e){let n=Uoe(e);return LHe(\"CLAUDE_CODE_MAX_OUTPUT_TOKENS\""
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@354918",
+   "expect": "function Ow(){let e=a.ANTHROPIC_SMALL_FAST_MODEL;if(e!==void 0)return uv(eR(e))"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2487553",
+   "expect": "var TYe=\"an <analysis> block followed by a <summary> block\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2490398",
+   "expect": "qdr=`Your task is to create a detailed summary of the conversation so far"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2494710",
+   "expect": "function Kdr(e){return`This conversation is being compacted."
+  },
+  {
+   "anchor": "chunk-phacttch.js@2496335",
+   "expect": "var hnn=\"Summarize the transcript inside <summary></summary> tags."
+  },
+  {
+   "anchor": "chunk-phacttch.js@2499171",
+   "expect": "Ydr=`Your task is to create a detailed summary of the RECENT portion"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2498265",
+   "expect": "Enn={control:{replyShape:TYe,instructions:()=>qdr}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2504347",
+   "expect": "function cke(e,n,r){let{replyShape:s,instructions:h}=Enn[n]"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2507189",
+   "expect": "Jdr=[\"control\",\"lean\",\"short\",\"short_v2\",\"capped\"]"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2507268",
+   "expect": "function pke(){let e=a.CLAUDE_CODE_CURRIED_TRINKET??E(Zdr,\"control\")"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2504575",
+   "expect": "function Qdr(e){let n=e;return n=n.replace(Mnn,\"\")"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2504709",
+   "expect": "function Onn(e){return Inn.test(e.replace(Mnn,\"\"))}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2504760",
+   "expect": "function L8(e,n){let r=Qdr(e),s,h=`${Oh(n?.foreignArtifactContent===!0"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2506062",
+   "expect": "var Snn=\"The messages after this summary are the most recent messages from before compaction, kept verbatim."
+  },
+  {
+   "anchor": "chunk-phacttch.js@2506294",
+   "expect": "function Dnn(e){let{content:n}=e.message;return{...e,message:{...e.message,content:typeof n===\"string\"?"
+  },
+  {
+   "anchor": "chunk-8mpz435d.js@32635",
+   "expect": "SRt=\"This session is being continued from a previous conversation that ran out of context."
+  },
+  {
+   "anchor": "chunk-phacttch.js@2585926",
+   "expect": "function Ske(e,n,r,s,h,y,S=!1){let w=ys(n.agentContext),D=await zur(e,n,RYe,r)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2587436",
+   "expect": "function zur(e,n,r,s=[]){let h=Qur(s),y=Zur(),S=!0"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2587630",
+   "expect": ".sort((Y,he)=>he.timestamp-Y.timestamp).slice(0,r)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2559446",
+   "expect": "CYe=5000,$ur=5000,xYe=25000"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2588174",
+   "expect": "function Kur(e,n=[]){let r=vIo(e);if(r.size===0)return null"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3695357",
+   "expect": "function l4t(e,n,r,s,h,y){let{offset:S,limit:w}=y??{};if(tW(e,de(n)))return null"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4458754",
+   "expect": "compact_file_reference:(e)=>_l([xe({content:`Note: ${su(e.filename)} was read before the last conversation was summarized"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2567812",
+   "expect": "let Vt=kLn(n.readFileState);n.readFileState.clear(),d2(n.memorySelector);let{attachments:qt,hookResults:on}=await Ske(Vt,n,[],\"compact_full\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2567400",
+   "expect": "m(he,\"compact_no_summary\"),new JK(\"Failed to generate conversation summary - response did not contain valid text content\")"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2511817",
+   "expect": "function cur(e,n){if(e.ok)return Onn(e.summaryText)?void 0:\"its reply has no <summary> block\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@4399105",
+   "expect": "Old tool result content cleared]\";function Cqr(e)"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@102696",
+   "expect": "clear_tool_uses_20250919\",trigger:{type:\"tool_uses\",value:P.triggerToolUses}"
+  },
+  {
+   "anchor": "chunk-j0bhqprc.js@1284",
+   "expect": "Qgo=128;class zde extends Error"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@187906",
+   "expect": "if(Ue.preventContinuation)return{reason:\"stop_hook_prevented\"}"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@188378",
+   "expect": "let Se=a.CLAUDE_CODE_STOP_HOOK_BLOCK_CAP??8"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@188920",
+   "expect": "yield*Qt(p,[...P,...z],{stopHookActive:xo}),{reason:\"completed\",goalPass:Ue.goalPass}"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@67408",
+   "expect": "async function*Za(e,o,n,r,u,s,y,k,T,S){if(wn()&&!s.abortController.signal.aborted)return{blockingErrors:[],preventContinuation:!1}"
+  },
+  {
+   "anchor": "chunk-93pksqr2.js@199182",
+   "expect": "{reason:\"max_turns\",turnCount:tr};$f(\"query_recursive_call\")"
+  },
+  {
+   "anchor": "chunk-80kqkekd.js@168441",
+   "expect": "var hH=[\"blocking_limit\",\"rap"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2911347",
+   "expect": "You are verifying a stop condition in Claude Code. Your task is to verify that the agent completed the given plan."
+  },
+  {
+   "anchor": "chunk-phacttch.js@1988701",
+   "expect": "function V0o(e){if(!V4(e))return null;return\"For actions that are hard to reverse or outward-facing"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@6140",
+   "expect": "function V4(e){let n=h();return Foe()?n.leanPromptCompiledOnly(e):n.leanPrompt(e)}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2002645",
+   "expect": "\"For UI or frontend changes, start the dev server and use the feature in a browser before reporting the task as complete."
+  },
+  {
+   "anchor": "chunk-phacttch.js@4442498",
+   "expect": "- Include a verification section describing how to test the changes end-to-end (run the code, use MCP tools, run tests)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3355376",
+   "expect": "function Lpn(e,n,r){return de(r).mode===\"plan\"&&Vxr(e,r)&&!e.isReadOnly(n,r)&&!Fbe(zp(e),n)}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3361916",
+   "expect": "message:`Cannot call ${e.name} while in plan mode.`,decisionReason:{type:\"mode\",mode:\"plan\"}"
+  },
+  {
+   "anchor": "chunk-b6yrqcs2.js@17997",
+   "expect": "function Q({planModeRequired:e,permissionMode:n,proactivityLevel:o,autoPickedByLevel:s=!1}){if(n===void 0)return[];let p=n;if(e)p=\"plan\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2086295",
+   "expect": "function L0e(){let e=tge();if(e===\"none\")return[];if(e===\"coordinator\")"
+  },
+  {
+   "anchor": "chunk-jwmqjyrb.js@83520",
+   "expect": "function Cl({tools:e,isBuiltIn:s,agentType:n,isAsync:r=!1,isTeammate:y=!1,permissionMode:h,agentDepth:S=0,subagentMemoryMode:A=Gcr}"
+  },
+  {
+   "anchor": "chunk-jwmqjyrb.js@87492",
+   "expect": "function LR(e,s,n=!1,r=!1,y=!1,h=0,S=Gcr){let{tools:A,disallowedTools:M,source:v,permissionMode:F,agentType:B}=e"
+  },
+  {
+   "anchor": "chunk-phacttch.js@767948",
+   "expect": "zno=250"
+  },
+  {
+   "anchor": "chunk-phacttch.js@767956",
+   "expect": "function INe(e,n,r=0){if(n===0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@767903",
+   "expect": "Gno=[\".git\",\".svn\",\".hg\",\".bzr\",\".jj\",\".sl\"]"
+  },
+  {
+   "anchor": "chunk-phacttch.js@771689",
+   "expect": "async function Vno(e,n){let r=bI.getPath(e)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@771408",
+   "expect": "async function Kno(e,n,r){let s=et(e);"
+  },
+  {
+   "anchor": "chunk-phacttch.js@777984",
+   "expect": "function Zno(e,n){let s=(G)=>G===void 0"
+  },
+  {
+   "anchor": "chunk-phacttch.js@770617",
+   "expect": "async validateInput(n){let{pattern:r,path:s,glob:h,type:y,head_limit:S,offset:w}=n;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@769615",
+   "expect": "mapToolResultToToolResultBlockParam({mode:e=\"files_with_matches\",numFiles:n,filenames:r,content:s"
+  },
+  {
+   "anchor": "chunk-phacttch.js@763672",
+   "expect": "async call(n,r){let{globLimits:s}=r,h={toolUseId:r.toolUseId"
+  },
+  {
+   "anchor": "chunk-phacttch.js@756830",
+   "expect": "async function Pno(e,n,{limit:r,offset:s},h,y){let S=e.canonical,w=gAt(y)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@756278",
+   "expect": "async function SAt(e,n,{limit:r,offset:s},h,y,S){"
+  },
+  {
+   "anchor": "chunk-phacttch.js@761443",
+   "expect": "function $no(e){let n=e.filenames.length;"
+  },
+  {
+   "anchor": "chunk-4gghv5aa.js@800105",
+   "expect": "function YB(e,r,n,s,h=!1,y,b,S,w=!1){ZUe();"
+  },
+  {
+   "anchor": "chunk-4gghv5aa.js@788791",
+   "expect": "var uf=20000000,HB=1048576;class CS{"
+  },
+  {
+   "anchor": "chunk-4gghv5aa.js@806230",
+   "expect": "Ripgrep search timed out after"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3543459",
+   "expect": "async validateInput(n,r){let s=cXe(e,r),{file_path:h,pages:y}=n;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3546618",
+   "expect": "async function oOr({file_path:e,offset:n=1,limit:r=void 0,pages:s,allow_large:h},y,S){"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3552514",
+   "expect": "async function uOr(e){let{file_path:n,fullFilePath:r,resolvedFilePath:s"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3551059",
+   "expect": "async function whn(e,n,r,s,h=!1,y=!1){"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3560509",
+   "expect": "Call ${rt} with offset=${qt+1} limit=${qt} for the next page"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3548371",
+   "expect": "if(Ze.offset===n&&Ze.limit===r)try{let Wt=await Gv(Xe)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3549026",
+   "expect": "on=await xse(Xe),Rn=`File does not exist."
+  },
+  {
+   "anchor": "chunk-j0bhqprc.js@1828",
+   "expect": "function YW(){let e=wo();return e.defaultFileReadingLimits"
+  },
+  {
+   "anchor": "chunk-zdd7h7by.js@209429",
+   "expect": "function FI(e,n,r,s,h,y,S){let w=e.charCodeAt(0)===65279;"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@87669",
+   "expect": "function ogs(e,n,s){if(Kx({model:e,leanPrompt:s}))return`Reads a file from the local filesystem."
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@87219",
+   "expect": "var TFe=\"[Truncated: PARTIAL view"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@91297",
+   "expect": "function Hdo(e,n){if(Kx({model:e,leanPrompt:n}))return`Content search built on ripgrep."
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@90663",
+   "expect": "function Fdo(e,n){if(Kx({model:e,leanPrompt:n}))return"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4477705",
+   "expect": "was too large and has been truncated to the first ${NXt} lines"
+  },
+  {
+   "anchor": "chunk-phacttch.js@198147",
+   "expect": "function r1n(){let e=xl(),n=e?Be:Rt,r=uE()&&e,s=r?"
+  },
+  {
+   "anchor": "chunk-phacttch.js@201968",
+   "expect": "function a1n(e){let n=GWn(wct)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2012784",
+   "expect": "For broad codebase exploration or research that'll take more than ${bct} queries"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2011894",
+   "expect": "function SBo(e,n,r,s){let h=lG()"
+  },
+  {
+   "anchor": "chunk-phacttch.js@143145",
+   "expect": "class rdt{latched=void 0;isEnabled(){return this.latched??=!a.CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2086587",
+   "expect": "if(tH())n.push(XT,ute)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4444995",
+   "expect": "Launch up to ${n} ${XT.agentType} agents IN PARALLEL"
+  },
+  {
+   "anchor": "chunk-phacttch.js@4361170",
+   "expect": "function nDn(){let e=a.CLAUDE_CODE_PLAN_V2_EXPLORE_AGENT_COUNT"
+  },
+  {
+   "anchor": "chunk-phacttch.js@197837",
+   "expect": "function uE(){if(!Fe(process.env.EMBEDDED_SEARCH_TOOLS))return!1;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@3609138",
+   "expect": "function tar(e,n){let r=lDr(e),s=n&&e.whenToUseLean||e.whenToUse;"
+  },
+  {
+   "anchor": "chunk-phacttch.js@678068",
+   "expect": "This is the git status at the start of the conversation."
+  },
+  {
+   "anchor": "chunk-80kqkekd.js@165513",
+   "expect": "$Ot=\"File content has changed since it was last read."
+  },
+  {
+   "anchor": "chunk-phacttch.js@737471",
+   "expect": "let Te=s.readFileState.get(D);if(!Te||Te.isPartialView){let Ae=We(s.model()),Pe=T7t(Ae),De=!Te&&!Uxt(D)&&!WXt(Ae,s.remoteCall)&&Jce(Xt,D,s,s.permissions())"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@3100",
+   "expect": "function WXt(e,n){if(n===void 0)return k(e);"
+  },
+  {
+   "anchor": "chunk-p9na5vps.js@232998",
+   "expect": "function Jce(e,n,r,s){return!Lf(e,r)&&$f(n,s)}"
+  },
+  {
+   "anchor": "chunk-p9na5vps.js@232851",
+   "expect": "function Lf(e,n){return n.tools.some((r)=>It(r,e))&&!eFe(n)}"
+  },
+  {
+   "anchor": "chunk-p9na5vps.js@231916",
+   "expect": "function ZNe(e,n,r){let s=Vo(n,lg,"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@100389",
+   "expect": "function jdo(e,n){let s=Za(e),r=Math.max(1,n)"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@101364",
+   "expect": "async function mgs(e,n,s){let{keepSet:r,tokensSaved:h,candidates:y}=jdo(e,s.keepRecent)"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@102148",
+   "expect": "wn={minIdleSeconds:3900,keepToolUses:5,clearAtLeastTokens:WNn,triggerToolUsesBelowCount:3,minTriggerToolUses:20}"
+  },
+  {
+   "anchor": "chunk-3qrxzjv5.js@99072",
+   "expect": "var Tt=\"[Old tool result content cleared]\""
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@6270",
+   "expect": "function I(e){if(!e)return!1;if(Fe(a.CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT))return!0;"
+  },
+  {
+   "anchor": "chunk-bnqade36.js@19657",
+   "expect": "latest_per_family:{fable:\"claude-fable-5-1\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@3744",
+   "expect": "{id:\"claude-haiku-5-5\",family:\"haiku\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@7631",
+   "expect": "{id:\"claude-sonnet-5\",family:\"sonnet\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@11966",
+   "expect": "{id:\"claude-opus-4-7\",family:\"opus\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@13699",
+   "expect": "{id:\"claude-opus-5\",family:\"opus\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@14669",
+   "expect": "{id:\"claude-opus-5-5\",family:\"opus\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@16598",
+   "expect": "{id:\"claude-fable-5-1\",family:\"fable\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@17645",
+   "expect": "{id:\"claude-mythos-5\",family:\"mythos\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@18092",
+   "expect": "{id:\"claude-mythos-5-1\",family:\"mythos\""
+  },
+  {
+   "anchor": "chunk-bnqade36.js@24039",
+   "expect": "function Vvo(e){let t=new Map,r=a.CLAUDE_CODE_MODEL_CAPABILITIES"
+  },
+  {
+   "anchor": "chunk-bnqade36.js@23940",
+   "expect": "function Gvo(e,t){return al(m(e))?.capabilities.includes(t)}"
+  },
+  {
+   "anchor": "chunk-bnqade36.js@30664",
+   "expect": "function WWn(){return Ie()!==\"firstParty\"}"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@1636",
+   "expect": "var Q=new Set([\"turn_updates\",\"bash_output_audience_note\""
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@1466",
+   "expect": "function YNn(e){if(e===void 0)return!1;if(w_(We(e),\"opus_5_prompt_bundle\",e)!==!0)return!1"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@1572",
+   "expect": "function y(e){return!YGn()&&w_(e,\"opus_5_5_prompt_bundle\")===!0}"
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@5163",
+   "expect": "function Bgs(e){return JH(\"bison_cairn\""
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@5238",
+   "expect": "function jgs(e){return JH(\"larch_cistern\""
+  },
+  {
+   "anchor": "chunk-bykygzr4.js@5072",
+   "expect": "function Ugs(e){return JH(\"amber_astrolabe\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2020982",
+   "expect": "em(\"overcorrection\",()=>jgs(s)?RBo:null)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2015444",
+   "expect": "EBo=`# Delivering work"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2017493",
+   "expect": "RBo=`# Corrections"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1997648",
+   "expect": "function uBo(e,n){if(!E(\"tengu_amber_sextant\",!0))return null;if(ZH(e,n)||Ugs(n))"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2021385",
+   "expect": "em(\"autonomy_append\",()=>uBo(y,s))"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2021102",
+   "expect": "em(\"opus5_reduced_delegation\",()=>{if(!YNn(s))return null;if(!E(\"tengu_slate_bittern\",!0))return null"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1997316",
+   "expect": "x5t=`Do not use the ${yt} tool, workflows, or deep-research unless"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2021023",
+   "expect": "em(\"subagent_steer_delegation\",()=>V.has(yt)&&b$()===\"counter_steer\"?tEs:null)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@116026",
+   "expect": "function YR(e){let n=Os(a.CLAUDE_CODE_THISTLE_GREBE)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@116645",
+   "expect": "tEs=`## Delegating to subagents"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@356337",
+   "expect": "function wh(){let e=Xc();if(e!==void 0)return rBn(e,\"explicit\");return DIt()}"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@356414",
+   "expect": "function DIt(){let e=lU(),n=process.env.ANTHROPIC_MODEL"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@387332",
+   "expect": "function Lt(e){let n=e.trim(),r=n.toLowerCase(),s=jp(r)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@378555",
+   "expect": "function Jl(){return Lt(q_())}"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@366970",
+   "expect": "function d8(){let e=kv();if(e!==null&&e.enforced)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@364941",
+   "expect": "function gvr(e){let{permissionMode:n,mainLoopModel:r,exceeds200kTokens:s=!1}=e;if(n!==\"plan\")"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@363981",
+   "expect": "function g7(e){if(e===\"opusplan\"||e===\"opusplan[1m]\")return\"opus\";if(e===\"haiku\")return\"sonnet\""
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@364422",
+   "expect": "function mvr(e){let n=g7(e)"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@339630",
+   "expect": "function Yr(e,n){try{if(yAe(e))return!1}catch{return!1}if(n?.allowlist===void 0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@747442",
+   "expect": "function ono(e,n){t(`Subagent model \"${e}\" is not in the availableModels allowlist"
+  },
+  {
+   "anchor": "chunk-phacttch.js@745309",
+   "expect": "function Gte(){let e=a.CLAUDE_CODE_SUBAGENT_MODEL;return e&&e!==\"inherit\"?e:\"inherit\"}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@747259",
+   "expect": "function Xxt(e,n){let r=typeof e===\"object\",s=r?e.inheritCap:e;if(!a.CLAUDE_CODE_SUBAGENT_MODEL_FORCE)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@747718",
+   "expect": "function qnr(e,n){let r=e.toLowerCase();if(!oy(r))return!1"
+  },
+  {
+   "anchor": "chunk-phacttch.js@201953",
+   "expect": "var wct=\"opus\";function a1n(e){let n=GWn(wct)??1/0"
+  },
+  {
+   "anchor": "chunk-phacttch.js@204673",
+   "expect": "ute={agentType:\"Plan\",whenToUse:\"Software architect agent for designing implementation plans"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2067564",
+   "expect": "Xj={agentType:\"general-purpose\",whenToUse:\"General-purpose agent for researching complex questions"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2730240",
+   "expect": "if(E1(an)&&(a.FALLBACK_FOR_ALL_PRIMARY_MODELS||r.fallbackModel!==void 0||"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2721070",
+   "expect": "Tan=3000,J8=3,$gr=2"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2728628",
+   "expect": "let ko=hxe(an)||Rdt(an),so=r.fallbackModel??(ko&&vc(r.model)===\"firstParty\"?F6e(r):void 0)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@2732473",
+   "expect": "throw i(\"tengu_api_fallback_last_resort\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2585401",
+   "expect": "tengu_model_fallback_triggered\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@2873232",
+   "expect": "if(gp===\"useFallbackModel\"&&(Yd?.cause===\"serverError\"||Yd?.cause===\"timedOut\")&&Y.fallbackModel)"
+  },
+  {
+   "anchor": "chunk-zdd7h7by.js@329558",
+   "expect": "function wk(){if(!MEt())return!1;if(a.CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL)return!0;return E(\"tengu_sage_compass2\""
+  },
+  {
+   "anchor": "chunk-zdd7h7by.js@330161",
+   "expect": "function Gw(e){if(cp())return!0;let n=Fc(e);return n!==void 0&&n>=Pj}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@1644901",
+   "expect": "DWe={type:\"local-jsx\",name:\"advisor\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@3579168",
+   "expect": "EOr=new Set([\"claude-3-opus\",\"claude-3-sonnet\""
+  },
+  {
+   "anchor": "chunk-phacttch.js@3579717",
+   "expect": "function jte(){return Fx()&&s2()}"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@393371",
+   "expect": "var u3e=200000,cz=200000,$v=32000,yF=128000"
+  },
+  {
+   "anchor": "chunk-cvvnq4he.js@383453",
+   "expect": "function vh(e){if(!e)return 4;let n=Lt(e)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@405864",
+   "expect": "function Xd(e,n=Xf()){let r=We(e);return{model:e,contextWindow:um(e,n)"
+  },
+  {
+   "anchor": "chunk-phacttch.js@862702",
+   "expect": "function wrr(e){let n=Math.min(e.maxOutputTokens,Srr);return e.contextWindow-n}"
+  },
+  {
+   "anchor": "chunk-phacttch.js@201851",
+   "expect": "if(a.CLAUDE_CODE_DISABLE_EXPLORE_INHERIT_CAP)return\"inherit\""
+  }
+ ]
+}

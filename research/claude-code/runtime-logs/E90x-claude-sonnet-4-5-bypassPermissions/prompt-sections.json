@@ -1,0 +1,18 @@
+{
+ "exp": "E90x-claude-sonnet-4-5-bypassPermissions",
+ "model": "claude-sonnet-4-5",
+ "tool_count": 30,
+ "system_chars": 27708,
+ "markers": {
+  "delivering_work": false,
+  "corrections": false,
+  "autonomy_block": false,
+  "explore_nudge": true,
+  "prefer_dedicated_tools_full": true,
+  "prefer_dedicated_tools_lean": false,
+  "read_before_edit_text": false
+ },
+ "thinking": "enabled",
+ "effort": null,
+ "max_tokens": 32000
+}

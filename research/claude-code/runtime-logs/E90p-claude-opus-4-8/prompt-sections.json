@@ -1,0 +1,18 @@
+{
+ "exp": "E90p-claude-opus-4-8",
+ "model": "claude-opus-4-8",
+ "tool_count": 26,
+ "system_chars": 6077,
+ "markers": {
+  "delivering_work": false,
+  "corrections": false,
+  "autonomy_block": false,
+  "explore_nudge": false,
+  "prefer_dedicated_tools_full": false,
+  "prefer_dedicated_tools_lean": true,
+  "read_before_edit_text": false
+ },
+ "thinking": "adaptive",
+ "effort": "high",
+ "max_tokens": 64000
+}

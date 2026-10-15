@@ -1,0 +1,562 @@
+{
+ "exp": "E50q-plan",
+ "message_requests": 8,
+ "stream": {
+  "init_permission_mode": "plan",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 6,
+    "terminal_reason": "completed",
+    "permission_denial_count": 3
+   }
+  ]
+ },
+ "requests": [
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [],
+   "seq": "0002",
+   "response_status": 200
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_plan_1",
+     "is_error": false,
+     "text_head": "1\tdef add(a, b):\n2\t    return a - b\n3\t"
+    }
+   ],
+   "seq": "0003",
+   "response_status": 200
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_plan_1",
+     "is_error": false,
+     "text_head": "1\tdef add(a, b):\n2\t    return a - b\n3\t"
+    },
+    {
+     "tool_use_id": "toolu_plan_2",
+     "is_error": true,
+     "text_head": "Cannot write to <home>/cc-rea-lab/proj-e50q-plan/src/app.py while in plan mode."
+    }
+   ],
+   "seq": "0004",
+   "response_status": 200
+  },
+  {
+   "model": "claude-sonnet-5",
+   "tool_names": [],
+   "system_block_chars": [
+    74,
+    137394,
+    242
+   ],
+   "message_roles": [
+    "user",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [],
+   "tool_results": [],
+   "seq": "0005",
+   "response_status": 400
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [],
+   "system_block_chars": [
+    74,
+    137394,
+    242
+   ],
+   "message_roles": [
+    "user",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [],
+   "tool_results": [],
+   "seq": "0006",
+   "response_status": 400
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_plan_1",
+     "is_error": false,
+     "text_head": "1\tdef add(a, b):\n2\t    return a - b\n3\t"
+    },
+    {
+     "tool_use_id": "toolu_plan_2",
+     "is_error": true,
+     "text_head": "Cannot write to <home>/cc-rea-lab/proj-e50q-plan/src/app.py while in plan mode."
+    },
+    {
+     "tool_use_id": "toolu_plan_3",
+     "is_error": true,
+     "text_head": "claude-haiku-5-5 is temporarily unavailable, so auto mode cannot determine the safety of Bash right now. Wait a moment and then try this action again. If it keeps failing, continue with other tasks that don't require this action and come ba"
+    }
+   ],
+   "seq": "0007",
+   "response_status": 200
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_plan_1",
+     "is_error": false,
+     "text_head": "1\tdef add(a, b):\n2\t    return a - b\n3\t"
+    },
+    {
+     "tool_use_id": "toolu_plan_2",
+     "is_error": true,
+     "text_head": "Cannot write to <home>/cc-rea-lab/proj-e50q-plan/src/app.py while in plan mode."
+    },
+    {
+     "tool_use_id": "toolu_plan_3",
+     "is_error": true,
+     "text_head": "claude-haiku-5-5 is temporarily unavailable, so auto mode cannot determine the safety of Bash right now. Wait a moment and then try this action again. If it keeps failing, continue with other tasks that don't require this action and come ba"
+    },
+    {
+     "tool_use_id": "toolu_plan_4",
+     "is_error": true,
+     "text_head": "<tool_use_error>Error: No such tool available: ExitPlanMode. ExitPlanMode is disabled for this session, in subagents as well as here.</tool_use_error>"
+    }
+   ],
+   "seq": "0008",
+   "response_status": 200
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    5986
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": true,
+    "plan_phase4": true,
+    "plan_file_info": true
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_plan_1",
+     "is_error": false,
+     "text_head": "1\tdef add(a, b):\n2\t    return a - b\n3\t"
+    },
+    {
+     "tool_use_id": "toolu_plan_2",
+     "is_error": true,
+     "text_head": "Cannot write to <home>/cc-rea-lab/proj-e50q-plan/src/app.py while in plan mode."
+    },
+    {
+     "tool_use_id": "toolu_plan_3",
+     "is_error": true,
+     "text_head": "claude-haiku-5-5 is temporarily unavailable, so auto mode cannot determine the safety of Bash right now. Wait a moment and then try this action again. If it keeps failing, continue with other tasks that don't require this action and come ba"
+    },
+    {
+     "tool_use_id": "toolu_plan_4",
+     "is_error": true,
+     "text_head": "<tool_use_error>Error: No such tool available: ExitPlanMode. ExitPlanMode is disabled for this session, in subagents as well as here.</tool_use_error>"
+    },
+    {
+     "tool_use_id": "toolu_plan_5",
+     "is_error": true,
+     "text_head": "Cannot write to <home>/cc-rea-lab/proj-e50q-plan/src/app.py while in plan mode."
+    }
+   ],
+   "seq": "0009",
+   "response_status": 200
+  }
+ ]
+}

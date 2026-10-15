@@ -1,0 +1,8 @@
+{
+ "id": "T01-pagination",
+ "title": "Last page of a paginator comes back empty",
+ "category": "bug_fix",
+ "protected": [],
+ "visible_test_cmd": "python -m unittest discover -s tests",
+ "timeout_s": 900
+}

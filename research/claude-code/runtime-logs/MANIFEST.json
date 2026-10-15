@@ -4337,12 +4337,726 @@
    "killed": null
   },
   {
+   "id": "E50a-baseline-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "3c4eccf862bd01dcb6ba27f5515af2c0c90769eeb50d62da7ce3e0e82d597926",
+     "bytes": 1623
+    },
+    "debug-summary.json": {
+     "sha256": "2480ad170adf294682f5aef92627fbac1325adf89838f36a70864eb7708a48af",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "692890550bb134392985be11b1f0c6aa05062585ed57d070ed83e77b18b160ee",
+     "bytes": 14660
+    },
+    "run.json": {
+     "sha256": "df6bdd630aa4023234238375b8951223806050cfb60bac172f11622eb8acc720",
+     "bytes": 1709
+    },
+    "stream-summary.json": {
+     "sha256": "65afcd6c61fa78a910b96ed6781258991f8a17bada49fad51aaa3a2a2d8a1608",
+     "bytes": 7565
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.051,
+   "started": "2026-10-14T22:15:41Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50m-claude-fable-5-1-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "d5b7a787a972b26e50c5a9788b42dd30b3ba0d6062ee4b122c575c2a4c21526d",
+     "bytes": 1632
+    },
+    "debug-summary.json": {
+     "sha256": "ef8c715623dca2a059a9edf8384114dc45a234cbe9ddf8ec871cc3246f600871",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "4de741c53a667442b47dd6b4c0282bd732ade7d7a709cc94a22051c0c2806a03",
+     "bytes": 14661
+    },
+    "run.json": {
+     "sha256": "8d2f9fddf02391557a9d5983ca8ed1e3d911b2db752dd2d39babeac21f2bd3c9",
+     "bytes": 1744
+    },
+    "stream-summary.json": {
+     "sha256": "c68ad476f9db5b65ac82b2438c388929f63fccbc4f2ab1fbe03c3f92fc845205",
+     "bytes": 7558
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.073,
+   "started": "2026-10-14T22:15:50Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50m-claude-opus-5-5-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "eaf5ff0e69e2c9a639fc8e00d9bf62d1fae5b12419095bd596aa39518185a295",
+     "bytes": 1629
+    },
+    "debug-summary.json": {
+     "sha256": "6574b0bddcf3f7bb1d6ad0e9287b4cefa271a16139197ac8b36f4c6325a95935",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "5a965bf7ad53a8495cd326d4e5b336d976f0872ea671b487a0efd2529b3a416d",
+     "bytes": 14658
+    },
+    "run.json": {
+     "sha256": "19f802500ff548bf891480ccbd83f48d0fa81564dfeeb50a17f120041175f7c9",
+     "bytes": 1739
+    },
+    "stream-summary.json": {
+     "sha256": "ff2a484b5db7c1beaea8c8fd9ed811486a2107e284da4125359e7079abc0c9ab",
+     "bytes": 7570
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.06,
+   "started": "2026-10-14T22:15:48Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50m-opus-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "3cf8b468e5dbc370456946de5aad0c6691aef2a0adcb1c83b008a72bb51546d1",
+     "bytes": 1618
+    },
+    "debug-summary.json": {
+     "sha256": "2a5e56260bf88aa333159edc9cde7bd5d13d7a9a41f91b17344f05db40227933",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "037939b79d555d99cc771981499ecf03a34a99874b54a239c088bcf2eeebb915",
+     "bytes": 14658
+    },
+    "run.json": {
+     "sha256": "81f5904e8968755912d727e475d1d94b0d807f96096ef97e9cd84461648632cb",
+     "bytes": 1696
+    },
+    "stream-summary.json": {
+     "sha256": "b58ce9bbcb8f3a821a99e9bae0ac7f24ff8d70a49dd1f877869773f41fccc78a",
+     "bytes": 7559
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.063,
+   "started": "2026-10-14T22:15:46Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50m-sonnet-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "6d9ac5e10b5712bfb4ea150bdb3bc1bff0c4dd2c4d7f2959d4f055f91e4e3c25",
+     "bytes": 1622
+    },
+    "debug-summary.json": {
+     "sha256": "23319d33a81d614a39eeba9d64dfc82a5a39ff94e0376d92f1247eddf440e9e5",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "391a9db715abb47e66b0bdcdb90853373ae3f108ee0ea3222a741e0aea805e56",
+     "bytes": 14659
+    },
+    "run.json": {
+     "sha256": "84664da8e1f868a56027b4f5d650848427eb8e82cf02792941ff12deee8c01eb",
+     "bytes": 1704
+    },
+    "stream-summary.json": {
+     "sha256": "b14d61e83ca851242a32f910384089b7ae2ae6eb83d5434c19113c095a512f85",
+     "bytes": 7564
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.198,
+   "started": "2026-10-14T22:15:43Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50o-claude-mythos-5-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "8368effa82ff0c34cf504e033624b356cc34c320eb3ce55e5175eb723f28fe97",
+     "bytes": 1629
+    },
+    "debug-summary.json": {
+     "sha256": "4480229680c1abaefd7f906d2d0bb2b1364fb08b67f175a1f9145dbc49e33a1e",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "3ec9026d79a31d2b497284abb3455e8bf6d999642bb0a4a67bd3b6dccd6021ec",
+     "bytes": 14630
+    },
+    "run.json": {
+     "sha256": "fae175f25d110dbc69897f3c7c8fa3264c08b44a8f13b05fc28dc1c14deafc6a",
+     "bytes": 1740
+    },
+    "stream-summary.json": {
+     "sha256": "5c1f7f0b015457864c84548f2a9f7b457e72225a3fc0a10613a146fff6bfac9b",
+     "bytes": 7556
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.037,
+   "started": "2026-10-14T22:15:58Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50o-claude-opus-4-1-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "d8c9c9b2a2afc9ed6d9fd5aec3014cca5da09c24d988ad24d169f7be84bbb517",
+     "bytes": 1629
+    },
+    "debug-summary.json": {
+     "sha256": "a46935712b505caca00e27e4f92b3052590af461e0da23fe1950c48de5cb7c8b",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "ff2295387c13c886dfbcfa259767d46ecb4e9a2f0c539c63f90343c895806f4e",
+     "bytes": 14658
+    },
+    "run.json": {
+     "sha256": "97b3665bbf8fb72c6ba4a9bf19287e70032dc48faeaacc6204ca617ef74703fc",
+     "bytes": 1740
+    },
+    "stream-summary.json": {
+     "sha256": "80e78c539a937487c57b8731b96963e59569ac6ea1b258ceff348f99b3ffab57",
+     "bytes": 7570
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 0.971,
+   "started": "2026-10-14T22:15:52Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50o-claude-opus-4-7-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "c11ad344ea7b2c63db934dd7da88d86779912efa9c3e91f68b33ae525b144be1",
+     "bytes": 1680
+    },
+    "debug-summary.json": {
+     "sha256": "f823dc6a568085f14dc0d9f388d937882a7eddba6674b8201ac2b963f33cd8c6",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "6a1d9f110eb7d645cda01a76b69e48896b43105903513c508c0bc4761da1e122",
+     "bytes": 16992
+    },
+    "run.json": {
+     "sha256": "5127a41ccb51dae54d909a7e5b23b1c7caf730ec645ee145eb4b490a0a4a5e85",
+     "bytes": 1740
+    },
+    "stream-summary.json": {
+     "sha256": "99fc951fae7c3ff4d2d18f551783784cd576ae53b85b2b3be8769e3b91610c2a",
+     "bytes": 7624
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.045,
+   "started": "2026-10-14T22:15:56Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50o-claude-sonnet-4-5-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "c383ca83ba5c5b43bf26a1edfa6788f603ac6ba80e81e838a2d94fd32627060b",
+     "bytes": 1684
+    },
+    "debug-summary.json": {
+     "sha256": "4832c2072fa40b3a881fbb874f5aa5004d7177412f47b6bf04470c7dc4ae01d8",
+     "bytes": 3062
+    },
+    "http-summary.json": {
+     "sha256": "d47552dfa33cc592fc59679c3a5ca1150f14910d75fd3f6ee43796ce0fccf540",
+     "bytes": 16881
+    },
+    "run.json": {
+     "sha256": "ec6052ae3b8238c6b56a1f9e173367d0d731eef127732225242095d0c5e350f6",
+     "bytes": 1748
+    },
+    "stream-summary.json": {
+     "sha256": "f48e27aa9dcf9c08c371ace74b845dffe20cec7ad912887bb1dc0ed668f75abb",
+     "bytes": 7630
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.039,
+   "started": "2026-10-14T22:15:54Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50p-haiku-ask",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "de52a725444a1feb843317724b73a7351caa5dc989d34e71fe5795aea6790257",
+     "bytes": 1613
+    },
+    "debug-summary.json": {
+     "sha256": "d52244650eeb79d8e19bdba4c5f9497be052f86c67d3cebd447be5e024a3b23c",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "df90fb3e5661e56216974cba905ee256ff4ee8f56860bc7fce72e098279cffdb",
+     "bytes": 14660
+    },
+    "run.json": {
+     "sha256": "d136fcc990f1bf88c2ce14a178eea8b9cbf7ddc17d9515b2ab7e1b55c6da2c3b",
+     "bytes": 1683
+    },
+    "stream-summary.json": {
+     "sha256": "a3bdf279b1e00a61751c812b35f683ceed59bba17cac0ee73905ba8066cc1825",
+     "bytes": 7558
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.04,
+   "started": "2026-10-14T22:16:00Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50p-haiku-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "07b6610032f81cdf5521e2914dad1501b7cfb9ab43180fbad6e5fecc672c4c40",
+     "bytes": 1620
+    },
+    "debug-summary.json": {
+     "sha256": "16f4bd2f7b5360dc614bd3795fede8acdd3361fa127ce0b9aee459b44af30231",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "90b9f2b58cc30430547bc304ada606113e50587a3c0d9ac2c18c8f245c9e9d37",
+     "bytes": 14660
+    },
+    "run.json": {
+     "sha256": "bfc88cdf32c72749755e3ec7b62ff6ab21ccafc3e94b0f51fc3ca30367f3c1b8",
+     "bytes": 1700
+    },
+    "stream-summary.json": {
+     "sha256": "4e753abe0beb5a9177fbcb5844771e80205eb371da73828088e2ef886c3c2873",
+     "bytes": 7562
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.041,
+   "started": "2026-10-14T22:16:02Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50p-haiku-proactive",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "9e1b8321b4d3772cee82211823667f5e52c8ad21ccc308d800b3c60b764a475f",
+     "bytes": 1620
+    },
+    "debug-summary.json": {
+     "sha256": "0e1b99f9eed409f8a85ce5e2cbdde8a4f112d82a7672b77da0e4607e2a0b0914",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "3e8c0745da719c9721491a7744dbb61c2bff8bb0937be25f732d260d540d0aab",
+     "bytes": 14661
+    },
+    "run.json": {
+     "sha256": "8848248c373c56e22af80ee579da4cce2b9ca1b343f82ba8ad20e1d67c0daca7",
+     "bytes": 1708
+    },
+    "stream-summary.json": {
+     "sha256": "577f8ba29f8043381c72b4743aa546393e011881144c613ec308ecc721f6e62e",
+     "bytes": 7564
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.094,
+   "started": "2026-10-14T22:16:04Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50q-plan",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "63be456e186ae47a41d5ccb7e58d3d5ecc7b2b3266833a089d54a4b8ead031b3",
+     "bytes": 12981
+    },
+    "debug-summary.json": {
+     "sha256": "c3cebc5519b84caee651398570421bcd17a509f4ba5dae1a11d34c5f49b5761b",
+     "bytes": 4076
+    },
+    "http-summary.json": {
+     "sha256": "cd169e56baadc4c19643fd82207184849c41f845e21e34d35093bb25b7c1d9d1",
+     "bytes": 104462
+    },
+    "run.json": {
+     "sha256": "311dccf3496def2b02df1102d0b8235b2e5488cc1a43dfae6e69640e8bde740a",
+     "bytes": 1660
+    },
+    "stream-summary.json": {
+     "sha256": "0bff476160482f30fbed3d47e212196356cc890b471826209ae0cf07bda0998a",
+     "bytes": 23831
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.226,
+   "started": "2026-10-14T22:16:06Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50r-explore",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "7fd7aab0ac341d623f82dbbfb5c2d662a1a733dbb963ebfad760e3e1700045ff",
+     "bytes": 9182
+    },
+    "debug-summary.json": {
+     "sha256": "139714270d70bb9e01f16cec302c9e396ebacfddf2afc63d682db5e0bb6901f0",
+     "bytes": 4006
+    },
+    "http-summary.json": {
+     "sha256": "63a2a163a965ec0ae2ee19fc29df12918231e6fbd5c6076c519d19944d52704b",
+     "bytes": 77951
+    },
+    "run.json": {
+     "sha256": "5e3e4d257d5d343bd42390dc6ba9033dce946be498d6dd358c387e5c4f5d512c",
+     "bytes": 1682
+    },
+    "stream-summary.json": {
+     "sha256": "c1b122f22d195d0d3bc26ae52f459f7bed14ebd9b83236698c4efbe9019586c3",
+     "bytes": 16521
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 1,
+   "duration_s": 1.219,
+   "started": "2026-10-14T22:16:09Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50s-notest",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "51566deb583e733d485399af3be38b802ab09ed56fd04880dee7bc3fa2dfef8d",
+     "bytes": 3200
+    },
+    "debug-summary.json": {
+     "sha256": "a7bdfba88d42d996d3139c5342b6223922a744af94bf7971e66d2e0647e246ad",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "4843bb73aa55eaea39cfa6f12b38a3e27cd26e2b1fc098bdb002a03a4d6e37be",
+     "bytes": 29064
+    },
+    "run.json": {
+     "sha256": "bbafd440edd11a50c10d172f27975ab3b4d4e2ccae026365400c2aeb7408dad4",
+     "bytes": 1679
+    },
+    "stream-summary.json": {
+     "sha256": "4eae61b67be422f718cda9938f0d3d676761b1cac871930e0adc6a02c2dd1390",
+     "bytes": 10695
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.096,
+   "started": "2026-10-14T22:16:14Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50t-failtest",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "e0b7e5ef54e455663c2a5a4019eb8d11f245015fc5f3c8de77bee19f45e6f5ef",
+     "bytes": 3079
+    },
+    "debug-summary.json": {
+     "sha256": "ff180ae26aa24e5bcfb4532bea90cfaecf4a08c1c6fae7d2bf929e3e62009275",
+     "bytes": 3400
+    },
+    "http-summary.json": {
+     "sha256": "7811aa73f00992f697a08ad4c6502d2fca422248015d2de289ad9b33649750d0",
+     "bytes": 29003
+    },
+    "run.json": {
+     "sha256": "dd5b7a64fda658d6052a115d4dd5ee7dc3df555cddef993c02994b1099188e63",
+     "bytes": 1685
+    },
+    "stream-summary.json": {
+     "sha256": "2db61505a0c6410c823bb4b9b3801088fb8d56b15a13343c489a79ca616af7f9",
+     "bytes": 10517
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.856,
+   "started": "2026-10-14T22:16:16Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50u-explore-bash",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "5176bd79b0342644329a17303d75957d9720803f7d8289a5bbc088561a8dcfbc",
+     "bytes": 9066
+    },
+    "debug-summary.json": {
+     "sha256": "9b141fe842c590c41a9c818be06afb9decb5b52c7afcf5832dff56c51d53c765",
+     "bytes": 4006
+    },
+    "http-summary.json": {
+     "sha256": "3120926b88e23d384f1a46abcc9ac26fd68021c18e50ead3ca4dc4ca5b6192b5",
+     "bytes": 77942
+    },
+    "run.json": {
+     "sha256": "66e5a00124806f5e2c07fbfbcc98fec08bd1eaf62a3e8bd53f49ab5251df604a",
+     "bytes": 1697
+    },
+    "stream-summary.json": {
+     "sha256": "5436a74c1441b0eec0f0953923d4b205b77a1d9df35b79dbd46ca979a6bf6a6b",
+     "bytes": 16442
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 1,
+   "duration_s": 1.647,
+   "started": "2026-10-14T22:16:11Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50v-stopgate",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "b5c81511b11ed1436d3b95ad9888916e66f079ee5930102d4941a14ea5fbd9c0",
+     "bytes": 6292
+    },
+    "debug-summary.json": {
+     "sha256": "0d17a160f546be6aef2c134ebb3c3a6eef2752a6159e54c91d2557935275e693",
+     "bytes": 3738
+    },
+    "http-summary.json": {
+     "sha256": "868080ec222ab0024ca5577baf3385f08dad40fa5ff53de775af54be03c70d67",
+     "bytes": 59604
+    },
+    "run.json": {
+     "sha256": "11156c4248dbc6cf168f72cbf38524098de859029b959122dab96ec85e2113c3",
+     "bytes": 1685
+    },
+    "stream-summary.json": {
+     "sha256": "1a8b8dd4e4c19c887e3dc35edfe462c8e6f998b6032d4a0c5c792a875bf618fc",
+     "bytes": 17672
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.808,
+   "started": "2026-10-14T22:16:19Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50w-mode-ask",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "f2172999f8ed7a5b71db426733ad24b035af87d25b8353ad233c92ff0bf13b33",
+     "bytes": 1599
+    },
+    "debug-summary.json": {
+     "sha256": "db04a8001ad5040bb78d3da4ddf386e1ee3b06228dc5fa575e9d71f27e893567",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "2bc85e468b801ac8f5fb729372d1b775115c6031bd36b642486661bebdc3d6e2",
+     "bytes": 14730
+    },
+    "run.json": {
+     "sha256": "5f1672b366e2f7289213dbf9327440efb37f5a230056075f0ac40e619ad8da27",
+     "bytes": 1633
+    },
+    "stream-summary.json": {
+     "sha256": "64a374826975b808ffa804d414ee527635f8067153e0ec8f68007d4a84deff01",
+     "bytes": 7544
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.047,
+   "started": "2026-10-14T22:18:17Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50w-mode-default",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "e02fb9638a978e28ade2aaa781a135a4ff8e90ddb4c5e7a1f439a60ca8b9041a",
+     "bytes": 1609
+    },
+    "debug-summary.json": {
+     "sha256": "a6655cd5159a3ebb35d5979436c8188149775151d4ddd8a78e21c29002afd6a9",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "9d1b6ac6b4870353d6fd8edd59514f0a74bf77d381b35ed1218255c67722f661",
+     "bytes": 14660
+    },
+    "run.json": {
+     "sha256": "e69fa384a0579c2449ee4982acc690c7ce638fb310fb4aa17dbe7989ed412385",
+     "bytes": 1648
+    },
+    "stream-summary.json": {
+     "sha256": "8f2ec87b0f1eaf5c36c3334c960aea02e83ce9b425749be96f750fd205a81827",
+     "bytes": 7551
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.03,
+   "started": "2026-10-14T22:18:19Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
+   "id": "E50w-mode-proactive",
+   "kind": "experiment",
+   "files": {
+    "coding-workflow-probe.json": {
+     "sha256": "d55680924d11e5110d20f007c42c8034bc8106542194bf9035ced87c08e3cc77",
+     "bytes": 1606
+    },
+    "debug-summary.json": {
+     "sha256": "9450dc85a8e738a0a6d27cdad748ffebcc60113d3cb1375eb0fd99457f08b509",
+     "bytes": 3232
+    },
+    "http-summary.json": {
+     "sha256": "d81ad8d89430cb6fff024877548ff4131b7b2f072bf19ba23b3111bd6da75aab",
+     "bytes": 14731
+    },
+    "run.json": {
+     "sha256": "6c853012e190db16ce5bcbfe175d7bb1e726d0d2efa4b94e76c529ade33fad33",
+     "bytes": 1657
+    },
+    "stream-summary.json": {
+     "sha256": "206cefd387637939d84e7196adb2476dbf32c986492c4bbacca700a3ecf21e75",
+     "bytes": 7550
+    }
+   },
+   "redaction": "sanitized",
+   "cli_version": "2.1.296 (Claude Code)",
+   "exe_sha256": "76de74f7694a5bdc03378a5f837c9e132827bf004c98c276bc4e9094ff06769a",
+   "exit_code": 0,
+   "duration_s": 1.041,
+   "started": "2026-10-14T22:18:21Z",
+   "fault_injected": true,
+   "killed": null
+  },
+  {
    "id": "E82-bg-stall",
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "9916648b68c9bed48d677640127801dc749ab1565c11c26aebc79056fb3d6499",
-     "bytes": 889
+     "sha256": "0276e6649e089082cf65be13fb63feb17ecbf431d09f19773bf75a7daf433388",
+     "bytes": 923
     }
    },
    "redaction": "sanitized"
@@ -4352,8 +5066,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "1d31a7fe67ed91e898d23b4fab7e89ec603ddd0913b274c09004ace877ccb573",
-     "bytes": 573
+     "sha256": "35601750f9130bd34199530b8c78b75d5e28579f766b30c1a52a613a61bfb508",
+     "bytes": 593
     }
    },
    "redaction": "sanitized"
@@ -4363,8 +5077,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "efa47ce754cc35891f5e393893daf490d6f7a9513aa4d177bb21d2129fdc16da",
-     "bytes": 693
+     "sha256": "576e789544e549f2de1348a1e825feac38457f5f92846ddec36de27e246228f9",
+     "bytes": 722
     }
    },
    "redaction": "sanitized"
@@ -4374,8 +5088,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "44a8925725cd7e0bb3f1322a591706164e48ece7cd7cb2aa53cced3ea8815ada",
-     "bytes": 561
+     "sha256": "6388ff5d6e372dedc277a4ddd53e55c36d0c7594a9643a077617ae801253d7ff",
+     "bytes": 579
     }
    },
    "redaction": "sanitized"
@@ -4662,8 +5376,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "9748c4d4432e5194df585672f2b5dd15563d26501509f79c5c2a8ea43c44d89c",
-     "bytes": 3172
+     "sha256": "d4ec0a65f7a0c23afcaccb4ea591499cb9c496f6e45e5db7a241e8c10dc98b6d",
+     "bytes": 3244
     }
    },
    "redaction": "sanitized"
@@ -4673,8 +5387,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "1208fd150bfbba9e0e2ba3e52fd8a91837a96ffa98c94abda607ed6a17a03191",
-     "bytes": 1653
+     "sha256": "5828b3eb237240291f8e57a5dda22d9de96095216b5e5919dad496efe0034a97",
+     "bytes": 1703
     }
    },
    "redaction": "sanitized"
@@ -4695,8 +5409,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "1bb8330d5fbb232774167eb0c2e74c7c701fd6447f423edec080376827e0c5af",
-     "bytes": 1194
+     "sha256": "ade9b406eb512670e8566e296be11dd399545382ba80e93d4377a94b327e26d6",
+     "bytes": 1230
     }
    },
    "redaction": "sanitized"
@@ -4706,20 +5420,20 @@
    "kind": "static-or-aggregate",
    "files": {
     "rea-capabilities.json": {
-     "sha256": "0c31f1328740bf6c0ca3669302391d86c763054c79fc9aba28ad7281cba2d09f",
-     "bytes": 150642
+     "sha256": "dec9f6e9b2e96b0e27e665ef4eaeaa164f116d7ff1117ca3a28aa430a0d5cbf1",
+     "bytes": 150643
     },
     "rea-doctor.json": {
-     "sha256": "5f216e3c494a87a1ae17167a6d93fe14cdae9b3aa70ef1c75169e2c6b78734c4",
-     "bytes": 74528
+     "sha256": "70117780aa505ca88bf692be2aa1b1323aa2b38bb96c6d21328ee8976df4388b",
+     "bytes": 74529
     },
     "rea-js-application-summary-2.1.296.json": {
      "sha256": "ac4dd44d57aa88a55c283485ad201d60813618ff3df3f15c1c39f5cafc6d2fd3",
      "bytes": 3455730
     },
     "rea-providers.json": {
-     "sha256": "3428095e67a8a4365bfd87bbdedcf271d04a2de00ed7d453a25542e8f0fd4c73",
-     "bytes": 150642
+     "sha256": "d7efac8d40a12de2729e73ff00c1bd5f279db829b187e59018cdbbfe08780f59",
+     "bytes": 150643
     }
    },
    "redaction": "sanitized"
@@ -4740,8 +5454,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "transcript-schema.json": {
-     "sha256": "337aea18a80975b929fc625fb932eed1641513632cb174b731bfb123bcf8823e",
-     "bytes": 57824
+     "sha256": "d0cb8194a65f7a1b20933716f117f8080970f1295f4425a84327cd1edd5f444a",
+     "bytes": 61035
     }
    },
    "redaction": "sanitized"
@@ -4763,24 +5477,24 @@
      "bytes": 25828
     },
     "audit/static-02-audit-ledger.md": {
-     "sha256": "3e4017bc222e35b2ec4aed040be0cee1aa4467798620ed44dda5940fdd819d71",
-     "bytes": 53530
+     "sha256": "a550c8240d376ed8b032f9700f88ad2502d14bcfe66ad92918fdd5152da60945",
+     "bytes": 53737
     },
     "audit/static-03-audit-ledger.md": {
-     "sha256": "b8bd1b69a0fe809a9f8e421f19a7e9acb0033c1bb6c6ddfcb2731f1cc43d9521",
-     "bytes": 58845
+     "sha256": "512dbff328678dbed3180b2c9f4808109c7e8c674e6b60a8b0982ca277278d4a",
+     "bytes": 59055
     },
     "audit/static-04-audit-ledger.md": {
-     "sha256": "82d2afd1b64cae351a8b373b647ea59ae6336b9f3959d89a4443e14bd0db9f07",
-     "bytes": 63832
+     "sha256": "0bb7eb263b3725eec1b59e025a77ce8b20f8e31080c6ad7eff6ad647f2b10a9d",
+     "bytes": 64112
     },
     "audit/static-05-audit-ledger.md": {
-     "sha256": "5f63a16470d3e345e678138fa842ff549fa5ff3c896aba93b3ac15cf7ba72a0d",
-     "bytes": 65193
+     "sha256": "51f72ced768b43bc4f39cce17cbacd13493262cd6e69196df5cfaee3b0379de9",
+     "bytes": 65465
     },
     "bun-module-manifest-2.1.296.json": {
-     "sha256": "fc726ffbee1713ca17be71fb86e21c7785d5893d81546f1b1c022f906e340ebe",
-     "bytes": 1554790
+     "sha256": "7cff7a35bcee7b286de3cc313615c3390f2ca574941a86c6d93ab763d1777aa6",
+     "bytes": 1611704
     },
     "chunk-index-2.1.296.json": {
      "sha256": "1f17c8d8b17d3d8ea7b618192c7899bc052bf76c48b1f67d6a30bb69ccefc23d",
@@ -4791,16 +5505,16 @@
      "bytes": 209714
     },
     "pe-inventory-2.1.296.json": {
-     "sha256": "8f5aa87eac3b10a807f4c2ca85465248b8c7d8ddbba9c696f8460218917cd1ac",
-     "bytes": 4945
+     "sha256": "1dd035e1050537e3c01ee22fbaa313fdea8af609ae1cef74f981d1a1a23b0188",
+     "bytes": 5208
     },
     "static-citation-audit-2.1.296.json": {
      "sha256": "07ea9330d313def7227d5808797cb7bd5d9946b6f863ed064273e6b7deb65f58",
      "bytes": 305756
     },
     "static-claim-ledger-2.1.296.json": {
-     "sha256": "8c55bdf494b87b799f65e4c40383dd7fbe08ff42ca629c8b2c47794035acd835",
-     "bytes": 573356
+     "sha256": "a72fce9210958265f20698267dfa67bb42b61abbac40f18018f6e96da7ce06b0",
+     "bytes": 681584
     }
    },
    "redaction": "sanitized"
@@ -4810,8 +5524,8 @@
    "kind": "static-or-aggregate",
    "files": {
     "summary.json": {
-     "sha256": "a3992b1c156d27bcfe67f62841564af31275f99e6c8fe90f870c948b6eb8da18",
-     "bytes": 1270
+     "sha256": "f352fe5821de34dc75eb28154a62ed91b53897a2994478cdaadc03907df4c8d6",
+     "bytes": 1315
     }
    },
    "redaction": "sanitized"

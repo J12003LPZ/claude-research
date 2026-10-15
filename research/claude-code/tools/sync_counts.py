@@ -19,8 +19,7 @@ PATTERNS = [
     ("README.md", r"\d+ instrumented lab runs against disposable projects \(\d+ E-runs, \d+ C-probes, and \d+ P-mode probes\)",
      "{n} instrumented lab runs against disposable projects ({E} E-runs, {C} C-probes, and {P} P-mode probes)"),
     ("01-environment-and-provenance.md", r"across the \d+ manifest runs", "across the {n} manifest runs"),
-    ("06-verification-matrix.md", r"none in the \d+ manifest runs", "none in the {n} manifest runs"),
-    ("06-verification-matrix.md", r"No contradiction in \d+ manifest runs", "No contradiction in {n} manifest runs"),
+    ("06-verification-matrix.md", r"The \d+ manifest runs include scoped", "The {n} manifest runs include scoped"),
 ]
 
 

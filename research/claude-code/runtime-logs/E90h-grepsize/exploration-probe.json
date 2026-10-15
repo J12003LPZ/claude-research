@@ -1,0 +1,71 @@
+{
+ "exp": "E90h-grepsize",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 3,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needleaa",
+    "output_mode": "content",
+    "head_limit": 0
+   },
+   "is_error": false,
+   "chars": 16691,
+   "lines": 700,
+   "first_line": "s1.py:1:needleaa 0000",
+   "last_line": "s1.py:700:needleaa 0699",
+   "first_lines": [
+    "s1.py:1:needleaa 0000",
+    "s1.py:2:needleaa 0001",
+    "s1.py:3:needleaa 0002"
+   ],
+   "last_lines": [
+    "s1.py:698:needleaa 0697",
+    "s1.py:699:needleaa 0698",
+    "s1.py:700:needleaa 0699"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needlebb",
+    "output_mode": "content",
+    "head_limit": 0
+   },
+   "is_error": false,
+   "chars": 2248,
+   "lines": 93,
+   "first_line": "<persisted-output>",
+   "last_line": "</persisted-output>",
+   "first_lines": [
+    "<persisted-output>",
+    "Output too large (30.7KB). Full output saved to: <home>/.claude/projects/<lab-projects>-proj-e60j-grepsize/9660a2db-d55b-44c9-a041-ed577d798a8f/tool-",
+    ""
+   ],
+   "last_lines": [
+    "s2.py:87:needlebb 0086",
+    "...",
+    "</persisted-output>"
+   ],
+   "markers": [
+    "persisted_output"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

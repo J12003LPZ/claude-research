@@ -1,0 +1,43 @@
+{
+ "exp": "E90d-guarde-claude-sonnet-4-5-bypassPermissions",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-sonnet-4-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-sonnet-4-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Edit",
+   "input": {
+    "file_path": "<str 89 chars>",
+    "old_string": "<str 12 chars>",
+    "new_string": "<str 12 chars>"
+   },
+   "is_error": true,
+   "chars": 96,
+   "lines": 1,
+   "first_line": "<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>",
+   "last_line": "<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>",
+   "first_lines": [
+    "<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>"
+   ],
+   "last_lines": [
+    "<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>"
+   ],
+   "markers": [
+    "not_read_error"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

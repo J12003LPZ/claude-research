@@ -3,7 +3,7 @@
 Target: the `claude` CLI installed on this Windows machine
 (`~\.local\bin\claude.exe`, SHA-256 `76de74f7...06769a`, a signed Bun standalone executable).
 Method: artifact extraction, static reading of the embedded JavaScript, REA's JavaScript
-application analyzer, and 150 instrumented lab runs against disposable projects (129 E-runs, 13 C-probes, and 8 P-mode probes), including targeted compaction-failure controls.
+application analyzer, and 171 instrumented lab runs against disposable projects (150 E-runs, 13 C-probes, and 8 P-mode probes), including targeted compaction-failure controls.
 
 Start with `02-verified-architecture.md`. Use `06-verification-matrix.md` to see how far
 each claim can be trusted.
@@ -32,7 +32,29 @@ each claim can be trusted.
 | Verified architecture | `02-verified-architecture.md` |
 | Verification matrix, behavioural matrix, open questions, confidence | `06-verification-matrix.md` |
 | Evidence index | this file, below, and `runtime-logs/MANIFEST.json` |
+| Coding-workflow success mechanisms, DaVinci controller, benchmark | `davinci-success-research/README.md` |
+| Static coding-workflow decompilation, call graph, prompt, plan, tools, recovery, completion | `coding-workflow-decompilation/10-complete-coding-workflow-reconstruction.md` |
 | Resume point for the investigation | `PROGRESS.md` |
+| Remaining subsystem decompilation (continuation) | `remaining-subsystems-decompilation/14-final-reconstruction.md` |
+| Final runtime-control continuation | `final-runtime-control-decompilation/12-final-reconstruction.md` (reports 01–12) |
+| Coding-success final mission: exploration, model routing, compaction fidelity, consolidated mechanisms and DaVinci gap matrix | `coding-success-final/claude-code-coding-success-mechanisms.md` (reports 01–03 beside it) |
+
+## Remaining-subsystem continuation
+
+The continuation pass covers batched tool scheduling, reactive/precomputed compaction,
+detached background delivery, plugin/MCP loading, Storage V5 and remote mirroring,
+permission decisions, and task tools. Reports 01–14 are evidence-backed static work on
+the extracted 2.1.296 modules and use `module@character-offset` anchors. The REA semantic
+graph used for this pass was partial/truncated; the reports explicitly distinguish
+module-local resolved callers from dynamic/global unknowns. No new live-model campaign was
+run and the installed executable/authentication data was not modified.
+
+The final runtime-control continuation is intentionally marked `PARTIAL`: local
+permission UI renderer/focus details, the lowest-level Storage V5 backend, full
+remote hydration, transport-specific MCP races, external wake policy, exhaustive
+dynamic caller enumeration, and independent semantic review remain open. Report
+01 records the corrected local detached-result wake edge; report 12 consolidates
+the evidence and does not claim completion.
 
 ## Evidence index
 
@@ -62,22 +84,27 @@ the tools here.
 ## How far to trust each layer
 
 - **Runtime findings** (`03`, and every V-RT tag in `02`): read directly from captured
-  requests, events, hook logs and files. Highest confidence. Limits: headless mode only,
-  mostly a slim configuration, all through a forwarding proxy.
+  requests, events, hook logs and files. Highest confidence. Manifest E/C/P runs are mostly
+  headless, use the slim profile unless marked otherwise, and generally use the forwarding
+  proxy. Supplemental daemon, worker, PTY, and attach probes exercise side entry points and
+  may make no model request; they are identified separately in `03` and the runtime summaries.
 - **Static passes** (`static-01` to `static-05`, about 520 KB): written by five parallel
   analysis agents reading minified code, each claim carrying a `chunk@offset` anchor, then
   **audited a second time** by five independent reviewers. Audit method and limits:
-  - Mechanical: `tools/audit_static_citations.py` checks that every one of the 1,913
-    `chunk@offset` citations names an extracted chunk and lies inside it. After one fix
-    (`static-04` line 239) all 1,913 resolve, including the anchors added by the merges below. This proves the address exists, not that the
-    prose is right.
-  - Semantic: each reviewer read the claims against the source and the runtime logs and
-    wrote a ledger, kept in `runtime-logs/static/audit/`. `runtime-logs/static/static-claim-ledger-2.1.296.json`
-    lists all 768 report paragraphs with their anchors (439 carry none).
+  - Mechanical: `tools/audit_static_citations.py` checks that every one of the 2,186
+    `chunk@offset` citations names an extracted chunk and lies inside it. All 2,186 resolve,
+    including the fresh daemon, PTY, renderer, input, and permission anchors. This proves the
+    address exists, not that the prose is right.
+  - Semantic: each prior reviewer read the earlier claims against the source and the runtime logs and
+    wrote a ledger, kept in `runtime-logs/static/audit/`. The regenerated
+    `runtime-logs/static/static-claim-ledger-2.1.296.json` now lists 941 report paragraphs with
+    their anchors (519 carry none).
   - Results (claim groups): 01: 146 verified, 48 partial, 1 contradicted. 02: 126, 25, 4.
     03: 108, 21, 2. 04: about 138, about 52, 1. 05: 155, 63, 1. "Partial" means some part
     was confirmed and some part was omitted, inexact or not re-read. Runtime evidence
-    contradicted no verified static claim.
+    contradicted no static claim outside the scoped disagreements recorded in the matrix.
+  - The fresh source-level supplement is mechanically anchored and separately identified in
+    `static-05`, but it is not included in the earlier semantic reviewer group totals above.
   - Fixed in place: every contradiction (9 in total) is corrected in the report, marked
     "Audit correction". I re-checked six of them against the source myself (`deniedModels`
     delete, stop-hook condition, idle-timeout interaction, `ts` rendering selection, resume
@@ -107,7 +134,14 @@ python -I tools/build_manifest.py
 bash tools/run_gates.sh        # tests, audits, manifest, count and matrix-footer checks
 ```
 
-Paths inside the tools are absolute for this machine; adjust `LAB`, `OUT`, `ROOT` at the
-top of each script. Each experiment makes real model requests on the logged-in account.
-In the default configuration of this machine one trivial request carried about 258,000
-tokens of tools and context, so use the slim profile.
+`run_gates.sh` fails if the uncommitted extracted Bun tree is absent. In a worktree whose
+extraction lives elsewhere, set `CLAUDE_REA_EXTRACTED_ROOT` to the absolute
+`.../extracted/2.1.296/~BUN/root` path before invoking it. The manifest builder resolves its
+runtime-log directory from its own file location and does not rewrite evidence while checking
+redaction.
+
+Paths inside the experiment tools are otherwise absolute for this machine; adjust `LAB`, `OUT`,
+and `ROOT` at the top of each script. Manifest experiments use either real model requests or a
+local scripted proxy; supplemental daemon, worker, PTY, and attach probes may make no model request.
+Runs that use the real account can be rate-limited. In the default configuration of this machine
+one trivial request carried about 258,000 tokens of tools and context, so use the slim profile.

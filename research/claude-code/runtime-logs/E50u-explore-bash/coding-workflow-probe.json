@@ -1,0 +1,415 @@
+{
+ "exp": "E50u-explore-bash",
+ "message_requests": 6,
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   },
+   {
+    "subtype": "success",
+    "is_error": true,
+    "num_turns": 1,
+    "terminal_reason": "api_error",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "requests": [
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    8786
+   ],
+   "message_roles": [
+    "user",
+    "system"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [],
+   "seq": "0002",
+   "response_status": 200
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Bash",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "Monitor",
+    "PowerShell",
+    "Read",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch"
+   ],
+   "system_block_chars": [
+    95,
+    62,
+    3184
+   ],
+   "message_roles": [
+    "user",
+    "system"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [],
+   "seq": "0003",
+   "response_status": 200
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    8786
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_eb_1",
+     "is_error": false,
+     "text_head": "Async agent launched successfully. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the agentId below, into a user-facing reply.)\nagentId: a819ab1103ac50ddb (internal ID - do not mention to user. Use S"
+    }
+   ],
+   "seq": "0004",
+   "response_status": 200
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Bash",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "Monitor",
+    "PowerShell",
+    "Read",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch"
+   ],
+   "system_block_chars": [
+    95,
+    62,
+    3184
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_eb_c1",
+     "is_error": false,
+     "text_head": "(Bash completed with no output)"
+    }
+   ],
+   "seq": "0005",
+   "response_status": 200
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    8786
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_eb_1",
+     "is_error": false,
+     "text_head": "Async agent launched successfully. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the agentId below, into a user-facing reply.)\nagentId: a819ab1103ac50ddb (internal ID - do not mention to user. Use S"
+    }
+   ],
+   "seq": "0006",
+   "response_status": 400
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskStop",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    8786
+   ],
+   "message_roles": [
+    "user",
+    "system",
+    "assistant",
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": false,
+    "executing_actions_heading": false,
+    "using_tools_heading": false,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [
+    {
+     "tool_use_id": "toolu_eb_1",
+     "is_error": false,
+     "text_head": "Async agent launched successfully. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the agentId below, into a user-facing reply.)\nagentId: a819ab1103ac50ddb (internal ID - do not mention to user. Use S"
+    }
+   ],
+   "seq": "0007",
+   "response_status": 400
+  }
+ ]
+}

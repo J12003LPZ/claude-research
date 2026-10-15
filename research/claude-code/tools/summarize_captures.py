@@ -21,7 +21,7 @@ import re
 import sys
 
 LAB = r"C:\Users\sergi\Desktop\claude-rea\lab"
-OUT = r"C:\Users\sergi\Desktop\claude-rea\research\claude-code\runtime-logs"
+OUT = os.environ.get("CLAUDE_REA_RUNTIME_LOGS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "runtime-logs")
 HEAD = 80
 
 MASKS = [

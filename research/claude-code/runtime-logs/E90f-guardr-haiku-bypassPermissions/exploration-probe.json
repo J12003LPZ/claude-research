@@ -1,0 +1,84 @@
+{
+ "exp": "E90f-guardr-haiku-bypassPermissions",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 4,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 77 chars>"
+   },
+   "is_error": false,
+   "chars": 38,
+   "lines": 3,
+   "first_line": "1\tdef add(a, b):",
+   "last_line": "3\t",
+   "first_lines": [
+    "1\tdef add(a, b):",
+    "2\t    return a - b",
+    "3\t"
+   ],
+   "last_lines": [
+    "1\tdef add(a, b):",
+    "2\t    return a - b",
+    "3\t"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Bash",
+   "input": {
+    "command": "<str 61 chars>",
+    "description": "<str 19 chars>"
+   },
+   "is_error": false,
+   "chars": 31,
+   "lines": 1,
+   "first_line": "(Bash completed with no output)",
+   "last_line": "(Bash completed with no output)",
+   "first_lines": [
+    "(Bash completed with no output)"
+   ],
+   "last_lines": [
+    "(Bash completed with no output)"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Edit",
+   "input": {
+    "file_path": "<str 77 chars>",
+    "old_string": "<str 12 chars>",
+    "new_string": "<str 12 chars>"
+   },
+   "is_error": false,
+   "chars": 325,
+   "lines": 1,
+   "first_line": "The file <home>/cc-rea-lab/proj-e60f-guardr-haiku-bypasspermissions/src/app.py has been updated successfully. (note: the file had been modified on disk since yo",
+   "last_line": "The file <home>/cc-rea-lab/proj-e60f-guardr-haiku-bypasspermissions/src/app.py has been updated successfully. (note: the file had been modified on disk since yo",
+   "first_lines": [
+    "The file <home>/cc-rea-lab/proj-e60f-guardr-haiku-bypasspermissions/src/app.py has been updated successfully. (note: the file had been modified on disk since yo"
+   ],
+   "last_lines": [
+    "The file <home>/cc-rea-lab/proj-e60f-guardr-haiku-bypasspermissions/src/app.py has been updated successfully. (note: the file had been modified on disk since yo"
+   ],
+   "markers": [
+    "updated_successfully"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

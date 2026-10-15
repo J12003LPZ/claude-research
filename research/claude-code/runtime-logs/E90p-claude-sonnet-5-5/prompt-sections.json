@@ -1,0 +1,18 @@
+{
+ "exp": "E90p-claude-sonnet-5-5",
+ "model": "claude-sonnet-5-5",
+ "tool_count": 26,
+ "system_chars": 6137,
+ "markers": {
+  "delivering_work": false,
+  "corrections": false,
+  "autonomy_block": false,
+  "explore_nudge": false,
+  "prefer_dedicated_tools_full": false,
+  "prefer_dedicated_tools_lean": true,
+  "read_before_edit_text": false
+ },
+ "thinking": "adaptive",
+ "effort": "medium",
+ "max_tokens": 128000
+}

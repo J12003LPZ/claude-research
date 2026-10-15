@@ -7,7 +7,30 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import getpass
 
+import build_manifest as manifest
 from build_manifest import FORBIDDEN, fault_was_injected
+
+
+class ManifestPathTests(unittest.TestCase):
+    def test_output_is_relative_to_this_worktree(self):
+        expected = Path(manifest.__file__).resolve().parents[2] / "claude-code" / "runtime-logs"
+        self.assertEqual(Path(manifest.OUT).resolve(), expected)
+
+    def test_static_copy_leak_check_does_not_rewrite_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            static = root / "static"
+            static.mkdir()
+            evidence = static / "evidence.txt"
+            before = f"path=C:/Users/{getpass.getuser()}/private"
+            evidence.write_text(before, encoding="utf-8")
+            original = manifest.OUT
+            manifest.OUT = str(root)
+            try:
+                self.assertTrue(manifest.static_copy_leaks())
+            finally:
+                manifest.OUT = original
+            self.assertEqual(evidence.read_text(encoding="utf-8"), before)
 
 
 class FaultManifestTests(unittest.TestCase):

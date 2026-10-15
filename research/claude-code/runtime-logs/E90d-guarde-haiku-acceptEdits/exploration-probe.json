@@ -1,0 +1,43 @@
+{
+ "exp": "E90d-guarde-haiku-acceptEdits",
+ "stream": {
+  "init_permission_mode": "acceptEdits",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Edit",
+   "input": {
+    "file_path": "<str 71 chars>",
+    "old_string": "<str 12 chars>",
+    "new_string": "<str 12 chars>"
+   },
+   "is_error": false,
+   "chars": 111,
+   "lines": 1,
+   "first_line": "The file <home>/cc-rea-lab/proj-e60d-guarde-haiku-acceptedits/src/app.py has been updated successfully.",
+   "last_line": "The file <home>/cc-rea-lab/proj-e60d-guarde-haiku-acceptedits/src/app.py has been updated successfully.",
+   "first_lines": [
+    "The file <home>/cc-rea-lab/proj-e60d-guarde-haiku-acceptedits/src/app.py has been updated successfully."
+   ],
+   "last_lines": [
+    "The file <home>/cc-rea-lab/proj-e60d-guarde-haiku-acceptedits/src/app.py has been updated successfully."
+   ],
+   "markers": [
+    "updated_successfully"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

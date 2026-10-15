@@ -261,3 +261,60 @@ chain root, then mode, cost state and attachments restored from the metadata row
 // Output: one assistant text. The loop stores a compact_boundary row and a synthetic user message
 // (isCompactSummary) that begins "This session is being continued from a previous conversation".
 ```
+
+## 10. Daemon worker and PTY contracts
+
+```ts
+interface DaemonWorkerStdin {                         // S [g72zgfkm@14736]
+  config: Record<string, unknown>;
+  initialAccessToken: string;
+}
+type WorkerExit = 0 | 1 | 2 | 75 | 78;              // S [mwtqc60a@615; g72zgfkm@14736]
+
+interface PtyFrame {                                  // S [k6k3h9nt@7067, @7235, @7383]
+  payloadLength: number;                              // uint32be
+  kind: 0 | 1;                                        // DATA | JSON control
+  payload: Uint8Array | string;
+}
+type PtyHostToClient =
+  | { t: "hello"; replPid: number; version: string }
+  | { t: "live" }
+  | { t: "ping" }
+  | { t: "exit"; code?: number; signal?: string }
+  | { t: "auth-required" };
+type PtyClientToHost =
+  | { t: "auth"; token: string }
+  | { t: "pong" }
+  | { t: "resize"; cols: number; rows: number }
+  | { t: "kill"; sig: "SIGTERM" | "SIGKILL" };
+```
+
+The host gates DATA forwarding on the per-socket token, not the entire control channel;
+frame payloads over 1 MiB and malformed or unknown frames close the parser. Static sources:
+`chunk-jn2r7nez.js@1906`, `@2994`, `@3498`; `chunk-5zh5q8ee.js@1564`.
+This contract is static only. Named-pipe ACLs and Bun.Terminal behavior remain unknown.
+
+## 11. Renderer and input scheduler contracts
+
+```ts
+interface RenderScheduler {                            // S [v44rfc3q@319390, @319644, @320043, @320611]
+  minFrameIntervalMs: 16;                             // tg
+  inputPriorityWindowMs: 50;                          // oUo
+  inputPriorityFrameIntervalMs: 4;                    // sUo
+  nonBlockingStdoutLimitBytes: 16384;                 // iUo
+  backpressureRetryMs: 250;                            // IFr
+  frameMicrotaskQueued: boolean;
+  lastPacedFrameAt: number;
+}
+type PermissionDialogResult = "allow" | "deny" | "cancelled"; // S [57pw7ky5@58350; 9w4htdvs@1249278]
+```
+
+`rootNode.onRender` schedules the renderer; input marks the priority window and dispatches
+through discrete updates. Escape is context-sensitive: permission selectors call `onCancel`,
+while composers and task viewers consume it according to their own state. The local dialog
+maps allow, deny, and cancel to different abort/feedback paths; remote dialogs validate
+`can_use_tool` and `request_id`, deduplicate in-flight requests, and conditionally send an
+interrupt on denial/cancellation. Sources: `chunk-v44rfc3q.js@233800`, `@235996`, `@236400`,
+`@311434`, `@319390`, `@319644`, `@320043`, `@320611`; `chunk-75p1g95y.js@10757`,
+`@16461`; `chunk-9w4htdvs.js@1249278`, `@1251327`, `@217294`, `@222896`, `@223400`; `chunk-57pw7ky5.js@51135`,
+`@55500`, `@58350`, `@6732`.

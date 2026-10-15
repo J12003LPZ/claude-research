@@ -14,8 +14,9 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
 
-OUT = r"C:\Users\sergi\Desktop\claude-rea\research\claude-code\runtime-logs"
+OUT = str(Path(__file__).resolve().parents[2] / "claude-code" / "runtime-logs")
 FORBIDDEN = [
     ("bearer-token", re.compile(r"Bearer\s+(?=[A-Za-z0-9._-]*\d)(?=[A-Za-z0-9._-]*[._-])[A-Za-z0-9._-]{40,}")),
     ("api-key", re.compile(r"sk-ant-[A-Za-z0-9_-]{10,}")),
@@ -45,25 +46,23 @@ def fault_was_injected(directory):
     return any((row.get("response") or {}).get("injected") is True for row in rows)
 
 
-def mask_static_copies():
-    """REA/static evidence copies embed absolute local paths; mask the account name in place."""
+def static_copy_leaks():
+    """Return local-path leaks without changing sanitized evidence files."""
     user = getpass.getuser()
     rx = re.compile(r"(?i)((?:[\\/]+|--)Users(?:[\\/]+|-))" + re.escape(user) + r"(?![A-Za-z0-9])")
+    leaks = []
     for sub in ("rea", "static", "config", "sessions"):
         for f in glob.glob(os.path.join(OUT, sub, "**", "*"), recursive=True):
             if os.path.isdir(f):
                 continue
             with open(f, encoding="utf-8", errors="replace") as fp:
-                t = fp.read()
-            t2 = rx.sub(lambda m: m.group(1) + "<user>", t)
-            if t2 != t:
-                with open(f, "w", encoding="utf-8", newline="") as fp:
-                    fp.write(t2)
+                if rx.search(fp.read()):
+                    leaks.append(f"{os.path.relpath(f, OUT).replace(os.sep, '/')}: local-path")
+    return leaks
 
 
 def main():
-    mask_static_copies()
-    rows, problems = [], []
+    rows, problems = [], static_copy_leaks()
     for d in sorted(glob.glob(os.path.join(OUT, "*"))):
         if not os.path.isdir(d):
             continue

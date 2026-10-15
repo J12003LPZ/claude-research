@@ -1,0 +1,235 @@
+{
+ "exp": "E90c-read",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 11,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 54 chars>"
+   },
+   "is_error": false,
+   "chars": 42788,
+   "lines": 3001,
+   "first_line": "1\tline 0",
+   "last_line": "3001\t",
+   "first_lines": [
+    "1\tline 0",
+    "2\tline 1",
+    "3\tline 2"
+   ],
+   "last_lines": [
+    "2999\tline 2998",
+    "3000\tline 2999",
+    "3001\t"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 54 chars>"
+   },
+   "is_error": false,
+   "chars": 42788,
+   "lines": 3001,
+   "first_line": "1\tline 0",
+   "last_line": "3001\t",
+   "first_lines": [
+    "1\tline 0",
+    "2\tline 1",
+    "3\tline 2"
+   ],
+   "last_lines": [
+    "2999\tline 2998",
+    "3000\tline 2999",
+    "3001\t"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 55 chars>"
+   },
+   "is_error": false,
+   "chars": 137643,
+   "lines": 10625,
+   "first_line": "1\txxxxxxx",
+   "last_line": "10625\txxxxxxx",
+   "first_lines": [
+    "1\txxxxxxx",
+    "2\txxxxxxx",
+    "3\txxxxxxx"
+   ],
+   "last_lines": [
+    "10623\txxxxxxx",
+    "10624\txxxxxxx",
+    "10625\txxxxxxx"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 55 chars>",
+    "offset": 1,
+    "limit": 30000
+   },
+   "is_error": true,
+   "chars": 378,
+   "lines": 1,
+   "first_line": "File content (60000 tokens) exceeds maximum allowed tokens (25000). Use offset and limit parameters to read specific portions of the file, or search for specifi",
+   "last_line": "File content (60000 tokens) exceeds maximum allowed tokens (25000). Use offset and limit parameters to read specific portions of the file, or search for specifi",
+   "first_lines": [
+    "File content (60000 tokens) exceeds maximum allowed tokens (25000). Use offset and limit parameters to read specific portions of the file, or search for specifi"
+   ],
+   "last_lines": [
+    "File content (60000 tokens) exceeds maximum allowed tokens (25000). Use offset and limit parameters to read specific portions of the file, or search for specifi"
+   ],
+   "markers": [
+    "exceeds_tokens_error"
+   ]
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 49 chars>"
+   },
+   "is_error": true,
+   "chars": 369,
+   "lines": 1,
+   "first_line": "File content (293KB) exceeds maximum allowed size (256KB). Use offset and limit parameters to read specific portions of the file, or search for specific content",
+   "last_line": "File content (293KB) exceeds maximum allowed size (256KB). Use offset and limit parameters to read specific portions of the file, or search for specific content",
+   "first_lines": [
+    "File content (293KB) exceeds maximum allowed size (256KB). Use offset and limit parameters to read specific portions of the file, or search for specific content"
+   ],
+   "last_lines": [
+    "File content (293KB) exceeds maximum allowed size (256KB). Use offset and limit parameters to read specific portions of the file, or search for specific content"
+   ],
+   "markers": [
+    "exceeds_size_error"
+   ]
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 49 chars>",
+    "offset": 1,
+    "limit": 10
+   },
+   "is_error": false,
+   "chars": 1020,
+   "lines": 10,
+   "first_line": "1\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+   "last_line": "10\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+   "first_lines": [
+    "1\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "2\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "3\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+   ],
+   "last_lines": [
+    "8\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "9\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "10\tyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 53 chars>"
+   },
+   "is_error": false,
+   "chars": 5014,
+   "lines": 3,
+   "first_line": "1\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "last_line": "3\t",
+   "first_lines": [
+    "1\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "2\tsecond",
+    "3\t"
+   ],
+   "last_lines": [
+    "1\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "2\tsecond",
+    "3\t"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 55 chars>"
+   },
+   "is_error": true,
+   "chars": 128,
+   "lines": 1,
+   "first_line": "File does not exist. Note: your current working directory is <home>/cc-rea-lab/proj-e60c-read. Did you mean missing.txt?",
+   "last_line": "File does not exist. Note: your current working directory is <home>/cc-rea-lab/proj-e60c-read. Did you mean missing.txt?",
+   "first_lines": [
+    "File does not exist. Note: your current working directory is <home>/cc-rea-lab/proj-e60c-read. Did you mean missing.txt?"
+   ],
+   "last_lines": [
+    "File does not exist. Note: your current working directory is <home>/cc-rea-lab/proj-e60c-read. Did you mean missing.txt?"
+   ],
+   "markers": [
+    "did_you_mean"
+   ]
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 44 chars>"
+   },
+   "is_error": true,
+   "chars": 93,
+   "lines": 1,
+   "first_line": "EISDIR: illegal operation on a directory, read '<home>/cc-rea-lab/proj-e60c-read/src'",
+   "last_line": "EISDIR: illegal operation on a directory, read '<home>/cc-rea-lab/proj-e60c-read/src'",
+   "first_lines": [
+    "EISDIR: illegal operation on a directory, read '<home>/cc-rea-lab/proj-e60c-read/src'"
+   ],
+   "last_lines": [
+    "EISDIR: illegal operation on a directory, read '<home>/cc-rea-lab/proj-e60c-read/src'"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Read",
+   "input": {
+    "file_path": "<str 49 chars>"
+   },
+   "is_error": true,
+   "chars": 218,
+   "lines": 1,
+   "first_line": "<tool_use_error>This tool cannot read binary files. The file appears to be a binary .bin file. Use a skill for this file type if one is available, or a shell co",
+   "last_line": "<tool_use_error>This tool cannot read binary files. The file appears to be a binary .bin file. Use a skill for this file type if one is available, or a shell co",
+   "first_lines": [
+    "<tool_use_error>This tool cannot read binary files. The file appears to be a binary .bin file. Use a skill for this file type if one is available, or a shell co"
+   ],
+   "last_lines": [
+    "<tool_use_error>This tool cannot read binary files. The file appears to be a binary .bin file. Use a skill for this file type if one is available, or a shell co"
+   ],
+   "markers": [
+    "binary_error"
+   ]
+  }
+ ],
+ "truncation_notes": [
+  "[Truncated: PARTIAL view \u2014 <home>/cc-rea-lab/proj-e60c-read/lines30000.txt: showing lines 1-10625 of 30001 total (60000 tokens, cap 25000). Call Read with offset=10626 limit=10625 for the next page, or Grep to find a specific section. To read it anyway, up to what still fits in your context, call Read again with allow_large: true \u2014 only if you genuinely need all of it or the user asked for the whole file. Do NOT answ"
+ ]
+}

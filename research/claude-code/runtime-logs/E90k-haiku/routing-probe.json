@@ -1,0 +1,70 @@
+{
+ "exp": "E90k-haiku",
+ "parent_model_flag": "haiku",
+ "env": {},
+ "requests": [
+  {
+   "model": null,
+   "tool_count": 0,
+   "has_write": false,
+   "child": false,
+   "max_tokens": null,
+   "thinking": null,
+   "effort": null
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 13,
+   "has_write": false,
+   "child": true,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 13,
+   "has_write": false,
+   "child": true,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "tool_count": 26,
+   "has_write": true,
+   "child": false,
+   "max_tokens": 128000,
+   "thinking": "adaptive",
+   "effort": "medium"
+  }
+ ]
+}

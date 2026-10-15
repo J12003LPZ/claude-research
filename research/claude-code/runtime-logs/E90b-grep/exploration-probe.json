@@ -1,0 +1,248 @@
+{
+ "exp": "E90b-grep",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 11,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "output_mode": "content"
+   },
+   "is_error": false,
+   "chars": 4833,
+   "lines": 252,
+   "first_line": ".hid.py:1:needle hidden",
+   "last_line": "[Showing results with pagination = limit: 250]",
+   "first_lines": [
+    ".hid.py:1:needle hidden",
+    "a.py:1:needle 0",
+    "a.py:2:needle 1"
+   ],
+   "last_lines": [
+    "a.py:249:needle 248",
+    "",
+    "[Showing results with pagination = limit: 250]"
+   ],
+   "markers": [
+    "pagination_note"
+   ]
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle"
+   },
+   "is_error": false,
+   "chars": 40,
+   "lines": 5,
+   "first_line": "Found 4 files",
+   "last_line": "b.py",
+   "first_lines": [
+    "Found 4 files",
+    "long.txt",
+    ".hid.py"
+   ],
+   "last_lines": [
+    ".hid.py",
+    "a.py",
+    "b.py"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "output_mode": "count"
+   },
+   "is_error": false,
+   "chars": 83,
+   "lines": 6,
+   "first_line": "long.txt:1",
+   "last_line": "Found 3004 total occurrences across 4 files.",
+   "first_lines": [
+    "long.txt:1",
+    "b.py:2",
+    ".hid.py:1"
+   ],
+   "last_lines": [
+    "a.py:3000",
+    "",
+    "Found 3004 total occurrences across 4 files."
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "output_mode": "content",
+    "head_limit": 0
+   },
+   "is_error": false,
+   "chars": 2252,
+   "lines": 116,
+   "first_line": "<persisted-output>",
+   "last_line": "</persisted-output>",
+   "first_lines": [
+    "<persisted-output>",
+    "Output too large (62.4KB). Full output saved to: <home>/.claude/projects/<lab-projects>-proj-e60b-grep/aedd9119-3668-43f4-a4dd-490ae464dd34/tool-resu",
+    ""
+   ],
+   "last_lines": [
+    "a.py:106:needle 105",
+    "...",
+    "</persisted-output>"
+   ],
+   "markers": [
+    "persisted_output",
+    "long_line_omitted"
+   ]
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "output_mode": "content",
+    "offset": 250,
+    "head_limit": 5
+   },
+   "is_error": false,
+   "chars": 158,
+   "lines": 7,
+   "first_line": "a.py:247:needle 246",
+   "last_line": "[Showing results with pagination = limit: 5, offset: 250]",
+   "first_lines": [
+    "a.py:247:needle 246",
+    "a.py:248:needle 247",
+    "a.py:249:needle 248"
+   ],
+   "last_lines": [
+    "a.py:251:needle 250",
+    "",
+    "[Showing results with pagination = limit: 5, offset: 250]"
+   ],
+   "markers": [
+    "pagination_note"
+   ]
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "head_limit": -1
+   },
+   "is_error": true,
+   "chars": 110,
+   "lines": 1,
+   "first_line": "<tool_use_error>head_limit must be a whole number of 0 or more, got -1. Pass 0 for unlimited.</tool_use_error>",
+   "last_line": "<tool_use_error>head_limit must be a whole number of 0 or more, got -1. Pass 0 for unlimited.</tool_use_error>",
+   "first_lines": [
+    "<tool_use_error>head_limit must be a whole number of 0 or more, got -1. Pass 0 for unlimited.</tool_use_error>"
+   ],
+   "last_lines": [
+    "<tool_use_error>head_limit must be a whole number of 0 or more, got -1. Pass 0 for unlimited.</tool_use_error>"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle",
+    "path": "<str 45 chars>"
+   },
+   "is_error": true,
+   "chars": 149,
+   "lines": 1,
+   "first_line": "Path does not exist: <home>/cc-rea-lab/proj-e60b-grep/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60b-grep.",
+   "last_line": "Path does not exist: <home>/cc-rea-lab/proj-e60b-grep/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60b-grep.",
+   "first_lines": [
+    "Path does not exist: <home>/cc-rea-lab/proj-e60b-grep/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60b-grep."
+   ],
+   "last_lines": [
+    "Path does not exist: <home>/cc-rea-lab/proj-e60b-grep/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60b-grep."
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "("
+   },
+   "is_error": true,
+   "chars": 144,
+   "lines": 5,
+   "first_line": "Search failed \u2014 ripgrep rejected the pattern, glob, or file type without searching:",
+   "last_line": "error: unclosed group",
+   "first_lines": [
+    "Search failed \u2014 ripgrep rejected the pattern, glob, or file type without searching:",
+    "rg: regex parse error:",
+    "    (?:()"
+   ],
+   "last_lines": [
+    "    (?:()",
+    "    ^",
+    "error: unclosed group"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle b",
+    "output_mode": "content",
+    "glob": "*.py"
+   },
+   "is_error": false,
+   "chars": 33,
+   "lines": 2,
+   "first_line": "b.py:2:needle b1",
+   "last_line": "b.py:3:needle b2",
+   "first_lines": [
+    "b.py:2:needle b1",
+    "b.py:3:needle b2"
+   ],
+   "last_lines": [
+    "b.py:2:needle b1",
+    "b.py:3:needle b2"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Grep",
+   "input": {
+    "pattern": "needle z",
+    "output_mode": "content"
+   },
+   "is_error": false,
+   "chars": 39,
+   "lines": 1,
+   "first_line": "long.txt:1:[Omitted long matching line]",
+   "last_line": "long.txt:1:[Omitted long matching line]",
+   "first_lines": [
+    "long.txt:1:[Omitted long matching line]"
+   ],
+   "last_lines": [
+    "long.txt:1:[Omitted long matching line]"
+   ],
+   "markers": [
+    "long_line_omitted"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

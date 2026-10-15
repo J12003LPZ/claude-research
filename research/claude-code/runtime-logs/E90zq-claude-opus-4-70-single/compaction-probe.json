@@ -1,0 +1,241 @@
+{
+ "base": "E90zq-claude-opus-4-7",
+ "out_dir": "E90zq-claude-opus-4-70-single",
+ "model": "claude-opus-4-7",
+ "turn_final_request": {
+  "messages": 21,
+  "shape": [
+   {
+    "role": "user",
+    "blocks": 9,
+    "chars": 13699
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 90
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 36
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 91
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 91
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 93
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 81800
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 91
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 91
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 59
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 92
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 50
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 82
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 46
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 164
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 181
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 83
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 478
+   }
+  ]
+ },
+ "compact_request": {
+  "messages": 21,
+  "instruction_chars": 6403,
+  "instruction_sha256": "6ffda2b58888bf70086ca99b6ed2209e27a1643bee2863c03a34b1a6de09e60c",
+  "arms_equal_by_sha256": [
+   "control"
+  ],
+  "static_prompts_checked": true,
+  "carries_custom_instruction": true,
+  "same_system_text_as_turn": true,
+  "cache_control_differs_from_turn": true,
+  "same_tools_as_turn": true,
+  "history_contains_turn_tool_ids": true,
+  "count_tokens_calls": 2
+ },
+ "after_request": {
+  "messages": 10,
+  "shape": [
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 1063
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 44
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 169
+   },
+   {
+    "role": "user",
+    "blocks": 20,
+    "chars": 90573
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 164
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 211
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 142
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 113
+   },
+   {
+    "role": "assistant",
+    "blocks": 1,
+    "chars": 164
+   },
+   {
+    "role": "user",
+    "blocks": 1,
+    "chars": 145
+   }
+  ],
+  "count_tokens_calls": 0,
+  "summary_message": {
+   "is_first_message": true,
+   "has_canned_summary": true,
+   "analysis_stripped": true,
+   "summary_tag_rewritten": true,
+   "has_transcript_pointer": true,
+   "has_continue_guidance": true,
+   "has_kept_tail_note": true,
+   "has_arm_resume_guidance": false
+  },
+  "restored_files": [
+   {
+    "name": "app.py",
+    "status": "content"
+   },
+   {
+    "name": "d.txt",
+    "status": "content"
+   },
+   {
+    "name": "c.txt",
+    "status": "content"
+   },
+   {
+    "name": "util.py",
+    "status": "content"
+   },
+   {
+    "name": "b.txt",
+    "status": "content"
+   }
+  ],
+  "edit_results_after": {
+   "toolu_cp_x1": "applied",
+   "toolu_cp_x2": "applied",
+   "toolu_cp_x3": "applied"
+  },
+  "attachment_message_chars": 90743,
+  "present": {
+   "canned_summary": true,
+   "project_instruction_file": true,
+   "compact_command_argument": true,
+   "new_user_prompt": true
+  },
+  "absent_after_compaction": {
+   "original_user_prompt": true,
+   "turn_tool_use_ids": false,
+   "failing_test_output": true,
+   "tool_result_blocks": false,
+   "tool_use_blocks": false
+  }
+ },
+ "turn_text_had": {
+  "failing_test_output": true,
+  "original_user_prompt": true
+ }
+}

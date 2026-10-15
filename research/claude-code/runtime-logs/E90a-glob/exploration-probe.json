@@ -1,0 +1,147 @@
+{
+ "exp": "E90a-glob",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-haiku-5-5",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 7,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-haiku-5-5",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": "**/*.txt"
+   },
+   "is_error": false,
+   "chars": 1404,
+   "lines": 101,
+   "first_line": "src/f000.txt",
+   "last_line": "(Showing 100 of 133 matching files; 33 more are not listed. Narrow the pattern or path to see the rest.)",
+   "first_lines": [
+    "src/f000.txt",
+    "src/f001.txt",
+    "src/f002.txt"
+   ],
+   "last_lines": [
+    "src/f098.txt",
+    "src/f099.txt",
+    "(Showing 100 of 133 matching files; 33 more are not listed. Narrow the pattern or path to see the rest.)"
+   ],
+   "markers": [
+    "glob_showing_note"
+   ]
+  },
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": "**/*.txt",
+    "path": "<str 45 chars>"
+   },
+   "is_error": true,
+   "chars": 154,
+   "lines": 1,
+   "first_line": "Directory does not exist: <home>/cc-rea-lab/proj-e60a-glob/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60a-glob.",
+   "last_line": "Directory does not exist: <home>/cc-rea-lab/proj-e60a-glob/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60a-glob.",
+   "first_lines": [
+    "Directory does not exist: <home>/cc-rea-lab/proj-e60a-glob/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60a-glob."
+   ],
+   "last_lines": [
+    "Directory does not exist: <home>/cc-rea-lab/proj-e60a-glob/nope. Note: your current working directory is <home>/cc-rea-lab/proj-e60a-glob."
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": "src/f00*.txt"
+   },
+   "is_error": false,
+   "chars": 129,
+   "lines": 10,
+   "first_line": "src/f000.txt",
+   "last_line": "src/f009.txt",
+   "first_lines": [
+    "src/f000.txt",
+    "src/f001.txt",
+    "src/f002.txt"
+   ],
+   "last_lines": [
+    "src/f007.txt",
+    "src/f008.txt",
+    "src/f009.txt"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": "**/*.zzz"
+   },
+   "is_error": false,
+   "chars": 14,
+   "lines": 1,
+   "first_line": "No files found",
+   "last_line": "No files found",
+   "first_lines": [
+    "No files found"
+   ],
+   "last_lines": [
+    "No files found"
+   ],
+   "markers": [
+    "no_files_found"
+   ]
+  },
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": "**/HEAD"
+   },
+   "is_error": false,
+   "chars": 9,
+   "lines": 1,
+   "first_line": ".git/HEAD",
+   "last_line": ".git/HEAD",
+   "first_lines": [
+    ".git/HEAD"
+   ],
+   "last_lines": [
+    ".git/HEAD"
+   ],
+   "markers": []
+  },
+  {
+   "tool": "Glob",
+   "input": {
+    "pattern": ".git/**",
+    "path": "<str 40 chars>"
+   },
+   "is_error": false,
+   "chars": 502,
+   "lines": 18,
+   "first_line": ".git/description",
+   "last_line": ".git/config",
+   "first_lines": [
+    ".git/description",
+    ".git/hooks/applypatch-msg.sample",
+    ".git/hooks/commit-msg.sample"
+   ],
+   "last_lines": [
+    ".git/info/exclude",
+    ".git/HEAD",
+    ".git/config"
+   ],
+   "markers": []
+  }
+ ],
+ "truncation_notes": []
+}

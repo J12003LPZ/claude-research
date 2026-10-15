@@ -1,0 +1,85 @@
+{
+ "exp": "E50o-claude-opus-4-7-default",
+ "message_requests": 1,
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 1,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "requests": [
+  {
+   "model": "claude-opus-4-7",
+   "tool_names": [
+    "Agent",
+    "Bash",
+    "CronCreate",
+    "CronDelete",
+    "CronList",
+    "DesignSync",
+    "Edit",
+    "EnterWorktree",
+    "ExitWorktree",
+    "Glob",
+    "Grep",
+    "ListAgents",
+    "Monitor",
+    "NotebookEdit",
+    "PowerShell",
+    "PushNotification",
+    "Read",
+    "RemoteTrigger",
+    "ReportFindings",
+    "ScheduleWakeup",
+    "SendMessage",
+    "Skill",
+    "TaskCreate",
+    "TaskGet",
+    "TaskList",
+    "TaskStop",
+    "TaskUpdate",
+    "WebFetch",
+    "WebSearch",
+    "Write"
+   ],
+   "system_block_chars": [
+    74,
+    62,
+    27558
+   ],
+   "message_roles": [
+    "user"
+   ],
+   "markers": {
+    "doing_tasks_text": true,
+    "executing_actions_heading": true,
+    "using_tools_heading": true,
+    "proactivity_heading": true,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "markers_in_system": {
+    "doing_tasks_text": true,
+    "executing_actions_heading": true,
+    "using_tools_heading": true,
+    "proactivity_heading": false,
+    "plan_mode_active": false,
+    "plan_phase4": false,
+    "plan_file_info": false
+   },
+   "proactivity_levels_found": [
+    "medium"
+   ],
+   "tool_results": [],
+   "seq": "0002",
+   "response_status": 200
+  }
+ ]
+}

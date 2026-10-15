@@ -1,0 +1,11 @@
+{
+ "id": "T05-docs-only",
+ "title": "Document the CLI flags in the README",
+ "category": "docs_only",
+ "protected": [
+  "cli.py",
+  "tests/test_cli.py"
+ ],
+ "visible_test_cmd": "python -m unittest discover -s tests",
+ "timeout_s": 600
+}

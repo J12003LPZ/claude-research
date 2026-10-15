@@ -1,0 +1,42 @@
+{
+ "exp": "E90e-guardw-claude-fable-5-1-bypassPermissions",
+ "stream": {
+  "init_permission_mode": "bypassPermissions",
+  "init_model": "claude-fable-5-1",
+  "results": [
+   {
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 2,
+    "terminal_reason": "completed",
+    "permission_denial_count": 0
+   }
+  ]
+ },
+ "model": "claude-fable-5-1",
+ "context_management": true,
+ "tool_calls": [
+  {
+   "tool": "Write",
+   "input": {
+    "file_path": "<str 88 chars>",
+    "content": "<str 32 chars>"
+   },
+   "is_error": false,
+   "chars": 194,
+   "lines": 1,
+   "first_line": "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-fable-5-1-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context ",
+   "last_line": "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-fable-5-1-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context ",
+   "first_lines": [
+    "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-fable-5-1-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context "
+   ],
+   "last_lines": [
+    "The file <home>/cc-rea-lab/proj-e60e-guardw-claude-fable-5-1-bypasspermissions/src/app.py has been updated successfully. (file state is current in your context "
+   ],
+   "markers": [
+    "updated_successfully"
+   ]
+  }
+ ],
+ "truncation_notes": []
+}

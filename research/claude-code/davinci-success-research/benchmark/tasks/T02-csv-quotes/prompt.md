@@ -1,0 +1,1 @@
+`parse_line` in `csvline.py` splits a line on commas only. Make it handle quoting the way RFC 4180 does, for a single line: a quoted field may contain commas, a doubled quote inside a quoted field is one literal quote, and empty fields (including a trailing one) are kept. An unterminated quote raises `ValueError`. The line has no trailing newline.

@@ -1,0 +1,1 @@
+After `rename_user` or `delete_user` in `api.py`, `CachedStore.get` can still return the old user. Fix it. The cache must keep doing its job: repeated reads of an unchanged key must not hit the store again, and changing one user must not evict other users from the cache.
